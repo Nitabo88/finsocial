@@ -19,25 +19,26 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.1")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.40")
     }
 }
 
-dependencies {
-    testCompile 'net.serenity-bdd:serenity-core:1.1.1'
-    testCompile 'net.serenity-bdd:serenity-junit:1.1.1'
-    testCompile('junit:junit:4.12')
-    testCompile('org.assertj:assertj-core:1.7.0')
-    testCompile('org.slf4j:slf4j-simple:1.7.7')
-
-    compile 'net.serenity-bdd:serenity-core:1.9.9'
-    compile 'net.serenity-bdd:serenity-junit:1.9.9'
-    compile 'net.serenity-bdd:serenity-cucumber:1.9.5'
-    compile 'net.serenity-bdd:serenity-screenplay:1.9.9'
-    compile 'net.serenity-bdd:serenity-screenplay-webdriver:1.9.9'
+configurations.all {
+    resolutionStrategy {
+        force "io.cucumber:cucumber-core:4.2.0"
+    }
 }
 
-tasks.withType(Test) {
-    systemProperties = System.properties
-    maxParallelForks = Runtime.runtime.availableProcessors()
+ext{
+    serenityVersion = '2.0.40'
+    serenityCucumberVersion = '1.0.4'
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber4:$rootProject.ext.serenityCucumberVersion"
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:1.1.36'
 }
