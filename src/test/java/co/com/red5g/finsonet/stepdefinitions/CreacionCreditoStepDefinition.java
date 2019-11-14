@@ -36,7 +36,7 @@ public class CreacionCreditoStepDefinition {
                 SeUbica.enNuevoCredito());
     }
 
-    @Cuando("el ingresa la cedula (.*) con el valor (.*) y a un plazo de (.*) meses")
+    @Cuando("el ingresa el numero de documento (.*) con el valor (.*) y a un plazo de (.*) meses")
     public void ingresarInformacionCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
         theActorInTheSpotlight().attemptsTo(
                 suDocumento(informacionCredito().conDocumento(strNumeroDocumento).conValor(strValorCuota).a(strPlazo))

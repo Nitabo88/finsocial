@@ -7,5 +7,10 @@ Característica: Creacion credito nuevo finsonet
 
   Escenario: Creacion nuevo credito
     Dado que un asesor quiere crear un credito
-    Cuando el ingresa la cedula 10000060  con el valor 1000000 y a un plazo de "36" meses
+    Cuando el ingresa el numero de documento 10000060 con el valor 1000000 y a un plazo de "36" meses
+    Entonces el podra ver un credito creado
+
+  Escenario: Creacion nuevo credito
+    Dado que un asesor quiere crear un credito
+    Cuando el ingresa el numero de documento 12000092 con el valor 2500000 y a un plazo de "48" meses
     Entonces el podra ver un credito creado
