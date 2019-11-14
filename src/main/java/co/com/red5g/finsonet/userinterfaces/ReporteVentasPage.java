@@ -21,5 +21,4 @@ public class ReporteVentasPage {
     public static final Target LNK_VER_DETALLE_VENTA_LIBERADA = Target.the("el detalle de la venta liberada").located(By.xpath("//div[@id='cierre_lib']/following-sibling::button"));
     public static final Target SPN_CARGA = Target.the("el detalle de la venta liberada").located(By.xpath("//img[@class='finsocialLogo']"));
     public static final List<Target> LST_VALOR_DETALLE_ORIGINACION = (List<Target>) Target.the ("la lista de valores de originacion").located(By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
-
 }

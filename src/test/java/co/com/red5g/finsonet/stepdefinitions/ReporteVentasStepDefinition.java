@@ -1,8 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutenticoException;
 import co.com.red5g.finsonet.interacions.Abrir;
-import co.com.red5g.finsonet.questions.Mensaje;
 import co.com.red5g.finsonet.questions.Reporte;
 import co.com.red5g.finsonet.tasks.Ingresar;
 import co.com.red5g.finsonet.tasks.Navegar;
@@ -15,7 +13,6 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 
-import static co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutenticoException.MENSAJE_LOGUEO_NO_EXITOSO;
 import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -31,8 +28,9 @@ public class ReporteVentasStepDefinition {
         theActorCalled(strActor).can(BrowseTheWeb.with(navegador));
         theActorInTheSpotlight().attemptsTo(
                 Abrir.laPaginaPrincipal(),
-                Ingresar.lasCredenciales(de().unUsuarioBasico()),
-                Navegar.AlosReportesDeVenta());
+                Ingresar.lasCredenciales(de().unUsuarioBasico()));
+        theActorInTheSpotlight().attemptsTo(
+                Navegar.alosReportesDeVenta());
     }
 
     @Cuando("el ingresa al reporte del (.*) de originacion")

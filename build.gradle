@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'net.serenity-bdd.aggregator'
 
-group 'google-test-suite'
+group 'Finsonet'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -29,7 +29,7 @@ configurations.all {
     }
 }
 
-ext{
+ext {
     serenityVersion = '2.0.40'
     serenityCucumberVersion = '1.0.4'
 }
@@ -37,8 +37,25 @@ ext{
 dependencies {
     testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
     testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
-
+    testImplementation "org.assertj:assertj-core:3.4.1"
+    testImplementation "org.hamcrest:hamcrest:2.1"
     implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-cucumber4:$rootProject.ext.serenityCucumberVersion"
-    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:1.1.36'
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:1.1.36"
+    implementation "org.projectlombok:lombok:1.18.4"
 }
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+    maxParallelForks = Runtime.runtime.availableProcessors()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+wrapper {
+    gradleVersion = '5.6'
+}
+
+gradle.startParameter.continueOnFailure = true

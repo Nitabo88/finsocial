@@ -3,7 +3,6 @@ package co.com.red5g.finsonet.stepdefinitions;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreado;
 import co.com.red5g.finsonet.interacions.Abrir;
 import co.com.red5g.finsonet.questions.Credito;
-import co.com.red5g.finsonet.tasks.Ingresa;
 import co.com.red5g.finsonet.tasks.Ingresar;
 import co.com.red5g.finsonet.tasks.SeUbica;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage;
@@ -16,6 +15,8 @@ import org.openqa.selenium.WebDriver;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreado.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
+import static co.com.red5g.finsonet.models.builder.CreditoBuilder.informacionCredito;
+import static co.com.red5g.finsonet.tasks.Ingresa.suDocumento;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -38,7 +39,7 @@ public class CreacionCreditoStepDefinition {
     @Cuando("el ingresa la cedula (.*) con el valor (.*) y a un plazo de (.*) meses")
     public void ingresarInformacionCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
         theActorInTheSpotlight().attemptsTo(
-                Ingresa.suDocumento(strNumeroDocumento).conValor(strValorCuota).a(strPlazo)
+                suDocumento(informacionCredito().conDocumento(strNumeroDocumento).conValor(strValorCuota).a(strPlazo))
         );
     }
 
