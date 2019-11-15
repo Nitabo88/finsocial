@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.userinterfaces;
 
 import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.targets.Target;
 
 import java.util.List;
@@ -20,5 +21,10 @@ public class ReporteVentasPage {
     public static final Target LBL_NUMERO_CREDITOS_VENTA_LIBERADA = Target.the("el numero total de creditos en la venta liberda").located(By.id("cantidad_lib"));
     public static final Target LNK_VER_DETALLE_VENTA_LIBERADA = Target.the("el detalle de la venta liberada").located(By.xpath("//div[@id='cierre_lib']/following-sibling::button"));
     public static final Target SPN_CARGA = Target.the("el detalle de la venta liberada").located(By.xpath("//img[@class='finsocialLogo']"));
-    public static final List<Target> LST_VALOR_DETALLE_ORIGINACION = (List<Target>) Target.the ("la lista de valores de originacion").located(By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
+    public static final Target LST_VALOR_DETALLE_ORIGINACION = Target.the ("la lista de valores de originacion").located(By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
+    public static final Target LST_CREDITO_DETALLE_ORIGINACION = Target.the ("la lista de creditos de originacion").located(By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'CR')]"));
+    public static final Target LST_VALOR_DETALLE_ANTECARTERA = Target.the ("la lista de valores de antecartera").located(By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'$')]"));
+    public static final Target LST_CREDITO_DETALLE_ANTECARTERA = Target.the ("la lista de creditos de antecartera").located(By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'CR')]"));
+    public static final Target LST_VALOR_DETALLE_VENTA_NUEVA = Target.the ("la lista de valores de venta nueva").located(By.xpath("//div[@class='tarjetas-Rventa-info br-l-purple']//span[@class='DOsuma']"));
+    public static final Target LST_CREDITO_DETALLE_VENTA_NUEVA = Target.the ("la lista de creditos de venta nueva").located(By.xpath("//div[@class='tarjetas-Rventa-info br-l-purple']//span[@class='DOCantidad']"));
 }
