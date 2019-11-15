@@ -21,7 +21,7 @@ public class Ingresa implements Task {
         this.credito = credito;
     }
 
-    public static Performable suDocumento(CreditoBuilder creditoBuilder) {
+    public static Performable Diligenciar(CreditoBuilder creditoBuilder) {
         return instrumented(Ingresa.class, creditoBuilder.build());
     }
 
@@ -33,7 +33,7 @@ public class Ingresa implements Task {
                 WaitUntil.the(TBL_INFORMACION_CREDITOS, isPresent()),
                 Enter.theValue(credito.getStrValorCuota()).into(TXT_VALOR_CUOTA).thenHit(Keys.TAB)
         );
-        actor.attemptsTo(Click.on(TXT_PLAZO),
+        actor.attemptsTo(
                 Enter.theValue(credito.getStrPlazo()).into(TXT_PLAZO),
                 WaitUntil.the(BTN_CREAR_CREDITO, isCurrentlyEnabled()),
                 Click.on(BTN_CREAR_CREDITO),
