@@ -50,7 +50,6 @@ public class ReporteVentasStepDefinition {
         theActorInTheSpotlight().attemptsTo(
                 Visualiza.elDetalledelReporteDeVentaNueva()
         );
-
     }
 
     @Cuando("el ingresa al reporte del mes de venta liberada")

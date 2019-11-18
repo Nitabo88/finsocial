@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
-import static co.com.red5g.finsonet.models.builder.CreditoBuilder.informacionCredito;
+import static co.com.red5g.finsonet.models.builder.CreditoBuilder.la;
 import static co.com.red5g.finsonet.tasks.Ingresa.Diligenciar;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -39,7 +39,7 @@ public class CreacionCreditoStepDefinition {
     @Cuando("el ingresa el numero de documento (.*) con el valor (.*) y a un plazo de (.*) meses")
     public void ingresarInformacionCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
         theActorInTheSpotlight().attemptsTo(
-                Diligenciar(informacionCredito().conDocumento(strNumeroDocumento).conValor(strValorCuota).a(strPlazo))
+                Diligenciar(la().informacionDelCredito(strNumeroDocumento,strValorCuota,strPlazo))
         );
     }
 
