@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_REPORTES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 
 public class Consultar implements Task {
 
@@ -23,7 +23,7 @@ public class Consultar implements Task {
         actor.attemptsTo(
                 Abrir.laPaginaPrincipal(),
                 Ingresar.lasCredenciales(de().unUsuarioBasico()),
-                WaitUntil.the(LNK_REPORTES,isEnabled()),
+                WaitUntil.the(LNK_REPORTES,isClickable()).forNoMoreThan(3).seconds(),
                 Click.on(LNK_REPORTES)
         );
     }

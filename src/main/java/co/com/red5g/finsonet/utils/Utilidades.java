@@ -9,7 +9,7 @@ public class Utilidades {
      public static Double suma(List<WebElementFacade> lstValores) {
        Double  suma = 0.0;
          for (WebElementFacade lstValore : lstValores) {
-             suma += Double.parseDouble(lstValore.getText().replaceAll("[^\\d]", ""));
+             suma = suma + Double.parseDouble(lstValore.getText().replaceAll("[^\\d]", ""));
          }
          return suma;
      }
