@@ -7,6 +7,20 @@ Característica: Reportes de venta Finsonet
 
   Escenario: Reporte de venta - Originacion
     Dado que un asesor quiere consultar un reporte
-    Cuando el ingresa al reporte del 2019-09 de originacion
+    Cuando el ingresa al reporte del mes de originacion
     Entonces el observara que el consolidado y el detalle del reporte de originacion son consistentes
 
+  Escenario: Reporte de venta - Antecartera
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte del mes de antecartera
+    Entonces el observara que el consolidado y el detalle del reporte de antecartera son consistentes
+
+  Escenario: Reporte de venta - Venta Nueva
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte del mes de venta nueva
+    Entonces el observara que el consolidado y el detalle del reporte de venta nueva son consistentes
+
+  Escenario: Reporte de venta - Venta Liberada
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte del mes de venta liberada
+    Entonces el observara que el consolidado y el detalle del reporte de venta liberada son consistentes

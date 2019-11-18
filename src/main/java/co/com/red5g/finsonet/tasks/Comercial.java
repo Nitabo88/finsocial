@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
