@@ -4,15 +4,14 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 import static co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage.LBL_MENSAJE_BIENVENIDA;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
 
 
 public class Mensaje implements Question<Boolean> {
 
-    private String mensaje;
+    private String mensajeBienvenida;
 
     public Mensaje(String strMensaje) {
-        this.mensaje = strMensaje;
+        this.mensajeBienvenida = strMensaje;
     }
 
     public static Mensaje deBienvenidaEs(String strMensaje) {
@@ -21,6 +20,6 @@ public class Mensaje implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        return (LBL_MENSAJE_BIENVENIDA.resolveFor(actor).getText().contains(mensaje));
+        return (LBL_MENSAJE_BIENVENIDA.resolveFor(actor).getText().contains(mensajeBienvenida));
     }
 }

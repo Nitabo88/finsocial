@@ -7,8 +7,6 @@ public class FormularioSolicitudPaso4Page {
     public static final Target TXT_ACTIVOS_CORRIENTES = Target.the("el valor de activos corrientes").located(By.id("activos_corrientes"));
     public static final Target TXT_ACTIVOS_FIJOS = Target.the("el valor de activos fijos").located(By.id("activos_fijos"));
     public static final Target TXT_OTROS_ACTIVOS = Target.the("el valor de otros activos").located(By.id("otros_activos"));
-    public static final Target TXT_CUALES_ACTIVOS = Target.the("cuales  activos").located(By.id("activos_corrientes"));
-    public static final Target TXT_PASIVOS_FINANCIEROS = Target.the("El valor de pasivos financieros").located(By.id("activos_corrientes"));
     public static final Target TXT_PASIVOS_CORRIENTES = Target.the("El valor de pasivos corrientes").located(By.id("pasivos_corrientes"));
     public static final Target TXT_OTROS_PASIVOS = Target.the("El valor de otros pasivos").located(By.id("pasivos_corrientes"));
     public static final Target TXT_CUALES_PASIVOS = Target.the("cuales pasivos").located(By.id("cuales_pasivos"));
@@ -49,4 +47,8 @@ public class FormularioSolicitudPaso4Page {
     public static final Target TXT_RAZON_CREDITO = Target.the("la razon del credito").located(By.id("razon"));
     public static final Target BTN_REGRESAR = Target.the("el boton regresar").located(By.id("btnRegresar_4"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_4"));
+
+    private FormularioSolicitudPaso4Page() {
+        throw new IllegalStateException("Utility class");
+    }
 }

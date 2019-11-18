@@ -28,7 +28,7 @@ public class FormularioSolicitudStepDefinition {
     }
 
     @Cuando("diligencia el formulario de un cliente en su totalidad")
-    public void diligenciaElFormularioDeUnClienteEnSuTotalidad() {
+    public void diligenciarFormularioSolicitudCredito() {
         theActorInTheSpotlight().attemptsTo(
                 Diligenciar.laSolicitudDeCredito()
         );
@@ -36,6 +36,6 @@ public class FormularioSolicitudStepDefinition {
     }
 
     @Entonces("el debería visualizar el credito del cliente")
-    public void elDeberíaVisualizarElCreditoDelCliente() {
+    public void verificarSolicitudCrecito() {
     }
 }

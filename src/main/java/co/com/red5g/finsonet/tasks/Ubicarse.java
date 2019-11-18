@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.Task;
 
 import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builder.CreditoBuilder.la;
-import static co.com.red5g.finsonet.tasks.Ingresa.Diligenciar;
+import static co.com.red5g.finsonet.tasks.Ingresa.diligenciar;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Ubicarse implements Task {
@@ -23,7 +23,7 @@ public class Ubicarse implements Task {
                 Abrir.laPaginaPrincipal(),
                 co.com.red5g.finsonet.tasks.Ingresar.lasCredenciales(de().unUsuarioBasico()),
                 SeUbica.enNuevoCredito(),
-                Diligenciar(la().informacionDelCredito()),
+                diligenciar(la().informacionDelCredito()),
                 Ingresar.enFormularioDeSolicitud());
     }
 }

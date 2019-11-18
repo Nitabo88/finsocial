@@ -6,9 +6,6 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.actions.Click;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
@@ -26,7 +23,7 @@ public class Ingresar implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         List<WebElementFacade> lstCredito = LST_FILA_CREDITOS.of(actor.recall(CEDULA_ACTOR),actor.recall(FECHA_CREDITO)).resolveAllFor(actor);
-        if(lstCredito.size()==0){
+        if(lstCredito.isEmpty()){
          lstCredito = LST_FILA_CREDITOS.of(actor.recall(CEDULA_ACTOR),masUnMinuto(actor.recall(FECHA_CREDITO))).resolveAllFor(actor);
         }
         actor.attemptsTo(
