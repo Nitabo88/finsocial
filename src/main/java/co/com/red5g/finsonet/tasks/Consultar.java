@@ -23,7 +23,7 @@ public class Consultar implements Task {
         actor.attemptsTo(
                 Abrir.laPaginaPrincipal(),
                 Ingresar.lasCredenciales(de().unUsuarioBasico()),
-                WaitUntil.the(LNK_REPORTES,isClickable()).forNoMoreThan(3).seconds(),
+                WaitUntil.the(LNK_REPORTES,isClickable()).forNoMoreThan(5).seconds(),
                 Click.on(LNK_REPORTES)
         );
     }

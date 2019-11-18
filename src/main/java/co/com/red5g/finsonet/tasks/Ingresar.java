@@ -28,11 +28,10 @@ public class Ingresar implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(TXT_USUARIO, isCurrentlyEnabled()),
                 Enter.theValue(cliente.getUsuario()).into(TXT_USUARIO),
                 Enter.theValue(cliente.getContrasena()).into(TXT_CONTRASENA),
                 Click.on(LoginFinsocialPage.BTN_ACCESO),
-                WaitUntil.the(TXT_CODIGO,isCurrentlyEnabled()),
+                WaitUntil.the(TXT_CODIGO,isCurrentlyEnabled()).forNoMoreThan(3).seconds(),
                 Enter.theValue(cliente.getCodigo()).into(TXT_CODIGO),
                 Click.on(LoginFinsocialPage.BTN_ENVIAR));
     }

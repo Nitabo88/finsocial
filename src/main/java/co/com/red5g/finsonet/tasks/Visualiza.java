@@ -20,7 +20,7 @@ public class Visualiza implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SelectFromOptions.byVisibleText("2019-09").from(LST_PERIODO),
-                WaitUntil.the(SPN_CARGA, isNotVisible()),
+                WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(3).seconds(),
                 Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_VENTA_NUEVA)
         );
     }
