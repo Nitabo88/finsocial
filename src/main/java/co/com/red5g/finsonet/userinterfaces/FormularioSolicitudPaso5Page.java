@@ -27,4 +27,8 @@ public class FormularioSolicitudPaso5Page {
     public static final Target TXT_CELULAR = Target.the("el numero del celular").located(By.id("txtCelCon"));
     public static final Target BTN_REGRESAR = Target.the("el boton de regresar").located(By.id("btnRegresar_5"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_5"));
+
+    private FormularioSolicitudPaso5Page() {
+        throw new IllegalStateException("Utility class");
+    }
 }

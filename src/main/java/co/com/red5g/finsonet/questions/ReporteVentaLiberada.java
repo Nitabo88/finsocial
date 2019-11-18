@@ -25,6 +25,6 @@ public class ReporteVentaLiberada implements Question <Boolean> {
         Double valorCreditos = Double.parseDouble(LBL_VALOR_VENTA_LIBERADA.resolveFor(actor).getText().replaceAll("[^\\d]", ""));
         Double numeroCreditosDetalle = suma (lstNumeroCredito);
         Double numeroCreditos = Double.parseDouble(LBL_NUMERO_CREDITOS_VENTA_LIBERADA.resolveFor(actor).getText().replaceAll("[^\\d]", ""));
-        return sumaValorCreditoDetalle.equals(valorCreditos)&numeroCreditosDetalle.equals(numeroCreditos);
+        return sumaValorCreditoDetalle.equals(valorCreditos)&&numeroCreditosDetalle.equals(numeroCreditos);
     }
 }

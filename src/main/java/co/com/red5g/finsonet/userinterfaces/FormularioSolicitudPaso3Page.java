@@ -23,4 +23,8 @@ public class FormularioSolicitudPaso3Page {
     public static final Target TXT_EXTENSION = Target.the("la extension del trabajo").located(By.id("txtExt"));
     public static final Target BTN_REGRESAR = Target.the("al boton regresar").located(By.id("btnRegresar_3"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_3"));
+
+    private FormularioSolicitudPaso3Page() {
+        throw new IllegalStateException("Utility class");
+    }
 }

@@ -20,4 +20,8 @@ public class FormularioSolicitudPaso6Page {
     public static final Target LST_TIPO_PRODUCTO = Target.the("el tipo de producto").located(By.id("cmbTipoProd"));
     public static final Target BTN_REGRESAR = Target.the("el boton regresar").located(By.id("btnRegresar_6"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_6"));
+
+    private FormularioSolicitudPaso6Page() {
+        throw new IllegalStateException("Utility class");
+    }
 }

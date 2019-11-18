@@ -13,14 +13,7 @@ public class FormularioSolicitudPaso2Page {
     public static final Target LST_LUGAR_EXPEDICION= Target.the("el lugar de expedicion").located(By.id("txtLugarExp"));
     public static final Target TXT_FECHA_EXPEDICION= Target.the("la fecha de expedicion").located(By.id("txtFechaExp"));
     public static final Target TXT_FECHA_NACIMIENTO= Target.the("la fecha de nacimiento").located(By.id("txtFechaNac"));
-    public static final Target LST_SEXO= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target LST_LUGAR_NACIMIENTO= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target LST_ESTADO_CIVIL= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target TXT_PAIS_RESIDENCIA= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target LST_CIUDAD_DEPARTAMENTO= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target LST_TIPO_VIVIENDA= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target LST_ESTRATO= Target.the("el segundo apellido").located(By.id("txtSApellido"));
-    public static final Target BTN_GUARDAR_CONTINUAR= Target.the("el boton guardar y continuar").located(By.id("btnEnviar_2"));
+    public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_2"));
     public static final Target BTN_REGRESAR= Target.the("el boton regresar").located(By.id("btnRegresar_2"));
     public static final Target TXT_NOMBRE_ARRENDATARIO= Target.the("el nombre del arrendatario").located(By.id("txtArrend"));
     public static final Target TXT_TELEFONO_ARREDADOR= Target.the("el telefono del arrendador").located(By.id("txtTelArr"));
@@ -37,4 +30,9 @@ public class FormularioSolicitudPaso2Page {
     public static final Target LST_PROFESION = Target.the("la profesion").located(By.id("cmbProfesion"));
     public static final Target TXT_DIRECCION = Target.the("la direccion").located(By.id("dirCa"));
     public static final Target LST_CORRESPONDENCIA = Target.the("la correspondencia").located(By.id("cmbCorrespondencia"));
+
+    private FormularioSolicitudPaso2Page() {
+        throw new IllegalStateException("Utility class");
+    }
+
 }

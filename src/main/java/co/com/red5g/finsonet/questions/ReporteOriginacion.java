@@ -18,6 +18,6 @@ public class ReporteOriginacion implements Question <Boolean> {
         Double valorCreditos = Double.parseDouble(LBL_VALOR_ORIGINACION.resolveFor(actor).getText().replaceAll("[^\\d]", ""));
         Double numeroCreditosDetalle = suma (LST_CREDITO_DETALLE_ORIGINACION.resolveAllFor(actor));
         Double numeroCreditos = Double.parseDouble(LBL_NUMERO_CREDITOS_ORIGINACION.resolveFor(actor).getText().replaceAll("[^\\d]", ""));
-        return sumaValorCreditoDetalle.equals(valorCreditos)&numeroCreditosDetalle.equals(numeroCreditos);
+        return sumaValorCreditoDetalle.equals(valorCreditos)&&numeroCreditosDetalle.equals(numeroCreditos);
     }
 }

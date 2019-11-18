@@ -26,4 +26,8 @@ public class ReporteVentasPage {
     public static final Target LST_CREDITO_DETALLE_VENTA_NUEVA = Target.the("la lista de creditos de venta nueva").located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p//span[@class='DOcantidad']"));
     public static final Target LST_VALOR_DETALLE_VENTA_LIBERADA = Target.the("la lista de valores de venta liberada").located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p[contains(.,'$')]"));
     public static final Target LST_CREDITO_DETALLE_VENTA_LIBERADA = Target.the("la lista de creditos de venta liberada").located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p//span[@class='DOcantidad']"));
+
+    private ReporteVentasPage() {
+        throw new IllegalStateException("Utility class");
+    }
 }
