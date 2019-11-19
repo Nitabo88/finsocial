@@ -3,8 +3,6 @@ package co.com.red5g.finsonet.models.builder;
 import co.com.red5g.finsonet.models.DocumentosRequeridos;
 import co.com.red5g.finsonet.utils.Builder;
 
-import static co.com.red5g.finsonet.utils.DocumentosRequeridos.DOCUMENTOS_REQUERIDOS_SOLICITANTE;
-
 public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos> {
     private String strTipoSolicitud;
     private String strCiudad;
@@ -70,11 +68,11 @@ public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos
     }
 
     public DocumentosRequeridos documentosSolicitante() {
-        this.conTipoSolicitud(DOCUMENTOS_REQUERIDOS_SOLICITANTE.getStrTipoSolicitud());
-        this.conCiudad(DOCUMENTOS_REQUERIDOS_SOLICITANTE.getStrCiudad());
-        this.conAgenciaVinculacion(DOCUMENTOS_REQUERIDOS_SOLICITANTE.getStrAgenciaVinculacion());
-        this.conCalificacion(DOCUMENTOS_REQUERIDOS_SOLICITANTE.getStrCalificacion());
-        this.conVinculacion(DOCUMENTOS_REQUERIDOS_SOLICITANTE.getStrVinculacion());
+        this.conTipoSolicitud("Solicitante");
+        this.conCiudad("MEDELLIN - ANTIOQUIA");
+        this.conAgenciaVinculacion("Institucional Medellin");
+        this.conCalificacion("660");
+        this.conVinculacion("Sí");
         return this.build();
     }
 

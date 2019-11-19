@@ -8,9 +8,11 @@ public class FormularioSolicitudPaso2Page {
     public static final Target TXT_SEGUNDO_APELLIDO= Target.the("el segundo apellido").located(By.id("txtSApellido"));
     public static final Target TXT_PRIMER_NOMBRE= Target.the("el primer nombre").located(By.id("txtPNombre"));
     public static final Target TXT_SEGUNDO_NOMBRE= Target.the("el segundo nombre").located(By.id("txtSNombre"));
-    public static final Target LST_TIPO_DOCUMENTO= Target.the("el tipo de documento").located(By.id("cmbTipoDoc"));
+    public static final Target BTN_TIPO_DOCUMENTO = Target.the("la ciudad").located(By.xpath("//button[@data-id='cmbTipoDoc']"));
+    public static final Target LST_TIPO_DOCUMENTO = Target.the("la ciudad").locatedBy("//select[@id='cmbTipoDoc']//following-sibling::div//ul[@class='dropdown-menu inner']//li[contains(.,'{0}')]");
     public static final Target TXT_NUMERO_DOCUMENTO= Target.the("el numero de documento").located(By.id("txtNoDoc"));
-    public static final Target LST_LUGAR_EXPEDICION= Target.the("el lugar de expedicion").located(By.id("txtLugarExp"));
+    public static final Target BTN_LUGAR_EXPEDICION= Target.the("el lugar de expedicion").located(By.xpath("//button[@data-id='txtLugarExp']"));
+    public static final Target LST_LUGAR_EXPEDICION= Target.the("el lugar de expedicion").locatedBy("//select[@id='txtLugarExp']//following-sibling::div//ul[@class='dropdown-menu inner']//li[contains(.,'{0}')]");
     public static final Target TXT_FECHA_EXPEDICION= Target.the("la fecha de expedicion").located(By.id("txtFechaExp"));
     public static final Target TXT_FECHA_NACIMIENTO= Target.the("la fecha de nacimiento").located(By.id("txtFechaNac"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_2"));
@@ -29,6 +31,7 @@ public class FormularioSolicitudPaso2Page {
     public static final Target LST_NIVEL_ESTUDIOS = Target.the("el nivel de estudios").located(By.id("cmbNivelEst"));
     public static final Target LST_PROFESION = Target.the("la profesion").located(By.id("cmbProfesion"));
     public static final Target TXT_DIRECCION = Target.the("la direccion").located(By.id("dirCa"));
+    public static final Target BTN_CERRAR_DIRECCION = Target.the("cerrar direccion").located(By.xpath("//button[@class='btn btn-default']"));
     public static final Target LST_CORRESPONDENCIA = Target.the("la correspondencia").located(By.id("cmbCorrespondencia"));
 
     private FormularioSolicitudPaso2Page() {
