@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class FormularioSolicitudPaso1Page {
     public static final Target LST_CIUDADES = Target.the("la ciudad").located(By.id("txtCiuC"));
     public static final Target TXT_CALIFICACION = Target.the("la calificacion").located(By.id("txtCalf"));
-    public static final Target RBT_INSTRUCCIONES = Target.the("Selecciona la opcion").locatedBy("//div[@class='radio'][contains(.,'{0}']");
+    public static final Target RBN_INSTRUCCIONES = Target.the("Selecciona la opcion").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]");
     public static final Target LST_AGENCIA_VINCULACION = Target.the("la agencia de vinculacion").located(By.id("a_vinculacion"));
     public static final Target TXT_MONTO = Target.the("el monto").located(By.id("txtMonto"));
     public static final Target TXT_TASA_INTERES= Target.the("la tasa de interes").located(By.id("tasaI"));
