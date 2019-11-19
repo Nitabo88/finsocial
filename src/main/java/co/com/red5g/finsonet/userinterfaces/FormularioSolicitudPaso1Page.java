@@ -17,7 +17,7 @@ public class FormularioSolicitudPaso1Page {
     public static final Target TXT_TASA_MORA= Target.the("la tasa de mora").located(By.id("tasaM"));
     public static final Target TXT_PLAZO= Target.the("el plazo").located(By.id("txtPlaz"));
     public static final Target TXT_TASA_MAXIMA_VIGENTE= Target.the("la tasa maxima legal vigente").located(By.id("tasaMax"));
-    public static final Target BTN_GUARDAR_CONTINUAR_1= Target.the("el boton guardar y continuar").located(By.id("btnEnviar_1"));
+    public static final Target BTN_GUARDAR_CONTINUAR= Target.the("el boton guardar y continuar").located(By.id("btnEnviar_1"));
 
     private FormularioSolicitudPaso1Page() {
         throw new IllegalStateException("Utility class");
