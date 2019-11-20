@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.red5g.finsonet.interacions.SelectDateInteraction;
 import co.com.red5g.finsonet.models.InformacionPersonal;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -7,7 +8,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.*;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -28,21 +31,40 @@ public class EscribirLaInformacion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(TXT_PRIMER_APELLIDO,isVisible()).forNoMoreThan(3).seconds(),
+                WaitUntil.the(TXT_PRIMER_APELLIDO, isVisible()).forNoMoreThan(3).seconds(),
                 Enter.theValue(informacionPersonal.getPrimerApellido()).into(TXT_PRIMER_APELLIDO),
                 Enter.theValue(informacionPersonal.getSegundoApellido()).into(TXT_SEGUNDO_APELLIDO),
                 Enter.theValue(informacionPersonal.getPrimerNombre()).into(TXT_PRIMER_NOMBRE),
                 Enter.theValue(informacionPersonal.getSegundoNombre()).into(TXT_SEGUNDO_NOMBRE),
                 Click.on(BTN_TIPO_DOCUMENTO),
                 Click.on(LST_TIPO_DOCUMENTO.of(informacionPersonal.getTipoDocumento())),
+                Click.on(BTN_LUGAR_EXPEDICION),
+                SelectDateInteraction.ofConsult(TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT),
+                Enter.theValue(informacionPersonal.getLugarExpedicion()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
+                Click.on(BTN_SEXO),
+                Click.on(LST_OPCIONES.of(informacionPersonal.getSexo())),
+                SelectDateInteraction.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT),
+                Click.on(BTN_LUGAR_NACIMIENTO),
+                Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
+                Click.on(BTN_ESTADO_CIVIL),
+                Click.on(LST_OPCIONES.of(informacionPersonal.getEstadoCivil())),
+                Click.on(BTN_CIUDAD_DEPARTAMENTO),
+                Enter.theValue(informacionPersonal.getCiudadDepartamento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
+                Click.on(BTN_TIPO_VIVIENDA),
+                Click.on(LST_OPCIONES.of(informacionPersonal.getTipoVivienda())),
+                Click.on(BTN_ESTRATO),
+                Click.on(LST_ESTRATO.of(informacionPersonal.getEstrato())),
                 Enter.theValue(informacionPersonal.getDireccion()).into(TXT_DIRECCION),
                 Click.on(BTN_CERRAR_DIRECCION),
                 Enter.theValue(informacionPersonal.getBarrio()).into(TXT_BARRIO),
                 Enter.theValue(informacionPersonal.getTelefono()).into(TXT_TELEFONO_RESIDENCIA),
                 Enter.theValue(informacionPersonal.getCelular()).into(TXT_CELULAR),
+                Click.on(BTN_CORRESPONDENCIA),
+                Click.on(LST_OPCIONES.of(informacionPersonal.getCorrepondencia())),
                 Enter.theValue(informacionPersonal.getCorreoElectronico()).into(TXT_EMAIL),
                 Enter.theValue(informacionPersonal.getTiempoResidenciaAnios()).into(TXT_ANOS_RESIDENCIA),
                 Enter.theValue(informacionPersonal.getTiempoResidenciaMeses()).into(TXT_MESES_RESIDENCIA),
+                Enter.theValue(informacionPersonal.getEps()).into(TXT_EPS),
                 Enter.theValue(informacionPersonal.getAdultosCargo()).into(TXT_ADULTOS),
                 Enter.theValue(informacionPersonal.getMenoresCargo()).into(TXT_MENORES_18_ANOS)
         );

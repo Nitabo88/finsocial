@@ -195,8 +195,8 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         this.conTipoDocumento("CC");
         this.conNumeroDocumento("10000060");
         this.conLugarExpedicion("BOLIVAR - ANTIOQUIA");
-        this.conFechaExpedicion("2002-03-01");
-        this.conFechaNacimiento("1984-03-01");
+        this.conFechaExpedicion("2002-Mar-1");
+        this.conFechaNacimiento("1990-Mar-1");
         this.conSexo("Femenino");
         this.conLugarNacimiento("AMAGA - ANTIOQUIA");
         this.conEstadoCivil("UNIÓN LIBRE");
@@ -320,7 +320,7 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
     }
 
     private InformacionPersonalBuilder conFechaExpedicion(String fechaExpedicion) {
-        this.lugarExpedicion = fechaExpedicion;
+        this.fechaExpedicion = fechaExpedicion;
         return this;
     }
 

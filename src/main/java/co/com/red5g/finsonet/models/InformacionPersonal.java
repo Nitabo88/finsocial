@@ -28,7 +28,7 @@ public class InformacionPersonal {
     private String tiempoResidenciaMeses;
     private String adultosCargo;
     private String menoresCargo;
-    private String EPS;
+    private String eps;
     private String nivelEstudios;
     private String profesion;
 
@@ -61,7 +61,7 @@ public class InformacionPersonal {
         this.tiempoResidenciaMeses = informacionPersonalBuilder.getTiempoResidenciaMeses();
         this.adultosCargo = informacionPersonalBuilder.getAdultosCargo();
         this.menoresCargo = informacionPersonalBuilder.getMenoresCargo();
-        this.EPS = informacionPersonalBuilder.getEps();
+        this.eps = informacionPersonalBuilder.getEps();
         this.nivelEstudios = informacionPersonalBuilder.getNivelEstudios();
         this.profesion = informacionPersonalBuilder.getProfesion();
     }
@@ -174,8 +174,7 @@ public class InformacionPersonal {
         return correpondencia;
     }
 
-    public String getEPS() {
-        return EPS;
+    public String getEps() {
+        return eps;
     }
 }
-
