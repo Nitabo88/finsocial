@@ -26,4 +26,8 @@ public class UtileriaFechas {
         fechaFormateada.setTimeZone(TimeZone.getTimeZone("Etc/GMT+10"));
         return fechaFormateada.format(fecha);
     }
+
+    public static String[] separarFecha(String fecha){
+      return  fecha.split("-");
+    }
 }

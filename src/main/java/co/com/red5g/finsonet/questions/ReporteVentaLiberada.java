@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Question;
 import java.util.List;
 
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
-import static co.com.red5g.finsonet.utils.Utilidades.suma;
+import static co.com.red5g.finsonet.utils.Utilerias.suma;
 
 public class ReporteVentaLiberada implements Question <Boolean> {
 
