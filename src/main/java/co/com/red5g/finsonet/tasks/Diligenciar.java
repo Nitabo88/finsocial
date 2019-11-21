@@ -2,11 +2,13 @@ package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso1Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page;
+import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
+import static co.com.red5g.finsonet.models.builder.ActividadLaboralBuilder.es;
 import static co.com.red5g.finsonet.models.builder.DocumentoRequeridosBuilder.los;
 import static co.com.red5g.finsonet.models.builder.InformacionPersonalBuilder.laCualEs;
 import static co.com.red5g.finsonet.models.builder.PrestamoBuilder.con;
@@ -25,7 +27,9 @@ public class Diligenciar implements Task {
                 Escribir.laInformacionDelPrestamo(con().informacionPrestamo()),
                 Click.on(FormularioSolicitudPaso1Page.BTN_GUARDAR_CONTINUAR),
                 EscribirLaInformacion.personal(laCualEs().informacionPersonal()),
-                Click.on(FormularioSolicitudPaso2Page.BTN_GUARDAR_CONTINUAR)
+                Click.on(FormularioSolicitudPaso2Page.BTN_GUARDAR_CONTINUAR),
+                EscribirLa.informacionLaboral(es().actividadLaboral()),
+                Click.on(FormularioSolicitudPaso3Page.BTN_GUARDAR_CONTINUAR)
         );
     }
 }

@@ -5,6 +5,9 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import java.util.List;
 
 public class Utilerias {
+    private static final String LEFT = "left";
+    private static final String RIGHT = "right";
+
     private Utilerias() {
     }
 
@@ -20,11 +23,11 @@ public class Utilerias {
         return i >= minValueInclusive && i <= maxValueInclusive;
     }
 
-    public static Integer desplazamientoAnios(int year, int minYear, int maxYear) {
+    public static Integer desplazamientoAnios(int year, int minYear) {
         if (year < minYear) {
             year = (minYear - year) / 10;
         } else {
-            year = (year - maxYear) / 10;
+            year = (year - minYear) / 10;
         }
         return year;
     }
@@ -32,9 +35,9 @@ public class Utilerias {
     public static String direccionDesplazamiento(int year, int minYear){
         String desplazamiento = "";
         if (year < minYear) {
-            desplazamiento = "left";
+            desplazamiento = LEFT;
         } else {
-           desplazamiento = "right";
+            desplazamiento = RIGHT;
         }
         return desplazamiento;
     }
