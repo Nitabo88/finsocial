@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.interacions.SelectDateInteraction;
 import co.com.red5g.finsonet.models.InformacionPersonal;
 import net.serenitybdd.screenplay.Actor;
@@ -25,7 +26,6 @@ public class EscribirLaInformacion implements Task {
 
     public static Performable personal(InformacionPersonal informacionPersonal) {
         return instrumented(EscribirLaInformacion.class, informacionPersonal);
-
     }
 
     @Override
@@ -39,11 +39,12 @@ public class EscribirLaInformacion implements Task {
                 Click.on(BTN_TIPO_DOCUMENTO),
                 Click.on(LST_TIPO_DOCUMENTO.of(informacionPersonal.getTipoDocumento())),
                 Click.on(BTN_LUGAR_EXPEDICION),
-                SelectDateInteraction.ofConsult(TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT),
                 Enter.theValue(informacionPersonal.getLugarExpedicion()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
+                SelectDateInteraction.ofConsult(
+                        TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT, BTN_DATA_PICKER_DAY, BTN_DATA_PICKER_MONTH, BTN_DATA_PICKER_YEAR),
                 Click.on(BTN_SEXO),
                 Click.on(LST_OPCIONES.of(informacionPersonal.getSexo())),
-                SelectDateInteraction.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT),
+                SelectDateInteraction.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT, BTN_DATA_PICKER_DAY, BTN_DATA_PICKER_MONTH, BTN_DATA_PICKER_YEAR),
                 Click.on(BTN_LUGAR_NACIMIENTO),
                 Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 Click.on(BTN_ESTADO_CIVIL),
@@ -52,8 +53,7 @@ public class EscribirLaInformacion implements Task {
                 Enter.theValue(informacionPersonal.getCiudadDepartamento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 Click.on(BTN_TIPO_VIVIENDA),
                 Click.on(LST_OPCIONES.of(informacionPersonal.getTipoVivienda())),
-                Click.on(BTN_ESTRATO),
-                Click.on(LST_ESTRATO.of(informacionPersonal.getEstrato())),
+                Seleccionar.opcionLista(informacionPersonal.getEstrato(), BTN_ESTRATO, LST_LISTAS),
                 Enter.theValue(informacionPersonal.getDireccion()).into(TXT_DIRECCION),
                 Click.on(BTN_CERRAR_DIRECCION),
                 Enter.theValue(informacionPersonal.getBarrio()).into(TXT_BARRIO),
@@ -66,7 +66,9 @@ public class EscribirLaInformacion implements Task {
                 Enter.theValue(informacionPersonal.getTiempoResidenciaMeses()).into(TXT_MESES_RESIDENCIA),
                 Enter.theValue(informacionPersonal.getEps()).into(TXT_EPS),
                 Enter.theValue(informacionPersonal.getAdultosCargo()).into(TXT_ADULTOS),
-                Enter.theValue(informacionPersonal.getMenoresCargo()).into(TXT_MENORES_18_ANOS)
+                Enter.theValue(informacionPersonal.getMenoresCargo()).into(TXT_MENORES_18_ANOS),
+                Seleccionar.opcionLista(informacionPersonal.getNivelEstudios(), BTN_NIVEL_ESTUDIOS, LST_LISTAS),
+                Seleccionar.opcionLista(informacionPersonal.getProfesion(), BTN_PROFESION, LST_LISTAS)
         );
     }
 }

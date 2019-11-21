@@ -19,7 +19,7 @@ public class FormularioSolicitudPaso2Page {
     public static final Target BTN_LUGAR_NACIMIENTO= Target.the("el lugar de nacimiento").located(By.xpath("//button[@data-id='txtLugarNac']"));
     public static final Target BTN_TIPO_VIVIENDA= Target.the("el tipo de vivienda").located(By.xpath("//button[@data-id='cmbTipoViv']"));
     public static final Target BTN_ESTRATO= Target.the("el estrato").located(By.xpath("//button[@data-id='txtEstrato']"));
-    public static final Target LST_ESTRATO= Target.the("el estrato").locatedBy("//div[contains(@class,'requerir open')]//li//span[contains(.,'{0}')]");
+    public static final Target LST_LISTAS = Target.the("el estrato").locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//ul[@class='dropdown-menu inner']");
     public static final Target BTN_CORRESPONDENCIA= Target.the("el lugar de correspondecia").located(By.xpath("//button[@data-id='cmbCorrespondencia']"));
     public static final Target BTN_NIVEL_ESTUDIOS= Target.the("el nivel de estudios").located(By.xpath("//button[@data-id='cmbNivelEst']"));
     public static final Target BTN_PROFESION= Target.the("la profesion").located(By.xpath("//button[@data-id='cmbProfesion']"));
