@@ -14,17 +14,17 @@ public class CreditoBuilder implements Builder<Credito> {
         return new CreditoBuilder();
     }
 
-    public CreditoBuilder conDocumento(String strNumeroDocumento) {
+    private CreditoBuilder conDocumento(String strNumeroDocumento) {
         this.strNumeroDocumento = strNumeroDocumento;
         return this;
     }
 
-    public CreditoBuilder conValor(String strValorCuota) {
+    private CreditoBuilder conValor(String strValorCuota) {
         this.strValorCuota = strValorCuota;
         return this;
     }
 
-    public CreditoBuilder a(String strPlazo) {
+    private CreditoBuilder a(String strPlazo) {
         this.strPlazo = strPlazo;
         return this;
     }
@@ -41,7 +41,7 @@ public class CreditoBuilder implements Builder<Credito> {
         return strPlazo;
     }
 
-    public CreditoBuilder() {
+    private CreditoBuilder() {
         this.strNumeroDocumento = "";
         this.strValorCuota = "";
         this.strPlazo = "";

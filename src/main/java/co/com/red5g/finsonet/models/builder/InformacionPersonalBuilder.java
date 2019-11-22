@@ -33,7 +33,7 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
     private String nivelEstudios;
     private String profesion;
 
-    public InformacionPersonalBuilder() {
+    private InformacionPersonalBuilder() {
         this.primerApellido = "";
         this.segundoApellido = "";
         this.primerNombre = "";

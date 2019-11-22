@@ -10,7 +10,7 @@ public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos
     private String strCalificacion;
     private String strVinculacion;
 
-    public DocumentoRequeridosBuilder() {
+    private DocumentoRequeridosBuilder() {
         this.strTipoSolicitud = "";
         this.strCiudad = "";
         this.strAgenciaVinculacion = "";
@@ -42,27 +42,27 @@ public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos
         return strVinculacion;
     }
 
-    public DocumentoRequeridosBuilder conTipoSolicitud(String strTipoSolicitud){
+    private DocumentoRequeridosBuilder conTipoSolicitud(String strTipoSolicitud) {
         this.strTipoSolicitud = strTipoSolicitud;
         return this;
     }
 
-    public DocumentoRequeridosBuilder conCiudad(String strCiudad){
+    private DocumentoRequeridosBuilder conCiudad(String strCiudad) {
         this.strCiudad = strCiudad;
         return this;
     }
 
-    public DocumentoRequeridosBuilder conCalificacion(String strCalificacion){
+    private DocumentoRequeridosBuilder conCalificacion(String strCalificacion) {
         this.strCalificacion = strCalificacion;
         return this;
     }
 
-    public DocumentoRequeridosBuilder conAgenciaVinculacion(String strAgenciaVinculacion){
+    private DocumentoRequeridosBuilder conAgenciaVinculacion(String strAgenciaVinculacion) {
         this.strAgenciaVinculacion = strAgenciaVinculacion;
         return this;
     }
 
-    public DocumentoRequeridosBuilder conVinculacion(String strVinculacion){
+    private DocumentoRequeridosBuilder conVinculacion(String strVinculacion) {
         this.strVinculacion = strVinculacion;
         return this;
     }

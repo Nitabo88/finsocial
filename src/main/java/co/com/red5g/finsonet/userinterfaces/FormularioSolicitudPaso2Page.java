@@ -15,7 +15,7 @@ public class FormularioSolicitudPaso2Page {
     public static final Target BTN_SEXO= Target.the("el sexo").located(By.xpath("//button[@data-id='cmbSexo']"));
     public static final Target BTN_CIUDAD_DEPARTAMENTO= Target.the("la ciudad y departamento").located(By.xpath("//button[@data-id='cmbCiudad']"));
     public static final Target BTN_ESTADO_CIVIL= Target.the("el estado civil").located(By.xpath("//button[@data-id='cmbEstCivil']"));
-    public static final Target LST_OPCIONES= Target.the("el sexo").locatedBy("//div[contains(@class,'input-form requerir open')]//li[contains(.,'{0}')]");
+    public static final Target LST_OPCIONES= Target.the("las opciones de lista").locatedBy("//div[contains(@class,'input-form requerir open')]//li[contains(.,'{0}')]");
     public static final Target BTN_LUGAR_NACIMIENTO= Target.the("el lugar de nacimiento").located(By.xpath("//button[@data-id='txtLugarNac']"));
     public static final Target BTN_TIPO_VIVIENDA= Target.the("el tipo de vivienda").located(By.xpath("//button[@data-id='cmbTipoViv']"));
     public static final Target BTN_ESTRATO= Target.the("el estrato").located(By.xpath("//button[@data-id='txtEstrato']"));

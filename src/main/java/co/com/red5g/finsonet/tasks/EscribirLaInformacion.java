@@ -41,10 +41,10 @@ public class EscribirLaInformacion implements Task {
                 Click.on(BTN_LUGAR_EXPEDICION),
                 Enter.theValue(informacionPersonal.getLugarExpedicion()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 SelectDateInteraction.ofConsult(
-                        TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT, BTN_DATA_PICKER_DAY, BTN_DATA_PICKER_MONTH, BTN_DATA_PICKER_YEAR),
+                        TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion()),
                 Click.on(BTN_SEXO),
                 Click.on(LST_OPCIONES.of(informacionPersonal.getSexo())),
-                SelectDateInteraction.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT, BTN_DATA_PICKER_DAY, BTN_DATA_PICKER_MONTH, BTN_DATA_PICKER_YEAR),
+                SelectDateInteraction.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento()),
                 Click.on(BTN_LUGAR_NACIMIENTO),
                 Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 Click.on(BTN_ESTADO_CIVIL),
