@@ -11,21 +11,20 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.*;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class EscribirLaInformacion implements Task {
+public class EscribirLaInformacionPersonal implements Task {
     private InformacionPersonal informacionPersonal;
 
-    public EscribirLaInformacion(InformacionPersonal informacionPersonal) {
+    public EscribirLaInformacionPersonal(InformacionPersonal informacionPersonal) {
         this.informacionPersonal = informacionPersonal;
     }
 
 
-    public static Performable personal(InformacionPersonal informacionPersonal) {
-        return instrumented(EscribirLaInformacion.class, informacionPersonal);
+    public static Performable la(InformacionPersonal informacionPersonal) {
+        return instrumented(EscribirLaInformacionPersonal.class, informacionPersonal);
     }
 
     @Override
