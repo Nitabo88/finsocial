@@ -21,7 +21,7 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
     private String extension;
     private String tipoContrato;
 
-    public ActividadLaboralBuilder() {
+    private ActividadLaboralBuilder() {
         this.impactoDecision = "";
         this.ocupacion = "";
         this.declaraRenta = "";

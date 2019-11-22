@@ -11,7 +11,7 @@ public class PrestamoBuilder implements Builder<Prestamo> {
     private String strPlazo;
     private String strTasaMaximaInteresVigente;
 
-    public PrestamoBuilder() {
+    private PrestamoBuilder() {
         this.strMonto = "";
         this.strTasaInteres = "";
         this.strCuota = "";
@@ -48,33 +48,33 @@ public class PrestamoBuilder implements Builder<Prestamo> {
         return strTasaMaximaInteresVigente;
     }
 
-    public PrestamoBuilder conMonto(String strMonto) {
+    private PrestamoBuilder conMonto(String strMonto) {
         this.strMonto = strMonto;
         return this;
     }
 
-    public PrestamoBuilder conTasaInteres(String strTasaInteres) {
+    private PrestamoBuilder conTasaInteres(String strTasaInteres) {
         this.strTasaInteres = strTasaInteres;
         return this;
     }
 
-    public PrestamoBuilder conCuota(String strCuota) {
+    private PrestamoBuilder conCuota(String strCuota) {
         this.strCuota = strCuota;
         return this;
     }
 
-    public PrestamoBuilder conTasaMora(String strTasaMora) {
+    private PrestamoBuilder conTasaMora(String strTasaMora) {
         this.strTasaMora = strTasaMora;
         return this;
     }
 
-    public PrestamoBuilder conPlazo(String strPlazo) {
+    private PrestamoBuilder conPlazo(String strPlazo) {
         this.strPlazo = strPlazo;
         return this;
     }
 
-    public PrestamoBuilder conTasaMaxima(String strTasaMaximaInteresVigente) {
-        this.strTasaMaximaInteresVigente = strPlazo;
+    private PrestamoBuilder conTasaMaxima(String strTasaMaximaInteresVigente) {
+        this.strTasaMaximaInteresVigente = strTasaMaximaInteresVigente;
         return this;
     }
 

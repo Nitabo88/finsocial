@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import org.openqa.selenium.Keys;
 
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.*;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -33,20 +32,21 @@ public class EscribirLa implements Task {
                 Click.on(RBN_IMPACTO_CARGO.of(actividadLaboral.getImpactoDecision())),
                 Click.on(RBN_RECURSOS_PUBLICOS.of(actividadLaboral.getManejoRecursosPublicos())),
                 Click.on(RBN_PERSONAJE_PUBLICO.of(actividadLaboral.getPersonaPublica())),
+                Click.on(BTN_EMPRESA),
+                Enter.theValue(actividadLaboral.getEmpresa()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
                 Enter.theValue(actividadLaboral.getCargo()).into(TXT_CARGO),
+                SelectDateInteraction.ofConsult(
+                        TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion()),
+                Enter.theValue(actividadLaboral.getDireccionTrabajo()).into(TXT_DIRECCION_TRABAJO),
+                Click.on(BTN_CERRAR_DIRECCION),
+                Click.on(BTN_CIUDAD_TRABAJO),
+                Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
                 Enter.theValue(actividadLaboral.getTelefonoTrabajo()).into(TXT_TELEFONO_TRABAJO),
                 Enter.theValue(actividadLaboral.getExtension()).into(TXT_EXTENSION),
                 Seleccionar.opcionLista(actividadLaboral.getTipoEmpresa(),BTN_TIPO_EMPRESA,LST_OPCIONES),
-                Seleccionar.opcionLista(actividadLaboral.getActividadEconomica(),BTN_ACTIVIDAD_ECONOMICA,LST_OPCIONES),
-                Seleccionar.opcionLista(actividadLaboral.getTipoContrato(),BTN_TIPO_CONTRATO,LST_OPCIONES),
-                SelectDateInteraction.ofConsult(
-                        TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion(), DATA_PICKER_YEAR, DATA_PICKER_MONTH, DATA_PICKER_DAY, BTN_ARROW_LEFT, BTN_ARROW_RIGHT, BTN_DATA_PICKER_DAY, BTN_DATA_PICKER_MONTH, BTN_DATA_PICKER_YEAR),
-                Enter.theValue(actividadLaboral.getDireccionTrabajo()).into(TXT_DIRECCION_TRABAJO),
-                Click.on(BTN_CERRAR_DIRECCION),
-                Click.on(BTN_EMPRESA),
-                Enter.theValue(actividadLaboral.getEmpresa()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
-                Click.on(BTN_CIUDAD_TRABAJO),
-                Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_LISTA).thenHit(Keys.ENTER)
+                Seleccionar.opcionLista(actividadLaboral.getTipoContrato(), BTN_TIPO_CONTRATO, LST_OPCIONES),
+                Click.on(BTN_ACTIVIDAD_ECONOMICA),
+                Click.on(LST_ACTIVIDAD_ECONOMICA.of(actividadLaboral.getActividadEconomica()))
         );
     }
 }

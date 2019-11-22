@@ -25,17 +25,17 @@ public class CredencialesBuilder implements Builder<Credenciales> {
        return new CredencialesBuilder();
     }
 
-    public CredencialesBuilder conUsuario(String usuario) {
+    private CredencialesBuilder conUsuario(String usuario) {
         this.usuario = USUARIO_FINSOCIAL.getUsuario();
         return this;
     }
 
-    public CredencialesBuilder conContrasena(String contrasena) {
+    private CredencialesBuilder conContrasena(String contrasena) {
         this.contrasena = USUARIO_FINSOCIAL.getContrasena();
         return this;
     }
 
-    public CredencialesBuilder conCodigo(String codigo) {
+    private CredencialesBuilder conCodigo(String codigo) {
         this.codigo = USUARIO_FINSOCIAL.getCodigo();
         return this;
     }
