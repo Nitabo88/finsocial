@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.PrestamoBuilder;
+import co.com.red5g.finsonet.models.builder.InformacionPrestamoBuilder;
 
-public class Prestamo {
+public class InformacionPrestamo {
     private String strMonto;
     private String strTasaInteres;
     private String strCuota;
@@ -10,7 +10,7 @@ public class Prestamo {
     private String strPlazo;
     private String strTasaMaximaInteresVigente;
 
-    public Prestamo(PrestamoBuilder prestamoBuilder) {
+    public InformacionPrestamo(InformacionPrestamoBuilder prestamoBuilder) {
         this.strMonto = prestamoBuilder.getStrMonto();
         this.strTasaInteres = prestamoBuilder.getStrTasaInteres();
         this.strCuota = prestamoBuilder.getStrCuota();

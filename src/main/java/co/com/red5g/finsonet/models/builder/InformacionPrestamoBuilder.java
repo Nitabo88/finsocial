@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.models.builder;
 
-import co.com.red5g.finsonet.models.Prestamo;
+import co.com.red5g.finsonet.models.InformacionPrestamo;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class PrestamoBuilder implements Builder<Prestamo> {
+public class InformacionPrestamoBuilder implements Builder<InformacionPrestamo> {
     private String strMonto;
     private String strTasaInteres;
     private String strCuota;
@@ -11,7 +11,7 @@ public class PrestamoBuilder implements Builder<Prestamo> {
     private String strPlazo;
     private String strTasaMaximaInteresVigente;
 
-    private PrestamoBuilder() {
+    private InformacionPrestamoBuilder() {
         this.strMonto = "";
         this.strTasaInteres = "";
         this.strCuota = "";
@@ -20,8 +20,8 @@ public class PrestamoBuilder implements Builder<Prestamo> {
         this.strTasaMaximaInteresVigente = "";
     }
 
-    public static PrestamoBuilder con() {
-        return new PrestamoBuilder();
+    public static InformacionPrestamoBuilder la() {
+        return new InformacionPrestamoBuilder();
     }
 
     public String getStrMonto() {
@@ -48,37 +48,37 @@ public class PrestamoBuilder implements Builder<Prestamo> {
         return strTasaMaximaInteresVigente;
     }
 
-    private PrestamoBuilder conMonto(String strMonto) {
+    private InformacionPrestamoBuilder conMonto(String strMonto) {
         this.strMonto = strMonto;
         return this;
     }
 
-    private PrestamoBuilder conTasaInteres(String strTasaInteres) {
+    private InformacionPrestamoBuilder conTasaInteres(String strTasaInteres) {
         this.strTasaInteres = strTasaInteres;
         return this;
     }
 
-    private PrestamoBuilder conCuota(String strCuota) {
+    private InformacionPrestamoBuilder conCuota(String strCuota) {
         this.strCuota = strCuota;
         return this;
     }
 
-    private PrestamoBuilder conTasaMora(String strTasaMora) {
+    private InformacionPrestamoBuilder conTasaMora(String strTasaMora) {
         this.strTasaMora = strTasaMora;
         return this;
     }
 
-    private PrestamoBuilder conPlazo(String strPlazo) {
+    private InformacionPrestamoBuilder conPlazo(String strPlazo) {
         this.strPlazo = strPlazo;
         return this;
     }
 
-    private PrestamoBuilder conTasaMaxima(String strTasaMaximaInteresVigente) {
+    private InformacionPrestamoBuilder conTasaMaxima(String strTasaMaximaInteresVigente) {
         this.strTasaMaximaInteresVigente = strTasaMaximaInteresVigente;
         return this;
     }
 
-    public Prestamo informacionPrestamo() {
+    public InformacionPrestamo informacionPrestamo() {
         this.conMonto("7680000");
         this.conTasaInteres("2");
         this.conCuota("160000");
@@ -89,7 +89,7 @@ public class PrestamoBuilder implements Builder<Prestamo> {
     }
 
     @Override
-    public Prestamo build() {
-        return new Prestamo(this);
+    public InformacionPrestamo build() {
+        return new InformacionPrestamo(this);
     }
 }

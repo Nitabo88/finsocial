@@ -70,7 +70,7 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
     }
 
 
-    public static InformacionPersonalBuilder laCualEs() {
+    public static InformacionPersonalBuilder cualEs() {
         return new InformacionPersonalBuilder();
     }
 
