@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.interacions.Seleccionar;
-import co.com.red5g.finsonet.interacions.SelectDateInteraction;
+import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.ActividadLaboral;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -35,7 +35,7 @@ public class EscribirLaInformacionLaboral implements Task {
                 Click.on(BTN_EMPRESA),
                 Enter.theValue(actividadLaboral.getEmpresa()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
                 Enter.theValue(actividadLaboral.getCargo()).into(TXT_CARGO),
-                SelectDateInteraction.ofConsult(
+                SeleccionarFecha.ofConsult(
                         TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion()),
                 Enter.theValue(actividadLaboral.getDireccionTrabajo()).into(TXT_DIRECCION_TRABAJO),
                 Click.on(BTN_CERRAR_DIRECCION),

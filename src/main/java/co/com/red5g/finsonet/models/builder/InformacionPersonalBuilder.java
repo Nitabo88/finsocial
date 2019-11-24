@@ -69,11 +69,9 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         return new InformacionPersonal(this);
     }
 
-
     public static InformacionPersonalBuilder cualEs() {
         return new InformacionPersonalBuilder();
     }
-
 
     public String getPrimerApellido() {
         return primerApellido;
@@ -358,5 +356,4 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         this.primerApellido = primerApellido;
         return this;
     }
-    
 }

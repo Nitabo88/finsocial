@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.red5g.finsonet.models.builder.InformacionBalancePersonalBuilder;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso1Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page;
@@ -29,7 +30,8 @@ public class Diligenciar implements Task {
                 EscribirLaInformacionPersonal.la(cualEs().informacionPersonal()),
                 Click.on(FormularioSolicitudPaso2Page.BTN_GUARDAR_CONTINUAR),
                 EscribirLaInformacionLaboral.laCual(es().actividadLaboral()),
-                Click.on(FormularioSolicitudPaso3Page.BTN_GUARDAR_CONTINUAR)
+                Click.on(FormularioSolicitudPaso3Page.BTN_GUARDAR_CONTINUAR),
+                EscribirLaInformacionDelBalancePersonal.de(InformacionBalancePersonalBuilder.la().persona())
         );
     }
 }
