@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.interacions.Seleccionar;
-import co.com.red5g.finsonet.interacions.SelectDateInteraction;
+import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.InformacionPersonal;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -39,11 +39,11 @@ public class EscribirLaInformacionPersonal implements Task {
                 Click.on(LST_TIPO_DOCUMENTO.of(informacionPersonal.getTipoDocumento())),
                 Click.on(BTN_LUGAR_EXPEDICION),
                 Enter.theValue(informacionPersonal.getLugarExpedicion()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
-                SelectDateInteraction.ofConsult(
+                SeleccionarFecha.ofConsult(
                         TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion()),
                 Click.on(BTN_SEXO),
                 Click.on(LST_OPCIONES.of(informacionPersonal.getSexo())),
-                SelectDateInteraction.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento()),
+                SeleccionarFecha.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento()),
                 Click.on(BTN_LUGAR_NACIMIENTO),
                 Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 Click.on(BTN_ESTADO_CIVIL),

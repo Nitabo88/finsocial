@@ -7,7 +7,9 @@ public class FormularioSolicitudPaso4Page {
     public static final Target TXT_ACTIVOS_CORRIENTES = Target.the("el valor de activos corrientes").located(By.id("activos_corrientes"));
     public static final Target TXT_ACTIVOS_FIJOS = Target.the("el valor de activos fijos").located(By.id("activos_fijos"));
     public static final Target TXT_OTROS_ACTIVOS = Target.the("el valor de otros activos").located(By.id("otros_activos"));
+    public static final Target TXT_CUALES_ACTIVOS = Target.the("cuales activos?").located(By.id("cuales_activos"));
     public static final Target TXT_PASIVOS_CORRIENTES = Target.the("El valor de pasivos corrientes").located(By.id("pasivos_corrientes"));
+    public static final Target TXT_PASIVOS_FINANCIEROS = Target.the("El valor de pasivos financieros").located(By.id("pasivos_financieros"));
     public static final Target TXT_OTROS_PASIVOS = Target.the("El valor de otros pasivos").located(By.id("pasivos_corrientes"));
     public static final Target TXT_CUALES_PASIVOS = Target.the("cuales pasivos").located(By.id("cuales_pasivos"));
     public static final Target TXT_TOTAL_ACTIVOS = Target.the("El valor total activos").located(By.id("total_activos"));
