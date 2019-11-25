@@ -1,31 +1,25 @@
 package co.com.red5g.finsonet.tasks;
 
-import co.com.red5g.finsonet.exceptions.ElDetalleNoCorrespondeException;
 import co.com.red5g.finsonet.models.InformacionBalancePersonal;
-import co.com.red5g.finsonet.questions.ReporteAntecartera;
-import co.com.red5g.finsonet.questions.TotalActivos;
-import co.com.red5g.finsonet.questions.TotalPasivos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static co.com.red5g.finsonet.exceptions.ElDetalleNoCorrespondeException.MENSAJE_REPORTE;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class EscribirLaInformacionDelBalancePersonal implements Task {
+public class EscribeLaInformacionDelBalancePersonal implements Task {
     private InformacionBalancePersonal informacionBalancePersonal;
 
-    public EscribirLaInformacionDelBalancePersonal(InformacionBalancePersonal informacionBalancePersonal) {
+    public EscribeLaInformacionDelBalancePersonal(InformacionBalancePersonal informacionBalancePersonal) {
         this.informacionBalancePersonal = informacionBalancePersonal;
     }
 
 
     public static Performable de(InformacionBalancePersonal informacionBalancePersonal) {
-        return instrumented(EscribirLaInformacionDelBalancePersonal.class, informacionBalancePersonal );
+        return instrumented(EscribeLaInformacionDelBalancePersonal.class, informacionBalancePersonal );
     }
 
     @Override
