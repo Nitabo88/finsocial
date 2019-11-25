@@ -22,7 +22,7 @@ public class ConsultaUnReporte implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 AbreLaPagina.finsonet(),
-                SeAutentica.lasCredenciales(CredencialesBuilder.de().unUsuarioBasico()),
+                SeAutentica.conCredenciales(CredencialesBuilder.de().unUsuarioBasico()),
                 WaitUntil.the(LNK_REPORTES,isClickable()).forNoMoreThan(5).seconds(),
                 Click.on(LNK_REPORTES)
         );

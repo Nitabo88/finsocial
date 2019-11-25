@@ -20,8 +20,7 @@ public class Ubicarse implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                AbreLaPagina.finsonet(),
-                SeAutentica.lasCredenciales(de().unUsuarioBasico()),
+                Autenticarse.enFinsonet(),
                 SeUbica.enNuevoCredito(),
                 diligenciar(la().informacionDelCredito()),
                 Ingresar.enFormularioDeSolicitud());
