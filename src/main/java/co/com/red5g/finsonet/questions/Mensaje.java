@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage.LBL_MENSAJE_BIENVENIDA;
+import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.LBL_MENSAJE_BIENVENIDA;
 
 
 public class Mensaje implements Question<Boolean> {

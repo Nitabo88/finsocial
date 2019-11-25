@@ -1,38 +1,31 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
-import co.com.red5g.finsonet.interacions.Abrir;
 import co.com.red5g.finsonet.questions.Credito;
-import co.com.red5g.finsonet.tasks.Ingresar;
+import co.com.red5g.finsonet.questions.LaNoCreacionDelCredito;
+import co.com.red5g.finsonet.tasks.Autenticarse;
 import co.com.red5g.finsonet.tasks.SeUbica;
-import co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.thucydides.core.annotations.Managed;
-import org.openqa.selenium.WebDriver;
+import net.serenitybdd.screenplay.Question;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.MENSAJE_CREDITO;
-import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builder.CreditoBuilder.la;
 import static co.com.red5g.finsonet.tasks.Ingresa.diligenciar;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.fluentlenium.core.filter.MatcherConstructor.contains;
+import static org.fluentlenium.core.filter.MatcherConstructor.equal;
 
 public class CreacionCreditoStepDefinition {
-    private LoginFinsocialPage loginFinsocialPage;
-
-    @Managed(driver = "chrome")
-    private WebDriver navegador;
 
     @Dado("que un (.*) quiere crear un credito")
     public void crearCredito(String nombreActor) {
-        theActorCalled(nombreActor).can(BrowseTheWeb.with(navegador));
-        theActorInTheSpotlight().attemptsTo(
-                Abrir.laPaginaPrincipal(),
-                Ingresar.lasCredenciales(de().unUsuarioBasico()),
+        theActorCalled(nombreActor).attemptsTo(
+                Autenticarse.enFinsonet(),
                 SeUbica.enNuevoCredito());
     }
 
@@ -46,5 +39,9 @@ public class CreacionCreditoStepDefinition {
     @Entonces("el podra ver un credito creado")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should(seeThat(Credito.existe()).orComplainWith(NoSeVeElCreditoCreadoException.class, MENSAJE_CREDITO));
+    }
+
+    @Entonces("el no podra crear un credito")
+    public void elNoPodraCrearUnCredito() {
     }
 }

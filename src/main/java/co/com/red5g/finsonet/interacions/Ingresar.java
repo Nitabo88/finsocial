@@ -27,7 +27,7 @@ public class Ingresar implements Interaction {
          lstCredito = LST_FILA_CREDITOS.of(actor.recall(CEDULA_ACTOR),masUnMinuto(actor.recall(FECHA_CREDITO))).resolveAllFor(actor);
         }
         actor.attemptsTo(
-            Click.on(lstCredito.get(0))
+            Click.on(lstCredito.get(2))
         );
     }
 }

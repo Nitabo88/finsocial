@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.interacions;
 
-import co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage;
+import co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -9,8 +9,8 @@ import net.serenitybdd.screenplay.actions.Open;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 
-public class Abrir implements Task {
-    private LoginFinsocialPage loginFinsocialPage;
+public class AbreLaPagina implements Task {
+    private LoginFinsonetPage loginFinsocialPage;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -19,7 +19,7 @@ public class Abrir implements Task {
         );
     }
 
-    public static Performable laPaginaPrincipal() {
-        return instrumented(Abrir.class);
+    public static Performable finsonet() {
+        return instrumented(AbreLaPagina.class);
     }
 }
