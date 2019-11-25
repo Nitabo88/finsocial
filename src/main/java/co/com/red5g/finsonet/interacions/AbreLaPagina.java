@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Open;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 
-public class Abrir implements Task {
+public class AbreLaPagina implements Task {
     private LoginFinsocialPage loginFinsocialPage;
 
     @Override
@@ -19,7 +19,7 @@ public class Abrir implements Task {
         );
     }
 
-    public static Performable laPaginaPrincipal() {
-        return instrumented(Abrir.class);
+    public static Performable finsonet() {
+        return instrumented(AbreLaPagina.class);
     }
 }

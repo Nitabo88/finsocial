@@ -14,15 +14,15 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyEnabled;
 
 
-public class Ingresar implements Task {
+public class SeAutentica implements Task {
     private Credenciales cliente;
 
-    public Ingresar(Credenciales cliente) {
+    public SeAutentica(Credenciales cliente) {
         this.cliente = cliente;
     }
 
     public static Performable lasCredenciales(Credenciales credenciales) {
-        return instrumented(Ingresar.class, credenciales);
+        return instrumented(SeAutentica.class, credenciales);
     }
 
     @Override

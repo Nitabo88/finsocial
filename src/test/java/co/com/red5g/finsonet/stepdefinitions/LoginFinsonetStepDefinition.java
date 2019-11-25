@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutenticoException;
-import co.com.red5g.finsonet.interacions.Abrir;
+import co.com.red5g.finsonet.interacions.AbreLaPagina;
 import co.com.red5g.finsonet.questions.Mensaje;
-import co.com.red5g.finsonet.tasks.Ingresar;
+import co.com.red5g.finsonet.tasks.SeAutentica;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -28,21 +28,21 @@ public class LoginFinsonetStepDefinition {
     @Dado("que (.*) quiere acceder a finsonet")
     public void ingresarPagina(String nombreActor) {
         theActorCalled(nombreActor).can(BrowseTheWeb.with(navegador));
-        theActorInTheSpotlight().wasAbleTo(Abrir.laPaginaPrincipal());
+        theActorInTheSpotlight().wasAbleTo(AbreLaPagina.finsonet());
     }
 
     @Cuando("(.*) se autentica en finsonet con el usuario (.*), la contraseña (.*) y el codigo (.*)")
     public void autenticarUsuario(String actor, String usuario, String contrasena, String codigo) {
         theActorCalled(actor).can(BrowseTheWeb.with(navegador));
         theActorInTheSpotlight().attemptsTo(
-                Abrir.laPaginaPrincipal(),
-                Ingresar.lasCredenciales(de().unUsuarioBasico(usuario, contrasena, codigo))
+                AbreLaPagina.finsonet(),
+                SeAutentica.lasCredenciales(de().unUsuarioBasico(usuario, contrasena, codigo))
         );
     }
 
     @Cuando("ingresa su informacion de autenticacion")
     public void diligenciarInformacionIngreso() {
-        theActorInTheSpotlight().attemptsTo(Ingresar.lasCredenciales(de().unUsuarioBasico()));
+        theActorInTheSpotlight().attemptsTo(SeAutentica.lasCredenciales(de().unUsuarioBasico()));
     }
 
     @Entonces("el debería ver (.*)")

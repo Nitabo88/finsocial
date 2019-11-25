@@ -27,35 +27,35 @@ public class ReporteVentasStepDefinition {
     public void ingresarReportes(String strActor) {
         theActorCalled(strActor).can(BrowseTheWeb.with(navegador));
         theActorInTheSpotlight().attemptsTo(
-                Consultar.unReporte()
+                ConsultaUnReporte.de()
         );
     }
 
     @Cuando("el ingresa al reporte del mes de originacion")
     public void consultarReporteOriginacion() {
         theActorInTheSpotlight().attemptsTo(
-                VeElDetalle.delReporteDeOriginacion()
+                VeElDetalleDeOriginacion.enElReporte()
         );
     }
 
     @Cuando("el ingresa al reporte del mes de antecartera")
     public void consultarReporteAntecartera() {
         theActorInTheSpotlight().attemptsTo(
-                VeEl.detalledelReporteDeAntecartera()
+                VeElDetalleDeAntecartera.enElReporte()
         );
     }
 
     @Cuando("el ingresa al reporte del mes de venta nueva")
     public void consultarReporteVentaNueva() {
         theActorInTheSpotlight().attemptsTo(
-                Visualiza.elDetalledelReporteDeVentaNueva()
+                VeElDetalleDeVentaNueva.enElReporte()
         );
     }
 
     @Cuando("el ingresa al reporte del mes de venta liberada")
     public void consultarVentaLiberada() {
         theActorInTheSpotlight().attemptsTo(
-                Puede.verElDetalledelReporteDeVentaNueva()
+                VeElDetalleDeVentaLiberada.enElReporte()
         );
     }
 
