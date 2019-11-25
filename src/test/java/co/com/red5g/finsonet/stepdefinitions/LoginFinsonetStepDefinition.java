@@ -36,13 +36,13 @@ public class LoginFinsonetStepDefinition {
         theActorCalled(actor).can(BrowseTheWeb.with(navegador));
         theActorInTheSpotlight().attemptsTo(
                 AbreLaPagina.finsonet(),
-                SeAutentica.lasCredenciales(de().unUsuarioBasico(usuario, contrasena, codigo))
+                SeAutentica.conCredenciales(de().unUsuarioBasico(usuario, contrasena, codigo))
         );
     }
 
     @Cuando("ingresa su informacion de autenticacion")
     public void diligenciarInformacionIngreso() {
-        theActorInTheSpotlight().attemptsTo(SeAutentica.lasCredenciales(de().unUsuarioBasico()));
+        theActorInTheSpotlight().attemptsTo(SeAutentica.conCredenciales(de().unUsuarioBasico()));
     }
 
     @Entonces("el debería ver (.*)")

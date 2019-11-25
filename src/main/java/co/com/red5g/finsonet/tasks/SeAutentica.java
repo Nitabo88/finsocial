@@ -21,7 +21,7 @@ public class SeAutentica implements Task {
         this.cliente = cliente;
     }
 
-    public static Performable lasCredenciales(Credenciales credenciales) {
+    public static Performable conCredenciales(Credenciales credenciales) {
         return instrumented(SeAutentica.class, credenciales);
     }
 
