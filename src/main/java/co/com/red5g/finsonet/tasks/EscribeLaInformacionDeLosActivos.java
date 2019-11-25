@@ -10,15 +10,15 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class EscribirLaInformacionDeLosActivos implements Task {
+public class EscribeLaInformacionDeLosActivos implements Task {
     private DescripcionActivos descripcionActivos;
 
-    public EscribirLaInformacionDeLosActivos(DescripcionActivos descripcionActivos) {
+    public EscribeLaInformacionDeLosActivos(DescripcionActivos descripcionActivos) {
         this.descripcionActivos = descripcionActivos;
     }
 
     public static Performable dada(DescripcionActivos descripcionActivos) {
-        return instrumented(EscribirLaInformacionDeLosActivos.class, descripcionActivos);
+        return instrumented(EscribeLaInformacionDeLosActivos.class, descripcionActivos);
     }
 
     @Override
