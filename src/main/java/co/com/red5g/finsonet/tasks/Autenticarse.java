@@ -9,6 +9,7 @@ import static co.com.red5g.finsonet.models.builder.CredencialesBuilder.de;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Autenticarse implements Task {
+
     public static Performable enFinsonet() {
         return instrumented(Autenticarse.class);
     }
