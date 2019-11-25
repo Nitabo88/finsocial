@@ -8,7 +8,6 @@ import co.com.red5g.finsonet.tasks.SeUbica;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.Question;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builder.CreditoBuilder.la;
@@ -16,9 +15,7 @@ import static co.com.red5g.finsonet.tasks.Ingresa.diligenciar;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.fluentlenium.core.filter.MatcherConstructor.contains;
-import static org.fluentlenium.core.filter.MatcherConstructor.equal;
+import static org.hamcrest.Matchers.containsString;
 
 public class CreacionCreditoStepDefinition {
 
@@ -43,5 +40,6 @@ public class CreacionCreditoStepDefinition {
 
     @Entonces("el no podra crear un credito")
     public void elNoPodraCrearUnCredito() {
+        theActorInTheSpotlight().should(seeThat(LaNoCreacionDelCredito.valor(), containsString("toda la información")));
     }
 }
