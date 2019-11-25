@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
-import co.com.red5g.finsonet.interacions.Abrir;
+import co.com.red5g.finsonet.interacions.AbreLaPagina;
 import co.com.red5g.finsonet.interacions.Ingresar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -20,8 +20,8 @@ public class Ubicarse implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Abrir.laPaginaPrincipal(),
-                co.com.red5g.finsonet.tasks.Ingresar.lasCredenciales(de().unUsuarioBasico()),
+                AbreLaPagina.finsonet(),
+                SeAutentica.lasCredenciales(de().unUsuarioBasico()),
                 SeUbica.enNuevoCredito(),
                 diligenciar(la().informacionDelCredito()),
                 Ingresar.enFormularioDeSolicitud());

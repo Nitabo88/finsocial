@@ -10,10 +10,10 @@ import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
-public class VeEl implements Task {
+public class VeElDetalleDeVentaNueva implements Task {
 
-    public static Performable detalledelReporteDeAntecartera() {
-        return instrumented(VeEl.class);
+    public static Performable enElReporte() {
+        return instrumented(VeElDetalleDeVentaNueva.class);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class VeEl implements Task {
         actor.attemptsTo(
                 SelectFromOptions.byVisibleText("2019-09").from(LST_PERIODO),
                 WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(3).seconds(),
-                Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_ANTECARTERA)
+                Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_VENTA_NUEVA)
         );
     }
 }

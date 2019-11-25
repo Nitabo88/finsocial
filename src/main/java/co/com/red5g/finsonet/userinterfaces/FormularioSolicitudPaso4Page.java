@@ -21,12 +21,14 @@ public class FormularioSolicitudPaso4Page {
     public static final Target TXT_VALOR_COMERCIAL_INMUEBLE = Target.the("el valor comercial").located(By.id("txtValorComInm"));
     public static final Target TXT_HIPOTECADO = Target.the("hipotecado a").located(By.id("txtHipotecado"));
     public static final Target TXT_DIRECCION = Target.the("direccion").located(By.id("dirBienes"));
+    public static final Target BTN_CERRAR_DIRECCION = Target.the("cerrar direccion del trabajo").located(By.xpath("//button[@class='btn btn-default']"));
     public static final Target TXT_SALDO_CREDITO_INMUEBLE = Target.the("el saldo del credito de inmueble").located(By.id("txtSaldoCredInm"));
     public static final Target TXT_VEHICULO_CLASE = Target.the("la clase del vehiculo").located(By.id("txtVehCls"));
     public static final Target TXT_VALOR_COMERCIAL_VEHICULO = Target.the("el valor comercial del vehiculo").located(By.id("txtValorComVeh"));
     public static final Target TXT_SALDO_CREDITO_VEHICULO = Target.the("el saldo del credito del vehiculo").located(By.id("txtSaldoCredVeh"));
     public static final Target TXT_PLACA_NUMERO = Target.the("el numero de placa").located(By.id("txtPlacaVeh"));
     public static final Target TXT_MARCA_MODELO = Target.the("la marca y modelo del vehiculo").located(By.id("txtMarcaVeh"));
+    public static final Target TXT_PRENDA_A_FAVOR = Target.the("la prenda a favor").located(By.id("txtPrendaFavVeh"));
     public static final Target TXT_SALARIO_FIJO = Target.the("el salario fijo").located(By.id("txtSueldoFijo"));
     public static final Target TXT_SALARIO_VARIABLES_COMISIONES = Target.the("el salario variable o comisiones").located(By.id("txtSalVarCom"));
     public static final Target TXT_ARRENDAMIENTO = Target.the("el arriendo").located(By.id("txtArrendamiento"));
@@ -46,7 +48,8 @@ public class FormularioSolicitudPaso4Page {
     public static final Target TXT_VALOR_COMERCIAL_VIVIENDA = Target.the("el valor de la vivienda").located(By.id("txtVlrComViv"));
     public static final Target TXT_DONDE_VIVIR = Target.the("donde le gustaria vivir").located(By.id("txtGustaVivir"));
     public static final Target TXT_TOTAL_EGRESOS = Target.the("el total de egresos").located(By.id("txtGustaVivir"));
-    public static final Target TXT_RAZON_CREDITO = Target.the("la razon del credito").located(By.id("razon"));
+    public static final Target BTN_RAZON_CREDITO = Target.the("la razon del credito").located(By.xpath("//button[@data-id='cmbRazondecredito']"));
+    public static final Target LST_RAZON_CREDITO = Target.the("la razon del credito").locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//ul[@class='dropdown-menu inner']");
     public static final Target BTN_REGRESAR = Target.the("el boton regresar").located(By.id("btnRegresar_4"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_4"));
 

@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
-import co.com.red5g.finsonet.interacions.Abrir;
+import co.com.red5g.finsonet.interacions.AbreLaPagina;
 import co.com.red5g.finsonet.questions.Credito;
-import co.com.red5g.finsonet.tasks.Ingresar;
+import co.com.red5g.finsonet.tasks.SeAutentica;
 import co.com.red5g.finsonet.tasks.SeUbica;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsocialPage;
 import cucumber.api.java.es.Cuando;
@@ -31,8 +31,8 @@ public class CreacionCreditoStepDefinition {
     public void crearCredito(String nombreActor) {
         theActorCalled(nombreActor).can(BrowseTheWeb.with(navegador));
         theActorInTheSpotlight().attemptsTo(
-                Abrir.laPaginaPrincipal(),
-                Ingresar.lasCredenciales(de().unUsuarioBasico()),
+                AbreLaPagina.finsonet(),
+                SeAutentica.lasCredenciales(de().unUsuarioBasico()),
                 SeUbica.enNuevoCredito());
     }
 

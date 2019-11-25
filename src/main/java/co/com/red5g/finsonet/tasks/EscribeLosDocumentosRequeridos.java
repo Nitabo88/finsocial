@@ -6,7 +6,6 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
@@ -14,15 +13,15 @@ import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso1Page.
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class Tramitar implements Task {
+public class EscribeLosDocumentosRequeridos implements Task {
     private DocumentosRequeridos documentosRequeridos;
 
-    public Tramitar(DocumentosRequeridos documentosRequeridos) {
+    public EscribeLosDocumentosRequeridos(DocumentosRequeridos documentosRequeridos) {
         this.documentosRequeridos = documentosRequeridos;
     }
 
-    public static Performable documentosRequeridos(DocumentosRequeridos documentosRequeridos) {
-        return instrumented(Tramitar.class, documentosRequeridos);
+    public static Performable en(DocumentosRequeridos documentosRequeridos) {
+        return instrumented(EscribeLosDocumentosRequeridos.class, documentosRequeridos);
     }
 
     @Override
