@@ -9,9 +9,6 @@ import co.com.red5g.finsonet.tasks.*;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.thucydides.core.annotations.Managed;
-import org.openqa.selenium.WebDriver;
 
 import static co.com.red5g.finsonet.exceptions.ElDetalleNoCorrespondeException.MENSAJE_REPORTE;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -20,13 +17,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ReporteVentasStepDefinition {
 
-    @Managed(driver = "chrome")
-    private WebDriver navegador;
-
     @Dado("que un (.*) quiere consultar un reporte")
     public void ingresarReportes(String strActor) {
-        theActorCalled(strActor).can(BrowseTheWeb.with(navegador));
-        theActorInTheSpotlight().attemptsTo(
+        theActorCalled(strActor).attemptsTo(
                 ConsultaUnReporte.de()
         );
     }
