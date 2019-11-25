@@ -8,7 +8,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("http://192.168.0.18:81/index.php")
 
 public class LoginFinsonetPage extends PageObject {
-    public static final Target TXT_USUARIO = Target.the("usuario").located(By.id("textfield"));
+    public static final Target TXT_USUARIO = Target.the("usuario").located(By.name("user"));
     public static final Target TXT_CONTRASENA = Target.the("contraseña").located(By.name("pass"));
     public static final Target BTN_ACCESO = Target.the("el boton iniciar sesion").located(By.id("butSubmit"));
     public static final Target TXT_CODIGO = Target.the("codigo").located(By.id("codigo"));
