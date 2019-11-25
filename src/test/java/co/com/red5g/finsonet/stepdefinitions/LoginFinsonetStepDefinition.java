@@ -25,7 +25,8 @@ public class LoginFinsonetStepDefinition {
     @Cuando("(.*) se autentica en finsonet con el usuario (.*), la contraseña (.*) y el codigo (.*)")
     public void autenticarUsuario(String actor, String usuario, String contrasena, String codigo) {
         theActorCalled(actor).attemptsTo(
-                AbreLaPagina.finsonet(),
+                AbreLaPagina.finsonet());
+        theActorInTheSpotlight().attemptsTo(
                 SeAutentica.conCredenciales(de().unUsuarioBasico(usuario, contrasena, codigo))
         );
     }
