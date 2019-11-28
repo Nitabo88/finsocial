@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.InformacionConyugue;
 import co.com.red5g.finsonet.models.InformacionPersonal;
@@ -8,6 +9,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
 
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.*;
@@ -37,13 +39,11 @@ public class EscribeLaInformacionDelConyugue implements Task {
                 Click.on(LST_FILTROS.of(informacionPersonal.getTipoDocumento())),
                 Enter.theValue(informacionPersonal.getNumeroDocumento()).into(TXT_DOCUMENTO_IDENTIDAD),
                 SeleccionarFecha.ofConsult(TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion()),
-                Enter.theValue(informacionPersonal.getCelular()).into(TXT_CELULAR), Click.on(BTN_TIPO_DOCUMENTO),
-
                 Click.on(BTN_LUGAR_EXPEDICION),
                 Enter.theValue(informacionPersonal.getLugarExpedicion()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 SeleccionarFecha.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento()),
                 Click.on(BTN_LUGAR_NACIMIENTO),
-                Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
+                Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGAR_NACIMIENTO).thenHit(Keys.ENTER),
                 Click.on(BTN_SEXO),
                 Click.on(LST_FILTROS.of(informacionPersonal.getSexo())),
                 Enter.theValue(informacionConyugue.getLugarDondeTrabaja()).into(TXT_LUGAR_TRABAJO),
@@ -53,7 +53,9 @@ public class EscribeLaInformacionDelConyugue implements Task {
                 Enter.theValue(informacionConyugue.getCargoActual()).into(TXT_CARGO_ACTUAL),
                 Enter.theValue(informacionConyugue.getTotalIngresos()).into(TXT_TOTAL_INGRESOS),
                 Enter.theValue(informacionConyugue.getTotalEgresos()).into(TXT_TOTAL_EGRESOS),
-                Enter.theValue(informacionPersonal.getEps()).into(TXT_NOMBRE_EPS)
+                Enter.theValue(informacionPersonal.getEps()).into(TXT_NOMBRE_EPS),
+                Enter.theValue(informacionPersonal.getCelular()).into(TXT_CELULAR),
+                SelectFromOptions.byVisibleText(informacionPersonal.getNivelEstudios()).from(LST_NIVEL_ESTUDIOS)
         );
     }
 }

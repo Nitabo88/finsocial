@@ -1,16 +1,11 @@
-# language : es
-    
-Característica: Ingreso a originacion
-  Como Usuario
-  Quiero ingresar a originacion
-  Para verificar los estados de diferentes creditos
+# language: es
 
+Característica: Chequeo de documento
+  Como asesor finsonet
+  Quiero rechazar un credito por falta de documentación
+  Este se debe chequear para que el credito quede rechazado
 
-    Escenario:
-      Dado que Daniela quiere ingresar a originación para verificar estados del credito
-      Cuando ella ingrese a "Por Girar"
-      Entonces ella deberia ver el menu de "Por Girar"
-
-
-
-
+  Escenario: Chequeo de documentos rechazado
+    Dado que el asesor quiere realizar el chequeo de un documento
+    Cuando el asesor decline el chequeo del credito del cliente con cedula 1143157190
+    Entonces el asesor no deberia verlo en chequeo de documentos
