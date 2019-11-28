@@ -189,13 +189,13 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         this.conPrimerApellido("Cardona");
         this.conSegundoApellido("Lopez");
         this.conPrimerNombre("Andres");
-        this.conSegundoNombre("");
+        this.conSegundoNombre("Juan");
         this.conTipoDocumento("CC");
         this.conNumeroDocumento("10101020");
         this.conFechaExpedicion("1999-Jan-28");
         this.conLugarExpedicion("ARENAL - BOLIVAR");
         this.conFechaNacimiento("1879-Dec-25");
-        this.conLugarNacimiento("ALEJANDRIA - ANTIOQUIA");
+        this.conLugarNacimiento("ARENAL - BOLIVAR");
         this.conSexo("M");
         this.conEPS("Salud Total");
         this.conNivelEstudios("Universitario");

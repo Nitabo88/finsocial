@@ -155,7 +155,7 @@ public class InformacionFinancieraBuilder implements Builder<InformacionFinancie
         this.conTarjetasCredito("0");
         this.conOtrosGastos("0");
         this.conCualesGastos("No aplica");
-        this.conPagoHipoteca("150000");
+        this.conPagoHipoteca("SI");
         this.conValorComercialVivienda("120000000");
         this.conDondeVivir("Bogota");
         this.conComprarVivienda("NO");
