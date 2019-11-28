@@ -2,8 +2,9 @@ package co.com.red5g.finsonet.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Text;
+import net.serenitybdd.screenplay.actions.Click;
 
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_CREAR_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_MENSAJE_FALLIDO;
 
 public class LaNoCreacionDelCredito implements Question<String> {
@@ -14,6 +15,7 @@ public class LaNoCreacionDelCredito implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        return Text.of(LBL_MENSAJE_FALLIDO).viewedBy(actor).asString();
+        actor.attemptsTo(Click.on(BTN_CREAR_CREDITO));
+        return LBL_MENSAJE_FALLIDO.resolveFor(actor).getText();
     }
 }

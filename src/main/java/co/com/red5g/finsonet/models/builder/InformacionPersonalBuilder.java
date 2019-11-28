@@ -185,6 +185,24 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         return eps;
     }
 
+    public InformacionPersonal informacionPersonalConyugue(){
+        this.conPrimerApellido("Cardona");
+        this.conSegundoApellido("Lopez");
+        this.conPrimerNombre("Andres");
+        this.conSegundoNombre("Juan");
+        this.conTipoDocumento("CC");
+        this.conNumeroDocumento("10101020");
+        this.conFechaExpedicion("1999-Jan-28");
+        this.conLugarExpedicion("ARENAL - BOLIVAR");
+        this.conFechaNacimiento("1879-Dec-25");
+        this.conLugarNacimiento("ARENAL - BOLIVAR");
+        this.conSexo("M");
+        this.conEPS("Salud Total");
+        this.conNivelEstudios("Universitario");
+        this.conCelular("3005656231");
+        return this.build();
+    }
+
     public InformacionPersonal informacionPersonal() {
         this.conPrimerApellido("Morales");
         this.conSegundoApellido("Carmona");

@@ -13,15 +13,15 @@ import org.openqa.selenium.Keys;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class EscribirLaInformacionLaboral implements Task {
+public class EscribeLaInformacionLaboral implements Task {
     private ActividadLaboral actividadLaboral;
 
-    public EscribirLaInformacionLaboral(ActividadLaboral actividadLaboral) {
+    public EscribeLaInformacionLaboral(ActividadLaboral actividadLaboral) {
         this.actividadLaboral = actividadLaboral;
     }
 
     public static Performable laCual(ActividadLaboral actividadLaboral) {
-        return instrumented(EscribirLaInformacionLaboral.class, actividadLaboral);
+        return instrumented(EscribeLaInformacionLaboral.class, actividadLaboral);
     }
 
     @Override

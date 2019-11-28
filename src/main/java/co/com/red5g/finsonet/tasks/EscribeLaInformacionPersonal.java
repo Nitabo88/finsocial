@@ -15,16 +15,16 @@ import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class EscribirLaInformacionPersonal implements Task {
+public class EscribeLaInformacionPersonal implements Task {
     private InformacionPersonal informacionPersonal;
 
-    public EscribirLaInformacionPersonal(InformacionPersonal informacionPersonal) {
+    public EscribeLaInformacionPersonal(InformacionPersonal informacionPersonal) {
         this.informacionPersonal = informacionPersonal;
     }
 
 
     public static Performable la(InformacionPersonal informacionPersonal) {
-        return instrumented(EscribirLaInformacionPersonal.class, informacionPersonal);
+        return instrumented(EscribeLaInformacionPersonal.class, informacionPersonal);
     }
 
     @Override

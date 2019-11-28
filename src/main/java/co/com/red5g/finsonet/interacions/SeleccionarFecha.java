@@ -31,21 +31,21 @@ public class SeleccionarFecha implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(fecha),
-                Click.on(BTN_DATA_PICKER_DIA),
-                Click.on(BTN_DATA_PICKER_MES)
+                Click.on(BTN_DIA),
+                Click.on(BTN_MES)
         );
-        String[] anios = separarFecha(BTN_DATA_PICKER_ANIO.resolveFor(actor).getText());
+        String[] anios = separarFecha(BTN_ANIO.resolveFor(actor).getText());
         int numeroMovimientos = desplazamientoAnios(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]));
         String desplazamiento = direccionDesplazamiento(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]));
         actor.attemptsTo(
                 Check.whether(between(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]), Integer.parseInt(anios[1])))
                         .andIfSo(
-                                Click.on(DATA_PICKER_ANIO.of(opcionAnio)))
+                                Click.on(DTP_ANIO.of(opcionAnio)))
                         .otherwise(
                                 SeleccionarElAnio.list(BTN_FLECHA_IZQUIERDA, BTN_FLECHA_DERECHA, numeroMovimientos, desplazamiento),
-                                Click.on(DATA_PICKER_ANIO.of(opcionAnio))),
-                Click.on(DATA_PICKER_MES.of(opcionMes)),
-                Click.on(DATA_PICKER_DIA.of(opcionDia)));
+                                Click.on(DTP_ANIO.of(opcionAnio))),
+                Click.on(DTP_MES.of(opcionMes)),
+                Click.on(DTP_DIA.of(opcionDia)));
     }
 
     public static SeleccionarFecha ofConsult(Target calendar, String date) {
