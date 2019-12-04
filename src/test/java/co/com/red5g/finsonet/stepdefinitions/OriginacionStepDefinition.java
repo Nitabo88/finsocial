@@ -1,14 +1,18 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import co.com.red5g.finsonet.models.builder.ChequeoDocumentoBuilder;
+import co.com.red5g.finsonet.questions.LaNoCreacionDelCredito;
+import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.tasks.Completar;
 import co.com.red5g.finsonet.tasks.Realizar;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
 public class OriginacionStepDefinition {
 
@@ -41,7 +45,7 @@ public class OriginacionStepDefinition {
 
     @Entonces("^deberia ver el mensaje de adjuntar informacion$")
     public void verificarNoCreacionCredito() {
-
+        theActorInTheSpotlight().should(seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString("Para poder continuar es necesario diligenciar")));
     }
 
 }
