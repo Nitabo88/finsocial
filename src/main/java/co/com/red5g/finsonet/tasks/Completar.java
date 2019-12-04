@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 import java.util.List;
 
@@ -35,17 +35,15 @@ public class Completar implements Task {
         List<WebElementFacade> lstChequeoDocumentos = seleccionarColumna(LST_COLUMNAS_CHEQUEO_DOCUMENTOS, cedula, actor.recall(FECHA_SOLICITUD_CREDITO)).answeredBy(actor);
         String nombre = lstChequeoDocumentos.get(1).getText();
         actor.attemptsTo(
-                Click.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(cedula, actor.recall(FECHA), nombre)));
-        if (LST_CHEQUEO_DOCUMENTOS_NOMBRE.resolveFor(actor).isPresent()){
-            Click.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(cedula, actor.recall(FECHA), nombre));
-        }
-        actor.attemptsTo(
+                JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(cedula, actor.recall(FECHA), nombre)),
                 Click.on(BTN_PAPELERIA_ANTIGUA),
                 Click.on(BTN_ACEPTAR1_POP_UP),
                 Click.on(BTN_ACTIVAL),
                 Click.on(BTN_ACEPTAR2_POP_UP),
+                Click.on(BTN_ACEPTAR),
                 Enter.theValue(chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
-                Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO)
+                Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
+                Click.on(BTN_GUARDAR)
         );
     }
 }
