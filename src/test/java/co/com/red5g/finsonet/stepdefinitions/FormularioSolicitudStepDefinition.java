@@ -12,7 +12,6 @@ import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.ME
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
 
 public class FormularioSolicitudStepDefinition {
 
