@@ -18,6 +18,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 
 public class CreacionCreditoStepDefinition {
+    private static final String ESTADO_NO_EXITOSO = "toda la información";
 
     @Dado("que un (.*) quiere crear un credito")
     public void crearCredito(String nombreActor) {
@@ -40,6 +41,6 @@ public class CreacionCreditoStepDefinition {
 
     @Entonces("el no podra crear un credito")
     public void elNoPodraCrearUnCredito() {
-        theActorInTheSpotlight().should(seeThat(LaNoCreacionDelCredito.valor(), containsString("toda la información")));
+        theActorInTheSpotlight().should(seeThat(LaNoCreacionDelCredito.valor(), containsString(ESTADO_NO_EXITOSO)));
     }
 }

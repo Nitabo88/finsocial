@@ -10,3 +10,10 @@ Característica: Chequeo de documento
     Cuando el asesor complete el chequeo de credito del cliente
     Entonces deberia ver el mensaje de adjuntar informacion
 
+  Escenario: Chequeo de documentos rechazado
+    Dado que el asesor quiere realizar el chequeo de un documento
+    Cuando el asesor decline el chequeo del credito del cliente
+    Entonces el asesor no deberia verlo en chequeo de documentos
+
+
+
