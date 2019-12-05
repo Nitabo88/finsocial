@@ -25,7 +25,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class ChequeoDocumentoStepsDefinitions {
-        private LoginFinsocialPage loginFinsocialPage;
         private static final String  CEDULA = "cedula";
 
         @Managed(driver = "chrome")
