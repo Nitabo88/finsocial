@@ -6,10 +6,14 @@ import co.com.red5g.finsonet.utils.Builder;
 public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
     private String puntajeCifin;
     private String aciertaDatacredito;
+    private String seleccionMotivo;
+    private String razonMotivo;
 
-    public ChequeoDocumentoBuilder() {
+    private ChequeoDocumentoBuilder() {
         this.puntajeCifin = "";
         this.aciertaDatacredito = "";
+        this.seleccionMotivo = "";
+        this.razonMotivo = "";
     }
 
     public static ChequeoDocumentoBuilder con() {
@@ -44,5 +48,29 @@ public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
     private ChequeoDocumentoBuilder conPuntajeCifin(String aciertaDatacredito) {
         this.aciertaDatacredito = aciertaDatacredito;
         return this;
+    }
+
+    public ChequeoDocumento motivo() {
+        this.conSeleccionMotivo("Datos incompleto");
+        this.conRazonMotivo("El usuario tiene los documentos incompletos");
+        return this.build();
+    }
+
+    private ChequeoDocumentoBuilder conRazonMotivo(String razonMotivo) {
+        this.razonMotivo = razonMotivo;
+        return this;
+    }
+
+    private ChequeoDocumentoBuilder conSeleccionMotivo(String seleccionMotivo) {
+        this.seleccionMotivo = seleccionMotivo;
+        return this;
+    }
+
+    public String getSeleccionMotivo() {
+        return seleccionMotivo;
+    }
+
+    public String getRazonMotivo() {
+        return razonMotivo;
     }
 }
