@@ -1,21 +1,22 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.ChequeoDocumentoBuilder;
+import co.com.red5g.finsonet.models.builder.ChequeDocumentoBuilder;
 
 public class ChequeoDocumento {
-    private String puntajeCifin;
-    private String aciertaDatacredito;
+    private String seleccionMotivo;
+    private String razonMotivo;
 
-    public ChequeoDocumento(ChequeoDocumentoBuilder chequeoDocumentoBuilder) {
-        this.puntajeCifin = chequeoDocumentoBuilder.getPuntajeCifin();
-        this.aciertaDatacredito = chequeoDocumentoBuilder.getAciertaDatacredito();
+    public ChequeoDocumento(ChequeDocumentoBuilder chequeDocumentoBuilder) {
+        this.seleccionMotivo = chequeDocumentoBuilder.getSeleccionMotivo();
+        this.razonMotivo = chequeDocumentoBuilder.getRazonMotivo();
     }
 
-    public String getPuntajeCifin() {
-        return puntajeCifin;
+    public String getSeleccionMotivo() {
+        return seleccionMotivo;
     }
 
-    public String getAciertaDatacredito() {
-        return aciertaDatacredito;
+    public String getRazonMotivo() {
+        return razonMotivo;
     }
+
 }
