@@ -24,6 +24,7 @@ public class ChequeoDocumentosPage {
     public static final Target LST_MODAL_CHECK4 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 5").locatedBy("//*[@id=\"motivo\"]/option[5]");
     public static final Target LST_MODAL_CHECK5 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 6").locatedBy("//*[@id=\"motivo\"]/option[6]");
     public static final Target BTN_MODAL_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2") );
+    public static final Target BTN_UPLOAD = Target.the("Enviar motivo en chequeo de documentos").located(By.xpath("//tr//button[@class='bg-square-button white bg-green']") );
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");
