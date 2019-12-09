@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.models.ChequeoDocumento;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -17,6 +18,7 @@ import static co.com.red5g.finsonet.tasks.Diligenciar.FECHA_SOLICITUD_CREDITO;
 import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class Diligencia implements Task {
     private ChequeoDocumento chequeoDocumento;
