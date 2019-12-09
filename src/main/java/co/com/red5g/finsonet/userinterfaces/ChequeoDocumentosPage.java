@@ -15,7 +15,7 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_ACTIVAL = Target.the("el boton de actival de afianzados").located(By.xpath("//p[contains(text(),'Actival')]"));
     public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_GUARDAR = Target.the("el boton aceptar").located(By.xpath("//button[contains(.,'Guardar')]"));
-    public static final Target LBL_MENSAJE = Target.the("el mensaje de advertencia").located(By.className("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
+    public static final Target LBL_MENSAJE = Target.the("el mensaje de advertencia").located(By.xpath("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
     public static final Target BTN_PENDIENTE = Target.the("Boton de estado en chequeo de documentos").locatedBy(("//*[@id=\"boton\"]"));
     public static final Target LST_MODAL_DEFAULT = Target.the("Clickear en lista de motivos en chequeo de documentos").located(By.id("motivo") );
     public static final Target LST_MODAL_CHECK1 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 2").locatedBy("//*[@id=\"motivo\"]/option[2]");
