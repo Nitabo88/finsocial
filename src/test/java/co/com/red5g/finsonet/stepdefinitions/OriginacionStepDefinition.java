@@ -25,8 +25,8 @@ public class OriginacionStepDefinition {
 
     @Cuando("^el asesor decline el chequeo del credito del cliente$")
     public void rechazarChequeoDocumentos() {
-        theActorInTheSpotlight().attemptsTo(co.com.red5g.finsonet.questions.Estado.actualizado()),
-                theActorInTheSpotlight().attemptsTo(Estado.diligenciar(con().motivo()));
+        theActorInTheSpotlight().attemptsTo(Estado.ubicarseConDocumento(),
+                theActorInTheSpotlight().attemptsTo(Estado.diligenciar(con().motivo())));
     }
 
     @Entonces("^el asesor no deberia verlo en chequeo de documentos$")
@@ -39,12 +39,10 @@ public class OriginacionStepDefinition {
         theActorInTheSpotlight().attemptsTo(
                 Completar.ElChequeoDeDocumentos(con().centralesDeRiesgo())
         );
-
     }
 
     @Entonces("^deberia ver el mensaje de adjuntar informacion$")
     public void verificarNoCreacionCredito() {
         theActorInTheSpotlight().should(seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString("Para poder continuar es necesario diligenciar")));
     }
-
 }
