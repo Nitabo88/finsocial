@@ -47,7 +47,6 @@ public class FormularioSolicitudPaso4Page {
     public static final Target TXT_PAGO_HIPOTECA = Target.the("pago hipoteca").located(By.id("txtPagHip"));
     public static final Target TXT_VALOR_COMERCIAL_VIVIENDA = Target.the("el valor de la vivienda").located(By.id("txtVlrComViv"));
     public static final Target TXT_DONDE_VIVIR = Target.the("donde le gustaria vivir").located(By.id("txtGustaVivir"));
-    public static final Target TXT_TOTAL_EGRESOS = Target.the("el total de egresos").located(By.id("txtGustaVivir"));
     public static final Target BTN_RAZON_CREDITO = Target.the("la razon del credito").located(By.xpath("//button[@data-id='cmbRazondecredito']"));
     public static final Target LST_RAZON_CREDITO = Target.the("la razon del credito").locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//ul[@class='dropdown-menu inner']");
     public static final Target BTN_REGRESAR = Target.the("el boton regresar").located(By.id("btnRegresar_4"));

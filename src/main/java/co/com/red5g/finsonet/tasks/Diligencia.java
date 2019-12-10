@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.red5g.finsonet.interacions.Subir;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -17,10 +17,11 @@ import static co.com.red5g.finsonet.questions.SeleccionarColumna.seleccionarColu
 import static co.com.red5g.finsonet.tasks.Diligenciar.FECHA_SOLICITUD_CREDITO;
 import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
+import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class Diligencia implements Task {
+    public static final String FECHA_CONFIRMACION = "fecha confirmacion";
     private ChequeoDocumento chequeoDocumento;
 
     public Diligencia(ChequeoDocumento chequeoDocumento) {
@@ -44,7 +45,10 @@ public class Diligencia implements Task {
                 Click.on(BTN_ACEPTAR2_POP_UP),
                 Click.on(BTN_ACEPTAR),
                 Enter.theValue(chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
-                Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO)
+                Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
+                Subir.losArchivos(),
+                Click.on(BTN_GUARDAR),
+                Click.on(BTN_ACEPTAR)
         );
     }
 }
