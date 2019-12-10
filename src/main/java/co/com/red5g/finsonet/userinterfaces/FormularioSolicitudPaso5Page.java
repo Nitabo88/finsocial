@@ -30,7 +30,6 @@ public class FormularioSolicitudPaso5Page {
     public static final Target FILTRO_LUGAR_NACIMIENTO= Target.the("el lugar de expedicion").located(By.xpath("//button[@data-id='txtLugarNacCon']//following-sibling::div//input"));
     public static final Target BTN_REGRESAR = Target.the("el boton de regresar").located(By.id("btnRegresar_5"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_5"));
-    public static final Target LST_OPCIONES = Target.the("las opciones de lista").locatedBy("//ul[@class='dropdown-menu inner']");
 
     private FormularioSolicitudPaso5Page() {
         throw new IllegalStateException("Utility class");
