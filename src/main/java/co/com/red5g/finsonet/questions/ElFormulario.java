@@ -12,7 +12,7 @@ import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_FILA_CHEQUEO_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 public class ElFormulario implements Question<Boolean> {
 
@@ -25,6 +25,7 @@ public class ElFormulario implements Question<Boolean> {
         cambiarPestana();
         actor.attemptsTo(
                 Click.on(LNK_HOME),
+                WaitUntil.the(LNK_ORIGINACION, isEnabled()).forNoMoreThan(15).seconds(),
                 Click.on(LNK_ORIGINACION));
         SeleccionarFila lstFila = seleccionarFila(LST_FILA_CHEQUEO_DOCUMENTOS, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_SOLICITUD_CREDITO));
         return lstFila.answeredBy(actor).isPresent();
