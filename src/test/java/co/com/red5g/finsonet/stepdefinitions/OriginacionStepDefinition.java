@@ -27,8 +27,9 @@ public class OriginacionStepDefinition {
 
     @Cuando("^el asesor decline el chequeo del credito del cliente$")
     public void rechazarChequeoDocumentos() {
-        theActorInTheSpotlight().attemptsTo(Estado.ubicarseConDocumento());
-        theActorInTheSpotlight().attemptsTo(ListadoDocumentos.llenar());
+        theActorInTheSpotlight().attemptsTo(Estado.ubicarseConDocumento(),
+                ListadoDocumentos.llenar(con().motivo())
+                );
     }
 
     @Entonces("^el asesor no deberia verlo en chequeo de documentos$")
