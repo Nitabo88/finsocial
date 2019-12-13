@@ -6,30 +6,28 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyEnabled;
 
 public class ListadoDocumentos implements Task {
-    private ListadoDocumentos listadoDocumentos;
+    private ChequeoDocumento chequeoDocumento;
 
-    public ListadoDocumentos(ListadoDocumentos listadoDocumentos) {
-        this.listadoDocumentos = listadoDocumentos;
+    public ListadoDocumentos(ChequeoDocumento chequeoDocumento) {
+        this.chequeoDocumento = chequeoDocumento;
     }
 
-    public static Performable llenar(ChequeoDocumento chequeoDocumento) { return instrumented(Estado.class, chequeoDocumento);
+    public static Performable llenar(ChequeoDocumento chequeoDocumento) {
+        return instrumented(ListadoDocumentos.class, chequeoDocumento);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(BTN_PENDIENTE, isCurrentlyEnabled()),
-                Click.on(BTN_PENDIENTE),
-                Click.on(LST_MODAL_DEFAULT),
-                Click.on(LST_MODAL_CHECK1),
-                Enter.theValue("Datos incompletos").into("//*[@id=\"area\"]"),
-                Click.on(BTN_MODAL_ENVIAR));
+                SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
+                Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
+                Click.on(BTN_ENVIAR),
+                Click.on(BTN_OK));
     }
 }

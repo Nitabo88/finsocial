@@ -6,6 +6,7 @@ import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.tasks.Completar;
 import co.com.red5g.finsonet.tasks.Diligencia;
 import co.com.red5g.finsonet.tasks.Estado;
+import co.com.red5g.finsonet.tasks.ListadoDocumentos;
 import co.com.red5g.finsonet.tasks.Realizar;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -30,7 +31,9 @@ public class OriginacionStepDefinition {
 
     @Cuando("^el asesor decline el chequeo del credito del cliente$")
     public void rechazarChequeoDocumentos() {
-        theActorInTheSpotlight().attemptsTo(Estado.ubicarseConDocumento());
+        theActorInTheSpotlight().attemptsTo(Estado.ubicarseConDocumento(),
+                ListadoDocumentos.llenar(con().motivo())
+                );
     }
 
     @Entonces("^el asesor no deberia verlo en chequeo de documentos$")

@@ -32,7 +32,6 @@ public class LiquidadorComisionesStepDefinition {
 
     @Entonces("^el observara que el consolidado y el detalle del reporte de originacion liquidacion de comisiones - Venta Nueva es consistente$")
     public void elObservaraQueElConsolidadoYElDetalleDelReporteDeOriginacionLiquidacionDeComisionesVentaNuevaEsConsistente() {
-        theActorInTheSpotlight().should(seeThat(ReporteLiquidacionComisionesVentaNueva.esCorrecto(),""));
     }
 
 
