@@ -19,14 +19,14 @@ public class ListadoDocumentos implements Task {
         this.listadoDocumentos = listadoDocumentos;
     }
 
-    public static Performable llenar(ChequeoDocumento chequeoDocumento) { return instrumented(Estado.class, chequeoDocumento);
+    public static Performable llenar() {
+        return instrumented(ListadoDocumentos.class);
     }
+
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(BTN_PENDIENTE, isCurrentlyEnabled()),
-                Click.on(BTN_PENDIENTE),
                 Click.on(LST_MODAL_DEFAULT),
                 Click.on(LST_MODAL_CHECK1),
                 Enter.theValue("Datos incompletos").into("//*[@id=\"area\"]"),
