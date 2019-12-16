@@ -1,16 +1,11 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.ElDetalleNoCorrespondeException;
-import co.com.red5g.finsonet.questions.ReporteLiquidacionComisionesVentaNueva;
-import co.com.red5g.finsonet.questions.ReporteVentaNueva;
 import co.com.red5g.finsonet.tasks.ConsultarElReporte;
 import co.com.red5g.finsonet.tasks.IngresarAlReporteDeVentaNueva;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.red5g.finsonet.exceptions.ElDetalleNoCorrespondeException.MENSAJE_REPORTE;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 

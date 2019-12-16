@@ -24,6 +24,12 @@ public class ChequeoDocumentosPage {
     public static final Target LST_MODAL_CHECK4 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 5").locatedBy("//*[@id=\"motivo\"]/option[5]");
     public static final Target LST_MODAL_CHECK5 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 6").locatedBy("//*[@id=\"motivo\"]/option[6]");
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2") );
+    public static final Target BTN_OK= Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]") );
+    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@class,'bg-green')]"));
+    public static final Target LBL_UPLOAD = Target.the("el input del archivo").located(By.xpath("//input[@type='file']") );
+    public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
+    public static final Target TXT_DOCUMENTO = Target.the("coordenada de subir documento").located(By.id("fileDocumento"));
+    public static final Target TXT_CREDITO = Target.the("coordenada de credito").located(By.id("fileCredito"));
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");

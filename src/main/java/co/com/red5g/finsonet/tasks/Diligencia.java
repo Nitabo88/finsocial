@@ -46,5 +46,6 @@ public class Diligencia implements Task {
                 Enter.theValue(chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
                 Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO)
         );
+        getProxiedDriver().close();
     }
 }
