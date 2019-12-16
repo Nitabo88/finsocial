@@ -28,6 +28,8 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@class,'bg-green')]"));
     public static final Target LBL_UPLOAD = Target.the("el input del archivo").located(By.xpath("//input[@type='file']") );
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
+    public static final Target TXT_DOCUMENTO = Target.the("coordenada de subir documento").located(By.id("fileDocumento"));
+    public static final Target TXT_CREDITO = Target.the("coordenada de credito").located(By.id("fileCredito"));
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");

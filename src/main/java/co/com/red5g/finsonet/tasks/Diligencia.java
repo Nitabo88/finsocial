@@ -19,6 +19,7 @@ import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 public class Diligencia implements Task {
     public static final String FECHA_CONFIRMACION = "fecha confirmacion";
@@ -50,5 +51,6 @@ public class Diligencia implements Task {
                 Click.on(BTN_GUARDAR),
                 Click.on(BTN_ACEPTAR)
         );
+        getProxiedDriver().close();
     }
 }
