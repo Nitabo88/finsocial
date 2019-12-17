@@ -17,16 +17,19 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_GUARDAR = Target.the("el boton aceptar").located(By.xpath("//button[contains(.,'Guardar')]"));
     public static final Target LBL_MENSAJE = Target.the("el mensaje de advertencia").located(By.xpath("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
     public static final Target BTN_PENDIENTE = Target.the("Boton de estado en chequeo de documentos").locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,'{1}')]//parent::tr//child::td//*[@id='boton']");
-    public static final Target LST_MODAL_DEFAULT = Target.the("Clickear en lista de motivos en chequeo de documentos").located(By.id("motivo") );
-    public static final Target LST_MODAL_CHECK1 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 2").locatedBy("//*[@id=\"motivo\"]/option[2]");
+    public static final Target LST_MOTIVO = Target.the("Lista de motivos en chequeo de documentos").located(By.id("motivo") );
+    public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));
     public static final Target LST_MODAL_CHECK2 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 3").locatedBy("//*[@id=\"motivo\"]/option[3]");
     public static final Target LST_MODAL_CHECK3 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 4").locatedBy("//*[@id=\"motivo\"]/option[4]");
     public static final Target LST_MODAL_CHECK4 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 5").locatedBy("//*[@id=\"motivo\"]/option[5]");
     public static final Target LST_MODAL_CHECK5 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 6").locatedBy("//*[@id=\"motivo\"]/option[6]");
-    public static final Target BTN_MODAL_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2") );
+    public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2") );
+    public static final Target BTN_OK= Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]") );
     public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@class,'bg-green')]"));
     public static final Target LBL_UPLOAD = Target.the("el input del archivo").located(By.xpath("//input[@type='file']") );
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
+    public static final Target TXT_DOCUMENTO = Target.the("coordenada de subir documento").located(By.id("fileDocumento"));
+    public static final Target TXT_CREDITO = Target.the("coordenada de credito").located(By.id("fileCredito"));
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");

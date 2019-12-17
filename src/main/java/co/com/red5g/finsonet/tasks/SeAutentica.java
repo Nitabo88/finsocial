@@ -14,7 +14,6 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyEnabled;
 
 
-
 public class SeAutentica implements Task {
     private Credenciales cliente;
 
@@ -32,7 +31,7 @@ public class SeAutentica implements Task {
                 Enter.theValue(cliente.getUsuario()).into(TXT_USUARIO),
                 Enter.theValue(cliente.getContrasena()).into(TXT_CONTRASENA),
                 Click.on(LoginFinsonetPage.BTN_ACCESO),
-                WaitUntil.the(TXT_CODIGO,isCurrentlyEnabled()).forNoMoreThan(3).seconds(),
+                WaitUntil.the(TXT_CODIGO, isCurrentlyEnabled()).forNoMoreThan(3).seconds(),
                 Enter.theValue(cliente.getCodigo()).into(TXT_CODIGO),
                 Click.on(LoginFinsonetPage.BTN_ENVIAR)
         );
