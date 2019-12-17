@@ -197,7 +197,7 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         this.conFechaNacimiento("1879-Dec-25");
         this.conLugarNacimiento("ARENAL - BOLIVAR");
         this.conSexo("M");
-        this.conEPS("Salud Total");
+        this.conEps("Salud Total");
         this.conNivelEstudios("Universitario");
         this.conCelular("3005656231");
         return this.build();
@@ -229,7 +229,7 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         this.conTiempoResidenciaMeses("2");
         this.conAdultosCargo("0");
         this.conMenoresCargo("0");
-        this.conEPS("Salud Total");
+        this.conEps("Salud Total");
         this.conNivelEstudios("Universitario");
         this.conProfesion("ARQUITECTO");
         return this.build();
@@ -245,8 +245,8 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
         return this;
     }
 
-    private InformacionPersonalBuilder conEPS(String EPS) {
-        this.eps = EPS;
+    private InformacionPersonalBuilder conEps(String eps) {
+        this.eps = eps;
         return this;
     }
 

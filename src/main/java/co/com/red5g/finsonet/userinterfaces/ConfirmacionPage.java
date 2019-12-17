@@ -5,4 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class ConfirmacionPage {
     public static final Target LST_FILA_CONFIRMACION = Target.the("la fila de la tabla").locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,'{1}')]");
 
+    private ConfirmacionPage() {
+        throw new IllegalStateException("Utility class");
+    }
 }

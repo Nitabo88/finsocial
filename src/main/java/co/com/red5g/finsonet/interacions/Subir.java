@@ -17,7 +17,7 @@ public class Subir implements Interaction {
     public static final String RUTA_SCRIPT = "C:\\Users\\Licet\\Documents\\sqa_code\\src\\test\\resources\\scripts\\FileUpload.exe";
     Logger logger;
 
-    public Subir() {
+    private Subir() {
     }
 
     @Override

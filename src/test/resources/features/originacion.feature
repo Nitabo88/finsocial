@@ -22,3 +22,15 @@ Característica: Chequeo de documento
     Dado que el asesor quiere realizar el chequeo de un documento
     Cuando el asesor decline el chequeo del credito del cliente
     Entonces el asesor no deberia verlo en chequeo de documentos
+
+  @Confirmacion
+  Escenario: aprobacion credito
+    Dado que un asesor quiere realizar una aprobacion de un credito
+    Cuando se apruebe el credito del usuario identificado con 22056283
+    Entonces el crédito debe pasar a incorporacion
+
+  @Confirmacion
+  Escenario: regresar el credito desde aprobacion
+    Dado que un asesor quiere regresar un credito de aprobacion
+    Cuando se regresa el credito del usuario identificado con 6808119
+    Entonces el crédito debe pasar a confirmacion

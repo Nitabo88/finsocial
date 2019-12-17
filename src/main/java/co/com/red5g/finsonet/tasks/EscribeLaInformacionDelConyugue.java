@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.InformacionConyugue;
 import co.com.red5g.finsonet.models.InformacionPersonal;

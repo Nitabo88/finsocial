@@ -25,7 +25,7 @@ public class Completar implements Task {
         this.chequeoDocumento = chequeoDocumento;
     }
 
-    public static Performable ElChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
+    public static Performable elChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
         return instrumented(Completar.class, chequeoDocumento);
     }
 

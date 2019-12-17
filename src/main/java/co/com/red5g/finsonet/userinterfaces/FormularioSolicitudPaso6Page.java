@@ -9,8 +9,8 @@ public class FormularioSolicitudPaso6Page {
     public static final Target TXT_TELEFONO_FAMILIAR = Target.the("el numero de telefono de la referencia familiar").located(By.id("ref_familiar_tel"));
     public static final Target BTN_CIUDAD_FAMILIAR = Target.the("la ciudad de la referencia familiar").located(By.xpath("//button[@data-id='cmbCiudadRefFam']"));
     public static final Target BTN_CIUDAD_REFERENCIA_PERSONAL = Target.the("la ciudad de la referencia personal").located(By.xpath("//button[@data-id='cmbCiudadRefPer']"));
-    public static final Target LST_CIUDAD_REFERENCIA_FAMILIAR = Target.the("la ciudad de la referencia familiar").located(By.xpath("//button[@data-id = 'cmbCiudadRefFam']//following-sibling::div//input"));
-    public static final Target LST_CIUDAD_REFERENCIA_PERSONAL = Target.the("la ciudad de la referencia familiar").located(By.xpath("//button[@data-id = 'cmbCiudadRefPer']//following-sibling::div//input"));
+    public static final Target LST_CIUDAD_REFERENCIA_FAMILIAR = Target.the("la lista ciudad de la referencia familiar").located(By.xpath("//button[@data-id = 'cmbCiudadRefFam']//following-sibling::div//input"));
+    public static final Target LST_CIUDAD_REFERENCIA_PERSONAL = Target.the("la lista de la referencia personal").located(By.xpath("//button[@data-id = 'cmbCiudadRefPer']//following-sibling::div//input"));
     public static final Target TXT_CELULAR_FAMILIAR = Target.the("el numero celular de la referencia familiar").located(By.id("txtCelRFam"));
     public static final Target TXT_NOMBRE_APELLIDO_REFERENCIA_PERSONAL = Target.the("el nombre y apellido de una referencia personal (Que no vive con usted)").located(By.id("ref_personal_nombre"));
     public static final Target TXT_PARENTESCO_REFERENCIA_PERSONAL = Target.the("el parentesco que tiene la referencia personal)").located(By.id("ref_personal_par"));
