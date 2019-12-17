@@ -39,7 +39,7 @@ public class OriginacionStepDefinition {
     @Cuando("^el asesor complete el chequeo de credito del cliente$")
     public void diligenciarChequeoDocumentos() {
         theActorInTheSpotlight().attemptsTo(
-                Completar.ElChequeoDeDocumentos(con().centralesDeRiesgo())
+                Completar.elChequeoDeDocumentos(con().centralesDeRiesgo())
         );
     }
 

@@ -18,12 +18,10 @@ public class Utilerias {
      }
 
      public static double sumaValores(List<String> lstValores){
-         double suma = lstValores.stream().mapToDouble(lstValore -> Double.parseDouble(lstValore.replaceAll("[^\\d]", ""))).sum();
-         return suma;
+        return lstValores.stream().mapToDouble(lstValore -> Double.parseDouble(lstValore.replaceAll("[^\\d]", ""))).sum();
      }
 
     public static boolean between(int i, int minValueInclusive, int maxValueInclusive) {
         return i >= minValueInclusive && i <= maxValueInclusive;
     }
-
 }

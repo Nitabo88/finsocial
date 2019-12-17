@@ -6,7 +6,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import org.openqa.selenium.Keys;
 
 import static co.com.red5g.finsonet.questions.SeleccionarFila.seleccionarFila;
-import static co.com.red5g.finsonet.tasks.Diligencia.FECHA_CONFIRMACION;
 import static co.com.red5g.finsonet.tasks.Diligenciar.FECHA_SOLICITUD_CREDITO;
 import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.LST_FILA_CONFIRMACION;

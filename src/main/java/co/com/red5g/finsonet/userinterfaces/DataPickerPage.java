@@ -13,4 +13,8 @@ public class DataPickerPage {
     public static final Target DTP_MES = Target.the("El calendario en meses").locatedBy("//div[@class='datepicker-months']//table//span[contains(.,'{0}')]");
     public static final Target DTP_DIA = Target.the("El calendario en dias").locatedBy("//div[@class='datepicker-days']//table//tr//td[@class='day'][.='{0}']");
     public static final Target BTN_DIA = Target.the("El boton del calendario en dias").located(By.xpath("//div[@class='datepicker-days']//th[@class='datepicker-switch']"));
+
+    private DataPickerPage() {
+        throw new IllegalStateException("Utility class");
+    }
 }

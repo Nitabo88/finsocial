@@ -8,7 +8,6 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 public class UtileriaFechas {
-    private static String dia = Integer.toString(Calendar.getInstance().get(Calendar.DATE));
     private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) + 1);
     private static String anio = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
