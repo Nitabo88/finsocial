@@ -51,6 +51,5 @@ public class Diligencia implements Task {
                 Click.on(BTN_GUARDAR),
                 Click.on(BTN_ACEPTAR)
         );
-        getProxiedDriver().close();
     }
 }
