@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.CredencialesBuilder;
+import co.com.red5g.finsonet.models.builders.CredencialesBuilder;
 
 public class Credenciales {
     private String usuario;

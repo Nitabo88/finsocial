@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.InformacionPrestamoBuilder;
+import co.com.red5g.finsonet.models.builders.InformacionPrestamoBuilder;
 
 public class InformacionPrestamo {
     private String strMonto;

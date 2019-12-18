@@ -21,10 +21,6 @@ public class SeAutentica implements Task {
         this.cliente = cliente;
     }
 
-    public static Performable conCredenciales(Credenciales credenciales) {
-        return instrumented(SeAutentica.class, credenciales);
-    }
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(

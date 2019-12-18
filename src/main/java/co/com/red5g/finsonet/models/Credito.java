@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.CreditoBuilder;
+import co.com.red5g.finsonet.models.builders.CreditoBuilder;
 
 public class Credito {
     private String strNumeroDocumento;

@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.DescripcionActivosBuilder;
+import co.com.red5g.finsonet.models.builders.DescripcionActivosBuilder;
 
 public class DescripcionActivos {
     private String tipoInmueble;

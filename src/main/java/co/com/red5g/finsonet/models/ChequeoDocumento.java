@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.ChequeoDocumentoBuilder;
+import co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder;
 
 public class ChequeoDocumento {
     private String puntajeCifin;

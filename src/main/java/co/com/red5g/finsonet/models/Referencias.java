@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.ReferenciasBuilder;
+import co.com.red5g.finsonet.models.builders.ReferenciasBuilder;
 
 public class Referencias {
     private String nombreCompletoReferencia;

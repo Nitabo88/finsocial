@@ -2,8 +2,9 @@ package co.com.red5g.finsonet.stepdefinitions;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
 import co.com.red5g.finsonet.questions.ElFormulario;
-import co.com.red5g.finsonet.tasks.Diligenciar;
-import co.com.red5g.finsonet.tasks.Ubicarse;
+import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
+import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -25,7 +26,7 @@ public class FormularioSolicitudStepDefinition {
     @Cuando("diligencia el formulario de un cliente en su totalidad")
     public void diligenciarFormularioSolicitudCredito() {
         theActorInTheSpotlight().attemptsTo(
-                Diligenciar.laSolicitudDeCredito()
+                Diligencia.laSolicitudDeCredito()
         );
     }
 

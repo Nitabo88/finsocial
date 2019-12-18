@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.InformacionBalancePersonalBuilder;
+import co.com.red5g.finsonet.models.builders.InformacionBalancePersonalBuilder;
 
 public class InformacionBalancePersonal {
     private String activosCorrientes;

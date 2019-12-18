@@ -1,7 +1,8 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.tasks.ConsultarElReporte;
+import co.com.red5g.finsonet.tasks.ReporteLiquidacionComisiones;
 import co.com.red5g.finsonet.tasks.IngresarAlReporteDeVentaNueva;
+import co.com.red5g.finsonet.tasks.factories.Consulta;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -14,7 +15,7 @@ public class LiquidadorComisionesStepDefinition {
     @Dado("^que (.*) quiere consultar el reporte actual de liquidacion de comisiones$")
     public void consultarReporteLiquidacionComisiones(String actor) {
         theActorCalled(actor).attemptsTo(
-                ConsultarElReporte.deLiquidacionDeComisiones()
+                Consulta.elReportedeLiquidacionDeComisiones()
         );
     }
 
