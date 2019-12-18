@@ -4,10 +4,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 import static co.com.red5g.finsonet.questions.SeleccionarFila.seleccionarFila;
-import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
-import static co.com.red5g.finsonet.tasks.Ingresa.FECHA_CREDITO;
+import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.InformacionCredito.FECHA_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_FILA_CREDITOS;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.masUnMinuto;
 
 public class Credito implements Question<Boolean> {
 

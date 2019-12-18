@@ -13,8 +13,8 @@ import java.util.List;
 
 import static co.com.red5g.finsonet.questions.SeleccionarColumna.FECHA;
 import static co.com.red5g.finsonet.questions.SeleccionarColumna.seleccionarColumna;
-import static co.com.red5g.finsonet.tasks.Diligenciar.FECHA_SOLICITUD_CREDITO;
-import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.FormularioSolicitudCredito.FECHA_SOLICITUD_CREDITO;
+import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

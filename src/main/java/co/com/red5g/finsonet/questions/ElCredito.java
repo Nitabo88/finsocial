@@ -6,8 +6,8 @@ import net.serenitybdd.screenplay.actions.Click;
 import org.openqa.selenium.Keys;
 
 import static co.com.red5g.finsonet.questions.SeleccionarFila.seleccionarFila;
-import static co.com.red5g.finsonet.tasks.Diligenciar.FECHA_SOLICITUD_CREDITO;
-import static co.com.red5g.finsonet.tasks.Ingresa.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.FormularioSolicitudCredito.FECHA_SOLICITUD_CREDITO;
+import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.LST_FILA_CONFIRMACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_ORIGINACION;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
