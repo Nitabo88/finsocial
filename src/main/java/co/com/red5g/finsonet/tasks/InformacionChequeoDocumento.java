@@ -17,11 +17,10 @@ import static co.com.red5g.finsonet.tasks.FormularioSolicitudCredito.FECHA_SOLIC
 import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 
-public class OriginacionChequeoDocumento implements Task {
-    public static final String FECHA_CONFIRMACION = "fecha confirmacion";
-    private co.com.red5g.finsonet.models.ChequeoDocumento chequeoDocumento;
+public class InformacionChequeoDocumento implements Task {
+    private ChequeoDocumento chequeoDocumento;
 
-    public OriginacionChequeoDocumento(ChequeoDocumento chequeoDocumento) {
+    public InformacionChequeoDocumento(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 
@@ -38,7 +37,8 @@ public class OriginacionChequeoDocumento implements Task {
                 Click.on(BTN_ACEPTAR2_POP_UP),
                 Click.on(BTN_ACEPTAR),
                 Enter.theValue(chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
-                Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
+                Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO));
+        actor.attemptsTo(
                 Subir.losArchivos(),
                 Click.on(BTN_GUARDAR),
                 Click.on(BTN_ACEPTAR)

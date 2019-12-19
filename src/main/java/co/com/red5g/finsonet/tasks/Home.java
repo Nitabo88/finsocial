@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.Task;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Credenciales implements Task {
+public class Home implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {

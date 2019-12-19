@@ -1,0 +1,18 @@
+package co.com.red5g.finsonet.questions;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LBL_TOTAL_VENTA_NUEVA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+
+public class ValorVentaNuevaLiquidacionComisiones implements Question<String> {
+
+    @Override
+    public String answeredBy(Actor actor) {
+        actor.attemptsTo(WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(5).seconds());
+        return LBL_TOTAL_VENTA_NUEVA.resolveFor(actor).getText();
+    }
+}

@@ -3,21 +3,18 @@ package co.com.red5g.finsonet.tasks;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyEnabled;
 
-
-public class SeAutentica implements Task {
+public class InformacionLogin implements Task {
     private Credenciales cliente;
 
-    public SeAutentica(Credenciales cliente) {
+    public InformacionLogin(Credenciales cliente) {
         this.cliente = cliente;
     }
 

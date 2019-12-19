@@ -7,10 +7,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/reporte_liquidador_comisiones.feature",
+        features = "src/test/resources/features/originacion.feature",
         glue = {"co.com.red5g.finsonet.stepdefinitions"},
+        tags = {"@Confirmacion"},
         snippets = SnippetType.CAMELCASE
 )
 
-public class ReporteLiquidacionComisionesRunner {
+public class ConfirmacionRunner {
 }
