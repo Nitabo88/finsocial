@@ -1,5 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
+import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -22,7 +24,7 @@ public class Realizar implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Ubicarse.enElFormulario(),
-                Diligenciar.laSolicitudDeCredito(),
+                Diligencia.laSolicitudDeCredito(),
                 cambiarPestana(),
                 Click.on(LNK_HOME),
                 WaitUntil.the(LNK_ORIGINACION,isEnabled()).forNoMoreThan(20).seconds(),
