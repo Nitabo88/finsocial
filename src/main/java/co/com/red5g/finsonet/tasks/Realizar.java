@@ -11,8 +11,10 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class Realizar implements Task {
 
@@ -27,7 +29,7 @@ public class Realizar implements Task {
                 Diligencia.laSolicitudDeCredito(),
                 cambiarPestana(),
                 Click.on(LNK_HOME),
-                WaitUntil.the(LNK_ORIGINACION,isEnabled()).forNoMoreThan(20).seconds(),
+                WaitUntil.the(SPN_CARGA,isNotVisible()).forNoMoreThan(10).seconds(),
                 Click.on(LNK_ORIGINACION)
         );
     }
