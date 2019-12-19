@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
@@ -29,7 +28,15 @@ public class Ingresa {
         return instrumented(InformacionCredito.class, credito);
     }
 
-    public static Performable lasCredenciales(Credenciales credenciales) {
-        return instrumented(SeAutentica.class, credenciales);
+    public static Performable lasCredenciales(co.com.red5g.finsonet.models.Credenciales credenciales) {
+        return instrumented(InformacionLogin.class, credenciales);
+    }
+
+    public static Performable enLiquidacionDeComisionesVentaNueva() {
+        return instrumented(LiquidacionComisionesVentaNueva.class);
+    }
+
+    public static Performable enLiquidacionDeComisionesVentaLiberada() {
+        return instrumented(LiquidacionComisionesVentaLiberada.class);
     }
 }

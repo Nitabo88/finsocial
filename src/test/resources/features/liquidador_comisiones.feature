@@ -1,9 +1,21 @@
 # language: es
 
-Característica: Reportes de comisiones Finsonet
+Característica: Liquidador de comisiones Finsonet
   Como asesor de finsonet
   Quiero ingresar a la seccion de reportes de liquidacion de comisiones
   Para revisar el estado de las comisiones del mes
+
+  Escenario: Liquidador de comisiones - Global Venta Nueva
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte actual de venta nueva
+    Entonces el observara que el valor de venta nueva es consistente
+    Y que el numero de creditos de venta nueva es consistente
+
+  Escenario: Liquidador de comisiones - Global Venta Liberada
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte actual de venta liberada
+    Entonces el observara que el valor de venta liberada es consistente
+    Y que el numero de creditos de venta liberada es consistente
 
   Esquema del escenario: : Reporte de venta - Venta Nueva
     Dado que un asesor quiere consultar el reporte actual de liquidacion de comisiones

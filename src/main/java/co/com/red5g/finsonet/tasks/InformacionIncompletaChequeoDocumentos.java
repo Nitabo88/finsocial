@@ -18,15 +18,11 @@ import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Completar implements Task {
+public class InformacionIncompletaChequeoDocumentos implements Task {
     private ChequeoDocumento chequeoDocumento;
 
-    public Completar(ChequeoDocumento chequeoDocumento) {
+    public InformacionIncompletaChequeoDocumentos(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
-    }
-
-    public static Performable elChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
-        return instrumented(Completar.class, chequeoDocumento);
     }
 
     @Override

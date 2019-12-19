@@ -3,8 +3,7 @@ package co.com.red5g.finsonet.stepdefinitions;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
 import co.com.red5g.finsonet.questions.ElCredito;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
-import co.com.red5g.finsonet.tasks.Completar;
-import co.com.red5g.finsonet.tasks.OriginacionChequeoDocumento;
+import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
 import co.com.red5g.finsonet.tasks.Estado;
 import co.com.red5g.finsonet.tasks.ListadoDocumentos;
 import co.com.red5g.finsonet.tasks.Realizar;
@@ -45,7 +44,7 @@ public class OriginacionStepDefinition {
     @Cuando("^el asesor complete el chequeo de credito del cliente$")
     public void diligenciarChequeoDocumentos() {
         theActorInTheSpotlight().attemptsTo(
-                Completar.elChequeoDeDocumentos(con().centralesDeRiesgo())
+                Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().centralesDeRiesgo())
         );
     }
 
