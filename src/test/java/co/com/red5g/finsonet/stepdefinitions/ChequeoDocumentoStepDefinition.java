@@ -18,7 +18,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-public class OriginacionStepDefinition {
+public class ChequeoDocumentoStepDefinition {
     private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
     @Dado("^que (.*) quiere realizar el chequeo de un documento$")

@@ -25,7 +25,7 @@ public class IngresaAReporte implements Interaction {
         actor.attemptsTo(
                 Open.browserOn(liquidadorComisionesPage),
                 WaitUntil.the(LST_PERIODO,isEnabled()).forNoMoreThan(10).seconds(),
-                SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO)
+                SelectFromOptions.byVisibleText("2019-10").from(LST_PERIODO)
         );
     }
 }
