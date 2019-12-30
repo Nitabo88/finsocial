@@ -6,8 +6,10 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LST_CICLO;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class IngresarAlReporteDeVentaNueva implements Task {
     private String ciclo;
@@ -24,7 +26,8 @@ public class IngresarAlReporteDeVentaNueva implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(LST_CICLO,isEnabled()).forNoMoreThan(10).seconds(),
-                SelectFromOptions.byVisibleText(ciclo).from(LST_CICLO)
+                SelectFromOptions.byVisibleText(ciclo).from(LST_CICLO),
+                WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(120).seconds()
         );
     }
 }
