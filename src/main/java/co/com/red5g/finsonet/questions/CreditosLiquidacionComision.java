@@ -17,7 +17,7 @@ public class CreditosLiquidacionComision implements Question<Boolean> {
 
   @Override
   public Boolean answeredBy(Actor actor) {
-    boolean estadoCredito = false;
+    boolean estadoCredito = true;
     List<WebElementFacade> lstCreditos = LST_NUMERO_CREDITOS.resolveAllFor(actor);
     List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);

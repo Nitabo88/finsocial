@@ -8,15 +8,15 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
-public class CambiarPestana implements Interaction {
+public class CambiarPestanaActual implements Interaction {
 
-  public static Performable cambiarPestana() {
-    return instrumented(CambiarPestana.class);
+  public static Performable cambiarPestanaActual() {
+    return instrumented(CambiarPestanaActual.class);
   }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     ArrayList<String> lstVentanas = new ArrayList<>(BrowseTheWeb.as(actor).getDriver().getWindowHandles());
-    BrowseTheWeb.as(actor).getDriver().switchTo().window(lstVentanas.get(0));
+    BrowseTheWeb.as(actor).getDriver().switchTo().window(lstVentanas.get(lstVentanas.size() - 1));
   }
 }

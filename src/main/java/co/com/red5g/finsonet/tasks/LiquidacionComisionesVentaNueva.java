@@ -1,14 +1,17 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_NUMERO_CREDITOS_VENTA_NUEVA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_VALOR_VENTA_NUEVA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_PERIODO;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+
 import co.com.red5g.finsonet.interacions.IngresaAReporte;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class LiquidacionComisionesVentaNueva implements Task {
     public static final String VALOR_VENTA_NUEVA = "valor venta nueva";

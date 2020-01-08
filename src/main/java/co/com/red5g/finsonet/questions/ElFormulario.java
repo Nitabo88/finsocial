@@ -1,10 +1,5 @@
 package co.com.red5g.finsonet.questions;
 
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-
 import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
 import static co.com.red5g.finsonet.questions.SeleccionarFila.seleccionarFila;
 import static co.com.red5g.finsonet.tasks.FormularioSolicitudCredito.FECHA_SOLICITUD_CREDITO;
@@ -13,6 +8,11 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_FIL
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ElFormulario implements Question<Boolean> {
 
