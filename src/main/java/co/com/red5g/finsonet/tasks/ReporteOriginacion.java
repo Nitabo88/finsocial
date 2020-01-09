@@ -1,15 +1,15 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LNK_VER_DETALLE_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_PERIODO;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class ReporteOriginacion implements Task {
 

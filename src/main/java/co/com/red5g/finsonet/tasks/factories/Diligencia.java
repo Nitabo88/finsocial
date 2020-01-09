@@ -21,4 +21,5 @@ public class Diligencia {
     public static Performable laInformacionIncompletaDeChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
         return instrumented(InformacionIncompletaChequeoDocumentos.class, chequeoDocumento);
     }
+
 }

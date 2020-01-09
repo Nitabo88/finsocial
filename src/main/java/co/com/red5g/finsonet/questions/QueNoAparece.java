@@ -10,15 +10,16 @@ import net.serenitybdd.screenplay.Question;
 
 public class QueNoAparece implements Question<Boolean> {
 
-    public static QueNoAparece laSolicitud() {
-        return new QueNoAparece();
-    }
+  public static QueNoAparece laSolicitud() {
+    return new QueNoAparece();
+  }
 
-    public Boolean answeredBy(Actor actor) {
-        boolean columna = LST_FILA_CHEQUEO_DOCUMENTOS .of(actor.recall(CEDULA_ACTOR), actor.recall(FECHA_SOLICITUD_CREDITO)).resolveFor(actor).isDisabled();
-        if (columna) {
-            columna = LST_FILA_CHEQUEO_DOCUMENTOS .of(actor.recall(CEDULA_ACTOR), masUnMinuto(actor.recall(FECHA_SOLICITUD_CREDITO))).resolveFor(actor).isDisabled();
-        }
-        return columna;
+  @Override
+  public Boolean answeredBy(Actor actor) {
+    boolean columna = LST_FILA_CHEQUEO_DOCUMENTOS.of(actor.recall(CEDULA_ACTOR), actor.recall(FECHA_SOLICITUD_CREDITO)).resolveFor(actor).isPresent();
+    if (!columna) {
+      columna = LST_FILA_CHEQUEO_DOCUMENTOS.of(actor.recall(CEDULA_ACTOR), masUnMinuto(actor.recall(FECHA_SOLICITUD_CREDITO))).resolveFor(actor).isPresent();
     }
+    return columna;
+  }
 }

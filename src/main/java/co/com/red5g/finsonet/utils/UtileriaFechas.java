@@ -8,18 +8,19 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 public class UtileriaFechas {
+
     private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) + 1);
     private static String anio = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {
         throw new IllegalStateException("Utileria Fechas");
-      }
+    }
 
-    public static String masUnMinuto(String minuto){
-        String []hora = minuto.split(":");
-        if (Integer.parseInt(hora[1]) + 1 < 10)
+    public static String masUnMinuto(String minuto) {
+        String[] hora = minuto.split(":");
+        if (Integer.parseInt(hora[1]) + 1 < 10) {
             return hora[0] + ":0" + (Integer.parseInt(hora[1]) + 1);
-        else
+        } else
             return hora[0] + ":" + (Integer.parseInt(hora[1]) + 1);
     }
 
@@ -34,9 +35,10 @@ public class UtileriaFechas {
       return  fecha.split("-");
     }
 
-    public static String obtenerPeriodoActual(){
-        if (mes.length() < 2)
+    public static String obtenerPeriodoActual() {
+        if (mes.length() < 2) {
             mes = "0" + mes;
-        return anio + "-" + mes;
+        }
+        return "2019" + "-" + "11";
     }
 }

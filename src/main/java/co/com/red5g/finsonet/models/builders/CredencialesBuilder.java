@@ -61,7 +61,7 @@ public class CredencialesBuilder implements Builder<Credenciales> {
         return this.build();
     }
 
-    public Credenciales conUsuarioDocumentos() {
+    public Credenciales unUsuarioDeDocumentacion() {
         this.conUsuario(USUARIO_DOCUMENTOS.getUsuario());
         this.conContrasena(USUARIO_DOCUMENTOS.getContrasena());
         this.conCodigo(USUARIO_DOCUMENTOS.getCodigo());

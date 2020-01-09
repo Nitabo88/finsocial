@@ -39,4 +39,8 @@ public class Ingresa {
     public static Performable enLiquidacionDeComisionesVentaLiberada() {
         return instrumented(LiquidacionComisionesVentaLiberada.class);
     }
+
+  public static Performable ConUsuarioDeDocumentacion() {
+      return instrumented(LoguinUsuarioDocumentacion.class);
+  }
 }

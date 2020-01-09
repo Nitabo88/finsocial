@@ -27,7 +27,7 @@ Característica: Chequeo de documento
   @Confirmacion
   Escenario: aprobacion credito
     Dado que un asesor quiere realizar una aprobacion de un credito
-    Cuando se apruebe el credito del usuario identificado con 22056283
+    Cuando se apruebe el credito del usuario
     Entonces el crédito debe pasar a incorporacion
 
   @Confirmacion

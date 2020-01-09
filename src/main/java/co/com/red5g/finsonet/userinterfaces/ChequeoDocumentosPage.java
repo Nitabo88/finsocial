@@ -7,6 +7,8 @@ public class ChequeoDocumentosPage {
 
     public static final Target LST_FILA_CHEQUEO_DOCUMENTOS = Target.the("la fila de la tabla")
         .locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,'{1}')]//parent::tr");
+    public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_PENDIENTE = Target.the("la fila de la tabla documentos pendiente")
+        .locatedBy("//table[@class='table table-striped table-condensed']//td[contains(.,'{0}')]//parent::tr//td[contains(.,'{1}')]//parent::tr");
     public static final Target LST_COLUMNAS_CHEQUEO_DOCUMENTOS = Target.the("la opcion de la tabla")
         .locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,'{1}')]//parent::tr//child::td");
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE = Target.the("la opcion de la tabla del nombre")
@@ -26,7 +28,7 @@ public class ChequeoDocumentosPage {
     public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2"));
     public static final Target BTN_OK = Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]"));
-    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@class,'bg-green')]"));
+    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@data-original-title,'Subir documento')]"));
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
 
     private ChequeoDocumentosPage() {
