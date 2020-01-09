@@ -1,11 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import co.com.red5g.finsonet.models.ChequeoDocumento;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
-
 import static co.com.red5g.finsonet.questions.SeleccionarColumna.FECHA;
 import static co.com.red5g.finsonet.questions.SeleccionarColumna.seleccionarColumna;
 import static co.com.red5g.finsonet.tasks.FormularioSolicitudCredito.FECHA_SOLICITUD_CREDITO;
@@ -14,9 +8,12 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PEN
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_COLUMNAS_CHEQUEO_DOCUMENTOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Estado implements Task {
-    private ChequeoDocumento chequeoDocumento;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
+public class Estado implements Task {
     public static Performable ubicarseConDocumento() {
         return instrumented(Estado.class);
     }
