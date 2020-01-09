@@ -2,8 +2,6 @@ package co.com.red5g.finsonet.interacions;
 
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_CERRAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_UPLOAD;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -11,7 +9,6 @@ import java.util.logging.Logger;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Subir implements Interaction {
     private String RUTA_SCRIPT = "C:\\Users\\Licet\\Documents\\sqa_code\\src\\test\\resources\\scripts\\FileUpload.exe";
@@ -35,8 +32,7 @@ public class Subir implements Interaction {
                     logger.log(Level.INFO, String.valueOf(e));
                 }
                 actor.attemptsTo(
-                    Click.on(BTN_CERRAR),
-                    WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(1).seconds());
+                    Click.on(BTN_CERRAR));
             }
         }
     }
