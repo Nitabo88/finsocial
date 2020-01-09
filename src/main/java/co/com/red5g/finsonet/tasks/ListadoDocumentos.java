@@ -28,9 +28,11 @@ public class ListadoDocumentos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
-                Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
-                Click.on(BTN_ENVIAR),
-                Click.on(BTN_OK));
+            SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
+            Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
+            Click.on(BTN_ENVIAR),
+            Click.on(BTN_OK),
+            Click.on(BTN_ENVIAR),
+            Click.on(BTN_OK));
     }
 }
