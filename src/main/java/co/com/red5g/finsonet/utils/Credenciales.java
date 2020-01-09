@@ -1,7 +1,8 @@
 package co.com.red5g.finsonet.utils;
 
 public enum Credenciales {
-    USUARIO_FINSOCIAL ("ochinchilla" ,"Nicolas32@", "123456");
+    USUARIO_FINSOCIAL ("ochinchilla" ,"Nicolas32@", "123456"),
+    USUARIO_DOCUMENTOS ("mvargas", "Nicolas32@","a");
 
     private String usuario;
     private String contrasena;

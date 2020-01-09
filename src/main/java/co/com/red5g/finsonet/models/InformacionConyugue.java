@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.InformacionConyugueBuilder;
+import co.com.red5g.finsonet.models.builders.InformacionConyugueBuilder;
 
 public class InformacionConyugue {
     private String lugarDondeTrabaja;

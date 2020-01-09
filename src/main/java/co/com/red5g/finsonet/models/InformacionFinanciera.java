@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.InformacionFinancieraBuilder;
+import co.com.red5g.finsonet.models.builders.InformacionFinancieraBuilder;
 
 public class InformacionFinanciera {
     private String salarioFijo;

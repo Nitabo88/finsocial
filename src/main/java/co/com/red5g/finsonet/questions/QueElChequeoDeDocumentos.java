@@ -11,6 +11,7 @@ public class QueElChequeoDeDocumentos implements Question<String> {
         return new QueElChequeoDeDocumentos();
     }
 
+
     @Override
     public String answeredBy(Actor actor) {
         return LBL_MENSAJE.resolveFor(actor).getText();
