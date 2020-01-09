@@ -26,6 +26,7 @@ public class ValorComisionAsesores implements Question<Boolean> {
   @Override
   public Boolean answeredBy(Actor actor) {
     boolean estadoCredito = true;
+    actor.attemptsTo(WaitUntil.the(SPN_CARGA,isNotVisible()).forNoMoreThan(120).seconds());
     List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
     int i = 0;
@@ -33,14 +34,13 @@ public class ValorComisionAsesores implements Question<Boolean> {
       String ciudad = lstCiudades.get(i).getText();
       List<WebElementFacade> lstNombreAsesor = obtenerNombres(ciudad).answeredBy(actor);
       for (int j = 0; j < lstNombreAsesor.size(); j++) {
-        actor.attemptsTo(WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(5).seconds());
         List<WebElementFacade> lstDetalleAsesores = (LST_MONTO_ASESOR.of(lstNombreAsesor.get(j).getText())).resolveAllFor(actor);
         lstDetalleAsesores.remove(0);
         long sumaDetalleMonto = suma(lstDetalleAsesores);
         String valorComision = LST_TOTALES_VALORES_LIQUIDACION.resolveAllFor(actor).get(j).getText().replaceAll("[^\\d]", "");
         actor.attemptsTo(
             JavaScriptClick.on(BTN_VER_DETALLE_LIQUIDACION.of(lstNombreAsesor.get(j).getText())),
-            WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(5).seconds(),
+            WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(30).seconds(),
             cambiarPestanaActual()
         );
         double porcentajeComision = Double.parseDouble(String.valueOf(LBL_PORCENTAJE_COMISION.resolveFor(actor).getText().split(" %")[0]));
@@ -55,7 +55,7 @@ public class ValorComisionAsesores implements Question<Boolean> {
         }
       }
       actor.attemptsTo(JavaScriptClick.on(BTN_CERRAR_DETALLE.of(ciudad)),
-          WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(5).seconds());
+          WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(10).seconds());
       i++;
     }
     return estadoCredito;
