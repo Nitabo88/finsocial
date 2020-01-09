@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
@@ -28,5 +29,7 @@ public class ListadoDocumentos implements Task {
                 SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
                 Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
                 Click.on(BTN_ENVIAR));
+        actor.attemptsTo(
+                JavaScriptClick.on(BTN_OK));
     }
 }

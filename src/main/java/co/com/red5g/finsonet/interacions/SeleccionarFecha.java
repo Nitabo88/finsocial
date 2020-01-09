@@ -53,7 +53,11 @@ public class SeleccionarFecha implements Interaction {
     }
 
     private static Integer desplazamientoAnios(int year, int minYear) {
-        if (year < minYear) {
+        if (year <= minYear) {
+            int modulo = (minYear - year) % 10;
+            if (modulo != 0) {
+                year = (minYear - year) / 10 + 1;
+            }
             year = (minYear - year) / 10;
         } else {
             year = (year - minYear) / 10;
@@ -61,9 +65,9 @@ public class SeleccionarFecha implements Interaction {
         return year;
     }
 
-    private static String direccionDesplazamiento(int year, int minYear){
+    private static String direccionDesplazamiento(int year, int minYear) {
         String desplazamiento = "";
-        if (year < minYear) {
+        if (year <= minYear) {
             desplazamiento = IZQUIERDA;
         } else {
             desplazamiento = DERECHA;

@@ -23,6 +23,7 @@ public class ChequeoDocumentosPage {
     public static final Target LST_MODAL_CHECK3 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 4").locatedBy("//*[@id=\"motivo\"]/option[4]");
     public static final Target LST_MODAL_CHECK4 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 5").locatedBy("//*[@id=\"motivo\"]/option[5]");
     public static final Target LST_MODAL_CHECK5 = Target.the("Seleccionar motivo de la lista en chequeo de documentos Opcion 6").locatedBy("//*[@id=\"motivo\"]/option[6]");
+    public static final Target BTN_OK = Target.the("Enviar motivo en chequeo de documentos").locatedBy(("//div[@class='sa-confirm-button-container']"));
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2") );
 
     private ChequeoDocumentosPage() {
