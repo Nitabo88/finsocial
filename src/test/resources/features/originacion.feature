@@ -6,16 +6,16 @@ Característica: Chequeo de documento
   Para revisar el proceso de originacion
 
   @ChequeoDocumentos
-  Escenario: No aprobacion de chequeo de documentos
-    Dado que el asesor quiere realizar el chequeo de un documento
-    Cuando el asesor decline el chequeo del credito del cliente
-    Entonces el asesor no deberia verlo en chequeo de documentos
-
-  @ChequeoDocumentos
   Escenario: Actualizacion chequeo documentos
     Dado que el asesor quiere realizar el chequeo de un documento
     Cuando el asesor adjunta toda la informacion de el chequeo de documentos
     Entonces deberia ver el credito en el paso de confirmacion
+
+  @ChequeoDocumentos
+  Escenario: No aprobacion de chequeo de documentos
+    Dado que el asesor quiere realizar el chequeo de un documento
+    Cuando el asesor decline el chequeo del credito del cliente
+    Entonces el asesor no deberia verlo en chequeo de documentos
 
   @ChequeoDocumentos
   Escenario: Actualizacion chequeo documentos no exitosa
