@@ -3,10 +3,12 @@ package co.com.red5g.finsonet.stepdefinitions;
 import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazado.MENSAJE_CREDITO_RECHAZADO;
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
+import static net.bytebuddy.matcher.ElementMatchers.is;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazado;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
@@ -41,7 +43,7 @@ public class ChequeoDocumentoStepDefinition {
 
     @Entonces("^el asesor no deberia verlo en chequeo de documentos$")
     public void elAsesorNoDeberiaVerloEnChequeoDeDocumentos() {
-        theActorInTheSpotlight().should(seeThat(QueNoAparece.laSolicitud()).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
+        theActorInTheSpotlight().should(seeThat(QueNoAparece.laSolicitud(),equalTo(false)).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
     }
 
     @Cuando("^el asesor complete el chequeo de credito del cliente$")

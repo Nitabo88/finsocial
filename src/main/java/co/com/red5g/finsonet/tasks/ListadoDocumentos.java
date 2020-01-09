@@ -1,5 +1,11 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ENVIAR;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_OK;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_AREA;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -8,9 +14,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class ListadoDocumentos implements Task {
     private ChequeoDocumento chequeoDocumento;
