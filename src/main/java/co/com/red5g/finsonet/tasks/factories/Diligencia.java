@@ -1,12 +1,13 @@
 package co.com.red5g.finsonet.tasks.factories;
 
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
 import co.com.red5g.finsonet.models.ChequeoDocumento;
-import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
 import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
 import co.com.red5g.finsonet.tasks.InformacionChequeoDocumento;
+import co.com.red5g.finsonet.tasks.InformacionConfirmacion;
+import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
 import net.serenitybdd.screenplay.Performable;
-
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Diligencia {
 
@@ -22,4 +23,7 @@ public class Diligencia {
         return instrumented(InformacionIncompletaChequeoDocumentos.class, chequeoDocumento);
     }
 
+    public static Performable laInformacionDeConfirmacion() {
+        return instrumented(InformacionConfirmacion.class);
+    }
 }

@@ -1,9 +1,8 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazado.MENSAJE_CREDITO_RECHAZADO;
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static net.bytebuddy.matcher.ElementMatchers.is;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -11,26 +10,29 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazado;
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
-import co.com.red5g.finsonet.questions.ElCredito;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.questions.QueAparece;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.QueNoAparece;
+import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.Estado;
 import co.com.red5g.finsonet.tasks.ListadoDocumentos;
 import co.com.red5g.finsonet.tasks.Realizar;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
+import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 
 public class ChequeoDocumentoStepDefinition {
-    private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
+    private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
     @Dado("^que (.*) quiere realizar el chequeo de un documento$")
     public void IngresarChequeo(String actor) {
         theActorCalled(actor).attemptsTo(
-                Realizar.unChequeoDeDocumento()
+            Realizar.unChequeoDeDocumento()
         );
     }
 
@@ -43,13 +45,13 @@ public class ChequeoDocumentoStepDefinition {
 
     @Entonces("^el asesor no deberia verlo en chequeo de documentos$")
     public void elAsesorNoDeberiaVerloEnChequeoDeDocumentos() {
-        theActorInTheSpotlight().should(seeThat(QueNoAparece.laSolicitud(),equalTo(false)).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
+        theActorInTheSpotlight().should(seeThat(QueNoAparece.laSolicitud(), equalTo(false)).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
     }
 
     @Cuando("^el asesor complete el chequeo de credito del cliente$")
     public void diligenciarChequeoDocumentos() {
         theActorInTheSpotlight().attemptsTo(
-                Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().centralesDeRiesgo())
+            Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().centralesDeRiesgo())
         );
     }
 
@@ -61,12 +63,18 @@ public class ChequeoDocumentoStepDefinition {
     @Cuando("^el asesor adjunta toda la informacion de el chequeo de documentos$")
     public void adjuntarDocumentos() {
         theActorInTheSpotlight().attemptsTo(
-                Diligencia.laInformacionDeChequeoDeDocumentos(con().centralesDeRiesgo())
+            Diligencia.laInformacionDeChequeoDeDocumentos(con().centralesDeRiesgo())
         );
     }
 
     @Entonces("^deberia ver el credito en el paso de confirmacion$")
     public void verificarCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoCreadoException.class, MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    }
+
+    @Y("^el asesor de documentacion deberia verlo$")
+    public void verificarRevisionDocumentacion() {
+        theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
+        theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
     }
 }
