@@ -1,11 +1,11 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoCreadoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.ElFormulario;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
@@ -32,6 +32,6 @@ public class FormularioSolicitudStepDefinition {
     @Entonces("el debería visualizar el credito del cliente")
     public void verificarSolicitudCrecito() {
         theActorInTheSpotlight()
-            .should(seeThat(ElFormulario.fueEnviado()).orComplainWith(NoSeVeElCreditoCreadoException.class, MENSAJE_CREDITO));
+            .should(seeThat(ElFormulario.fueEnviado()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
     }
 }

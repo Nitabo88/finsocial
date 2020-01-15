@@ -1,10 +1,19 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.finsonet.tasks.*;
-import net.serenitybdd.screenplay.Performable;
-
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import co.com.red5g.finsonet.models.Credito;
+import co.com.red5g.finsonet.tasks.InformacionCredito;
+import co.com.red5g.finsonet.tasks.InformacionLogin;
+import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
+import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada;
+import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
+import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
+import co.com.red5g.finsonet.tasks.ReporteAntecartera;
+import co.com.red5g.finsonet.tasks.ReporteOriginacion;
+import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
+import co.com.red5g.finsonet.tasks.ReporteVentaNueva;
+import net.serenitybdd.screenplay.Performable;
 
 public class Ingresa {
 
@@ -40,7 +49,11 @@ public class Ingresa {
         return instrumented(LiquidacionComisionesVentaLiberada.class);
     }
 
-  public static Performable ConUsuarioDeDocumentacion() {
-      return instrumented(LoguinUsuarioDocumentacion.class);
-  }
+    public static Performable conUsuarioDeDocumentacion() {
+        return instrumented(LoguinUsuarioDocumentacion.class);
+    }
+
+    public static Performable alReporteDeLiquidacionDeComisiones(String ciclo) {
+        return instrumented(LiquidacionComisiones.class, ciclo);
+    }
 }

@@ -25,10 +25,10 @@ Característica: Chequeo de documento
     Entonces deberia ver el mensaje de adjuntar informacion
 
   @Confirmacion
-  Escenario: aprobacion credito
+  Escenario: aprobacion del paso de confirmacion de un credito
     Dado que un asesor quiere realizar una aprobacion de un credito
-    Cuando se apruebe el credito del usuario
-    Entonces el crédito debe pasar a incorporacion
+    Cuando se apruebe el paso de confirmacion
+    Entonces deberia ver el crédito en el paso de aprobacion de creditos
 
   @Confirmacion
   Escenario: regresar el credito desde aprobacion

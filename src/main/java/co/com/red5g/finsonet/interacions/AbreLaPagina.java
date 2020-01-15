@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.interacions;
 
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
 import co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
-
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 
 public class AbreLaPagina implements Task {

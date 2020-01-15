@@ -1,9 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
-import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.questions.NombreAsesores.obtenerNombres;
+import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.BTN_ATRAS;
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.BTN_CERRAR_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.BTN_VER_DETALLE_LIQUIDACION;
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LBL_CIUDAD_DETALLE;
@@ -26,7 +24,6 @@ public class ValorComisionAsesores implements Question<Boolean> {
   @Override
   public Boolean answeredBy(Actor actor) {
     boolean estadoCredito = true;
-    actor.attemptsTo(WaitUntil.the(SPN_CARGA,isNotVisible()).forNoMoreThan(120).seconds());
     List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
     int i = 0;
@@ -39,23 +36,20 @@ public class ValorComisionAsesores implements Question<Boolean> {
         long sumaDetalleMonto = suma(lstDetalleAsesores);
         String valorComision = LST_TOTALES_VALORES_LIQUIDACION.resolveAllFor(actor).get(j).getText().replaceAll("[^\\d]", "");
         actor.attemptsTo(
-            JavaScriptClick.on(BTN_VER_DETALLE_LIQUIDACION.of(lstNombreAsesor.get(j).getText())),
-            WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(30).seconds(),
-            cambiarPestanaActual()
+            JavaScriptClick.on(BTN_VER_DETALLE_LIQUIDACION.of(lstNombreAsesor.get(j).getText()))
         );
         double porcentajeComision = Double.parseDouble(String.valueOf(LBL_PORCENTAJE_COMISION.resolveFor(actor).getText().split(" %")[0]));
         estadoCredito = valorComision.equals(String.valueOf(Long.valueOf((long) Math.floor(sumaDetalleMonto * porcentajeComision / 100))));
         if (estadoCredito) {
           actor.attemptsTo(
-              cerrarPestana(),
-              cambiarPestana()
+              JavaScriptClick.on(BTN_ATRAS)
           );
         } else {
           break;
         }
       }
       actor.attemptsTo(JavaScriptClick.on(BTN_CERRAR_DETALLE.of(ciudad)),
-          WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(10).seconds());
+          WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(30).seconds());
       i++;
     }
     return estadoCredito;

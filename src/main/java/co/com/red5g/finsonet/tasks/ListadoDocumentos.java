@@ -14,6 +14,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ListadoDocumentos implements Task {
@@ -34,7 +35,12 @@ public class ListadoDocumentos implements Task {
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
             WaitUntil.the(BTN_ENVIAR, isEnabled()),
             Click.on(BTN_ENVIAR),
-            Click.on(BTN_OK)
+            Click.on(BTN_OK),
+            Check.whether(
+                BTN_ENVIAR.resolveFor(actor).isPresent())
+                .andIfSo(
+                    Click.on(BTN_ENVIAR),
+                    Click.on(BTN_OK))
         );
     }
 }

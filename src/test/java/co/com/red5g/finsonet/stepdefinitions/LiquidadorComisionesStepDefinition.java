@@ -11,7 +11,6 @@ import static org.hamcrest.Matchers.containsString;
 
 import co.com.red5g.finsonet.questions.factories.ElNumero;
 import co.com.red5g.finsonet.questions.factories.ElValor;
-import co.com.red5g.finsonet.tasks.IngresarAlReporteDeLiquidacionDeComisiones;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
@@ -31,7 +30,7 @@ public class LiquidadorComisionesStepDefinition {
     @Cuando("^el ingresa al reporte de liquidacion de comisiones - Venta Nueva del ciclo (.*)$")
     public void ingresarLiquidacionComisiones(String ciclo) {
         theActorInTheSpotlight().attemptsTo(
-                IngresarAlReporteDeLiquidacionDeComisiones.delCiclo(ciclo)
+                Ingresa.alReporteDeLiquidacionDeComisiones(ciclo)
         );
     }
 
