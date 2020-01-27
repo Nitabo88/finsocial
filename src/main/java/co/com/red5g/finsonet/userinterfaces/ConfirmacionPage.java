@@ -10,6 +10,7 @@ public class ConfirmacionPage {
         .locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,'{1}')]//parent::tr//button[@class='btn btn-primary dropdown-toggle dropdown-toggle-split']");
     public static final Target MNU_ACCION = Target.the("el menu de acciones de confirmacion").locatedBy("//div[@class='btn-group open']//div[@class='dropdown-menu']//a[contains(.,'{0}')]");
     public static final Target BTN_OK = Target.the("el boton ok de confirmacion").located(By.xpath("//button[@class='confirm']"));
+    public static final Target TXT_MOTIVO = Target.the("motivo de regresar el credito").located(By.xpath("//input[@placeholder='Motivo']"));
 
     private ConfirmacionPage() {
         throw new IllegalStateException("Utility class");

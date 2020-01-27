@@ -9,6 +9,7 @@ import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LBL_
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LST_MONTO_ASESOR;
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LST_TOTALES_VALORES_LIQUIDACION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.finsonet.utils.Utilerias.suma;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
@@ -16,6 +17,7 @@ import java.util.List;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -34,15 +36,22 @@ public class ValorComisionAsesores implements Question<Boolean> {
         List<WebElementFacade> lstDetalleAsesores = (LST_MONTO_ASESOR.of(lstNombreAsesor.get(j).getText())).resolveAllFor(actor);
         lstDetalleAsesores.remove(0);
         long sumaDetalleMonto = suma(lstDetalleAsesores);
-        String valorComision = LST_TOTALES_VALORES_LIQUIDACION.resolveAllFor(actor).get(j).getText().replaceAll("[^\\d]", "");
+        String valorComision = (LST_TOTALES_VALORES_LIQUIDACION.of(lstNombreAsesor.get(j).getText())).resolveFor(actor).getText().replaceAll("[^\\d]", "");
         actor.attemptsTo(
             JavaScriptClick.on(BTN_VER_DETALLE_LIQUIDACION.of(lstNombreAsesor.get(j).getText()))
         );
-        double porcentajeComision = Double.parseDouble(String.valueOf(LBL_PORCENTAJE_COMISION.resolveFor(actor).getText().split(" %")[0]));
-        estadoCredito = valorComision.equals(String.valueOf(Long.valueOf((long) Math.floor(sumaDetalleMonto * porcentajeComision / 100))));
+        String porcentajeComision = String.valueOf(LBL_PORCENTAJE_COMISION.resolveFor(actor).getText().split(" %")[0]);
+        double porcentaje;
+        if (porcentajeComision.equals("%")){
+          porcentaje = 0.0;
+        }else{
+          porcentaje= Double.parseDouble(porcentajeComision);
+        }
+        estadoCredito = valorComision.equals(String.valueOf(Long.valueOf((long) Math.floor(sumaDetalleMonto * porcentaje / 100))));
         if (estadoCredito) {
           actor.attemptsTo(
-              JavaScriptClick.on(BTN_ATRAS)
+              Click.on(BTN_ATRAS),
+              WaitUntil.the(SPN_CARGANDO,isNotVisible()).forNoMoreThan(60).seconds()
           );
         } else {
           break;

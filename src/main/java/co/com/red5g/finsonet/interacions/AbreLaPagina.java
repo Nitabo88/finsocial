@@ -10,16 +10,17 @@ import net.serenitybdd.screenplay.actions.Open;
 
 
 public class AbreLaPagina implements Task {
+
     private LoginFinsonetPage loginFinsocialPage;
+
+    public static Performable finsonet() {
+        return instrumented(AbreLaPagina.class);
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Open.browserOn(loginFinsocialPage)
+            Open.browserOn(loginFinsocialPage)
         );
-    }
-
-    public static Performable finsonet() {
-        return instrumented(AbreLaPagina.class);
     }
 }

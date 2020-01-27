@@ -29,7 +29,7 @@ public class ChequeoDocumentoStepDefinition {
 
     private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
-    @Dado("^que (.*) quiere realizar el chequeo de un documento$")
+    @Dado("^que (.*) esta en el paso de chequeo de un documentos$")
     public void IngresarChequeo(String actor) {
         theActorCalled(actor).attemptsTo(
             Realizar.unChequeoDeDocumento()
@@ -72,7 +72,7 @@ public class ChequeoDocumentoStepDefinition {
         theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
     }
 
-    @Y("^el asesor de documentacion deberia verlo$")
+    @Y("^el auxiliar de documentacion deberia verlo$")
     public void verificarRevisionDocumentacion() {
         theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
         theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
