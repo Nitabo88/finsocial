@@ -2,10 +2,12 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.userinterfaces.AuxiliarOperativoPage.LNK_CHEQUEO_DOCUMENTOS;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_CHEQUEO_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_AUXILIAR_OPERATIVO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNU_MI_CUENTA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
@@ -26,7 +28,8 @@ public class LoguinUsuarioDocumentacion implements Task {
         WaitUntil.the(LNK_AUXILIAR_OPERATIVO, isEnabled()).forNoMoreThan(10).seconds(),
         Click.on(LNK_AUXILIAR_OPERATIVO),
         WaitUntil.the(LNK_CHEQUEO_DOCUMENTOS, isEnabled()).forNoMoreThan(10).seconds(),
-        Click.on(LNK_CHEQUEO_DOCUMENTOS)
+        Click.on(LNK_CHEQUEO_DOCUMENTOS),
+        WaitUntil.the(LBL_CHEQUEO_DOCUMENTOS, isVisible()).forNoMoreThan(10).seconds()
     );
   }
 }

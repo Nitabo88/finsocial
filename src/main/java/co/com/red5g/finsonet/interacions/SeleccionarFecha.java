@@ -74,7 +74,7 @@ public class SeleccionarFecha implements Interaction {
     }
 
     private static String direccionDesplazamiento(int year, int minYear) {
-        String desplazamiento = "";
+        String desplazamiento;
         if (year <= minYear) {
             desplazamiento = IZQUIERDA;
         } else {

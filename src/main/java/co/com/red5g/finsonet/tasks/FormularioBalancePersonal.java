@@ -2,13 +2,10 @@ package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.models.InformacionBalancePersonal;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.*;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class FormularioBalancePersonal implements Task {
     private InformacionBalancePersonal informacionBalancePersonal;

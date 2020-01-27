@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 
 public class Subir implements Interaction {
-    private String RUTA_SCRIPT = "C:\\Users\\Licet\\Documents\\sqa_code\\src\\test\\resources\\scripts\\FileUpload.exe";
+
     Logger logger;
 
     public Subir() {
@@ -27,6 +27,7 @@ public class Subir implements Interaction {
             for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
                 actor.attemptsTo(Click.on(BTN_UPLOAD.resolveAllFor(actor).get(i)));
                 try {
+                    String RUTA_SCRIPT = "C:\\Users\\Licet\\Documents\\sqa_code\\src\\test\\resources\\scripts\\FileUpload.exe";
                     Runtime.getRuntime().exec(RUTA_SCRIPT);
                 } catch (IOException e) {
                     logger.log(Level.INFO, String.valueOf(e));

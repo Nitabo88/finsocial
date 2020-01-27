@@ -3,14 +3,12 @@ package co.com.red5g.finsonet.tasks;
 import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.models.Referencias;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import org.openqa.selenium.Keys;
 
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso6Page.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class FormularioInformacionReferencias implements Task {
     private Referencias informacionReferenciaFamiliar;
