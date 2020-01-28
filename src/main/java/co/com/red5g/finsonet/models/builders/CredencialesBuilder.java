@@ -1,11 +1,13 @@
 package co.com.red5g.finsonet.models.builders;
 
+import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_DOCUMENTOS;
+import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_FINSOCIAL;
+
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.utils.Builder;
 
-import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_FINSOCIAL;
-
 public class CredencialesBuilder implements Builder<Credenciales> {
+
     private String usuario;
     private String contrasena;
     private String codigo;
@@ -26,17 +28,17 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     }
 
     private CredencialesBuilder conUsuario(String usuario) {
-        this.usuario = USUARIO_FINSOCIAL.getUsuario();
+        this.usuario = usuario;
         return this;
     }
 
     private CredencialesBuilder conContrasena(String contrasena) {
-        this.contrasena = USUARIO_FINSOCIAL.getContrasena();
+        this.contrasena = contrasena;
         return this;
     }
 
     private CredencialesBuilder conCodigo(String codigo) {
-        this.codigo = USUARIO_FINSOCIAL.getCodigo();
+        this.codigo = codigo;
         return this;
     }
 
@@ -56,6 +58,13 @@ public class CredencialesBuilder implements Builder<Credenciales> {
         this.conUsuario(USUARIO_FINSOCIAL.getUsuario());
         this.conContrasena(USUARIO_FINSOCIAL.getContrasena());
         this.conCodigo(USUARIO_FINSOCIAL.getCodigo());
+        return this.build();
+    }
+
+    public Credenciales unUsuarioDeDocumentacion() {
+        this.conUsuario(USUARIO_DOCUMENTOS.getUsuario());
+        this.conContrasena(USUARIO_DOCUMENTOS.getContrasena());
+        this.conCodigo(USUARIO_DOCUMENTOS.getCodigo());
         return this.build();
     }
 

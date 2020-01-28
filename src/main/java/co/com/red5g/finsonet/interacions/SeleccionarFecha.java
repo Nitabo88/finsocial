@@ -1,14 +1,21 @@
 package co.com.red5g.finsonet.interacions;
 
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_ANIO;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_DIA;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_FLECHA_DERECHA;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_FLECHA_IZQUIERDA;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_MES;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_ANIO;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_DIA;
+import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_MES;
+import static co.com.red5g.finsonet.utils.UtileriaFechas.separarFecha;
+import static co.com.red5g.finsonet.utils.Utilerias.between;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.targets.Target;
-
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.*;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.separarFecha;
-import static co.com.red5g.finsonet.utils.Utilerias.*;
 
 public class SeleccionarFecha implements Interaction {
     private static final String IZQUIERDA = "izquierda";
@@ -53,17 +60,22 @@ public class SeleccionarFecha implements Interaction {
     }
 
     private static Integer desplazamientoAnios(int year, int minYear) {
-        if (year < minYear) {
-            year = (minYear - year) / 10;
+        if (year <= minYear) {
+            int modulo = (minYear - year) % 10;
+            if (modulo != 0) {
+                year = (minYear - year) / 10 + 1;
+            } else {
+                year = (minYear - year) / 10;
+            }
         } else {
             year = (year - minYear) / 10;
         }
         return year;
     }
 
-    private static String direccionDesplazamiento(int year, int minYear){
-        String desplazamiento = "";
-        if (year < minYear) {
+    private static String direccionDesplazamiento(int year, int minYear) {
+        String desplazamiento;
+        if (year <= minYear) {
             desplazamiento = IZQUIERDA;
         } else {
             desplazamiento = DERECHA;

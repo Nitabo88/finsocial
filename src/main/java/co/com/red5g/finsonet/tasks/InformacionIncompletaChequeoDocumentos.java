@@ -3,7 +3,6 @@ package co.com.red5g.finsonet.tasks;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
@@ -16,7 +15,6 @@ import static co.com.red5g.finsonet.questions.SeleccionarColumna.seleccionarColu
 import static co.com.red5g.finsonet.tasks.FormularioSolicitudCredito.FECHA_SOLICITUD_CREDITO;
 import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class InformacionIncompletaChequeoDocumentos implements Task {
     private ChequeoDocumento chequeoDocumento;

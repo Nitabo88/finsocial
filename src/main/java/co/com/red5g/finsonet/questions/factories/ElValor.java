@@ -1,5 +1,8 @@
 package co.com.red5g.finsonet.questions.factories;
 
+import co.com.red5g.finsonet.questions.ValorComisionAsesores;
+import co.com.red5g.finsonet.questions.ValorTotalComision;
+import co.com.red5g.finsonet.questions.ValorConsolidadoLiquidadorComisiones;
 import co.com.red5g.finsonet.questions.ValorDetalleReporteVentaNueva;
 import co.com.red5g.finsonet.questions.ValorReporteOriginacion;
 import co.com.red5g.finsonet.questions.ValorReporteVentaLiberada;
@@ -36,5 +39,17 @@ public class ElValor {
 
   public static Question<String> delDetalleDelReporteDeVentaLiberada() {
     return new ValorReporteVentaLiberada();
+  }
+
+  public static Question<Boolean> deCreditosDeLiquidacionDeComisiones() {
+    return new ValorConsolidadoLiquidadorComisiones();
+  }
+
+  public static Question<Boolean> deLaComision() {
+    return new ValorTotalComision();
+  }
+
+  public static Question<Boolean> delDetalleDeLaComisionPorAsesor() {
+    return new ValorComisionAsesores();
   }
 }

@@ -1,15 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.questions.factories.ElNumero;
-import co.com.red5g.finsonet.questions.factories.ElValor;
-import co.com.red5g.finsonet.tasks.IngresarAlReporteDeVentaNueva;
-import co.com.red5g.finsonet.tasks.factories.Consulta;
-import co.com.red5g.finsonet.tasks.factories.Ingresa;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
-import cucumber.api.java.es.Y;
-
 import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada.NUMERO_CREDITOS_VENTA_LIBERADA;
 import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada.VALOR_VENTA_LIBERADA;
 import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva.NUMERO_CREDITOS_VENTA_NUEVA;
@@ -18,6 +8,15 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
+
+import co.com.red5g.finsonet.questions.factories.ElNumero;
+import co.com.red5g.finsonet.questions.factories.ElValor;
+import co.com.red5g.finsonet.tasks.factories.Consulta;
+import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import cucumber.api.java.es.Cuando;
+import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 
 public class LiquidadorComisionesStepDefinition {
 
@@ -29,22 +28,10 @@ public class LiquidadorComisionesStepDefinition {
     }
 
     @Cuando("^el ingresa al reporte de liquidacion de comisiones - Venta Nueva del ciclo (.*)$")
-    public void elIngresaAlReporteDeLiquidacionDeComisionesVentaNuevaDelCicloCiclo(String ciclo) {
+    public void ingresarLiquidacionComisiones(String ciclo) {
         theActorInTheSpotlight().attemptsTo(
-                IngresarAlReporteDeVentaNueva.delCiclo(ciclo)
+                Ingresa.alReporteDeLiquidacionDeComisiones(ciclo)
         );
-    }
-
-    @Entonces("^el observara que el consolidado y el detalle del reporte de originacion liquidacion de comisiones - Venta Nueva es consistente$")
-    public void elObservaraQueElConsolidadoYElDetalleDelReporteDeOriginacionLiquidacionDeComisionesVentaNuevaEsConsistente() {
-    }
-
-    @Cuando("^el ingresa al reporte de liquidacion de comisiones - Venta Liberada del ciclo (.*)$")
-    public void elIngresaAlReporteDeLiquidacionDeComisionesVentaLiberadaDelCicloCiclo(String ciclo) {
-    }
-
-    @Entonces("^el observara que el consolidado y el detalle del reporte de originacion liquidacion de comisiones - Venta Liberada es consistente$")
-    public void elObservaraQueElConsolidadoYElDetalleDelReporteDeOriginacionLiquidacionDeComisionesVentaLiberadaEsConsistente() {
     }
 
     @Cuando("^el ingresa al reporte actual de venta nueva$")
@@ -59,7 +46,6 @@ public class LiquidadorComisionesStepDefinition {
         theActorInTheSpotlight().attemptsTo(
                 Ingresa.enLiquidacionDeComisionesVentaLiberada()
         );
-
     }
 
     @Entonces("^el observara que el valor de venta nueva es consistente$")
@@ -84,5 +70,25 @@ public class LiquidadorComisionesStepDefinition {
     public void verificarValorVentaLiberada() {
         theActorInTheSpotlight().should(
             seeThat(ElValor.deVentaLiberadaEsConsistente(), containsString(theActorInTheSpotlight().recall(VALOR_VENTA_LIBERADA))));
+    }
+
+    @Entonces("^el observara que el numero de creditos consolidado y el detalle del reporte de liquidacion de comisiones es consistente$")
+    public void verificarNumeroCreditosDetalle() {
+        theActorInTheSpotlight().should(seeThat(ElNumero.deCreditosDeLiquidacionDeComisiones()));
+    }
+
+    @Y("^que el valor del consolidad y el detalle del reporte de liquidacion de comisiones es consistente$")
+    public void verificarValorConsolidadoDetalle() {
+        theActorInTheSpotlight().should(seeThat(ElValor.deCreditosDeLiquidacionDeComisiones()));
+    }
+
+    @Entonces("^el observara que el valor liquidado, corresponde al valor total del detalle$")
+    public void verificarValorLiquidacionComision() {
+        theActorInTheSpotlight().should(seeThat(ElValor.deLaComision()));
+    }
+
+    @Y("^que el detalle por asesor es el adecuado$")
+    public void verificarDetalleValorLiquidacionComision() {
+        theActorInTheSpotlight().should(seeThat(ElValor.delDetalleDeLaComisionPorAsesor()));
     }
 }

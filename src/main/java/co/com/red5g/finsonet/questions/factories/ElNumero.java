@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.CreditosDetalleReporteVentaLiberada;
 import co.com.red5g.finsonet.questions.CreditosDetalleReporteVentaNueva;
+import co.com.red5g.finsonet.questions.CreditosLiquidacionComision;
 import co.com.red5g.finsonet.questions.CreditosReporteAntecartera;
 import co.com.red5g.finsonet.questions.CreditosReporteOriginacion;
 import co.com.red5g.finsonet.questions.CreditosReporteVentaLiberada;
@@ -42,5 +43,9 @@ public class ElNumero {
 
   public static Question<String> delDetalleDeCreditosDelReporteDeVentaLiberada() {
     return new CreditosDetalleReporteVentaLiberada();
+  }
+
+  public static Question<Boolean> deCreditosDeLiquidacionDeComisiones() {
+    return new CreditosLiquidacionComision();
   }
 }

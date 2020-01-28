@@ -6,7 +6,6 @@ import co.com.red5g.finsonet.models.builders.ReferenciasBuilder;
 import co.com.red5g.finsonet.tasks.factories.Escribe;
 import co.com.red5g.finsonet.userinterfaces.*;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
@@ -17,7 +16,6 @@ import static co.com.red5g.finsonet.models.builders.InformacionConyugueBuilder.e
 import static co.com.red5g.finsonet.models.builders.InformacionPersonalBuilder.cualEs;
 import static co.com.red5g.finsonet.models.builders.InformacionPrestamoBuilder.la;
 import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class FormularioSolicitudCredito implements Task {
     public static final String FECHA_SOLICITUD_CREDITO = "fecha credito";

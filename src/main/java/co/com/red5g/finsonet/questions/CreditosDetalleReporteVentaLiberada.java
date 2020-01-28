@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_NUMERO_CREDITOS_VENTA_LIBERADA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_VENTA_LIBERADA;
 import static co.com.red5g.finsonet.utils.Utilerias.suma;
 
