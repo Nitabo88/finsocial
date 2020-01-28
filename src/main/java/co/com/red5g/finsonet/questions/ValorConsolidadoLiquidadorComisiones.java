@@ -21,7 +21,7 @@ public class ValorConsolidadoLiquidadorComisiones implements Question<Boolean> {
   @Override
   public Boolean answeredBy(Actor actor) {
     boolean estadoCredito = true;
-    actor.attemptsTo(WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(120).seconds());
+    actor.attemptsTo(WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(300).seconds());
     List<WebElementFacade> lstValorCreditos = LST_VALOR_CREDITOS.resolveAllFor(actor);
     lstValorCreditos.remove(0);
     List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
