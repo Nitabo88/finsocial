@@ -18,7 +18,7 @@ public class Reportes implements Task {
         actor.attemptsTo(
                 AbreLaPagina.finsonet(),
                 Ingresa.lasCredenciales(CredencialesBuilder.de().unUsuarioBasico()),
-                WaitUntil.the(LNK_REPORTES, isClickable()).forNoMoreThan(5).seconds(),
+                WaitUntil.the(LNK_REPORTES, isClickable()).forNoMoreThan(10).seconds(),
                 Click.on(LNK_REPORTES)
         );
     }

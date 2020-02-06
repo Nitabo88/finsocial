@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Consultar;
+import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -19,7 +19,7 @@ public class ConfirmacionStepDefinition {
   @Dado("^que (.*) esta en el paso de confirmacion$")
   public void consultarCredito(String actor) {
     theActorCalled(actor).attemptsTo(
-        Consultar.elCredito()
+        Consulta.elCreditoEnConfirmacion()
     );
   }
 
@@ -31,14 +31,14 @@ public class ConfirmacionStepDefinition {
   }
 
   @Entonces("^el asesor deberia ver el crédito en el paso de aprobacion de creditos$")
-  public void verificarConfirmacion() {
+  public void verificarAprobacionConfirmacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeDocumentos()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor regresa el credito a chequeo de documentos$")
   public void regresarCredito() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeRegreso(con().motivo())
+        Diligencia.laInformacionDeRegresoDeConfirmacion(con().motivo())
     );
   }
 
@@ -46,4 +46,5 @@ public class ConfirmacionStepDefinition {
   public void verificarRegresoChequeoDocumento() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enChequeoDeDocumentos()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
+
 }

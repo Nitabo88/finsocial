@@ -31,7 +31,31 @@ Característica: Originacion
     Entonces el asesor deberia ver el crédito en el paso de aprobacion de creditos
 
   @Confirmacion
-  Escenario: regresar el credito desde aprobacion
+  Escenario: regresar el credito desde confirmacion
     Dado que un asesor esta en el paso de confirmacion
     Cuando el asesor regresa el credito a chequeo de documentos
     Entonces el asesor debera ver el credito en el paso de chequeo de documentos
+
+  @AprobacionCreditos
+  Escenario: Marcar el credito como pendiente en aprobacion de creditos
+    Dado que un asesor esta en el paso de aprobacion de creditos
+    Cuando el asesor pone el credito como pendiente
+    Entonces el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes
+
+  @AprobacionCreditos
+  Escenario: regresar el credito desde aprobacion de creditos
+    Dado que un asesor esta en el paso de aprobacion de creditos
+    Cuando el asesor regresa el credito a confirmacion
+    Entonces el asesor debera ver el credito en el paso de confirmacion
+
+  @AprobacionCreditos
+  Escenario: Marcar el credito como pendiente en aprobacion de creditos
+    Dado que un asesor esta en el paso de aprobacion de creditos
+    Cuando el asesor pone el credito como pendiente
+    Entonces el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes
+
+  @AprobacionCreditos
+  Escenario: aprobar el credito desde aprobacion de creditos
+    Dado que un asesor esta en el paso de aprobacion de creditos
+    Cuando el asesor aprueba el credito
+    Entonces el asesor debera ver el credito en el paso de incorporacion

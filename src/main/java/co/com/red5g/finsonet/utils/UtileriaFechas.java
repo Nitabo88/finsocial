@@ -25,9 +25,8 @@ public class UtileriaFechas {
     }
 
     public static String formatearFechaServidorUTC(){
-        Date fecha = new Date(System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(10));
+        Date fecha = new Date(System.currentTimeMillis());
         DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        fechaFormateada.setTimeZone(TimeZone.getTimeZone("Etc/GMT+10"));
         return fechaFormateada.format(fecha);
     }
 

@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_NUMERO_CREDITOS_VENTA_NUEVA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_VALOR_VENTA_NUEVA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_PERIODO;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
 import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
@@ -21,7 +21,7 @@ public class LiquidacionComisionesVentaNueva implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO),
-                WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(5).seconds()
+                WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(10).seconds()
         );
         actor.remember(VALOR_VENTA_NUEVA, LBL_VALOR_VENTA_NUEVA.resolveFor(actor).getText());
         actor.remember(NUMERO_CREDITOS_VENTA_NUEVA, LBL_NUMERO_CREDITOS_VENTA_NUEVA.resolveFor(actor).getText());

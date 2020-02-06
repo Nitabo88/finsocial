@@ -7,7 +7,7 @@ Característica: Creacion credito nuevo finsonet
 
   Escenario: Creacion nuevo credito sin los campos obligatorios del cliente
     Dado que un asesor quiere crear un credito
-    Cuando el ingresa el numero de documento 23604517 con el valor 1500000 y a un plazo de "36" meses
+    Cuando el ingresa el numero de documento 23604517 con el valor 1500000 y a un plazo de "38" meses
     Entonces el no podra crear un credito
 
   Escenario: Creacion nuevo credito

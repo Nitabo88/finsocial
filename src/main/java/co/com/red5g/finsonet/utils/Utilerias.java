@@ -11,7 +11,7 @@ public class Utilerias {
     public static long suma(List<WebElementFacade> lstValores) {
        long suma = 0;
          for (WebElementFacade lstValore : lstValores) {
-             suma = suma + Long.parseLong(lstValore.getText().replaceAll("[^\\d]", ""));
+             suma = suma + Long.parseLong(lstValore.getText().replaceAll("[\\,.]",""));
          }
          return suma;
      }
