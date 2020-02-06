@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
@@ -37,9 +37,9 @@ public class Visualizar implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(SPN_CARGA, isNotVisible()),
+                WaitUntil.the(SPN_FINSONET, isNotVisible()),
                 Click.on(lnkReporte),
-                WaitUntil.the(SPN_CARGA, isNotVisible())
+                WaitUntil.the(SPN_FINSONET, isNotVisible())
         );
     }
 }

@@ -22,7 +22,7 @@ public class LiquidacionComisiones implements Task {
         actor.attemptsTo(
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(100).seconds(),
             SelectFromOptions.byVisibleText(ciclo).from(LST_CICLO),
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(300).seconds()
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(500).seconds()
         );
     }
 }

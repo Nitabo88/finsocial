@@ -22,7 +22,6 @@ public class FormularioSolicitudCredito implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.remember(FECHA_SOLICITUD_CREDITO, formatearFechaServidorUTC());
         actor.attemptsTo(
                 Escribe.losDocumentosRequeridos(los().documentosSolicitante()),
                 Escribe.laInformacionDelPrestamo(la().informacionPrestamo()),
