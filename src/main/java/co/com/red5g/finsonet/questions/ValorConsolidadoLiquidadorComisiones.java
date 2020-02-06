@@ -30,7 +30,8 @@ public class ValorConsolidadoLiquidadorComisiones implements Question<Boolean> {
     while (i < lstValorCreditos.size()) {
       String valorCreditos = lstValorCreditos.get(i).getText().replaceAll("[^\\d]", "");
       String ciudad = lstCiudades.get(i).getText();
-      actor.attemptsTo(JavaScriptClick.on(BTN_DETALLE_CREDITOS.of(ciudad)));
+      actor.attemptsTo(JavaScriptClick.on(BTN_DETALLE_CREDITOS.of(ciudad)),
+          WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(60).seconds());
       List<WebElementFacade> lstValorDetalleCreditos = LST_TOTALES_VALORES_CREDITOS.resolveAllFor(actor);
       lstValorDetalleCreditos.remove(0);
       estadoCredito = valorCreditos.equals(String.valueOf(suma(lstValorDetalleCreditos)));

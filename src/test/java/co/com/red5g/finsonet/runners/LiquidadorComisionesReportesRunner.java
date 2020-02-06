@@ -9,8 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/liquidador_comisiones.feature",
         glue = {"co.com.red5g.finsonet.stepdefinitions"},
+        tags = {"@Reporte"},
         snippets = SnippetType.CAMELCASE
 )
 
-public class LiquidadorComisionesRunner {
+public class LiquidadorComisionesReportesRunner {
 }

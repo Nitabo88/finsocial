@@ -77,7 +77,7 @@ public class LiquidadorComisionesStepDefinition {
         theActorInTheSpotlight().should(seeThat(ElNumero.deCreditosDeLiquidacionDeComisiones()));
     }
 
-    @Y("^que el valor del consolidad y el detalle del reporte de liquidacion de comisiones es consistente$")
+    @Y("^que el valor del consolidado y el detalle del reporte de liquidacion de comisiones es consistente$")
     public void verificarValorConsolidadoDetalle() {
         theActorInTheSpotlight().should(seeThat(ElValor.deCreditosDeLiquidacionDeComisiones()));
     }

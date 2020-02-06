@@ -25,6 +25,7 @@ public class InformacionCredito implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.remember(CEDULA_ACTOR, credito.getStrNumeroDocumento());
+        actor.remember(FECHA_CREDITO, formatearFechaServidorUTC());
         actor.attemptsTo(
                 WaitUntil.the(TXT_DOCUMENTO, isCurrentlyEnabled()),
                 Enter.theValue(credito.getStrNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
@@ -36,6 +37,5 @@ public class InformacionCredito implements Task {
                 WaitUntil.the(FRM_EMERGENTE, isPresent()).forNoMoreThan(3).seconds(),
                 Click.on(BTN_OK)
         );
-        actor.remember(FECHA_CREDITO, formatearFechaServidorUTC());
     }
 }

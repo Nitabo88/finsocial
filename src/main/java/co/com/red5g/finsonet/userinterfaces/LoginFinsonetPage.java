@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("http://192.168.0.18:81/index.php")
+@DefaultUrl("http://192.168.0.48:82/index.php")
 
 public class LoginFinsonetPage extends PageObject {
     public static final Target TXT_USUARIO = Target.the("usuario").located(By.name("user"));
