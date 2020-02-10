@@ -33,7 +33,7 @@ dependencies {
 
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
-    maxParallelForks = Runtime.runtime.availableProcessors()
+    // maxParallelForks = Runtime.runtime.availableProcessors()
 }
 
 tasks.withType(JavaCompile) {

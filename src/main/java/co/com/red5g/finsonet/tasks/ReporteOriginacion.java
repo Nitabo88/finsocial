@@ -13,12 +13,14 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ReporteOriginacion implements Task {
 
+    private static final int TIEMPO = 20;
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO),
-                WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(5).seconds(),
-                Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_ORIGINACION)
+            SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO),
+            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+            Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_ORIGINACION)
         );
     }
 }
