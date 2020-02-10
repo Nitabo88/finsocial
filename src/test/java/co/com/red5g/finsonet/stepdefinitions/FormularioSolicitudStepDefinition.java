@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.questions.ElFormulario.fueEnviado;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -32,6 +33,6 @@ public class FormularioSolicitudStepDefinition {
     @Entonces("el debería visualizar el credito del cliente")
     public void verificarSolicitudCrecito() {
         theActorInTheSpotlight()
-            .should(seeThat(ElFormulario.fueEnviado()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+            .should(seeThat(fueEnviado()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
     }
 }

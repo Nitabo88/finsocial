@@ -2,12 +2,14 @@ package co.com.red5g.finsonet.tasks.factories;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.InformacionCredito;
 import co.com.red5g.finsonet.tasks.InformacionLogin;
 import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
 import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada;
 import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
 import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
 import co.com.red5g.finsonet.tasks.ReporteAntecartera;
 import co.com.red5g.finsonet.tasks.ReporteOriginacion;
@@ -56,4 +58,8 @@ public class Ingresa {
     public static Performable alReporteDeLiquidacionDeComisiones(String ciclo) {
         return instrumented(LiquidacionComisiones.class, ciclo);
     }
+
+  public static Performable elRechazoDelCredito(ChequeoDocumento motivo) {
+        return instrumented(ChequeoDocumentosRechazo.class, motivo);
+  }
 }

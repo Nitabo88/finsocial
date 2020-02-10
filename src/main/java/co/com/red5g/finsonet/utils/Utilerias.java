@@ -1,17 +1,20 @@
 package co.com.red5g.finsonet.utils;
 
 import java.util.List;
+import java.util.regex.Pattern;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 public class Utilerias {
 
-    private Utilerias() {
+  private static final Pattern FORMATO_NUMERO = Pattern.compile("[^\\d-]");
+
+  private Utilerias() {
     }
 
     public static long suma(List<WebElementFacade> lstValores) {
        long suma = 0;
          for (WebElementFacade lstValore : lstValores) {
-             suma = suma + Long.parseLong(lstValore.getText().replaceAll("[\\,.]",""));
+           suma += Long.parseLong((FORMATO_NUMERO.matcher(lstValore.getText()).replaceAll("")));
          }
          return suma;
      }

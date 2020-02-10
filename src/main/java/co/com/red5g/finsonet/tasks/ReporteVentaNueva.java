@@ -13,11 +13,13 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ReporteVentaNueva implements Task {
 
+    private static final int TIEMPO = 20;
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
             SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO),
-            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(3).seconds(),
+            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_VENTA_NUEVA)
         );
     }

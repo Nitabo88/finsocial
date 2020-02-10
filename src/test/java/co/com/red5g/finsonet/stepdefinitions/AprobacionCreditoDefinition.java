@@ -25,7 +25,7 @@ public class AprobacionCreditoDefinition {
   }
 
   @Cuando("^el asesor regresa el credito a confirmacion$")
-  public void elAsesorRegresaElCreditoAConfirmacion() {
+  public void regresarCredito() {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laInformacionDeRegresoDeAprobacionDeCredito(con().motivoRegreso())
     );
@@ -33,12 +33,12 @@ public class AprobacionCreditoDefinition {
   }
 
   @Entonces("^el asesor debera ver el credito en el paso de confirmacion$")
-  public void elAsesorDeberaVerElCreditoEnElPasoDeConfirmacion() {
+  public void verificarCreditoConfirmacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor pone el credito como pendiente$")
-  public void elAsesorPoneElCreditoComoPendiente() {
+  public void marcarCreditoPendiente() {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laInformacionDeCreditoPendiente(con().motivoPendiente())
     );
@@ -46,7 +46,7 @@ public class AprobacionCreditoDefinition {
   }
 
   @Entonces("^el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes$")
-  public void elAsesorDeberaVerElCreditoEnAprobacionDeCreditosEnLaListaDePendientes() {
+  public void verificarCreditoListaPendientes() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
