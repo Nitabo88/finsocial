@@ -4,8 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
 public class UtileriaFechas {
 
@@ -18,10 +16,7 @@ public class UtileriaFechas {
 
     public static String masUnMinuto(String minuto) {
         String[] hora = minuto.split(":");
-        if (Integer.parseInt(hora[1]) + 1 < 10) {
-            return hora[0] + ":0" + (Integer.parseInt(hora[1]) + 1);
-        } else
-            return hora[0] + ":" + (Integer.parseInt(hora[1]) + 1);
+        return Integer.parseInt(hora[1]) + 1 < 10 ? hora[0] + ":0" + (Integer.parseInt(hora[1]) + 1) : hora[0] + ":" + (Integer.parseInt(hora[1]) + 1);
     }
 
     public static String formatearFechaServidorUTC(){
@@ -38,6 +33,6 @@ public class UtileriaFechas {
         if (mes.length() < 2) {
             mes = "0" + mes;
         }
-        return "2019" + "-" + "11";
+        return "2019" + "-" + "12";
     }
 }

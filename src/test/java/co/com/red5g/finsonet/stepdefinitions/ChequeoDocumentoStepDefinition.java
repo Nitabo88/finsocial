@@ -15,8 +15,6 @@ import co.com.red5g.finsonet.questions.QueAparece;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.QueNoAparece;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Estado;
-import co.com.red5g.finsonet.tasks.ListadoDocumentos;
 import co.com.red5g.finsonet.tasks.Realizar;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
@@ -38,9 +36,9 @@ public class ChequeoDocumentoStepDefinition {
 
     @Cuando("^el asesor decline el chequeo del credito del cliente$")
     public void rechazarChequeoDocumentos() {
-        theActorInTheSpotlight().attemptsTo(Estado.ubicarseConDocumento(),
-                ListadoDocumentos.llenar(con().motivo())
-                );
+        theActorInTheSpotlight().attemptsTo(
+            Ingresa.elRechazoDelCredito(con().motivo())
+        );
     }
 
     @Entonces("^el asesor no deberia verlo en chequeo de documentos$")

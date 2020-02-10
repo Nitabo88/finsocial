@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.interacions;
 
+import static co.com.red5g.finsonet.questions.ObtenerUrl.obtenerUrl;
 import static co.com.red5g.finsonet.questions.SeleccionarColumna.seleccionarColumna;
 import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.tasks.InformacionCredito.FECHA_CREDITO;
@@ -15,15 +16,19 @@ import net.serenitybdd.screenplay.actions.Click;
 
 public class Ingresar implements Interaction {
 
+    public static final String NUMERO_CREDITO = "numero credito";
+
     public static Performable enFormularioDeSolicitud() {
         return instrumented(Ingresar.class);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        List<WebElementFacade> lstCredito = seleccionarColumna(LST_FILA_CREDITOS, actor.recall(CEDULA_ACTOR),actor.recall(FECHA_CREDITO)).answeredBy(actor);
+        List<WebElementFacade> lstCredito = seleccionarColumna(LST_FILA_CREDITOS, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_CREDITO)).answeredBy(actor);
         actor.attemptsTo(
             Click.on(lstCredito.get(2))
         );
+        String url = obtenerUrl().answeredBy(actor);
+        actor.remember(NUMERO_CREDITO, url);
     }
 }
