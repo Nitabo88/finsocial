@@ -7,20 +7,20 @@ import net.serenitybdd.screenplay.Question;
 import java.util.List;
 
 public class Suma implements Question<String> {
-    private List<WebElementFacade> lstValores;
+    private final List<WebElementFacade> lstValores;
 
-    public Suma(List<WebElementFacade> lstValores) {
+    public Suma(final List<WebElementFacade> lstValores) {
         this.lstValores = lstValores;
     }
 
-    public static Question<String> deLosValores(List<WebElementFacade> lstValores) {
+    public static Question<String> deLosValores(final List<WebElementFacade> lstValores) {
         return new Suma(lstValores);
     }
 
     @Override
-    public String answeredBy(Actor actor) {
+    public String answeredBy(final Actor actor) {
         double suma = 0.0;
-        for (WebElementFacade lstValore : lstValores) {
+        for (final WebElementFacade lstValore : this.lstValores) {
             suma = suma + Double.parseDouble(lstValore.getText().replaceAll("[^\\d]", ""));
         }
         return String.valueOf(suma);

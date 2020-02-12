@@ -17,7 +17,7 @@ import cucumber.api.java.es.Entonces;
 public class FormularioSolicitudStepDefinition {
 
     @Dado("que un (.*) quiere llenar el formulario de solicitud de credito")
-    public void ingresarFormularioSolicitud(String actor) {
+    public void ingresarFormularioSolicitud(final String actor) {
         theActorCalled(actor).attemptsTo(
                 Ubicarse.enElFormulario()
         );

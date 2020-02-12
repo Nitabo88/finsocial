@@ -3,74 +3,74 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.DescripcionActivosBuilder;
 
 public class DescripcionActivos {
-    private String tipoInmueble;
-    private String valorComercialInmueble;
-    private String hipotecadoA;
-    private String direccion;
-    private String saldoCreditoInmueble;
-    private String vehiculoClase;
-    private String valorComercialVehiculo;
-    private String marcaModelo;
-    private String numeroPlaca;
-    private String saldoCreditoVehiculo;
-    private String prendaAFavor;
+    private final String tipoInmueble;
+    private final String valorComercialInmueble;
+    private final String hipotecadoA;
+    private final String direccion;
+    private final String saldoCreditoInmueble;
+    private final String vehiculoClase;
+    private final String valorComercialVehiculo;
+    private final String marcaModelo;
+    private final String numeroPlaca;
+    private final String saldoCreditoVehiculo;
+    private final String prendaAFavor;
 
 
-    public DescripcionActivos(DescripcionActivosBuilder descripcionActivosBuilder) {
-        this.tipoInmueble = descripcionActivosBuilder.getTipoInmueble();
-        this.valorComercialInmueble = descripcionActivosBuilder.getValorComercialInmueble();
-        this.hipotecadoA = descripcionActivosBuilder.getHipotecadoA();
-        this.direccion = descripcionActivosBuilder.getDireccion();
-        this.saldoCreditoInmueble = descripcionActivosBuilder.getSaldoCreditoInmueble();
-        this.vehiculoClase = descripcionActivosBuilder.getVehiculoClase();
-        this.valorComercialVehiculo = descripcionActivosBuilder.getValorComercialVehiculo();
-        this.marcaModelo = descripcionActivosBuilder.getMarcaModelo();
-        this.numeroPlaca = descripcionActivosBuilder.getNumeroPlaca();
-        this.saldoCreditoVehiculo = descripcionActivosBuilder.getSaldoCreditoVehiculo();
-        this.prendaAFavor = descripcionActivosBuilder.getPrendaAFavor();
+    public DescripcionActivos(final DescripcionActivosBuilder descripcionActivosBuilder) {
+      tipoInmueble = descripcionActivosBuilder.getTipoInmueble();
+      valorComercialInmueble = descripcionActivosBuilder.getValorComercialInmueble();
+      hipotecadoA = descripcionActivosBuilder.getHipotecadoA();
+      direccion = descripcionActivosBuilder.getDireccion();
+      saldoCreditoInmueble = descripcionActivosBuilder.getSaldoCreditoInmueble();
+      vehiculoClase = descripcionActivosBuilder.getVehiculoClase();
+      valorComercialVehiculo = descripcionActivosBuilder.getValorComercialVehiculo();
+      marcaModelo = descripcionActivosBuilder.getMarcaModelo();
+      numeroPlaca = descripcionActivosBuilder.getNumeroPlaca();
+      saldoCreditoVehiculo = descripcionActivosBuilder.getSaldoCreditoVehiculo();
+      prendaAFavor = descripcionActivosBuilder.getPrendaAFavor();
     }
 
     public String getTipoInmueble() {
-        return tipoInmueble;
+        return this.tipoInmueble;
     }
 
     public String getValorComercialInmueble() {
-        return valorComercialInmueble;
+        return this.valorComercialInmueble;
     }
 
     public String getHipotecadoA() {
-        return hipotecadoA;
+        return this.hipotecadoA;
     }
 
     public String getDireccion() {
-        return direccion;
+        return this.direccion;
     }
 
     public String getSaldoCreditoInmueble() {
-        return saldoCreditoInmueble;
+        return this.saldoCreditoInmueble;
     }
 
     public String getVehiculoClase() {
-        return vehiculoClase;
+        return this.vehiculoClase;
     }
 
     public String getValorComercialVehiculo() {
-        return valorComercialVehiculo;
+        return this.valorComercialVehiculo;
     }
 
     public String getMarcaModelo() {
-        return marcaModelo;
+        return this.marcaModelo;
     }
 
     public String getNumeroPlaca() {
-        return numeroPlaca;
+        return this.numeroPlaca;
     }
 
     public String getSaldoCreditoVehiculo() {
-        return saldoCreditoVehiculo;
+        return this.saldoCreditoVehiculo;
     }
 
     public String getPrendaAFavor() {
-        return prendaAFavor;
+        return this.prendaAFavor;
     }
 }

@@ -35,11 +35,11 @@ public class Ingresa {
         return instrumented(ReporteVentaNueva.class);
     }
 
-    public static Performable laInformacionDelCredito(Credito credito) {
+    public static Performable laInformacionDelCredito(final Credito credito) {
         return instrumented(InformacionCredito.class, credito);
     }
 
-    public static Performable lasCredenciales(co.com.red5g.finsonet.models.Credenciales credenciales) {
+    public static Performable lasCredenciales(final co.com.red5g.finsonet.models.Credenciales credenciales) {
         return instrumented(InformacionLogin.class, credenciales);
     }
 
@@ -55,11 +55,11 @@ public class Ingresa {
         return instrumented(LoguinUsuarioDocumentacion.class);
     }
 
-    public static Performable alReporteDeLiquidacionDeComisiones(String ciclo) {
+    public static Performable alReporteDeLiquidacionDeComisiones(final String ciclo) {
         return instrumented(LiquidacionComisiones.class, ciclo);
     }
 
-  public static Performable elRechazoDelCredito(ChequeoDocumento motivo) {
+  public static Performable elRechazoDelCredito(final ChequeoDocumento motivo) {
         return instrumented(ChequeoDocumentosRechazo.class, motivo);
   }
 }

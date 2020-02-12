@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.userinterfaces;
 
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class ComercialPage {
     public static final Target LNK_NUEVO_CREDITO = Target.the("el link nuevo_credito").located(By.id("nuevo_credito"));

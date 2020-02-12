@@ -11,8 +11,8 @@ import net.serenitybdd.screenplay.Question;
 public class ValorDetalleReporteVentaNueva implements Question<String> {
 
     @Override
-    public String answeredBy(Actor actor) {
-        List<WebElementFacade> lstValoresCredito= LST_VALOR_DETALLE_VENTA_NUEVA.resolveAllFor(actor);
+    public String answeredBy(final Actor actor) {
+        final List<WebElementFacade> lstValoresCredito= LST_VALOR_DETALLE_VENTA_NUEVA.resolveAllFor(actor);
         lstValoresCredito.remove(0);
         return String.valueOf(suma (lstValoresCredito));
     }

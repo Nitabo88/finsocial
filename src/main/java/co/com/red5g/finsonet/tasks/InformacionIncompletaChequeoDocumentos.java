@@ -24,15 +24,15 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class InformacionIncompletaChequeoDocumentos implements Task {
 
     private static final int TIEMPO = 10;
-    private ChequeoDocumento chequeoDocumento;
+    private final ChequeoDocumento chequeoDocumento;
 
-    public InformacionIncompletaChequeoDocumentos(ChequeoDocumento chequeoDocumento) {
+    public InformacionIncompletaChequeoDocumentos(final ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
-        String numeroCredito = actor.recall(NUMERO_CREDITO);
+    public <T extends Actor> void performAs(final T actor) {
+        final String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito)),
             Click.on(BTN_PAPELERIA_ANTIGUA),
@@ -40,9 +40,9 @@ public class InformacionIncompletaChequeoDocumentos implements Task {
             Click.on(BTN_ACTIVAL),
             Click.on(BTN_ACEPTAR2_POP_UP),
             Click.on(BTN_ACEPTAR),
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
-            Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
-            Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(InformacionIncompletaChequeoDocumentos.TIEMPO).seconds(),
+            Enter.theValue(chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
+            Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
             Click.on(BTN_GUARDAR)
         );
     }

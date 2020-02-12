@@ -28,7 +28,7 @@ public class ChequeoDocumentoStepDefinition {
     private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
     @Dado("^que (.*) esta en el paso de chequeo de un documentos$")
-    public void IngresarChequeo(String actor) {
+    public void IngresarChequeo(final String actor) {
         theActorCalled(actor).attemptsTo(
             Realizar.unChequeoDeDocumento()
         );
@@ -55,7 +55,7 @@ public class ChequeoDocumentoStepDefinition {
 
     @Entonces("^deberia ver el mensaje de adjuntar informacion$")
     public void verificarNoCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString(ESTADO_NO_EXITOSO)));
+        theActorInTheSpotlight().should(seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString(ChequeoDocumentoStepDefinition.ESTADO_NO_EXITOSO)));
     }
 
     @Cuando("^el asesor adjunta toda la informacion de el chequeo de documentos$")

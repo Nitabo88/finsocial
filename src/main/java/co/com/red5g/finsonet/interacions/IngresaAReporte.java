@@ -21,9 +21,9 @@ public class IngresaAReporte implements Interaction {
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-                Open.browserOn(liquidadorComisionesPage),
+                Open.browserOn(this.liquidadorComisionesPage),
                 WaitUntil.the(LST_PERIODO,isEnabled()).forNoMoreThan(10).seconds(),
             SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO)
         );

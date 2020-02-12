@@ -11,15 +11,15 @@ public class Utilerias {
   private Utilerias() {
     }
 
-    public static long suma(List<WebElementFacade> lstValores) {
+    public static long suma(final List<WebElementFacade> lstValores) {
        long suma = 0;
-         for (WebElementFacade lstValore : lstValores) {
-           suma += Long.parseLong((FORMATO_NUMERO.matcher(lstValore.getText()).replaceAll("")));
+         for (final WebElementFacade lstValore : lstValores) {
+           suma += Long.parseLong((Utilerias.FORMATO_NUMERO.matcher(lstValore.getText()).replaceAll("")));
          }
          return suma;
      }
 
-    public static boolean between(int i, int minValueInclusive, int maxValueInclusive) {
+    public static boolean between(final int i, final int minValueInclusive, final int maxValueInclusive) {
         return i >= minValueInclusive && i <= maxValueInclusive;
     }
 }
