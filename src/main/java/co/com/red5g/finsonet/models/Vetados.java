@@ -11,7 +11,7 @@ public class Vetados {
     public Vetados(VetadosBuilder vetadosBuilder) {
         this.documentoVetados = vetadosBuilder.getDocumentoVetados();
         this.detalleVetados = vetadosBuilder.getDetalleVetados();
-        this.listaVetados = listaVetados;
+        this.listaVetados = vetadosBuilder.getListaVetados();
     }
 
     public String getListaVetados() {
