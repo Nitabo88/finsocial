@@ -18,7 +18,7 @@ import cucumber.api.java.es.Entonces;
 public class AprobacionCreditoDefinition {
 
   @Dado("^que (.*) esta en el paso de aprobacion de creditos$")
-  public void consultarCredito(String actor) {
+  public void consultarCredito(final String actor) {
     theActorCalled(actor).attemptsTo(
         Consulta.elCreditoEnAprobacionDeCreditos()
     );
@@ -29,7 +29,6 @@ public class AprobacionCreditoDefinition {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laInformacionDeRegresoDeAprobacionDeCredito(con().motivoRegreso())
     );
-
   }
 
   @Entonces("^el asesor debera ver el credito en el paso de confirmacion$")
@@ -42,7 +41,6 @@ public class AprobacionCreditoDefinition {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laInformacionDeCreditoPendiente(con().motivoPendiente())
     );
-
   }
 
   @Entonces("^el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes$")
@@ -55,5 +53,10 @@ public class AprobacionCreditoDefinition {
     theActorInTheSpotlight().attemptsTo(
         Aprobar.elCredito(con().aprobacion())
     );
+  }
+
+  @Entonces("^el asesor debera ver el credito en el paso de incorporacion$")
+  public void verificarCreditoIncorporacion() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 }

@@ -11,18 +11,19 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class LiquidacionComisiones implements Task {
 
-    private String ciclo;
+    private static final int TIEMPO = 660;
+    private final String ciclo;
 
-    public LiquidacionComisiones(String ciclo) {
+    public LiquidacionComisiones(final String ciclo) {
         this.ciclo = ciclo;
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(100).seconds(),
-            SelectFromOptions.byVisibleText(ciclo).from(LST_CICLO),
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(500).seconds()
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(LiquidacionComisiones.TIEMPO).seconds(),
+            SelectFromOptions.byVisibleText(this.ciclo).from(LST_CICLO),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(LiquidacionComisiones.TIEMPO).seconds()
         );
     }
 }

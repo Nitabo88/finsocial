@@ -8,18 +8,18 @@ import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.LBL_MENSAJE
 
 public class Mensaje implements Question<Boolean> {
 
-    private String mensajeBienvenida;
+    private final String mensajeBienvenida;
 
-    public Mensaje(String strMensaje) {
-        this.mensajeBienvenida = strMensaje;
+    public Mensaje(final String strMensaje) {
+      mensajeBienvenida = strMensaje;
     }
 
-    public static Mensaje deBienvenidaEs(String strMensaje) {
+    public static Mensaje deBienvenidaEs(final String strMensaje) {
         return new Mensaje(strMensaje);
     }
 
     @Override
-    public Boolean answeredBy(Actor actor) {
-        return (LBL_MENSAJE_BIENVENIDA.resolveFor(actor).getText().contains(mensajeBienvenida));
+    public Boolean answeredBy(final Actor actor) {
+        return (LBL_MENSAJE_BIENVENIDA.resolveFor(actor).getText().contains(this.mensajeBienvenida));
     }
 }

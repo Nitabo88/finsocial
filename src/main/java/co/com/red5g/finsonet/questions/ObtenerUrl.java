@@ -11,9 +11,9 @@ public class ObtenerUrl implements Question<String> {
   }
 
   @Override
-  public String answeredBy(Actor actor) {
-    String url = BrowseTheWeb.as(actor).getDriver().getCurrentUrl();
-    String[] lstUrl = url.split("=");
+  public String answeredBy(final Actor actor) {
+    final String url = BrowseTheWeb.as(actor).getDriver().getCurrentUrl();
+    final String[] lstUrl = url.split("=");
     return lstUrl[1];
   }
 

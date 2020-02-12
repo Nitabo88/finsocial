@@ -21,14 +21,14 @@ public class CreacionCreditoStepDefinition {
     private static final String ESTADO_NO_EXITOSO = "toda la información";
 
     @Dado("que un (.*) quiere crear un credito")
-    public void crearCredito(String nombreActor) {
+    public void crearCredito(final String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
                 Loguearse.enFinsonet(),
                 Ubicarse.enNuevoCredito());
     }
 
     @Cuando("el ingresa el numero de documento (.*) con el valor (.*) y a un plazo de (.*) meses")
-    public void ingresarInformacionCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
+    public void ingresarInformacionCredito(final String strNumeroDocumento, final String strValorCuota, final String strPlazo) {
         theActorInTheSpotlight().attemptsTo(
                 Ingresa.laInformacionDelCredito(la().informacionDelCredito(strNumeroDocumento, strValorCuota, strPlazo))
         );
@@ -41,6 +41,6 @@ public class CreacionCreditoStepDefinition {
 
     @Entonces("el no podra crear un credito")
     public void verificarNoCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(LaNoCreacionDelCredito.valor(), containsString(ESTADO_NO_EXITOSO)));
+        theActorInTheSpotlight().should(seeThat(LaNoCreacionDelCredito.valor(), containsString(CreacionCreditoStepDefinition.ESTADO_NO_EXITOSO)));
     }
 }

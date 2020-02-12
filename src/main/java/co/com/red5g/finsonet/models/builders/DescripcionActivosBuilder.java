@@ -17,17 +17,17 @@ public class DescripcionActivosBuilder implements Builder<DescripcionActivos> {
     private String prendaAFavor;
 
     public DescripcionActivosBuilder() {
-        this.tipoInmueble = "";
-        this.valorComercialInmueble = "";
-        this.hipotecadoA = "";
-        this.direccion = "";
-        this.saldoCreditoInmueble = "";
-        this.vehiculoClase = "";
-        this.valorComercialVehiculo = "";
-        this.marcaModelo = "";
-        this.numeroPlaca = "";
-        this.saldoCreditoVehiculo = "";
-        this.prendaAFavor = "";
+      tipoInmueble = "";
+      valorComercialInmueble = "";
+      hipotecadoA = "";
+      direccion = "";
+      saldoCreditoInmueble = "";
+      vehiculoClase = "";
+      valorComercialVehiculo = "";
+      marcaModelo = "";
+      numeroPlaca = "";
+      saldoCreditoVehiculo = "";
+      prendaAFavor = "";
     }
 
     public static DescripcionActivosBuilder por() {
@@ -40,115 +40,115 @@ public class DescripcionActivosBuilder implements Builder<DescripcionActivos> {
     }
 
     public String getTipoInmueble() {
-        return tipoInmueble;
+        return this.tipoInmueble;
     }
 
     public String getValorComercialInmueble() {
-        return valorComercialInmueble;
+        return this.valorComercialInmueble;
     }
 
     public String getHipotecadoA() {
-        return hipotecadoA;
+        return this.hipotecadoA;
     }
 
     public String getDireccion() {
-        return direccion;
+        return this.direccion;
     }
 
     public String getSaldoCreditoInmueble() {
-        return saldoCreditoInmueble;
+        return this.saldoCreditoInmueble;
     }
 
     public String getVehiculoClase() {
-        return vehiculoClase;
+        return this.vehiculoClase;
     }
 
     public String getValorComercialVehiculo() {
-        return valorComercialVehiculo;
+        return this.valorComercialVehiculo;
     }
 
     public String getMarcaModelo() {
-        return marcaModelo;
+        return this.marcaModelo;
     }
 
     public String getNumeroPlaca() {
-        return numeroPlaca;
+        return this.numeroPlaca;
     }
 
     public String getSaldoCreditoVehiculo() {
-        return saldoCreditoVehiculo;
+        return this.saldoCreditoVehiculo;
     }
 
     public String getPrendaAFavor() {
-        return prendaAFavor;
+        return this.prendaAFavor;
     }
 
     public DescripcionActivos laPersona() {
-        this.conTipoInmueble("Casa");
-        this.conValorComercialInmueble("120000000");
-        this.conHipotecadoA("Banco");
-        this.conDireccion("CL 80 35 20");
-        this.conSaldoCreditoInmueble("50000000");
-        this.conVehiculoClase("Swift");
-        this.conValorComercialVehiculo("51000000");
-        this.conMarcaModelo("2018");
-        this.conNumeroPlaca("EFY260");
-        this.conSaldoCreditoVehiculo("38000000");
-        this.conPrendaAFavor("No");
-        return this.build();
+      conTipoInmueble("Casa");
+      conValorComercialInmueble("120000000");
+      conHipotecadoA("Banco");
+      conDireccion("CL 80 35 20");
+      conSaldoCreditoInmueble("50000000");
+      conVehiculoClase("Swift");
+      conValorComercialVehiculo("51000000");
+      conMarcaModelo("2018");
+      conNumeroPlaca("EFY260");
+      conSaldoCreditoVehiculo("38000000");
+      conPrendaAFavor("No");
+        return build();
     }
 
-    private DescripcionActivosBuilder conPrendaAFavor(String prendaAFavor) {
+    private DescripcionActivosBuilder conPrendaAFavor(final String prendaAFavor) {
         this.prendaAFavor = prendaAFavor;
         return this;
     }
 
-    private DescripcionActivosBuilder conSaldoCreditoVehiculo(String saldoCreditoVehiculo) {
+    private DescripcionActivosBuilder conSaldoCreditoVehiculo(final String saldoCreditoVehiculo) {
         this.saldoCreditoVehiculo = saldoCreditoVehiculo;
         return this;
     }
 
-    private DescripcionActivosBuilder conNumeroPlaca(String numeroPlaca) {
+    private DescripcionActivosBuilder conNumeroPlaca(final String numeroPlaca) {
         this.numeroPlaca = numeroPlaca;
         return this;
     }
 
-    private DescripcionActivosBuilder conMarcaModelo(String marcaModelo) {
+    private DescripcionActivosBuilder conMarcaModelo(final String marcaModelo) {
         this.marcaModelo = marcaModelo;
         return this;
     }
 
-    private DescripcionActivosBuilder conValorComercialVehiculo(String valorComercialVehiculo) {
+    private DescripcionActivosBuilder conValorComercialVehiculo(final String valorComercialVehiculo) {
         this.valorComercialVehiculo = valorComercialVehiculo;
         return this;
     }
 
-    private DescripcionActivosBuilder conVehiculoClase(String vehiculoClase) {
+    private DescripcionActivosBuilder conVehiculoClase(final String vehiculoClase) {
         this.vehiculoClase = vehiculoClase;
         return this;
     }
 
-    private DescripcionActivosBuilder conSaldoCreditoInmueble(String saldoCreditoInmueble) {
+    private DescripcionActivosBuilder conSaldoCreditoInmueble(final String saldoCreditoInmueble) {
         this.saldoCreditoInmueble = saldoCreditoInmueble;
         return this;
     }
 
-    private DescripcionActivosBuilder conDireccion(String direccion) {
+    private DescripcionActivosBuilder conDireccion(final String direccion) {
         this.direccion = direccion;
         return this;
     }
 
-    private DescripcionActivosBuilder conHipotecadoA(String hipotecadoA) {
+    private DescripcionActivosBuilder conHipotecadoA(final String hipotecadoA) {
         this.hipotecadoA = hipotecadoA;
         return this;
     }
 
-    private DescripcionActivosBuilder conValorComercialInmueble(String valorComercialInmueble) {
+    private DescripcionActivosBuilder conValorComercialInmueble(final String valorComercialInmueble) {
         this.valorComercialInmueble = valorComercialInmueble;
         return this;
     }
 
-    private DescripcionActivosBuilder conTipoInmueble(String tipoInmueble) {
+    private DescripcionActivosBuilder conTipoInmueble(final String tipoInmueble) {
         this.tipoInmueble = tipoInmueble;
         return this;
     }

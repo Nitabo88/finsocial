@@ -8,39 +8,39 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Escribe {
 
-    public static Performable elDetalleDeLaInformacionFinanciera(InformacionFinanciera informacionFinanciera) {
+    public static Performable elDetalleDeLaInformacionFinanciera(final InformacionFinanciera informacionFinanciera) {
         return instrumented(FormularioInformacionFinanciera.class, informacionFinanciera);
     }
 
-    public static Performable laInformacionDeLasReferencias(Referencias informacionReferenciaFamiliar, Referencias informacionReferenciaPersonal, Referencias informacionReferenciaFinanciera) {
+    public static Performable laInformacionDeLasReferencias(final Referencias informacionReferenciaFamiliar, final Referencias informacionReferenciaPersonal, final Referencias informacionReferenciaFinanciera) {
         return instrumented(FormularioInformacionReferencias.class, informacionReferenciaFamiliar, informacionReferenciaPersonal, informacionReferenciaFinanciera);
     }
 
-    public static Performable laInformacionDelBalancePersonal(InformacionBalancePersonal informacionBalancePersonal) {
+    public static Performable laInformacionDelBalancePersonal(final InformacionBalancePersonal informacionBalancePersonal) {
         return instrumented(FormularioBalancePersonal.class, informacionBalancePersonal);
     }
 
-    public static Performable laInformacionDelConyugue(InformacionPersonal informacionPersonalConyugue, InformacionConyugue informacionConyugue) {
+    public static Performable laInformacionDelConyugue(final InformacionPersonal informacionPersonalConyugue, final InformacionConyugue informacionConyugue) {
         return instrumented(FormularioInformacionConyugue.class, informacionPersonalConyugue, informacionConyugue);
     }
 
-    public static Performable laInformacionDeLosActivos(DescripcionActivos descripcionActivos) {
+    public static Performable laInformacionDeLosActivos(final DescripcionActivos descripcionActivos) {
         return instrumented(FormularioInformacionActivos.class, descripcionActivos);
     }
 
-    public static Performable laInformacionDelPrestamo(InformacionPrestamo informacionPrestamo) {
+    public static Performable laInformacionDelPrestamo(final InformacionPrestamo informacionPrestamo) {
         return instrumented(FormularioInformacionPrestamo.class, informacionPrestamo);
     }
 
-    public static Performable laInformacionLaboral(ActividadLaboral actividadLaboral) {
+    public static Performable laInformacionLaboral(final ActividadLaboral actividadLaboral) {
         return instrumented(FormularioInformacionLaboral.class, actividadLaboral);
     }
 
-    public static Performable laInformacionPersonal(InformacionPersonal informacionPersonal) {
+    public static Performable laInformacionPersonal(final InformacionPersonal informacionPersonal) {
         return instrumented(FormularioInformacionPersonal.class, informacionPersonal);
     }
 
-    public static Performable losDocumentosRequeridos(DocumentosRequeridos documentosRequeridos) {
+    public static Performable losDocumentosRequeridos(final DocumentosRequeridos documentosRequeridos) {
         return instrumented(FormularioDocumentosRequeridos.class, documentosRequeridos);
     }
 }

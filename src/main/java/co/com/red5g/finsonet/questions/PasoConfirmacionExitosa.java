@@ -16,11 +16,11 @@ public class PasoConfirmacionExitosa implements Question<Boolean> {
     private static final int TIEMPO = 10;
 
     @Override
-    public Boolean answeredBy(Actor actor) {
-        String numeroCredito = actor.recall(NUMERO_CREDITO);
+    public Boolean answeredBy(final Actor actor) {
+        final String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            Click.on(MNU_ORIGINACION.of(CONFIRMACION)),
-            WaitUntil.the(LST_FILA_CONFIRMACION.of(numeroCredito), isEnabled()).forNoMoreThan(TIEMPO).seconds());
+            Click.on(MNU_ORIGINACION.of(PasoConfirmacionExitosa.CONFIRMACION)),
+            WaitUntil.the(LST_FILA_CONFIRMACION.of(numeroCredito), isEnabled()).forNoMoreThan(PasoConfirmacionExitosa.TIEMPO).seconds());
         return LST_FILA_CONFIRMACION.of(numeroCredito).resolveFor(actor).isPresent();
     }
 }

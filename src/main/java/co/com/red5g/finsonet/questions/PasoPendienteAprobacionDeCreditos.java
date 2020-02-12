@@ -9,8 +9,8 @@ import net.serenitybdd.screenplay.Question;
 public class PasoPendienteAprobacionDeCreditos implements Question<Boolean> {
 
   @Override
-  public Boolean answeredBy(Actor actor) {
-    String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public Boolean answeredBy(final Actor actor) {
+    final String numeroCredito = actor.recall(NUMERO_CREDITO);
     return LST_PENDIENTE_APROBACION_CREDITO.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

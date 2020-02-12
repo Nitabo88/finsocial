@@ -21,14 +21,14 @@ import cucumber.api.java.es.Y;
 public class LiquidadorComisionesStepDefinition {
 
     @Dado("^que (.*) quiere consultar el reporte actual de liquidacion de comisiones$")
-    public void consultarReporteLiquidacionComisiones(String actor) {
+    public void consultarReporteLiquidacionComisiones(final String actor) {
         theActorCalled(actor).wasAbleTo(
                 Consulta.elReportedeLiquidacionDeComisiones()
         );
     }
 
     @Cuando("^el ingresa al reporte de liquidacion de comisiones - Venta Nueva del ciclo (.*)$")
-    public void ingresarLiquidacionComisiones(String ciclo) {
+    public void ingresarLiquidacionComisiones(final String ciclo) {
         theActorInTheSpotlight().attemptsTo(
                 Ingresa.alReporteDeLiquidacionDeComisiones(ciclo)
         );

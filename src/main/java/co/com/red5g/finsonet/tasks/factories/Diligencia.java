@@ -19,7 +19,7 @@ public class Diligencia {
     public Diligencia() {
     }
 
-    public static Performable laInformacionDeChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
+    public static Performable laInformacionDeChequeoDeDocumentos(final ChequeoDocumento chequeoDocumento) {
         return instrumented(InformacionChequeoDocumento.class, chequeoDocumento);
     }
 
@@ -27,7 +27,7 @@ public class Diligencia {
         return instrumented(FormularioSolicitudCredito.class);
     }
 
-    public static Performable laInformacionIncompletaDeChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
+    public static Performable laInformacionIncompletaDeChequeoDeDocumentos(final ChequeoDocumento chequeoDocumento) {
         return instrumented(InformacionIncompletaChequeoDocumentos.class, chequeoDocumento);
     }
 
@@ -35,15 +35,15 @@ public class Diligencia {
         return instrumented(InformacionConfirmacion.class);
     }
 
-    public static Performable laInformacionDeRegresoDeConfirmacion(Confirmacion confirmacion) {
+    public static Performable laInformacionDeRegresoDeConfirmacion(final Confirmacion confirmacion) {
         return instrumented(RegresarConfirmacion.class, confirmacion);
     }
 
-    public static Performable laInformacionDeRegresoDeAprobacionDeCredito(AprobacionCredito aprobacionCredito) {
+    public static Performable laInformacionDeRegresoDeAprobacionDeCredito(final AprobacionCredito aprobacionCredito) {
         return instrumented(RegresarAprobacionCredito.class, aprobacionCredito);
     }
 
-    public static Performable laInformacionDeCreditoPendiente(AprobacionCredito motivoPendiente) {
+    public static Performable laInformacionDeCreditoPendiente(final AprobacionCredito motivoPendiente) {
         return instrumented(AprobacionCreditoPendiente.class, motivoPendiente);
     }
 }

@@ -16,8 +16,8 @@ public class Credito implements Question<Boolean> {
     }
 
     @Override
-    public Boolean answeredBy(Actor actor) {
-        WebElementFacade lstFila = seleccionarFila(LST_FILA_CREDITOS,actor.recall(CEDULA_ACTOR),actor.recall(FECHA_CREDITO)).answeredBy(actor);
+    public Boolean answeredBy(final Actor actor) {
+        final WebElementFacade lstFila = seleccionarFila(LST_FILA_CREDITOS,actor.recall(CEDULA_ACTOR),actor.recall(FECHA_CREDITO)).answeredBy(actor);
         return lstFila.isPresent();
     }
 }
