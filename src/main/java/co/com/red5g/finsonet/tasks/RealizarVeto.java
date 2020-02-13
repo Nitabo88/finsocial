@@ -33,8 +33,10 @@ public class RealizarVeto implements Task {
                 Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO_VETADOS),
                 Enter.theValue(vetados.getDetalleVetados()).into(TXT_DETALLE),
                 WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(2).seconds(),
-                SelectFromOptions.byVisibleText(vetados.getListaVetados()).from(LST_TXT_MOTIVO),
-                Click.on(BTN_NUEVO_VETO)
+                Click.on(LST_TXT_MOTIVO),
+                Click.on(LST_TXT_MOTIVO1),
+                Click.on(BTN_NUEVO_VETO),
+                Click.on(BTN_ACEPTAR_VETO)
         );
     }
 }
