@@ -11,6 +11,8 @@ public class VetadosPage extends PageObject {
 
     public static final Target CHK_NIT_VETADOS = Target.the("Checkbox nit vetados").located(By.xpath("//*[@id=\"checkboxes\"]/label[1]/span"));
     public static final Target CHK_CC_VETADOS = Target.the("Checkbox CC vetados").located(By.xpath("//*[@id=\"checkboxes\"]/label[2]/span"));
+    public static final Target LST_TXT_MOTIVO1 = Target.the("Checkbox CC vetados").located(By.xpath("//*[@id=\"txtMotivo\"]/option[2]"));
+    public static final Target BTN_ACEPTAR_VETO = Target.the("Checkbox CC vetados").located(By.xpath("/html/body/div[6]/div/div[3]/button[1]"));
     public static final Target TXT_VETADOS = Target.the("Busqueda vetados").located(By.id("txtParBusqueda"));
     public static final Target HBG_RIESGOS = Target.the("Mostrar menu vetados").located(By.id("hamburger"));
     public static final Target TAB_INTERNO = Target.the("tab veto interno").located(By.id("veto-interno"));
