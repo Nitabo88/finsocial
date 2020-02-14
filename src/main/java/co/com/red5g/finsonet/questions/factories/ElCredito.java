@@ -31,4 +31,8 @@ public class ElCredito {
   public static Question<Boolean> enIncorporacion() {
     return new PasoIncorporacion();
   }
+
+  public static Question<Boolean> enAprobacionCredito() {
+    return new PasoAprobacionDeCreditos();
+  }
 }
