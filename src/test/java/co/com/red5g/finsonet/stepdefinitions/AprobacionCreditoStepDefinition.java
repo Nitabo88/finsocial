@@ -8,14 +8,13 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Aprobar;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-public class AprobacionCreditoDefinition {
+public class AprobacionCreditoStepDefinition {
 
   @Dado("^que (.*) esta en el paso de aprobacion de creditos$")
   public void consultarCredito(final String actor) {
@@ -51,7 +50,7 @@ public class AprobacionCreditoDefinition {
   @Cuando("^el asesor aprueba el credito$")
   public void aprobarCredito() {
     theActorInTheSpotlight().attemptsTo(
-        Aprobar.elCredito(con().aprobacion())
+        Diligencia.laInformacionDeAprobacionDeCredito()
     );
   }
 
