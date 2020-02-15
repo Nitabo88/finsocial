@@ -6,13 +6,10 @@ public class AprobacionCredito {
 
   private String razonMotivo;
   private String seleccionMotivo;
-  private String perfilRiesgo;
-
 
   public AprobacionCredito(AprobacionCreditoBuilder aprobacionCreditoBuilder) {
     this.razonMotivo = aprobacionCreditoBuilder.getRazonMotivo();
     this.seleccionMotivo = aprobacionCreditoBuilder.getSeleccionMotivo();
-    this.perfilRiesgo = aprobacionCreditoBuilder.getPerfilRiesgo();
   }
 
   public String getRazonMotivo() {
@@ -23,7 +20,4 @@ public class AprobacionCredito {
     return seleccionMotivo;
   }
 
-  public String getPerfilRiesgo() {
-    return perfilRiesgo;
-  }
 }

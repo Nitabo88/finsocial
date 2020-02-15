@@ -35,7 +35,6 @@ public class Aprobar implements Task {
     actor.attemptsTo(
         JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito)),
         WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-        SelectFromOptions.byVisibleText(perfilRiesgo.getPerfilRiesgo()).from(LST_PERFIL_RIESGO),
         JavaScriptClick.on(BTN_APROBAR)
     );
   }

@@ -47,15 +47,4 @@ public class AprobacionCreditoStepDefinition {
     theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
-  @Cuando("^el asesor aprueba el credito$")
-  public void aprobarCredito() {
-    theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeAprobacionDeCredito()
-    );
-  }
-
-  @Entonces("^el asesor debera ver el credito en el paso de incorporacion$")
-  public void verificarCreditoIncorporacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
-  }
 }

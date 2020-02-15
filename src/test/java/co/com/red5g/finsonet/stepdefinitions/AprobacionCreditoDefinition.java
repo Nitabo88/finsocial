@@ -50,10 +50,4 @@ public class AprobacionCreditoDefinition {
     theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
-  @Cuando("^el asesor aprueba el credito$")
-  public void aprobarCredito() {
-    theActorInTheSpotlight().attemptsTo(
-        Aprobar.elCredito(con().aprobacion())
-    );
-  }
 }

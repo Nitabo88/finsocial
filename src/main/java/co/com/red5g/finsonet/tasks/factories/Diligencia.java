@@ -46,4 +46,5 @@ public class Diligencia {
     public static Performable laInformacionDeCreditoPendiente(AprobacionCredito motivoPendiente) {
         return instrumented(AprobacionCreditoPendiente.class, motivoPendiente);
     }
+
 }

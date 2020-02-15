@@ -47,7 +47,6 @@ public class AprobacionCreditoPage {
     public static final Target BTN_REPROCESO = Target.the("reproceso").located(By.xpath("/html/body/div[30]/div/div/div/section/div[7]/div[2]/div[14]/div[2]/div/button[2]"));
     public static final Target BTN_GUARDAR = Target.the("guardar").located(By.xpath("/html/body/div[30]/div/div/div/section/div[7]/div[2]/div[14]/div[2]/div/button[3]"));
     public static final Target BTN_ESTUDIO= Target.the("estudio").located(By.xpath("/html/body/div[30]/div/div/div/section/div[7]/div[2]/div[14]/div[2]/div/button[4]"));
-    public static final Target BTN_APROBAR= Target.the("aprobar").located(By.xpath("/html/body/div[30]/div/div/div/section/div[7]/div[2]/div[14]/div[2]/div/button[5]"));
 
     public static final Target TXT_CUENTA= Target.the("numero cuenta").located(By.id("n_cuenta"));
     public static final Target DATE_ANODESCUENTO= Target.the("año de descuento").located(By.id("comboAnoLiq"));
@@ -56,13 +55,6 @@ public class AprobacionCreditoPage {
     public static final Target LST_PROCEENLINEA= Target.the("proceso enlinea").located(By.id("procesoEnlinea"));
     public static final Target LST_BANCOHUY= Target.the("banco").located(By.id("banco_huy"));
     public static final Target LST_PPAGO= Target.the("punto pago").located(By.id("punto_huy"));
-
-    private AprobacionCreditoPage() { throw new IllegalStateException("Utility class"); }
-import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
-
-public class AprobacionCreditoPage {
-
   public static final Target BTN_APROBAR = Target.the("El boton aprobar").located(By.xpath("//button[contains(.,'Aprobar')]"));
   public static final Target LST_FILA_APROBACION_CREDITO_NOMBRE = Target.the("la fila de la tabla").locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,"
       + "'{1}')]//parent::tr//td[contains(.,'{2}')]");
