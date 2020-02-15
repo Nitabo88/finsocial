@@ -54,6 +54,18 @@ Característica: Originacion
     Cuando el asesor regresa el credito a confirmacion
     Entonces el asesor debera ver el credito en el paso de confirmacion
 
+  @AprobacionCreditos
+  Escenario:  credito huy - aprobacion
+    Dado que un asesor quiere normalizar un credito
+    Cuando normalice el credito
+    Entonces el podra enviar el credito hacia aprobacion huy
+
+  @AprobacionCreditos
+  Escenario:  normalizar credito huy
+    Dado que un asesor quiere normalizar un credito
+    Cuando normalice el credito
+    Entonces el podra enviar el credito hacia aprobacion huy
+
   @Incorporacion
   Escenario: Regresar el credito desde incorporacion
     Dado que un asesor esta en el paso de incorporacion
