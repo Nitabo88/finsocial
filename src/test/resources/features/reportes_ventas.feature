@@ -5,22 +5,25 @@ Característica: Reportes de venta Finsonet
   Quiero ingresar a la seccion de reportes de venta
   Para revisar el estado de las ventas del mes
 
-  Escenario: Reporte de venta - Originacion
-    Dado que un asesor quiere consultar un reporte
-    Cuando el ingresa al reporte del mes de originacion
-    Entonces el observara que el consolidado y el detalle del reporte de originacion son consistentes
-
   Escenario: Reporte de venta - Antecartera
     Dado que un asesor quiere consultar un reporte
     Cuando el ingresa al reporte del mes de antecartera
-    Entonces el observara que el consolidado y el detalle del reporte de antecartera son consistentes
+    Entonces el observara que el numero de creditos consolidado y el detalle del reporte de antecartera son consistentes
+
+  Escenario: Reporte de venta - Originacion
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte del mes de originacion
+    Entonces el observara que el valor consolidado y el detalle del reporte de originacion son consistentes
+    Y que el numero de creditos consolidado y el detalle del reporte de originacion son consistentes
 
   Escenario: Reporte de venta - Venta Nueva
     Dado que un asesor quiere consultar un reporte
     Cuando el ingresa al reporte del mes de venta nueva
-    Entonces el observara que el consolidado y el detalle del reporte de venta nueva son consistentes
+    Entonces el observara que el valor consolidado y el detalle del reporte de venta nueva son consistentes
+    Y que el numero de creditos consolidado y el detalle del reporte de venta nueva son consistentes
 
   Escenario: Reporte de venta - Venta Liberada
     Dado que un asesor quiere consultar un reporte
     Cuando el ingresa al reporte del mes de venta liberada
-    Entonces el observara que el consolidado y el detalle del reporte de venta liberada son consistentes
+    Entonces el observara que el valor consolidado y el detalle del reporte de venta liberada son consistentes
+    Y que el numero de creditos consolidado y el detalle del reporte de venta liberada son consistentes

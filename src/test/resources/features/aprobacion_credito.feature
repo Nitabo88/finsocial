@@ -1,6 +1,6 @@
 # language: es
 
-   Caracteristica verificacion de estado en un credito nuevo
+   Caracteristica: verificacion de estado en un credito nuevo
     Como asesor de finsonet
     Quiero asignar estado de pendiente, regresar y normalizar acorde a la documentacion
     Para los creditos de un cliente

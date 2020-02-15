@@ -1,13 +1,18 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.tasks.Diligenciar;
-import co.com.red5g.finsonet.tasks.Ubicarse;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.questions.ElFormulario.fueEnviado;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.questions.ElFormulario;
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
+import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class FormularioSolicitudStepDefinition {
 
@@ -21,11 +26,13 @@ public class FormularioSolicitudStepDefinition {
     @Cuando("diligencia el formulario de un cliente en su totalidad")
     public void diligenciarFormularioSolicitudCredito() {
         theActorInTheSpotlight().attemptsTo(
-                Diligenciar.laSolicitudDeCredito()
+                Diligencia.laSolicitudDeCredito()
         );
     }
 
     @Entonces("el debería visualizar el credito del cliente")
     public void verificarSolicitudCrecito() {
+        theActorInTheSpotlight()
+            .should(seeThat(fueEnviado()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
     }
 }

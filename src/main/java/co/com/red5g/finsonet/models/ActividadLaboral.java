@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.ActividadLaboralBuilder;
+import co.com.red5g.finsonet.models.builders.ActividadLaboralBuilder;
 
 public class ActividadLaboral {
     private String ocupacion;

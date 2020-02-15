@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.models;
 
-import co.com.red5g.finsonet.models.builder.DocumentoRequeridosBuilder;
+import co.com.red5g.finsonet.models.builders.DocumentoRequeridosBuilder;
 
 public class DocumentosRequeridos {
     private String strTipoSolicitud;

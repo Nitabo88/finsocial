@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -19,5 +20,11 @@ public class Hooks {
                         BrowseTheWeb.with(navegador)
                 )
         );
+    }
+
+    @After
+    public void close(){
+        navegador.close();
+        navegador.quit();
     }
 }

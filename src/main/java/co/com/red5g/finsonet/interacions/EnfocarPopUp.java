@@ -15,6 +15,6 @@ public class EnfocarPopUp implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        BrowseTheWeb.as(actor).getAlert().accept();
+        BrowseTheWeb.as(actor).getAlert();
     }
 }
