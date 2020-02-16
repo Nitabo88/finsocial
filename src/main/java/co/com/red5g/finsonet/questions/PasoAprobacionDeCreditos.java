@@ -1,22 +1,22 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_FILA_CHEQUEO_DOCUMENTOS;
+import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_FILA_APROBACION_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_ORIGINACION;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
 
-public class PasoChequeoDeDocumentos implements Question<Boolean> {
+public class PasoAprobacionDeCreditos implements Question<Boolean> {
 
-  private static final String CHEQUEO_DOCUMENTOS = "Chequeo Docs";
+  private static final String APROBACION_CREDITOS = "Apr. de créditos";
 
   @Override
   public Boolean answeredBy(Actor actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNU_ORIGINACION.of(CHEQUEO_DOCUMENTOS)));
-    return LST_FILA_CHEQUEO_DOCUMENTOS.of(numeroCredito).resolveFor(actor).isPresent();
+        Click.on(MNU_ORIGINACION.of(APROBACION_CREDITOS)));
+    return LST_FILA_APROBACION_CREDITO.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }
