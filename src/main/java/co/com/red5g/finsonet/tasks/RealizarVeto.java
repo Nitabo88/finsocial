@@ -30,9 +30,8 @@ public class RealizarVeto implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO_VETADOS),
-                Enter.theValue(vetados.getDetalleVetados()).into(TXT_DETALLE),
-                WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(2).seconds(),
                 SelectFromOptions.byVisibleText("Sin motivo").from(LST_MOTIVO),
+                Enter.theValue(vetados.getDetalleVetados()).into(TXT_DETALLE),
                 Click.on(BTN_NUEVO_VETO),
                 Click.on(BTN_ACEPTAR_VETO)
         );
