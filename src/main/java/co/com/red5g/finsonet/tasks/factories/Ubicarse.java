@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks.factories;
 
+import co.com.red5g.finsonet.tasks.Llamada;
 import co.com.red5g.finsonet.tasks.SolicitudCredito;
 import co.com.red5g.finsonet.tasks.NuevoCredito;
 import net.serenitybdd.screenplay.Performable;
@@ -16,4 +17,7 @@ public class Ubicarse {
         return instrumented(SolicitudCredito.class);
     }
 
+    public static Performable enLlamada() {
+        return instrumented(Llamada.class);
+    }
 }
