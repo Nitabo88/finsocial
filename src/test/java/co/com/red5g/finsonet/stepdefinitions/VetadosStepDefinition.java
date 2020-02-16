@@ -19,9 +19,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class VetadosStepDefinition {
     private static final String ESTADO_NO_EXITOSO = "El cliente ya tiene un veto interno.";
 
-  //  @Before("Vetados")
+  // @Before("@Vetados")
     //public void quitarMarca() {
-      //  theActorInTheSpotlight().attemptsTo(Eliminar.elVeto(a().unCliente()));
+      //theActorInTheSpotlight().wasAbleTo(Eliminar.elVeto());
     //}
 
     @Dado("que el (.*) quiere aginar un veto interno")
