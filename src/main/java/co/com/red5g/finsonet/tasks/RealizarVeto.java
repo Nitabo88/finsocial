@@ -1,11 +1,13 @@
 package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.models.Vetados;
+import co.com.red5g.finsonet.userinterfaces.VetadosPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
@@ -30,7 +32,7 @@ public class RealizarVeto implements Task {
                 Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO_VETADOS),
                 Enter.theValue(vetados.getDetalleVetados()).into(TXT_DETALLE),
                 WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(2).seconds(),
-                Click.on(LST_TXT_MOTIVO),
+                SelectFromOptions.byVisibleText("Sin motivo").from(LST_MOTIVO),
                 Click.on(BTN_NUEVO_VETO),
                 Click.on(BTN_ACEPTAR_VETO)
         );
