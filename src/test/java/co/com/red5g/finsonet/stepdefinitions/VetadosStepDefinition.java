@@ -5,6 +5,7 @@ import co.com.red5g.finsonet.tasks.Eliminar;
 import co.com.red5g.finsonet.tasks.ModuloVetados;
 import co.com.red5g.finsonet.tasks.RealizarVeto;
 import co.com.red5g.finsonet.tasks.factories.Loguearse;
+import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -18,16 +19,15 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class VetadosStepDefinition {
     private static final String ESTADO_NO_EXITOSO = "El cliente ya tiene un veto interno.";
 
-    @Before("Vetados")
-    public void quitarMarca() {
-        theActorInTheSpotlight().attemptsTo(Eliminar.elVeto(a().unCliente()));
-    }
+  //  @Before("Vetados")
+    //public void quitarMarca() {
+      //  theActorInTheSpotlight().attemptsTo(Eliminar.elVeto(a().unCliente()));
+    //}
 
     @Dado("que el (.*) quiere aginar un veto interno")
     public void ubicarseEnVetados(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
-                Loguearse.enFinsonet(),
-                ModuloVetados.ubicarseEnVetados()
+                Ubicarse.enVetados()
         );
     }
 
