@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
 import co.com.red5g.finsonet.tasks.ModuloVetados;
@@ -11,6 +12,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
+import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto.MENSAJE_VETO;
 import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -41,6 +43,6 @@ public class VetadosStepDefinition {
     @Entonces("el asesor deberia verlo en listado de vetos")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
-                (seeThat(Veto.existe()));
+                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
     }
 }
