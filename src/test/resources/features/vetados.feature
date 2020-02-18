@@ -10,6 +10,3 @@ Característica: Vetados
     Dado que el asesor quiere aginar un veto interno
     Cuando el asesor asigne un veto interno a un cliente
     Entonces el asesor deberia verlo en listado de vetos
-
-
-
