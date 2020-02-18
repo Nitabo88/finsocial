@@ -19,6 +19,5 @@ public class VetadosPage extends PageObject {
     public static final Target LST_MOTIVO = Target.the(" lista de motivos vetados").located(By.id("txtMotivo"));
     public static final Target TXT_DETALLE = Target.the("detalle vetados").located(By.id("txtDetalle"));
     public static final Target BTN_NUEVO_VETO = Target.the("boton agregar veto").located(By.id("addVeto"));
-    public static final Target BTN_DETALLE_VETO = Target.the("boton detalle del veto").locatedBy(("//div[@id='btnDetalle1292']"));
-    public static final Target BTN_ANULAR_VETO = Target.the("boton anular veto").locatedBy(("//button[@class='btn btn-green text-white']"));
+
 }
