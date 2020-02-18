@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 public class VetadosPage extends PageObject {
 
-    public static final Target BTN_ACEPTAR_VETO = Target.the("Checkbox CC vetados").locatedBy(("//*[@class=\"swal2-confirm btn confirm-button-class-green swal2-styled\"]"));
+    public static final Target BTN_ACEPTAR_VETO = Target.the("Checkbox CC vetados").locatedBy(("//*[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target TXT_VETADOS = Target.the("Busqueda vetados").located(By.id("txtParBusqueda"));
     public static final Target MNU_RIESGOS = Target.the("Mostrar menu vetados").located(By.id("hamburger"));
     public static final Target MNU_INTERNO = Target.the("tab veto interno").located(By.id("veto-interno"));
