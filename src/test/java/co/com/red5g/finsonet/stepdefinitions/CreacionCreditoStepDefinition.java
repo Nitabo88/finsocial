@@ -27,6 +27,13 @@ public class CreacionCreditoStepDefinition {
                 Ubicarse.enNuevoCredito());
     }
 
+    @Dado("que un (.*) debe crear un credito tipo huy")
+    public void crearCreditoHuy(final String nombreActor) {
+        theActorCalled(nombreActor).attemptsTo(
+            Loguearse.enFinsonet(),
+            Ubicarse.enNuevoCreditoHuy());
+    }
+
     @Cuando("el ingresa el numero de documento (.*) con el valor (.*) y a un plazo de (.*) meses")
     public void ingresarInformacionCredito(final String strNumeroDocumento, final String strValorCuota, final String strPlazo) {
         theActorInTheSpotlight().attemptsTo(
