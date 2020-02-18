@@ -40,4 +40,8 @@ tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
 
+wrapper{
+    gradleVersion = '5.6.4'
+}
+
 gradle.startParameter.continueOnFailure = true

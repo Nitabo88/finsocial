@@ -53,3 +53,35 @@ Característica: Originacion
     Dado que un asesor esta en el paso de aprobacion de creditos
     Cuando el asesor regresa el credito a confirmacion
     Entonces el asesor debera ver el credito en el paso de confirmacion
+
+  @AprobacionCreditos
+  Escenario:  credito huy - aprobacion
+    Dado que un asesor quiere aprobar un credito huy
+    Cuando el asesor normalice el credito
+    Y apruebe el credito
+    Entonces
+
+  @AprobacionCreditos
+  Escenario:  credito huy - pendiente
+    Dado que un asesor quiere normalizar un credito
+    Cuando normalice el credito
+    Y el credito se ponga en la lista de pendientes
+    Entonces
+
+  @Incorporacion
+  Escenario: Regresar el credito desde incorporacion
+    Dado que un asesor esta en el paso de incorporacion
+    Cuando el asesor regresa el credito a aprobacion de creditos
+    Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
+
+  @Incorporacion
+  Escenario: Marcar el credito como pendiente en incorporacion
+    Dado que un asesor esta en el paso de incorporacion
+    Cuando el asesor pone el credito como pendiente en incorporacion
+    Entonces el asesor debera ver el credito en incorporacion en la lista de pendientes
+
+  @Incorporacion
+  Escenario: Aprobar el credito desde incorporacion
+    Dado que un asesor esta en el paso de incorporacion
+    Cuando el asesor aprueba el credito en incorporacion
+    Entonces el asesor debera ver el credito en el paso de formalizacion

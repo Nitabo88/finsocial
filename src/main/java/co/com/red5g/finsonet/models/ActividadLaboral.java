@@ -3,103 +3,103 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.ActividadLaboralBuilder;
 
 public class ActividadLaboral {
-    private String ocupacion;
-    private String declaraRenta;
-    private String impactoDecision;
-    private String personaPublica;
-    private String manejoRecursosPublicos;
-    private String empresa;
-    private String direccionTrabajo;
-    private String nit;
-    private String tipoEmpresa;
-    private String cargo;
-    private String ciudadTrabajo;
-    private String telefonoTrabajo;
-    private String actividadEconomica;
-    private String fechaVinculacion;
-    private String extension;
-    private String tipoContrato;
+    private final String ocupacion;
+    private final String declaraRenta;
+    private final String impactoDecision;
+    private final String personaPublica;
+    private final String manejoRecursosPublicos;
+    private final String empresa;
+    private final String direccionTrabajo;
+    private final String nit;
+    private final String tipoEmpresa;
+    private final String cargo;
+    private final String ciudadTrabajo;
+    private final String telefonoTrabajo;
+    private final String actividadEconomica;
+    private final String fechaVinculacion;
+    private final String extension;
+    private final String tipoContrato;
 
-    public ActividadLaboral(ActividadLaboralBuilder actividadLaboralBuilder) {
-        this.ocupacion = actividadLaboralBuilder.getOcupacion();
-        this.declaraRenta = actividadLaboralBuilder.getDeclaraRenta();
-        this.impactoDecision = actividadLaboralBuilder.getImpactoDecision();
-        this.personaPublica = actividadLaboralBuilder.getPersonaPublica();
-        this.manejoRecursosPublicos = actividadLaboralBuilder.getManejoRecursosPublicos();
-        this.empresa = actividadLaboralBuilder.getEmpresa();
-        this.direccionTrabajo = actividadLaboralBuilder.getDireccionTrabajo();
-        this.nit = actividadLaboralBuilder.getNit();
-        this.tipoEmpresa = actividadLaboralBuilder.getTipoEmpresa();
-        this.cargo = actividadLaboralBuilder.getCargo();
-        this.ciudadTrabajo = actividadLaboralBuilder.getCiudadTrabajo();
-        this.telefonoTrabajo = actividadLaboralBuilder.getTelefonoTrabajo();
-        this.actividadEconomica = actividadLaboralBuilder.getActividadEconomica();
-        this.fechaVinculacion = actividadLaboralBuilder.getFechaVinculacion();
-        this.extension = actividadLaboralBuilder.getExtension();
-        this.tipoContrato = actividadLaboralBuilder.getTipoContrato();
+    public ActividadLaboral(final ActividadLaboralBuilder actividadLaboralBuilder) {
+      ocupacion = actividadLaboralBuilder.getOcupacion();
+      declaraRenta = actividadLaboralBuilder.getDeclaraRenta();
+      impactoDecision = actividadLaboralBuilder.getImpactoDecision();
+      personaPublica = actividadLaboralBuilder.getPersonaPublica();
+      manejoRecursosPublicos = actividadLaboralBuilder.getManejoRecursosPublicos();
+      empresa = actividadLaboralBuilder.getEmpresa();
+      direccionTrabajo = actividadLaboralBuilder.getDireccionTrabajo();
+      nit = actividadLaboralBuilder.getNit();
+      tipoEmpresa = actividadLaboralBuilder.getTipoEmpresa();
+      cargo = actividadLaboralBuilder.getCargo();
+      ciudadTrabajo = actividadLaboralBuilder.getCiudadTrabajo();
+      telefonoTrabajo = actividadLaboralBuilder.getTelefonoTrabajo();
+      actividadEconomica = actividadLaboralBuilder.getActividadEconomica();
+      fechaVinculacion = actividadLaboralBuilder.getFechaVinculacion();
+      extension = actividadLaboralBuilder.getExtension();
+      tipoContrato = actividadLaboralBuilder.getTipoContrato();
     }
 
     public String getOcupacion() {
-        return ocupacion;
+        return this.ocupacion;
     }
 
     public String getDeclaraRenta() {
-        return declaraRenta;
+        return this.declaraRenta;
     }
 
     public String getImpactoDecision() {
-        return impactoDecision;
+        return this.impactoDecision;
     }
 
     public String getPersonaPublica() {
-        return personaPublica;
+        return this.personaPublica;
     }
 
     public String getManejoRecursosPublicos() {
-        return manejoRecursosPublicos;
+        return this.manejoRecursosPublicos;
     }
 
     public String getEmpresa() {
-        return empresa;
+        return this.empresa;
     }
 
     public String getDireccionTrabajo() {
-        return direccionTrabajo;
+        return this.direccionTrabajo;
     }
 
     public String getNit() {
-        return nit;
+        return this.nit;
     }
 
     public String getTipoEmpresa() {
-        return tipoEmpresa;
+        return this.tipoEmpresa;
     }
 
     public String getCargo() {
-        return cargo;
+        return this.cargo;
     }
 
     public String getCiudadTrabajo() {
-        return ciudadTrabajo;
+        return this.ciudadTrabajo;
     }
 
     public String getTelefonoTrabajo() {
-        return telefonoTrabajo;
+        return this.telefonoTrabajo;
     }
 
     public String getActividadEconomica() {
-        return actividadEconomica;
+        return this.actividadEconomica;
     }
 
     public String getFechaVinculacion() {
-        return fechaVinculacion;
+        return this.fechaVinculacion;
     }
 
     public String getExtension() {
-        return extension;
+        return this.extension;
     }
 
     public String getTipoContrato() {
-        return tipoContrato;
+        return this.tipoContrato;
     }
 }

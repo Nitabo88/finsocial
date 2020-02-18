@@ -4,26 +4,20 @@ import co.com.red5g.finsonet.models.builders.AprobacionCreditoBuilder;
 
 public class AprobacionCredito {
 
-  private String razonMotivo;
-  private String seleccionMotivo;
-  private String perfilRiesgo;
+  private final String razonMotivo;
+  private final String seleccionMotivo;
 
 
-  public AprobacionCredito(AprobacionCreditoBuilder aprobacionCreditoBuilder) {
-    this.razonMotivo = aprobacionCreditoBuilder.getRazonMotivo();
-    this.seleccionMotivo = aprobacionCreditoBuilder.getSeleccionMotivo();
-    this.perfilRiesgo = aprobacionCreditoBuilder.getPerfilRiesgo();
+  public AprobacionCredito(final AprobacionCreditoBuilder aprobacionCreditoBuilder) {
+    razonMotivo = aprobacionCreditoBuilder.getRazonMotivo();
+    seleccionMotivo = aprobacionCreditoBuilder.getSeleccionMotivo();
   }
 
   public String getRazonMotivo() {
-    return razonMotivo;
+    return this.razonMotivo;
   }
 
   public String getSeleccionMotivo() {
-    return seleccionMotivo;
-  }
-
-  public String getPerfilRiesgo() {
-    return perfilRiesgo;
+    return this.seleccionMotivo;
   }
 }

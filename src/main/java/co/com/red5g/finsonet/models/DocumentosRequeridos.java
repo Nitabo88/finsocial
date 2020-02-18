@@ -3,37 +3,37 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.DocumentoRequeridosBuilder;
 
 public class DocumentosRequeridos {
-    private String strTipoSolicitud;
-    private String strCiudad;
-    private String strAgenciaVinculacion;
-    private String strCalificacion;
-    private String strVinculacion;
+    private final String strTipoSolicitud;
+    private final String strCiudad;
+    private final String strAgenciaVinculacion;
+    private final String strCalificacion;
+    private final String strVinculacion;
 
-    public DocumentosRequeridos(DocumentoRequeridosBuilder documentosRequeridosBuilder) {
-        this.strTipoSolicitud = documentosRequeridosBuilder.getStrTipoSolicitud();
-        this.strCiudad = documentosRequeridosBuilder.getStrCiudad();
-        this.strAgenciaVinculacion = documentosRequeridosBuilder.getStrAgenciaVinculacion();
-        this.strCalificacion = documentosRequeridosBuilder.getStrCalificacion();
-        this.strVinculacion = documentosRequeridosBuilder.getStrVinculacion();
+    public DocumentosRequeridos(final DocumentoRequeridosBuilder documentosRequeridosBuilder) {
+      strTipoSolicitud = documentosRequeridosBuilder.getStrTipoSolicitud();
+      strCiudad = documentosRequeridosBuilder.getStrCiudad();
+      strAgenciaVinculacion = documentosRequeridosBuilder.getStrAgenciaVinculacion();
+      strCalificacion = documentosRequeridosBuilder.getStrCalificacion();
+      strVinculacion = documentosRequeridosBuilder.getStrVinculacion();
     }
 
     public String getStrTipoSolicitud() {
-        return strTipoSolicitud;
+        return this.strTipoSolicitud;
     }
 
     public String getStrCiudad() {
-        return strCiudad;
+        return this.strCiudad;
     }
 
     public String getStrAgenciaVinculacion() {
-        return strAgenciaVinculacion;
+        return this.strAgenciaVinculacion;
     }
 
     public String getStrCalificacion() {
-        return strCalificacion;
+        return this.strCalificacion;
     }
 
     public String getStrVinculacion() {
-        return strVinculacion;
+        return this.strVinculacion;
     }
 }

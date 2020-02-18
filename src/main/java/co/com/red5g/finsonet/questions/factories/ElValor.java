@@ -1,17 +1,20 @@
 package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.ValorComisionAsesores;
-import co.com.red5g.finsonet.questions.ValorTotalComision;
 import co.com.red5g.finsonet.questions.ValorConsolidadoLiquidadorComisiones;
 import co.com.red5g.finsonet.questions.ValorDetalleReporteVentaNueva;
 import co.com.red5g.finsonet.questions.ValorReporteOriginacion;
 import co.com.red5g.finsonet.questions.ValorReporteVentaLiberada;
 import co.com.red5g.finsonet.questions.ValorReporteVentaNueva;
+import co.com.red5g.finsonet.questions.ValorTotalComision;
 import co.com.red5g.finsonet.questions.ValorVentaLiberadaLiquidacionComisiones;
 import co.com.red5g.finsonet.questions.ValorVentaNuevaLiquidacionComisiones;
 import net.serenitybdd.screenplay.Question;
 
 public class ElValor {
+
+  private ElValor() {
+  }
 
   public static Question<String> deVentaNuevaEsConsistente() {
     return new ValorVentaNuevaLiquidacionComisiones();
