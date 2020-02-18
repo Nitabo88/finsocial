@@ -38,7 +38,7 @@ public class CrearSolicitudContact implements Task {
                 JavaScriptClick.on(BTN_PRIMER_CONTACTO),
                 SelectFromOptions.byVisibleText("Envio detalle de credito").from(LST_PROTOCOLOS),
                 Click.on(BTN_RESPUESTA_PROTOCOLO),
-                Enter.theValue(equipoSatisfaccion.getDocumentoEquipoSatisfaccion()).into(TXT_DETALLE_PROTOCOLO),
+                Enter.theValue(equipoSatisfaccion.getDetalleEquipoSatisfaccion()).into(TXT_DETALLE_PROTOCOLO),
                 Click.on(BTN_ENVIAR_PROTOCOLO),
                 WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(3).seconds(),
                 JavaScriptClick.on(BTN_CLOSE_PROTOCOLO),
