@@ -21,10 +21,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class VetadosStepDefinition {
     private static final String ESTADO_NO_EXITOSO = "El cliente ya tiene un veto interno.";
 
-  // @Before("@Vetados")
-    //public void quitarMarca() {
-      //theActorInTheSpotlight().wasAbleTo(Eliminar.elVeto());
-    //}
+   @Before("@Vetados")
+    public void quitarMarca() {
+      theActorCalled("Administrador").wasAbleTo(Eliminar.elVeto(a().unCliente()));
+    }
 
     @Dado("que el (.*) quiere aginar un veto interno")
     public void ubicarseEnVetados(String nombreActor) {
