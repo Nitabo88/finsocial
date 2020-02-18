@@ -12,28 +12,27 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class RegresarAprobacionCredito implements Task {
 
   private static final int TIEMPO = 5;
-  private AprobacionCredito aprobacionCredito;
+  private final AprobacionCredito aprobacionCredito;
 
   private static final String REGRESAR = "Regresar";
 
-  public RegresarAprobacionCredito(AprobacionCredito aprobacionCredito) {
+  public RegresarAprobacionCredito(final AprobacionCredito aprobacionCredito) {
     this.aprobacionCredito = aprobacionCredito;
   }
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
-    String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public <T extends Actor> void performAs(final T actor) {
+    final String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         JavaScriptClick.on(BTN_ACCION_CONFIRMACION.of(numeroCredito)),
-        JavaScriptClick.on(MNU_ACCION.of(REGRESAR)),
-        Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO),
+        JavaScriptClick.on(MNU_ACCION.of(RegresarAprobacionCredito.REGRESAR)),
+        Enter.theValue(this.aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_OK),
-        WaitFor.seconds(TIEMPO),
+        WaitFor.seconds(RegresarAprobacionCredito.TIEMPO),
         JavaScriptClick.on(BTN_OK));
   }
 }

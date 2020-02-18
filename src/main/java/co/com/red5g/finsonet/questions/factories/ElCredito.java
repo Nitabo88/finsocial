@@ -1,11 +1,19 @@
 package co.com.red5g.finsonet.questions.factories;
 
+<<<<<<< HEAD
 import co.com.red5g.finsonet.questions.*;
+=======
+import co.com.red5g.finsonet.questions.PasoAprobacionDeCreditos;
+import co.com.red5g.finsonet.questions.PasoChequeoDeDocumentos;
+import co.com.red5g.finsonet.questions.PasoConfirmacionExitosa;
+import co.com.red5g.finsonet.questions.PasoIncorporacion;
+import co.com.red5g.finsonet.questions.PasoPendienteAprobacionDeCreditos;
+>>>>>>> dev
 import net.serenitybdd.screenplay.Question;
 
 public class ElCredito {
 
-  public ElCredito() {
+  private ElCredito() {
   }
 
   public static Question<Boolean> enConfirmacion() {
@@ -20,7 +28,16 @@ public class ElCredito {
     return new PasoChequeoDeDocumentos();
   }
 
-  public static Question<Boolean> enPendientesAprobacionCredito() { return new PasoPendienteAprobacionDeCreditos();
+  public static Question<Boolean> enPendientesAprobacionCredito() {
+    return new PasoPendienteAprobacionDeCreditos();
+  }
+
+  public static Question<Boolean> enIncorporacion() {
+    return new PasoIncorporacion();
+  }
+
+  public static Question<Boolean> enAprobacionCredito() {
+    return new PasoAprobacionDeCreditos();
   }
 
     public static Question<Boolean> asignado() { return new AsignacionLlamada();

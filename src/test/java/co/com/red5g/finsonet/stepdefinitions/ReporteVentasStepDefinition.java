@@ -21,7 +21,7 @@ import cucumber.api.java.es.Y;
 public class ReporteVentasStepDefinition {
 
     @Dado("que un (.*) quiere consultar un reporte")
-    public void ingresarReportes(String strActor) {
+    public void ingresarReportes(final String strActor) {
         theActorCalled(strActor).attemptsTo(
                 Consulta.unReporte()
         );

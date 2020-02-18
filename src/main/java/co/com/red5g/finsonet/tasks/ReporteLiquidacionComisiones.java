@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.Task;
 public class ReporteLiquidacionComisiones implements Task {
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
                 AbreLaPagina.finsonet(),
                 Ingresa.lasCredenciales(CredencialesBuilder.de().unUsuarioBasico()),

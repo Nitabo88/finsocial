@@ -4,7 +4,7 @@ public class ElCreditoNoFueRechazado extends AssertionError {
 
   public static final String MENSAJE_CREDITO_RECHAZADO = "El credito aun esta en la tabla";
 
-  public ElCreditoNoFueRechazado(String mensaje, Throwable causa) {
+  public ElCreditoNoFueRechazado(final String mensaje, final Throwable causa) {
     super(mensaje, causa);
   }
 

@@ -4,14 +4,14 @@ import co.com.red5g.finsonet.models.builders.ConfirmacionBuilder;
 
 public class Confirmacion {
 
-    private String razonMotivo;
+    private final String razonMotivo;
 
-    public Confirmacion(ConfirmacionBuilder confirmacionBuilder) {
-        this.razonMotivo = confirmacionBuilder.getRazonMotivo();
+    public Confirmacion(final ConfirmacionBuilder confirmacionBuilder) {
+      razonMotivo = confirmacionBuilder.getRazonMotivo();
     }
 
     public String getRazonMotivo() {
-        return razonMotivo;
+        return this.razonMotivo;
     }
 
 }

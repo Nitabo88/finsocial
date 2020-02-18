@@ -14,7 +14,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClic
 public class Reportes implements Task {
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
                 AbreLaPagina.finsonet(),
                 Ingresa.lasCredenciales(CredencialesBuilder.de().unUsuarioBasico()),

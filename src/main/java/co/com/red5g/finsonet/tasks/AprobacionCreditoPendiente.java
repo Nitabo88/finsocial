@@ -20,23 +20,23 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class AprobacionCreditoPendiente implements Task {
 
   private static final int TIEMPO = 20;
-  private AprobacionCredito aprobacionCredito;
+  private final AprobacionCredito aprobacionCredito;
   private static final String PENDIENTE = "Pendiente";
 
-  public AprobacionCreditoPendiente(AprobacionCredito aprobacionCredito) {
+  public AprobacionCreditoPendiente(final AprobacionCredito aprobacionCredito) {
     this.aprobacionCredito = aprobacionCredito;
   }
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
-    String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public <T extends Actor> void performAs(final T actor) {
+    final String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         JavaScriptClick.on(BTN_ACCION_CONFIRMACION.of(numeroCredito)),
-        JavaScriptClick.on(MNU_ACCION.of(PENDIENTE)),
-        SelectFromOptions.byVisibleText(aprobacionCredito.getSeleccionMotivo()).from(LST_MOTIVO),
-        Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO),
+        JavaScriptClick.on(MNU_ACCION.of(AprobacionCreditoPendiente.PENDIENTE)),
+        SelectFromOptions.byVisibleText(this.aprobacionCredito.getSeleccionMotivo()).from(LST_MOTIVO),
+        Enter.theValue(this.aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_ENVIAR),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(AprobacionCreditoPendiente.TIEMPO).seconds(),
         JavaScriptClick.on(BTN_OK));
   }
 }

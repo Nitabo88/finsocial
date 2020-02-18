@@ -23,12 +23,12 @@ public class Ingresar implements Interaction {
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
-        List<WebElementFacade> lstCredito = seleccionarColumna(LST_FILA_CREDITOS, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_CREDITO)).answeredBy(actor);
+    public <T extends Actor> void performAs(final T actor) {
+        final List<WebElementFacade> lstCredito = seleccionarColumna(LST_FILA_CREDITOS, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_CREDITO)).answeredBy(actor);
         actor.attemptsTo(
             Click.on(lstCredito.get(2))
         );
-        String url = obtenerUrl().answeredBy(actor);
-        actor.remember(NUMERO_CREDITO, url);
+        final String url = obtenerUrl().answeredBy(actor);
+        actor.remember(Ingresar.NUMERO_CREDITO, url);
     }
 }

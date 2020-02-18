@@ -13,6 +13,9 @@ import net.serenitybdd.screenplay.Question;
 
 public class ElNumero {
 
+  private ElNumero() {
+  }
+
   public static Question<String> deCreditosDeVentaNuevaEsConsistente() {
     return new CreditosVentaNuevaLiquidacionComisiones();
   }

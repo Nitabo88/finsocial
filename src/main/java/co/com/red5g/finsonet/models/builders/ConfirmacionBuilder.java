@@ -8,7 +8,7 @@ public class ConfirmacionBuilder implements Builder<Confirmacion> {
     private String razonMotivo;
 
     private ConfirmacionBuilder() {
-        this.razonMotivo = "";
+      razonMotivo = "";
     }
 
     public static ConfirmacionBuilder con() {
@@ -21,16 +21,16 @@ public class ConfirmacionBuilder implements Builder<Confirmacion> {
     }
 
     public Confirmacion motivo() {
-        this.razonMotivo("El usuario tiene los documentos incompletos");
-        return this.build();
+      razonMotivo("El usuario tiene los documentos incompletos");
+        return build();
     }
 
-    private ConfirmacionBuilder razonMotivo(String razonMotivo) {
+    private ConfirmacionBuilder razonMotivo(final String razonMotivo) {
         this.razonMotivo = razonMotivo;
         return this;
     }
 
     public String getRazonMotivo() {
-        return razonMotivo;
+        return this.razonMotivo;
     }
 }
