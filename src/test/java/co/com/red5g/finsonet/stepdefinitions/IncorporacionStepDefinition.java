@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCredito.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCredito;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -49,6 +49,6 @@ public class IncorporacionStepDefinition {
 
   @Entonces("^el asesor debera ver el credito en el paso de aprobacion de creditos$")
   public void verificarElCreditoEnAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
 }

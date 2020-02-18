@@ -9,6 +9,9 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Ubicarse {
 
+    private Ubicarse() {
+    }
+
     public static Performable enNuevoCredito() {
         return instrumented(NuevoCredito.class);
     }

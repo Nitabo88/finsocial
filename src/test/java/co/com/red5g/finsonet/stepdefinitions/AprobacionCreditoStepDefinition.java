@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCredito.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.AprobacionCreditoBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCredito;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -32,7 +32,7 @@ public class AprobacionCreditoStepDefinition {
 
   @Entonces("^el asesor debera ver el credito en el paso de confirmacion$")
   public void verificarCreditoConfirmacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor pone el credito como pendiente$")
@@ -44,7 +44,7 @@ public class AprobacionCreditoStepDefinition {
 
   @Entonces("^el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes$")
   public void verificarCreditoListaPendientes() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor aprueba el credito$")
@@ -56,6 +56,6 @@ public class AprobacionCreditoStepDefinition {
 
   @Entonces("^el asesor debera ver el credito en el paso de incorporacion$")
   public void verificarCreditoIncorporacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
 }

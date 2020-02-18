@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.Question;
 
 public class ElCredito {
 
-  public ElCredito() {
+  private ElCredito() {
   }
 
   public static Question<Boolean> enConfirmacion() {

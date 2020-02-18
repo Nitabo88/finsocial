@@ -12,7 +12,6 @@ public class Incorporacion implements Task {
 
   private static final String INCORPORACION = "Incorporación";
 
-
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
