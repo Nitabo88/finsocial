@@ -14,4 +14,8 @@ public class IncorporacionPage {
   public static final Target MNU_APROBACION_CREDITO = Target.the("el menu aprobacion credito").located(By.id("or-aprob"));
   public static final Target BTN_REGRESAR_INCORPORACION = Target.the("el boton regresar")
       .locatedBy("//tr[@role='row']//td[contains(text(),'{0}')]//parent::tr//button[@data-original-title='Regresar']");
+
+  private IncorporacionPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

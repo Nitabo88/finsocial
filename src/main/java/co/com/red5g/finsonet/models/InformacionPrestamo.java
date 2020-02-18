@@ -3,43 +3,43 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.InformacionPrestamoBuilder;
 
 public class InformacionPrestamo {
-    private String strMonto;
-    private String strTasaInteres;
-    private String strCuota;
-    private String strTasaMora;
-    private String strPlazo;
-    private String strTasaMaximaInteresVigente;
+    private final String strMonto;
+    private final String strTasaInteres;
+    private final String strCuota;
+    private final String strTasaMora;
+    private final String strPlazo;
+    private final String strTasaMaximaInteresVigente;
 
-    public InformacionPrestamo(InformacionPrestamoBuilder prestamoBuilder) {
-        this.strMonto = prestamoBuilder.getStrMonto();
-        this.strTasaInteres = prestamoBuilder.getStrTasaInteres();
-        this.strCuota = prestamoBuilder.getStrCuota();
-        this.strTasaMora = prestamoBuilder.getStrTasaMora();
-        this.strPlazo = prestamoBuilder.getStrPlazo();
-        this.strTasaMaximaInteresVigente = prestamoBuilder.getStrTasaMaximaInteresVigente();
+    public InformacionPrestamo(final InformacionPrestamoBuilder prestamoBuilder) {
+      strMonto = prestamoBuilder.getStrMonto();
+      strTasaInteres = prestamoBuilder.getStrTasaInteres();
+      strCuota = prestamoBuilder.getStrCuota();
+      strTasaMora = prestamoBuilder.getStrTasaMora();
+      strPlazo = prestamoBuilder.getStrPlazo();
+      strTasaMaximaInteresVigente = prestamoBuilder.getStrTasaMaximaInteresVigente();
     }
 
     public String getStrMonto() {
-        return strMonto;
+        return this.strMonto;
     }
 
     public String getStrTasaInteres() {
-        return strTasaInteres;
+        return this.strTasaInteres;
     }
 
     public String getStrCuota() {
-        return strCuota;
+        return this.strCuota;
     }
 
     public String getStrTasaMora() {
-        return strTasaMora;
+        return this.strTasaMora;
     }
 
     public String getStrPlazo() {
-        return strPlazo;
+        return this.strPlazo;
     }
 
     public String getStrTasaMaximaInteresVigente() {
-        return strTasaMaximaInteresVigente;
+        return this.strTasaMaximaInteresVigente;
     }
 }

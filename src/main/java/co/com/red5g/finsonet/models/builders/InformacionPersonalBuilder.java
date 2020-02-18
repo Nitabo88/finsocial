@@ -34,34 +34,34 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
     private String profesion;
 
     private InformacionPersonalBuilder() {
-        this.primerApellido = "";
-        this.segundoApellido = "";
-        this.primerNombre = "";
-        this.segundoNombre = "";
-        this.tipoDocumento = "";
-        this.numeroDocumento = "";
-        this.lugarExpedicion = "";
-        this.fechaExpedicion = "";
-        this.fechaNacimiento = "";
-        this.sexo = "";
-        this.lugarNacimiento = "";
-        this.estadoCivil = "";
-        this.ciudadDepartamento = "";
-        this.tipoVivienda = "";
-        this.estrato = "";
-        this.direccion = "";
-        this.barrio = "";
-        this.telefono = "";
-        this.celular = "";
-        this.correpondencia = "";
-        this.correoElectronico = "";
-        this.tiempoResidenciaAnios = "";
-        this.tiempoResidenciaMeses = "";
-        this.adultosCargo = "";
-        this.menoresCargo = "";
-        this.eps = "";
-        this.nivelEstudios = "";
-        this.profesion = "";
+      primerApellido = "";
+      segundoApellido = "";
+      primerNombre = "";
+      segundoNombre = "";
+      tipoDocumento = "";
+      numeroDocumento = "";
+      lugarExpedicion = "";
+      fechaExpedicion = "";
+      fechaNacimiento = "";
+      sexo = "";
+      lugarNacimiento = "";
+      estadoCivil = "";
+      ciudadDepartamento = "";
+      tipoVivienda = "";
+      estrato = "";
+      direccion = "";
+      barrio = "";
+      telefono = "";
+      celular = "";
+      correpondencia = "";
+      correoElectronico = "";
+      tiempoResidenciaAnios = "";
+      tiempoResidenciaMeses = "";
+      adultosCargo = "";
+      menoresCargo = "";
+      eps = "";
+      nivelEstudios = "";
+      profesion = "";
     }
 
     @Override
@@ -74,303 +74,303 @@ public class InformacionPersonalBuilder implements Builder<InformacionPersonal> 
     }
 
     public String getPrimerApellido() {
-        return primerApellido;
+        return this.primerApellido;
     }
 
     public String getSegundoApellido() {
-        return segundoApellido;
+        return this.segundoApellido;
     }
 
     public String getPrimerNombre() {
-        return primerNombre;
+        return this.primerNombre;
     }
 
     public String getSegundoNombre() {
-        return segundoNombre;
+        return this.segundoNombre;
     }
 
     public String getTipoDocumento() {
-        return tipoDocumento;
+        return this.tipoDocumento;
     }
 
     public String getNumeroDocumento() {
-        return numeroDocumento;
+        return this.numeroDocumento;
     }
 
     public String getLugarExpedicion() {
-        return lugarExpedicion;
+        return this.lugarExpedicion;
     }
 
     public String getFechaExpedicion() {
-        return fechaExpedicion;
+        return this.fechaExpedicion;
     }
 
     public String getFechaNacimiento() {
-        return fechaNacimiento;
+        return this.fechaNacimiento;
     }
 
     public String getSexo() {
-        return sexo;
+        return this.sexo;
     }
 
     public String getLugarNacimiento() {
-        return lugarNacimiento;
+        return this.lugarNacimiento;
     }
 
     public String getEstadoCivil() {
-        return estadoCivil;
+        return this.estadoCivil;
     }
 
     public String getCiudadDepartamento() {
-        return ciudadDepartamento;
+        return this.ciudadDepartamento;
     }
 
     public String getTipoVivienda() {
-        return tipoVivienda;
+        return this.tipoVivienda;
     }
 
     public String getEstrato() {
-        return estrato;
+        return this.estrato;
     }
 
     public String getDireccion() {
-        return direccion;
+        return this.direccion;
     }
 
     public String getBarrio() {
-        return barrio;
+        return this.barrio;
     }
 
     public String getTelefono() {
-        return telefono;
+        return this.telefono;
     }
 
     public String getCelular() {
-        return celular;
+        return this.celular;
     }
 
     public String getCorrepondencia() {
-        return correpondencia;
+        return this.correpondencia;
     }
 
     public String getCorreoElectronico() {
-        return correoElectronico;
+        return this.correoElectronico;
     }
 
     public String getTiempoResidenciaAnios() {
-        return tiempoResidenciaAnios;
+        return this.tiempoResidenciaAnios;
     }
 
     public String getTiempoResidenciaMeses() {
-        return tiempoResidenciaMeses;
+        return this.tiempoResidenciaMeses;
     }
 
     public String getAdultosCargo() {
-        return adultosCargo;
+        return this.adultosCargo;
     }
 
     public String getMenoresCargo() {
-        return menoresCargo;
+        return this.menoresCargo;
     }
 
     public String getNivelEstudios() {
-        return nivelEstudios;
+        return this.nivelEstudios;
     }
 
     public String getProfesion() {
-        return profesion;
+        return this.profesion;
     }
 
     public String getEps() {
-        return eps;
+        return this.eps;
     }
 
     public InformacionPersonal informacionPersonalConyugue(){
-        this.conPrimerApellido("Cardona");
-        this.conSegundoApellido("Lopez");
-        this.conPrimerNombre("Andres");
-        this.conSegundoNombre("Juan");
-        this.conTipoDocumento("CC");
-        this.conNumeroDocumento("10101020");
-        this.conFechaExpedicion("1999-Jan-28");
-        this.conLugarExpedicion("ARENAL - BOLIVAR");
-        this.conFechaNacimiento("1879-Dec-25");
-        this.conLugarNacimiento("ARENAL - BOLIVAR");
-        this.conSexo("M");
-        this.conEps("Salud Total");
-        this.conNivelEstudios("Universitario");
-        this.conCelular("3005656231");
-        return this.build();
+      conPrimerApellido("Cardona");
+      conSegundoApellido("Lopez");
+      conPrimerNombre("Andres");
+      conSegundoNombre("Juan");
+      conTipoDocumento("CC");
+      conNumeroDocumento("10101020");
+      conFechaExpedicion("1999-Jan-28");
+      conLugarExpedicion("ARENAL - BOLIVAR");
+      conFechaNacimiento("1879-Dec-25");
+      conLugarNacimiento("ARENAL - BOLIVAR");
+      conSexo("M");
+      conEps("Salud Total");
+      conNivelEstudios("Universitario");
+      conCelular("3005656231");
+        return build();
     }
 
     public InformacionPersonal informacionPersonal() {
-        this.conPrimerApellido("Morales");
-        this.conSegundoApellido("Carmona");
-        this.conPrimerNombre("Maria");
-        this.conSegundoNombre("Jose");
-        this.conTipoDocumento("CC");
-        this.conNumeroDocumento("10000060");
-        this.conLugarExpedicion("BOLIVAR - ANTIOQUIA");
-        this.conFechaExpedicion("2002-Mar-1");
-        this.conFechaNacimiento("1990-Mar-1");
-        this.conSexo("Femenino");
-        this.conLugarNacimiento("AMAGA - ANTIOQUIA");
-        this.conEstadoCivil("UNIÓN LIBRE");
-        this.conCiudadDepartamento("MEDELLIN - ANTIOQUIA");
-        this.conTipoVivienda("Familiar");
-        this.conEstrato("4");
-        this.conDireccion("CL 80 35 20");
-        this.conBarrio("Estadio");
-        this.conTelefono("2800000");
-        this.conCelular("3002002020");
-        this.conCorreoElectronico("risetzu@gmail.com");
-        this.conCorrespondencia("E-mail");
-        this.conTiempoResidenciaAnios("5");
-        this.conTiempoResidenciaMeses("2");
-        this.conAdultosCargo("0");
-        this.conMenoresCargo("0");
-        this.conEps("Salud Total");
-        this.conNivelEstudios("Universitario");
-        this.conProfesion("ARQUITECTO");
-        return this.build();
+      conPrimerApellido("Morales");
+      conSegundoApellido("Carmona");
+      conPrimerNombre("Maria");
+      conSegundoNombre("Jose");
+      conTipoDocumento("CC");
+      conNumeroDocumento("10000060");
+      conLugarExpedicion("BOLIVAR - ANTIOQUIA");
+      conFechaExpedicion("2002-Mar-1");
+      conFechaNacimiento("1990-Mar-1");
+      conSexo("Femenino");
+      conLugarNacimiento("AMAGA - ANTIOQUIA");
+      conEstadoCivil("UNIÓN LIBRE");
+      conCiudadDepartamento("MEDELLIN - ANTIOQUIA");
+      conTipoVivienda("Familiar");
+      conEstrato("4");
+      conDireccion("CL 80 35 20");
+      conBarrio("Estadio");
+      conTelefono("2800000");
+      conCelular("3002002020");
+      conCorreoElectronico("risetzu@gmail.com");
+      conCorrespondencia("E-mail");
+      conTiempoResidenciaAnios("5");
+      conTiempoResidenciaMeses("2");
+      conAdultosCargo("0");
+      conMenoresCargo("0");
+      conEps("Salud Total");
+      conNivelEstudios("Universitario");
+      conProfesion("ARQUITECTO");
+        return build();
     }
 
-    private InformacionPersonalBuilder conProfesion(String profesion) {
+    private InformacionPersonalBuilder conProfesion(final String profesion) {
         this.profesion = profesion;
         return this;
     }
 
-    private InformacionPersonalBuilder conNivelEstudios(String nivelEstudios) {
+    private InformacionPersonalBuilder conNivelEstudios(final String nivelEstudios) {
         this.nivelEstudios = nivelEstudios;
         return this;
     }
 
-    private InformacionPersonalBuilder conEps(String eps) {
+    private InformacionPersonalBuilder conEps(final String eps) {
         this.eps = eps;
         return this;
     }
 
-    private InformacionPersonalBuilder conMenoresCargo(String menoresCargo) {
+    private InformacionPersonalBuilder conMenoresCargo(final String menoresCargo) {
         this.menoresCargo = menoresCargo;
         return this;
     }
 
-    private InformacionPersonalBuilder conAdultosCargo(String adultosCargo) {
+    private InformacionPersonalBuilder conAdultosCargo(final String adultosCargo) {
         this.adultosCargo = adultosCargo;
         return this;
     }
 
-    private InformacionPersonalBuilder conTiempoResidenciaMeses(String tiempoResidenciaMeses) {
+    private InformacionPersonalBuilder conTiempoResidenciaMeses(final String tiempoResidenciaMeses) {
         this.tiempoResidenciaMeses = tiempoResidenciaMeses;
         return this;
     }
 
-    private InformacionPersonalBuilder conTiempoResidenciaAnios(String tiempoResidenciaAnios) {
+    private InformacionPersonalBuilder conTiempoResidenciaAnios(final String tiempoResidenciaAnios) {
         this.tiempoResidenciaAnios = tiempoResidenciaAnios;
         return this;
     }
 
-    private InformacionPersonalBuilder conCorrespondencia(String correpondencia) {
+    private InformacionPersonalBuilder conCorrespondencia(final String correpondencia) {
         this.correpondencia = correpondencia;
         return this;
     }
 
-    private InformacionPersonalBuilder conCorreoElectronico(String correoElectronico) {
+    private InformacionPersonalBuilder conCorreoElectronico(final String correoElectronico) {
         this.correoElectronico = correoElectronico;
         return this;
     }
 
-    private InformacionPersonalBuilder conCelular(String celular) {
+    private InformacionPersonalBuilder conCelular(final String celular) {
         this.celular = celular;
         return this;
     }
 
-    private InformacionPersonalBuilder conTelefono(String telefono) {
+    private InformacionPersonalBuilder conTelefono(final String telefono) {
         this.telefono = telefono;
         return this;
     }
 
-    private InformacionPersonalBuilder conBarrio(String barrio) {
+    private InformacionPersonalBuilder conBarrio(final String barrio) {
         this.barrio = barrio;
         return this;
     }
 
-    private InformacionPersonalBuilder conDireccion(String direccion) {
+    private InformacionPersonalBuilder conDireccion(final String direccion) {
         this.direccion = direccion;
         return this;
     }
 
-    private InformacionPersonalBuilder conEstrato(String estrato) {
+    private InformacionPersonalBuilder conEstrato(final String estrato) {
         this.estrato = estrato;
         return this;
     }
 
-    private InformacionPersonalBuilder conCiudadDepartamento(String ciudadDepartamento) {
+    private InformacionPersonalBuilder conCiudadDepartamento(final String ciudadDepartamento) {
         this.ciudadDepartamento = ciudadDepartamento;
         return this;
     }
 
-    private InformacionPersonalBuilder conEstadoCivil(String estadoCivil) {
+    private InformacionPersonalBuilder conEstadoCivil(final String estadoCivil) {
         this.estadoCivil = estadoCivil;
         return this;
     }
 
-    private InformacionPersonalBuilder conLugarNacimiento(String lugarNacimiento) {
+    private InformacionPersonalBuilder conLugarNacimiento(final String lugarNacimiento) {
         this.lugarNacimiento = lugarNacimiento;
         return this;
     }
 
-    private InformacionPersonalBuilder conTipoVivienda(String tipoVivienda) {
+    private InformacionPersonalBuilder conTipoVivienda(final String tipoVivienda) {
         this.tipoVivienda = tipoVivienda;
         return this;
     }
 
-    private InformacionPersonalBuilder conSexo(String sexo) {
+    private InformacionPersonalBuilder conSexo(final String sexo) {
         this.sexo = sexo;
         return this;
     }
 
-    private InformacionPersonalBuilder conFechaNacimiento(String fechaNacimiento) {
+    private InformacionPersonalBuilder conFechaNacimiento(final String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
         return this;
     }
 
-    private InformacionPersonalBuilder conFechaExpedicion(String fechaExpedicion) {
+    private InformacionPersonalBuilder conFechaExpedicion(final String fechaExpedicion) {
         this.fechaExpedicion = fechaExpedicion;
         return this;
     }
 
-    private InformacionPersonalBuilder conLugarExpedicion(String lugarExpedicion) {
+    private InformacionPersonalBuilder conLugarExpedicion(final String lugarExpedicion) {
         this.lugarExpedicion = lugarExpedicion;
         return this;
     }
 
-    private InformacionPersonalBuilder conNumeroDocumento(String numeroDocumento) {
+    private InformacionPersonalBuilder conNumeroDocumento(final String numeroDocumento) {
         this.numeroDocumento = numeroDocumento;
         return this;
     }
 
-    private InformacionPersonalBuilder conTipoDocumento(String tipoDocumento) {
+    private InformacionPersonalBuilder conTipoDocumento(final String tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
         return this;
     }
 
-    private InformacionPersonalBuilder conSegundoNombre(String segundoNombre) {
+    private InformacionPersonalBuilder conSegundoNombre(final String segundoNombre) {
         this.segundoNombre = segundoNombre;
         return this;
     }
 
-    private InformacionPersonalBuilder conPrimerNombre(String primerNombre) {
+    private InformacionPersonalBuilder conPrimerNombre(final String primerNombre) {
         this.primerNombre = primerNombre;
         return this;
     }
 
-    private InformacionPersonalBuilder conSegundoApellido(String segundoApellido) {
+    private InformacionPersonalBuilder conSegundoApellido(final String segundoApellido) {
         this.segundoApellido = segundoApellido;
         return this;
     }
 
-    private InformacionPersonalBuilder conPrimerApellido(String primerApellido) {
+    private InformacionPersonalBuilder conPrimerApellido(final String primerApellido) {
         this.primerApellido = primerApellido;
         return this;
     }

@@ -34,6 +34,7 @@ public class RegresarIncoporacion implements Task {
         Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_REGISTRAR),
         WaitUntil.the(BTN_ACEPTAR, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-        JavaScriptClick.on(BTN_ACEPTAR));
+        JavaScriptClick.on(BTN_ACEPTAR),
+        Ingresa.enAprobacion());
   }
 }

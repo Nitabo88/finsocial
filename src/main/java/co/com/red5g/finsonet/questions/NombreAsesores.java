@@ -14,22 +14,23 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class NombreAsesores implements Question<List<WebElementFacade>> {
 
-  private String ciudad;
+  private static final int TIEMPO = 100;
+  private final String ciudad;
 
-  public NombreAsesores(String ciudad) {
+  public NombreAsesores(final String ciudad) {
     this.ciudad = ciudad;
   }
 
-  public static NombreAsesores obtenerNombres(String ciudad) {
+  public static NombreAsesores obtenerNombres(final String ciudad) {
     return new NombreAsesores(ciudad);
   }
 
   @Override
-  public List<WebElementFacade> answeredBy(Actor actor) {
+  public List<WebElementFacade> answeredBy(final Actor actor) {
     actor.attemptsTo(
-        JavaScriptClick.on(BTN_DETALLE_CREDITOS.of(ciudad)),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(30).seconds());
-    List<WebElementFacade> lstNombreAsesor = LST_NOMBRE_ASESOR.resolveAllFor(actor);
+        JavaScriptClick.on(BTN_DETALLE_CREDITOS.of(this.ciudad)),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(NombreAsesores.TIEMPO).seconds());
+    final List<WebElementFacade> lstNombreAsesor = LST_NOMBRE_ASESOR.resolveAllFor(actor);
     lstNombreAsesor.remove(lstNombreAsesor.size() - 1);
     return lstNombreAsesor;
   }

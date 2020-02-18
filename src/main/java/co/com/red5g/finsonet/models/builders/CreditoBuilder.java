@@ -14,51 +14,51 @@ public class CreditoBuilder implements Builder<Credito> {
         return new CreditoBuilder();
     }
 
-    private CreditoBuilder conDocumento(String strNumeroDocumento) {
+    private CreditoBuilder conDocumento(final String strNumeroDocumento) {
         this.strNumeroDocumento = strNumeroDocumento;
         return this;
     }
 
-    private CreditoBuilder conValor(String strValorCuota) {
+    private CreditoBuilder conValor(final String strValorCuota) {
         this.strValorCuota = strValorCuota;
         return this;
     }
 
-    private CreditoBuilder a(String strPlazo) {
+    private CreditoBuilder a(final String strPlazo) {
         this.strPlazo = strPlazo;
         return this;
     }
 
     public String getStrNumeroDocumento() {
-        return strNumeroDocumento;
+        return this.strNumeroDocumento;
     }
 
     public String getStrValorCuota() {
-        return strValorCuota;
+        return this.strValorCuota;
     }
 
     public String getStrPlazo() {
-        return strPlazo;
+        return this.strPlazo;
     }
 
     private CreditoBuilder() {
-        this.strNumeroDocumento = "";
-        this.strValorCuota = "";
-        this.strPlazo = "";
+      strNumeroDocumento = "";
+      strValorCuota = "";
+      strPlazo = "";
     }
 
     public Credito informacionDelCredito() {
-        this.conDocumento(INFORMACION_CREDITO.getNumeroDocumento());
-        this.conValor(INFORMACION_CREDITO.getValorCuota());
-        this.a(INFORMACION_CREDITO.getNumeroCuotas());
-        return this.build();
+      conDocumento(INFORMACION_CREDITO.getNumeroDocumento());
+      conValor(INFORMACION_CREDITO.getValorCuota());
+      a(INFORMACION_CREDITO.getNumeroCuotas());
+        return build();
     }
 
-    public Credito informacionDelCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
-        this.conDocumento(strNumeroDocumento);
-        this.conValor(strValorCuota);
-        this.a(strPlazo);
-        return this.build();
+    public Credito informacionDelCredito(final String strNumeroDocumento, final String strValorCuota, final String strPlazo) {
+      conDocumento(strNumeroDocumento);
+      conValor(strValorCuota);
+      a(strPlazo);
+        return build();
     }
 
     @Override

@@ -13,8 +13,8 @@ public class QueAparece implements Question<Boolean> {
   }
 
   @Override
-  public Boolean answeredBy(Actor actor) {
-    String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public Boolean answeredBy(final Actor actor) {
+    final String numeroCredito = actor.recall(NUMERO_CREDITO);
     return LST_FILA_CHEQUEO_DOCUMENTOS_PENDIENTE.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

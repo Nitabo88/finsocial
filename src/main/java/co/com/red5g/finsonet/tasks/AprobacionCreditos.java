@@ -12,11 +12,11 @@ public class AprobacionCreditos implements Task {
   private static final String APROBACION_CREDITO = "Apr. de créditos";
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
+  public <T extends Actor> void performAs(final T actor) {
     actor.attemptsTo(
         Consulta.elCreditoEnConfirmacion(),
         Diligencia.laInformacionDeConfirmacion(),
-        Click.on(MNU_ORIGINACION.of(APROBACION_CREDITO))
+        Click.on(MNU_ORIGINACION.of(AprobacionCreditos.APROBACION_CREDITO))
         );
   }
 }

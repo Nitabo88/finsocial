@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.Question;
 public class CreditosReporteVentaLiberada implements Question<String> {
 
     @Override
-    public String answeredBy(Actor actor) {
+    public String answeredBy(final Actor actor) {
        return LBL_NUMERO_CREDITOS_VENTA_LIBERADA.resolveFor(actor).getText().replaceAll("[^\\d]", "");
     }
 }

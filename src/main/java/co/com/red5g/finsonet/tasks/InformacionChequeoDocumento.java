@@ -20,15 +20,15 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class InformacionChequeoDocumento implements Task {
-    private ChequeoDocumento chequeoDocumento;
+    private final ChequeoDocumento chequeoDocumento;
 
-    public InformacionChequeoDocumento(ChequeoDocumento chequeoDocumento) {
+    public InformacionChequeoDocumento(final ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
-        String numeroCredito = actor.recall(NUMERO_CREDITO);
+    public <T extends Actor> void performAs(final T actor) {
+        final String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito)),
             Click.on(BTN_PAPELERIA_ANTIGUA),
@@ -36,10 +36,9 @@ public class InformacionChequeoDocumento implements Task {
             Click.on(BTN_ACTIVAL),
             Click.on(BTN_ACEPTAR2_POP_UP),
             Click.on(BTN_ACEPTAR),
-            Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
-            Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
-            Subir.losArchivos());
-        actor.attemptsTo(
+            Enter.theValue(chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
+            Enter.theValue(chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
+            Subir.losArchivos(),
             Click.on(BTN_GUARDAR),
             Click.on(BTN_ACEPTAR)
         );

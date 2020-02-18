@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.Question;
 public class ValorReporteOriginacion implements Question <String> {
 
     @Override
-    public String answeredBy(Actor actor) {
+    public String answeredBy(final Actor actor) {
      return LBL_VALOR_ORIGINACION.resolveFor(actor).getText().replaceAll("[^\\d]", "");
     }
 }
