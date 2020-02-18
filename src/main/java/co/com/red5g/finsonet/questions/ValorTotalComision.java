@@ -26,7 +26,7 @@ public class ValorTotalComision implements Question<Boolean> {
     lstValorLiquidacion.remove(0);
     final List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
-    for (int i = 18; i < lstValorLiquidacion.size(); i++) {
+    for (int i = 0; i < lstValorLiquidacion.size(); i++) {
       final String valorComision = lstValorLiquidacion.get(i).getText().replaceAll("[^\\d]", "");
       final String ciudad = lstCiudades.get(i).getText();
       actor.attemptsTo(
