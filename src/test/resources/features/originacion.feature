@@ -56,15 +56,17 @@ Característica: Originacion
 
   @AprobacionCreditos
   Escenario:  credito huy - aprobacion
-    Dado que un asesor quiere normalizar un credito
-    Cuando normalice el credito
-    Entonces el podra enviar el credito hacia aprobacion huy
+    Dado que un asesor quiere aprobar un credito huy
+    Cuando el asesor normalice el credito
+    Y apruebe el credito
+    Entonces
 
   @AprobacionCreditos
-  Escenario:  normalizar credito huy
+  Escenario:  credito huy - pendiente
     Dado que un asesor quiere normalizar un credito
     Cuando normalice el credito
-    Entonces el podra enviar el credito hacia aprobacion huy
+    Y el credito se ponga en la lista de pendientes
+    Entonces
 
   @Incorporacion
   Escenario: Regresar el credito desde incorporacion
