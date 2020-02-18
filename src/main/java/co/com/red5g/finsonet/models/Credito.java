@@ -13,15 +13,15 @@ public class Credito {
       strPlazo = creditoBuilder.getStrPlazo();
     }
 
-    public String getStrNumeroDocumento() {
+    public String getNumeroDocumento() {
         return this.strNumeroDocumento;
     }
 
-    public String getStrValorCuota() {
+    public String getValorCuota() {
         return this.strValorCuota;
     }
 
-    public String getStrPlazo() {
+    public String getPlazo() {
         return this.strPlazo;
     }
 }
