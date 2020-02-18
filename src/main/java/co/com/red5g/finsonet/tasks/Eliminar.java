@@ -35,9 +35,10 @@ public class Eliminar implements Task {
             Ubicarse.enVetados(),
             Click.on(MNU_RIESGOS),
             Click.on(MNU_LST_VETADOS),
-            Check.whether(BTN_DETALLE_VETO.of(numeroDocumento).resolveFor(actor).isVisible()).andIfSo(
-                Click.on(BTN_DETALLE_VETO.of(numeroDocumento)),
-                Click.on(BTN_ANULAR_VETO)),
+            Check.whether(BTN_DETALLE_VETO.of(numeroDocumento).resolveFor(actor).isVisible())
+                .andIfSo(
+                    Click.on(BTN_DETALLE_VETO.of(numeroDocumento)),
+                    Click.on(BTN_ANULAR_VETO)),
             Click.on(BTN_MI_CUENTA),
             Click.on(MNU_MI_CUENTA.of(MNU_SALIR))
         );
