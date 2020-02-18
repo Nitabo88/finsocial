@@ -7,7 +7,7 @@ Característica: Creacion credito nuevo finsonet
 
   Escenario: Creacion nuevo credito huy
     Dado que un asesor debe crear un credito tipo huy
-    Cuando el ingresa el numero de documento 12000092 con el valor 2500000 y a un plazo de "48" meses
+    Cuando el asesor ingresa la informacion del credito
     Entonces el podra ver un credito huy creado
 
   Escenario:  Creacion nuevo credito - Campos faltantes

@@ -61,6 +61,12 @@ public class CreditoBuilder implements Builder<Credito> {
         return build();
     }
 
+  public Credito informacionDelCreditoHuy() {
+    conDocumento("10000622");
+    a("48");
+    return build();
+  }
+
     @Override
     public Credito build() {
         return new Credito(this);
