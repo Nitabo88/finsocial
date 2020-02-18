@@ -1,18 +1,38 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import co.com.red5g.finsonet.models.*;
-import co.com.red5g.finsonet.tasks.*;
-import net.serenitybdd.screenplay.Performable;
-
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.com.red5g.finsonet.models.ActividadLaboral;
+import co.com.red5g.finsonet.models.DescripcionActivos;
+import co.com.red5g.finsonet.models.DocumentosRequeridos;
+import co.com.red5g.finsonet.models.InformacionBalancePersonal;
+import co.com.red5g.finsonet.models.InformacionConyugue;
+import co.com.red5g.finsonet.models.InformacionFinanciera;
+import co.com.red5g.finsonet.models.InformacionPersonal;
+import co.com.red5g.finsonet.models.InformacionPrestamo;
+import co.com.red5g.finsonet.models.Referencias;
+import co.com.red5g.finsonet.tasks.FormularioBalancePersonal;
+import co.com.red5g.finsonet.tasks.FormularioDocumentosRequeridos;
+import co.com.red5g.finsonet.tasks.FormularioInformacionActivos;
+import co.com.red5g.finsonet.tasks.FormularioInformacionConyugue;
+import co.com.red5g.finsonet.tasks.FormularioInformacionFinanciera;
+import co.com.red5g.finsonet.tasks.FormularioInformacionLaboral;
+import co.com.red5g.finsonet.tasks.FormularioInformacionPersonal;
+import co.com.red5g.finsonet.tasks.FormularioInformacionPrestamo;
+import co.com.red5g.finsonet.tasks.FormularioInformacionReferencias;
+import net.serenitybdd.screenplay.Performable;
+
 public class Escribe {
+
+    private Escribe() {
+    }
 
     public static Performable elDetalleDeLaInformacionFinanciera(final InformacionFinanciera informacionFinanciera) {
         return instrumented(FormularioInformacionFinanciera.class, informacionFinanciera);
     }
 
-    public static Performable laInformacionDeLasReferencias(final Referencias informacionReferenciaFamiliar, final Referencias informacionReferenciaPersonal, final Referencias informacionReferenciaFinanciera) {
+    public static Performable laInformacionDeLasReferencias(final Referencias informacionReferenciaFamiliar, final Referencias informacionReferenciaPersonal,
+        final Referencias informacionReferenciaFinanciera) {
         return instrumented(FormularioInformacionReferencias.class, informacionReferenciaFamiliar, informacionReferenciaPersonal, informacionReferenciaFinanciera);
     }
 

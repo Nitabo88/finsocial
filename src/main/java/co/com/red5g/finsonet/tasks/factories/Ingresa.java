@@ -20,6 +20,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Ingresa {
 
+    private Ingresa() {
+    }
+
     public static Performable enElReporteDeAntecartera() {
         return instrumented(ReporteAntecartera.class);
     }

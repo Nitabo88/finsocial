@@ -18,8 +18,8 @@ public class LiquidadorComisionesPage extends PageObject {
     public static final Target LST_NUMERO_CREDITOS = Target.the("numero de creditos").located(org.openqa.selenium.By.xpath("//p[contains(.,'Cr')]"));
     public static final Target LST_VALOR_CREDITOS = Target.the("valor de creditos").located(org.openqa.selenium.By.xpath("//p[@class='colocacion']"));
     public static final Target LST_VALOR_LIQUIDACION = Target.the("valor de la liquidacion de la comision").located(org.openqa.selenium.By.xpath("//p[@class='liq']"));
-    public static final Target BTN_DETALLE_CREDITOS = Target.the("numero de creditos").locatedBy("//p[contains(.,'{0}')]//parent::div//parent::div//child::button");
-    public static final Target LST_TOTALES_NUMERO_CREDITOS = Target.the("numero de creditos").located(org.openqa.selenium.By.xpath(
+    public static final Target BTN_DETALLE_CREDITOS = Target.the("boton detalle de creditos").locatedBy("//p[contains(.,'{0}')]//parent::div//parent::div//child::button");
+    public static final Target LST_TOTALES_NUMERO_CREDITOS = Target.the("numero total de creditos").located(org.openqa.selenium.By.xpath(
         "//div[@class='panel mt-10']//div[@class='panel-body p-30']//div//div[@class='grid-vertical-center'][contains(text(),'TOTALES')]//..//p[contains(.,'Cantidad')]//following-sibling::p[@class='qty']"));
     public static final Target LST_TOTALES_VALORES_CREDITOS = Target.the("valor consolidado de creditos").located(org.openqa.selenium.By.xpath(
         "//div[@class='panel mt-10']//div[@class='panel-body p-30']//div//div[@class='grid-vertical-center'][contains(text(),'TOTALES')]//..//p[contains(.,'Monto')]//following-sibling::p[contains(@class,'val')]"));

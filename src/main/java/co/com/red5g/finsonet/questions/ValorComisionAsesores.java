@@ -45,7 +45,7 @@ public class ValorComisionAsesores implements Question<Boolean> {
               cerrarPestana(),
               cambiarPestanaActual());
         } else {
-          j = lstNombreAsesor.size();
+          break;
         }
       }
       actor.attemptsTo(

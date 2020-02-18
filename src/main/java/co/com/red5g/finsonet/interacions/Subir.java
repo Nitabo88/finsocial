@@ -14,7 +14,7 @@ public class Subir implements Interaction {
 
     Logger logger;
 
-    public Subir() {
+    private Subir() {
     }
 
     public static Subir losArchivos() {

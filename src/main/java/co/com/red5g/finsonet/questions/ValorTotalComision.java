@@ -36,7 +36,7 @@ public class ValorTotalComision implements Question<Boolean> {
       if (estadoCredito) {
         actor.attemptsTo(JavaScriptClick.on(BTN_CERRAR_DETALLE.of(ciudad)));
       } else {
-        i = lstValorLiquidacion.size();
+       break;
       }
     }
     return estadoCredito;

@@ -20,7 +20,7 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Diligencia {
 
-    public Diligencia() {
+    private Diligencia() {
     }
 
     public static Performable laInformacionDeChequeoDeDocumentos(final ChequeoDocumento chequeoDocumento) {

@@ -10,13 +10,13 @@ import net.serenitybdd.screenplay.actions.Click;
 
 public class PasoIncorporacion implements Question<Boolean> {
 
-  private static final String INCORPORACIÓN = "Incorporación";
+  private static final String INCORPORACION = "Incorporación";
 
   @Override
   public Boolean answeredBy(final Actor actor) {
     final String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNU_ORIGINACION.of(PasoIncorporacion.INCORPORACIÓN)));
+        Click.on(MNU_ORIGINACION.of(PasoIncorporacion.INCORPORACION)));
     return LST_FILA_INCORPORACION.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

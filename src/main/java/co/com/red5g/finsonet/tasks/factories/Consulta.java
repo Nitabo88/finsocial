@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Consulta {
 
-    public Consulta() {
+    private Consulta() {
     }
 
     public static Performable elReportedeLiquidacionDeComisiones() {
