@@ -16,7 +16,7 @@ public class VetadosPage extends PageObject {
     public static final Target MNU_BUSQUEDA_VETADOS = Target.the("tab veto interno").located(By.id("busq-vetados"));
     public static final Target MNU_LST_VETADOS = Target.the("tab veto lista de vetados").located(By.id("listado-vetados"));
     public static final Target TXT_DOCUMENTO_VETADOS = Target.the("input text documento").located(By.id("txtDocumento"));
-    public static final Target LST_MOTIVO = Target.the(" lista de motivos vetados").located(By.id("txtMotivo"));
+    public static final Target LST_MOTIVO = Target.the("lista de motivos vetados").located(By.id("txtMotivo"));
     public static final Target TXT_DETALLE = Target.the("detalle vetados").located(By.id("txtDetalle"));
     public static final Target BTN_NUEVO_VETO = Target.the("boton agregar veto").located(By.id("addVeto"));
 

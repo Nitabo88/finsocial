@@ -17,15 +17,21 @@ public class VetadosBuilder {
         return new VetadosBuilder();
     }
 
-    public Vetados build(){
-        return  new Vetados(this);
+    public Vetados build() {
+        return new Vetados(this);
     }
 
-    public String getDocumentoVetados() { return documentoVetados;    }
+    public String getDocumentoVetados() {
+        return documentoVetados;
+    }
 
-    public String getDetalleVetados() { return detalleVetados;    }
+    public String getDetalleVetados() {
+        return detalleVetados;
+    }
 
-    public String getListaVetados() { return detalleVetados;    }
+    public String getListaVetados() {
+        return listaVetados;
+    }
 
     public Vetados unCliente() {
         this.condocumentoVetados("10040048");
@@ -47,5 +53,4 @@ public class VetadosBuilder {
         this.listaVetados = listaVetados;
         return this;
     }
-
 }
