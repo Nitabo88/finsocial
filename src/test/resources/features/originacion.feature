@@ -5,18 +5,17 @@ Característica: Originacion
   Quiero tramitar un credito
   Para revisar el proceso de originacion
 
+  @ChequeoDocumentos
+  Escenario: Aprobacion chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de un documentos
+    Cuando el asesor adjunta toda la informacion de el chequeo de documentos
+    Entonces deberia ver el credito en el paso de confirmacion
 
   @ChequeoDocumentos
   Escenario: Aprobacion chequeo documentos no exitosa
     Dado que el asesor esta en el paso de chequeo de un documentos
     Cuando el asesor complete el chequeo de credito del cliente
     Entonces deberia ver el mensaje de adjuntar informacion
-
-  @ChequeoDocumentos
-  Escenario: Aprobacion chequeo de documentos
-    Dado que un asesor esta en el paso de chequeo de un documentos
-    Cuando el asesor adjunta toda la informacion de el chequeo de documentos
-    Entonces deberia ver el credito en el paso de confirmacion
 
   @ChequeoDocumentos
   Escenario: Chequeo de documentos estado Pendiente
