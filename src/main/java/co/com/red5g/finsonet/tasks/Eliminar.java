@@ -50,8 +50,8 @@ public class Eliminar implements Task {
                     WaitUntil.the(BTN_ANULAR, isClickable()).forNoMoreThan(TIEMPO).seconds(),
                     JavaScriptClick.on(BTN_ANULAR),
                     WaitUntil.the(BTN_ACEPTAR, isClickable()).forNoMoreThan(TIEMPO).seconds(),
-                    JavaScriptClick.on(BTN_ACEPTAR)));
-        actor.attemptsTo(
+                    JavaScriptClick.on(BTN_ACEPTAR)),
+            WaitUntil.the(BTN_MI_CUENTA, isClickable()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(BTN_MI_CUENTA),
             JavaScriptClick.on(MNU_MI_CUENTA.of(MNU_SALIR))
         );
