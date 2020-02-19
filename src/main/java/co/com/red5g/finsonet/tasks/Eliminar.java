@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ListadoVetadosPage.BTN_ANULAR;
 import static co.com.red5g.finsonet.userinterfaces.ListadoVetadosPage.BTN_ANULAR_VETO;
 import static co.com.red5g.finsonet.userinterfaces.ListadoVetadosPage.BTN_DETALLE_VETO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
@@ -13,6 +14,7 @@ import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.conditions.Check;
 
 public class Eliminar implements Task {
@@ -37,10 +39,11 @@ public class Eliminar implements Task {
             Click.on(MNU_LST_VETADOS),
             Check.whether(BTN_DETALLE_VETO.of(numeroDocumento).resolveFor(actor).isPresent())
                 .andIfSo(
-                    Click.on(BTN_DETALLE_VETO.of(numeroDocumento)),
-                    Click.on(BTN_ANULAR_VETO)),
-            Click.on(BTN_MI_CUENTA),
-            Click.on(MNU_MI_CUENTA.of(MNU_SALIR))
+                    JavaScriptClick.on(BTN_DETALLE_VETO.of(numeroDocumento)),
+                    JavaScriptClick.on(BTN_ANULAR_VETO),
+                    JavaScriptClick.on(BTN_ANULAR)),
+            JavaScriptClick.on(BTN_MI_CUENTA),
+            JavaScriptClick.on(MNU_MI_CUENTA.of(MNU_SALIR))
         );
     }
 }
