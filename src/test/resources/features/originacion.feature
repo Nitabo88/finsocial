@@ -5,6 +5,7 @@ Característica: Originacion
   Quiero tramitar un credito
   Para revisar el proceso de originacion
 
+
   @ChequeoDocumentos
   Escenario: Aprobacion chequeo documentos no exitosa
     Dado que el asesor esta en el paso de chequeo de un documentos
@@ -21,8 +22,8 @@ Característica: Originacion
   Escenario: Chequeo de documentos estado Pendiente
     Dado que un asesor esta en el paso de chequeo de un documentos
     Cuando el asesor decline el chequeo del credito del cliente
-    Entonces el asesor no deberia verlo en chequeo de documentos
-    Y el auxiliar de documentacion deberia verlo
+    Entonces el auxiliar de documentacion deberia verlo
+
   @Confirmacion
   Escenario: Regresar el credito desde el paso de confirmacion
     Dado que un asesor esta en el paso de confirmacion
