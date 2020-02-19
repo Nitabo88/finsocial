@@ -13,7 +13,7 @@ public class EquipoSatisfaccionBuilder {
         this.asuntoEquipoSatisfaccion = "";
     }
 
-    public static EquipoSatisfaccionBuilder a() {
+    public static EquipoSatisfaccionBuilder un() {
         return new EquipoSatisfaccionBuilder();
     }
 
@@ -27,7 +27,7 @@ public class EquipoSatisfaccionBuilder {
 
     public String getAsuntoEquipoSatisfaccion() { return asuntoEquipoSatisfaccion;    }
 
-    public EquipoSatisfaccion unUsuario() {
+    public EquipoSatisfaccion Usuario() {
         this.condocumentoEquipoSatisfaccion("10040048");
         this.condetalleEquipoSatisfaccion("Detalle de la nueva solicitud contact");
         this.conasuntoEquipoSatisfaccion("");

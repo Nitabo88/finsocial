@@ -25,5 +25,11 @@ public class EquipoSatisfaccionPage extends PageObject {
     public static final Target SPN_PREGUNTA_1 = Target.the("boton realizar encuesta").located(By.id("respuesta11"));
     public static final Target SPN_PREGUNTA_2 = Target.the("boton realizar encuesta").located(By.id("respuesta21"));
     public static final Target BTN_ENCUESTA_GUARDAR = Target.the("boton guardar encuesta").located(By.id("btnGuardar"));
+    public static final Target MNU_EQUIPO_SATISFACCION = Target.the("Hamburger equipo satisfaccion").located(By.id("hamburger"));
+    public static final Target MNU_CONTACT_CENTER = Target.the("Hamburger equipo satisfaccion").located(By.id("pqr-main"));
+    public static final Target MNU_BUSQUEDA_CONTACT = Target.the("Hamburger equipo satisfaccion").located(By.id("contact-busq"));
+    public static final Target BTN_BUSQUEDA_CONTACT = Target.the("Hamburger equipo satisfaccion").located(By.id("buscarBtn"));
+    public static final Target SPN_RADICADO_BUSQUEDA = Target.the("Hamburger equipo satisfaccion").located(By.id("rad"));
+
 
 }
