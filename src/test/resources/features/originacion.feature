@@ -23,7 +23,6 @@ Característica: Originacion
     Cuando el asesor decline el chequeo del credito del cliente
     Entonces el asesor no deberia verlo en chequeo de documentos
     Y el auxiliar de documentacion deberia verlo
-
   @Confirmacion
   Escenario: Regresar el credito desde el paso de confirmacion
     Dado que un asesor esta en el paso de confirmacion
@@ -59,14 +58,14 @@ Característica: Originacion
     Dado que un asesor quiere aprobar un credito huy
     Cuando el asesor normalice el credito
     Y apruebe el credito
-    Entonces
+    Entonces a
 
   @AprobacionCreditos
   Escenario:  credito huy - pendiente
     Dado que un asesor quiere normalizar un credito
     Cuando normalice el credito
     Y el credito se ponga en la lista de pendientes
-    Entonces
+    Entonces a
 
   @Incorporacion
   Escenario: Regresar el credito desde incorporacion
