@@ -14,12 +14,9 @@ public class Subir implements Interaction {
 
     Logger logger;
 
-    private Subir() {
-    }
-
-    public static Subir losArchivos() {
-        return new Subir();
-    }
+   public static Subir losArchivos() {
+       return new Subir();
+   }
 
     @Override
     public <T extends Actor> void performAs(final T actor) {
@@ -27,7 +24,7 @@ public class Subir implements Interaction {
             for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
                 actor.attemptsTo(Click.on(BTN_UPLOAD.resolveAllFor(actor).get(i)));
                 try {
-                    final String RUTA_SCRIPT = "C:\\Users\\Licet\\Documents\\sqa_code\\src\\test\\resources\\scripts\\FileUpload.exe";
+                    final String RUTA_SCRIPT = "C:/Users/Licet/Documents/sqa_code/src/test/resources/scripts/FileUpload.exe";
                     Runtime.getRuntime().exec(RUTA_SCRIPT);
                 } catch (final IOException e) {
                   this.logger.log(Level.INFO, String.valueOf(e));
