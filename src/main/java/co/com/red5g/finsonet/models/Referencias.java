@@ -3,61 +3,61 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.ReferenciasBuilder;
 
 public class Referencias {
-    private String nombreCompletoReferencia;
-    private String parentescoReferencia;
-    private String telefonoFijoReferencia;
-    private String ciudadReferencia;
-    private String celularReferencia;
-    private String direccionReferencia;
-    private String nombreEntidadFinanciera;
-    private String sucursal;
-    private String tipoProducto;
+    private final String nombreCompletoReferencia;
+    private final String parentescoReferencia;
+    private final String telefonoFijoReferencia;
+    private final String ciudadReferencia;
+    private final String celularReferencia;
+    private final String direccionReferencia;
+    private final String nombreEntidadFinanciera;
+    private final String sucursal;
+    private final String tipoProducto;
 
-    public Referencias(ReferenciasBuilder referenciasBuilder) {
-        this.nombreCompletoReferencia = referenciasBuilder.getNombreCompletoReferencia();
-        this.parentescoReferencia = referenciasBuilder.getParentescoReferencia();
-        this.telefonoFijoReferencia = referenciasBuilder.getTelefonoFijoReferencia();
-        this.ciudadReferencia = referenciasBuilder.getCiudadReferencia();
-        this.celularReferencia = referenciasBuilder.getCelularReferencia();
-        this.direccionReferencia = referenciasBuilder.getDireccionReferencia();
-        this.nombreEntidadFinanciera = referenciasBuilder.getNombreEntidadFinanciera();
-        this.sucursal = referenciasBuilder.getSucursal();
-        this.tipoProducto = referenciasBuilder.getTipoProducto();
+    public Referencias(final ReferenciasBuilder referenciasBuilder) {
+      nombreCompletoReferencia = referenciasBuilder.getNombreCompletoReferencia();
+      parentescoReferencia = referenciasBuilder.getParentescoReferencia();
+      telefonoFijoReferencia = referenciasBuilder.getTelefonoFijoReferencia();
+      ciudadReferencia = referenciasBuilder.getCiudadReferencia();
+      celularReferencia = referenciasBuilder.getCelularReferencia();
+      direccionReferencia = referenciasBuilder.getDireccionReferencia();
+      nombreEntidadFinanciera = referenciasBuilder.getNombreEntidadFinanciera();
+      sucursal = referenciasBuilder.getSucursal();
+      tipoProducto = referenciasBuilder.getTipoProducto();
     }
 
     public String getNombreCompletoReferencia() {
-        return nombreCompletoReferencia;
+        return this.nombreCompletoReferencia;
     }
 
     public String getParentescoReferencia() {
-        return parentescoReferencia;
+        return this.parentescoReferencia;
     }
 
     public String getTelefonoFijoReferencia() {
-        return telefonoFijoReferencia;
+        return this.telefonoFijoReferencia;
     }
 
     public String getCiudadReferencia() {
-        return ciudadReferencia;
+        return this.ciudadReferencia;
     }
 
     public String getDireccionReferencia() {
-        return direccionReferencia;
+        return this.direccionReferencia;
     }
 
     public String getNombreEntidadFinanciera() {
-        return nombreEntidadFinanciera;
+        return this.nombreEntidadFinanciera;
     }
 
     public String getSucursal() {
-        return sucursal;
+        return this.sucursal;
     }
 
     public String getTipoProducto() {
-        return tipoProducto;
+        return this.tipoProducto;
     }
 
     public String getCelularReferencia() {
-        return celularReferencia;
+        return this.celularReferencia;
     }
 }

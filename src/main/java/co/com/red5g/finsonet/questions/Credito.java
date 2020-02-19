@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.questions;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
@@ -15,8 +16,8 @@ public class Credito implements Question<Boolean> {
     }
 
     @Override
-    public Boolean answeredBy(Actor actor) {
-        SeleccionarFila lstFila = seleccionarFila(LST_FILA_CREDITOS,actor.recall(CEDULA_ACTOR),actor.recall(FECHA_CREDITO));
-        return lstFila.answeredBy(actor).isPresent();
+    public Boolean answeredBy(final Actor actor) {
+        final WebElementFacade lstFila = seleccionarFila(LST_FILA_CREDITOS,actor.recall(CEDULA_ACTOR),actor.recall(FECHA_CREDITO)).answeredBy(actor);
+        return lstFila.isPresent();
     }
 }

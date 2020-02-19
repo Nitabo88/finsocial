@@ -14,7 +14,7 @@ public class LaNoCreacionDelCredito implements Question<String> {
     }
 
     @Override
-    public String answeredBy(Actor actor) {
+    public String answeredBy(final Actor actor) {
         actor.attemptsTo(Click.on(BTN_CREAR_CREDITO));
         return LBL_MENSAJE_FALLIDO.resolveFor(actor).getText();
     }

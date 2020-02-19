@@ -3,49 +3,49 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.InformacionConyugueBuilder;
 
 public class InformacionConyugue {
-    private String lugarDondeTrabaja;
-    private String ocupacion;
-    private String dependenciaEconomica;
-    private String fechaIngreso;
-    private String cargoActual;
-    private String totalIngresos;
-    private String totalEgresos;
+    private final String lugarDondeTrabaja;
+    private final String ocupacion;
+    private final String dependenciaEconomica;
+    private final String fechaIngreso;
+    private final String cargoActual;
+    private final String totalIngresos;
+    private final String totalEgresos;
 
-    public InformacionConyugue(InformacionConyugueBuilder informacionConyugueBuilder) {
-        this.lugarDondeTrabaja = informacionConyugueBuilder.getLugarDondeTrabaja();
-        this.ocupacion = informacionConyugueBuilder.getOcupacion();
-        this.dependenciaEconomica = informacionConyugueBuilder.getDependenciaEconomica();
-        this.fechaIngreso = informacionConyugueBuilder.getFechaIngreso();
-        this.cargoActual = informacionConyugueBuilder.getCargoActual();
-        this.totalIngresos = informacionConyugueBuilder.getTotalIngresos();
-        this.totalEgresos = informacionConyugueBuilder.getTotalEgresos();
+    public InformacionConyugue(final InformacionConyugueBuilder informacionConyugueBuilder) {
+      lugarDondeTrabaja = informacionConyugueBuilder.getLugarDondeTrabaja();
+      ocupacion = informacionConyugueBuilder.getOcupacion();
+      dependenciaEconomica = informacionConyugueBuilder.getDependenciaEconomica();
+      fechaIngreso = informacionConyugueBuilder.getFechaIngreso();
+      cargoActual = informacionConyugueBuilder.getCargoActual();
+      totalIngresos = informacionConyugueBuilder.getTotalIngresos();
+      totalEgresos = informacionConyugueBuilder.getTotalEgresos();
     }
 
     public String getLugarDondeTrabaja() {
-        return lugarDondeTrabaja;
+        return this.lugarDondeTrabaja;
     }
 
     public String getOcupacion() {
-        return ocupacion;
+        return this.ocupacion;
     }
 
     public String getDependenciaEconomica() {
-        return dependenciaEconomica;
+        return this.dependenciaEconomica;
     }
 
     public String getFechaIngreso() {
-        return fechaIngreso;
+        return this.fechaIngreso;
     }
 
     public String getCargoActual() {
-        return cargoActual;
+        return this.cargoActual;
     }
 
     public String getTotalIngresos() {
-        return totalIngresos;
+        return this.totalIngresos;
     }
 
     public String getTotalEgresos() {
-        return totalEgresos;
+        return this.totalEgresos;
     }
 }

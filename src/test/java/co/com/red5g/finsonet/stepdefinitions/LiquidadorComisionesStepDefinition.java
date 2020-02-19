@@ -11,7 +11,6 @@ import static org.hamcrest.Matchers.containsString;
 
 import co.com.red5g.finsonet.questions.factories.ElNumero;
 import co.com.red5g.finsonet.questions.factories.ElValor;
-import co.com.red5g.finsonet.tasks.IngresarAlReporteDeLiquidacionDeComisiones;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
@@ -22,16 +21,16 @@ import cucumber.api.java.es.Y;
 public class LiquidadorComisionesStepDefinition {
 
     @Dado("^que (.*) quiere consultar el reporte actual de liquidacion de comisiones$")
-    public void consultarReporteLiquidacionComisiones(String actor) {
+    public void consultarReporteLiquidacionComisiones(final String actor) {
         theActorCalled(actor).wasAbleTo(
                 Consulta.elReportedeLiquidacionDeComisiones()
         );
     }
 
     @Cuando("^el ingresa al reporte de liquidacion de comisiones - Venta Nueva del ciclo (.*)$")
-    public void ingresarLiquidacionComisiones(String ciclo) {
+    public void ingresarLiquidacionComisiones(final String ciclo) {
         theActorInTheSpotlight().attemptsTo(
-                IngresarAlReporteDeLiquidacionDeComisiones.delCiclo(ciclo)
+                Ingresa.alReporteDeLiquidacionDeComisiones(ciclo)
         );
     }
 
@@ -78,7 +77,7 @@ public class LiquidadorComisionesStepDefinition {
         theActorInTheSpotlight().should(seeThat(ElNumero.deCreditosDeLiquidacionDeComisiones()));
     }
 
-    @Y("^que el valor del consolidad y el detalle del reporte de liquidacion de comisiones es consistente$")
+    @Y("^que el valor del consolidado y el detalle del reporte de liquidacion de comisiones es consistente$")
     public void verificarValorConsolidadoDetalle() {
         theActorInTheSpotlight().should(seeThat(ElValor.deCreditosDeLiquidacionDeComisiones()));
     }

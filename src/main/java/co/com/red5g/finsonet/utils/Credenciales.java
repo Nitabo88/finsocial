@@ -4,25 +4,25 @@ public enum Credenciales {
     USUARIO_FINSOCIAL ("ochinchilla" ,"Nicolas32@", "123456"),
     USUARIO_DOCUMENTOS ("mvargas", "Nicolas32@","a");
 
-    private String usuario;
-    private String contrasena;
-    private String codigo;
+    private final String usuario;
+    private final String contrasena;
+    private final String codigo;
 
-    Credenciales(String usuario, String contrasena, String codigo) {
+    Credenciales(final String usuario, final String contrasena, final String codigo) {
         this.usuario = usuario;
         this.contrasena = contrasena;
         this.codigo = codigo;
     }
 
     public String getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
     public String getContrasena() {
-        return contrasena;
+        return this.contrasena;
     }
 
     public String getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 }

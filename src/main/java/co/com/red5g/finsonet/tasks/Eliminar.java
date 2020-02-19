@@ -22,7 +22,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Eliminar implements Task {
 
-    private static final String MNU_SALIR = "Salir";
+    private static final String SALIR = "Salir";
     private static final int TIEMPO = 5;
     Vetados vetados;
 
@@ -53,7 +53,7 @@ public class Eliminar implements Task {
                     JavaScriptClick.on(BTN_ACEPTAR)),
             WaitUntil.the(BTN_MI_CUENTA, isClickable()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(BTN_MI_CUENTA),
-            JavaScriptClick.on(MNU_MI_CUENTA.of(MNU_SALIR))
+            JavaScriptClick.on(MNU_MI_CUENTA.of(SALIR))
         );
     }
 }

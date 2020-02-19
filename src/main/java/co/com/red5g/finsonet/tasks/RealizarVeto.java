@@ -1,11 +1,14 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.BTN_ACEPTAR_VETO;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.BTN_NUEVO_VETO;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.LST_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.TXT_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.TXT_DOCUMENTO_VETADOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Vetados;
@@ -36,9 +39,13 @@ public class RealizarVeto implements Task {
         actor.attemptsTo(
             WaitUntil.the(TXT_DOCUMENTO_VETADOS, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO_VETADOS).thenHit(Keys.ENTER),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             SelectFromOptions.byVisibleText(vetados.getListaVetados()).from(LST_MOTIVO),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Enter.theValue(vetados.getDetalleVetados()).into(TXT_DETALLE),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(BTN_NUEVO_VETO),
+            WaitUntil.the(BTN_ACEPTAR_VETO, isClickable()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(BTN_ACEPTAR_VETO)
         );
     }
