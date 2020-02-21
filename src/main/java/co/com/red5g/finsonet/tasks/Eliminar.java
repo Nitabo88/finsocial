@@ -38,7 +38,8 @@ public class Eliminar implements Task {
         actor.attemptsTo(
             Ubicarse.enVetados(),
             Click.on(MNU_RIESGOS),
-            Click.on(MNU_LST_VETADOS),
+            Click.on(MNU_LST_VETADOS));
+        actor.attemptsTo(
             Check.whether(BTN_DETALLE_VETO.of(numeroDocumento).resolveFor(actor).isPresent())
                 .andIfSo(
                     JavaScriptClick.on(BTN_DETALLE_VETO.of(numeroDocumento)),
