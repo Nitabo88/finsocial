@@ -8,6 +8,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_SOLICIT
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_MOTIVO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
@@ -19,18 +20,15 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class RegresarIncoporacion implements Task {
 
-  private static final int TIEMPO = 10;
+  private static final int TIEMPO = 20;
   private Incorporacion incorporacion;
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     final String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        JavaScriptClick.on(BTN_REGRESAR_INCORPORACION.of(numeroCredito)));
-    actor.attemptsTo(
-        SelectFromOptions.byVisibleText(incorporacion.getSolicitadoPor()).from(LST_SOLICITADO_POR)
-    );
-    actor.attemptsTo(
+        JavaScriptClick.on(BTN_REGRESAR_INCORPORACION.of(numeroCredito)),
+        SelectFromOptions.byVisibleText(incorporacion.getSolicitadoPor()).from(LST_SOLICITADO_POR),
         Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_REGISTRAR),
         WaitUntil.the(BTN_ACEPTAR, isVisible()).forNoMoreThan(TIEMPO).seconds(),

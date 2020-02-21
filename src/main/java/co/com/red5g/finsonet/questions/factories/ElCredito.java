@@ -4,6 +4,7 @@ import co.com.red5g.finsonet.questions.PasoAprobacionDeCreditos;
 import co.com.red5g.finsonet.questions.PasoChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.PasoConfirmacionExitosa;
 import co.com.red5g.finsonet.questions.PasoIncorporacion;
+import co.com.red5g.finsonet.questions.PasoIncorporacionPendiente;
 import co.com.red5g.finsonet.questions.PasoPendienteAprobacionDeCreditos;
 import net.serenitybdd.screenplay.Question;
 
@@ -34,5 +35,9 @@ public class ElCredito {
 
   public static Question<Boolean> enAprobacionCredito() {
     return new PasoAprobacionDeCreditos();
+  }
+
+  public static Question<Boolean> enLaListaPendienteDeIncorporacion() {
+    return new PasoIncorporacionPendiente();
   }
 }
