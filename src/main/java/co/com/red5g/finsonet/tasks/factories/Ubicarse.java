@@ -21,9 +21,7 @@ public class Ubicarse {
     return instrumented(SolicitudCredito.class);
   }
 
-  public static Performable enNuevoCreditoHuy() {
-    return instrumented(NuevoCreditoHuy.class);
-  }
-    public static Performable enVetados() { return instrumented(VetoCliente.class);
-    }
+  public static Performable enNuevoCreditoHuy() { return instrumented(NuevoCreditoHuy.class); }
+
+  public static Performable enVetados() { return instrumented(VetoCliente.class); }
 }

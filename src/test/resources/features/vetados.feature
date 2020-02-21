@@ -7,6 +7,6 @@ Característica: Vetados
 
   @Vetados
   Escenario: Asignar veto interno persona natural
-    Dado que el asesor quiere aginar un veto interno
+    Dado que el asesor quiere asignar un veto interno
     Cuando el asesor asigne un veto interno a un cliente
-    Entonces el asesor deberia verlo en listado de vetos
+    Entonces el asesor deberia verlo en listado de vetados

@@ -21,7 +21,6 @@ import net.serenitybdd.screenplay.conditions.Check;
 public class Eliminar implements Task {
 
     private static final String SALIR = "Salir";
-    private static final int TIEMPO = 5;
     Vetados vetados;
 
     public Eliminar(final Vetados vetados) {

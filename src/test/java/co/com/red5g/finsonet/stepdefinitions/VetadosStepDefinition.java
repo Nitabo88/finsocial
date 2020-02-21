@@ -25,7 +25,7 @@ public class VetadosStepDefinition {
      theActorCalled(ACTOR).wasAbleTo(Eliminar.elVeto(a().unCliente()));
     }
 
-    @Dado("que el (.*) quiere aginar un veto interno")
+    @Dado("que el (.*) quiere asignar un veto interno")
     public void ubicarseEnVetados(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
                 Ubicarse.enVetados()
@@ -39,7 +39,7 @@ public class VetadosStepDefinition {
         );
     }
 
-    @Entonces("el asesor deberia verlo en listado de vetos")
+    @Entonces("el asesor deberia verlo en listado de vetados")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
                 (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
