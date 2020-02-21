@@ -31,10 +31,17 @@ public class IncorporacionStepDefinition {
 
   @Cuando("^el asesor pone el credito como pendiente en incorporacion$")
   public void marcarPendienteCredito() {
+    theActorInTheSpotlight().attemptsTo(
+        Diligencia.laInformacionDeCreditoPendienteEnIncorporacion(con().motivoPendiente()));
   }
 
   @Cuando("^el asesor aprueba el credito en incorporacion$")
   public void aprobarCredito() {
+  }
+
+  @Entonces("^el asesor debera ver el credito en el paso de aprobacion de creditos$")
+  public void verificarElCreditoEnAprobacion() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
 
   @Entonces("^el asesor debera ver el credito en el paso de formalizacion$")
@@ -43,12 +50,7 @@ public class IncorporacionStepDefinition {
   }
 
   @Entonces("^el asesor debera ver el credito en incorporacion en la lista de pendientes$")
-  public void elAsesorDeberaVerElCreditoEnIncorporacionEnLaListaDePendientes() {
-
+  public void verificarElCreditoEnPendienteAprobacion() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaPendienteDeIncorporacion()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
-
-  @Entonces("^el asesor debera ver el credito en el paso de aprobacion de creditos$")
-  public void verificarElCreditoEnAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
   }
-}

@@ -24,6 +24,12 @@ Característica: Originacion
     Entonces el auxiliar de documentacion deberia verlo
 
   @Confirmacion
+  Escenario: Aprobacion del paso de confirmacion de un credito
+    Dado que un asesor esta en el paso de confirmacion
+    Cuando el asesor apruebe el paso de confirmacion
+    Entonces el asesor deberia ver el crédito en el paso de aprobacion de creditos
+
+  @Confirmacion
   Escenario: Regresar el credito desde el paso de confirmacion
     Dado que un asesor esta en el paso de confirmacion
     Cuando el asesor regresa el credito a chequeo de documentos
@@ -53,14 +59,14 @@ Característica: Originacion
     Cuando el asesor regresa el credito a confirmacion
     Entonces el asesor debera ver el credito en el paso de confirmacion
 
-  @AprobacionCreditos
+  @AprobacionCreditosHuy
   Escenario:  credito huy - aprobacion
     Dado que un asesor quiere aprobar un credito huy
     Cuando el asesor normalice el credito
     Y apruebe el credito
     Entonces a
 
-  @AprobacionCreditos
+  @AprobacionCreditosHuy
   Escenario:  credito huy - pendiente
     Dado que un asesor quiere normalizar un credito
     Cuando normalice el credito
