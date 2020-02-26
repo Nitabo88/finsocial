@@ -8,7 +8,6 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_SOLICIT
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_MOTIVO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
@@ -22,6 +21,10 @@ public class RegresarIncoporacion implements Task {
 
   private static final int TIEMPO = 20;
   private Incorporacion incorporacion;
+
+  public RegresarIncoporacion(final Incorporacion incorporacion) {
+    this.incorporacion = incorporacion;
+  }
 
   @Override
   public <T extends Actor> void performAs(T actor) {

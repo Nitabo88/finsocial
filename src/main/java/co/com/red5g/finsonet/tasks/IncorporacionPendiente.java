@@ -9,7 +9,6 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_TIPO_DE
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_DETALLE;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -31,7 +30,6 @@ public class IncorporacionPendiente implements Task {
   public <T extends Actor> void performAs(T actor) {
     final String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        WaitFor.seconds(10),
         JavaScriptClick.on(BTN_PENDIENTE_INCORPORACION.of(numeroCredito)),
         SelectFromOptions.byVisibleText(incorporacion.getTipoDevolucion()).from(LST_TIPO_DEVOLUCION),
         SelectFromOptions.byVisibleText(incorporacion.getMotivo()).from(LST_MOTIVO_DEVOLUCION),
