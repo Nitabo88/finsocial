@@ -12,10 +12,10 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class Intenta implements Task {
+public class IntentaCrear implements Task {
 
-    public static Performable crearUnCredito() {
-        return instrumented(Intenta.class);
+    public static Performable unCredito() {
+        return instrumented(IntentaCrear.class);
     }
     @Override
     public <T extends Actor> void performAs(final T actor) {
