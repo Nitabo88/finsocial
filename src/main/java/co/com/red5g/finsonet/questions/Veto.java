@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
 
-import static co.com.red5g.finsonet.userinterfaces.VerificarVetoPage.LST_FILA_VETOS;
+import static co.com.red5g.finsonet.userinterfaces.VetadosPage.LST_FILA_VETOS;
 
 public class Veto implements Question<Boolean> {
     private Vetados vetados;
