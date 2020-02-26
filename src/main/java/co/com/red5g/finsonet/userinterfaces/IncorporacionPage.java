@@ -12,11 +12,19 @@ public class IncorporacionPage {
   public static final Target LST_MOTIVO_DEVOLUCION = Target.the("la fila del motivo de devolucion").located(By.id("txtMotivo2"));
   public static final Target LST_TIPO_DEVOLUCION = Target.the("el tipo de devolucion").located(By.id("txtTipoDev"));
   public static final Target LST_SOLICITADO_POR = Target.the("la lista de solicitado por del cuadro emergente").located(By.id("txtAut"));
+  public static final Target LST_SELECCIONAR_GESTION = Target.the("la lista de seleccionar gestion").located(By.xpath("//div[@id='modGestion']//child::select[@id='txtGestion']"));
+  public static final Target LST_INCORPORACION_NOMBRE = Target.the("la lista de solicitado por del cuadro emergente").locatedBy("//h2[text()='Incorporación de "
+      + "créditos']//ancestor::div[@class='panel panel-green']//td[contains(.,'{0}')]//parent::tr//a[@class='faq-link']");
   public static final Target TXT_MOTIVO = Target.the("el motivo de regreso").located(By.id("txtMotivo"));
+  public static final Target TXT_ARCHIVO = Target.the("el archivo de subida").located(By.id("textFile"));
+  public static final Target TXT_DETALLE_GESTION = Target.the("el detalle de gestion").located(By.xpath("//div[@id='modGestion']//child::textarea[@id='txtDetGestion']"));
   public static final Target LBL_INCORPORACION = Target.the("el texto de incorporacion").located(By.xpath("//h1[text()='Incorporación']"));
   public static final Target TXT_DETALLE = Target.the("el detalle de pendiente").located(By.id("txtDetalle2"));
-  public static final Target BTN_REGISTRAR = Target.the("el boton de registro").located(By.id("btn-aceptar-regreso"));
+  public static final Target BTN_REGISTRAR = Target.the("el boton de registro").located(By.id("btn-aceptar-pendiente2"));
   public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
+  public static final Target BTN_OK = Target.the("el boton aceptar").located(By.xpath("//button[text()='OK']"));
+  public static final Target BTN_ACTUALIZAR_GESTION = Target.the("el boton actualizar gestion").located(By.xpath("//button[text()='Actualizar gestión']"));
+  public static final Target BTN_APROBAR = Target.the("el boton aprobar").located(By.xpath("//button[text()='Aprobar']"));
   public static final Target MNU_HAMBURGUESA = Target.the("el menu hamburguesa").located(By.id("hamburger"));
   public static final Target MNU_APROBACION_CREDITO = Target.the("el menu aprobacion credito").located(By.id("or-aprob"));
   public static final Target BTN_REGRESAR_INCORPORACION = Target.the("el boton regresar")

@@ -8,6 +8,7 @@ import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoPendiente;
 import co.com.red5g.finsonet.tasks.AprobacionDeCredito;
+import co.com.red5g.finsonet.tasks.AprobacionIncorporacion;
 import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
 import co.com.red5g.finsonet.tasks.IncorporacionPendiente;
 import co.com.red5g.finsonet.tasks.InformacionChequeoDocumento;
@@ -61,5 +62,9 @@ public class Diligencia {
 
     public static Performable laInformacionDeCreditoPendienteEnIncorporacion(Incorporacion motivoPendiente) {
         return instrumented(IncorporacionPendiente.class, motivoPendiente);
+    }
+
+    public static Performable laAprobacionDelCreditoEnIncorporacion() {
+        return instrumented(AprobacionIncorporacion.class);
     }
 }

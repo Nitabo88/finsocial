@@ -74,10 +74,10 @@ Característica: Originacion
     Entonces a
 
   @Incorporacion
-  Escenario: Regresar el credito desde incorporacion
+  Escenario: Aprobar el credito desde incorporacion
     Dado que un asesor esta en el paso de incorporacion
-    Cuando el asesor regresa el credito a aprobacion de creditos
-    Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
+    Cuando el asesor aprueba el credito en incorporacion
+    Entonces el asesor debera ver el credito en el paso de formalizacion
 
   @Incorporacion
   Escenario: Marcar el credito como pendiente en incorporacion
@@ -86,7 +86,7 @@ Característica: Originacion
     Entonces el asesor debera ver el credito en incorporacion en la lista de pendientes
 
   @Incorporacion
-  Escenario: Aprobar el credito desde incorporacion
+  Escenario: Regresar el credito desde incorporacion
     Dado que un asesor esta en el paso de incorporacion
-    Cuando el asesor aprueba el credito en incorporacion
-    Entonces el asesor debera ver el credito en el paso de formalizacion
+    Cuando el asesor regresa el credito a aprobacion de creditos
+    Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
