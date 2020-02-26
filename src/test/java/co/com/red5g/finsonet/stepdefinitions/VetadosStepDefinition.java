@@ -9,12 +9,14 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
+import co.com.red5g.finsonet.tasks.Intenta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.Y;
 
 public class VetadosStepDefinition {
 
@@ -43,5 +45,12 @@ public class VetadosStepDefinition {
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
                 (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
+    }
+
+    @Y("^el asesor no deberia poder crear un credito con este usuario$")
+    public void IntentarCrearCredito() {
+       theActorInTheSpotlight().attemptsTo(
+               Intenta.crearUnCredito()
+       );
     }
 }

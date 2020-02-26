@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.utils;
 
 public enum InformacionCredito {
-    INFORMACION_CREDITO ("10000060" ,"1200000", "48");
+    INFORMACION_CREDITO ("10040048" ,"1200000", "48");
 
     private final String numeroDocumento;
     private final String valorCuota;
