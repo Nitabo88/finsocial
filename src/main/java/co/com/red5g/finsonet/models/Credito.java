@@ -3,25 +3,25 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.CreditoBuilder;
 
 public class Credito {
-    private String strNumeroDocumento;
-    private String strValorCuota;
-    private String strPlazo;
+    private final String strNumeroDocumento;
+    private final String strValorCuota;
+    private final String strPlazo;
 
-    public Credito(CreditoBuilder creditoBuilder) {
-        this.strNumeroDocumento = creditoBuilder.getStrNumeroDocumento();
-        this.strValorCuota = creditoBuilder.getStrValorCuota();
-        this.strPlazo = creditoBuilder.getStrPlazo();
+    public Credito(final CreditoBuilder creditoBuilder) {
+      strNumeroDocumento = creditoBuilder.getStrNumeroDocumento();
+      strValorCuota = creditoBuilder.getStrValorCuota();
+      strPlazo = creditoBuilder.getStrPlazo();
     }
 
-    public String getStrNumeroDocumento() {
-        return strNumeroDocumento;
+    public String getNumeroDocumento() {
+        return this.strNumeroDocumento;
     }
 
-    public String getStrValorCuota() {
-        return strValorCuota;
+    public String getValorCuota() {
+        return this.strValorCuota;
     }
 
-    public String getStrPlazo() {
-        return strPlazo;
+    public String getPlazo() {
+        return this.strPlazo;
     }
 }

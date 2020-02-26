@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.questions;
 
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_MENSAJE;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_MENSAJE;
 
 public class QueElChequeoDeDocumentos implements Question<String> {
 
@@ -11,9 +11,8 @@ public class QueElChequeoDeDocumentos implements Question<String> {
         return new QueElChequeoDeDocumentos();
     }
 
-
     @Override
-    public String answeredBy(Actor actor) {
+    public String answeredBy(final Actor actor) {
         return LBL_MENSAJE.resolveFor(actor).getText();
     }
 }

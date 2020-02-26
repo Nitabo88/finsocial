@@ -1,11 +1,11 @@
 package co.com.red5g.finsonet.userinterfaces;
 
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class ComercialPage {
-    public static final Target LNK_NUEVO_CREDITO = Target.the("el link nuevo_credito").located(By.id("nuevo_credito"));
-    public static final Target LNK_MIS_CREDITOS = Target.the("el link a mis creditos").located(By.id("mis_creditos"));
+    public static final Target LNK_NUEVO_CREDITO = Target.the("el link nuevo_credito").located(By.xpath("//h3[text()='Nuevo Crédito']//parent::a//div"));
+    public static final Target LNK_NUEVO_CREDITO_HUY= Target.the("el link nuevo_credito").located(By.xpath("//h3[text()='Nuevo Crédito Huy']//parent::a//div"));
 
     private ComercialPage() {
         throw new IllegalStateException("Utility class");

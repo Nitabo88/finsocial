@@ -3,134 +3,134 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.InformacionFinancieraBuilder;
 
 public class InformacionFinanciera {
-    private String salarioFijo;
-    private String salarioVariableComisiones;
-    private String arrendamientoIngresos;
-    private String rendimientosFinancieros;
-    private String honorarios;
-    private String otrosIngresos;
-    private String cualesIngresos;
-    private String arriendosEgresos;
-    private String gastosPersonalesFamiliares;
-    private String prestamosDiferentesFinsocial;
-    private String deduccionesNomina;
-    private String tarjetasCredito;
-    private String otrosGastos;
-    private String cualesGastos;
-    private String pagoHipoteca;
-    private String valorComercialVivienda;
-    private String dondeVivir;
-    private String comprarVivienda;
-    private String cupoExtraLibranza;
-    private String usoCredito;
-    private String razonOtros;
+    private final String salarioFijo;
+    private final String salarioVariableComisiones;
+    private final String arrendamientoIngresos;
+    private final String rendimientosFinancieros;
+    private final String honorarios;
+    private final String otrosIngresos;
+    private final String cualesIngresos;
+    private final String arriendosEgresos;
+    private final String gastosPersonalesFamiliares;
+    private final String prestamosDiferentesFinsocial;
+    private final String deduccionesNomina;
+    private final String tarjetasCredito;
+    private final String otrosGastos;
+    private final String cualesGastos;
+    private final String pagoHipoteca;
+    private final String valorComercialVivienda;
+    private final String dondeVivir;
+    private final String comprarVivienda;
+    private final String cupoExtraLibranza;
+    private final String usoCredito;
+    private final String razonOtros;
 
-    public InformacionFinanciera(InformacionFinancieraBuilder informacionFinancieraBuilder) {
-        this.salarioFijo = informacionFinancieraBuilder.getSalarioFijo();
-        this.salarioVariableComisiones = informacionFinancieraBuilder.getSalarioVariableComisiones();
-        this.arrendamientoIngresos = informacionFinancieraBuilder.getArrendamientoIngresos();
-        this.rendimientosFinancieros = informacionFinancieraBuilder.getRendimientosFinancieros();
-        this.honorarios = informacionFinancieraBuilder.getHonorarios();
-        this.otrosIngresos = informacionFinancieraBuilder.getOtrosIngresos();
-        this.cualesIngresos = informacionFinancieraBuilder.getCualesIngresos();
-        this.arriendosEgresos = informacionFinancieraBuilder.getArriendosEgresos();
-        this.gastosPersonalesFamiliares = informacionFinancieraBuilder.getGastosPersonalesFamiliares();
-        this.prestamosDiferentesFinsocial = informacionFinancieraBuilder.getPrestamosDiferentesFinsocial();
-        this.deduccionesNomina = informacionFinancieraBuilder.getDeduccionesNomina();
-        this.tarjetasCredito = informacionFinancieraBuilder.getTarjetasCredito();
-        this.otrosGastos = informacionFinancieraBuilder.getOtrosGastos();
-        this.cualesGastos = informacionFinancieraBuilder.getCualesGastos();
-        this.pagoHipoteca = informacionFinancieraBuilder.getPagoHipoteca();
-        this.valorComercialVivienda = informacionFinancieraBuilder.getValorComercialVivienda();
-        this.dondeVivir = informacionFinancieraBuilder.getDondeVivir();
-        this.comprarVivienda = informacionFinancieraBuilder.getComprarVivienda();
-        this.cupoExtraLibranza = informacionFinancieraBuilder.getCupoExtraLibranza();
-        this.usoCredito = informacionFinancieraBuilder.getUsoCredito();
-        this.razonOtros = informacionFinancieraBuilder.getRazonOtros();
+    public InformacionFinanciera(final InformacionFinancieraBuilder informacionFinancieraBuilder) {
+      salarioFijo = informacionFinancieraBuilder.getSalarioFijo();
+      salarioVariableComisiones = informacionFinancieraBuilder.getSalarioVariableComisiones();
+      arrendamientoIngresos = informacionFinancieraBuilder.getArrendamientoIngresos();
+      rendimientosFinancieros = informacionFinancieraBuilder.getRendimientosFinancieros();
+      honorarios = informacionFinancieraBuilder.getHonorarios();
+      otrosIngresos = informacionFinancieraBuilder.getOtrosIngresos();
+      cualesIngresos = informacionFinancieraBuilder.getCualesIngresos();
+      arriendosEgresos = informacionFinancieraBuilder.getArriendosEgresos();
+      gastosPersonalesFamiliares = informacionFinancieraBuilder.getGastosPersonalesFamiliares();
+      prestamosDiferentesFinsocial = informacionFinancieraBuilder.getPrestamosDiferentesFinsocial();
+      deduccionesNomina = informacionFinancieraBuilder.getDeduccionesNomina();
+      tarjetasCredito = informacionFinancieraBuilder.getTarjetasCredito();
+      otrosGastos = informacionFinancieraBuilder.getOtrosGastos();
+      cualesGastos = informacionFinancieraBuilder.getCualesGastos();
+      pagoHipoteca = informacionFinancieraBuilder.getPagoHipoteca();
+      valorComercialVivienda = informacionFinancieraBuilder.getValorComercialVivienda();
+      dondeVivir = informacionFinancieraBuilder.getDondeVivir();
+      comprarVivienda = informacionFinancieraBuilder.getComprarVivienda();
+      cupoExtraLibranza = informacionFinancieraBuilder.getCupoExtraLibranza();
+      usoCredito = informacionFinancieraBuilder.getUsoCredito();
+      razonOtros = informacionFinancieraBuilder.getRazonOtros();
     }
 
     public String getSalarioFijo() {
-        return salarioFijo;
+        return this.salarioFijo;
     }
 
     public String getSalarioVariableComisiones() {
-        return salarioVariableComisiones;
+        return this.salarioVariableComisiones;
     }
 
     public String getArrendamientoIngresos() {
-        return arrendamientoIngresos;
+        return this.arrendamientoIngresos;
     }
 
     public String getRendimientosFinancieros() {
-        return rendimientosFinancieros;
+        return this.rendimientosFinancieros;
     }
 
     public String getHonorarios() {
-        return honorarios;
+        return this.honorarios;
     }
 
     public String getOtrosIngresos() {
-        return otrosIngresos;
+        return this.otrosIngresos;
     }
 
     public String getCualesIngresos() {
-        return cualesIngresos;
+        return this.cualesIngresos;
     }
 
     public String getArriendosEgresos() {
-        return arriendosEgresos;
+        return this.arriendosEgresos;
     }
 
     public String getGastosPersonalesFamiliares() {
-        return gastosPersonalesFamiliares;
+        return this.gastosPersonalesFamiliares;
     }
 
     public String getPrestamosDiferentesFinsocial() {
-        return prestamosDiferentesFinsocial;
+        return this.prestamosDiferentesFinsocial;
     }
 
     public String getDeduccionesNomina() {
-        return deduccionesNomina;
+        return this.deduccionesNomina;
     }
 
     public String getTarjetasCredito() {
-        return tarjetasCredito;
+        return this.tarjetasCredito;
     }
 
     public String getOtrosGastos() {
-        return otrosGastos;
+        return this.otrosGastos;
     }
 
     public String getPagoHipoteca() {
-        return pagoHipoteca;
+        return this.pagoHipoteca;
     }
 
     public String getValorComercialVivienda() {
-        return valorComercialVivienda;
+        return this.valorComercialVivienda;
     }
 
     public String getDondeVivir() {
-        return dondeVivir;
+        return this.dondeVivir;
     }
 
     public String getComprarVivienda() {
-        return comprarVivienda;
+        return this.comprarVivienda;
     }
 
     public String getCupoExtraLibranza() {
-        return cupoExtraLibranza;
+        return this.cupoExtraLibranza;
     }
 
     public String getUsoCredito() {
-        return usoCredito;
+        return this.usoCredito;
     }
 
     public String getRazonOtros() {
-        return razonOtros;
+        return this.razonOtros;
     }
 
     public String getCualesGastos() {
-        return cualesGastos;
+        return this.cualesGastos;
     }
 }
 

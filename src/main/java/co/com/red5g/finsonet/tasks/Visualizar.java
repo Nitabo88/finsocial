@@ -7,39 +7,39 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class Visualizar implements Task {
-    private Target lnkReporte;
+    private final Target lnkReporte;
 
-    public Visualizar(Target lnkReporte) {
+    public Visualizar(final Target lnkReporte) {
         this.lnkReporte = lnkReporte;
     }
 
-    public static Performable elReporteDeOriginacion(Target lnkReporte) {
+    public static Performable elReporteDeOriginacion(final Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeAntecartera(Target lnkReporte) {
+    public static Performable elReporteDeAntecartera(final Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeVentaNueva(Target lnkReporte) {
+    public static Performable elReporteDeVentaNueva(final Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeVentaLiberada(Target lnkReporte) {
+    public static Performable elReporteDeVentaLiberada(final Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-                WaitUntil.the(SPN_CARGA, isNotVisible()),
-                Click.on(lnkReporte),
-                WaitUntil.the(SPN_CARGA, isNotVisible())
+                WaitUntil.the(SPN_FINSONET, isNotVisible()),
+                Click.on(this.lnkReporte),
+                WaitUntil.the(SPN_FINSONET, isNotVisible())
         );
     }
 }
