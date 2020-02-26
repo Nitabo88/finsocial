@@ -8,12 +8,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGA;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class RealizarVeto implements Task {
     private Vetados vetados;
