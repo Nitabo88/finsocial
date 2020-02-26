@@ -7,7 +7,6 @@ public class Vetados {
     private String detalleVetados;
     private String listaVetados;
 
-
     public Vetados(VetadosBuilder vetadosBuilder) {
         this.documentoVetados = vetadosBuilder.getDocumentoVetados();
         this.detalleVetados = vetadosBuilder.getDetalleVetados();

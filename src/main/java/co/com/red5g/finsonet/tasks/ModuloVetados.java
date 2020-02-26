@@ -14,10 +14,11 @@ public class ModuloVetados implements Task  {
     public static Performable ubicarseEnVetados() {
         return instrumented(ModuloVetados.class);
     }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                IngresaAVetados.NuevoVetados(),
+                IngresaAVetados.nuevoVetados(),
                 WaitUntil.the(BTN_NUEVO_VETO, isEnabled()));
     }
 }

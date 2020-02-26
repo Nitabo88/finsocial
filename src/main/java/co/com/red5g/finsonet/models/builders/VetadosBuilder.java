@@ -1,8 +1,9 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.Vetados;
+import co.com.red5g.finsonet.utils.Builder;
 
-public class VetadosBuilder {
+public class VetadosBuilder implements Builder<Vetados> {
     private String documentoVetados;
     private String detalleVetados;
     private String listaVetados;

@@ -9,7 +9,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
-import co.com.red5g.finsonet.tasks.RealizarVeto;
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
@@ -35,11 +35,11 @@ public class VetadosStepDefinition {
     @Cuando("el asesor asigne un veto interno a un cliente")
     public void asignarVetoInterno() {
         theActorInTheSpotlight().attemptsTo
-                (RealizarVeto.interno(a().unCliente())
+                (Diligencia.ElVetoInterno(a().unCliente())
         );
     }
 
-    @Entonces("el asesor deberia verlo en listado de vetados")
+    @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
                 (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
