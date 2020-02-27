@@ -1,15 +1,15 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazado.MENSAJE_CREDITO_RECHAZADO;
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCredito.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 
-import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazado;
-import co.com.red5g.finsonet.exceptions.NoSeVeElCredito;
+import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.QueAparece;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
@@ -59,12 +59,12 @@ public class ChequeoDocumentosStepDefinition {
 
   @Entonces("^deberia ver el credito en el paso de confirmacion$")
   public void verificarCreacionCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
   @Entonces("^el auxiliar de documentacion deberia verlo$")
   public void verificarRevisionDocumentacion() {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
-    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazado.class, MENSAJE_CREDITO_RECHAZADO));
+    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, MENSAJE_CREDITO_RECHAZADO));
   }
 }

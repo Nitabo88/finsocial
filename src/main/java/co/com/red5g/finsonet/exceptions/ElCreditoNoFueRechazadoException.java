@@ -1,10 +1,10 @@
 package co.com.red5g.finsonet.exceptions;
 
-public class ElCreditoNoFueRechazado extends AssertionError {
+public class ElCreditoNoFueRechazadoException extends AssertionError {
 
   public static final String MENSAJE_CREDITO_RECHAZADO = "El credito aun esta en la tabla";
 
-  public ElCreditoNoFueRechazado(final String mensaje, final Throwable causa) {
+  public ElCreditoNoFueRechazadoException(final String mensaje, final Throwable causa) {
     super(mensaje, causa);
   }
 
