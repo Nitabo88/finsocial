@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto.MENSAJE_VETO;
+import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException.MENSAJE_VETO;
 import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
+import co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -42,6 +42,6 @@ public class VetadosStepDefinition {
     @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
-                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
+                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVetoException.class,MENSAJE_VETO));
     }
 }
