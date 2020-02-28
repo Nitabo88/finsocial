@@ -10,7 +10,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class PasoIncorporacionPendiente implements Question<Boolean> {
 
-  private static final String INCORPORACION = "Incorporación";
   private static final int TIEMPO = 10;
 
   @Override

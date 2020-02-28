@@ -5,6 +5,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import co.com.red5g.finsonet.models.AprobacionCredito;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Confirmacion;
+import co.com.red5g.finsonet.models.Formalizacion;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.models.Vetados;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoPendiente;
@@ -19,6 +20,7 @@ import co.com.red5g.finsonet.tasks.RealizarVeto;
 import co.com.red5g.finsonet.tasks.RegresarAprobacionCredito;
 import co.com.red5g.finsonet.tasks.RegresarConfirmacion;
 import co.com.red5g.finsonet.tasks.RegresarIncoporacion;
+import co.com.red5g.finsonet.tasks.RegresoFormalizacion;
 import net.serenitybdd.screenplay.Performable;
 
 public class Diligencia {
@@ -66,11 +68,15 @@ public class Diligencia {
         return instrumented(IncorporacionPendiente.class, motivoPendiente);
     }
 
-    public static Performable ElVetoInterno(Vetados vetados) {
+    public static Performable elVetoInterno(Vetados vetados) {
         return instrumented(RealizarVeto.class, vetados);
     }
 
     public static Performable laAprobacionDelCreditoEnIncorporacion() {
         return instrumented(AprobacionIncorporacion.class);
+    }
+
+    public static Performable laInformacionDeRegresoDeFormalizacion(Formalizacion motivoRegreso) {
+        return instrumented(RegresoFormalizacion.class, motivoRegreso);
     }
 }
