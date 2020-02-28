@@ -90,3 +90,9 @@ Característica: Originacion
     Dado que un asesor esta en el paso de incorporacion
     Cuando el asesor regresa el credito a aprobacion de creditos
     Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
+
+  @Formalizacion
+  Escenario: Regresar el credito desde formalizacion
+    Dado que un asesor esta en el paso de formalizacion
+    Cuando el asesor regresa el credito desde formalizacion
+    Entonces el asesor debera ver el credito en el paso de incorporacion

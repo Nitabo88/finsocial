@@ -13,11 +13,11 @@ public class Incorporacion implements Task {
   private static final String INCORPORACION = "Incorporación";
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
+  public <T extends Actor> void performAs(final T actor) {
     actor.attemptsTo(
         Consulta.elCreditoEnAprobacionDeCreditos(),
         Diligencia.laInformacionDeAprobacionDeCredito(),
-        Click.on(MNU_ORIGINACION.of(INCORPORACION))
+        Click.on(MNU_ORIGINACION.of(Incorporacion.INCORPORACION))
     );
   }
 }

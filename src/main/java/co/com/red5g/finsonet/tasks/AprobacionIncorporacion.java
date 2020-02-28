@@ -4,6 +4,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_ACTUALI
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_APROBAR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGISTRAR;
+import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LBL_PRUEBA;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_INCORPORACION_NOMBRE;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_SELECCIONAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_ARCHIVO;
@@ -19,10 +20,11 @@ public class AprobacionIncorporacion implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    final String numeroCredito = "84929";
+    final String numeroCredito = "84971";
     actor.attemptsTo(
         JavaScriptClick.on(LST_INCORPORACION_NOMBRE.of(numeroCredito)),
         JavaScriptClick.on(BTN_ACTUALIZAR_GESTION));
+    String texto = LBL_PRUEBA.resolveFor(actor).getText();
     actor.attemptsTo(
         SelectFromOptions.byVisibleText("Incorporado").from(LST_SELECCIONAR_GESTION)
     );

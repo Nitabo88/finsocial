@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.userinterfaces;
 
 import net.serenitybdd.core.annotations.findby.By;
+import net.serenitybdd.screenplay.targets.IFrame;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class IncorporacionPage {
@@ -12,7 +13,8 @@ public class IncorporacionPage {
   public static final Target LST_MOTIVO_DEVOLUCION = Target.the("la fila del motivo de devolucion").located(By.id("txtMotivo2"));
   public static final Target LST_TIPO_DEVOLUCION = Target.the("el tipo de devolucion").located(By.id("txtTipoDev"));
   public static final Target LST_SOLICITADO_POR = Target.the("la lista de solicitado por del cuadro emergente").located(By.id("txtAut"));
-  public static final Target LST_SELECCIONAR_GESTION = Target.the("la lista de seleccionar gestion").located(By.xpath("//div[@id='modGestion']//child::select[@id='txtGestion']"));
+  public static final IFrame FRAME = IFrame.withPath(By.id("frame"));
+  public static final Target LST_SELECCIONAR_GESTION = Target.the("la lista de seleccionar gestion").inIFrame(FRAME).located(By.xpath("//div[@id='modGestion']//child::select[@id='txtGestion']"));
   public static final Target LST_INCORPORACION_NOMBRE = Target.the("la lista de solicitado por del cuadro emergente").locatedBy("//h2[text()='Incorporación de "
       + "créditos']//ancestor::div[@class='panel panel-green']//td[contains(.,'{0}')]//parent::tr//a[@class='faq-link']");
   public static final Target TXT_MOTIVO = Target.the("el motivo de regreso").located(By.id("txtMotivo"));
@@ -26,6 +28,7 @@ public class IncorporacionPage {
   public static final Target BTN_ACTUALIZAR_GESTION = Target.the("el boton actualizar gestion").located(By.xpath("//button[text()='Actualizar gestión']"));
   public static final Target BTN_APROBAR = Target.the("el boton aprobar").located(By.xpath("//button[text()='Aprobar']"));
   public static final Target MNU_HAMBURGUESA = Target.the("el menu hamburguesa").located(By.id("hamburger"));
+  public static final Target LBL_PRUEBA = Target.the("el menu hamburguesa").inIFrame(FRAME).located(By.xpath("//h2[contains(.,'Administrador')]"));
   public static final Target MNU_APROBACION_CREDITO = Target.the("el menu aprobacion credito").located(By.id("or-aprob"));
   public static final Target BTN_REGRESAR_INCORPORACION = Target.the("el boton regresar")
       .locatedBy("//tr[@role='row']//td[contains(text(),'{0}')]//parent::tr//button[@data-original-title='Regresar']");
