@@ -8,12 +8,14 @@ public class Incorporacion {
   private final String motivo;
   private final String solicitadoPor;
   private final String tipoDevolucion;
+  private final String seleccionarGestion;
 
   public Incorporacion(final IncorporacionBuilder incorporacionBuilder) {
     tipoDevolucion = incorporacionBuilder.getTipoDevolucion();
     razonMotivo = incorporacionBuilder.getRazonMotivo();
     motivo = incorporacionBuilder.getMotivo();
     solicitadoPor = incorporacionBuilder.getSolicitadoPor();
+    seleccionarGestion = incorporacionBuilder.getSeleccionarGestion();
   }
 
   public String getRazonMotivo() {
@@ -30,5 +32,9 @@ public class Incorporacion {
 
   public String getMotivo() {
     return this.motivo;
+  }
+
+  public String getSeleccionarGestion() {
+    return this.seleccionarGestion;
   }
 }

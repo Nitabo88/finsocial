@@ -9,12 +9,14 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
   private String motivo;
   private String solicitadoPor;
   private String tipoDevolucion;
+  private String seleccionarGestion;
 
   private IncorporacionBuilder() {
     razonMotivo = "";
     motivo = "";
     solicitadoPor = "";
     tipoDevolucion = "";
+    seleccionarGestion = "";
   }
 
   public static IncorporacionBuilder con() {
@@ -39,6 +41,12 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
     return build();
   }
 
+  public Incorporacion aprobacion() {
+    seleccionarGestion("Incorporado");
+    razonMotivo("Prueba");
+    return build();
+  }
+
   private IncorporacionBuilder razonMotivo(final String razonMotivo) {
     this.razonMotivo = razonMotivo;
     return this;
@@ -46,6 +54,11 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
 
   private IncorporacionBuilder solicitadoPor(final String solicitadoPor) {
     this.solicitadoPor = solicitadoPor;
+    return this;
+  }
+
+  private IncorporacionBuilder seleccionarGestion(final String seleccionarGestion) {
+    this.seleccionarGestion = seleccionarGestion;
     return this;
   }
 
@@ -73,5 +86,9 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
 
   public String getMotivo() {
     return this.motivo;
+  }
+
+  public String getSeleccionarGestion() {
+    return this.seleccionarGestion;
   }
 }

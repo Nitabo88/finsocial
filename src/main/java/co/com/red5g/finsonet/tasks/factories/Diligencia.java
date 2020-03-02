@@ -72,8 +72,8 @@ public class Diligencia {
         return instrumented(RealizarVeto.class, vetados);
     }
 
-    public static Performable laAprobacionDelCreditoEnIncorporacion() {
-        return instrumented(AprobacionIncorporacion.class);
+    public static Performable laAprobacionDelCreditoEnIncorporacion(Incorporacion aprobacion) {
+        return instrumented(AprobacionIncorporacion.class, aprobacion);
     }
 
     public static Performable laInformacionDeRegresoDeFormalizacion(Formalizacion motivoRegreso) {

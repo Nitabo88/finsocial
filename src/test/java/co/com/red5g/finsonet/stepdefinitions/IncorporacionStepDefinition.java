@@ -2,29 +2,24 @@ package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_ORIGINACION;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
+import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
-import co.com.red5g.finsonet.tasks.factories.Loguearse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.actions.Click;
 
 public class IncorporacionStepDefinition {
 
   @Dado("^que (.*) esta en el paso de incorporacion$")
   public void ingresarIncorporacion(String actor) {
     theActorCalled(actor).attemptsTo(
-        Loguearse.enFinsonet(),
-        Click.on(LNK_ORIGINACION),
-        Click.on(MNU_ORIGINACION.of("Incorp"))
+        Consulta.elCreditoEnIncorporacion()
     );
   }
 
@@ -43,7 +38,7 @@ public class IncorporacionStepDefinition {
   @Cuando("^el asesor aprueba el credito en incorporacion$")
   public void aprobarCredito() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laAprobacionDelCreditoEnIncorporacion());
+        Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()));
   }
 
   @Entonces("^el asesor debera ver el credito en el paso de aprobacion de creditos$")
