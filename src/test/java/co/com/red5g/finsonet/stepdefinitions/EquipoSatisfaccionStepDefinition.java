@@ -23,7 +23,7 @@ public class EquipoSatisfaccionStepDefinition {
     @Cuando("^el asesor genere una nueva PQR$")
     public void genereUnaNuevaPQR() {
         theActorInTheSpotlight().attemptsTo
-                (Diligencia.UnaNuevaSolicitudContact(aUn().Cliente()));
+                (Diligencia.unaNuevaSolicitudContact(aUn().Cliente()));
     }
 
     @Entonces("^el asesor deberia verlo en listado de nuevos ingresos$")

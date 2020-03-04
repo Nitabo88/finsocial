@@ -5,12 +5,10 @@ import co.com.red5g.finsonet.models.EquipoSatisfaccion;
 public class EquipoSatisfaccionBuilder {
     private String documentoEquipoSatisfaccion;
     private String detalleEquipoSatisfaccion;
-    private String asuntoEquipoSatisfaccion;
 
     public EquipoSatisfaccionBuilder() {
         this.documentoEquipoSatisfaccion = "";
         this.detalleEquipoSatisfaccion = "";
-        this.asuntoEquipoSatisfaccion = "";
     }
 
     public static EquipoSatisfaccionBuilder aUn() {
@@ -25,12 +23,9 @@ public class EquipoSatisfaccionBuilder {
 
     public String getDetalleEquipoSatisfaccion() { return detalleEquipoSatisfaccion;    }
 
-    public String getAsuntoEquipoSatisfaccion() { return asuntoEquipoSatisfaccion;    }
-
     public EquipoSatisfaccion Cliente() {
         this.condocumentoEquipoSatisfaccion("10040048");
         this.condetalleEquipoSatisfaccion("Detalle de la nueva solicitud contact");
-        this.conasuntoEquipoSatisfaccion("");
         return this.build();
     }
 
@@ -43,8 +38,4 @@ public class EquipoSatisfaccionBuilder {
         return this;
     }
 
-    private EquipoSatisfaccionBuilder conasuntoEquipoSatisfaccion(String asuntoEquipoSatisfaccion) {
-        this.asuntoEquipoSatisfaccion = asuntoEquipoSatisfaccion;
-        return this;
-    }
 }

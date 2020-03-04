@@ -43,6 +43,6 @@ public class VetadosStepDefinition {
     @Entonces("el asesor deberia verlo en listado de vetos")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
-                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
+                (seeThat(Veto. existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
     }
 }

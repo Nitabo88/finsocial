@@ -54,7 +54,7 @@ public class Diligencia {
         return instrumented(IncorporacionPendiente.class, motivoPendiente);
     }
 
-    public static Performable UnaNuevaSolicitudContact(EquipoSatisfaccion equipoSatisfaccion) {
+    public static Performable unaNuevaSolicitudContact(EquipoSatisfaccion equipoSatisfaccion) {
         return instrumented(CrearSolicitudContact.class, equipoSatisfaccion);
     }
 
