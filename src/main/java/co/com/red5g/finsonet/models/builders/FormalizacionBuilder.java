@@ -9,8 +9,8 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
   private String motivo;
 
   private FormalizacionBuilder() {
-    accion = "";
-    motivo = "";
+    this.accion = "";
+    this.motivo = "";
   }
 
   public static FormalizacionBuilder con() {
@@ -23,26 +23,26 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
   }
 
   public Formalizacion motivoRegreso() {
-    accion("Regresar");
-    motivo("El usuario tiene los documentos incompletos");
-    return build();
+    this.accion("Regresar");
+    this.motivo("El usuario tiene los documentos incompletos");
+    return this.build();
   }
 
-  private FormalizacionBuilder accion(final String accion) {
+  private FormalizacionBuilder accion(String accion) {
     this.accion = accion;
     return this;
   }
 
-  private FormalizacionBuilder motivo(final String motivo) {
+  private FormalizacionBuilder motivo(String motivo) {
     this.motivo = motivo;
     return this;
   }
 
   public String getMotivo() {
-    return this.motivo;
+    return motivo;
   }
 
   public String getAccion() {
-    return this.accion;
+    return accion;
   }
 }

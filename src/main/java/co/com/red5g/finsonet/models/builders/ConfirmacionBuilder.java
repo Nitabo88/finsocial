@@ -4,11 +4,14 @@ import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.utils.Builder;
 
 public class ConfirmacionBuilder implements Builder<Confirmacion> {
-
+    private String accion;
     private String razonMotivo;
+    private String motivo;
 
     private ConfirmacionBuilder() {
-      razonMotivo = "";
+        this.razonMotivo = "";
+        this.accion = "";
+        this.motivo = "";
     }
 
     public static ConfirmacionBuilder con() {
@@ -20,17 +23,43 @@ public class ConfirmacionBuilder implements Builder<Confirmacion> {
         return new Confirmacion(this);
     }
 
-    public Confirmacion motivo() {
-      razonMotivo("El usuario tiene los documentos incompletos");
-        return build();
+    public Confirmacion motivoRegreso() {
+        this.accion("Regresar");
+        this.razonMotivo("El usuario tiene los documentos incompletos");
+        return this.build();
     }
 
-    private ConfirmacionBuilder razonMotivo(final String razonMotivo) {
+    public Confirmacion motivoPendiente() {
+        this.accion("Pendiente");
+        this.motivo("Datos incompletos");
+        this.razonMotivo("Contactar al usuario por documentos pendientes");
+        return this.build();
+    }
+
+    private ConfirmacionBuilder razonMotivo(String razonMotivo) {
         this.razonMotivo = razonMotivo;
         return this;
     }
 
+    private ConfirmacionBuilder motivo(String motivo) {
+        this.motivo = motivo;
+        return this;
+    }
+
+    private ConfirmacionBuilder accion(String accion) {
+        this.accion = accion;
+        return this;
+    }
+
     public String getRazonMotivo() {
-        return this.razonMotivo;
+        return razonMotivo;
+    }
+
+    public String getAccion() {
+        return accion;
+    }
+
+    public String getMotivo() {
+        return motivo;
     }
 }

@@ -14,11 +14,11 @@ public class InformacionConfirmacion implements Task {
   private static final String CONFIRMAR = "Confirmar";
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
-    final String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public <T extends Actor> void performAs(T actor) {
+    String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         JavaScriptClick.on(BTN_ACCION_CONFIRMACION.of(numeroCredito)),
-        JavaScriptClick.on(MNU_ACCION.of(InformacionConfirmacion.CONFIRMAR)),
+        JavaScriptClick.on(MNU_ACCION.of(CONFIRMAR)),
         JavaScriptClick.on(BTN_OK));
   }
 }

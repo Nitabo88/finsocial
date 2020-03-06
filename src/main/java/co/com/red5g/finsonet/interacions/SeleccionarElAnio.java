@@ -15,22 +15,22 @@ public class SeleccionarElAnio implements Interaction {
     private final int numeroMovimientos;
     private final String desplazamiento;
 
-    public SeleccionarElAnio(final Target arrowLeft, final Target flechaDerecha, final int numeroMovimientos, final String desplazamiento) {
-      flechaIzquierda = arrowLeft;
+    public SeleccionarElAnio(Target arrowLeft, Target flechaDerecha, int numeroMovimientos, String desplazamiento) {
+      this.flechaIzquierda = arrowLeft;
         this.flechaDerecha = flechaDerecha;
         this.numeroMovimientos = numeroMovimientos;
         this.desplazamiento = desplazamiento;
     }
 
-    public static SeleccionarElAnio list(final Target arrowLeft, final Target arrowRight, final int numeroMovimientos, final String desplazamiento) {
+    public static SeleccionarElAnio list(Target arrowLeft, Target arrowRight, int numeroMovimientos, String desplazamiento) {
         return new SeleccionarElAnio(arrowLeft,arrowRight,numeroMovimientos,desplazamiento);
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
-        if (this.desplazamiento.equals(SeleccionarElAnio.LEFT)) {
-            IntStream.range(0, this.numeroMovimientos).forEach(i -> this.flechaIzquierda.resolveFor(theActorInTheSpotlight()).click());
+    public <T extends Actor> void performAs(T actor) {
+        if (desplazamiento.equals(LEFT)) {
+            IntStream.range(0, numeroMovimientos).forEach(i -> flechaIzquierda.resolveFor(theActorInTheSpotlight()).click());
         } else
-            IntStream.range(0, this.numeroMovimientos).forEach(i -> this.flechaDerecha.resolveFor(theActorInTheSpotlight()).click());
+            IntStream.range(0, numeroMovimientos).forEach(i -> flechaDerecha.resolveFor(theActorInTheSpotlight()).click());
     }
 }

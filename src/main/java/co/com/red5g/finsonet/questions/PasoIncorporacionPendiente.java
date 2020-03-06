@@ -13,9 +13,9 @@ public class PasoIncorporacionPendiente implements Question<Boolean> {
   private static final int TIEMPO = 10;
 
   @Override
-  public Boolean answeredBy(Actor actor) {
-    final String numeroCredito = actor.recall(NUMERO_CREDITO);
-    actor.attemptsTo(WaitUntil.the(LST_FILA_PENDIENTE_INCORPORACION.of(numeroCredito), isVisible()).forNoMoreThan(TIEMPO).seconds());
+  public Boolean answeredBy(final Actor actor) {
+    String numeroCredito = actor.recall(NUMERO_CREDITO);
+    actor.attemptsTo(WaitUntil.the(LST_FILA_PENDIENTE_INCORPORACION.of(numeroCredito), isVisible()).forNoMoreThan(PasoIncorporacionPendiente.TIEMPO).seconds());
     return LST_FILA_PENDIENTE_INCORPORACION.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

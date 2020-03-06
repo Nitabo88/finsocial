@@ -16,10 +16,10 @@ public class ReporteVentaNueva implements Task {
     private static final int TIEMPO = 20;
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
             SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO),
-            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(ReporteVentaNueva.TIEMPO).seconds(),
+            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_VENTA_NUEVA)
         );
     }

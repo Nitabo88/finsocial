@@ -20,10 +20,10 @@ public class LoguinUsuarioDocumentacion implements Task {
   private static final String OPCION_SALIR = "Salir";
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
+  public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Click.on(BTN_MI_CUENTA),
-        Click.on(MNU_MI_CUENTA.of(LoguinUsuarioDocumentacion.OPCION_SALIR)),
+        Click.on(MNU_MI_CUENTA.of(OPCION_SALIR)),
         Ingresa.lasCredenciales(de().unUsuarioDeDocumentacion()),
         WaitUntil.the(LNK_AUXILIAR_OPERATIVO, isEnabled()).forNoMoreThan(10).seconds(),
         Click.on(LNK_AUXILIAR_OPERATIVO),

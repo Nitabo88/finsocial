@@ -19,18 +19,18 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class CreditosLiquidacionComision implements Question<Boolean> {
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
+  public Boolean answeredBy(Actor actor) {
     boolean estadoCredito = true;
-    final List<WebElementFacade> lstCreditos = LST_NUMERO_CREDITOS.resolveAllFor(actor);
-    final List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
+    List<WebElementFacade> lstCreditos = LST_NUMERO_CREDITOS.resolveAllFor(actor);
+    List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
     int i = 0;
     while (i < lstCreditos.size()) {
-      final String ciudad = lstCiudades.get(i).getText();
-      final String numeroCreditos = lstCreditos.get(i).getText().replaceAll("[^\\d]", "");
+      String ciudad = lstCiudades.get(i).getText();
+      String numeroCreditos = lstCreditos.get(i).getText().replaceAll("[^\\d]", "");
       actor.attemptsTo(JavaScriptClick.on(BTN_DETALLE_CREDITOS.of(ciudad)),
           WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(60).seconds());
-      final List<WebElementFacade> lstDetalleCreditos = LST_TOTALES_NUMERO_CREDITOS.resolveAllFor(actor);
+      List<WebElementFacade> lstDetalleCreditos = LST_TOTALES_NUMERO_CREDITOS.resolveAllFor(actor);
       lstDetalleCreditos.remove(0);
       estadoCredito = numeroCreditos.equals(String.valueOf(suma(lstDetalleCreditos)));
       if (estadoCredito) {

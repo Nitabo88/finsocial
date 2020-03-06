@@ -23,18 +23,18 @@ public class ChequeoDocumentosRechazo implements Task {
 
     private final ChequeoDocumento chequeoDocumento;
 
-    public ChequeoDocumentosRechazo(final ChequeoDocumento chequeoDocumento) {
+    public ChequeoDocumentosRechazo(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
-        final String numeroCredito = actor.recall(NUMERO_CREDITO);
+    public <T extends Actor> void performAs(T actor) {
+        String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
             JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS.of(numeroCredito)));
         actor.attemptsTo(
-            SelectFromOptions.byVisibleText(this.chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
-            Enter.theValue(this.chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
+            SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
+            Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
             WaitUntil.the(BTN_ENVIAR, isEnabled()),
             Click.on(BTN_ENVIAR),
             Click.on(BTN_OK),

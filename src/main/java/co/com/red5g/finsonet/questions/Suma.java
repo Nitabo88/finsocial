@@ -9,18 +9,18 @@ import java.util.List;
 public class Suma implements Question<String> {
     private final List<WebElementFacade> lstValores;
 
-    public Suma(final List<WebElementFacade> lstValores) {
+    public Suma(List<WebElementFacade> lstValores) {
         this.lstValores = lstValores;
     }
 
-    public static Question<String> deLosValores(final List<WebElementFacade> lstValores) {
+    public static Question<String> deLosValores(List<WebElementFacade> lstValores) {
         return new Suma(lstValores);
     }
 
     @Override
-    public String answeredBy(final Actor actor) {
+    public String answeredBy(Actor actor) {
         double suma = 0.0;
-        for (final WebElementFacade lstValore : this.lstValores) {
+        for (WebElementFacade lstValore : lstValores) {
             suma = suma + Double.parseDouble(lstValore.getText().replaceAll("[^\\d]", ""));
         }
         return String.valueOf(suma);

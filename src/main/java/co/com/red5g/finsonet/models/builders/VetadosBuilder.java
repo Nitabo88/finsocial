@@ -9,9 +9,9 @@ public class VetadosBuilder implements Builder<Vetados> {
     private String listaVetados;
 
     public VetadosBuilder() {
-        this.documentoVetados = "";
-        this.detalleVetados = "";
-        this.listaVetados = "";
+      documentoVetados = "";
+      detalleVetados = "";
+      listaVetados = "";
     }
 
     public static VetadosBuilder a() {
@@ -23,34 +23,34 @@ public class VetadosBuilder implements Builder<Vetados> {
     }
 
     public String getDocumentoVetados() {
-        return documentoVetados;
+        return this.documentoVetados;
     }
 
     public String getDetalleVetados() {
-        return detalleVetados;
+        return this.detalleVetados;
     }
 
     public String getListaVetados() {
-        return listaVetados;
+        return this.listaVetados;
     }
 
     public Vetados unCliente() {
-        this.condocumentoVetados("10040048");
-        this.condetalleVetados("Usuario con problemas penales");
-        this.conListaVetados("Sin motivo");
-        return this.build();
+      condocumentoVetados("10040048");
+      condetalleVetados("Usuario con problemas penales");
+      conListaVetados("Sin motivo");
+        return build();
     }
 
-    private VetadosBuilder condetalleVetados(String detalleVetados) {
+    private VetadosBuilder condetalleVetados(final String detalleVetados) {
         this.detalleVetados = detalleVetados;
         return this;
     }
-    private VetadosBuilder condocumentoVetados(String documentoVetados) {
+    private VetadosBuilder condocumentoVetados(final String documentoVetados) {
         this.documentoVetados = documentoVetados;
         return this;
     }
 
-    private VetadosBuilder conListaVetados(String listaVetados) {
+    private VetadosBuilder conListaVetados(final String listaVetados) {
         this.listaVetados = listaVetados;
         return this;
     }

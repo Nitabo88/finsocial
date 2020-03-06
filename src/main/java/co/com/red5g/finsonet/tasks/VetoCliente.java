@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Task;
 public class VetoCliente implements Task {
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
                 Loguearse.enFinsonet(),
                 ModuloVetados.ubicarseEnVetados()

@@ -7,21 +7,21 @@ public class Credenciales {
     private final String contrasena;
     private final String codigo;
 
-    public Credenciales(final CredencialesBuilder credencialesBuilder) {
-      usuario = credencialesBuilder.getUsuario();
-      contrasena = credencialesBuilder.getContrasena();
-      codigo = credencialesBuilder.getCodigo();
+    public Credenciales(CredencialesBuilder credencialesBuilder) {
+      this.usuario = credencialesBuilder.getUsuario();
+      this.contrasena = credencialesBuilder.getContrasena();
+      this.codigo = credencialesBuilder.getCodigo();
     }
 
     public String getUsuario() {
-        return this.usuario;
+        return usuario;
     }
 
     public String getContrasena() {
-        return this.contrasena;
+        return contrasena;
     }
 
     public String getCodigo() {
-        return this.codigo;
+        return codigo;
     }
 }

@@ -19,15 +19,15 @@ public class Subir implements Interaction {
    }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         while (!BTN_UPLOAD.resolveAllFor(actor).isEmpty()) {
             for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
                 actor.attemptsTo(Click.on(BTN_UPLOAD.resolveAllFor(actor).get(i)));
                 try {
                     final String RUTA_SCRIPT = "C:/Users/Licet/Documents/sqa_code/src/test/resources/scripts/FileUpload.exe";
                     Runtime.getRuntime().exec(RUTA_SCRIPT);
-                } catch (final IOException e) {
-                  this.logger.log(Level.INFO, String.valueOf(e));
+                } catch (IOException e) {
+                  logger.log(Level.INFO, String.valueOf(e));
                 }
                 actor.attemptsTo(
                     Click.on(BTN_CERRAR));

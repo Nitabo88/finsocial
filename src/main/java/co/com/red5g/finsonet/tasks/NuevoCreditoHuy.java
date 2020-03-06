@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.actions.Click;
 public class NuevoCreditoHuy implements Task {
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
+  public <T extends Actor> void performAs(final T actor) {
     actor.attemptsTo(
         Click.on(LNK_COMERCIAL),
         Click.on(LNK_NUEVO_CREDITO_HUY));

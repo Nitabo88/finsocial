@@ -15,9 +15,9 @@ public class IngresaAVetados implements Interaction {
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-                Open.browserOn(vetadosPage)
+                Open.browserOn(this.vetadosPage)
         );
     }
 }

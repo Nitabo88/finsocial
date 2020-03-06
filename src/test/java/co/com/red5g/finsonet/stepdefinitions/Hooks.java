@@ -17,14 +17,14 @@ public class Hooks {
     public void setTheStage() {
         OnStage.setTheStage(
                 OnlineCast.whereEveryoneCan(
-                        BrowseTheWeb.with(this.navegador)
+                        BrowseTheWeb.with(navegador)
                 )
         );
     }
 
     @After
     public void close(){
-      this.navegador.close();
-      this.navegador.quit();
+      navegador.close();
+      navegador.quit();
     }
 }

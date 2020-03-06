@@ -17,12 +17,12 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class LoginFinsonetStepDefinition {
 
     @Dado("que (.*) quiere acceder a finsonet")
-    public void ingresarPagina(final String nombreActor) {
+    public void ingresarPagina(String nombreActor) {
         theActorCalled(nombreActor).wasAbleTo(AbreLaPagina.finsonet());
     }
 
     @Cuando("(.*) se autentica en finsonet con el usuario (.*), la contraseña (.*) y el codigo (.*)")
-    public void autenticarUsuario(final String actor, final String usuario, final String contrasena, final String codigo) {
+    public void autenticarUsuario(String actor, String usuario, String contrasena, String codigo) {
         theActorCalled(actor).attemptsTo(
                 AbreLaPagina.finsonet(),
                 Ingresa.lasCredenciales(de().unUsuarioBasico(usuario, contrasena, codigo))
@@ -36,7 +36,7 @@ public class LoginFinsonetStepDefinition {
     }
 
     @Entonces("el debería ver (.*)")
-    public void verificarIngreso(final String strMensaje) {
+    public void verificarIngreso(String strMensaje) {
         theActorInTheSpotlight().should(seeThat(Mensaje.deBienvenidaEs(strMensaje)).orComplainWith(ElUsuarioNoSeAutenticoException.class,MENSAJE_LOGUEO_NO_EXITOSO));
     }
 }

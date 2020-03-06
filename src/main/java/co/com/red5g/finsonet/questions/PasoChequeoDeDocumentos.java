@@ -13,10 +13,10 @@ public class PasoChequeoDeDocumentos implements Question<Boolean> {
   private static final String CHEQUEO_DOCUMENTOS = "Chequeo Docs";
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
-    final String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public Boolean answeredBy(Actor actor) {
+    String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNU_ORIGINACION.of(PasoChequeoDeDocumentos.CHEQUEO_DOCUMENTOS)));
+        Click.on(MNU_ORIGINACION.of(CHEQUEO_DOCUMENTOS)));
     return LST_FILA_CHEQUEO_DOCUMENTOS.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

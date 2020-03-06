@@ -12,7 +12,7 @@ import cucumber.api.java.es.Dado;
 public class FormalizacionStepDefinition {
 
   @Dado("^que (.*) esta en el paso de formalizacion$")
-  public void consultarCredito(final String actor) {
+  public void consultarCredito(String actor) {
     theActorCalled(actor).attemptsTo(
         Consulta.elCreditoEnFormalizacion()
     );

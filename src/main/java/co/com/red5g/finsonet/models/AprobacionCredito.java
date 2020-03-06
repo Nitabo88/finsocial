@@ -8,16 +8,16 @@ public class AprobacionCredito {
   private final String seleccionMotivo;
 
 
-  public AprobacionCredito(final AprobacionCreditoBuilder aprobacionCreditoBuilder) {
-    razonMotivo = aprobacionCreditoBuilder.getRazonMotivo();
-    seleccionMotivo = aprobacionCreditoBuilder.getSeleccionMotivo();
+  public AprobacionCredito(AprobacionCreditoBuilder aprobacionCreditoBuilder) {
+    this.razonMotivo = aprobacionCreditoBuilder.getRazonMotivo();
+    this.seleccionMotivo = aprobacionCreditoBuilder.getSeleccionMotivo();
   }
 
   public String getRazonMotivo() {
-    return this.razonMotivo;
+    return razonMotivo;
   }
 
   public String getSeleccionMotivo() {
-    return this.seleccionMotivo;
+    return seleccionMotivo;
   }
 }
