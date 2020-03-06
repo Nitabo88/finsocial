@@ -17,7 +17,7 @@ import cucumber.api.java.es.Entonces;
 public class ConfirmacionStepDefinition {
 
   @Dado("^que (.*) esta en el paso de confirmacion$")
-  public void consultarCredito(final String actor) {
+  public void consultarCredito(String actor) {
     theActorCalled(actor).attemptsTo(
         Consulta.elCreditoEnConfirmacion()
     );
@@ -30,21 +30,33 @@ public class ConfirmacionStepDefinition {
     );
   }
 
-  @Entonces("^el asesor deberia ver el crédito en el paso de aprobacion de creditos$")
-  public void verificarAprobacionConfirmacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeDocumentos()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+  @Cuando("^el asesor marque como pendiente el paso de confirmacion$")
+  public void confirmacionPendiente() {
+    theActorInTheSpotlight().attemptsTo(
+        Diligencia.laInformacionDePendienteConfirmacion(con().motivoPendiente())
+    );
   }
 
   @Cuando("^el asesor regresa el credito a chequeo de documentos$")
   public void regresarCredito() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeRegresoDeConfirmacion(con().motivo())
+        Diligencia.laInformacionDeRegresoDeConfirmacion(con().motivoRegreso())
     );
   }
 
   @Entonces("^el asesor debera ver el credito en el paso de chequeo de documentos$")
   public void verificarRegresoChequeoDocumento() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enChequeoDeDocumentos()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+  }
+
+  @Entonces("^el asesor deberia ver el crédito en confirmacion de creditos en la lista de pendientes$")
+  public void verificarConfirmacionPendiente() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacionPendiente()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+  }
+
+  @Entonces("^el asesor deberia ver el crédito en el paso de aprobacion de creditos$")
+  public void verificarAprobacionConfirmacion() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeDocumentos()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
 }

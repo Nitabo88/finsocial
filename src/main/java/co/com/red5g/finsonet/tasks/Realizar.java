@@ -22,7 +22,7 @@ public class Realizar implements Task {
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Ubicarse.enElFormulario(),
                 Diligencia.laSolicitudDeCredito(),

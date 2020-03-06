@@ -12,46 +12,46 @@ public class InformacionBalancePersonal {
     private final String otrosPasivos;
     private final String razonOtrosPasivos;
 
-    public InformacionBalancePersonal(final InformacionBalancePersonalBuilder informacionBalancePersonalBuilder) {
-      activosCorrientes = informacionBalancePersonalBuilder.getActivosCorrientes();
-      activosFijos = informacionBalancePersonalBuilder.getActivosFijos();
-      otrosActivos = informacionBalancePersonalBuilder.getOtrosActivos();
-      razonOtrosActivos = informacionBalancePersonalBuilder.getRazonOtrosActivos();
-      pasivosFinancieros = informacionBalancePersonalBuilder.getPasivosFinancieros();
-      pasivosCorrientes = informacionBalancePersonalBuilder.getPasivosCorrientes();
-      otrosPasivos = informacionBalancePersonalBuilder.getOtrosPasivos();
-      razonOtrosPasivos = informacionBalancePersonalBuilder.getRazonOtrosPasivos();
+    public InformacionBalancePersonal(InformacionBalancePersonalBuilder informacionBalancePersonalBuilder) {
+      this.activosCorrientes = informacionBalancePersonalBuilder.getActivosCorrientes();
+      this.activosFijos = informacionBalancePersonalBuilder.getActivosFijos();
+      this.otrosActivos = informacionBalancePersonalBuilder.getOtrosActivos();
+      this.razonOtrosActivos = informacionBalancePersonalBuilder.getRazonOtrosActivos();
+      this.pasivosFinancieros = informacionBalancePersonalBuilder.getPasivosFinancieros();
+      this.pasivosCorrientes = informacionBalancePersonalBuilder.getPasivosCorrientes();
+      this.otrosPasivos = informacionBalancePersonalBuilder.getOtrosPasivos();
+      this.razonOtrosPasivos = informacionBalancePersonalBuilder.getRazonOtrosPasivos();
     }
 
     public String getActivosCorrientes() {
-        return this.activosCorrientes;
+        return activosCorrientes;
     }
 
     public String getActivosFijos() {
-        return this.activosFijos;
+        return activosFijos;
     }
 
     public String getOtrosActivos() {
-        return this.otrosActivos;
+        return otrosActivos;
     }
 
     public String getRazonOtrosActivos() {
-        return this.razonOtrosActivos;
+        return razonOtrosActivos;
     }
 
     public String getPasivosFinancieros() {
-        return this.pasivosFinancieros;
+        return pasivosFinancieros;
     }
 
     public String getPasivosCorrientes() {
-        return this.pasivosCorrientes;
+        return pasivosCorrientes;
     }
 
     public String getOtrosPasivos() {
-        return this.otrosPasivos;
+        return otrosPasivos;
     }
 
     public String getRazonOtrosPasivos() {
-        return this.razonOtrosPasivos;
+        return razonOtrosPasivos;
     }
 }

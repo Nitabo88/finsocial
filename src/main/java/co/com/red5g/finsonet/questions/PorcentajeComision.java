@@ -12,8 +12,8 @@ public class PorcentajeComision implements Question<Double> {
   }
 
   @Override
-  public Double answeredBy(Actor actor) {
-    final String porcentajeComision = String.valueOf(LBL_PORCENTAJE_COMISION.resolveFor(actor).getText().split(" %")[0]);
+  public Double answeredBy(final Actor actor) {
+    String porcentajeComision = String.valueOf(LBL_PORCENTAJE_COMISION.resolveFor(actor).getText().split(" %")[0]);
     return porcentajeComision.equals("%") ? 0.0 : Double.parseDouble(porcentajeComision);
   }
 }

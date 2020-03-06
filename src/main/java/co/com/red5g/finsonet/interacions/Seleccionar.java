@@ -11,22 +11,22 @@ public class Seleccionar implements Interaction {
     private final Target btnLista;
     private final Target lista;
 
-    private Seleccionar(final String opcion, final Target btnLista, final Target lista) {
+    private Seleccionar(String opcion, Target btnLista, Target lista) {
         this.opcion = opcion;
         this.btnLista = btnLista;
         this.lista = lista;
     }
 
-    public static Seleccionar opcionLista(final String opcion, final Target btnLista, final Target lista) {
+    public static Seleccionar opcionLista(String opcion, Target btnLista, Target lista) {
         return new Seleccionar(opcion, btnLista, lista);
     }
 
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(this.btnLista)
+                Click.on(btnLista)
         );
-      this.lista.resolveFor(actor).find(By.xpath("//li[contains(.,'" + this.opcion + "')]")).click();
+      lista.resolveFor(actor).find(By.xpath("//li[contains(.,'" + opcion + "')]")).click();
     }
 }

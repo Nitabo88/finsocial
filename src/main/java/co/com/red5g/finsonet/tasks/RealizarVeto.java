@@ -16,18 +16,18 @@ import org.openqa.selenium.Keys;
 
 public class RealizarVeto implements Task {
 
-    private Vetados vetados;
+    private final Vetados vetados;
 
-    public RealizarVeto(Vetados vetados) {
+    public RealizarVeto(final Vetados vetados) {
         this.vetados = vetados;
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
+    public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-            Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO_VETADOS).thenHit(Keys.ENTER),
-            SelectFromOptions.byVisibleText(vetados.getListaVetados()).from(LST_MOTIVO),
-            Enter.theValue(vetados.getDetalleVetados()).into(TXT_DETALLE),
+            Enter.theValue(this.vetados.getDocumentoVetados()).into(TXT_DOCUMENTO_VETADOS).thenHit(Keys.ENTER),
+            SelectFromOptions.byVisibleText(this.vetados.getListaVetados()).from(LST_MOTIVO),
+            Enter.theValue(this.vetados.getDetalleVetados()).into(TXT_DETALLE),
             JavaScriptClick.on(BTN_NUEVO_VETO),
             JavaScriptClick.on(BTN_ACEPTAR_VETO)
         );

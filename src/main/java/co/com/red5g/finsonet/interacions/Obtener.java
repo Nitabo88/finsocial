@@ -17,22 +17,22 @@ public class Obtener implements Interaction {
   private final String ciudad;
   private final List<String> valoresComparacion;
 
-  public Obtener(final WebElementFacade lstCreditos, final String ciudad, final List<String> valoresComparacion) {
+  public Obtener(WebElementFacade lstCreditos, String ciudad, List<String> valoresComparacion) {
     this.lstCreditos = lstCreditos;
     this.ciudad = ciudad;
     this.valoresComparacion = valoresComparacion;
   }
 
-  public static Obtener numeroCreditos(final WebElementFacade lstCreditos, final String ciudad, final List<String> valoresComparacion) {
+  public static Obtener numeroCreditos(WebElementFacade lstCreditos, String ciudad, List<String> valoresComparacion) {
     return instrumented(Obtener.class,lstCreditos, ciudad, valoresComparacion);
   }
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
-    final String numeroCreditos = this.lstCreditos.getText().replaceAll("[^\\d]", "");
-    actor.attemptsTo(Click.on(BTN_DETALLE_CREDITOS.of(this.ciudad)));
-    final String detalleCreditos = String.valueOf(suma(LST_TOTALES_NUMERO_CREDITOS.resolveAllFor(actor)));
-    this.valoresComparacion.add(numeroCreditos);
-    this.valoresComparacion.add(detalleCreditos);
+  public <T extends Actor> void performAs(T actor) {
+    String numeroCreditos = lstCreditos.getText().replaceAll("[^\\d]", "");
+    actor.attemptsTo(Click.on(BTN_DETALLE_CREDITOS.of(ciudad)));
+    String detalleCreditos = String.valueOf(suma(LST_TOTALES_NUMERO_CREDITOS.resolveAllFor(actor)));
+    valoresComparacion.add(numeroCreditos);
+    valoresComparacion.add(detalleCreditos);
   }
 }

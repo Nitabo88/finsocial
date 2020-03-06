@@ -12,21 +12,21 @@ public class SeleccionarFila implements Question<WebElementFacade> {
     String primerParametro;
     String segundoParametro;
 
-    private SeleccionarFila(final Target lstFila, final String primerParametro, final String segundoParametro) {
+    private SeleccionarFila(Target lstFila, String primerParametro, String segundoParametro) {
         this.lstFila = lstFila;
         this.primerParametro = primerParametro;
         this.segundoParametro = segundoParametro;
     }
 
-    public static SeleccionarFila seleccionarFila(final Target lstFila, final String primerParametro, final String segundoParametro) {
+    public static SeleccionarFila seleccionarFila(Target lstFila, String primerParametro, String segundoParametro) {
         return new SeleccionarFila(lstFila, primerParametro, segundoParametro);
     }
 
     @Override
-    public WebElementFacade answeredBy(final Actor actor) {
-       WebElementFacade lstFilaCompleta = this.lstFila.of(this.primerParametro, this.segundoParametro).resolveFor(actor);
+    public WebElementFacade answeredBy(Actor actor) {
+       WebElementFacade lstFilaCompleta = lstFila.of(primerParametro, segundoParametro).resolveFor(actor);
         if (!lstFilaCompleta.isPresent()) {
-            lstFilaCompleta = this.lstFila.of(this.primerParametro, masUnMinuto(this.segundoParametro)).resolveFor(actor);
+            lstFilaCompleta = lstFila.of(primerParametro, masUnMinuto(segundoParametro)).resolveFor(actor);
         }
         return lstFilaCompleta;
     }

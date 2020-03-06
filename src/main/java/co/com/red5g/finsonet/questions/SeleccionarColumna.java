@@ -15,23 +15,23 @@ public class SeleccionarColumna implements Question<List<WebElementFacade>> {
     String primerParametro;
     String segundoParametro;
 
-    private SeleccionarColumna(final Target lstFila, final String primerParametro, final String segundoParametro) {
+    private SeleccionarColumna(Target lstFila, String primerParametro, String segundoParametro) {
         this.lstFila = lstFila;
         this.primerParametro = primerParametro;
         this.segundoParametro = segundoParametro;
     }
 
-    public static SeleccionarColumna seleccionarColumna(final Target lstFila, final String primerParametro, final String segundoParametro) {
+    public static SeleccionarColumna seleccionarColumna(Target lstFila, String primerParametro, String segundoParametro) {
         return new SeleccionarColumna(lstFila, primerParametro, segundoParametro);
     }
 
     @Override
-    public List<WebElementFacade> answeredBy(final Actor actor) {
-        List<WebElementFacade> lstFilaCompleta = this.lstFila.of(this.primerParametro, this.segundoParametro).resolveAllFor(actor);
-        actor.remember(SeleccionarColumna.FECHA, this.segundoParametro);
+    public List<WebElementFacade> answeredBy(Actor actor) {
+        List<WebElementFacade> lstFilaCompleta = lstFila.of(primerParametro, segundoParametro).resolveAllFor(actor);
+        actor.remember(FECHA, segundoParametro);
         if (lstFilaCompleta.isEmpty()) {
-            lstFilaCompleta = this.lstFila.of(this.primerParametro, masUnMinuto(this.segundoParametro)).resolveAllFor(actor);
-            actor.remember(SeleccionarColumna.FECHA, masUnMinuto(this.segundoParametro));
+            lstFilaCompleta = lstFila.of(primerParametro, masUnMinuto(segundoParametro)).resolveAllFor(actor);
+            actor.remember(FECHA, masUnMinuto(segundoParametro));
         }
         return lstFilaCompleta;
     }

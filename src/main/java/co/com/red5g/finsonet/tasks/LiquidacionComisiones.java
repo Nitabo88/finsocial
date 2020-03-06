@@ -14,16 +14,16 @@ public class LiquidacionComisiones implements Task {
     private static final int TIEMPO = 660;
     private final String ciclo;
 
-    public LiquidacionComisiones(final String ciclo) {
+    public LiquidacionComisiones(String ciclo) {
         this.ciclo = ciclo;
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(LiquidacionComisiones.TIEMPO).seconds(),
-            SelectFromOptions.byVisibleText(this.ciclo).from(LST_CICLO),
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(LiquidacionComisiones.TIEMPO).seconds()
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+            SelectFromOptions.byVisibleText(ciclo).from(LST_CICLO),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds()
         );
     }
 }

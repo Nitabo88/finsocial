@@ -17,7 +17,7 @@ import cucumber.api.java.es.Entonces;
 public class AprobacionCreditoStepDefinition {
 
   @Dado("^que (.*) esta en el paso de aprobacion de creditos$")
-  public void consultarCredito(final String actor) {
+  public void consultarCredito(String actor) {
     theActorCalled(actor).attemptsTo(
         Consulta.elCreditoEnAprobacionDeCreditos()
     );

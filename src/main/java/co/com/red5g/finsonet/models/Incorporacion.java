@@ -10,31 +10,31 @@ public class Incorporacion {
   private final String tipoDevolucion;
   private final String seleccionarGestion;
 
-  public Incorporacion(final IncorporacionBuilder incorporacionBuilder) {
-    tipoDevolucion = incorporacionBuilder.getTipoDevolucion();
-    razonMotivo = incorporacionBuilder.getRazonMotivo();
-    motivo = incorporacionBuilder.getMotivo();
-    solicitadoPor = incorporacionBuilder.getSolicitadoPor();
-    seleccionarGestion = incorporacionBuilder.getSeleccionarGestion();
+  public Incorporacion(IncorporacionBuilder incorporacionBuilder) {
+    this.tipoDevolucion = incorporacionBuilder.getTipoDevolucion();
+    this.razonMotivo = incorporacionBuilder.getRazonMotivo();
+    this.motivo = incorporacionBuilder.getMotivo();
+    this.solicitadoPor = incorporacionBuilder.getSolicitadoPor();
+    this.seleccionarGestion = incorporacionBuilder.getSeleccionarGestion();
   }
 
   public String getRazonMotivo() {
-    return this.razonMotivo;
+    return razonMotivo;
   }
 
   public String getSolicitadoPor() {
-    return this.solicitadoPor;
+    return solicitadoPor;
   }
 
   public String getTipoDevolucion() {
-    return this.tipoDevolucion;
+    return tipoDevolucion;
   }
 
   public String getMotivo() {
-    return this.motivo;
+    return motivo;
   }
 
   public String getSeleccionarGestion() {
-    return this.seleccionarGestion;
+    return seleccionarGestion;
   }
 }

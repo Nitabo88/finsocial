@@ -7,21 +7,21 @@ public enum InformacionCredito {
     private final String valorCuota;
     private final String numerdoCuotas;
 
-    InformacionCredito(final String numeroDocumento, final String valorCuota, final String numerdoCuotas) {
+    InformacionCredito(String numeroDocumento, String valorCuota, String numerdoCuotas) {
         this.numeroDocumento = numeroDocumento;
         this.valorCuota = valorCuota;
         this.numerdoCuotas = numerdoCuotas;
     }
 
     public String getNumeroDocumento() {
-        return this.numeroDocumento;
+        return numeroDocumento;
     }
 
     public String getValorCuota() {
-        return this.valorCuota;
+        return valorCuota;
     }
 
     public String getNumeroCuotas() {
-        return this.numerdoCuotas;
+        return numerdoCuotas;
     }
 }

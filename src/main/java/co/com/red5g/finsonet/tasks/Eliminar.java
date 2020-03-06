@@ -23,17 +23,17 @@ public class Eliminar implements Task {
     private static final String SALIR = "Salir";
     Vetados vetados;
 
-    public Eliminar(final Vetados vetados) {
+    public Eliminar(Vetados vetados) {
         this.vetados = vetados;
     }
 
-    public static Eliminar elVeto(Vetados vetados) {
+    public static Eliminar elVeto(final Vetados vetados) {
         return instrumented(Eliminar.class, vetados);
     }
 
     @Override
-    public <T extends Actor> void performAs(T actor) {
-        String numeroDocumento = vetados.getDocumentoVetados();
+    public <T extends Actor> void performAs(final T actor) {
+        final String numeroDocumento = this.vetados.getDocumentoVetados();
         actor.attemptsTo(
             Ubicarse.enVetados(),
             Click.on(MNU_RIESGOS),
@@ -46,10 +46,10 @@ public class Eliminar implements Task {
                     JavaScriptClick.on(BTN_ANULAR),
                     JavaScriptClick.on(BTN_ACEPTAR),
                     JavaScriptClick.on(BTN_MI_CUENTA),
-                    JavaScriptClick.on(MNU_MI_CUENTA.of(SALIR)))
+                    JavaScriptClick.on(MNU_MI_CUENTA.of(Eliminar.SALIR)))
                 .otherwise(
                     JavaScriptClick.on(BTN_MI_CUENTA),
-                    JavaScriptClick.on(MNU_MI_CUENTA.of(SALIR))
+                    JavaScriptClick.on(MNU_MI_CUENTA.of(Eliminar.SALIR))
                 ));
     }
 }

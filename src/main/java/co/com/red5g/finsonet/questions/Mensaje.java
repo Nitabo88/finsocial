@@ -10,16 +10,16 @@ public class Mensaje implements Question<Boolean> {
 
     private final String mensajeBienvenida;
 
-    public Mensaje(final String strMensaje) {
-      mensajeBienvenida = strMensaje;
+    public Mensaje(String strMensaje) {
+      this.mensajeBienvenida = strMensaje;
     }
 
-    public static Mensaje deBienvenidaEs(final String strMensaje) {
+    public static Mensaje deBienvenidaEs(String strMensaje) {
         return new Mensaje(strMensaje);
     }
 
     @Override
-    public Boolean answeredBy(final Actor actor) {
-        return (LBL_MENSAJE_BIENVENIDA.resolveFor(actor).getText().contains(this.mensajeBienvenida));
+    public Boolean answeredBy(Actor actor) {
+        return (LBL_MENSAJE_BIENVENIDA.resolveFor(actor).getText().contains(mensajeBienvenida));
     }
 }

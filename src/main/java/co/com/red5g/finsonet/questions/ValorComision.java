@@ -11,17 +11,17 @@ public class ValorComision implements Question<Double> {
   private static final String FORMATO_NUMERO = "[^\\d]";
   private final String nombreAsesor;
 
-  public ValorComision(String nombreAsesor) {
+  public ValorComision(final String nombreAsesor) {
     this.nombreAsesor = nombreAsesor;
   }
 
-  public static Question<Double> valorComision(final String nombreAsesor) {
+  public static Question<Double> valorComision(String nombreAsesor) {
     return new ValorComision(nombreAsesor);
   }
 
   @Override
-  public Double answeredBy(final Actor actor) {
-    final WebElementFacade lstTotalLiquidacion = (LST_TOTALES_VALORES_LIQUIDACION.of(this.nombreAsesor)).resolveFor(actor);
-    return Double.parseDouble(lstTotalLiquidacion.getText().replaceAll(ValorComision.FORMATO_NUMERO, ""));
+  public Double answeredBy(Actor actor) {
+    WebElementFacade lstTotalLiquidacion = (LST_TOTALES_VALORES_LIQUIDACION.of(nombreAsesor)).resolveFor(actor);
+    return Double.parseDouble(lstTotalLiquidacion.getText().replaceAll(FORMATO_NUMERO, ""));
   }
 }

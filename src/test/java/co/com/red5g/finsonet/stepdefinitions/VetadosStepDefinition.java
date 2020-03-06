@@ -22,11 +22,11 @@ public class VetadosStepDefinition {
 
    @Before("@Vetados")
     public void quitarMarca() {
-     theActorCalled(ACTOR).wasAbleTo(Eliminar.elVeto(a().unCliente()));
+     theActorCalled(VetadosStepDefinition.ACTOR).wasAbleTo(Eliminar.elVeto(a().unCliente()));
     }
 
     @Dado("que el (.*) quiere asignar un veto interno")
-    public void ubicarseEnVetados(String nombreActor) {
+    public void ubicarseEnVetados(final String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
                 Ubicarse.enVetados()
         );

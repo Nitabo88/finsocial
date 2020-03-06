@@ -12,11 +12,11 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
   private String seleccionarGestion;
 
   private IncorporacionBuilder() {
-    razonMotivo = "";
-    motivo = "";
-    solicitadoPor = "";
-    tipoDevolucion = "";
-    seleccionarGestion = "";
+    this.razonMotivo = "";
+    this.motivo = "";
+    this.solicitadoPor = "";
+    this.tipoDevolucion = "";
+    this.seleccionarGestion = "";
   }
 
   public static IncorporacionBuilder con() {
@@ -29,66 +29,66 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
   }
 
   public Incorporacion motivoRegreso() {
-    solicitadoPor("COORDINADOR-ZN2");
-    razonMotivo("El usuario tiene los documentos incompletos");
-    return build();
+    this.solicitadoPor("COORDINADOR-ZN2");
+    this.razonMotivo("El usuario tiene los documentos incompletos");
+    return this.build();
   }
 
   public Incorporacion motivoPendiente() {
-    tipoDevolucion("Pendiente");
-    motivo("Otros");
-    razonMotivo("Prueba");
-    return build();
+    this.tipoDevolucion("Pendiente");
+    this.motivo("Otros");
+    this.razonMotivo("Prueba");
+    return this.build();
   }
 
   public Incorporacion aprobacion() {
-    seleccionarGestion("Incorporado");
-    razonMotivo("Prueba");
-    return build();
+    this.seleccionarGestion("Incorporado");
+    this.razonMotivo("Prueba");
+    return this.build();
   }
 
-  private IncorporacionBuilder razonMotivo(final String razonMotivo) {
+  private IncorporacionBuilder razonMotivo(String razonMotivo) {
     this.razonMotivo = razonMotivo;
     return this;
   }
 
-  private IncorporacionBuilder solicitadoPor(final String solicitadoPor) {
+  private IncorporacionBuilder solicitadoPor(String solicitadoPor) {
     this.solicitadoPor = solicitadoPor;
     return this;
   }
 
-  private IncorporacionBuilder seleccionarGestion(final String seleccionarGestion) {
+  private IncorporacionBuilder seleccionarGestion(String seleccionarGestion) {
     this.seleccionarGestion = seleccionarGestion;
     return this;
   }
 
-  private IncorporacionBuilder tipoDevolucion(final String tipoDevolucion) {
+  private IncorporacionBuilder tipoDevolucion(String tipoDevolucion) {
     this.tipoDevolucion = tipoDevolucion;
     return this;
   }
 
-  private IncorporacionBuilder motivo(final String motivo) {
+  private IncorporacionBuilder motivo(String motivo) {
     this.motivo = motivo;
     return this;
   }
 
   public String getRazonMotivo() {
-    return this.razonMotivo;
+    return razonMotivo;
   }
 
   public String getSolicitadoPor() {
-    return this.solicitadoPor;
+    return solicitadoPor;
   }
 
   public String getTipoDevolucion() {
-    return this.tipoDevolucion;
+    return tipoDevolucion;
   }
 
   public String getMotivo() {
-    return this.motivo;
+    return motivo;
   }
 
   public String getSeleccionarGestion() {
-    return this.seleccionarGestion;
+    return seleccionarGestion;
   }
 }

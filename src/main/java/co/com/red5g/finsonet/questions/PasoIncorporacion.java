@@ -17,11 +17,11 @@ public class PasoIncorporacion implements Question<Boolean> {
   private static final int TIEMPO = 50;
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
-    final String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public Boolean answeredBy(Actor actor) {
+    String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNU_ORIGINACION.of(PasoIncorporacion.INCORPORACION)),
-        WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(TIEMPO).seconds());
+        Click.on(MNU_ORIGINACION.of(INCORPORACION)),
+        WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(PasoIncorporacion.TIEMPO).seconds());
     return LST_FILA_INCORPORACION.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }
