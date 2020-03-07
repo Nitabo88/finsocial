@@ -3,7 +3,8 @@ package co.com.red5g.finsonet.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class AprobacionCreditoPage {
+
+public final class AprobacionCreditoPage {
 
   public static final Target BTN_APROBAR = Target.the("El boton aprobar").located(By.xpath("//button[contains(.,'Aprobar')]"));
   public static final Target LST_FILA_APROBACION_CREDITO_NOMBRE = Target.the("la fila de la tabla").locatedBy("//div[@class='table-responsive']//td[contains(.,'{0}')]//parent::tr//td[contains(.,"

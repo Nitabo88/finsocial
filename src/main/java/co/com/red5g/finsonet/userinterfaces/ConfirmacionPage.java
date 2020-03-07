@@ -3,7 +3,8 @@ package co.com.red5g.finsonet.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class ConfirmacionPage {
+
+public final class ConfirmacionPage {
 
     public static final Target LST_FILA_CONFIRMACION = Target.the("la fila de la tabla")
         .locatedBy("//tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
