@@ -17,6 +17,7 @@ import co.com.red5g.finsonet.tasks.InformacionChequeoDocumento;
 import co.com.red5g.finsonet.tasks.InformacionConfirmacion;
 import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
 import co.com.red5g.finsonet.tasks.PendienteConfirmacion;
+import co.com.red5g.finsonet.tasks.PendienteFormalizacion;
 import co.com.red5g.finsonet.tasks.RealizarVeto;
 import co.com.red5g.finsonet.tasks.RegresarAprobacionCredito;
 import co.com.red5g.finsonet.tasks.RegresarConfirmacion;
@@ -24,7 +25,7 @@ import co.com.red5g.finsonet.tasks.RegresarIncoporacion;
 import co.com.red5g.finsonet.tasks.RegresoFormalizacion;
 import net.serenitybdd.screenplay.Performable;
 
-public class Diligencia {
+public final class Diligencia {
 
     private Diligencia() {
     }
@@ -83,5 +84,9 @@ public class Diligencia {
 
     public static Performable laInformacionDePendienteConfirmacion(final Confirmacion motivoPendiente) {
         return instrumented(PendienteConfirmacion.class,motivoPendiente);
+    }
+
+    public static Performable laInformacionFormalizacionPendiente(Formalizacion motivoPendiente) {
+        return instrumented(PendienteFormalizacion.class, motivoPendiente);
     }
 }

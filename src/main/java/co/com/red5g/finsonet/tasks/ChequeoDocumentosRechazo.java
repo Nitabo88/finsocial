@@ -21,6 +21,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ChequeoDocumentosRechazo implements Task {
 
+    private static final int TIEMPO = 3;
     private final ChequeoDocumento chequeoDocumento;
 
     public ChequeoDocumentosRechazo(ChequeoDocumento chequeoDocumento) {
@@ -37,14 +38,16 @@ public class ChequeoDocumentosRechazo implements Task {
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
             WaitUntil.the(BTN_ENVIAR, isEnabled()),
             Click.on(BTN_ENVIAR),
+            WaitFor.seconds(TIEMPO),
             Click.on(BTN_OK),
             Check.whether(
                 BTN_ENVIAR.resolveFor(actor).isPresent())
                 .andIfSo(
                     Click.on(BTN_ENVIAR),
-                    Click.on(BTN_OK),
-                    WaitFor.seconds(3))
-                .otherwise(WaitFor.seconds(3))
+                    WaitFor.seconds(TIEMPO),
+                    Click.on(BTN_OK)
+                )
+                .otherwise(WaitFor.seconds(TIEMPO))
         );
     }
 }

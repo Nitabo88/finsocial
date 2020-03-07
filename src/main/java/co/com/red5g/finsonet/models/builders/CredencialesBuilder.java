@@ -7,7 +7,7 @@ import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_FINSOCIAL;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class CredencialesBuilder implements Builder<Credenciales> {
+public final class CredencialesBuilder implements Builder<Credenciales> {
 
     private String usuario;
     private String contrasena;

@@ -3,9 +3,7 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.utils.Builder;
 
-import static co.com.red5g.finsonet.utils.InformacionCredito.INFORMACION_CREDITO;
-
-public class CreditoBuilder implements Builder<Credito> {
+public final class CreditoBuilder implements Builder<Credito> {
     private String strNumeroDocumento;
     private String strValorCuota;
     private String strPlazo;
@@ -48,9 +46,9 @@ public class CreditoBuilder implements Builder<Credito> {
     }
 
     public Credito informacionDelCredito() {
-      this.conDocumento(INFORMACION_CREDITO.getNumeroDocumento());
-      this.conValor(INFORMACION_CREDITO.getValorCuota());
-      this.a(INFORMACION_CREDITO.getNumeroCuotas());
+      this.conDocumento("10000060");
+      this.conValor("1200000");
+      this.a("48");
         return this.build();
     }
 

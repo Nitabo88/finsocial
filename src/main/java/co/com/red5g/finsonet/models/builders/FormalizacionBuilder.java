@@ -7,10 +7,12 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
 
   private String accion;
   private String motivo;
+  private String detalleMotivo;
 
   private FormalizacionBuilder() {
     this.accion = "";
     this.motivo = "";
+    this.detalleMotivo = "";
   }
 
   public static FormalizacionBuilder con() {
@@ -28,6 +30,13 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
     return this.build();
   }
 
+  public Formalizacion motivoPendiente() {
+    this.accion("Pendiente");
+    this.motivo("Espera de papeleria");
+    this.detalleMotivo("El usuario tiene los documentos incompletos");
+    return this.build();
+  }
+
   private FormalizacionBuilder accion(String accion) {
     this.accion = accion;
     return this;
@@ -38,11 +47,20 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
     return this;
   }
 
+  private FormalizacionBuilder detalleMotivo(String detalleMotivo) {
+    this.detalleMotivo = detalleMotivo;
+    return this;
+  }
+
   public String getMotivo() {
     return motivo;
   }
 
   public String getAccion() {
     return accion;
+  }
+
+  public String getDetalleMotivo() {
+    return this.detalleMotivo;
   }
 }

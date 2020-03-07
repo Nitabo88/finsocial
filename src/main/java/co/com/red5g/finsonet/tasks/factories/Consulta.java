@@ -10,7 +10,7 @@ import co.com.red5g.finsonet.tasks.ReporteLiquidacionComisiones;
 import co.com.red5g.finsonet.tasks.Reportes;
 import net.serenitybdd.screenplay.Performable;
 
-public class Consulta {
+public final class Consulta {
 
     private Consulta() {
     }

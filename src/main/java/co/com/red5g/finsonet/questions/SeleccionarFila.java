@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static co.com.red5g.finsonet.utils.UtileriaFechas.masUnMinuto;
 
-public class SeleccionarFila implements Question<WebElementFacade> {
+public final class SeleccionarFila implements Question<WebElementFacade> {
     Target lstFila;
     String primerParametro;
     String segundoParametro;
