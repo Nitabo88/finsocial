@@ -22,7 +22,7 @@ import co.com.red5g.finsonet.tasks.FormularioInformacionPrestamo;
 import co.com.red5g.finsonet.tasks.FormularioInformacionReferencias;
 import net.serenitybdd.screenplay.Performable;
 
-public class Escribe {
+public final class Escribe {
 
     private Escribe() {
     }

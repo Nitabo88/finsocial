@@ -9,7 +9,7 @@ import java.util.List;
 
 import static co.com.red5g.finsonet.utils.UtileriaFechas.masUnMinuto;
 
-public class SeleccionarColumna implements Question<List<WebElementFacade>> {
+public final class SeleccionarColumna implements Question<List<WebElementFacade>> {
     public static final String FECHA = "fecha";
     Target lstFila;
     String primerParametro;

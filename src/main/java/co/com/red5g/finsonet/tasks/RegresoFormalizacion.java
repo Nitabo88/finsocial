@@ -15,6 +15,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class RegresoFormalizacion implements Task {
 
+  private static final int TIEMPO = 5;
   private final Formalizacion formalizacion;
 
   public RegresoFormalizacion(Formalizacion formalizacion) {
@@ -29,7 +30,7 @@ public class RegresoFormalizacion implements Task {
         JavaScriptClick.on(LST_ACCION_FORMALIZACION.of(numeroCredito, this.formalizacion.getAccion())),
         Enter.theValue(formalizacion.getMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_OK),
-        WaitFor.seconds(5),
+        WaitFor.seconds(TIEMPO),
         JavaScriptClick.on(BTN_OK));
   }
 }

@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.AprobacionCredito;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class AprobacionCreditoBuilder implements Builder<AprobacionCredito> {
+public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito> {
 
   private String seleccionMotivo;
   private String razonMotivo;

@@ -11,7 +11,7 @@ import co.com.red5g.finsonet.questions.CreditosVentaLiberadaLiquidacionComisione
 import co.com.red5g.finsonet.questions.CreditosVentaNuevaLiquidacionComisiones;
 import net.serenitybdd.screenplay.Question;
 
-public class ElNumero {
+public final class ElNumero {
 
   private ElNumero() {
   }

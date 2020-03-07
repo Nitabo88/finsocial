@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import net.serenitybdd.core.pages.WebElementFacade;
 
-public class Utilerias {
+public final class Utilerias {
 
   private static final Pattern FORMATO_NUMERO = Pattern.compile("[^\\d-]");
 

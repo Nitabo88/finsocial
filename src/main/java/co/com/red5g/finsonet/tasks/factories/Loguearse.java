@@ -5,7 +5,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import co.com.red5g.finsonet.tasks.Home;
 import net.serenitybdd.screenplay.Performable;
 
-public class Loguearse {
+public final class Loguearse {
 
     private Loguearse() {
     }

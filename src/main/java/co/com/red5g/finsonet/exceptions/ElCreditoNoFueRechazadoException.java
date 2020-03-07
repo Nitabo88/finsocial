@@ -7,5 +7,4 @@ public class ElCreditoNoFueRechazadoException extends AssertionError {
   public ElCreditoNoFueRechazadoException(String mensaje, Throwable causa) {
     super(mensaje, causa);
   }
-
 }

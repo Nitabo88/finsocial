@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class IncorporacionBuilder implements Builder<Incorporacion> {
+public final class IncorporacionBuilder implements Builder<Incorporacion> {
 
   private String razonMotivo;
   private String motivo;

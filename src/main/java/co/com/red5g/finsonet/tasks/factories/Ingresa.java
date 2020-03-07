@@ -19,7 +19,7 @@ import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
 import co.com.red5g.finsonet.tasks.ReporteVentaNueva;
 import net.serenitybdd.screenplay.Performable;
 
-public class Ingresa {
+public final class Ingresa {
 
     private Ingresa() {
     }

@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class ConfirmacionBuilder implements Builder<Confirmacion> {
+public final class ConfirmacionBuilder implements Builder<Confirmacion> {
     private String accion;
     private String razonMotivo;
     private String motivo;

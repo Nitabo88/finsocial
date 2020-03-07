@@ -6,10 +6,12 @@ public class Formalizacion {
 
   private final String accion;
   private final String motivo;
+  private final String detalleMotivo;
 
   public Formalizacion(FormalizacionBuilder formalizacionBuilder) {
     this.accion = formalizacionBuilder.getAccion();
     this.motivo = formalizacionBuilder.getMotivo();
+    this.detalleMotivo = formalizacionBuilder.getDetalleMotivo();
   }
 
   public String getMotivo() {
@@ -18,5 +20,9 @@ public class Formalizacion {
 
   public String getAccion() {
     return accion;
+  }
+
+  public String getDetalleMotivo() {
+    return this.detalleMotivo;
   }
 }
