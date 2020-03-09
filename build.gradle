@@ -35,8 +35,8 @@ dependencies {
 
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
-    reports {}
-    // maxParallelForks = Runtime.runtime.availableProcessors()
+    reports {"gradle reports"}
+   // maxParallelForks = Runtime.runtime.availableProcessors()
 }
 
 tasks.withType(JavaCompile) {

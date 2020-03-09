@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.runners;
+package co.com.red5g.finsonet.runners.regresion;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
