@@ -27,15 +27,34 @@ public class CreacionCreditoStepDefinition {
                 Ubicarse.enNuevoCredito());
     }
 
+    @Dado("que un (.*) debe crear un credito tipo huy")
+    public void crearCreditoHuy(final String nombreActor) {
+        theActorCalled(nombreActor).attemptsTo(
+            Loguearse.enFinsonet(),
+            Ubicarse.enNuevoCreditoHuy());
+    }
+
     @Cuando("el ingresa el numero de documento (.*) con el valor (.*) y a un plazo de (.*) meses")
     public void ingresarInformacionCredito(final String strNumeroDocumento, final String strValorCuota, final String strPlazo) {
         theActorInTheSpotlight().attemptsTo(
-                Ingresa.laInformacionDelCredito(la().informacionDelCredito(strNumeroDocumento, strValorCuota, strPlazo))
+            Ingresa.laInformacionDelCredito(la().informacionDelCredito(strNumeroDocumento, strValorCuota, strPlazo))
+        );
+    }
+
+    @Cuando("el asesor ingresa la informacion del credito")
+    public void ingresarInformacionCreditoHuy() {
+        theActorInTheSpotlight().attemptsTo(
+            Ingresa.laInformacionDelCreditoHuy(la().informacionDelCreditoHuy())
         );
     }
 
     @Entonces("el podra ver un credito creado")
     public void verificarCreacionCredito() {
+        theActorInTheSpotlight().should(seeThat(Credito.existe()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
+    }
+
+    @Entonces("el podra ver un credito huy creado")
+    public void verificarCreacionCreditoHuy() {
         theActorInTheSpotlight().should(seeThat(Credito.existe()).orComplainWith(NoSeVeElCredito.class, MENSAJE_CREDITO));
     }
 

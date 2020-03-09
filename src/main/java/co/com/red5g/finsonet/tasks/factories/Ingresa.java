@@ -5,12 +5,13 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
 import co.com.red5g.finsonet.tasks.InformacionCredito;
+import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.InformacionLogin;
 import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
 import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada;
 import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
-import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
 import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
 import co.com.red5g.finsonet.tasks.ReporteAntecartera;
 import co.com.red5g.finsonet.tasks.ReporteOriginacion;
@@ -63,11 +64,15 @@ public class Ingresa {
         return instrumented(LiquidacionComisiones.class, ciclo);
     }
 
-  public static Performable elRechazoDelCredito(final ChequeoDocumento motivo) {
+    public static Performable elRechazoDelCredito(final ChequeoDocumento motivo) {
         return instrumented(ChequeoDocumentosRechazo.class, motivo);
-  }
+    }
 
-  public static Performable enAprobacion() {
+    public static Performable enAprobacion() {
         return instrumented(Aprobacion.class);
-  }
+    }
+
+    public static Performable laInformacionDelCreditoHuy(Credito informacionDelCreditoHuy) {
+        return instrumented(InformacionCreditoHuy.class, informacionDelCreditoHuy);
+    }
 }
