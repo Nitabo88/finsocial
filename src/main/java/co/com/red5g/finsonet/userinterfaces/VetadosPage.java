@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.userinterfaces;
 
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.By;
 
 @DefaultUrl("http://192.168.0.48:82/vetados/vetoInterno.php")
 

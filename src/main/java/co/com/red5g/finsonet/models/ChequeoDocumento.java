@@ -8,26 +8,26 @@ public class ChequeoDocumento {
     private final String seleccionMotivo;
     private final String razonMotivo;
 
-    public ChequeoDocumento(final ChequeoDocumentoBuilder chequeoDocumentoBuilder) {
-      puntajeCifin = chequeoDocumentoBuilder.getPuntajeCifin();
-      aciertaDatacredito = chequeoDocumentoBuilder.getAciertaDatacredito();
-      seleccionMotivo = chequeoDocumentoBuilder.getSeleccionMotivo();
-      razonMotivo = chequeoDocumentoBuilder.getRazonMotivo();
+    public ChequeoDocumento(ChequeoDocumentoBuilder chequeoDocumentoBuilder) {
+      this.puntajeCifin = chequeoDocumentoBuilder.getPuntajeCifin();
+      this.aciertaDatacredito = chequeoDocumentoBuilder.getAciertaDatacredito();
+      this.seleccionMotivo = chequeoDocumentoBuilder.getSeleccionMotivo();
+      this.razonMotivo = chequeoDocumentoBuilder.getRazonMotivo();
     }
 
     public String getSeleccionMotivo() {
-        return this.seleccionMotivo;
+        return seleccionMotivo;
     }
 
     public String getRazonMotivo() {
-        return this.razonMotivo;
+        return razonMotivo;
     }
 
     public String getPuntajeCifin() {
-        return this.puntajeCifin;
+        return puntajeCifin;
     }
 
     public String getAciertaDatacredito() {
-        return this.aciertaDatacredito;
+        return aciertaDatacredito;
     }
 }

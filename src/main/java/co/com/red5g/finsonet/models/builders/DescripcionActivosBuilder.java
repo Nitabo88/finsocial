@@ -17,17 +17,17 @@ public class DescripcionActivosBuilder implements Builder<DescripcionActivos> {
     private String prendaAFavor;
 
     public DescripcionActivosBuilder() {
-      tipoInmueble = "";
-      valorComercialInmueble = "";
-      hipotecadoA = "";
-      direccion = "";
-      saldoCreditoInmueble = "";
-      vehiculoClase = "";
-      valorComercialVehiculo = "";
-      marcaModelo = "";
-      numeroPlaca = "";
-      saldoCreditoVehiculo = "";
-      prendaAFavor = "";
+      this.tipoInmueble = "";
+      this.valorComercialInmueble = "";
+      this.hipotecadoA = "";
+      this.direccion = "";
+      this.saldoCreditoInmueble = "";
+      this.vehiculoClase = "";
+      this.valorComercialVehiculo = "";
+      this.marcaModelo = "";
+      this.numeroPlaca = "";
+      this.saldoCreditoVehiculo = "";
+      this.prendaAFavor = "";
     }
 
     public static DescripcionActivosBuilder por() {
@@ -40,115 +40,115 @@ public class DescripcionActivosBuilder implements Builder<DescripcionActivos> {
     }
 
     public String getTipoInmueble() {
-        return this.tipoInmueble;
+        return tipoInmueble;
     }
 
     public String getValorComercialInmueble() {
-        return this.valorComercialInmueble;
+        return valorComercialInmueble;
     }
 
     public String getHipotecadoA() {
-        return this.hipotecadoA;
+        return hipotecadoA;
     }
 
     public String getDireccion() {
-        return this.direccion;
+        return direccion;
     }
 
     public String getSaldoCreditoInmueble() {
-        return this.saldoCreditoInmueble;
+        return saldoCreditoInmueble;
     }
 
     public String getVehiculoClase() {
-        return this.vehiculoClase;
+        return vehiculoClase;
     }
 
     public String getValorComercialVehiculo() {
-        return this.valorComercialVehiculo;
+        return valorComercialVehiculo;
     }
 
     public String getMarcaModelo() {
-        return this.marcaModelo;
+        return marcaModelo;
     }
 
     public String getNumeroPlaca() {
-        return this.numeroPlaca;
+        return numeroPlaca;
     }
 
     public String getSaldoCreditoVehiculo() {
-        return this.saldoCreditoVehiculo;
+        return saldoCreditoVehiculo;
     }
 
     public String getPrendaAFavor() {
-        return this.prendaAFavor;
+        return prendaAFavor;
     }
 
     public DescripcionActivos laPersona() {
-      conTipoInmueble("Casa");
-      conValorComercialInmueble("120000000");
-      conHipotecadoA("Banco");
-      conDireccion("CL 80 35 20");
-      conSaldoCreditoInmueble("50000000");
-      conVehiculoClase("Swift");
-      conValorComercialVehiculo("51000000");
-      conMarcaModelo("2018");
-      conNumeroPlaca("EFY260");
-      conSaldoCreditoVehiculo("38000000");
-      conPrendaAFavor("No");
-        return build();
+      this.conTipoInmueble("Casa");
+      this.conValorComercialInmueble("120000000");
+      this.conHipotecadoA("Banco");
+      this.conDireccion("CL 80 35 20");
+      this.conSaldoCreditoInmueble("50000000");
+      this.conVehiculoClase("Swift");
+      this.conValorComercialVehiculo("51000000");
+      this.conMarcaModelo("2018");
+      this.conNumeroPlaca("EFY260");
+      this.conSaldoCreditoVehiculo("38000000");
+      this.conPrendaAFavor("No");
+        return this.build();
     }
 
-    private DescripcionActivosBuilder conPrendaAFavor(final String prendaAFavor) {
+    private DescripcionActivosBuilder conPrendaAFavor(String prendaAFavor) {
         this.prendaAFavor = prendaAFavor;
         return this;
     }
 
-    private DescripcionActivosBuilder conSaldoCreditoVehiculo(final String saldoCreditoVehiculo) {
+    private DescripcionActivosBuilder conSaldoCreditoVehiculo(String saldoCreditoVehiculo) {
         this.saldoCreditoVehiculo = saldoCreditoVehiculo;
         return this;
     }
 
-    private DescripcionActivosBuilder conNumeroPlaca(final String numeroPlaca) {
+    private DescripcionActivosBuilder conNumeroPlaca(String numeroPlaca) {
         this.numeroPlaca = numeroPlaca;
         return this;
     }
 
-    private DescripcionActivosBuilder conMarcaModelo(final String marcaModelo) {
+    private DescripcionActivosBuilder conMarcaModelo(String marcaModelo) {
         this.marcaModelo = marcaModelo;
         return this;
     }
 
-    private DescripcionActivosBuilder conValorComercialVehiculo(final String valorComercialVehiculo) {
+    private DescripcionActivosBuilder conValorComercialVehiculo(String valorComercialVehiculo) {
         this.valorComercialVehiculo = valorComercialVehiculo;
         return this;
     }
 
-    private DescripcionActivosBuilder conVehiculoClase(final String vehiculoClase) {
+    private DescripcionActivosBuilder conVehiculoClase(String vehiculoClase) {
         this.vehiculoClase = vehiculoClase;
         return this;
     }
 
-    private DescripcionActivosBuilder conSaldoCreditoInmueble(final String saldoCreditoInmueble) {
+    private DescripcionActivosBuilder conSaldoCreditoInmueble(String saldoCreditoInmueble) {
         this.saldoCreditoInmueble = saldoCreditoInmueble;
         return this;
     }
 
-    private DescripcionActivosBuilder conDireccion(final String direccion) {
+    private DescripcionActivosBuilder conDireccion(String direccion) {
         this.direccion = direccion;
         return this;
     }
 
-    private DescripcionActivosBuilder conHipotecadoA(final String hipotecadoA) {
+    private DescripcionActivosBuilder conHipotecadoA(String hipotecadoA) {
         this.hipotecadoA = hipotecadoA;
         return this;
     }
 
-    private DescripcionActivosBuilder conValorComercialInmueble(final String valorComercialInmueble) {
+    private DescripcionActivosBuilder conValorComercialInmueble(String valorComercialInmueble) {
         this.valorComercialInmueble = valorComercialInmueble;
         return this;
     }
 
-    private DescripcionActivosBuilder conTipoInmueble(final String tipoInmueble) {
+    private DescripcionActivosBuilder conTipoInmueble(String tipoInmueble) {
         this.tipoInmueble = tipoInmueble;
         return this;
     }

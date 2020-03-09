@@ -9,31 +9,31 @@ public class DocumentosRequeridos {
     private final String strCalificacion;
     private final String strVinculacion;
 
-    public DocumentosRequeridos(final DocumentoRequeridosBuilder documentosRequeridosBuilder) {
-      strTipoSolicitud = documentosRequeridosBuilder.getStrTipoSolicitud();
-      strCiudad = documentosRequeridosBuilder.getStrCiudad();
-      strAgenciaVinculacion = documentosRequeridosBuilder.getStrAgenciaVinculacion();
-      strCalificacion = documentosRequeridosBuilder.getStrCalificacion();
-      strVinculacion = documentosRequeridosBuilder.getStrVinculacion();
+    public DocumentosRequeridos(DocumentoRequeridosBuilder documentosRequeridosBuilder) {
+      this.strTipoSolicitud = documentosRequeridosBuilder.getStrTipoSolicitud();
+      this.strCiudad = documentosRequeridosBuilder.getStrCiudad();
+      this.strAgenciaVinculacion = documentosRequeridosBuilder.getStrAgenciaVinculacion();
+      this.strCalificacion = documentosRequeridosBuilder.getStrCalificacion();
+      this.strVinculacion = documentosRequeridosBuilder.getStrVinculacion();
     }
 
     public String getStrTipoSolicitud() {
-        return this.strTipoSolicitud;
+        return strTipoSolicitud;
     }
 
     public String getStrCiudad() {
-        return this.strCiudad;
+        return strCiudad;
     }
 
     public String getStrAgenciaVinculacion() {
-        return this.strAgenciaVinculacion;
+        return strAgenciaVinculacion;
     }
 
     public String getStrCalificacion() {
-        return this.strCalificacion;
+        return strCalificacion;
     }
 
     public String getStrVinculacion() {
-        return this.strVinculacion;
+        return strVinculacion;
     }
 }

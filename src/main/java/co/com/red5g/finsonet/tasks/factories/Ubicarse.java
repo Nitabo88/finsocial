@@ -8,7 +8,7 @@ import co.com.red5g.finsonet.tasks.SolicitudCredito;
 import co.com.red5g.finsonet.tasks.VetoCliente;
 import net.serenitybdd.screenplay.Performable;
 
-public class Ubicarse {
+public final class Ubicarse {
 
     private Ubicarse() {
     }

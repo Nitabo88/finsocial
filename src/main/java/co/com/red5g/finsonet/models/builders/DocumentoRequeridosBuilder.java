@@ -11,11 +11,11 @@ public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos
     private String strVinculacion;
 
     private DocumentoRequeridosBuilder() {
-      strTipoSolicitud = "";
-      strCiudad = "";
-      strAgenciaVinculacion = "";
-      strCalificacion = "";
-      strVinculacion = "";
+      this.strTipoSolicitud = "";
+      this.strCiudad = "";
+      this.strAgenciaVinculacion = "";
+      this.strCalificacion = "";
+      this.strVinculacion = "";
     }
 
     public static DocumentoRequeridosBuilder los(){
@@ -23,57 +23,57 @@ public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos
     }
 
     public String getStrTipoSolicitud() {
-        return this.strTipoSolicitud;
+        return strTipoSolicitud;
     }
 
     public String getStrCiudad() {
-        return this.strCiudad;
+        return strCiudad;
     }
 
     public String getStrAgenciaVinculacion() {
-        return this.strAgenciaVinculacion;
+        return strAgenciaVinculacion;
     }
 
     public String getStrCalificacion() {
-        return this.strCalificacion;
+        return strCalificacion;
     }
 
     public String getStrVinculacion() {
-        return this.strVinculacion;
+        return strVinculacion;
     }
 
-    private DocumentoRequeridosBuilder conTipoSolicitud(final String strTipoSolicitud) {
+    private DocumentoRequeridosBuilder conTipoSolicitud(String strTipoSolicitud) {
         this.strTipoSolicitud = strTipoSolicitud;
         return this;
     }
 
-    private DocumentoRequeridosBuilder conCiudad(final String strCiudad) {
+    private DocumentoRequeridosBuilder conCiudad(String strCiudad) {
         this.strCiudad = strCiudad;
         return this;
     }
 
-    private DocumentoRequeridosBuilder conCalificacion(final String strCalificacion) {
+    private DocumentoRequeridosBuilder conCalificacion(String strCalificacion) {
         this.strCalificacion = strCalificacion;
         return this;
     }
 
-    private DocumentoRequeridosBuilder conAgenciaVinculacion(final String strAgenciaVinculacion) {
+    private DocumentoRequeridosBuilder conAgenciaVinculacion(String strAgenciaVinculacion) {
         this.strAgenciaVinculacion = strAgenciaVinculacion;
         return this;
     }
 
-    private DocumentoRequeridosBuilder conVinculacion(final String strVinculacion) {
+    private DocumentoRequeridosBuilder conVinculacion(String strVinculacion) {
         this.strVinculacion = strVinculacion;
         return this;
     }
 
     public DocumentosRequeridos documentosSolicitante() {
-      conTipoSolicitud("Solicitante");
-      conCiudad("MEDELLIN - ANTIOQUIA");
-      conAgenciaVinculacion("Institucional Medellin");
-      conCalificacion("660");
-      conVinculacion("Sí");
-        return build();
+      this.conTipoSolicitud("Solicitante");
+      this.conCiudad("MEDELLIN - ANTIOQUIA");
+      this.conAgenciaVinculacion("Institucional Medellin");
+      this.conCalificacion("660");
+      this.conVinculacion("Sí");
+        return this.build();
     }
 
     @Override

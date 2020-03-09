@@ -11,41 +11,41 @@ public class InformacionConyugue {
     private final String totalIngresos;
     private final String totalEgresos;
 
-    public InformacionConyugue(final InformacionConyugueBuilder informacionConyugueBuilder) {
-      lugarDondeTrabaja = informacionConyugueBuilder.getLugarDondeTrabaja();
-      ocupacion = informacionConyugueBuilder.getOcupacion();
-      dependenciaEconomica = informacionConyugueBuilder.getDependenciaEconomica();
-      fechaIngreso = informacionConyugueBuilder.getFechaIngreso();
-      cargoActual = informacionConyugueBuilder.getCargoActual();
-      totalIngresos = informacionConyugueBuilder.getTotalIngresos();
-      totalEgresos = informacionConyugueBuilder.getTotalEgresos();
+    public InformacionConyugue(InformacionConyugueBuilder informacionConyugueBuilder) {
+      this.lugarDondeTrabaja = informacionConyugueBuilder.getLugarDondeTrabaja();
+      this.ocupacion = informacionConyugueBuilder.getOcupacion();
+      this.dependenciaEconomica = informacionConyugueBuilder.getDependenciaEconomica();
+      this.fechaIngreso = informacionConyugueBuilder.getFechaIngreso();
+      this.cargoActual = informacionConyugueBuilder.getCargoActual();
+      this.totalIngresos = informacionConyugueBuilder.getTotalIngresos();
+      this.totalEgresos = informacionConyugueBuilder.getTotalEgresos();
     }
 
     public String getLugarDondeTrabaja() {
-        return this.lugarDondeTrabaja;
+        return lugarDondeTrabaja;
     }
 
     public String getOcupacion() {
-        return this.ocupacion;
+        return ocupacion;
     }
 
     public String getDependenciaEconomica() {
-        return this.dependenciaEconomica;
+        return dependenciaEconomica;
     }
 
     public String getFechaIngreso() {
-        return this.fechaIngreso;
+        return fechaIngreso;
     }
 
     public String getCargoActual() {
-        return this.cargoActual;
+        return cargoActual;
     }
 
     public String getTotalIngresos() {
-        return this.totalIngresos;
+        return totalIngresos;
     }
 
     public String getTotalEgresos() {
-        return this.totalEgresos;
+        return totalEgresos;
     }
 }

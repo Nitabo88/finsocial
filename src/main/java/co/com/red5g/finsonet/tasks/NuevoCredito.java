@@ -10,7 +10,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 public class NuevoCredito implements Task {
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(LNK_COMERCIAL),
                 Click.on(LNK_NUEVO_CREDITO));

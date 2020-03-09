@@ -28,7 +28,7 @@ public class FormularioSolicitudCredito implements Task {
     public static final String FECHA_SOLICITUD_CREDITO = "fecha credito";
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
             Escribe.losDocumentosRequeridos(los().documentosSolicitante()),
             Escribe.laInformacionDelPrestamo(la().informacionPrestamo()),

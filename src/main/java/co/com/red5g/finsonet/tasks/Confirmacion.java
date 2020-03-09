@@ -22,16 +22,16 @@ public class Confirmacion implements Task {
   private static final int TIEMPO = 10;
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
+  public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Ubicarse.enElFormulario(),
         Diligencia.laSolicitudDeCredito(),
         cambiarPestana(),
         Click.on(LNK_HOME),
-        WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(Confirmacion.TIEMPO).seconds(),
+        WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_ORIGINACION),
         Diligencia.laInformacionDeChequeoDeDocumentos(con().centralesDeRiesgo()),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(Confirmacion.TIEMPO).seconds(),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(MNU_ORIGINACION.of(CONFIRMACION))
     );
   }

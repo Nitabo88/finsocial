@@ -11,7 +11,7 @@ import co.com.red5g.finsonet.questions.ValorVentaLiberadaLiquidacionComisiones;
 import co.com.red5g.finsonet.questions.ValorVentaNuevaLiquidacionComisiones;
 import net.serenitybdd.screenplay.Question;
 
-public class ElValor {
+public final class ElValor {
 
   private ElValor() {
   }

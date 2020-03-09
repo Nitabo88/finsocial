@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.exceptions;
 
-public class ElUsuarioNoSeAutentico extends AssertionError {
+public class ElUsuarioNoSeAutenticoException extends AssertionError {
     public static final String MENSAJE_LOGUEO_NO_EXITOSO = "Error al autenticarse en la aplicacion";
 
-    public ElUsuarioNoSeAutentico(final String mensaje, final Throwable causa) {
+    public ElUsuarioNoSeAutenticoException(String mensaje, Throwable causa) {
         super(mensaje, causa);
     }
 }

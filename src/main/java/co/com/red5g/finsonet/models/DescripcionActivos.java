@@ -16,61 +16,61 @@ public class DescripcionActivos {
     private final String prendaAFavor;
 
 
-    public DescripcionActivos(final DescripcionActivosBuilder descripcionActivosBuilder) {
-      tipoInmueble = descripcionActivosBuilder.getTipoInmueble();
-      valorComercialInmueble = descripcionActivosBuilder.getValorComercialInmueble();
-      hipotecadoA = descripcionActivosBuilder.getHipotecadoA();
-      direccion = descripcionActivosBuilder.getDireccion();
-      saldoCreditoInmueble = descripcionActivosBuilder.getSaldoCreditoInmueble();
-      vehiculoClase = descripcionActivosBuilder.getVehiculoClase();
-      valorComercialVehiculo = descripcionActivosBuilder.getValorComercialVehiculo();
-      marcaModelo = descripcionActivosBuilder.getMarcaModelo();
-      numeroPlaca = descripcionActivosBuilder.getNumeroPlaca();
-      saldoCreditoVehiculo = descripcionActivosBuilder.getSaldoCreditoVehiculo();
-      prendaAFavor = descripcionActivosBuilder.getPrendaAFavor();
+    public DescripcionActivos(DescripcionActivosBuilder descripcionActivosBuilder) {
+      this.tipoInmueble = descripcionActivosBuilder.getTipoInmueble();
+      this.valorComercialInmueble = descripcionActivosBuilder.getValorComercialInmueble();
+      this.hipotecadoA = descripcionActivosBuilder.getHipotecadoA();
+      this.direccion = descripcionActivosBuilder.getDireccion();
+      this.saldoCreditoInmueble = descripcionActivosBuilder.getSaldoCreditoInmueble();
+      this.vehiculoClase = descripcionActivosBuilder.getVehiculoClase();
+      this.valorComercialVehiculo = descripcionActivosBuilder.getValorComercialVehiculo();
+      this.marcaModelo = descripcionActivosBuilder.getMarcaModelo();
+      this.numeroPlaca = descripcionActivosBuilder.getNumeroPlaca();
+      this.saldoCreditoVehiculo = descripcionActivosBuilder.getSaldoCreditoVehiculo();
+      this.prendaAFavor = descripcionActivosBuilder.getPrendaAFavor();
     }
 
     public String getTipoInmueble() {
-        return this.tipoInmueble;
+        return tipoInmueble;
     }
 
     public String getValorComercialInmueble() {
-        return this.valorComercialInmueble;
+        return valorComercialInmueble;
     }
 
     public String getHipotecadoA() {
-        return this.hipotecadoA;
+        return hipotecadoA;
     }
 
     public String getDireccion() {
-        return this.direccion;
+        return direccion;
     }
 
     public String getSaldoCreditoInmueble() {
-        return this.saldoCreditoInmueble;
+        return saldoCreditoInmueble;
     }
 
     public String getVehiculoClase() {
-        return this.vehiculoClase;
+        return vehiculoClase;
     }
 
     public String getValorComercialVehiculo() {
-        return this.valorComercialVehiculo;
+        return valorComercialVehiculo;
     }
 
     public String getMarcaModelo() {
-        return this.marcaModelo;
+        return marcaModelo;
     }
 
     public String getNumeroPlaca() {
-        return this.numeroPlaca;
+        return numeroPlaca;
     }
 
     public String getSaldoCreditoVehiculo() {
-        return this.saldoCreditoVehiculo;
+        return saldoCreditoVehiculo;
     }
 
     public String getPrendaAFavor() {
-        return this.prendaAFavor;
+        return prendaAFavor;
     }
 }

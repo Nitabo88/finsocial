@@ -35,146 +35,146 @@ public class InformacionPersonal {
     public InformacionPersonal() {
     }
 
-    public InformacionPersonal(final InformacionPersonalBuilder informacionPersonalBuilder) {
-      primerApellido = informacionPersonalBuilder.getPrimerApellido();
-      segundoApellido = informacionPersonalBuilder.getSegundoApellido();
-      primerNombre = informacionPersonalBuilder.getPrimerNombre();
-      segundoNombre = informacionPersonalBuilder.getSegundoNombre();
-      tipoDocumento = informacionPersonalBuilder.getTipoDocumento();
-      numeroDocumento = informacionPersonalBuilder.getNumeroDocumento();
-      lugarExpedicion = informacionPersonalBuilder.getLugarExpedicion();
-      fechaExpedicion = informacionPersonalBuilder.getFechaExpedicion();
-      fechaNacimiento = informacionPersonalBuilder.getFechaNacimiento();
-      sexo = informacionPersonalBuilder.getSexo();
-      lugarNacimiento = informacionPersonalBuilder.getLugarNacimiento();
-      estadoCivil = informacionPersonalBuilder.getEstadoCivil();
-      ciudadDepartamento = informacionPersonalBuilder.getCiudadDepartamento();
-      tipoVivienda = informacionPersonalBuilder.getTipoVivienda();
-      estrato = informacionPersonalBuilder.getEstrato();
-      direccion = informacionPersonalBuilder.getDireccion();
-      barrio = informacionPersonalBuilder.getBarrio();
-      telefono = informacionPersonalBuilder.getTelefono();
-      celular = informacionPersonalBuilder.getCelular();
-      correpondencia = informacionPersonalBuilder.getCorrepondencia();
-      correoElectronico = informacionPersonalBuilder.getCorreoElectronico();
-      tiempoResidenciaAnios = informacionPersonalBuilder.getTiempoResidenciaAnios();
-      tiempoResidenciaMeses = informacionPersonalBuilder.getTiempoResidenciaMeses();
-      adultosCargo = informacionPersonalBuilder.getAdultosCargo();
-      menoresCargo = informacionPersonalBuilder.getMenoresCargo();
-      eps = informacionPersonalBuilder.getEps();
-      nivelEstudios = informacionPersonalBuilder.getNivelEstudios();
-      profesion = informacionPersonalBuilder.getProfesion();
+    public InformacionPersonal(InformacionPersonalBuilder informacionPersonalBuilder) {
+      this.primerApellido = informacionPersonalBuilder.getPrimerApellido();
+      this.segundoApellido = informacionPersonalBuilder.getSegundoApellido();
+      this.primerNombre = informacionPersonalBuilder.getPrimerNombre();
+      this.segundoNombre = informacionPersonalBuilder.getSegundoNombre();
+      this.tipoDocumento = informacionPersonalBuilder.getTipoDocumento();
+      this.numeroDocumento = informacionPersonalBuilder.getNumeroDocumento();
+      this.lugarExpedicion = informacionPersonalBuilder.getLugarExpedicion();
+      this.fechaExpedicion = informacionPersonalBuilder.getFechaExpedicion();
+      this.fechaNacimiento = informacionPersonalBuilder.getFechaNacimiento();
+      this.sexo = informacionPersonalBuilder.getSexo();
+      this.lugarNacimiento = informacionPersonalBuilder.getLugarNacimiento();
+      this.estadoCivil = informacionPersonalBuilder.getEstadoCivil();
+      this.ciudadDepartamento = informacionPersonalBuilder.getCiudadDepartamento();
+      this.tipoVivienda = informacionPersonalBuilder.getTipoVivienda();
+      this.estrato = informacionPersonalBuilder.getEstrato();
+      this.direccion = informacionPersonalBuilder.getDireccion();
+      this.barrio = informacionPersonalBuilder.getBarrio();
+      this.telefono = informacionPersonalBuilder.getTelefono();
+      this.celular = informacionPersonalBuilder.getCelular();
+      this.correpondencia = informacionPersonalBuilder.getCorrepondencia();
+      this.correoElectronico = informacionPersonalBuilder.getCorreoElectronico();
+      this.tiempoResidenciaAnios = informacionPersonalBuilder.getTiempoResidenciaAnios();
+      this.tiempoResidenciaMeses = informacionPersonalBuilder.getTiempoResidenciaMeses();
+      this.adultosCargo = informacionPersonalBuilder.getAdultosCargo();
+      this.menoresCargo = informacionPersonalBuilder.getMenoresCargo();
+      this.eps = informacionPersonalBuilder.getEps();
+      this.nivelEstudios = informacionPersonalBuilder.getNivelEstudios();
+      this.profesion = informacionPersonalBuilder.getProfesion();
     }
 
     public String getTipoDocumento() {
-        return this.tipoDocumento;
+        return tipoDocumento;
     }
 
     public String getNumeroDocumento() {
-        return this.numeroDocumento;
+        return numeroDocumento;
     }
 
     public String getCorreoElectronico() {
-        return this.correoElectronico;
+        return correoElectronico;
     }
 
     public String getPrimerApellido() {
-        return this.primerApellido;
+        return primerApellido;
     }
 
     public String getSegundoApellido() {
-        return this.segundoApellido;
+        return segundoApellido;
     }
 
     public String getPrimerNombre() {
-        return this.primerNombre;
+        return primerNombre;
     }
 
     public String getSegundoNombre() {
-        return this.segundoNombre;
+        return segundoNombre;
     }
 
     public String getLugarExpedicion() {
-        return this.lugarExpedicion;
+        return lugarExpedicion;
     }
 
     public String getFechaExpedicion() {
-        return this.fechaExpedicion;
+        return fechaExpedicion;
     }
 
     public String getFechaNacimiento() {
-        return this.fechaNacimiento;
+        return fechaNacimiento;
     }
 
     public String getSexo() {
-        return this.sexo;
+        return sexo;
     }
 
     public String getLugarNacimiento() {
-        return this.lugarNacimiento;
+        return lugarNacimiento;
     }
 
     public String getEstadoCivil() {
-        return this.estadoCivil;
+        return estadoCivil;
     }
 
     public String getCiudadDepartamento() {
-        return this.ciudadDepartamento;
+        return ciudadDepartamento;
     }
 
     public String getTipoVivienda() {
-        return this.tipoVivienda;
+        return tipoVivienda;
     }
 
     public String getEstrato() {
-        return this.estrato;
+        return estrato;
     }
 
     public String getDireccion() {
-        return this.direccion;
+        return direccion;
     }
 
     public String getBarrio() {
-        return this.barrio;
+        return barrio;
     }
 
     public String getTelefono() {
-        return this.telefono;
+        return telefono;
     }
 
     public String getCelular() {
-        return this.celular;
+        return celular;
     }
 
     public String getTiempoResidenciaAnios() {
-        return this.tiempoResidenciaAnios;
+        return tiempoResidenciaAnios;
     }
 
     public String getTiempoResidenciaMeses() {
-        return this.tiempoResidenciaMeses;
+        return tiempoResidenciaMeses;
     }
 
     public String getAdultosCargo() {
-        return this.adultosCargo;
+        return adultosCargo;
     }
 
     public String getMenoresCargo() {
-        return this.menoresCargo;
+        return menoresCargo;
     }
 
     public String getNivelEstudios() {
-        return this.nivelEstudios;
+        return nivelEstudios;
     }
 
     public String getProfesion() {
-        return this.profesion;
+        return profesion;
     }
 
     public String getCorrepondencia() {
-        return this.correpondencia;
+        return correpondencia;
     }
 
     public String getEps() {
-        return this.eps;
+        return eps;
     }
 }

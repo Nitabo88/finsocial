@@ -10,19 +10,19 @@ import net.serenitybdd.screenplay.Question;
 
 public class MontoAsesor implements Question<Long> {
 
-  private String nombreAsesor;
+  private final String nombreAsesor;
 
-  public MontoAsesor(final String nombreAsesor) {
+  public MontoAsesor(String nombreAsesor) {
     this.nombreAsesor = nombreAsesor;
   }
 
-  public static Question<Long> montoAsesor(String nombreAsesor) {
+  public static Question<Long> montoAsesor(final String nombreAsesor) {
     return new MontoAsesor(nombreAsesor);
   }
 
   @Override
-  public Long answeredBy(Actor actor) {
-    List<WebElementFacade> lstMontoAsesor = (LST_MONTO_ASESOR.of(nombreAsesor)).resolveAllFor(actor);
+  public Long answeredBy(final Actor actor) {
+    final List<WebElementFacade> lstMontoAsesor = (LST_MONTO_ASESOR.of(this.nombreAsesor)).resolveAllFor(actor);
     lstMontoAsesor.remove(0);
     return suma(lstMontoAsesor);
   }

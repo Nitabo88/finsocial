@@ -3,14 +3,20 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class IncorporacionBuilder implements Builder<Incorporacion> {
+public final class IncorporacionBuilder implements Builder<Incorporacion> {
 
   private String razonMotivo;
+  private String motivo;
   private String solicitadoPor;
+  private String tipoDevolucion;
+  private String seleccionarGestion;
 
   private IncorporacionBuilder() {
-    razonMotivo = "";
-    solicitadoPor = "";
+    this.razonMotivo = "";
+    this.motivo = "";
+    this.solicitadoPor = "";
+    this.tipoDevolucion = "";
+    this.seleccionarGestion = "";
   }
 
   public static IncorporacionBuilder con() {
@@ -23,31 +29,66 @@ public class IncorporacionBuilder implements Builder<Incorporacion> {
   }
 
   public Incorporacion motivoRegreso() {
-    solicitadoPor("COORDINADOR-ZN2");
-    razonMotivo("El usuario tiene los documentos incompletos");
-    return build();
+    this.solicitadoPor("COORDINADOR-ZN2");
+    this.razonMotivo("El usuario tiene los documentos incompletos");
+    return this.build();
   }
 
   public Incorporacion motivoPendiente() {
-    razonMotivo("El usuario tiene los documentos incompletos");
-    return build();
+    this.tipoDevolucion("Pendiente");
+    this.motivo("Otros");
+    this.razonMotivo("Prueba");
+    return this.build();
   }
 
-  private IncorporacionBuilder razonMotivo(final String razonMotivo) {
+  public Incorporacion aprobacion() {
+    this.seleccionarGestion("Incorporado");
+    this.razonMotivo("Prueba");
+    return this.build();
+  }
+
+  private IncorporacionBuilder razonMotivo(String razonMotivo) {
     this.razonMotivo = razonMotivo;
     return this;
   }
 
-  private IncorporacionBuilder solicitadoPor(final String solicitadoPor) {
+  private IncorporacionBuilder solicitadoPor(String solicitadoPor) {
     this.solicitadoPor = solicitadoPor;
     return this;
   }
 
+  private IncorporacionBuilder seleccionarGestion(String seleccionarGestion) {
+    this.seleccionarGestion = seleccionarGestion;
+    return this;
+  }
+
+  private IncorporacionBuilder tipoDevolucion(String tipoDevolucion) {
+    this.tipoDevolucion = tipoDevolucion;
+    return this;
+  }
+
+  private IncorporacionBuilder motivo(String motivo) {
+    this.motivo = motivo;
+    return this;
+  }
+
   public String getRazonMotivo() {
-    return this.razonMotivo;
+    return razonMotivo;
   }
 
   public String getSolicitadoPor() {
-    return this.solicitadoPor;
+    return solicitadoPor;
+  }
+
+  public String getTipoDevolucion() {
+    return tipoDevolucion;
+  }
+
+  public String getMotivo() {
+    return motivo;
+  }
+
+  public String getSeleccionarGestion() {
+    return seleccionarGestion;
   }
 }
