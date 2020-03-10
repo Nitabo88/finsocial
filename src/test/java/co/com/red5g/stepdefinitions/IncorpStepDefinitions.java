@@ -37,7 +37,7 @@ public class IncorpStepDefinitions {
     }
 
     @Entonces("el crédito debe pasar a Formalizacion")
-    public void elCréditoDebePasarAFormalizacion() {
+    public void elCreditoDebePasarAFormalizacion() {
 
     }
 

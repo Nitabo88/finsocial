@@ -29,7 +29,7 @@ public class OrigStepDefinitions {
     }
 
     @Dado("que (.*) ingresar a originación para verificar estados del credito")
-    public void queQuiereIngresarAOriginaciónParaVerificarEstadosDelCredito(String nombreActor) {
+    public void queQuiereIngresarAOriginacionParaVerificarEstadosDelCredito(String nombreActor) {
                 theActorCalled(nombreActor).attemptsTo(
                 Sesion.sesion(),
                 Ingreso.usuario("daramirez").de("Dramirez.1609@").a("123456"),

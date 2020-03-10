@@ -41,7 +41,7 @@ public class FormStepDefinitions {
     }
 
     @Entonces("el crédito debe pasar a tesoreria")
-    public void elCréditoDebePasarATesoreria() {
+    public void elCreditoDebePasarATesoreria() {
 
     }
 
