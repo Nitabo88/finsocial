@@ -1,5 +1,5 @@
-# google-suite-test
-Un proyecto que sirve de base para crear automatizaciones con Serenity BDD y Screenplay
+# sqa-code
+Este es el proyecto de FINSONET con Serenity BDD y Screenplay
 
 En el archivo serenity.properties, cambiar la propiedad webdriver.chrome.driver a:
 
@@ -7,4 +7,5 @@ En el archivo serenity.properties, cambiar la propiedad webdriver.chrome.driver 
 - Sistema operativo windows: webdriver.chrome.driver = chromedriver.exe
 
 Las pruebas se corren con el comando gradle test aggregate.
-La documentaciónviva será generada en target/site/serenity/index.html
+La documentación viva será generada en target/site/serenity/index.html
+Revisar la WIKI del proyecto para tener pautas del patron y diferentes ayudas.
