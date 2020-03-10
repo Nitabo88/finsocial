@@ -9,5 +9,4 @@ import org.junit.runner.RunWith;
 @CucumberOptions(features = "src/test/resources/features/originacion.feature", glue = "co.com.red5g.finsonet.stepdefinitions", tags = "@Formalizacion", snippets = SnippetType.CAMELCASE)
 
 public class FormalizacionRunner {
-
 }

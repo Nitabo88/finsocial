@@ -88,3 +88,9 @@ Característica: Originacion
     Dado que un asesor esta en el paso de formalizacion
     Cuando el asesor pone el credito como pendiente en formalizacion
     Entonces el asesor debera ver el credito en formalizacion en la lista de pendientes
+
+  @Formalizacion
+  Escenario: Formalizacion - Aprobar el credito desde formalizacion
+    Dado que un asesor esta en el paso de formalizacion
+    Cuando el asesor aprueba el credito en formalizacion
+    Entonces el asesor debera ver el credito en el paso de tesoreria

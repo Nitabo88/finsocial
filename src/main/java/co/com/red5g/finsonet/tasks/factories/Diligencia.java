@@ -8,21 +8,7 @@ import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.models.Formalizacion;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.models.Vetados;
-import co.com.red5g.finsonet.tasks.AprobacionCreditoPendiente;
-import co.com.red5g.finsonet.tasks.AprobacionDeCredito;
-import co.com.red5g.finsonet.tasks.AprobacionIncorporacion;
-import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
-import co.com.red5g.finsonet.tasks.IncorporacionPendiente;
-import co.com.red5g.finsonet.tasks.InformacionChequeoDocumento;
-import co.com.red5g.finsonet.tasks.InformacionConfirmacion;
-import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
-import co.com.red5g.finsonet.tasks.PendienteConfirmacion;
-import co.com.red5g.finsonet.tasks.PendienteFormalizacion;
-import co.com.red5g.finsonet.tasks.RealizarVeto;
-import co.com.red5g.finsonet.tasks.RegresarAprobacionCredito;
-import co.com.red5g.finsonet.tasks.RegresarConfirmacion;
-import co.com.red5g.finsonet.tasks.RegresarIncoporacion;
-import co.com.red5g.finsonet.tasks.RegresoFormalizacion;
+import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
 
 public final class Diligencia {
@@ -88,5 +74,9 @@ public final class Diligencia {
 
     public static Performable laInformacionFormalizacionPendiente(Formalizacion motivoPendiente) {
         return instrumented(PendienteFormalizacion.class, motivoPendiente);
+    }
+
+    public static Performable laAprobacionDelCreditoEnFormalizacion() {
+        return instrumented(AprobacionFormalizacion.class);
     }
 }
