@@ -1,6 +1,15 @@
 package co.com.red5g.finsonet.questions.factories;
 
-import co.com.red5g.finsonet.questions.*;
+import co.com.red5g.finsonet.questions.PasoAprobacionDeCreditos;
+import co.com.red5g.finsonet.questions.PasoChequeoDeDocumentos;
+import co.com.red5g.finsonet.questions.PasoConfirmacionExitosa;
+import co.com.red5g.finsonet.questions.PasoFormalizacion;
+import co.com.red5g.finsonet.questions.PasoIncorporacion;
+import co.com.red5g.finsonet.questions.PasoIncorporacionPendiente;
+import co.com.red5g.finsonet.questions.PasoPendienteAprobacionDeCreditos;
+import co.com.red5g.finsonet.questions.PasoPendienteConfirmacion;
+import co.com.red5g.finsonet.questions.PasoPendienteFormalizacion;
+import co.com.red5g.finsonet.questions.PasoTesoreria;
 import net.serenitybdd.screenplay.Question;
 
 public final class ElCredito {

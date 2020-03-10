@@ -23,13 +23,13 @@ Característica: Originacion
     Cuando el asesor decline el chequeo del credito del cliente
     Entonces el auxiliar de documentacion deberia verlo
 
-  @Confirmacion
+
   Escenario: Confirmacion - Aprobacion del paso de confirmacion de un credito
     Dado que un asesor esta en el paso de confirmacion
     Cuando el asesor apruebe el paso de confirmacion
     Entonces el asesor deberia ver el crédito en el paso de aprobacion de creditos
 
-  @Confirmacion
+
   Escenario: Confirmacion - Regresar el credito desde el paso de confirmacion
     Dado que un asesor esta en el paso de confirmacion
     Cuando el asesor regresa el credito a chequeo de documentos
@@ -77,13 +77,13 @@ Característica: Originacion
     Cuando el asesor regresa el credito a aprobacion de creditos
     Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
 
-
+  @Formalizacion
   Escenario: Formalizacion - Regresar el credito desde formalizacion
     Dado que un asesor esta en el paso de formalizacion
     Cuando el asesor regresa el credito desde formalizacion
     Entonces el asesor debera ver el credito en el paso de incorporacion
 
-
+  @Formalizacion
   Escenario: Formalizacion - Marcar el credito como pendiente en formalizacion
     Dado que un asesor esta en el paso de formalizacion
     Cuando el asesor pone el credito como pendiente en formalizacion

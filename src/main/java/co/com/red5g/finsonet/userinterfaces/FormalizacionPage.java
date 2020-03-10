@@ -15,7 +15,8 @@ public final class FormalizacionPage {
   public static final Target TXT_DETALLE_PENDIENTE = Target.the("el detalle del motivo pendiente").located(By.id("area"));
   public static final Target LST_FILA_FORMALIZACION = Target.the("la fila de la tabla de formalizacion").locatedBy("//table[@id='table_n']//a[contains(@href,'{0}')]/ancestor::tr");
   public static final Target LST_FILA_PENDIENTE_FORMALIZACION = Target.the("la fila de la tabla pendiente de formalizacion").locatedBy("//table[@id='table_p']//a[contains(@href,'{0}')]/ancestor::tr");
-  public static final Target LST_COLUMNA_NOMBRE_FORMALIZACION = Target.the("la columna nombre de la de formalizacion").locatedBy("//table[@id='table_n']//a[contains(@href,'{0}')]/ancestor::tr//td[@style='text-align: left']");
+  public static final Target LST_COLUMNA_NOMBRE_FORMALIZACION = Target.the("la columna nombre de la de formalizacion")
+      .locatedBy("//table[@id='table_n']//a[contains(@href,'{0}')]//ancestor::tr//td[@style='text-align: left']");
   public static final Target BTN_ACCION_FORMALIZACION = Target.the("el boton de accion de formalizacion")
       .locatedBy("//table[@id='table_n']//a[contains(@href,'{0}')]/ancestor::tr//div[@class='dropdown-menu']");
 
