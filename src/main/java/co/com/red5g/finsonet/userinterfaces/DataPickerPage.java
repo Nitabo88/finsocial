@@ -4,7 +4,7 @@ package co.com.red5g.finsonet.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class DataPickerPage {
+public final class DataPickerPage {
     public static final Target BTN_ANIO = Target.the("El  boton del calendario en años").located(By.xpath("//div[@class='datepicker-years']//th[@class='datepicker-switch']"));
     public static final Target DTP_ANIO = Target.the("El calendario en años").locatedBy("//div[@class='datepicker-years']//table//span[contains(.,'{0}')]");
     public static final Target BTN_FLECHA_IZQUIERDA = Target.the("Flecha izquierda").located(By.xpath("//div[@class='datepicker-years']//th[@class='prev']"));

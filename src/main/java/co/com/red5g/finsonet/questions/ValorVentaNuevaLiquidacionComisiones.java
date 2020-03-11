@@ -11,7 +11,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 public class ValorVentaNuevaLiquidacionComisiones implements Question<String> {
 
     @Override
-    public String answeredBy(final Actor actor) {
+    public String answeredBy(Actor actor) {
         actor.attemptsTo(WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(5).seconds());
         return LBL_TOTAL_VENTA_NUEVA.resolveFor(actor).getText();
     }

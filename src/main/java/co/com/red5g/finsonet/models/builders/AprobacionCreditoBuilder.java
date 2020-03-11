@@ -3,23 +3,23 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.AprobacionCredito;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class AprobacionCreditoBuilder implements Builder<AprobacionCredito> {
+public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito> {
 
   private String seleccionMotivo;
   private String razonMotivo;
 
   public String getSeleccionMotivo() {
-    return this.seleccionMotivo;
+    return seleccionMotivo;
   }
 
   public String getRazonMotivo() {
-    return this.razonMotivo;
+    return razonMotivo;
   }
 
 
   private AprobacionCreditoBuilder() {
-    razonMotivo = "";
-    seleccionMotivo = "";
+    this.razonMotivo = "";
+    this.seleccionMotivo = "";
   }
 
   public static AprobacionCreditoBuilder con() {
@@ -32,22 +32,22 @@ public class AprobacionCreditoBuilder implements Builder<AprobacionCredito> {
   }
 
   public AprobacionCredito motivoRegreso() {
-    conRazonMotivo("El usuario tiene los documentos incompletos");
-    return build();
+    this.conRazonMotivo("El usuario tiene los documentos incompletos");
+    return this.build();
   }
 
   public AprobacionCredito motivoPendiente() {
-    conSeleccionMotivo("Pendiente Certificaciones");
-    conRazonMotivo("El usuario aun no entrega los certificados");
-    return build();
+    this.conSeleccionMotivo("Pendiente Certificaciones");
+    this.conRazonMotivo("El usuario aun no entrega los certificados");
+    return this.build();
   }
 
-  private AprobacionCreditoBuilder conRazonMotivo(final String razonMotivo) {
+  private AprobacionCreditoBuilder conRazonMotivo(String razonMotivo) {
     this.razonMotivo = razonMotivo;
     return this;
   }
 
-  private AprobacionCreditoBuilder conSeleccionMotivo(final String seleccionMotivo) {
+  private AprobacionCreditoBuilder conSeleccionMotivo(String seleccionMotivo) {
     this.seleccionMotivo = seleccionMotivo;
     return this;
   }

@@ -15,7 +15,7 @@ public class QueNoAparece implements Question<Boolean> {
   }
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
+  public Boolean answeredBy(Actor actor) {
     boolean columna = LST_FILA_CHEQUEO_DOCUMENTOS.of(actor.recall(CEDULA_ACTOR), actor.recall(FECHA_SOLICITUD_CREDITO)).resolveFor(actor).isPresent();
     if (!columna) {
       columna = LST_FILA_CHEQUEO_DOCUMENTOS.of(actor.recall(CEDULA_ACTOR), masUnMinuto(actor.recall(FECHA_SOLICITUD_CREDITO))).resolveFor(actor).isPresent();

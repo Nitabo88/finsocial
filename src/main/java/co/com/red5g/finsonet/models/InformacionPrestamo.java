@@ -10,36 +10,36 @@ public class InformacionPrestamo {
     private final String strPlazo;
     private final String strTasaMaximaInteresVigente;
 
-    public InformacionPrestamo(final InformacionPrestamoBuilder prestamoBuilder) {
-      strMonto = prestamoBuilder.getStrMonto();
-      strTasaInteres = prestamoBuilder.getStrTasaInteres();
-      strCuota = prestamoBuilder.getStrCuota();
-      strTasaMora = prestamoBuilder.getStrTasaMora();
-      strPlazo = prestamoBuilder.getStrPlazo();
-      strTasaMaximaInteresVigente = prestamoBuilder.getStrTasaMaximaInteresVigente();
+    public InformacionPrestamo(InformacionPrestamoBuilder prestamoBuilder) {
+      this.strMonto = prestamoBuilder.getStrMonto();
+      this.strTasaInteres = prestamoBuilder.getStrTasaInteres();
+      this.strCuota = prestamoBuilder.getStrCuota();
+      this.strTasaMora = prestamoBuilder.getStrTasaMora();
+      this.strPlazo = prestamoBuilder.getStrPlazo();
+      this.strTasaMaximaInteresVigente = prestamoBuilder.getStrTasaMaximaInteresVigente();
     }
 
     public String getStrMonto() {
-        return this.strMonto;
+        return strMonto;
     }
 
     public String getStrTasaInteres() {
-        return this.strTasaInteres;
+        return strTasaInteres;
     }
 
     public String getStrCuota() {
-        return this.strCuota;
+        return strCuota;
     }
 
     public String getStrTasaMora() {
-        return this.strTasaMora;
+        return strTasaMora;
     }
 
     public String getStrPlazo() {
-        return this.strPlazo;
+        return strPlazo;
     }
 
     public String getStrTasaMaximaInteresVigente() {
-        return this.strTasaMaximaInteresVigente;
+        return strTasaMaximaInteresVigente;
     }
 }

@@ -8,7 +8,7 @@ import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LBL_
 public class CreditosVentaLiberadaLiquidacionComisiones implements Question<String> {
 
     @Override
-    public String answeredBy(final Actor actor) {
+    public String answeredBy(Actor actor) {
         return LBL_TOTAL_CREDITOS_VENTA_LIBERADA.resolveFor(actor).getText();
     }
 }

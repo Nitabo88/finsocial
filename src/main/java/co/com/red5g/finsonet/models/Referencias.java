@@ -13,51 +13,51 @@ public class Referencias {
     private final String sucursal;
     private final String tipoProducto;
 
-    public Referencias(final ReferenciasBuilder referenciasBuilder) {
-      nombreCompletoReferencia = referenciasBuilder.getNombreCompletoReferencia();
-      parentescoReferencia = referenciasBuilder.getParentescoReferencia();
-      telefonoFijoReferencia = referenciasBuilder.getTelefonoFijoReferencia();
-      ciudadReferencia = referenciasBuilder.getCiudadReferencia();
-      celularReferencia = referenciasBuilder.getCelularReferencia();
-      direccionReferencia = referenciasBuilder.getDireccionReferencia();
-      nombreEntidadFinanciera = referenciasBuilder.getNombreEntidadFinanciera();
-      sucursal = referenciasBuilder.getSucursal();
-      tipoProducto = referenciasBuilder.getTipoProducto();
+    public Referencias(ReferenciasBuilder referenciasBuilder) {
+      this.nombreCompletoReferencia = referenciasBuilder.getNombreCompletoReferencia();
+      this.parentescoReferencia = referenciasBuilder.getParentescoReferencia();
+      this.telefonoFijoReferencia = referenciasBuilder.getTelefonoFijoReferencia();
+      this.ciudadReferencia = referenciasBuilder.getCiudadReferencia();
+      this.celularReferencia = referenciasBuilder.getCelularReferencia();
+      this.direccionReferencia = referenciasBuilder.getDireccionReferencia();
+      this.nombreEntidadFinanciera = referenciasBuilder.getNombreEntidadFinanciera();
+      this.sucursal = referenciasBuilder.getSucursal();
+      this.tipoProducto = referenciasBuilder.getTipoProducto();
     }
 
     public String getNombreCompletoReferencia() {
-        return this.nombreCompletoReferencia;
+        return nombreCompletoReferencia;
     }
 
     public String getParentescoReferencia() {
-        return this.parentescoReferencia;
+        return parentescoReferencia;
     }
 
     public String getTelefonoFijoReferencia() {
-        return this.telefonoFijoReferencia;
+        return telefonoFijoReferencia;
     }
 
     public String getCiudadReferencia() {
-        return this.ciudadReferencia;
+        return ciudadReferencia;
     }
 
     public String getDireccionReferencia() {
-        return this.direccionReferencia;
+        return direccionReferencia;
     }
 
     public String getNombreEntidadFinanciera() {
-        return this.nombreEntidadFinanciera;
+        return nombreEntidadFinanciera;
     }
 
     public String getSucursal() {
-        return this.sucursal;
+        return sucursal;
     }
 
     public String getTipoProducto() {
-        return this.tipoProducto;
+        return tipoProducto;
     }
 
     public String getCelularReferencia() {
-        return this.celularReferencia;
+        return celularReferencia;
     }
 }

@@ -1,17 +1,19 @@
 package co.com.red5g.finsonet.questions.factories;
 
-
-import co.com.red5g.finsonet.questions.*;
-
 import co.com.red5g.finsonet.questions.PasoAprobacionDeCreditos;
 import co.com.red5g.finsonet.questions.PasoChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.PasoConfirmacionExitosa;
+import co.com.red5g.finsonet.questions.PasoFormalizacion;
 import co.com.red5g.finsonet.questions.PasoIncorporacion;
+import co.com.red5g.finsonet.questions.PasoIncorporacionPendiente;
 import co.com.red5g.finsonet.questions.PasoPendienteAprobacionDeCreditos;
-
+import co.com.red5g.finsonet.questions.PasoPendienteConfirmacion;
+import co.com.red5g.finsonet.questions.PasoPendienteFormalizacion;
+import co.com.red5g.finsonet.questions.PasoPendienteTesoreria;
+import co.com.red5g.finsonet.questions.PasoTesoreria;
 import net.serenitybdd.screenplay.Question;
 
-public class ElCredito {
+public final class ElCredito {
 
   private ElCredito() {
   }
@@ -40,6 +42,25 @@ public class ElCredito {
     return new PasoAprobacionDeCreditos();
   }
 
-    public static Question<Boolean> asignado() { return new AsignacionLlamada();
-    }
+  public static Question<Boolean> enLaListaPendienteDeIncorporacion() {
+    return new PasoIncorporacionPendiente();
+  }
+
+  public static Question<Boolean> enLaListDeFormalizacion() {
+    return new PasoFormalizacion();
+  }
+
+  public static Question<Boolean> enConfirmacionPendiente() {
+    return new PasoPendienteConfirmacion();
+  }
+
+  public static Question<Boolean> enListaPendienteDeFormalizacion() { return new PasoPendienteFormalizacion();
+  }
+
+  public static Question<Boolean> enTesoreria() {
+    return new PasoTesoreria();
+  }
+
+  public static Question<Boolean> enListaPendienteDeTesoreria() {return new PasoPendienteTesoreria();
+  }
 }

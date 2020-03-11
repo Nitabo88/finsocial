@@ -7,21 +7,21 @@ public class Credito {
     private final String strValorCuota;
     private final String strPlazo;
 
-    public Credito(final CreditoBuilder creditoBuilder) {
-      strNumeroDocumento = creditoBuilder.getStrNumeroDocumento();
-      strValorCuota = creditoBuilder.getStrValorCuota();
-      strPlazo = creditoBuilder.getStrPlazo();
+    public Credito(CreditoBuilder creditoBuilder) {
+      this.strNumeroDocumento = creditoBuilder.getStrNumeroDocumento();
+      this.strValorCuota = creditoBuilder.getStrValorCuota();
+      this.strPlazo = creditoBuilder.getStrPlazo();
     }
 
-    public String getStrNumeroDocumento() {
-        return this.strNumeroDocumento;
+    public String getNumeroDocumento() {
+        return strNumeroDocumento;
     }
 
-    public String getStrValorCuota() {
-        return this.strValorCuota;
+    public String getValorCuota() {
+        return strValorCuota;
     }
 
-    public String getStrPlazo() {
-        return this.strPlazo;
+    public String getPlazo() {
+        return strPlazo;
     }
 }

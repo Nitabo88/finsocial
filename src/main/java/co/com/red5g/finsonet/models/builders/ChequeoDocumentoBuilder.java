@@ -10,10 +10,10 @@ public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
     private String razonMotivo;
 
     private ChequeoDocumentoBuilder() {
-      puntajeCifin = "";
-      aciertaDatacredito = "";
-      seleccionMotivo = "";
-      razonMotivo = "";
+      this.puntajeCifin = "";
+      this.aciertaDatacredito = "";
+      this.seleccionMotivo = "";
+      this.razonMotivo = "";
     }
 
     public static ChequeoDocumentoBuilder con() {
@@ -26,51 +26,51 @@ public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
     }
 
     public String getPuntajeCifin() {
-        return this.puntajeCifin;
+        return puntajeCifin;
     }
 
     public String getAciertaDatacredito() {
-        return this.aciertaDatacredito;
+        return aciertaDatacredito;
     }
 
     public ChequeoDocumento centralesDeRiesgo(){
-      conPuntajeCifin("660");
-      conAciertaDatacredito("880");
-        return build();
+      this.conPuntajeCifin("660");
+      this.conAciertaDatacredito("880");
+        return this.build();
 
     }
 
-    private ChequeoDocumentoBuilder conAciertaDatacredito(final String puntajeCifin) {
+    private ChequeoDocumentoBuilder conAciertaDatacredito(String puntajeCifin) {
         this.puntajeCifin = puntajeCifin;
         return this;
     }
 
-    private ChequeoDocumentoBuilder conPuntajeCifin(final String aciertaDatacredito) {
+    private ChequeoDocumentoBuilder conPuntajeCifin(String aciertaDatacredito) {
         this.aciertaDatacredito = aciertaDatacredito;
         return this;
     }
 
     public ChequeoDocumento motivo() {
-      conSeleccionMotivo("Datos incompleto");
-      conRazonMotivo("El usuario tiene los documentos incompletos");
-        return build();
+      this.conSeleccionMotivo("Datos incompleto");
+      this.conRazonMotivo("El usuario tiene los documentos incompletos");
+        return this.build();
     }
 
-    private ChequeoDocumentoBuilder conRazonMotivo(final String razonMotivo) {
+    private ChequeoDocumentoBuilder conRazonMotivo(String razonMotivo) {
         this.razonMotivo = razonMotivo;
         return this;
     }
 
-    private ChequeoDocumentoBuilder conSeleccionMotivo(final String seleccionMotivo) {
+    private ChequeoDocumentoBuilder conSeleccionMotivo(String seleccionMotivo) {
         this.seleccionMotivo = seleccionMotivo;
         return this;
     }
 
     public String getSeleccionMotivo() {
-        return this.seleccionMotivo;
+        return seleccionMotivo;
     }
 
     public String getRazonMotivo() {
-        return this.razonMotivo;
+        return razonMotivo;
     }
 }

@@ -18,18 +18,19 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class LoguinUsuarioDocumentacion implements Task {
 
   private static final String OPCION_SALIR = "Salir";
+  private static final Integer TIEMPO = 10;
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
+  public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Click.on(BTN_MI_CUENTA),
-        Click.on(MNU_MI_CUENTA.of(LoguinUsuarioDocumentacion.OPCION_SALIR)),
+        Click.on(MNU_MI_CUENTA.of(OPCION_SALIR)),
         Ingresa.lasCredenciales(de().unUsuarioDeDocumentacion()),
-        WaitUntil.the(LNK_AUXILIAR_OPERATIVO, isEnabled()).forNoMoreThan(10).seconds(),
+        WaitUntil.the(LNK_AUXILIAR_OPERATIVO, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_AUXILIAR_OPERATIVO),
-        WaitUntil.the(LNK_CHEQUEO_DOCUMENTOS, isEnabled()).forNoMoreThan(10).seconds(),
+        WaitUntil.the(LNK_CHEQUEO_DOCUMENTOS, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_CHEQUEO_DOCUMENTOS),
-        WaitUntil.the(LBL_CHEQUEO_DOCUMENTOS, isVisible()).forNoMoreThan(10).seconds()
+        WaitUntil.the(LBL_CHEQUEO_DOCUMENTOS, isVisible()).forNoMoreThan(TIEMPO).seconds()
     );
   }
 }

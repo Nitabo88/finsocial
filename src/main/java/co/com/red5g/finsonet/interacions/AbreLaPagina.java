@@ -18,9 +18,9 @@ public class AbreLaPagina implements Task {
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            Open.browserOn(this.loginFinsocialPage)
+            Open.browserOn(loginFinsocialPage)
         );
     }
 }

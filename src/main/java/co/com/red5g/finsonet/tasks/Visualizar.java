@@ -14,31 +14,31 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 public class Visualizar implements Task {
     private final Target lnkReporte;
 
-    public Visualizar(final Target lnkReporte) {
+    public Visualizar(Target lnkReporte) {
         this.lnkReporte = lnkReporte;
     }
 
-    public static Performable elReporteDeOriginacion(final Target lnkReporte) {
+    public static Performable elReporteDeOriginacion(Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeAntecartera(final Target lnkReporte) {
+    public static Performable elReporteDeAntecartera(Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeVentaNueva(final Target lnkReporte) {
+    public static Performable elReporteDeVentaNueva(Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeVentaLiberada(final Target lnkReporte) {
+    public static Performable elReporteDeVentaLiberada(Target lnkReporte) {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 WaitUntil.the(SPN_FINSONET, isNotVisible()),
-                Click.on(this.lnkReporte),
+                Click.on(lnkReporte),
                 WaitUntil.the(SPN_FINSONET, isNotVisible())
         );
     }

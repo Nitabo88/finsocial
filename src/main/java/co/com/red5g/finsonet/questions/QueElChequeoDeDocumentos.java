@@ -12,7 +12,7 @@ public class QueElChequeoDeDocumentos implements Question<String> {
     }
 
     @Override
-    public String answeredBy(final Actor actor) {
+    public String answeredBy(Actor actor) {
         return LBL_MENSAJE.resolveFor(actor).getText();
     }
 }

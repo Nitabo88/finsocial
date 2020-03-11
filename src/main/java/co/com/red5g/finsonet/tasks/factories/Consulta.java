@@ -4,12 +4,14 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import co.com.red5g.finsonet.tasks.AprobacionCreditos;
 import co.com.red5g.finsonet.tasks.Confirmacion;
+import co.com.red5g.finsonet.tasks.Formalizacion;
 import co.com.red5g.finsonet.tasks.Incorporacion;
 import co.com.red5g.finsonet.tasks.ReporteLiquidacionComisiones;
 import co.com.red5g.finsonet.tasks.Reportes;
+import co.com.red5g.finsonet.tasks.Tesoreria;
 import net.serenitybdd.screenplay.Performable;
 
-public class Consulta {
+public final class Consulta {
 
     private Consulta() {
     }
@@ -33,4 +35,10 @@ public class Consulta {
     public static Performable elCreditoEnIncorporacion() {
         return instrumented(Incorporacion.class);
     }
+
+  public static Performable elCreditoEnFormalizacion() {
+        return instrumented(Formalizacion.class);
+  }
+
+    public static Performable elCreditoEnTesoreria() { return instrumented( Tesoreria.class);}
 }

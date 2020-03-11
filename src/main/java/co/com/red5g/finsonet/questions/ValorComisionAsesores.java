@@ -24,17 +24,17 @@ public class ValorComisionAsesores implements Question<Boolean> {
   private static final int TIEMPO = 300;
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
+  public Boolean answeredBy(Actor actor) {
     boolean respuestaCredito = true;
-    final List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
+    List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
     for (int i = 0; i < lstCiudades.size(); i++) {
-      final String ciudad = lstCiudades.get(i).getText();
-      final List<WebElementFacade> lstNombreAsesor = obtenerNombres(ciudad).answeredBy(actor);
+      String ciudad = lstCiudades.get(i).getText();
+      List<WebElementFacade> lstNombreAsesor = obtenerNombres(ciudad).answeredBy(actor);
       for (int j = 0; j < lstNombreAsesor.size(); j++) {
-        final String nombreAsesor = lstNombreAsesor.get(j).getText();
-        final Long montoTotalAsesor = montoAsesor(nombreAsesor).answeredBy(actor);
-        final Double valorComisionAsesor = valorComision(nombreAsesor).answeredBy(actor);
+        String nombreAsesor = lstNombreAsesor.get(j).getText();
+        Long montoTotalAsesor = montoAsesor(nombreAsesor).answeredBy(actor);
+        Double valorComisionAsesor = valorComision(nombreAsesor).answeredBy(actor);
         actor.attemptsTo(
             JavaScriptClick.on(BTN_VER_DETALLE_LIQUIDACION.of(nombreAsesor)));
         actor.attemptsTo(
@@ -50,7 +50,7 @@ public class ValorComisionAsesores implements Question<Boolean> {
       }
       actor.attemptsTo(
           JavaScriptClick.on(BTN_CERRAR_DETALLE.of(ciudad)),
-          WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(ValorComisionAsesores.TIEMPO).seconds()
+          WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds()
       );
     }
     return respuestaCredito;
