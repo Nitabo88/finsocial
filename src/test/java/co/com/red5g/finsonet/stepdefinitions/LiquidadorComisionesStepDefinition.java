@@ -61,7 +61,7 @@ public class LiquidadorComisionesStepDefinition {
     }
 
     @Y("^que el numero de creditos de venta liberada es consistente$")
-    public void verficarNumeroCreditosVentaLiberada() {
+    public void verificarNumeroCreditosVentaLiberada() {
         theActorInTheSpotlight().should(
             seeThat(ElNumero.deCreditosDeVentaLiberadaEsConsistente(), containsString(theActorInTheSpotlight().recall(NUMERO_CREDITOS_VENTA_LIBERADA))));
     }

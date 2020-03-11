@@ -8,6 +8,7 @@ import co.com.red5g.finsonet.tasks.Formalizacion;
 import co.com.red5g.finsonet.tasks.Incorporacion;
 import co.com.red5g.finsonet.tasks.ReporteLiquidacionComisiones;
 import co.com.red5g.finsonet.tasks.Reportes;
+import co.com.red5g.finsonet.tasks.Tesoreria;
 import net.serenitybdd.screenplay.Performable;
 
 public final class Consulta {
@@ -38,4 +39,6 @@ public final class Consulta {
   public static Performable elCreditoEnFormalizacion() {
         return instrumented(Formalizacion.class);
   }
+
+    public static Performable elCreditoEnTesoreria() { return instrumented( Tesoreria.class);}
 }
