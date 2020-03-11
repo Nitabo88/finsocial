@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -23,6 +24,7 @@ public class LlamadasStepDefinition {
     @Dado("que un (.*) quiere asignar una llamada para el credito")
     public void queUnAsesorQuiereAsignarUnaLlamadaParaElCredito(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
+
                 Ubicarse.enLlamada()
         );
     }
@@ -37,7 +39,8 @@ public class LlamadasStepDefinition {
 
     @Y("^procesa la llamada$")
     public void procesaLaLlamada() {
-        String numeroCredito = "84548";
+
+        String numeroCredito = theActorInTheSpotlight().recall(NUMERO_CREDITO);;
 
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(LST_FILA_LLAMADAS.of(numeroCredito), isVisible()),
@@ -45,7 +48,7 @@ public class LlamadasStepDefinition {
                 cambiarPestanaActual(),
                 Click.on(CHK_RESPUESTA_CUATRO.of(numeroCredito)),
                 Click.on(CHK_RESPUESTA_QUINTO.of(numeroCredito)),
-                Enter.theValue("Pruebas de validacion de la escritura de el mundo mundial ").into(TXT_OBSERVACION_LLAMADA.of(numeroCredito))
+                Enter.theValue("El credito se realizara proceso exitoza").into(TXT_OBSERVACION_LLAMADA.of(numeroCredito))
 
         );
 
