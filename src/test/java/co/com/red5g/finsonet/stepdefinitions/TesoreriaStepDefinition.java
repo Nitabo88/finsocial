@@ -22,4 +22,10 @@ public class TesoreriaStepDefinition {
     theActorInTheSpotlight()
         .attemptsTo(Diligencia.laInformacionDeRegresoDeTesoreria(con().motivoRegreso()));
   }
+
+  @Cuando("^el asesor pone el credito como pendiente en tesoreria$")
+  public void creditoPendiente() {
+    theActorInTheSpotlight()
+        .attemptsTo(Diligencia.laInformacionTesoreriaPendiente(con().motivoPendiente()));
+  }
 }

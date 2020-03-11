@@ -83,4 +83,8 @@ public final class Diligencia {
 
   public static Performable laInformacionDeRegresoDeTesoreria(Tesoreria motivoRegreso) { return instrumented(RegresoTesoreria.class, motivoRegreso);
   }
+
+    public static Performable laInformacionTesoreriaPendiente(Tesoreria motivoPendiente) {
+        return instrumented(PendienteTesoreria.class, motivoPendiente);
+    }
 }
