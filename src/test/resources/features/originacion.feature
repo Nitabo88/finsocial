@@ -94,3 +94,15 @@ Característica: Originacion
     Dado que un asesor esta en el paso de formalizacion
     Cuando el asesor aprueba el credito en formalizacion
     Entonces el asesor debera ver el credito en el paso de tesoreria
+
+  @Tesoreria
+  Escenario: Tesoreria - Regresar el credito desde tesoreria
+    Dado que un asesor esta en el paso de tesoreria
+    Cuando el asesor regresa el credito desde tesoreria
+    Entonces el asesor debera ver el credito en el paso de formalizacion
+
+  @Tesoreria
+  Escenario: Formalizacion - Marcar el credito como pendiente en tesoreria
+    Dado que un asesor esta en el paso de tesoreria
+    Cuando el asesor pone el credito como pendiente en tesoreria
+    Entonces el asesor debera ver el credito en tesoreria en la lista de pendientes
