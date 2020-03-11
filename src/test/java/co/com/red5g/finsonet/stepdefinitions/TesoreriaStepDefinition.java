@@ -19,7 +19,6 @@ public class TesoreriaStepDefinition {
   @Dado("^que (.*) esta en el paso de tesoreria$")
   public void ingresarTesoreria(String actor) {
     theActorCalled(actor).attemptsTo(Consulta.elCreditoEnTesoreria());
-
   }
 
   @Cuando("^el asesor regresa el credito desde tesoreria$")
