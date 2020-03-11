@@ -24,7 +24,6 @@ public class LlamadasStepDefinition {
     @Dado("que un (.*) quiere asignar una llamada para el credito")
     public void queUnAsesorQuiereAsignarUnaLlamadaParaElCredito(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
-
                 Ubicarse.enLlamada()
         );
     }
