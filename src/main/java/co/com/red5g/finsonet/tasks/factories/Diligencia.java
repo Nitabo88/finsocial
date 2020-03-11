@@ -7,6 +7,7 @@ import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.models.Formalizacion;
 import co.com.red5g.finsonet.models.Incorporacion;
+import co.com.red5g.finsonet.models.Tesoreria;
 import co.com.red5g.finsonet.models.Vetados;
 import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
@@ -79,4 +80,7 @@ public final class Diligencia {
     public static Performable laAprobacionDelCreditoEnFormalizacion() {
         return instrumented(AprobacionFormalizacion.class);
     }
+
+  public static Performable laInformacionDeRegresoDeTesoreria(Tesoreria motivoRegreso) { return instrumented(RegresoTesoreria.class, motivoRegreso);
+  }
 }
