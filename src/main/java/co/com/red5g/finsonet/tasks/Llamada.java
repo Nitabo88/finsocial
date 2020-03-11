@@ -6,9 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.CHK_ID_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_LLAMADAS;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class Llamada implements Task {

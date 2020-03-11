@@ -6,12 +6,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.*;
-import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_CONFIRMAR_LLAMADAS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AsignacionLlamadas implements Task {
 
@@ -21,7 +18,7 @@ public class AsignacionLlamadas implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        String numeroCredito = "84542";
+        String numeroCredito = "84504";
         actor.attemptsTo(
 
                 WaitUntil.the(CHK_ID_LLAMADAS.of(numeroCredito), isPresent()).forNoMoreThan(100).seconds(),
