@@ -16,9 +16,7 @@ import co.com.red5g.finsonet.models.Vetados;
 import co.com.red5g.finsonet.questions.NoPuede;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
-import co.com.red5g.finsonet.tasks.IntentaCrear;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
-import co.com.red5g.finsonet.tasks.factories.Loguearse;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
@@ -33,11 +31,11 @@ import org.openqa.selenium.Keys;
 public class VetadosStepDefinition {
     private static final String SALIR = "Salir";
     private Vetados vetados;
-  private static final String ACTOR = "Administrador";
+    private static final String ACTOR = "Administrador";
 
-   @Before("@Vetados")
+    @Before("@Vetados")
     public void quitarMarca() {
-     theActorCalled(ACTOR).wasAbleTo(Eliminar.elVeto(a().unCliente()));
+        theActorCalled(ACTOR).wasAbleTo(Eliminar.elVeto(a().unCliente()));
     }
 
     @Dado("que el (.*) quiere asignar un veto interno")
@@ -51,22 +49,24 @@ public class VetadosStepDefinition {
     public void asignarVetoInterno() {
         theActorInTheSpotlight().attemptsTo
                 (Diligencia.ElVetoInterno(a().unCliente())
-        );
+                );
     }
 
     @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
-                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
+                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class, MENSAJE_VETO)
+                );
     }
 
     @Y("el (.*) no deberia poder crear un credito con este usuario")
     public void IntentarCrearCredito(final String strMensaje) {
-                theActorInTheSpotlight().attemptsTo(
+        theActorInTheSpotlight().attemptsTo(
                 JavaScriptClick.on(LNK_HOME),
                 Click.on(LNK_COMERCIAL),
                 Click.on(LNK_NUEVO_CREDITO),
                 Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER));
-       theActorInTheSpotlight().should(seeThat(NoPuede.crearCreditos(strMensaje)).orComplainWith(ElCreditoFueRechazado.class, MENSAJE_USUARIO_VETADO));
+        theActorInTheSpotlight().should(seeThat(NoPuede.crearCreditos(strMensaje)).orComplainWith(ElCreditoFueRechazado.class, MENSAJE_USUARIO_VETADO)
+        );
     }
 }
