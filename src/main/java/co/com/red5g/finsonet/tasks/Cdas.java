@@ -1,5 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
+import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ACCION_CERTIFICACIONES;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ACCION_DOCUMENTACION;
@@ -38,7 +41,8 @@ public class Cdas implements Task {
         JavaScriptClick.on(RBN_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
         JavaScriptClick.on(BTN_BUSQUEDA),
-        Click.on(BTN_DETALLE_GESTION.of(numeroCredito)),
+        JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
+        cambiarPestanaActual(),
         Click.on(BTN_ACCION_VOBO),
         SelectFromOptions.byVisibleText(accionCdas.getSeleccionarGestion()).from(LST_SELECCIONAR_GESTION),
         Enter.theValue(accionCdas.getDetalleGestion()).into(TXT_MOTIVO_GESTION),
@@ -53,7 +57,9 @@ public class Cdas implements Task {
         SelectFromOptions.byVisibleText(accionCdas.getSeleccionarGestion()).from(LST_SELECCIONAR_GESTION),
         Enter.theValue(accionCdas.getDetalleGestion()).into(TXT_MOTIVO_GESTION),
         Click.on(BTN_REGISTRAR),
-        Click.on(BTN_CERRAR)
+        Click.on(BTN_CERRAR),
+        cerrarPestana(),
+        cambiarPestana()
     );
   }
 }
