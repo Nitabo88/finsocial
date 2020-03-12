@@ -1,12 +1,15 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import co.com.red5g.finsonet.tasks.factories.Consulta;
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
+import static co.com.red5g.finsonet.models.builders.AccionCdasBuilder.con;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CdasStepDefinition {
 
@@ -16,8 +19,8 @@ public class CdasStepDefinition {
     }
 
     @Cuando("^el asesor diligencia los CDAS del credito$")
-    public void elAsesorDiligenciaLosCDASDelCredito() {
-
+    public void diligenciarCdas() {
+        theActorInTheSpotlight().attemptsTo(Diligencia.laInformacionDeLosDocumentos(con().vistoBueno()));
     }
 
     @Entonces("^el podra ver el credito en estado completo$")
