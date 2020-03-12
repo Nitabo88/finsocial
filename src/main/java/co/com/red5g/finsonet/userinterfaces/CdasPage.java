@@ -20,7 +20,7 @@ public class CdasPage {
             .located(By.xpath("//tr[@id='gr-5']//i[@class='fas fa-thumbs-up']"));
     public static final Target LST_SELECCIONAR_GESTION = Target.the("la lista de seleccionar gestion")
             .locatedBy("#txtTipoGestion");
-    public static final Target LST_MOTIVO_GESTION = Target.the("el motivo de gestion")
+    public static final Target TXT_MOTIVO_GESTION = Target.the("el motivo de gestion")
             .locatedBy("#actMotivo2");
     public static final Target BTN_REGISTRAR = Target.the("el boton de registrar")
             .locatedBy("#btn-cerrar-gestion");
