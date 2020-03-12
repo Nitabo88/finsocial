@@ -6,9 +6,9 @@ import static co.com.red5g.finsonet.userinterfaces.ListadoVetadosPage.BTN_ANULAR
 import static co.com.red5g.finsonet.userinterfaces.ListadoVetadosPage.BTN_DETALLE_VETO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNU_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.VetadosPage.MNU_LST_VETADOS;
-import static co.com.red5g.finsonet.userinterfaces.VetadosPage.MNU_RIESGOS;
+import static co.com.red5g.finsonet.userinterfaces.VetadosPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 
 import co.com.red5g.finsonet.models.Vetados;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
@@ -17,6 +17,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Eliminar implements Task {
 
@@ -43,8 +44,9 @@ public class Eliminar implements Task {
                 .andIfSo(
                     JavaScriptClick.on(BTN_DETALLE_VETO.of(numeroDocumento)),
                     JavaScriptClick.on(BTN_ANULAR_VETO),
-                    JavaScriptClick.on(BTN_ANULAR),
-                    JavaScriptClick.on(BTN_ACEPTAR),
+                    Click.on(BTN_ANULAR),
+                    Click.on(BTN_ACEPTAR),
+                    WaitUntil.the(BTN_MI_CUENTA, isClickable()),
                     JavaScriptClick.on(BTN_MI_CUENTA),
                     JavaScriptClick.on(MNU_MI_CUENTA.of(SALIR)))
                 .otherwise(

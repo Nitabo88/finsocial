@@ -19,11 +19,10 @@ public class IntentaCrear implements Task {
     public static Performable unCredito() {
         return instrumented(IntentaCrear.class);
     }
+
     @Override
     public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-                JavaScriptClick.on(IMG_FINSONET),
-                Ubicarse.enNuevoCredito(),
                 Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER)
         );
     }
