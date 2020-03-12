@@ -6,6 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ACCION_DOCUMENTA
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ACCION_VOBO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_CERRAR;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_DETALLE_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_REGISTRAR;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.LST_SELECCIONAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.RBN_CRITERIO_BUSQUEDA;
@@ -26,16 +27,18 @@ public class Cdas implements Task {
 
   private static final String ID_CREDITO = "ID crédito";
 
+  public Cdas(AccionCdas accionCdas) {
+    this.accionCdas = accionCdas;
+  }
+
   @Override
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        JavaScriptClick.on(RBN_CRITERIO_BUSQUEDA.of(ID_CREDITO)));
-    actor.attemptsTo(
-        Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA));
-    actor.attemptsTo(
-        JavaScriptClick.on(BTN_BUSQUEDA));
-    actor.attemptsTo(
+        JavaScriptClick.on(RBN_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
+        Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
+        JavaScriptClick.on(BTN_BUSQUEDA),
+        Click.on(BTN_DETALLE_GESTION.of(numeroCredito)),
         Click.on(BTN_ACCION_VOBO),
         SelectFromOptions.byVisibleText(accionCdas.getSeleccionarGestion()).from(LST_SELECCIONAR_GESTION),
         Enter.theValue(accionCdas.getDetalleGestion()).into(TXT_MOTIVO_GESTION),
