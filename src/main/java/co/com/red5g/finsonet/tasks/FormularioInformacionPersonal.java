@@ -1,5 +1,39 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_CERRAR_DIRECCION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_CIUDAD_DEPARTAMENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_CORRESPONDENCIA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_ESTADO_CIVIL;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_ESTRATO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_LUGAR_EXPEDICION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_LUGAR_NACIMIENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_NIVEL_ESTUDIOS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_PROFESION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_SEXO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_TIPO_DOCUMENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.BTN_TIPO_VIVIENDA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.FILTRO_LUGARES;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.LST_LISTAS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.LST_OPCIONES;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.LST_TIPO_DOCUMENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_ADULTOS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_ANOS_RESIDENCIA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_BARRIO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_CELULAR;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_DIRECCION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_EMAIL;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_EPS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_FECHA_EXPEDICION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_FECHA_NACIMIENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_MENORES_18_ANOS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_MESES_RESIDENCIA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_PRIMER_APELLIDO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_PRIMER_NOMBRE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_SEGUNDO_APELLIDO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_SEGUNDO_NOMBRE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.TXT_TELEFONO_RESIDENCIA;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+
 import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.InformacionPersonal;
@@ -9,9 +43,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
-
-import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso2Page.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class FormularioInformacionPersonal implements Task {
     private final InformacionPersonal informacionPersonal;
