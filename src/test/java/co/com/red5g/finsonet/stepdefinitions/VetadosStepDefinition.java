@@ -4,7 +4,8 @@ import static co.com.red5g.finsonet.exceptions.ElCreditoFueRechazado.MENSAJE_USU
 import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto.MENSAJE_VETO;
 import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
 import static co.com.red5g.finsonet.userinterfaces.ComercialPage.LNK_NUEVO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -29,6 +30,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import org.openqa.selenium.Keys;
 
 public class VetadosStepDefinition {
+
     private static final String SALIR = "Salir";
     private Vetados vetados;
     private static final String ACTOR = "Administrador";
@@ -41,7 +43,7 @@ public class VetadosStepDefinition {
     @Dado("que el (.*) quiere asignar un veto interno")
     public void ubicarseEnVetados(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
-                Ubicarse.enVetados()
+            Ubicarse.enVetados()
         );
     }
 
