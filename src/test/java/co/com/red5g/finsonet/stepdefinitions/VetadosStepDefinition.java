@@ -35,7 +35,7 @@ public class VetadosStepDefinition {
 
     @Before("@Vetados")
     public void quitarMarca() {
-        theActorCalled(ACTOR).wasAbleTo(Eliminar.elVeto(a().unCliente()));
+        theActorCalled(ACTOR).attemptsTo(Eliminar.elVeto(a().unCliente()));
     }
 
     @Dado("que el (.*) quiere asignar un veto interno")
