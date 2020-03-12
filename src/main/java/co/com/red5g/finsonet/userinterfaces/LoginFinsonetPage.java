@@ -14,4 +14,10 @@ public class LoginFinsonetPage extends PageObject {
     public static final Target TXT_CODIGO = Target.the("codigo").located(org.openqa.selenium.By.id("codigo"));
     public static final Target BTN_ENVIAR = Target.the("el boton enviar").located(org.openqa.selenium.By.id("butSubmit"));
     public static final Target LBL_MENSAJE_BIENVENIDA = Target.the("el mensaje de bienvenido").located(org.openqa.selenium.By.xpath("//p[contains(.,'Bienvenido')]"));
+    public static final Target TXT_CELULAR = Target.the("el mensaje de bienvenido").located(By.id("celular"));
+    public static final Target TXT_CORREO = Target.the("el mensaje de bienvenido").located(By.id("textfield2"));
+    public static final Target TXT_NUEVA_CONTRASEÑA = Target.the("el mensaje de bienvenido").located(By.id("textfield"));
+    public static final Target TXT_NUEVA_CONTRASEÑA1 = Target.the("el mensaje de bienvenido").located(By.name("confirme_pass"));
+    public static final Target BTN_ACTUALIZAR_CONTRASEÑA = Target.the("el mensaje de bienvenido").located(By.id("butSubmit"));
+
 }
