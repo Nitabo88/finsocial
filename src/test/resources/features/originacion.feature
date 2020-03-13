@@ -11,13 +11,13 @@ Característica: Originacion
     Cuando el asesor adjunta toda la informacion de el chequeo de documentos
     Entonces deberia ver el credito en el paso de confirmacion
 
-  @ChequeoDocumentos
+
   Escenario: Chequeo Documentos - Aprobacion chequeo documentos no exitosa
     Dado que el asesor esta en el paso de chequeo de un documentos
     Cuando el asesor complete el chequeo de credito del cliente
     Entonces deberia ver el mensaje de adjuntar informacion
 
-  @ChequeoDocumentos
+
   Escenario: Chequeo Documentos - Chequeo de documentos estado Pendiente
     Dado que un asesor esta en el paso de chequeo de un documentos
     Cuando el asesor decline el chequeo del credito del cliente
@@ -65,13 +65,13 @@ Característica: Originacion
     Cuando el asesor aprueba el credito en incorporacion
     Entonces el asesor debera ver el credito en el paso de formalizacion
 
-  @Incorporacion
+
   Escenario: Incorporacion - Marcar el credito como pendiente en incorporacion
     Dado que un asesor esta en el paso de incorporacion
     Cuando el asesor pone el credito como pendiente en incorporacion
     Entonces el asesor debera ver el credito en incorporacion en la lista de pendientes
 
-  @Incorporacion
+
   Escenario: Incorporacion - Regresar el credito desde incorporacion
     Dado que un asesor esta en el paso de incorporacion
     Cuando el asesor regresa el credito a aprobacion de creditos
