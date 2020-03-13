@@ -14,6 +14,8 @@ public class ModulosAdministracionPage {
     public static final Target BTN_MI_CUENTA = Target.the("boton de mi cuenta").located(By.id("dropdownCuenta"));
     public static final Target MNU_MI_CUENTA = Target.the("el submenu de mi cuenta").locatedBy("//div[contains(@class,'dropdown-menu')]//a[contains(.,'{0}')]");
     public static final Target IMG_FINSONET = Target.the("el logo de finsonet").located(By.xpath("//div[@class='col-sm-12 col-md-3 col-lg-2 div-logo']//img[@class='icon icon-finsonetlogo']"));
+    public static final Target IMG_FINSONET_NEW = Target.the("el logo de finsonet nuevo").locatedBy(("//img[@src='/assets/images/logo_finsonet.svg'][@title='Inicio']"));
+
 
     private ModulosAdministracionPage() {
         throw new IllegalStateException("Utility class");

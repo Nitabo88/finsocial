@@ -1,20 +1,25 @@
 package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.models.Vetados;
-import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
+import static co.com.red5g.finsonet.userinterfaces.ComercialPage.LNK_NUEVO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class IntentaCrear implements Task {
     private Vetados vetados;
+
+    private static final int TIEMPO = 5;
 
     public static Performable unCredito() {
         return instrumented(IntentaCrear.class);
@@ -23,7 +28,11 @@ public class IntentaCrear implements Task {
     @Override
     public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-                Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER)
+                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+                Click.on(IMG_FINSONET_NEW),
+                Click.on(LNK_COMERCIAL),
+                Click.on(LNK_NUEVO_CREDITO),
+                Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit<(Keys.ENTER)
         );
     }
 }
