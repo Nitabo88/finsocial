@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 public class VetadosPage extends PageObject {
 
-    public static final Target BTN_ACEPTAR_VETO = Target.the("boton aceptar veto").locatedBy(("//button[contains(.,'Aceptar')]"));
+    public static final Target BTN_ACEPTAR_VETO = Target.the("boton aceptar veto").locatedBy(("//div[@class='swal2-actions actions-class']//button[contains(.,'Aceptar')]"));
     public static final Target MNU_RIESGOS = Target.the("Menu de riesgo").located(By.id("hamburger"));
     public static final Target MNU_LST_VETADOS = Target.the("Menu lista de vetados").located(By.id("listado-vetados"));
     public static final Target TXT_DOCUMENTO_VETADOS = Target.the("campo de documento vetado").located(By.id("txtDocumento"));
