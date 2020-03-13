@@ -9,7 +9,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import co.com.red5g.finsonet.exceptions.ElCreditoFueRechazado;
 import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
-import co.com.red5g.finsonet.models.Vetados;
 import co.com.red5g.finsonet.questions.NoPuede;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
@@ -24,9 +23,7 @@ import cucumber.api.java.es.Y;
 
 public class VetadosStepDefinition {
 
-    private static final String SALIR = "Salir";
-    private Vetados vetados;
-    private static final String ACTOR = "Administrador";
+   private static final String ACTOR = "Administrador";
 
     @Before("@Vetados")
     public void quitarMarca() {
