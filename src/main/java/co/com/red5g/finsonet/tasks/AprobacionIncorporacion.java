@@ -28,7 +28,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AprobacionIncorporacion implements Task {
 
-  private static final int TIEMPO = 20;
+  private static final int TIEMPO = 100;
   Logger logger;
 
   private final Incorporacion incorporacion;
@@ -41,8 +41,11 @@ public class AprobacionIncorporacion implements Task {
   public <T extends Actor> void performAs(final T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
+        WaitUntil.the(LST_INCORPORACION_NOMBRE.of(numeroCredito),isVisible()).forNoMoreThan(TIEMPO).seconds(),
         JavaScriptClick.on(LST_INCORPORACION_NOMBRE.of(numeroCredito)),
+        WaitUntil.the(BTN_ACTUALIZAR_GESTION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         JavaScriptClick.on(BTN_ACTUALIZAR_GESTION),
+        WaitUntil.the(LST_SELECCIONAR_GESTION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         SelectFromOptions.byVisibleText(this.incorporacion.getSeleccionarGestion()).from(LST_SELECCIONAR_GESTION),
         Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_DETALLE_GESTION),
         JavaScriptClick.on(BTN_SELECCIONE_ARCHIVO));
