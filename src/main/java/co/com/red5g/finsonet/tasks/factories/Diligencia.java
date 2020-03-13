@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.tasks.factories;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.com.red5g.finsonet.models.AccionCdas;
 import co.com.red5g.finsonet.models.AprobacionCredito;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Confirmacion;
@@ -87,4 +88,8 @@ public final class Diligencia {
     public static Performable laInformacionTesoreriaPendiente(Tesoreria motivoPendiente) {
         return instrumented(PendienteTesoreria.class, motivoPendiente);
     }
+
+  public static Performable laInformacionDeLosDocumentos(AccionCdas vistoBueno) {
+      return instrumented(Cdas.class, vistoBueno);
+  }
 }
