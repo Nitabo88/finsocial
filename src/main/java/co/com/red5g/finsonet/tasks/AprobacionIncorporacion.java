@@ -50,7 +50,7 @@ public class AprobacionIncorporacion implements Task {
         Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_DETALLE_GESTION),
         JavaScriptClick.on(BTN_SELECCIONE_ARCHIVO));
     try {
-      final String RUTA_SCRIPT = "./src/test/resources/scripts/FileUpload.exe";
+      final String RUTA_SCRIPT = ".src/test/resources/scripts/ScriptUploadFile.exe";
       Runtime.getRuntime().exec(RUTA_SCRIPT);
     } catch (IOException e) {
       logger.log(Level.INFO, String.valueOf(e));
