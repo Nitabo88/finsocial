@@ -24,7 +24,7 @@ public class Subir implements Interaction {
         for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
           actor.attemptsTo(Click.on(BTN_UPLOAD.resolveAllFor(actor).get(i)));
           try {
-            final String RUTA_SCRIPT = ".src/test/resources/scripts/ScriptUploadFile.exe";
+            String RUTA_SCRIPT = "./src/test/resources/scripts/ScriptUploadFile.exe";
             Runtime.getRuntime().exec(RUTA_SCRIPT);
           } catch (IOException e) {
             logger.log(Level.INFO, String.valueOf(e));
