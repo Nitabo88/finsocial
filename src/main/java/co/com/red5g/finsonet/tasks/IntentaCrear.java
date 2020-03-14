@@ -22,17 +22,17 @@ public class IntentaCrear implements Task {
         this.vetados = vetados;
     }
 
-    public static Performable unCredito() {
-        return instrumented(IntentaCrear.class);
+    public static Performable unCredito(Vetados vetados) {
+        return instrumented(IntentaCrear.class, vetados);
     }
 
     @Override
     public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
             Click.on(IMG_FINSONET_NEW),
-                Click.on(LNK_COMERCIAL),
-                Click.on(LNK_NUEVO_CREDITO),
-                Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER)
+            Click.on(LNK_COMERCIAL),
+            Click.on(LNK_NUEVO_CREDITO),
+            Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER)
         );
     }
 }

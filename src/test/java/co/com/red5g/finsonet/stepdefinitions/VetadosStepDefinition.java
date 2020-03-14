@@ -54,7 +54,7 @@ public class VetadosStepDefinition {
     @Y("el (.*) no deberia poder crear un credito con este usuario")
     public void IntentarCrearCredito(final String strMensaje) {
         theActorInTheSpotlight().attemptsTo(
-                IntentaCrear.unCredito());
+                IntentaCrear.unCredito(a().unCliente()));
         theActorInTheSpotlight().should(seeThat(
                 NoPuede.crearCreditos(strMensaje)).orComplainWith(ElCreditoFueRechazado.class, MENSAJE_USUARIO_VETADO)
         );
