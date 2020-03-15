@@ -22,11 +22,11 @@ public final class FormularioSolicitudPaso2Page {
     public static final Target LST_LISTAS = Target.the("el estrato").locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//ul[@class='dropdown-menu inner']");
     public static final Target BTN_CORRESPONDENCIA= Target.the("el lugar de correspondecia").located(By.xpath("//button[@data-id='cmbCorrespondencia']"));
     public static final Target BTN_NIVEL_ESTUDIOS= Target.the("el nivel de estudios").located(By.xpath("//button[@data-id='cmbNivelEst']"));
-    public static final Target BTN_PROFESION= Target.the("la profesion").located(By.xpath("//button[@data-id='cmbProfesion']"));
-    public static final Target FILTRO_LUGARES= Target.the("el lugar de expedicion")
-        .locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//input[@class='form-control'] or //div[@class='btn-group bootstrap-select input-form requerir "
-            + "open']//input[@class='form-control']");
-    public static final Target TXT_FECHA_EXPEDICION= Target.the("la fecha de expedicion").located(By.id("txtFechaExp"));
+    public static final Target BTN_PROFESION = Target.the("la profesion").located(By.xpath("//button[@data-id='cmbProfesion']"));
+    public static final Target FILTRO_LUGARES = Target.the("el lugar de expedicion")
+        .located(By.xpath("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//input[@class='form-control']|or //div[@class='btn-group bootstrap-select input-form requerir "
+            + "open']//input[@class='form-control']"));
+    public static final Target TXT_FECHA_EXPEDICION = Target.the("la fecha de expedicion").located(By.id("txtFechaExp"));
     public static final Target TXT_FECHA_NACIMIENTO= Target.the("la fecha de nacimiento").located(By.id("txtFechaNac"));
     public static final Target TXT_NOMBRE_ARRENDATARIO= Target.the("el nombre del arrendatario").located(By.id("txtArrend"));
     public static final Target TXT_TELEFONO_ARREDADOR= Target.the("el telefono del arrendador").located(By.id("txtTelArr"));
