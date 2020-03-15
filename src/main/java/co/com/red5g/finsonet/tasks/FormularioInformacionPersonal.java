@@ -65,11 +65,11 @@ public class FormularioInformacionPersonal implements Task {
                 Click.on(LST_TIPO_DOCUMENTO.of(informacionPersonal.getTipoDocumento())),
                 Click.on(BTN_LUGAR_EXPEDICION),
                 Enter.theValue(informacionPersonal.getLugarExpedicion()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
-                SeleccionarFecha.ofConsult(
+                SeleccionarFecha.deConsulta(
                         TXT_FECHA_EXPEDICION, informacionPersonal.getFechaExpedicion()),
                 Click.on(BTN_SEXO),
                 Click.on(LST_OPCIONES.of(informacionPersonal.getSexo())),
-                SeleccionarFecha.ofConsult(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento()),
+                SeleccionarFecha.deConsulta(TXT_FECHA_NACIMIENTO, informacionPersonal.getFechaNacimiento()),
                 Click.on(BTN_LUGAR_NACIMIENTO),
                 Enter.theValue(informacionPersonal.getLugarNacimiento()).into(FILTRO_LUGARES).thenHit(Keys.ENTER),
                 Click.on(BTN_ESTADO_CIVIL),
