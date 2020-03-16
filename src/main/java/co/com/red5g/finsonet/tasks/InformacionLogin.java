@@ -16,18 +16,18 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class InformacionLogin implements Task {
     private final Credenciales cliente;
 
-    public InformacionLogin(final Credenciales cliente) {
+    public InformacionLogin(Credenciales cliente) {
         this.cliente = cliente;
     }
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            Enter.theValue(this.cliente.getUsuario()).into(TXT_USUARIO),
-            Enter.theValue(this.cliente.getContrasena()).into(TXT_CONTRASENA),
+            Enter.theValue(cliente.getUsuario()).into(TXT_USUARIO),
+            Enter.theValue(cliente.getContrasena()).into(TXT_CONTRASENA),
             Click.on(LoginFinsonetPage.BTN_ACCESO),
             WaitUntil.the(TXT_CODIGO, isCurrentlyEnabled()).forNoMoreThan(3).seconds(),
-            Enter.theValue(this.cliente.getCodigo()).into(TXT_CODIGO),
+            Enter.theValue(cliente.getCodigo()).into(TXT_CODIGO),
             Click.on(LoginFinsonetPage.BTN_ENVIAR)
         );
     }

@@ -20,21 +20,19 @@ public class RegresarConfirmacion implements Task {
   private static final int TIEMPO = 10;
   private final Confirmacion confirmacion;
 
-  private static final String REGRESAR = "Regresar";
-
-  public RegresarConfirmacion(final Confirmacion confirmacion) {
+  public RegresarConfirmacion(Confirmacion confirmacion) {
     this.confirmacion = confirmacion;
   }
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
-    final String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public <T extends Actor> void performAs(T actor) {
+    String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         JavaScriptClick.on(BTN_ACCION_CONFIRMACION.of(numeroCredito)),
-        JavaScriptClick.on(MNU_ACCION.of(RegresarConfirmacion.REGRESAR)),
-        Enter.theValue(this.confirmacion.getRazonMotivo()).into(TXT_MOTIVO),
+        JavaScriptClick.on(MNU_ACCION.of(this.confirmacion.getAccion())),
+        Enter.theValue(confirmacion.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_OK),
-        WaitUntil.the(LBL_CREDITO_REGRESADO, isVisible()).forNoMoreThan(RegresarConfirmacion.TIEMPO).seconds(),
+        WaitUntil.the(LBL_CREDITO_REGRESADO, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         JavaScriptClick.on(BTN_OK));
   }
 }

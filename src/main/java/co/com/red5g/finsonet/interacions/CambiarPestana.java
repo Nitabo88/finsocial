@@ -15,8 +15,8 @@ public class CambiarPestana implements Interaction {
   }
 
   @Override
-  public <T extends Actor> void performAs(final T actor) {
-    final ArrayList<String> lstVentanas = new ArrayList<>(BrowseTheWeb.as(actor).getDriver().getWindowHandles());
+  public <T extends Actor> void performAs(T actor) {
+    ArrayList<String> lstVentanas = new ArrayList<>(BrowseTheWeb.as(actor).getDriver().getWindowHandles());
     BrowseTheWeb.as(actor).getDriver().switchTo().window(lstVentanas.get(0));
   }
 }

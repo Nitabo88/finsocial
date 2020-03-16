@@ -3,9 +3,7 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.utils.Builder;
 
-import static co.com.red5g.finsonet.utils.InformacionCredito.INFORMACION_CREDITO;
-
-public class CreditoBuilder implements Builder<Credito> {
+public final class CreditoBuilder implements Builder<Credito> {
     private String strNumeroDocumento;
     private String strValorCuota;
     private String strPlazo;
@@ -14,57 +12,57 @@ public class CreditoBuilder implements Builder<Credito> {
         return new CreditoBuilder();
     }
 
-    private CreditoBuilder conDocumento(final String strNumeroDocumento) {
+    private CreditoBuilder conDocumento(String strNumeroDocumento) {
         this.strNumeroDocumento = strNumeroDocumento;
         return this;
     }
 
-    private CreditoBuilder conValor(final String strValorCuota) {
+    private CreditoBuilder conValor(String strValorCuota) {
         this.strValorCuota = strValorCuota;
         return this;
     }
 
-    private CreditoBuilder a(final String strPlazo) {
+    private CreditoBuilder a(String strPlazo) {
         this.strPlazo = strPlazo;
         return this;
     }
 
     public String getStrNumeroDocumento() {
-        return this.strNumeroDocumento;
+        return strNumeroDocumento;
     }
 
     public String getStrValorCuota() {
-        return this.strValorCuota;
+        return strValorCuota;
     }
 
     public String getStrPlazo() {
-        return this.strPlazo;
+        return strPlazo;
     }
 
     private CreditoBuilder() {
-      strNumeroDocumento = "";
-      strValorCuota = "";
-      strPlazo = "";
+      this.strNumeroDocumento = "";
+      this.strValorCuota = "";
+      this.strPlazo = "";
     }
 
     public Credito informacionDelCredito() {
-      conDocumento(INFORMACION_CREDITO.getNumeroDocumento());
-      conValor(INFORMACION_CREDITO.getValorCuota());
-      a(INFORMACION_CREDITO.getNumeroCuotas());
-        return build();
+      this.conDocumento("10000060");
+      this.conValor("1200000");
+      this.a("48");
+        return this.build();
     }
 
-    public Credito informacionDelCredito(final String strNumeroDocumento, final String strValorCuota, final String strPlazo) {
-      conDocumento(strNumeroDocumento);
-      conValor(strValorCuota);
-      a(strPlazo);
-        return build();
+    public Credito informacionDelCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
+      this.conDocumento(strNumeroDocumento);
+      this.conValor(strValorCuota);
+      this.a(strPlazo);
+        return this.build();
     }
 
   public Credito informacionDelCreditoHuy() {
-    conDocumento("10000622");
-    a("48");
-    return build();
+    this.conDocumento("10000622");
+    this.a("48");
+    return this.build();
   }
 
     @Override

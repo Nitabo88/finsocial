@@ -12,12 +12,12 @@ public class InformacionPrestamoBuilder implements Builder<InformacionPrestamo> 
     private String strTasaMaximaInteresVigente;
 
     private InformacionPrestamoBuilder() {
-      strMonto = "";
-      strTasaInteres = "";
-      strCuota = "";
-      strTasaMora = "";
-      strPlazo = "";
-      strTasaMaximaInteresVigente = "";
+      this.strMonto = "";
+      this.strTasaInteres = "";
+      this.strCuota = "";
+      this.strTasaMora = "";
+      this.strPlazo = "";
+      this.strTasaMaximaInteresVigente = "";
     }
 
     public static InformacionPrestamoBuilder la() {
@@ -25,67 +25,67 @@ public class InformacionPrestamoBuilder implements Builder<InformacionPrestamo> 
     }
 
     public String getStrMonto() {
-        return this.strMonto;
+        return strMonto;
     }
 
     public String getStrTasaInteres() {
-        return this.strTasaInteres;
+        return strTasaInteres;
     }
 
     public String getStrCuota() {
-        return this.strCuota;
+        return strCuota;
     }
 
     public String getStrTasaMora() {
-        return this.strTasaMora;
+        return strTasaMora;
     }
 
     public String getStrPlazo() {
-        return this.strPlazo;
+        return strPlazo;
     }
 
     public String getStrTasaMaximaInteresVigente() {
-        return this.strTasaMaximaInteresVigente;
+        return strTasaMaximaInteresVigente;
     }
 
-    private InformacionPrestamoBuilder conMonto(final String strMonto) {
+    private InformacionPrestamoBuilder conMonto(String strMonto) {
         this.strMonto = strMonto;
         return this;
     }
 
-    private InformacionPrestamoBuilder conTasaInteres(final String strTasaInteres) {
+    private InformacionPrestamoBuilder conTasaInteres(String strTasaInteres) {
         this.strTasaInteres = strTasaInteres;
         return this;
     }
 
-    private InformacionPrestamoBuilder conCuota(final String strCuota) {
+    private InformacionPrestamoBuilder conCuota(String strCuota) {
         this.strCuota = strCuota;
         return this;
     }
 
-    private InformacionPrestamoBuilder conTasaMora(final String strTasaMora) {
+    private InformacionPrestamoBuilder conTasaMora(String strTasaMora) {
         this.strTasaMora = strTasaMora;
         return this;
     }
 
-    private InformacionPrestamoBuilder conPlazo(final String strPlazo) {
+    private InformacionPrestamoBuilder conPlazo(String strPlazo) {
         this.strPlazo = strPlazo;
         return this;
     }
 
-    private InformacionPrestamoBuilder conTasaMaxima(final String strTasaMaximaInteresVigente) {
+    private InformacionPrestamoBuilder conTasaMaxima(String strTasaMaximaInteresVigente) {
         this.strTasaMaximaInteresVigente = strTasaMaximaInteresVigente;
         return this;
     }
 
     public InformacionPrestamo informacionPrestamo() {
-      conMonto("7680000");
-      conTasaInteres("2");
-      conCuota("160000");
-      conTasaMora("23");
-      conPlazo("48");
-      conTasaMaxima("23");
-        return build();
+      this.conMonto("7680000");
+      this.conTasaInteres("2");
+      this.conCuota("160000");
+      this.conTasaMora("23");
+      this.conPlazo("48");
+      this.conTasaMaxima("23");
+        return this.build();
     }
 
     @Override

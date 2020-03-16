@@ -3,26 +3,25 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.VetadosBuilder;
 
 public class Vetados {
-    private String documentoVetados;
-    private String detalleVetados;
-    private String listaVetados;
+    private final String documentoVetados;
+    private final String detalleVetados;
+    private final String listaVetados;
 
-
-    public Vetados(VetadosBuilder vetadosBuilder) {
-        this.documentoVetados = vetadosBuilder.getDocumentoVetados();
-        this.detalleVetados = vetadosBuilder.getDetalleVetados();
-        this.listaVetados = vetadosBuilder.getListaVetados();
+    public Vetados(final VetadosBuilder vetadosBuilder) {
+      documentoVetados = vetadosBuilder.getDocumentoVetados();
+      detalleVetados = vetadosBuilder.getDetalleVetados();
+      listaVetados = vetadosBuilder.getListaVetados();
     }
 
     public String getListaVetados() {
-        return listaVetados;
+        return this.listaVetados;
     }
 
     public String getDocumentoVetados() {
-        return documentoVetados;
+        return this.documentoVetados;
     }
 
     public String getDetalleVetados() {
-        return detalleVetados;
+        return this.detalleVetados;
     }
 }

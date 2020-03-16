@@ -9,6 +9,7 @@ import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGAND
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import java.util.List;
+import java.util.regex.Pattern;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
@@ -18,21 +19,22 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class ValorTotalComision implements Question<Boolean> {
 
   private static final int TIEMPO = 300;
+  private static final Pattern FORMATO = Pattern.compile("[^\\d]");
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
+  public Boolean answeredBy(Actor actor) {
     boolean estadoCredito = true;
-    final List<WebElementFacade> lstValorLiquidacion = LST_VALOR_LIQUIDACION.resolveAllFor(actor);
+    List<WebElementFacade> lstValorLiquidacion = LST_VALOR_LIQUIDACION.resolveAllFor(actor);
     lstValorLiquidacion.remove(0);
-    final List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
+    List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
     for (int i = 0; i < lstValorLiquidacion.size(); i++) {
-      final String valorComision = lstValorLiquidacion.get(i).getText().replaceAll("[^\\d]", "");
-      final String ciudad = lstCiudades.get(i).getText();
+      String valorComision = FORMATO.matcher(lstValorLiquidacion.get(i).getText()).replaceAll("");
+      String ciudad = lstCiudades.get(i).getText();
       actor.attemptsTo(
           JavaScriptClick.on(BTN_DETALLE_CREDITOS.of(ciudad)),
-          WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds());
-      estadoCredito = valorComision.equals(LST_TOTAL_VALOR_LIQUIDACION.resolveFor(actor).getText().replaceAll("[^\\d]", ""));
+          WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(ValorTotalComision.TIEMPO).seconds());
+      estadoCredito = valorComision.equals(FORMATO.matcher(LST_TOTAL_VALOR_LIQUIDACION.resolveFor(actor).getText()).replaceAll(""));
       if (estadoCredito) {
         actor.attemptsTo(JavaScriptClick.on(BTN_CERRAR_DETALLE.of(ciudad)));
       } else {

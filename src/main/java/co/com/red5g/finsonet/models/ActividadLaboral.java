@@ -20,86 +20,86 @@ public class ActividadLaboral {
     private final String extension;
     private final String tipoContrato;
 
-    public ActividadLaboral(final ActividadLaboralBuilder actividadLaboralBuilder) {
-      ocupacion = actividadLaboralBuilder.getOcupacion();
-      declaraRenta = actividadLaboralBuilder.getDeclaraRenta();
-      impactoDecision = actividadLaboralBuilder.getImpactoDecision();
-      personaPublica = actividadLaboralBuilder.getPersonaPublica();
-      manejoRecursosPublicos = actividadLaboralBuilder.getManejoRecursosPublicos();
-      empresa = actividadLaboralBuilder.getEmpresa();
-      direccionTrabajo = actividadLaboralBuilder.getDireccionTrabajo();
-      nit = actividadLaboralBuilder.getNit();
-      tipoEmpresa = actividadLaboralBuilder.getTipoEmpresa();
-      cargo = actividadLaboralBuilder.getCargo();
-      ciudadTrabajo = actividadLaboralBuilder.getCiudadTrabajo();
-      telefonoTrabajo = actividadLaboralBuilder.getTelefonoTrabajo();
-      actividadEconomica = actividadLaboralBuilder.getActividadEconomica();
-      fechaVinculacion = actividadLaboralBuilder.getFechaVinculacion();
-      extension = actividadLaboralBuilder.getExtension();
-      tipoContrato = actividadLaboralBuilder.getTipoContrato();
+    public ActividadLaboral(ActividadLaboralBuilder actividadLaboralBuilder) {
+      this.ocupacion = actividadLaboralBuilder.getOcupacion();
+      this.declaraRenta = actividadLaboralBuilder.getDeclaraRenta();
+      this.impactoDecision = actividadLaboralBuilder.getImpactoDecision();
+      this.personaPublica = actividadLaboralBuilder.getPersonaPublica();
+      this.manejoRecursosPublicos = actividadLaboralBuilder.getManejoRecursosPublicos();
+      this.empresa = actividadLaboralBuilder.getEmpresa();
+      this.direccionTrabajo = actividadLaboralBuilder.getDireccionTrabajo();
+      this.nit = actividadLaboralBuilder.getNit();
+      this.tipoEmpresa = actividadLaboralBuilder.getTipoEmpresa();
+      this.cargo = actividadLaboralBuilder.getCargo();
+      this.ciudadTrabajo = actividadLaboralBuilder.getCiudadTrabajo();
+      this.telefonoTrabajo = actividadLaboralBuilder.getTelefonoTrabajo();
+      this.actividadEconomica = actividadLaboralBuilder.getActividadEconomica();
+      this.fechaVinculacion = actividadLaboralBuilder.getFechaVinculacion();
+      this.extension = actividadLaboralBuilder.getExtension();
+      this.tipoContrato = actividadLaboralBuilder.getTipoContrato();
     }
 
     public String getOcupacion() {
-        return this.ocupacion;
+        return ocupacion;
     }
 
     public String getDeclaraRenta() {
-        return this.declaraRenta;
+        return declaraRenta;
     }
 
     public String getImpactoDecision() {
-        return this.impactoDecision;
+        return impactoDecision;
     }
 
     public String getPersonaPublica() {
-        return this.personaPublica;
+        return personaPublica;
     }
 
     public String getManejoRecursosPublicos() {
-        return this.manejoRecursosPublicos;
+        return manejoRecursosPublicos;
     }
 
     public String getEmpresa() {
-        return this.empresa;
+        return empresa;
     }
 
     public String getDireccionTrabajo() {
-        return this.direccionTrabajo;
+        return direccionTrabajo;
     }
 
     public String getNit() {
-        return this.nit;
+        return nit;
     }
 
     public String getTipoEmpresa() {
-        return this.tipoEmpresa;
+        return tipoEmpresa;
     }
 
     public String getCargo() {
-        return this.cargo;
+        return cargo;
     }
 
     public String getCiudadTrabajo() {
-        return this.ciudadTrabajo;
+        return ciudadTrabajo;
     }
 
     public String getTelefonoTrabajo() {
-        return this.telefonoTrabajo;
+        return telefonoTrabajo;
     }
 
     public String getActividadEconomica() {
-        return this.actividadEconomica;
+        return actividadEconomica;
     }
 
     public String getFechaVinculacion() {
-        return this.fechaVinculacion;
+        return fechaVinculacion;
     }
 
     public String getExtension() {
-        return this.extension;
+        return extension;
     }
 
     public String getTipoContrato() {
-        return this.tipoContrato;
+        return tipoContrato;
     }
 }

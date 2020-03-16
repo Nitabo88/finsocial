@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 public class Aprobacion implements Task {
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
+  public <T extends Actor> void performAs(final T actor) {
     actor.attemptsTo(
         JavaScriptClick.on(MNU_HAMBURGUESA),
         JavaScriptClick.on(MNU_APROBACION_CREDITO)

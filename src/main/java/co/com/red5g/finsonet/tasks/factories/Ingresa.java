@@ -1,25 +1,14 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-
 import co.com.red5g.finsonet.models.ChequeoDocumento;
+import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.finsonet.tasks.Aprobacion;
-import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
-import co.com.red5g.finsonet.tasks.InformacionCredito;
-import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
-import co.com.red5g.finsonet.tasks.InformacionLogin;
-import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
-import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada;
-import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
-import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
-import co.com.red5g.finsonet.tasks.ReporteAntecartera;
-import co.com.red5g.finsonet.tasks.ReporteOriginacion;
-import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
-import co.com.red5g.finsonet.tasks.ReporteVentaNueva;
+import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
 
-public class Ingresa {
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+public final class Ingresa {
 
     private Ingresa() {
     }
@@ -40,11 +29,11 @@ public class Ingresa {
         return instrumented(ReporteVentaNueva.class);
     }
 
-    public static Performable laInformacionDelCredito(final Credito credito) {
+    public static Performable laInformacionDelCredito(Credito credito) {
         return instrumented(InformacionCredito.class, credito);
     }
 
-    public static Performable lasCredenciales(final co.com.red5g.finsonet.models.Credenciales credenciales) {
+    public static Performable lasCredenciales(Credenciales credenciales) {
         return instrumented(InformacionLogin.class, credenciales);
     }
 
@@ -60,11 +49,11 @@ public class Ingresa {
         return instrumented(LoguinUsuarioDocumentacion.class);
     }
 
-    public static Performable alReporteDeLiquidacionDeComisiones(final String ciclo) {
+    public static Performable alReporteDeLiquidacionDeComisiones(String ciclo) {
         return instrumented(LiquidacionComisiones.class, ciclo);
     }
 
-    public static Performable elRechazoDelCredito(final ChequeoDocumento motivo) {
+    public static Performable elRechazoDelCredito(ChequeoDocumento motivo) {
         return instrumented(ChequeoDocumentosRechazo.class, motivo);
     }
 
@@ -72,7 +61,10 @@ public class Ingresa {
         return instrumented(Aprobacion.class);
     }
 
-    public static Performable laInformacionDelCreditoHuy(Credito informacionDelCreditoHuy) {
+    public static Performable laInformacionDelCreditoHuy(final Credito informacionDelCreditoHuy) {
         return instrumented(InformacionCreditoHuy.class, informacionDelCreditoHuy);
+    }
+
+    public static Performable alModuloCDAS() { return instrumented(ModuloCdas.class);
     }
 }

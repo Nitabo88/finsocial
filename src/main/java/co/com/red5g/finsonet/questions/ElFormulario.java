@@ -20,13 +20,13 @@ public class ElFormulario implements Question<Boolean> {
     }
 
     @Override
-    public Boolean answeredBy(final Actor actor) {
+    public Boolean answeredBy(Actor actor) {
         actor.attemptsTo(
-            WaitUntil.the(LNK_HOME, isVisible()).forNoMoreThan(ElFormulario.TIEMPO).seconds(),
+            WaitUntil.the(LNK_HOME, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(LNK_HOME),
-            WaitUntil.the(LNK_ORIGINACION, isVisible()).forNoMoreThan(ElFormulario.TIEMPO).seconds(),
+            WaitUntil.the(LNK_ORIGINACION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(LNK_ORIGINACION));
-        final String numeroCredito = actor.recall(NUMERO_CREDITO);
+        String numeroCredito = actor.recall(NUMERO_CREDITO);
         return LST_FILA_CHEQUEO_DOCUMENTOS.of(numeroCredito).resolveFor(actor).isPresent();
     }
 }

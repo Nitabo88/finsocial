@@ -1,33 +1,32 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
+import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException.MENSAJE_VETO;
+import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
+import co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
-import co.com.red5g.finsonet.tasks.ModuloVetados;
-import co.com.red5g.finsonet.tasks.RealizarVeto;
-import co.com.red5g.finsonet.tasks.factories.Loguearse;
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.Before;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto.MENSAJE_VETO;
-import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-
 public class VetadosStepDefinition {
-    private static final String ESTADO_NO_EXITOSO = "El cliente ya tiene un veto interno.";
 
-  // @Before("@Vetados")
-    //public void quitarMarca() {
-      //theActorInTheSpotlight().wasAbleTo(Eliminar.elVeto());
-    //}
+  private static final String ACTOR = "Administrador";
 
-    @Dado("que el (.*) quiere aginar un veto interno")
-    public void ubicarseEnVetados(String nombreActor) {
+   @Before("@Vetados")
+    public void quitarMarca() {
+     theActorCalled(ACTOR).attemptsTo(Eliminar.elVeto(a().unCliente()));
+    }
+
+    @Dado("que el (.*) quiere asignar un veto interno")
+    public void ubicarseEnVetados(final String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
                 Ubicarse.enVetados()
         );
@@ -36,13 +35,13 @@ public class VetadosStepDefinition {
     @Cuando("el asesor asigne un veto interno a un cliente")
     public void asignarVetoInterno() {
         theActorInTheSpotlight().attemptsTo
-                (RealizarVeto.interno(a().unCliente())
+                (Diligencia.elVetoInterno(a().unCliente())
         );
     }
 
-    @Entonces("el asesor deberia verlo en listado de vetos")
+    @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
         theActorInTheSpotlight().should
-                (seeThat(Veto. existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class,MENSAJE_VETO));
+                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVetoException.class,MENSAJE_VETO));
     }
 }

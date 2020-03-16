@@ -13,10 +13,10 @@ public class PasoAprobacionDeCreditos implements Question<Boolean> {
   private static final String APROBACION_CREDITOS = "Apr. de créditos";
 
   @Override
-  public Boolean answeredBy(final Actor actor) {
-    final String numeroCredito = actor.recall(NUMERO_CREDITO);
+  public Boolean answeredBy(Actor actor) {
+    String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNU_ORIGINACION.of(PasoAprobacionDeCreditos.APROBACION_CREDITOS)));
+        Click.on(MNU_ORIGINACION.of(APROBACION_CREDITOS)));
     return LST_FILA_APROBACION_CREDITO.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

@@ -18,9 +18,9 @@ public class CambiarPestanaActual implements Interaction {
   }
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
-    actor.attemptsTo(WaitFor.seconds(CambiarPestanaActual.TIEMPO));
-    ArrayList<String> lstVentanas = new ArrayList<>(BrowseTheWeb.as(actor).getDriver().getWindowHandles());
+  public <T extends Actor> void performAs(final T actor) {
+    actor.attemptsTo(WaitFor.seconds(TIEMPO));
+    final ArrayList<String> lstVentanas = new ArrayList<>(BrowseTheWeb.as(actor).getDriver().getWindowHandles());
     BrowseTheWeb.as(actor).getDriver().switchTo().window(lstVentanas.get(lstVentanas.size() - 1));
   }
 }

@@ -14,23 +14,23 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnab
 public class FormularioDocumentosRequeridos implements Task {
     private final DocumentosRequeridos documentosRequeridos;
 
-    public FormularioDocumentosRequeridos(final DocumentosRequeridos documentosRequeridos) {
+    public FormularioDocumentosRequeridos(DocumentosRequeridos documentosRequeridos) {
         this.documentosRequeridos = documentosRequeridos;
     }
 
 
 
     @Override
-    public <T extends Actor> void performAs(final T actor) {
+    public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(RBN_INSTRUCCIONES.of(this.documentosRequeridos.getStrTipoSolicitud())),
+                Click.on(RBN_INSTRUCCIONES.of(documentosRequeridos.getStrTipoSolicitud())),
                 WaitUntil.the(BTN_CIUDADES,isEnabled()).forNoMoreThan(3).seconds(),
                 Click.on(BTN_CIUDADES),
-                Enter.theValue(this.documentosRequeridos.getStrCiudad()).into(FILTRO_CIUDADES).thenHit(Keys.ENTER),
+                Enter.theValue(documentosRequeridos.getStrCiudad()).into(FILTRO_CIUDADES).thenHit(Keys.ENTER),
                 Click.on(BTN_AGENCIA_VINCULACION),
-                Click.on(FILTRO_AGENCIA_VINCULACION.of(this.documentosRequeridos.getStrAgenciaVinculacion())),
-                Enter.theValue(this.documentosRequeridos.getStrCalificacion()).into(TXT_CALIFICACION),
-                Click.on(RBN_INSTRUCCIONES.of(this.documentosRequeridos.getStrVinculacion()))
+                Click.on(FILTRO_AGENCIA_VINCULACION.of(documentosRequeridos.getStrAgenciaVinculacion())),
+                Enter.theValue(documentosRequeridos.getStrCalificacion()).into(TXT_CALIFICACION),
+                Click.on(RBN_INSTRUCCIONES.of(documentosRequeridos.getStrVinculacion()))
                 );
     }
 }

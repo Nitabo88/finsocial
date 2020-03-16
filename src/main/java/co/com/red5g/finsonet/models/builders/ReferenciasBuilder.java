@@ -15,15 +15,15 @@ public class ReferenciasBuilder implements Builder<Referencias> {
     private String tipoProducto;
 
     public ReferenciasBuilder() {
-      nombreCompletoReferencia = "";
-      parentescoReferencia = "";
-      telefonoFijoReferencia = "";
-      ciudadReferencia = "";
-      celularReferencia = "";
-      direccionReferencia = "";
-      nombreEntidadFinanciera = "";
-      sucursal = "";
-      tipoProducto = "";
+      this.nombreCompletoReferencia = "";
+      this.parentescoReferencia = "";
+      this.telefonoFijoReferencia = "";
+      this.ciudadReferencia = "";
+      this.celularReferencia = "";
+      this.direccionReferencia = "";
+      this.nombreEntidadFinanciera = "";
+      this.sucursal = "";
+      this.tipoProducto = "";
     }
 
     public static ReferenciasBuilder es() {
@@ -36,110 +36,110 @@ public class ReferenciasBuilder implements Builder<Referencias> {
     }
 
     public Referencias informacionReferenciaPersonal() {
-      conNombreCompletoReferencia("Laura Mejia");
-      conParentescoReferencia("Compañera del Trabajo");
-      conTelefonoFijoReferencia("2505050");
-      conCiudadReferencia("BARRANQUILLA");
-      conCelularReferencia("3002809010");
-      conDireccionReferencia("CL 99 35 90");
-        return build();
+      this.conNombreCompletoReferencia("Laura Mejia");
+      this.conParentescoReferencia("Compañera del Trabajo");
+      this.conTelefonoFijoReferencia("2505050");
+      this.conCiudadReferencia("BARRANQUILLA");
+      this.conCelularReferencia("3002809010");
+      this.conDireccionReferencia("CL 99 35 90");
+        return this.build();
     }
 
-    private ReferenciasBuilder conDireccionReferencia(final String direccionReferencia) {
+    private ReferenciasBuilder conDireccionReferencia(String direccionReferencia) {
         this.direccionReferencia = direccionReferencia;
         return this;
     }
 
-    private ReferenciasBuilder conCiudadReferencia(final String ciudadReferencia) {
+    private ReferenciasBuilder conCiudadReferencia(String ciudadReferencia) {
         this.ciudadReferencia = ciudadReferencia;
         return this;
     }
 
-    private ReferenciasBuilder conTelefonoFijoReferencia(final String telefonoFijoReferencia) {
+    private ReferenciasBuilder conTelefonoFijoReferencia(String telefonoFijoReferencia) {
         this.telefonoFijoReferencia = telefonoFijoReferencia;
         return this;
     }
 
-    private ReferenciasBuilder conParentescoReferencia(final String parentescoReferencia) {
+    private ReferenciasBuilder conParentescoReferencia(String parentescoReferencia) {
         this.parentescoReferencia = parentescoReferencia;
         return this;
     }
 
-    private ReferenciasBuilder conNombreCompletoReferencia(final String nombreCompletoReferencia) {
+    private ReferenciasBuilder conNombreCompletoReferencia(String nombreCompletoReferencia) {
         this.nombreCompletoReferencia = nombreCompletoReferencia;
         return this;
     }
 
     public Referencias informacionReferenciaFamiliar() {
-      conNombreCompletoReferencia("Cristian Morales");
-      conParentescoReferencia("Hermano");
-      conTelefonoFijoReferencia("2606060");
-      conCiudadReferencia("BARRANQUILLA");
-      conCelularReferencia("3002005656");
-      conDireccionReferencia("CR 99 90 90");
-        return build();
+      this.conNombreCompletoReferencia("Cristian Morales");
+      this.conParentescoReferencia("Hermano");
+      this.conTelefonoFijoReferencia("2606060");
+      this.conCiudadReferencia("BARRANQUILLA");
+      this.conCelularReferencia("3002005656");
+      this.conDireccionReferencia("CR 99 90 90");
+        return this.build();
     }
 
-    private ReferenciasBuilder conCelularReferencia(final String celularReferencia) {
+    private ReferenciasBuilder conCelularReferencia(String celularReferencia) {
         this.celularReferencia = celularReferencia;
         return this;
     }
 
     public Referencias informacionReferenciaFinanciera() {
-      conNombreEntidadFinanciera("BANCOMEVA");
-      conSucursal("Cali");
-      conTipoProducto("AHORROS");
-        return build();
+      this.conNombreEntidadFinanciera("BANCOMEVA");
+      this.conSucursal("Cali");
+      this.conTipoProducto("AHORROS");
+        return this.build();
     }
 
-    private ReferenciasBuilder conTipoProducto(final String tipoProducto) {
+    private ReferenciasBuilder conTipoProducto(String tipoProducto) {
         this.tipoProducto = tipoProducto;
         return this;
     }
 
-    private ReferenciasBuilder conSucursal(final String sucursal) {
+    private ReferenciasBuilder conSucursal(String sucursal) {
         this.sucursal = sucursal;
         return this;
     }
 
-    private ReferenciasBuilder conNombreEntidadFinanciera(final String nombreEntidadFinanciera) {
+    private ReferenciasBuilder conNombreEntidadFinanciera(String nombreEntidadFinanciera) {
         this.nombreEntidadFinanciera = nombreEntidadFinanciera;
         return this;
     }
 
     public String getNombreEntidadFinanciera() {
-        return this.nombreEntidadFinanciera;
+        return nombreEntidadFinanciera;
     }
 
     public String getSucursal() {
-        return this.sucursal;
+        return sucursal;
     }
 
     public String getTipoProducto() {
-        return this.tipoProducto;
+        return tipoProducto;
     }
 
     public String getNombreCompletoReferencia() {
-        return this.nombreCompletoReferencia;
+        return nombreCompletoReferencia;
     }
 
     public String getParentescoReferencia() {
-        return this.parentescoReferencia;
+        return parentescoReferencia;
     }
 
     public String getTelefonoFijoReferencia() {
-        return this.telefonoFijoReferencia;
+        return telefonoFijoReferencia;
     }
 
     public String getCiudadReferencia() {
-        return this.ciudadReferencia;
+        return ciudadReferencia;
     }
 
     public String getDireccionReferencia() {
-        return this.direccionReferencia;
+        return direccionReferencia;
     }
 
     public String getCelularReferencia() {
-        return this.celularReferencia;
+        return celularReferencia;
     }
 }

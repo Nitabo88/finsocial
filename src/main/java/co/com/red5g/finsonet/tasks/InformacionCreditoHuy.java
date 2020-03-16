@@ -17,19 +17,19 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
-  private Credito credito;
+  private final Credito credito;
 
-  public InformacionCreditoHuy(final Credito credito) {
+  public InformacionCreditoHuy(Credito credito) {
     this.credito = credito;
   }
 
   @Override
-  public <T extends Actor> void performAs(T actor) {
-    actor.remember(InformacionCredito.CEDULA_ACTOR, this.credito.getNumeroDocumento());
+  public <T extends Actor> void performAs(final T actor) {
+    actor.remember(InformacionCredito.CEDULA_ACTOR, credito.getNumeroDocumento());
     actor.remember(InformacionCredito.FECHA_CREDITO, formatearFechaServidorUTC());
     actor.attemptsTo(
-        Enter.theValue(this.credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
-        Enter.theValue(this.credito.getPlazo()).into(TXT_PLAZO),
+        Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
+        Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
         JavaScriptClick.on(BTN_CREAR_CREDITO),
         WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(10).seconds(),
         JavaScriptClick.on(BTN_OK)
