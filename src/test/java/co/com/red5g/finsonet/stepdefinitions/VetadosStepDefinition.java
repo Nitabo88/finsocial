@@ -1,13 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.ElCreditoFueRechazado.MENSAJE_USUARIO_VETADO;
 import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto.MENSAJE_VETO;
 import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.equalTo;
 
-import co.com.red5g.finsonet.exceptions.ElCreditoFueRechazado;
 import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
 import co.com.red5g.finsonet.questions.NoPuede;
 import co.com.red5g.finsonet.questions.Veto;
@@ -24,6 +23,8 @@ import cucumber.api.java.es.Y;
 public class VetadosStepDefinition {
 
    private static final String ACTOR = "Administrador";
+   private static final String NO_REGISTRA = "NO REGISTRA";
+
 
     @Before("@Vetados")
     public void quitarMarca() {
@@ -46,17 +47,15 @@ public class VetadosStepDefinition {
 
     @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
-        theActorInTheSpotlight().should
-                (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class, MENSAJE_VETO)
-                );
+      theActorInTheSpotlight().should
+          (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVeto.class, MENSAJE_VETO));
     }
 
     @Y("el asesor no deberia poder crear un credito con este usuario")
     public void IntentarCrearCredito() {
-        theActorInTheSpotlight().attemptsTo(
-                IntentaCrear.unCredito(a().unCliente()));
-        theActorInTheSpotlight().should(seeThat(
-                NoPuede.crearCreditos()).orComplainWith(ElCreditoFueRechazado.class, MENSAJE_USUARIO_VETADO)
-        );
+      theActorInTheSpotlight().attemptsTo(
+          IntentaCrear.unCredito(a().unCliente()));
+      theActorInTheSpotlight()
+          .should(seeThat(NoPuede.crearCreditos(), equalTo(NO_REGISTRA)));
     }
 }
