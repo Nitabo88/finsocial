@@ -20,13 +20,18 @@ public class CdasStepDefinition {
         theActorCalled(actor).attemptsTo(Ingresa.alModuloCDAS());
     }
 
-    @Cuando("^el asesor diligencia los CDAS del credito$")
+    @Cuando("^el asesor diligencia los CDAS del credito como completos$")
     public void diligenciarCdas() {
         theActorInTheSpotlight().attemptsTo(Diligencia.laInformacionDeLosDocumentos(con().vistoBueno()));
     }
 
-    @Entonces("^el podra ver el credito en estado completo$")
-    public void verificarEstadoCompleto() {
-        theActorInTheSpotlight().should(seeThat(GestionDocumental.completa(), containsString("INCOMPLETO")));
+    @Cuando("^el asesor diligencia los CDAS del credito con excepcion$")
+    public void diligenciarCdasExcepcion() {
+        theActorInTheSpotlight().attemptsTo(Diligencia.laInformacionDeLosDocumentos(con().excepcion()));
+    }
+
+    @Entonces("^el podra ver el credito en estado (.*)$")
+    public void verificarEstadoCompleto(String estado) {
+        theActorInTheSpotlight().should(seeThat(GestionDocumental.estado(), containsString(estado)));
     }
 }

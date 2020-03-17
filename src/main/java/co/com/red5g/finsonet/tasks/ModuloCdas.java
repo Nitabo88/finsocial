@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
+import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_HAMBURGUESA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.IMG_FINSONET;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
-import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -17,9 +17,8 @@ public class ModuloCdas implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            Ubicarse.enElFormulario(),
-            Diligencia.laSolicitudDeCredito(),
-            Click.on(MNU_HAMBURGUESA),
+            Consulta.elCreditoEnIncorporacion(),
+            Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()),
             Click.on(IMG_FINSONET),
             WaitUntil.the(LNK_CDAS, isVisible()).forNoMoreThan(10).seconds(),
             Click.on(LNK_CDAS)
