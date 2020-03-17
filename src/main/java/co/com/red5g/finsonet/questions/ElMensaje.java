@@ -5,13 +5,13 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.NOMBRE_COMPL
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-public class NoPuede implements Question<String> {
+public class ElMensaje implements Question<String> {
 
-    public NoPuede() {
+    public ElMensaje() {
     }
 
-    public static NoPuede crearCreditos() {
-        return new NoPuede();
+    public static ElMensaje noRegistra() {
+        return new ElMensaje();
     }
 
     @Override

@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.exceptions.NoSeMarcaElVeto;
-import co.com.red5g.finsonet.questions.NoPuede;
+import co.com.red5g.finsonet.questions.ElMensaje;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
 import co.com.red5g.finsonet.tasks.IntentaCrear;
@@ -56,6 +56,6 @@ public class VetadosStepDefinition {
       theActorInTheSpotlight().attemptsTo(
           IntentaCrear.unCredito(a().unCliente()));
       theActorInTheSpotlight()
-          .should(seeThat(NoPuede.crearCreditos(), equalTo(NO_REGISTRA)));
+          .should(seeThat(ElMensaje.noRegistra(), equalTo(NO_REGISTRA)));
     }
 }
