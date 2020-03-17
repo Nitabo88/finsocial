@@ -7,18 +7,14 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.NOMBRE_COMPL
 
 public class NoPuede implements Question<Boolean> {
 
-    private final String mensajeNoRegistra;
+    private static final String MENSAJE_NO_REGISTRA = "NO REGISTRA";
 
-    public NoPuede(final String strMensaje) {
-        mensajeNoRegistra = strMensaje;
-    }
-
-    public static NoPuede crearCreditos(final String strMensaje) {
-        return new NoPuede(strMensaje);
+    public static NoPuede crearCreditos() {
+        return new NoPuede();
     }
 
     @Override
     public Boolean answeredBy(final Actor actor) {
-        return (NOMBRE_COMPLETO.resolveFor(actor).getText().contains(this.mensajeNoRegistra));
+        return (NOMBRE_COMPLETO.resolveFor(actor).getText().contains(this.MENSAJE_NO_REGISTRA));
     }
 }

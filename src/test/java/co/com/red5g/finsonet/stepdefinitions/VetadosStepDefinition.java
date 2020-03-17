@@ -51,12 +51,12 @@ public class VetadosStepDefinition {
                 );
     }
 
-    @Y("el (.*) no deberia poder crear un credito con este usuario")
-    public void IntentarCrearCredito(final String strMensaje) {
+    @Y("el asesor no deberia poder crear un credito con este usuario")
+    public void IntentarCrearCredito() {
         theActorInTheSpotlight().attemptsTo(
                 IntentaCrear.unCredito(a().unCliente()));
         theActorInTheSpotlight().should(seeThat(
-                NoPuede.crearCreditos(strMensaje)).orComplainWith(ElCreditoFueRechazado.class, MENSAJE_USUARIO_VETADO)
+                NoPuede.crearCreditos()).orComplainWith(ElCreditoFueRechazado.class, MENSAJE_USUARIO_VETADO)
         );
     }
 }
