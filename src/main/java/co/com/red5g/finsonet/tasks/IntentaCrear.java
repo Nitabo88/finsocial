@@ -15,7 +15,6 @@ import net.serenitybdd.screenplay.actions.Enter;
 import org.openqa.selenium.Keys;
 
 public class IntentaCrear implements Task {
-
     private Vetados vetados;
 
     public IntentaCrear(Vetados vetados) {
