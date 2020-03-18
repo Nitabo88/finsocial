@@ -13,7 +13,7 @@ Característica: Cdas
   Escenario: Cdas - Excepcion
     Dado que un asesor esta en el modulo de CDAS
     Cuando el asesor diligencia los CDAS del credito con excepcion
-    Entonces el podra ver el credito en estado EXCEPCION
+    Entonces el podra ver el credito en estado INCOMPLETO
 
   Escenario: Cdas - Completo
     Dado que un asesor esta en el modulo de CDAS

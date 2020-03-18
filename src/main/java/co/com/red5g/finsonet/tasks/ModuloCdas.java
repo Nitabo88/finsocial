@@ -17,8 +17,8 @@ public class ModuloCdas implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            Consulta.elCreditoEnIncorporacion(),
-            Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()),
+            Consulta.elCreditoEnFormalizacion(),
+            Diligencia.laAprobacionDelCreditoEnFormalizacion(),
             Click.on(IMG_FINSONET),
             WaitUntil.the(LNK_CDAS, isVisible()).forNoMoreThan(10).seconds(),
             Click.on(LNK_CDAS)
