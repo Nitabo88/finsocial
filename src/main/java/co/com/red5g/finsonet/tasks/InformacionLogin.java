@@ -1,15 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.BTN_ACTUALIZAR_CONTRASEÑA;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.BTN_ENVIAR;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_CELULAR;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_CODIGO;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_CONTRASENA;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_CORREO;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_NUEVA_CONTRASEÑA;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_NUEVA_CONTRASEÑA1;
-import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.TXT_USUARIO;
-
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage;
 import net.serenitybdd.screenplay.Actor;
@@ -17,6 +7,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
+
+import static co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage.*;
 
 public class InformacionLogin implements Task {
     private final Credenciales cliente;
@@ -32,18 +24,20 @@ public class InformacionLogin implements Task {
             Enter.theValue(this.cliente.getContrasena()).into(TXT_CONTRASENA),
             Click.on(LoginFinsonetPage.BTN_ACCESO));
         actor.attemptsTo(
-                Check.whether((TXT_CELULAR.resolveFor(actor).isPresent()))
+                Check.whether((!TXT_CELULAR.resolveFor(actor).isPresent()))
                         .andIfSo(
+                                Enter.theValue(this.cliente.getCodigo()).into(TXT_CODIGO),
+                                Click.on(BTN_ENVIAR))
+                        .otherwise(
                                 Enter.theValue(this.cliente.getCelular()).into(TXT_CELULAR),
                                 Enter.theValue(this.cliente.getEmail()).into(TXT_CORREO),
                                 Enter.theValue(this.cliente.getNueva_contrasena()).into(TXT_NUEVA_CONTRASEÑA),
                                 Enter.theValue(this.cliente.getNueva_contrasena()).into(TXT_NUEVA_CONTRASEÑA1),
                                 Click.on(BTN_ACTUALIZAR_CONTRASEÑA),
                                 Enter.theValue(this.cliente.getUsuario()).into(TXT_USUARIO),
-                                Enter.theValue(this.cliente.getContrasena()).into(TXT_CONTRASENA))
-                        .otherwise(
-                            Enter.theValue(this.cliente.getCodigo()).into(TXT_CODIGO),
-                            Click.on(BTN_ENVIAR))
+                                Enter.theValue(this.cliente.getContrasena()).into(TXT_CONTRASENA),
+                                Enter.theValue(this.cliente.getCodigo()).into(TXT_CODIGO),
+                                Click.on(BTN_ENVIAR))
         );
     }
 }
