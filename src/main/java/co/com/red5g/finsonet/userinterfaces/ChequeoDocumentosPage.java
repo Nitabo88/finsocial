@@ -28,8 +28,8 @@ public final class ChequeoDocumentosPage {
     public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2"));
     public static final Target BTN_OK = Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]"));
-    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@data-original-title,'Subir documento')]"));
-    public static final Target BTN_UPLOAD1= Target.the("icono de cargar").located(By.id("fileUpload"));
+    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[contains(@data-original-title,'Subir documento')]//i"));
+    public static final Target LNK_FILE_UPLOAD = Target.the("el input del archivor").located(By.id("fileUpload"));
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
         org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
