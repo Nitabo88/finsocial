@@ -1,17 +1,14 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeMarcaLaLlamadaException;
-import co.com.red5g.finsonet.questions.ValidarLlamada;
 import co.com.red5g.finsonet.tasks.AsignacionLlamadas;
 import co.com.red5g.finsonet.tasks.SeProcesa;
+import co.com.red5g.finsonet.tasks.SeValida;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
-import static co.com.red5g.finsonet.exceptions.NoSeMarcaLaLlamadaException.MENSAJE_LLAMADA;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -41,7 +38,10 @@ public class LlamadasStepDefinition {
 
     @Entonces("^la gestion quedara confirmado$")
     public void elCreditoQuedaraConfirmado() {
-        theActorInTheSpotlight().should
-                (seeThat(ValidarLlamada.estaConfirmada()).orComplainWith(NoSeMarcaLaLlamadaException.class,MENSAJE_LLAMADA));
+        theActorInTheSpotlight().attemptsTo(
+                SeValida.queLaLlamada()
+        );
+      /*  theActorInTheSpotlight().should
+                (seeThat(ValidarLlamada.estaConfirmada()).orComplainWith(NoSeMarcaLaLlamadaException.class,MENSAJE_LLAMADA));*/
     }
 }

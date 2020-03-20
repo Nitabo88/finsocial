@@ -16,6 +16,10 @@ public class LlamadasPage {
     public static final Target BTN_CERTIFICACION_LLAMADAS = Target.the("Campo de certificación de la llamada").locatedBy("//button[text()='Regresar']");
     public static final Target BTN_ADVERTENCIA_GUARDAR = Target.the("Campo de advertencia para guardar").locatedBy("//button[text()='Aceptar']");
     public static final Target BTN_GUARDAR_GESTION = Target.the("Campo para guardar la gestión").locatedBy("//button[@onclick='marcaLlamadaExitosa({0}, 1);']");
+    public static final Target TXT_BUSCAR_CDAS = Target.the("input CDAS").located(By.id("txtParBusqueda"));
+    public static final Target BTN_ESTADO_CDAS_GESTION_LLAMADA = Target.the("BOTON DETALLES LLAMADAS EN  CDAS").locatedBy(("//button[@data-id='84403']"));
+
+
 
 
 
