@@ -9,5 +9,5 @@ Característica: Realizar gestion de llamada
     Dado que un asesor quiere asignar una llamada para el credito
     Cuando el realiza el proceso de asignacion
     Y procesa la llamada
-    Entonces el credito quedara confirmado
+    Entonces la gestion quedara confirmado
 

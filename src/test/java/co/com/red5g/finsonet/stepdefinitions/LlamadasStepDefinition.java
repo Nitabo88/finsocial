@@ -39,7 +39,7 @@ public class LlamadasStepDefinition {
         );
     }
 
-    @Entonces("^el credito quedara confirmado$")
+    @Entonces("^la gestion quedara confirmado$")
     public void elCreditoQuedaraConfirmado() {
         theActorInTheSpotlight().should
                 (seeThat(ValidarLlamada.estaConfirmada()).orComplainWith(NoSeMarcaLaLlamadaException.class,MENSAJE_LLAMADA));
