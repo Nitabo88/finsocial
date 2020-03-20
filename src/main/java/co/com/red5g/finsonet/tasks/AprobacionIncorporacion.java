@@ -1,30 +1,25 @@
 package co.com.red5g.finsonet.tasks;
 
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_APROBAR;
-import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_OK;
-import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_INCORPORACION_NOMBRE;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.BTN_ACTUALIZAR_GESTION;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.BTN_REGISTRAR;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.BTN_SELECCIONE_ARCHIVO;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_ANIO_DESCUENTO;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_MES_DESCUENTO;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_SELECCIONAR_GESTION;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_DETALLE_GESTION;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-
 import co.com.red5g.finsonet.models.Incorporacion;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.*;
+import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.*;
+import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AprobacionIncorporacion implements Task {
 
@@ -39,6 +34,7 @@ public class AprobacionIncorporacion implements Task {
 
   @Override
   public <T extends Actor> void performAs(final T actor) {
+    Path path = Paths.get("./src/test/resources/file/prueba.pdf");
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         WaitUntil.the(LST_INCORPORACION_NOMBRE.of(numeroCredito),isVisible()).forNoMoreThan(TIEMPO).seconds(),
