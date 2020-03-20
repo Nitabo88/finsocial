@@ -13,9 +13,12 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.EnterValue;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.remote.LocalFileDetector;
 
 public class Subir implements Interaction {
@@ -33,9 +36,9 @@ public class Subir implements Interaction {
                     JavaScriptClick.on(BTN_UPLOAD.resolveAllFor(actor).get(i)),
                     WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(20).seconds(),
                     Upload.theFile(path).to(LNK_FILE_UPLOAD),
-                    Click.on(BTN_CERRAR)
+                    Click.on(BTN_CERRAR),
+                    Enter.keyValues(Keys.ESCAPE).into(BTN_UPLOAD.resolveAllFor(actor).get(i))
                 );
-                BrowseTheWeb.as(actor).getDriver().manage().window().maximize();
             }
         }
     }
