@@ -9,7 +9,6 @@ import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.CHK_ID_LLAMADAS;
 
 public class ValidarLlamada implements Question<Boolean> {
 
-
     public static ValidarLlamada estaConfirmada() {
         return new ValidarLlamada();
     }
@@ -19,6 +18,6 @@ public class ValidarLlamada implements Question<Boolean> {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
 
         final Target lstFila = CHK_ID_LLAMADAS.of(numeroCredito);
-        return lstFila.resolveFor(actor).isPresent();
+        return lstFila.resolveFor(actor).isDisabled();
     }
 }
