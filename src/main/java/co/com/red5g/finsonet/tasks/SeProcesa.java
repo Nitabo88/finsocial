@@ -31,8 +31,7 @@ public class SeProcesa implements Task {
                 Click.on(CHK_RESPUESTA_CUATRO.of(numeroCredito)),
                 Click.on(CHK_RESPUESTA_QUINTO.of(numeroCredito)),
                 Enter.theValue("El credito se realizara proceso exitoza").into(TXT_OBSERVACION_LLAMADA.of(numeroCredito)),
-                WaitUntil.the(BTN_GUARDAR_GESTION.of(numeroCredito), isClickable()),
-                Click.on(BTN_GUARDAR_GESTION),
+                Click.on(BTN_GUARDAR_GESTION.of(numeroCredito)),
                 Click.on(BTN_ADVERTENCIA_GUARDAR),
                 Click.on(BTN_CERTIFICACION_LLAMADAS)
         );
