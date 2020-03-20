@@ -1,14 +1,16 @@
 package co.com.red5g.finsonet.interacions;
 
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_CERRAR;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_UPLOAD;
+import co.com.devco.automation.mobile.actions.WaitFor;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.actions.Click;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Interaction;
-import net.serenitybdd.screenplay.actions.Click;
+
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_CERRAR;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_UPLOAD;
 
 public class Subir implements Interaction {
 
@@ -31,7 +33,8 @@ public class Subir implements Interaction {
                   logger.log(Level.INFO, String.valueOf(e));
                 }
                 actor.attemptsTo(
-                    Click.on(BTN_CERRAR));
+                        Click.on(BTN_CERRAR),
+                        WaitFor.seconds(2));
             }
         }
     }
