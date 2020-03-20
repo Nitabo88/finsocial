@@ -1,15 +1,8 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO;
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
-import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
-
 import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.interacions.AbreLaPagina;
 import co.com.red5g.finsonet.questions.QueAparece;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
@@ -19,6 +12,24 @@ import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.Upload;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO;
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
+import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_UPLOAD1;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
 public class ChequeoDocumentosStepDefinition {
 
@@ -66,5 +77,20 @@ public class ChequeoDocumentosStepDefinition {
   public void verificarRevisionDocumentacion() {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
     theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, MENSAJE_CREDITO_RECHAZADO));
+  }
+
+  @Dado("^que un asesor esta en el credito numero (.*)$")
+  public void queUnAsesorEstaEnElCreditoNumero(String numeroCredito) {
+    theActorCalled("Prueba").attemptsTo(
+            AbreLaPagina.finsonet(),
+            Ingresa.lasCredenciales(de().unUsuarioBasico()),
+            Click.on(LNK_ORIGINACION),
+            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito))
+    );
+    Path path = Paths.get("./src/test/resources/scripts/prueba.pdf");
+    theActorInTheSpotlight().attemptsTo(JavaScriptClick.on("//tr[@id='doc-43']//i[@class='fas fa-upload white']"));
+    theActorInTheSpotlight().attemptsTo(
+            Upload.theFile(path).to(BTN_UPLOAD1)
+    );
   }
 }
