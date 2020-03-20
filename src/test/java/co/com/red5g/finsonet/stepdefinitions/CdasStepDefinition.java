@@ -5,6 +5,7 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.questions.GestionDocumental;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -32,6 +33,6 @@ public class CdasStepDefinition {
 
     @Entonces("^el podra ver el credito en estado (.*)$")
     public void verificarEstadoCompleto(String estado) {
-        theActorInTheSpotlight().should(seeThat(GestionDocumental.estado(), containsString(estado)));
+        theActorInTheSpotlight().should(seeThat(GestionDocumental.estado(), equalTo(estado)));
     }
 }
