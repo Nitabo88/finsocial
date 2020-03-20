@@ -13,8 +13,7 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class SeProcesa implements Task {
 
@@ -32,6 +31,7 @@ public class SeProcesa implements Task {
                 Click.on(CHK_RESPUESTA_CUATRO.of(numeroCredito)),
                 Click.on(CHK_RESPUESTA_QUINTO.of(numeroCredito)),
                 Enter.theValue("El credito se realizara proceso exitoza").into(TXT_OBSERVACION_LLAMADA.of(numeroCredito)),
+                WaitUntil.the(BTN_GUARDAR_GESTION.of(numeroCredito), isClickable()),
                 Click.on(BTN_GUARDAR_GESTION),
                 Click.on(BTN_ADVERTENCIA_GUARDAR),
                 Click.on(BTN_CERTIFICACION_LLAMADAS)
