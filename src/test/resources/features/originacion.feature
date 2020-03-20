@@ -7,6 +7,11 @@ Característica: Originacion
 
   @ChequeoDocumentos
   Escenario: Chequeo Documentos - Aprobacion chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de un credito numero 62339
+    Cuando el asesor adjunta toda la informacion de el chequeo de documentos
+    Entonces deberia ver el credito en el paso de confirmacion
+
+  Escenario: Chequeo Documentos - Aprobacion chequeo de documentos
     Dado que un asesor esta en el paso de chequeo de un documentos
     Cuando el asesor adjunta toda la informacion de el chequeo de documentos
     Entonces deberia ver el credito en el paso de confirmacion
