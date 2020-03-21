@@ -22,8 +22,6 @@ public class ValorConsolidadoLiquidadorComisiones implements Question<Boolean> {
   private static final Pattern FORMATO = Pattern.compile("[^\\d]");
   private static final int TIEMPO = 300;
 
-
-
   @Override
   public Boolean answeredBy(Actor actor) {
     boolean estadoCredito = true;

@@ -22,18 +22,6 @@ public class Visualizar implements Task {
         return instrumented(Visualizar.class,lnkReporte);
     }
 
-    public static Performable elReporteDeAntecartera(Target lnkReporte) {
-        return instrumented(Visualizar.class,lnkReporte);
-    }
-
-    public static Performable elReporteDeVentaNueva(Target lnkReporte) {
-        return instrumented(Visualizar.class,lnkReporte);
-    }
-
-    public static Performable elReporteDeVentaLiberada(Target lnkReporte) {
-        return instrumented(Visualizar.class,lnkReporte);
-    }
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(

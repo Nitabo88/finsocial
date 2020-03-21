@@ -10,7 +10,6 @@ public final class FormularioSolicitudPaso2Page {
     public static final Target TXT_SEGUNDO_NOMBRE= Target.the("el segundo nombre").located(By.id("txtSNombre"));
     public static final Target BTN_TIPO_DOCUMENTO = Target.the("el tipo de documento").located(By.xpath("//button[@data-id='cmbTipoDoc']"));
     public static final Target LST_TIPO_DOCUMENTO = Target.the("la tipo de documento").locatedBy("//select[@id='cmbTipoDoc']//following-sibling::div//ul[@class='dropdown-menu inner']//li[contains(.,'{0}')]");
-    public static final Target TXT_NUMERO_DOCUMENTO= Target.the("el numero de documento").located(By.id("txtNoDoc"));
     public static final Target BTN_LUGAR_EXPEDICION= Target.the("el lugar de expedicion").located(By.xpath("//button[@data-id='txtLugarExp']"));
     public static final Target BTN_SEXO= Target.the("el sexo").located(By.xpath("//button[@data-id='cmbSexo']"));
     public static final Target BTN_CIUDAD_DEPARTAMENTO= Target.the("la ciudad y departamento").located(By.xpath("//button[@data-id='cmbCiudad']"));
@@ -22,14 +21,12 @@ public final class FormularioSolicitudPaso2Page {
     public static final Target LST_LISTAS = Target.the("el estrato").locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//ul[@class='dropdown-menu inner']");
     public static final Target BTN_CORRESPONDENCIA= Target.the("el lugar de correspondecia").located(By.xpath("//button[@data-id='cmbCorrespondencia']"));
     public static final Target BTN_NIVEL_ESTUDIOS= Target.the("el nivel de estudios").located(By.xpath("//button[@data-id='cmbNivelEst']"));
-    public static final Target BTN_PROFESION = Target.the("la profesion").located(By.xpath("//button[@data-id='cmbProfesion']"));
-    public static final Target FILTRO_LUGARES = Target.the("el lugar de expedicion")
+    public static final Target BTN_PROFESION= Target.the("la profesion").located(By.xpath("//button[@data-id='cmbProfesion']"));
+    public static final Target FILTRO_LUGARES= Target.the("el lugar de expedicion")
         .located(By.xpath("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//input[@class='form-control'] |" +
             "//div[@class='btn-group bootstrap-select input-form requerir open']//input[@class='form-control']"));
-    public static final Target TXT_FECHA_EXPEDICION = Target.the("la fecha de expedicion").located(By.id("txtFechaExp"));
+    public static final Target TXT_FECHA_EXPEDICION= Target.the("la fecha de expedicion").located(By.id("txtFechaExp"));
     public static final Target TXT_FECHA_NACIMIENTO= Target.the("la fecha de nacimiento").located(By.id("txtFechaNac"));
-    public static final Target TXT_NOMBRE_ARRENDATARIO= Target.the("el nombre del arrendatario").located(By.id("txtArrend"));
-    public static final Target TXT_TELEFONO_ARREDADOR= Target.the("el telefono del arrendador").located(By.id("txtTelArr"));
     public static final Target TXT_BARRIO= Target.the("el barrio").located(By.id("txtBarrio"));
     public static final Target TXT_TELEFONO_RESIDENCIA = Target.the("el telefono de residencia").located(By.id("txtTel"));
     public static final Target TXT_CELULAR = Target.the("el celular").located(By.id("txtCel"));
@@ -42,7 +39,6 @@ public final class FormularioSolicitudPaso2Page {
     public static final Target TXT_DIRECCION = Target.the("la direccion").located(By.id("dirCa"));
     public static final Target BTN_CERRAR_DIRECCION = Target.the("cerrar direccion").located(By.xpath("//button[@class='btn btn-default']"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_2"));
-    public static final Target BTN_REGRESAR= Target.the("el boton regresar").located(By.id("btnRegresar_2"));
 
     private FormularioSolicitudPaso2Page() {
         throw new IllegalStateException("Utility class");

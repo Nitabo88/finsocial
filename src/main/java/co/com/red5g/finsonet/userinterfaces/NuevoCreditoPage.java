@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 
 public final class NuevoCreditoPage {
     public static final Target TXT_DOCUMENTO = Target.the("documento").located(By.id("textoDoc"));
-    public static final Target TXT_TELEFONO = Target.the("telefono").located(By.id("textoTel"));
-    public static final Target TXT_EMAIL = Target.the("correo electronico").located(By.id("textoEmail"));
     public static final Target TXT_VALOR_CUOTA = Target.the("el valor de la cuota").located(By.id("textoVlrCuota"));
     public static final Target TXT_PLAZO = Target.the("el numero de cuotas").located(By.id("textoNumCuotas"));
     public static final Target TBL_INFORMACION_CREDITOS=Target.the("La Tabla de informacion este visible").located(By.id("tablaInfo"));

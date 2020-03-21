@@ -11,9 +11,9 @@ import static co.com.red5g.finsonet.utils.UtileriaFechas.masUnMinuto;
 
 public final class SeleccionarColumna implements Question<List<WebElementFacade>> {
     public static final String FECHA = "fecha";
-    Target lstFila;
-    String primerParametro;
-    String segundoParametro;
+    final Target lstFila;
+    final String primerParametro;
+    final String segundoParametro;
 
     private SeleccionarColumna(Target lstFila, String primerParametro, String segundoParametro) {
         this.lstFila = lstFila;

@@ -11,12 +11,14 @@ public final class ModulosAdministracionPage {
     public static final Target LNK_ORIGINACION = Target.the("el link de originacion").located(By.id("origin"));
     public static final Target LNK_AUXILIAR_OPERATIVO = Target.the("el link de auxiliar operativo").located(By.id("auxop"));
     public static final Target LNK_HOME = Target.the("el link de la pagina principal").located(By.xpath("//a[@class='col-md-2']//img[@class='icon icon-finsonetlogo']"));
+    public static final Target LNK_CDAS = Target.the("el link de CDAS").located(By.xpath("//a[contains(@href,'cdas')]"));
     public static final Target BTN_MI_CUENTA = Target.the("boton de mi cuenta").located(By.id("dropdownCuenta"));
     public static final Target MNU_MI_CUENTA = Target.the("el submenu de mi cuenta").locatedBy("//div[contains(@class,'dropdown-menu')]//a[contains(.,'{0}')]");
-    public static final Target IMG_FINSONET = Target.the("el logo de finsonet").located(By.xpath("//div[@class='text-center divlogo']//img[@class='icon icon-finsonetlogo']"));
+    public static final Target IMG_FINSONET = Target.the("el logo de finsonet").located(By.xpath("//div[@id='menu-content']//div[@class='text-center divlogo']//img"));
     public static final Target LNK_LLAMADAS = Target.the("el logo de llamadas").located(By.id("call"));
     public static final Target IMG_FINSONET_NEW = Target.the("el logo de finsonet nuevo").locatedBy(("//img[@src='/assets/images/logo_finsonet.svg'][@title='Inicio']"));
     public static final Target IMG_CDAS = Target.the("el logo de CDAS").locatedBy(("//h3[contains(.,'CDAS')]"));
+
     private ModulosAdministracionPage() {
         throw new IllegalStateException("Utility class");
     }

@@ -28,11 +28,11 @@ public class ValorComisionAsesores implements Question<Boolean> {
     boolean respuestaCredito = true;
     List<WebElementFacade> lstCiudades = LBL_CIUDAD_DETALLE.resolveAllFor(actor);
     lstCiudades.remove(0);
-    for (int i = 0; i < lstCiudades.size(); i++) {
-      String ciudad = lstCiudades.get(i).getText();
+    for (WebElementFacade lstCiudade : lstCiudades) {
+      String ciudad = lstCiudade.getText();
       List<WebElementFacade> lstNombreAsesor = obtenerNombres(ciudad).answeredBy(actor);
-      for (int j = 0; j < lstNombreAsesor.size(); j++) {
-        String nombreAsesor = lstNombreAsesor.get(j).getText();
+      for (WebElementFacade webElementFacade : lstNombreAsesor) {
+        String nombreAsesor = webElementFacade.getText();
         Long montoTotalAsesor = montoAsesor(nombreAsesor).answeredBy(actor);
         Double valorComisionAsesor = valorComision(nombreAsesor).answeredBy(actor);
         actor.attemptsTo(
