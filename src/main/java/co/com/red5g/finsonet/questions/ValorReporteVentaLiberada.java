@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.userinterfaces.CdasPage.LBL_GESTION_DOCUMENTAL;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_VALOR_VENTA_LIBERADA;
 
 import java.util.regex.Pattern;
