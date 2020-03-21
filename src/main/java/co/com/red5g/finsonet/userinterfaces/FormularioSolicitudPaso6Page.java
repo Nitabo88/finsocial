@@ -27,7 +27,6 @@ public final class FormularioSolicitudPaso6Page {
     public static final Target BTN_TIPO_PRODUCTO = Target.the("el tipo de producto").located(By.xpath("//button[@data-id='cmbTipoProd']"));
     public static final Target LST_TIPO_PRODUCTO = Target.the("la lista del tipo de producto")
         .locatedBy("//div[@class='btn-group bootstrap-select input-form requerir open']");
-    public static final Target BTN_REGRESAR = Target.the("el boton regresar").located(By.id("btnRegresar_6"));
     public static final Target BTN_CERRAR_DIRECCION = Target.the("el boton cerrar direccion").located(By.xpath("//button[@class='btn btn-default']"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_6"));
 

@@ -8,7 +8,7 @@ import java.util.Date;
 public class UtileriaFechas {
 
     private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) - 1);
-    private static String anio = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
+    private static final String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {
         throw new IllegalStateException("Utileria Fechas");
@@ -33,6 +33,6 @@ public class UtileriaFechas {
         if (mes.length() < 2) {
             mes = "0" + mes;
         }
-        return UtileriaFechas.anio + "-" + UtileriaFechas.mes;
+        return UtileriaFechas.year + "-" + UtileriaFechas.mes;
     }
 }

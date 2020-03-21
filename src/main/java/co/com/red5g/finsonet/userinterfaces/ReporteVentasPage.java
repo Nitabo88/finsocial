@@ -9,7 +9,6 @@ public final class ReporteVentasPage {
     public static final Target LBL_VALOR_ORIGINACION = Target.the("el valor total de la originacion").located(By.id("valor_orig"));
     public static final Target LBL_NUMERO_CREDITOS_ORIGINACION = Target.the("el numero total de creditos en la originacion").located(By.id("cantidad_orig"));
     public static final Target LNK_VER_DETALLE_ORIGINACION = Target.the("el detalle de la originacion").located(By.xpath("//div[@id='cierre_orig']/following-sibling::button"));
-    public static final Target LBL_VALOR_ANTECARTERA = Target.the("el valor total de la antecartera").located(By.id("valor_ac"));
     public static final Target LBL_NUMERO_CREDITOS_ANTECARTERA = Target.the("el numero total de creditos en antecartera").located(By.id("cantidad_ac"));
     public static final Target LNK_VER_DETALLE_ANTECARTERA = Target.the("el detalle de la antecartera").located(By.xpath("//div[@id='cierre_ac']/following-sibling::button"));
     public static final Target LBL_VALOR_VENTA_NUEVA = Target.the("el valor total de la venta nueva").located(By.id("valor_vn"));
@@ -24,8 +23,6 @@ public final class ReporteVentasPage {
         By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
     public static final Target LST_CREDITO_DETALLE_ORIGINACION = Target.the("la lista de creditos de originacion").located(
         By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'CR')]"));
-    public static final Target LST_VALOR_DETALLE_ANTECARTERA = Target.the("la lista de valores de antecartera").located(
-        By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'$')]"));
     public static final Target LST_CREDITO_DETALLE_ANTECARTERA = Target.the("la lista de creditos de antecartera").located(
         By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'CR')]"));
     public static final Target LST_VALOR_DETALLE_VENTA_NUEVA = Target.the("la lista de valores de venta nueva").located(

@@ -9,8 +9,7 @@ public class InformacionBalancePersonal {
     private final String razonOtrosActivos;
     private final String pasivosFinancieros;
     private final String pasivosCorrientes;
-    private final String otrosPasivos;
-    private final String razonOtrosPasivos;
+  private final String razonOtrosPasivos;
 
     public InformacionBalancePersonal(InformacionBalancePersonalBuilder informacionBalancePersonalBuilder) {
       this.activosCorrientes = informacionBalancePersonalBuilder.getActivosCorrientes();
@@ -19,7 +18,6 @@ public class InformacionBalancePersonal {
       this.razonOtrosActivos = informacionBalancePersonalBuilder.getRazonOtrosActivos();
       this.pasivosFinancieros = informacionBalancePersonalBuilder.getPasivosFinancieros();
       this.pasivosCorrientes = informacionBalancePersonalBuilder.getPasivosCorrientes();
-      this.otrosPasivos = informacionBalancePersonalBuilder.getOtrosPasivos();
       this.razonOtrosPasivos = informacionBalancePersonalBuilder.getRazonOtrosPasivos();
     }
 
@@ -31,27 +29,23 @@ public class InformacionBalancePersonal {
         return activosFijos;
     }
 
-    public String getOtrosActivos() {
-        return otrosActivos;
-    }
+  public String getOtrosActivos() {
+    return otrosActivos;
+  }
 
-    public String getRazonOtrosActivos() {
-        return razonOtrosActivos;
-    }
+  public String getRazonOtrosActivos() {
+    return razonOtrosActivos;
+  }
 
-    public String getPasivosFinancieros() {
-        return pasivosFinancieros;
-    }
+  public String getPasivosFinancieros() {
+    return pasivosFinancieros;
+  }
 
-    public String getPasivosCorrientes() {
-        return pasivosCorrientes;
-    }
+  public String getPasivosCorrientes() {
+    return pasivosCorrientes;
+  }
 
-    public String getOtrosPasivos() {
-        return otrosPasivos;
-    }
-
-    public String getRazonOtrosPasivos() {
-        return razonOtrosPasivos;
-    }
+  public String getRazonOtrosPasivos() {
+    return razonOtrosPasivos;
+  }
 }

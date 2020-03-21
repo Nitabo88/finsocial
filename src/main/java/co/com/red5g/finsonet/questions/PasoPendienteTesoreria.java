@@ -8,8 +8,6 @@ import net.serenitybdd.screenplay.Question;
 
 public class PasoPendienteTesoreria implements Question<Boolean> {
 
-  private final static Integer TIEMPO = 100;
-
   @Override
   public Boolean answeredBy(Actor actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);

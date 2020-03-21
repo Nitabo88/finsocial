@@ -13,7 +13,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class PasoTesoreria implements Question<Boolean> {
 
-    private final static String TESORERIA = "Tesorería";
+    private static final String TESORERIA = "Tesorería";
     private static final int TIEMPO = 100;
 
     @Override
