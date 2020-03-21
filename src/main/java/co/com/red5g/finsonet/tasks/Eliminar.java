@@ -25,7 +25,7 @@ public class Eliminar implements Task {
 
     private static final String SALIR = "Salir";
     private static final int TIEMPO = 3;
-    Vetados vetados;
+    final Vetados vetados;
 
     public Eliminar(Vetados vetados) {
         this.vetados = vetados;

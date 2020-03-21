@@ -16,14 +16,12 @@ public class InformacionFinanciera {
     private final String deduccionesNomina;
     private final String tarjetasCredito;
     private final String otrosGastos;
-    private final String cualesGastos;
     private final String pagoHipoteca;
     private final String valorComercialVivienda;
     private final String dondeVivir;
     private final String comprarVivienda;
     private final String cupoExtraLibranza;
     private final String usoCredito;
-    private final String razonOtros;
 
     public InformacionFinanciera(InformacionFinancieraBuilder informacionFinancieraBuilder) {
       this.salarioFijo = informacionFinancieraBuilder.getSalarioFijo();
@@ -39,14 +37,12 @@ public class InformacionFinanciera {
       this.deduccionesNomina = informacionFinancieraBuilder.getDeduccionesNomina();
       this.tarjetasCredito = informacionFinancieraBuilder.getTarjetasCredito();
       this.otrosGastos = informacionFinancieraBuilder.getOtrosGastos();
-      this.cualesGastos = informacionFinancieraBuilder.getCualesGastos();
       this.pagoHipoteca = informacionFinancieraBuilder.getPagoHipoteca();
       this.valorComercialVivienda = informacionFinancieraBuilder.getValorComercialVivienda();
       this.dondeVivir = informacionFinancieraBuilder.getDondeVivir();
       this.comprarVivienda = informacionFinancieraBuilder.getComprarVivienda();
       this.cupoExtraLibranza = informacionFinancieraBuilder.getCupoExtraLibranza();
       this.usoCredito = informacionFinancieraBuilder.getUsoCredito();
-      this.razonOtros = informacionFinancieraBuilder.getRazonOtros();
     }
 
     public String getSalarioFijo() {
@@ -125,13 +121,6 @@ public class InformacionFinanciera {
         return usoCredito;
     }
 
-    public String getRazonOtros() {
-        return razonOtros;
-    }
-
-    public String getCualesGastos() {
-        return cualesGastos;
-    }
 }
 
 

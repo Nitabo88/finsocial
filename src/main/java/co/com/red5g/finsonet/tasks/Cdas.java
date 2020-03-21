@@ -26,7 +26,7 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 public class Cdas implements Task {
 
-  AccionCdas accionCdas;
+  final AccionCdas accionCdas;
 
   private static final String ID_CREDITO = "ID crédito";
 

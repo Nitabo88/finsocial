@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.ValorComisionAsesores;
 import co.com.red5g.finsonet.questions.ValorConsolidadoLiquidadorComisiones;
+import co.com.red5g.finsonet.questions.ValorDetalleReporteVentaLiberada;
 import co.com.red5g.finsonet.questions.ValorDetalleReporteVentaNueva;
 import co.com.red5g.finsonet.questions.ValorReporteOriginacion;
 import co.com.red5g.finsonet.questions.ValorReporteVentaLiberada;
@@ -41,7 +42,7 @@ public final class ElValor {
   }
 
   public static Question<String> delDetalleDelReporteDeVentaLiberada() {
-    return new ValorReporteVentaLiberada();
+    return new ValorDetalleReporteVentaLiberada();
   }
 
   public static Question<Boolean> deCreditosDeLiquidacionDeComisiones() {

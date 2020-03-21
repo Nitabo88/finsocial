@@ -4,8 +4,8 @@ import co.com.red5g.finsonet.models.builders.AccionCdasBuilder;
 
 public class AccionCdas {
 
-    private String seleccionarGestion;
-    private String detalleGestion;
+    private final String seleccionarGestion;
+    private final String detalleGestion;
 
     public AccionCdas(AccionCdasBuilder accionCdasBuilder) {
         this.seleccionarGestion = accionCdasBuilder.getSeleccionarGestion();

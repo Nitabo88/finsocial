@@ -10,7 +10,6 @@ public class ActividadLaboral {
     private final String manejoRecursosPublicos;
     private final String empresa;
     private final String direccionTrabajo;
-    private final String nit;
     private final String tipoEmpresa;
     private final String cargo;
     private final String ciudadTrabajo;
@@ -28,7 +27,6 @@ public class ActividadLaboral {
       this.manejoRecursosPublicos = actividadLaboralBuilder.getManejoRecursosPublicos();
       this.empresa = actividadLaboralBuilder.getEmpresa();
       this.direccionTrabajo = actividadLaboralBuilder.getDireccionTrabajo();
-      this.nit = actividadLaboralBuilder.getNit();
       this.tipoEmpresa = actividadLaboralBuilder.getTipoEmpresa();
       this.cargo = actividadLaboralBuilder.getCargo();
       this.ciudadTrabajo = actividadLaboralBuilder.getCiudadTrabajo();
@@ -65,10 +63,6 @@ public class ActividadLaboral {
 
     public String getDireccionTrabajo() {
         return direccionTrabajo;
-    }
-
-    public String getNit() {
-        return nit;
     }
 
     public String getTipoEmpresa() {
