@@ -47,10 +47,8 @@ public class AprobacionIncorporacion implements Task {
         JavaScriptClick.on(BTN_ACTUALIZAR_GESTION),
         WaitUntil.the(LST_SELECCIONAR_GESTION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         SelectFromOptions.byVisibleText(this.incorporacion.getSeleccionarGestion()).from(LST_SELECCIONAR_GESTION),
-        Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_DETALLE_GESTION));
-    actor.attemptsTo(
-        Upload.theFile(path).to(LNK_FILE_UPLOAD));
-    actor.attemptsTo(
+        Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_DETALLE_GESTION),
+        Upload.theFile(path).to(LNK_FILE_UPLOAD),
         WaitUntil.the(BTN_REGISTRAR, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
         JavaScriptClick.on(BTN_REGISTRAR),
         WaitUntil.the(LST_ANIO_DESCUENTO, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
