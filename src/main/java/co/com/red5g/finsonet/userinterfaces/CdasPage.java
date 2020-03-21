@@ -28,4 +28,8 @@ public class CdasPage {
         .located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target LBL_GESTION_DOCUMENTAL = Target.the("el label de gestion documental")
         .locatedBy("//button[@id='btn-ver-gestion-{0}']//parent::div");
+
+    private CdasPage() {
+        throw new IllegalStateException("Utility class");
+    }
 }
