@@ -11,7 +11,6 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
     private String manejoRecursosPublicos;
     private String empresa;
     private String direccionTrabajo;
-    private String nit;
     private String tipoEmpresa;
     private String cargo;
     private String ciudadTrabajo;
@@ -22,22 +21,21 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
     private String tipoContrato;
 
     private ActividadLaboralBuilder() {
-      this.impactoDecision = "";
-      this.ocupacion = "";
-      this.declaraRenta = "";
-      this.personaPublica = "";
-      this.manejoRecursosPublicos = "";
-      this.empresa = "";
-      this.direccionTrabajo = "";
-      this.nit = "";
-      this.tipoEmpresa = "";
-      this.cargo = "";
-      this.ciudadTrabajo = "";
-      this.telefonoTrabajo = "";
-      this.actividadEconomica = "";
-      this.fechaVinculacion = "";
-      this.extension = "";
-      this.tipoContrato = "";
+        this.impactoDecision = "";
+        this.ocupacion = "";
+        this.declaraRenta = "";
+        this.personaPublica = "";
+        this.manejoRecursosPublicos = "";
+        this.empresa = "";
+        this.direccionTrabajo = "";
+        this.tipoEmpresa = "";
+        this.cargo = "";
+        this.ciudadTrabajo = "";
+        this.telefonoTrabajo = "";
+        this.actividadEconomica = "";
+        this.fechaVinculacion = "";
+        this.extension = "";
+        this.tipoContrato = "";
     }
 
     @Override
@@ -75,10 +73,6 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
 
     public String getDireccionTrabajo() {
         return direccionTrabajo;
-    }
-
-    public String getNit() {
-        return nit;
     }
 
     public String getTipoEmpresa() {
@@ -124,7 +118,6 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
       this.conFechaVinculacion("2018-Mar-5");
       this.conDireccionTrabajo("BRR CALASANZ");
       this.conCiudadTrabajo("BARRANQUILLA - ATLANTICO");
-      this.conNit("900336604-7");
       this.conTelefonoTrabajo("2306060");
       this.conExtension("0");
       this.conTipoEmpresa("MIXTA");
@@ -155,11 +148,6 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
 
     private ActividadLaboralBuilder conTelefonoTrabajo(String telefonoTrabajo) {
         this.telefonoTrabajo = telefonoTrabajo;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conNit(String nit) {
-        this.nit = nit;
         return this;
     }
 

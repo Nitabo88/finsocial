@@ -36,6 +36,5 @@ public class LiquidadorComisionesPage extends PageObject {
     public static final Target BTN_CERRAR_DETALLE = Target.the("nombre del departamento o asesor").locatedBy("//div[@class='panel mt-10']//i[@class='fas fa-times rotate white']");
     public static final Target BTN_VER_DETALLE_LIQUIDACION = Target.the("detalle de la liquidacion")
         .locatedBy("//div[@class='panel mt-10']//div[@class='panel-body p-30']//div//div[@class='grid-vertical-center'][contains(.,'{0}')]//parent::div[@class='table-eyes-body']//div//p[contains(.,'Acción')]//parent::div//button");
-    public static final Target BTN_ATRAS = Target.the("atras del detalle de la liquidacion").located(By.xpath("//i[@class='far fa-arrow-left fa-25']"));
     public static final Target LBL_PORCENTAJE_COMISION = Target.the("porcentaje comision").locatedBy("//td[@class='bg-td text-green fw-600'][contains(text(),'%')]");
 }

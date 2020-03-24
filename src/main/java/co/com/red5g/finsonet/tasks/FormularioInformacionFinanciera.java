@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.*;
 
 public class FormularioInformacionFinanciera implements Task {
-    co.com.red5g.finsonet.models.InformacionFinanciera informacionFinanciera;
+    final co.com.red5g.finsonet.models.InformacionFinanciera informacionFinanciera;
 
     public FormularioInformacionFinanciera(co.com.red5g.finsonet.models.InformacionFinanciera informacionFinanciera) {
         this.informacionFinanciera = informacionFinanciera;

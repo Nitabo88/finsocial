@@ -20,7 +20,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class RegresoTesoreria implements Task {
 
-  private Tesoreria tesoreria;
+  private final Tesoreria tesoreria;
 
   public RegresoTesoreria(Tesoreria tesoreria) {
     this.tesoreria = tesoreria;

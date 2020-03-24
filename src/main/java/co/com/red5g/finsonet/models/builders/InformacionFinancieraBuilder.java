@@ -17,14 +17,12 @@ public class InformacionFinancieraBuilder implements Builder<InformacionFinancie
     private String deduccionesNomina;
     private String tarjetasCredito;
     private String otrosGastos;
-    private String cualesGastos;
     private String pagoHipoteca;
     private String valorComercialVivienda;
     private String dondeVivir;
     private String comprarVivienda;
     private String cupoExtraLibranza;
     private String usoCredito;
-    private String razonOtros;
 
     public InformacionFinancieraBuilder() {
       this.salarioFijo = "";
@@ -40,14 +38,12 @@ public class InformacionFinancieraBuilder implements Builder<InformacionFinancie
       this.deduccionesNomina = "";
       this.tarjetasCredito = "";
       this.otrosGastos = "";
-      this.cualesGastos = "";
       this.pagoHipoteca = "";
       this.valorComercialVivienda = "";
       this.dondeVivir = "";
       this.comprarVivienda = "";
       this.cupoExtraLibranza = "";
       this.usoCredito = "";
-      this.razonOtros = "";
     }
 
     public static InformacionFinancieraBuilder la() {
@@ -135,39 +131,27 @@ public class InformacionFinancieraBuilder implements Builder<InformacionFinancie
         return usoCredito;
     }
 
-    public String getRazonOtros() {
-        return razonOtros;
-    }
-
-
     public InformacionFinanciera persona() {
-      this.conSalarioFijo("4500000");
-      this.conSalarioVariableComisiones("0");
-      this.conArrendamientoIngresos("500000");
-      this.conRendimientosFinancieros("0");
-      this.conHonorarios("0");
-      this.conOtrosIngresos("0");
-      this.conCualesIngresos("No aplica");
-      this.conArriendosEgresos("800000");
-      this.conGastosPersonalesFamiliares("1000000");
-      this.conPrestamosDiferentesFinsocial("0");
-      this.conDeduccionesNomina("0");
-      this.conTarjetasCredito("0");
-      this.conOtrosGastos("0");
-      this.conCualesGastos("No aplica");
-      this.conPagoHipoteca("SI");
-      this.conValorComercialVivienda("120000000");
-      this.conDondeVivir("Bogota");
-      this.conComprarVivienda("NO");
-      this.conCupoExtraLibranza("SI");
-      this.conUsoCredito("Deudas");
-      this.conRazonOtros("");
+        this.conSalarioFijo("4500000");
+        this.conSalarioVariableComisiones("0");
+        this.conArrendamientoIngresos("500000");
+        this.conRendimientosFinancieros("0");
+        this.conHonorarios("0");
+        this.conOtrosIngresos("0");
+        this.conCualesIngresos("No aplica");
+        this.conArriendosEgresos("800000");
+        this.conGastosPersonalesFamiliares("1000000");
+        this.conPrestamosDiferentesFinsocial("0");
+        this.conDeduccionesNomina("0");
+        this.conTarjetasCredito("0");
+        this.conOtrosGastos("0");
+        this.conPagoHipoteca("SI");
+        this.conValorComercialVivienda("120000000");
+        this.conDondeVivir("Bogota");
+        this.conComprarVivienda("NO");
+        this.conCupoExtraLibranza("SI");
+        this.conUsoCredito("Deudas");
         return this.build();
-    }
-
-    private InformacionFinancieraBuilder conCualesGastos(String cualesGastos) {
-        this.cualesGastos = cualesGastos;
-        return this;
     }
 
     private InformacionFinancieraBuilder conDondeVivir(String dondeVivir) {
@@ -187,11 +171,6 @@ public class InformacionFinancieraBuilder implements Builder<InformacionFinancie
 
     private InformacionFinancieraBuilder conUsoCredito(String usoCredito) {
         this.usoCredito = usoCredito;
-        return this;
-    }
-
-    private InformacionFinancieraBuilder conRazonOtros(String razonOtros) {
-        this.razonOtros = razonOtros;
         return this;
     }
 
@@ -268,9 +247,5 @@ public class InformacionFinancieraBuilder implements Builder<InformacionFinancie
     private InformacionFinancieraBuilder conSalarioFijo(String salarioFijo) {
         this.salarioFijo = salarioFijo;
         return this;
-    }
-
-    public String getCualesGastos() {
-        return cualesGastos;
     }
 }

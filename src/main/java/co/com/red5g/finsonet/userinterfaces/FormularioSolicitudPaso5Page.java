@@ -32,7 +32,6 @@ public final class FormularioSolicitudPaso5Page {
     public static final Target FILTRO_LUGARES= Target.the("el lugar de expedicion").located(
        By.xpath("//div[contains(@class,'disabled input-form open')]//input[@class='form-control requerir']"));
     public static final Target FILTRO_LUGAR_NACIMIENTO= Target.the("el lugar de expedicion").located(By.xpath("//button[@data-id='txtLugarNacCon']//following-sibling::div//input"));
-    public static final Target BTN_REGRESAR = Target.the("el boton de regresar").located(By.id("btnRegresar_5"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_5"));
 
     private FormularioSolicitudPaso5Page() {
