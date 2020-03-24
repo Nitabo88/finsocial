@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_ESTADO_CDAS_GESTION_LLAMADA;
-import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.TXT_BUSCAR_CDAS;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_BUSQUEDA;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.TXT_VALOR_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
@@ -32,8 +32,8 @@ public class SeValida implements Task {
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(IMG_FINSONET),
             Click.on(LNK_CDAS),
-            Enter.theValue(numeroCredito).into(TXT_BUSCAR_CDAS),
-            Click.on(BTN_ESTADO_CDAS_GESTION_LLAMADA)
+            Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
+            Click.on(BTN_BUSQUEDA)
         );
     }
 }

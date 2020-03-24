@@ -23,7 +23,6 @@ public class SeProcesa implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = theActorInTheSpotlight().recall(NUMERO_CREDITO);;
-
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(LST_FILA_LLAMADAS.of(numeroCredito), isVisible()),
                 JavaScriptClick.on(LST_FILA_LLAMADAS.of(numeroCredito)),

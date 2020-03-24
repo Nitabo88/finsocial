@@ -1,23 +1,27 @@
 package co.com.red5g.finsonet.questions;
 
+import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ACCION;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.FRM_REQUISITOS_GIRO;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.targets.Target;
+import net.serenitybdd.screenplay.actions.Click;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.CHK_ID_LLAMADAS;
+public class ValidarLlamada implements Question<String> {
 
-public class ValidarLlamada implements Question<Boolean> {
+    private static final String LLAMADA = "Llamada";
 
     public static ValidarLlamada estaConfirmada() {
         return new ValidarLlamada();
     }
 
     @Override
-    public Boolean answeredBy(final Actor actor) {
+    public String answeredBy(final Actor actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
-
-        final Target lstFila = CHK_ID_LLAMADAS.of(numeroCredito);
-        return lstFila.resolveFor(actor).isDisabled();
+        actor.attemptsTo(
+            Click.on(BTN_ACCION.of(numeroCredito))
+        );
+        return FRM_REQUISITOS_GIRO.of(LLAMADA).resolveFor(actor).getText();
     }
 }

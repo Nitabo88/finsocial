@@ -1,5 +1,11 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
+
+import co.com.red5g.finsonet.questions.ValidarLlamada;
 import co.com.red5g.finsonet.tasks.AsignacionLlamadas;
 import co.com.red5g.finsonet.tasks.SeProcesa;
 import co.com.red5g.finsonet.tasks.SeValida;
@@ -9,10 +15,9 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-
 public class LlamadasStepDefinition {
+
+    private static final String ESTADO_COMPLETO = "Visto bueno";
 
     @Dado("que un (.*) quiere asignar una llamada para el credito")
     public void queUnAsesorQuiereAsignarUnaLlamadaParaElCredito(String nombreActor) {
@@ -39,9 +44,9 @@ public class LlamadasStepDefinition {
     @Entonces("^la gestion quedara confirmado$")
     public void elCreditoQuedaraConfirmado() {
         theActorInTheSpotlight().attemptsTo(
-                SeValida.queLaLlamada()
+            SeValida.queLaLlamada()
         );
-      /*  theActorInTheSpotlight().should
-                (seeThat(ValidarLlamada.estaConfirmada()).orComplainWith(NoSeMarcaLaLlamadaException.class,MENSAJE_LLAMADA));*/
+        theActorInTheSpotlight().should
+            (seeThat(ValidarLlamada.estaConfirmada(), containsString(ESTADO_COMPLETO)));
     }
 }
