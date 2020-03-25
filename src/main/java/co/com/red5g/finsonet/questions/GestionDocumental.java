@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.questions;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.LBL_GESTION_DOCUMENTAL;
-import static co.com.red5g.finsonet.userinterfaces.CdasPage.RBN_CRITERIO_BUSQUEDA;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.RDB_CRITERIO_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.TXT_VALOR_BUSQUEDA;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
@@ -25,7 +25,7 @@ public class GestionDocumental implements Question<String> {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     getProxiedDriver().navigate().refresh();
     actor.attemptsTo(
-        JavaScriptClick.on(RBN_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
+        JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
         JavaScriptClick.on(BTN_BUSQUEDA));
     return LBL_GESTION_DOCUMENTAL.of(numeroCredito).resolveFor(actor).getText();

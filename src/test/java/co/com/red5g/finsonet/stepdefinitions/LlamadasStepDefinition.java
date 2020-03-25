@@ -22,22 +22,21 @@ public class LlamadasStepDefinition {
     @Dado("que un (.*) quiere asignar una llamada para el credito")
     public void queUnAsesorQuiereAsignarUnaLlamadaParaElCredito(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
-                Ubicarse.enLlamada()
+            Ubicarse.enLlamada()
         );
     }
 
     @Cuando("el realiza el proceso de asignacion")
     public void elRealizaElProcesoDeAsignacion() {
         theActorInTheSpotlight().attemptsTo(
-                AsignacionLlamadas.asignarllamada()
+            AsignacionLlamadas.asignarllamada()
         );
-
     }
 
     @Y("^procesa la llamada$")
     public void procesaLaLlamada() {
         theActorInTheSpotlight().attemptsTo(
-                SeProcesa.laLlamada()
+            SeProcesa.laLlamada()
         );
     }
 

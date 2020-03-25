@@ -4,7 +4,6 @@ import static co.com.red5g.finsonet.models.builders.AccionCdasBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.questions.GestionDocumental;
@@ -15,6 +14,11 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
 public class CdasStepDefinition {
+
+    @Dado("^que (.*) esta en el modulo de CDAS con la informacion previa completa$")
+    public void ingresarModulaCdasCompleto(String actor) {
+        theActorCalled(actor).attemptsTo(Ingresa.alModuloCDASCompleto());
+    }
 
     @Dado("^que (.*) esta en el modulo de CDAS$")
     public void ingresarModuloCdas(String actor) {

@@ -18,9 +18,9 @@ import co.com.red5g.finsonet.interacions.Subir;
 import co.com.red5g.finsonet.questions.QueAparece;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Realizar;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import co.com.red5g.finsonet.tasks.factories.Realiza;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -34,7 +34,7 @@ public class ChequeoDocumentosStepDefinition {
   @Dado("^que (.*) esta en el paso de chequeo de un documentos$")
   public void ingresarChequeo(final String actor) {
     theActorCalled(actor).attemptsTo(
-        Realizar.unChequeoDeDocumento()
+        Realiza.unChequeoDeDocumento()
     );
   }
 

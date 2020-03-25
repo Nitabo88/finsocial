@@ -4,10 +4,10 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
 
 public class LlamadasPage {
-    public static final Target MNU_HAMBURGER = Target.the("menu de acceso modulo llamadas").located(By.id("hamburger"));
+
     public static final Target CHK_ID_LLAMADAS = Target.the("menu de acceso modulo llamadas").locatedBy("//input[@id='chk-{0}']");
     public static final Target BTN_ASIGNACION_LIBRANZA = Target.the("boton de asignacion credito libranza").located(By.id("botonLibranza"));
-    public static final Target BTN_ASIGNACION_HUY= Target.the("boton de asignacion credito huy").located(By.id("botonHuy"));
+    public static final Target BTN_ASIGNACION_HUY = Target.the("boton de asignacion credito huy").located(By.id("botonHuy"));
     public static final Target BTN_CONFIRMAR_LLAMADAS = Target.the("menu de acceso modulo llamadas").locatedBy("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']");
     public static final Target LST_FILA_LLAMADAS = Target.the("la fila de llamadas asignadas").locatedBy("//tr[@id='listLlamadas-{0}']//span[@class='fas fa-phone-alt']");
     public static final Target CHK_RESPUESTA_CUATRO = Target.the("Seleccionar la cuarta pregunta").locatedBy("//input[@id='respuesta-1-{0}']");
@@ -16,12 +16,8 @@ public class LlamadasPage {
     public static final Target BTN_CERTIFICACION_LLAMADAS = Target.the("Campo de certificación de la llamada").locatedBy("//button[text()='Regresar']");
     public static final Target BTN_ADVERTENCIA_GUARDAR = Target.the("Campo de advertencia para guardar").locatedBy("//button[text()='Aceptar']");
     public static final Target BTN_GUARDAR_GESTION = Target.the("Campo para guardar la gestión").locatedBy("//button[@onclick='marcaLlamadaExitosa({0}, 1);']");
-    public static final Target TXT_BUSCAR_CDAS = Target.the("input CDAS").located(By.id("txtParBusqueda"));
-    public static final Target BTN_ESTADO_CDAS_GESTION_LLAMADA = Target.the("BOTON DETALLES LLAMADAS EN  CDAS").locatedBy(("//button[@data-id='84403']"));
 
-
-
-
-
-
+    private LlamadasPage() {
+        throw new IllegalStateException("Utility class");
+    }
 }
