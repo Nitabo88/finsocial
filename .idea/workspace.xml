@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad1eb4cf-fdb1-4e04-a176-770ec44e0703" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10.3/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +38,24 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="google-test-suite" type="f1a62948:ProjectNode" />
+                <item name="sqa_code" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="google-test-suite" type="f1a62948:ProjectNode" />
+                <item name="sqa_code" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="google-test-suite" type="f1a62948:ProjectNode" />
+                <item name="sqa_code" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sqa_code" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="help" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -50,290 +64,71 @@
       </state>
     </system>
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="google-test-suite" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Substep Definition" />
-        <option value="Kotlin File" />
-        <option value="Substep Feature" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ZhHUPsg8VePxJNozm2L3l4pIFl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\PROGRAMADOR_5\IdeaProjects\sqa_code\red5g-automatizacion\src\main\java\co\com\red5g\userinterfaces" />
-      <recent name="C:\Users\PROGRAMADOR_5\IdeaProjects\sqa_code\red5g-automatizacion\src\main\java\co\com\red5g\task" />
-      <recent name="C:\Users\PROGRAMADOR_5\IdeaProjects\sqa_code\red5g-automatizacion\src\main\java\co\com\red5g\question" />
-      <recent name="C:\Users\PROGRAMADOR_5\IdeaProjects\sqa_code\red5g-automatizacion\src\test\java\co\com\red5g\stepdefinitions" />
-      <recent name="C:\Users\PROGRAMADOR_5\IdeaProjects\sqa_code\red5g-automatizacion\src\test\resources\features" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="co.com.red5g.Interaction" />
-    </key>
-  </component>
-  <component name="RunManager" selected="JUnit.ConfirmRunner">
-    <configuration name="AprobRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="google-test-suite.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="co.com.red5g.runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="co.com.red5g.runners" />
-      <option name="MAIN_CLASS_NAME" value="co.com.red5g.runners.AprobRunner" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChequeoRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="google-test-suite.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="co.com.red5g.runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="co.com.red5g.runners" />
-      <option name="MAIN_CLASS_NAME" value="co.com.red5g.runners.ChequeoRunner" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfirmRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="google-test-suite.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="co.com.red5g.runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="co.com.red5g.runners" />
-      <option name="MAIN_CLASS_NAME" value="co.com.red5g.runners.ConfirmRunner" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrigRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="google-test-suite.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="co.com.red5g.runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="co.com.red5g.runners" />
-      <option name="MAIN_CLASS_NAME" value="co.com.red5g.runners.OrigRunner" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TesoRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="google-test-suite.test" />
-      <shortenClasspath name="CLASSPATH_FILE" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="co.com.red5g.runners.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="co.com.red5g.runners" />
-      <option name="MAIN_CLASS_NAME" value="co.com.red5g.runners.TesoRunner" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <shortenClasspath name="NONE" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="JUnit.AprobRunner" />
-      <item itemvalue="JUnit.OrigRunner" />
-      <item itemvalue="JUnit.TesoRunner" />
-      <item itemvalue="JUnit.ChequeoRunner" />
-      <item itemvalue="JUnit.ConfirmRunner" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.ConfirmRunner" />
-        <item itemvalue="JUnit.ChequeoRunner" />
-        <item itemvalue="JUnit.AprobRunner" />
-        <item itemvalue="JUnit.TesoRunner" />
-        <item itemvalue="JUnit.OrigRunner" />
-      </list>
-    </recent_temporary>
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ad1eb4cf-fdb1-4e04-a176-770ec44e0703" name="Default Changelist" comment="" />
-      <created>1562426317338</created>
+      <changelist id="cafe92dc-523e-44a2-92b8-741e4fa7bcfb" name="Default Changelist" comment="" />
+      <created>1563554556977</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1562426317338</updated>
-      <workItem from="1583876400231" duration="547000" />
-      <workItem from="1585284422035" duration="99000" />
+      <updated>1563554556977</updated>
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 08m 14s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 11m 58s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 12m 26s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 13m 18s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 19m 33s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 20m 02s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 31m 28s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 32m 06s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 38m 18s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConfirmRunner - 2019.08.13 at 17h 44m 06s.xml">
-      <configuration name="ConfirmRunner" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/.." />
-    </ignored-roots>
-  </component>
   <component name="WindowStateProjectService">
-    <state x="585" y="113" key="CommitChangelistDialog2" timestamp="1583876930024">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1585155304632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583876930024" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1585284516620">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1585155304632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585284516620" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1585284540608">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1585155304632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585284540608" />
-    <state x="672" y="236" key="MultipleFileMergeDialog" timestamp="1585284540613">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1585155304632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="672" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585284540613" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1585284520154">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585155304633">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585284520154" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/co/com/red5g/runners/TesoRunner.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304633" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585155304632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585155304632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585155304632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585155304632" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1585155117283">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585155117283" />
+    <state x="672" y="236" key="MultipleFileMergeDialog" timestamp="1585155117289">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585155117289" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585155359866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585155359866" />
   </component>
 </project>
