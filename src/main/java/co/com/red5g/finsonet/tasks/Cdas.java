@@ -12,7 +12,7 @@ import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_CERRAR;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_DETALLE_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_REGISTRAR;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.LST_SELECCIONAR_GESTION;
-import static co.com.red5g.finsonet.userinterfaces.CdasPage.RBN_CRITERIO_BUSQUEDA;
+import static co.com.red5g.finsonet.userinterfaces.CdasPage.RDB_CRITERIO_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.TXT_MOTIVO_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.TXT_VALOR_BUSQUEDA;
 
@@ -38,7 +38,7 @@ public class Cdas implements Task {
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        JavaScriptClick.on(RBN_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
+        JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
         JavaScriptClick.on(BTN_BUSQUEDA),
         JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
