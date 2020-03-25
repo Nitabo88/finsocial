@@ -7,6 +7,5 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)@CucumberOptions(features = "src/test/resources/features/cdas.feature", glue = "co.com.red5g.finsonet.stepdefinitions", tags = "@Completo",snippets = SnippetType.CAMELCASE)
 
-
 public class CdasRunner {
 }
