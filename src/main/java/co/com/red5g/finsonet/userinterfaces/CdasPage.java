@@ -32,6 +32,8 @@ public class CdasPage {
         .locatedBy("//div[@id='swal2-content']//p[contains(.,'{0}')]//following-sibling::p");
     public static final Target BTN_ACCION = Target.the("el boton de accion")
         .locatedBy("//button[@data-id='{0}']");
+    public static final Target BTN_ATRAS = Target.the("el boton atras")
+        .locatedBy("#btn-back");
 
 
     private CdasPage() {

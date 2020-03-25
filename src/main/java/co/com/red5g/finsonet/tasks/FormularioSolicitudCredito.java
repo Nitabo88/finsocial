@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
+import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.models.builders.ActividadLaboralBuilder.es;
 import static co.com.red5g.finsonet.models.builders.DescripcionActivosBuilder.por;
 import static co.com.red5g.finsonet.models.builders.DocumentoRequeridosBuilder.los;
@@ -58,6 +59,7 @@ public class FormularioSolicitudCredito implements Task {
             Click.on(BTN_ENCUESTA.of(VISITA_COLEGIO)),
             Click.on(BTN_ENVIAR_ENCUESTA),
             Click.on(BTN_ACEPTAR_ENCUESTA),
+            cerrarPestana(),
             cambiarPestana()
         );
     }
