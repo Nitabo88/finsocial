@@ -41,8 +41,7 @@ public class VetadosStepDefinition {
     @Cuando("el asesor asigne un veto interno a un cliente")
     public void asignarVetoInterno() {
         theActorInTheSpotlight().attemptsTo
-                (Diligencia.ElVetoInterno(a().unCliente())
-                );
+            (Diligencia.elVetoInterno(a().unCliente()));
     }
 
     @Entonces("el asesor deberia ver al cliente en el listado de vetados")
