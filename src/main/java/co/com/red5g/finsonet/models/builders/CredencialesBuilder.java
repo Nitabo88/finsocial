@@ -1,17 +1,19 @@
 package co.com.red5g.finsonet.models.builders;
 
-import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_APROBACION_CREDITOS;
 import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_DOCUMENTOS;
 import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_FINSOCIAL;
 
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.utils.Builder;
 
-public final class CredencialesBuilder implements Builder<Credenciales> {
+public class CredencialesBuilder implements Builder<Credenciales> {
 
     private String usuario;
     private String contrasena;
     private String codigo;
+    private String celular;
+    private String email;
+    private String nueva_contrasena;
 
     @Override
     public Credenciales build() {
@@ -19,69 +21,93 @@ public final class CredencialesBuilder implements Builder<Credenciales> {
     }
 
     private CredencialesBuilder() {
-      this.usuario = "";
-      this.contrasena = "";
-      this.codigo = "";
+        usuario = "";
+        contrasena = "";
+        codigo = "";
+        celular = "";
+        email = "";
+        nueva_contrasena = "";
     }
 
-    public static CredencialesBuilder de(){
-       return new CredencialesBuilder();
+    public static CredencialesBuilder de() {
+        return new CredencialesBuilder();
     }
 
-    private CredencialesBuilder conUsuario(String usuario) {
+    private CredencialesBuilder conCelular(final String celular) {
+        this.celular = celular;
+        return this;
+    }
+
+    private CredencialesBuilder conEmail(final String email) {
+        this.email = email;
+        return this;
+    }
+
+    private CredencialesBuilder conNuevaContrasena(final String nueva_contrasena) {
+        this.nueva_contrasena = nueva_contrasena;
+        return this;
+    }
+
+    private CredencialesBuilder conUsuario(final String usuario) {
         this.usuario = usuario;
         return this;
     }
 
-    private CredencialesBuilder conContrasena(String contrasena) {
+    private CredencialesBuilder conContrasena(final String contrasena) {
         this.contrasena = contrasena;
         return this;
     }
 
-    private CredencialesBuilder conCodigo(String codigo) {
+    private CredencialesBuilder conCodigo(final String codigo) {
         this.codigo = codigo;
         return this;
     }
 
     public String getUsuario() {
-        return usuario;
+        return this.usuario;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNueva_contrasena() {
+        return nueva_contrasena;
     }
 
     public String getContrasena() {
-        return contrasena;
+        return this.contrasena;
     }
 
     public String getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 
     public Credenciales unUsuarioBasico() {
-      this.conUsuario(USUARIO_FINSOCIAL.getUsuario());
-      this.conContrasena(USUARIO_FINSOCIAL.getContrasena());
-      this.conCodigo(USUARIO_FINSOCIAL.getCodigo());
-        return this.build();
+        conUsuario(USUARIO_FINSOCIAL.getUsuario());
+        conContrasena(USUARIO_FINSOCIAL.getContrasena());
+        conCodigo(USUARIO_FINSOCIAL.getCodigo());
+        conCelular("3045341711");
+        conEmail("sqa4@finsocial.co");
+        conNuevaContrasena("Nicolas32@");
+        return build();
     }
 
     public Credenciales unUsuarioDeDocumentacion() {
-      this.conUsuario(USUARIO_DOCUMENTOS.getUsuario());
-      this.conContrasena(USUARIO_DOCUMENTOS.getContrasena());
-      this.conCodigo(USUARIO_DOCUMENTOS.getCodigo());
-        return this.build();
+        conUsuario(USUARIO_DOCUMENTOS.getUsuario());
+        conContrasena(USUARIO_DOCUMENTOS.getContrasena());
+        conCodigo(USUARIO_DOCUMENTOS.getCodigo());
+        return build();
     }
 
-  public Credenciales unUsuarioDeAprobacionCreditos() {
-    this.conUsuario(USUARIO_APROBACION_CREDITOS.getUsuario());
-    this.conContrasena(USUARIO_APROBACION_CREDITOS.getContrasena());
-    this.conCodigo(USUARIO_APROBACION_CREDITOS.getCodigo());
-    return this.build();
-  }
-
-
-
-    public Credenciales unUsuarioBasico(String usuario, String contrasena, String codigo) {
-      this.conUsuario(usuario);
-      this.conContrasena(contrasena);
-      this.conCodigo(codigo);
-        return this.build();
+    public Credenciales unUsuarioBasico(final String usuario, final String contrasena, final String codigo) {
+        conUsuario(usuario);
+        conContrasena(contrasena);
+        conCodigo(codigo);
+        return build();
     }
 }

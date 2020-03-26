@@ -6,22 +6,40 @@ public class Credenciales {
     private final String usuario;
     private final String contrasena;
     private final String codigo;
+    private String celular;
+    private String email;
+    private String nueva_contrasena;
 
-    public Credenciales(CredencialesBuilder credencialesBuilder) {
-      this.usuario = credencialesBuilder.getUsuario();
-      this.contrasena = credencialesBuilder.getContrasena();
-      this.codigo = credencialesBuilder.getCodigo();
+    public Credenciales(final CredencialesBuilder credencialesBuilder) {
+      usuario = credencialesBuilder.getUsuario();
+      contrasena = credencialesBuilder.getContrasena();
+      codigo = credencialesBuilder.getCodigo();
+      celular = credencialesBuilder.getCelular();
+      email = credencialesBuilder.getEmail();
+      nueva_contrasena = credencialesBuilder.getNueva_contrasena();
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNueva_contrasena() {
+        return nueva_contrasena;
     }
 
     public String getUsuario() {
-        return usuario;
+        return this.usuario;
     }
 
     public String getContrasena() {
-        return contrasena;
+        return this.contrasena;
     }
 
     public String getCodigo() {
-        return codigo;
+        return this.codigo;
     }
 }
