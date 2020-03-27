@@ -7,11 +7,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/gestion_llamadas.feature",
+        features = "src/test/resources/features/llamadas.feature",
         glue = {"co.com.red5g.finsonet.stepdefinitions"},
         snippets = SnippetType.CAMELCASE
 )
-public class GestionLlamadasRunner {
+public class LlamadasRunner {
 }
 
 
