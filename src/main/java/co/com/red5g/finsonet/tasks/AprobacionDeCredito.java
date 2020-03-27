@@ -30,7 +30,7 @@ public class AprobacionDeCredito implements Task {
     actor.attemptsTo(
         JavaScriptClick.on(BTN_MI_CUENTA),
         JavaScriptClick.on(MNU_MI_CUENTA.of(AprobacionDeCredito.SALIR)),
-        Ingresa.lasCredenciales(de().unUsuarioBasico()),
+        Ingresa.lasCredenciales(de().unUsuarioDeAprobacionCreditos()),
         WaitUntil.the(LNK_ORIGINACION, isVisible()).forNoMoreThan(AprobacionDeCredito.TIEMPO).seconds(),
         JavaScriptClick.on(LNK_ORIGINACION),
         JavaScriptClick.on(MNU_ORIGINACION.of(AprobacionDeCredito.APROBACION_CREDITO)),

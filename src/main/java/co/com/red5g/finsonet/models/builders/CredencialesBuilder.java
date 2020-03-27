@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.models.builders;
 
+import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_APROBACION_CREDITOS;
 import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_DOCUMENTOS;
 import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_FINSOCIAL;
 
@@ -109,5 +110,12 @@ public class CredencialesBuilder implements Builder<Credenciales> {
         conContrasena(contrasena);
         conCodigo(codigo);
         return build();
+    }
+
+    public Credenciales unUsuarioDeAprobacionCreditos() {
+        this.conUsuario(USUARIO_APROBACION_CREDITOS.getUsuario());
+        this.conContrasena(USUARIO_APROBACION_CREDITOS.getContrasena());
+        this.conCodigo(USUARIO_APROBACION_CREDITOS.getCodigo());
+        return this.build();
     }
 }
