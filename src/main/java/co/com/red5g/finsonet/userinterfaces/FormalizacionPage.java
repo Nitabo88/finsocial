@@ -27,6 +27,7 @@ public final class FormalizacionPage {
   public static final Target BTN_SELECCIONAR_ARCHIVO = Target.the("El boton de seleccionar archivo").inIFrame(FRAME).located(By.xpath("//span[@class='buttonText']"));
   public static final Target LNK_FILE = Target.the("el input del archivo").inIFrame(FRAME).located(By.id("file"));
   public static final Target BTN_ENVIAR_FILE = Target.the("el boton enviar archivo").inIFrame(FRAME).located(By.name("submit"));
+  public static final Target BTN_CERRAR = Target.the("el boton enviar archivo").inIFrame(FRAME).located(By.xpath("//a[@class='fancybox-item fancybox-close']"));
   public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//i[contains(@class,'fa-upload')]"));
 
   private FormalizacionPage() {

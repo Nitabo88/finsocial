@@ -12,12 +12,6 @@ public class CdasPage {
         .locatedBy("#btn-parametro-busqueda");
     public static final Target BTN_DETALLE_GESTION = Target.the("el boton del detalle de gestion")
         .locatedBy("#btn-ver-gestion-{0}");
-    public static final Target BTN_ACCION_VOBO = Target.the("el boton de VoBo")
-        .located(By.xpath("//tr[@id='gr-2']//i[@class='fas fa-thumbs-up']"));
-    public static final Target BTN_ACCION_DOCUMENTACION = Target.the("el boton de documentacion")
-        .located(By.xpath("//tr[@id='gr-4']//i[@class='fas fa-thumbs-up']"));
-    public static final Target BTN_ACCION_CERTIFICACIONES = Target.the("el boton de certificaciones")
-        .located(By.xpath("//tr[@id='gr-5']//i[@class='fas fa-thumbs-up']"));
     public static final Target LST_SELECCIONAR_GESTION = Target.the("la lista de seleccionar gestion")
         .locatedBy("#txtTipoGestion");
     public static final Target TXT_MOTIVO_GESTION = Target.the("el motivo de gestion")
@@ -34,6 +28,8 @@ public class CdasPage {
         .locatedBy("//button[@data-id='{0}']");
     public static final Target BTN_ATRAS = Target.the("el boton atras")
         .locatedBy("#btn-back");
+    public static final Target BTN_ACCION_GESTION = Target.the("el boton accion gestion")
+        .located(By.className("fas fa-thumbs-up"));
 
 
     private CdasPage() {
