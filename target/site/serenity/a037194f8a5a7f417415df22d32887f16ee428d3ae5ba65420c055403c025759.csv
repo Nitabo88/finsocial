@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login Finsonet","Ingreso exitoso de un usuario a la pagina finsonet","SUCCESS","2020-03-26T13:02:00.389-05:00[America/Bogota]","0.0","20.24"
+"Login Finsonet","Loguin Alternativo","SUCCESS","2020-03-26T13:02:20.632-05:00[America/Bogota]","0.0","20.3"

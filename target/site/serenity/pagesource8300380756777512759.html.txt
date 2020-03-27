@@ -1,0 +1,10 @@
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body style="overflow-x: hidden;">
+<h3 class="item-text" style="text-align: left;padding-left: 3rem;">Archivo adicionado con éxito.</h3>
+
+</body></html>

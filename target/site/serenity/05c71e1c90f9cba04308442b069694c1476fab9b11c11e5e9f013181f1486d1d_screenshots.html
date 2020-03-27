@@ -1,0 +1,1160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Pruebas FINSONET</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="1743b4a9ce606f9b4d673aea9884b36d362847203039d94ba63a25bf283fa1e1.html">Cdas</a></span>
+                > <span class="truncate-60"><a
+                    href="05c71e1c90f9cba04308442b069694c1476fab9b11c11e5e9f013181f1486d1d.html">Cdas - Excepcion </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 26-03-2020 22:48</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Cdas </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como asesor de finsonet<br />
+Quiero diligenciar los cdas del cliente<br />
+Para verificar que queden en el estado correcto
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">Cdas - Excepcion
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Assertion error: Expected: 'INCOMPLETO' but: was 'COMPLETO'</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>co.com.red5g.finsonet.stepdefinitions.CdasStepDefinition.verificarEstadoCompleto(CdasStepDefinition.java:40)<br />✽.el podra ver el credito en estado INCOMPLETO(src/test/resources/features/cdas.feature:21)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource7166873723540673600.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Dado que un asesor esta en el modulo de CDAS con la informacion previa completa" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor modulo cdas completo" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor formalizacion" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor incorporacion" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor aprobacion creditos" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor confirmacion" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor solicitud credito" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor home" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor abre la pagina" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" un asesor opens the Login finsonet page" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor informacion login" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" un asesor enters 'ochinchilla' into usuario" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" un asesor enters 'ochinchilla' into usuario (completed)" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" un asesor enters 'Nicolas32@' into contrase&ntilde;a" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" un asesor enters 'Nicolas32@' into contrase&ntilde;a (completed)" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" un asesor clicks on el boton iniciar sesion" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" un asesor clicks on el boton iniciar sesion (completed)" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" un asesor enters '123456' into codigo" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" un asesor enters '123456' into codigo (completed)" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" un asesor clicks on el boton enviar" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el boton enviar (completed)" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" Un asesor nuevo credito" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el link comercial" width="1920"/>
+                <img src="a841683da64be370323797a647619f7fa2ddc5ff49634f55c66fb6d075165ad0.png" title=" un asesor clicks on el link comercial (completed)" width="1920"/>
+                <img src="a841683da64be370323797a647619f7fa2ddc5ff49634f55c66fb6d075165ad0.png" title=" un asesor clicks on el link nuevo_credito" width="1920"/>
+                <img src="aca4132186170f300460cdb4db2e0d6f871c5a0867919b66d9d764f38315f5c8.png" title=" un asesor clicks on el link nuevo_credito (completed)" width="1920"/>
+                <img src="aca4132186170f300460cdb4db2e0d6f871c5a0867919b66d9d764f38315f5c8.png" title=" Un asesor informacion credito" width="1920"/>
+                <img src="aca4132186170f300460cdb4db2e0d6f871c5a0867919b66d9d764f38315f5c8.png" title=" un asesor enters '10000060' then hits [ENTER] into documento" width="1920"/>
+                <img src="a407f2ba8a906adfb08b380ba38a47fd60eab5edd99ce1790cbba69dcfb2c5cd.png" title=" un asesor enters '10000060' then hits [ENTER] into documento (completed)" width="1920"/>
+                <img src="3d5d09825d90a9b62cafad81f81787b04dc2166e8ef09baff185b0fd3ab7e934.png" title=" un asesor enters '1200000' then hits [TAB] into el valor de la cuota" width="1920"/>
+                <img src="bb13506ae266bc26d5f9c4afc49a2f5c62c827debd804c359beadd08fbab2d90.png" title=" un asesor enters '1200000' then hits [TAB] into el valor de la cuota (completed)" width="1920"/>
+                <img src="bb13506ae266bc26d5f9c4afc49a2f5c62c827debd804c359beadd08fbab2d90.png" title=" un asesor enters '48' into el numero de cuotas" width="1920"/>
+                <img src="c99cdff6331adfb71f2784601c818af5bca2eabcfdaa71ef4670e6f54316c35b.png" title=" un asesor enters '48' into el numero de cuotas (completed)" width="1920"/>
+                <img src="813cb9731dc9ca4f483aae87b624cd0895f11ad27abe9e4fca7ab58bb4ab2d0f.png" title=" un asesor clicks on el boton crear credito" width="1920"/>
+                <img src="4469b27bd25921c4a33b5ec0035aaf0e27551403413d28e5b70f6f5fcbb9ed33.png" title=" un asesor clicks on el boton crear credito (completed)" width="1920"/>
+                <img src="2247f6790fe2ca76a3cae5cebe903ef20e2ef0aef606528e08769eeade592aa5.png" title=" un asesor clicks on el boton OK" width="1920"/>
+                <img src="bfd040262f4f386a73a8f0e8c9a8d48a20109dff450503070dd409583411efd1.png" title=" un asesor clicks on el boton OK (completed)" width="1920"/>
+                <img src="bfd040262f4f386a73a8f0e8c9a8d48a20109dff450503070dd409583411efd1.png" title=" Un asesor ingresar" width="1920"/>
+                <img src="bfd040262f4f386a73a8f0e8c9a8d48a20109dff450503070dd409583411efd1.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //td[contains(.,'10000060')]//parent::tr[contains(.,'2020-03-26 22:49')]//child::td]" width="1920"/>
+                <img src="1930519ba49425c5179b15c1fe2de29af8ebc18627733a3abc5c8fac0cd9772b.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //td[contains(.,'10000060')]//parent::tr[contains(.,'2020-03-26 22:49')]//child::td] (completed)" width="1920"/>
+                <img src="1930519ba49425c5179b15c1fe2de29af8ebc18627733a3abc5c8fac0cd9772b.png" title=" Un asesor ingresar (completed)" width="1920"/>
+                <img src="1930519ba49425c5179b15c1fe2de29af8ebc18627733a3abc5c8fac0cd9772b.png" title=" Un asesor formulario solicitud credito" width="1920"/>
+                <img src="1930519ba49425c5179b15c1fe2de29af8ebc18627733a3abc5c8fac0cd9772b.png" title=" Un asesor formulario documentos requeridos" width="1920"/>
+                <img src="1930519ba49425c5179b15c1fe2de29af8ebc18627733a3abc5c8fac0cd9772b.png" title=" un asesor clicks on Selecciona la opcion" width="1920"/>
+                <img src="4621551b4c0004058114522dd8e197c5e6a15d6f3af9f0f8a94f377a4d215ca3.png" title=" un asesor clicks on Selecciona la opcion (completed)" width="1920"/>
+                <img src="4621551b4c0004058114522dd8e197c5e6a15d6f3af9f0f8a94f377a4d215ca3.png" title=" un asesor clicks on seleccionar la ciudad" width="1920"/>
+                <img src="8b71569389b10869e94ed1d7f8d32a1c205c37ca931167d0cde82b07a385090b.png" title=" un asesor clicks on seleccionar la ciudad (completed)" width="1920"/>
+                <img src="8b71569389b10869e94ed1d7f8d32a1c205c37ca931167d0cde82b07a385090b.png" title=" un asesor enters 'MEDELLIN - ANTIOQUIA' then hits [ENTER] into lista de ciudades" width="1920"/>
+                <img src="16d69cff7f71ed8df4acaeaad9ac865b26cc63fd25c29d6c517f2eeb800d73d8.png" title=" un asesor enters 'MEDELLIN - ANTIOQUIA' then hits [ENTER] into lista de ciudades (completed)" width="1920"/>
+                <img src="16d69cff7f71ed8df4acaeaad9ac865b26cc63fd25c29d6c517f2eeb800d73d8.png" title=" un asesor clicks on seleccionar la agencia de vinculacion" width="1920"/>
+                <img src="9270effbb321088dbc273341f8d08a7cd588cde4098534678823c8ea63e1f739.png" title=" un asesor clicks on seleccionar la agencia de vinculacion (completed)" width="1920"/>
+                <img src="9270effbb321088dbc273341f8d08a7cd588cde4098534678823c8ea63e1f739.png" title=" un asesor clicks on lista de las agencias de vinculacion" width="1920"/>
+                <img src="9e8ab0e14cebe929cb6214b056e0d28288ee4c5e9a08fb485dfbdad5a3f1dbde.png" title=" un asesor clicks on lista de las agencias de vinculacion (completed)" width="1920"/>
+                <img src="9e8ab0e14cebe929cb6214b056e0d28288ee4c5e9a08fb485dfbdad5a3f1dbde.png" title=" un asesor enters '660' into la calificacion" width="1920"/>
+                <img src="4973adb90c3bf0e7e4e2dc1638391f7c3afc26690ac591e0aa500ef5deac58e9.png" title=" un asesor enters '660' into la calificacion (completed)" width="1920"/>
+                <img src="4973adb90c3bf0e7e4e2dc1638391f7c3afc26690ac591e0aa500ef5deac58e9.png" title=" un asesor clicks on Selecciona la opcion" width="1920"/>
+                <img src="646a4a19e2477a77c9a4ed4f6363c380a26073482a8ab748ff2b11975e2ef372.png" title=" un asesor clicks on Selecciona la opcion (completed)" width="1920"/>
+                <img src="646a4a19e2477a77c9a4ed4f6363c380a26073482a8ab748ff2b11975e2ef372.png" title=" Un asesor formulario informacion prestamo" width="1920"/>
+                <img src="646a4a19e2477a77c9a4ed4f6363c380a26073482a8ab748ff2b11975e2ef372.png" title=" un asesor enters '7680000' into el monto" width="1920"/>
+                <img src="bd25e296d05dfe404bd9668861f86e4b7c8d2bfbae8f579039abca141c1e697a.png" title=" un asesor enters '7680000' into el monto (completed)" width="1920"/>
+                <img src="bd25e296d05dfe404bd9668861f86e4b7c8d2bfbae8f579039abca141c1e697a.png" title=" un asesor enters '160000' into el numero de cuotas" width="1920"/>
+                <img src="d2d79ba3a5259a13f6ee11acd8ba6a2e7c0c5213a2574d4f5155a01adf50eda4.png" title=" un asesor enters '160000' into el numero de cuotas (completed)" width="1920"/>
+                <img src="d2d79ba3a5259a13f6ee11acd8ba6a2e7c0c5213a2574d4f5155a01adf50eda4.png" title=" un asesor enters '48' into el plazo" width="1920"/>
+                <img src="22024ceb9e96fbcf6f743ad9b8f0fe06f4eb7d8199a9e5e777fc0f9439793dd8.png" title=" un asesor enters '48' into el plazo (completed)" width="1920"/>
+                <img src="22024ceb9e96fbcf6f743ad9b8f0fe06f4eb7d8199a9e5e777fc0f9439793dd8.png" title=" un asesor enters '2' into la tasa de interes" width="1920"/>
+                <img src="26a148aa02cd5bc3d96c2b378b2a1bfe63433546beb446c13b6a671af273f0e5.png" title=" un asesor enters '2' into la tasa de interes (completed)" width="1920"/>
+                <img src="26a148aa02cd5bc3d96c2b378b2a1bfe63433546beb446c13b6a671af273f0e5.png" title=" un asesor enters '23' into la tasa de mora" width="1920"/>
+                <img src="5faa5504c6697d2174ff75729a0556d983309b57f43106c202e5c5c2978a89fb.png" title=" un asesor enters '23' into la tasa de mora (completed)" width="1920"/>
+                <img src="5faa5504c6697d2174ff75729a0556d983309b57f43106c202e5c5c2978a89fb.png" title=" un asesor enters '23' into la tasa maxima legal vigente" width="1920"/>
+                <img src="7a21aa837fe2ef297c4b9fd743b873594eac7abde4d9d43923c3b44f70a42e50.png" title=" un asesor enters '23' into la tasa maxima legal vigente (completed)" width="1920"/>
+                <img src="7a21aa837fe2ef297c4b9fd743b873594eac7abde4d9d43923c3b44f70a42e50.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="135fbb6973eb9a44700ee7e984a6016d1b8c91d3e01e28722d32de9967f0a101.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="e162f9b61b360700ec5063676b7e135a5a47161a9421ff3a7e5c9a26dada4e12.png" title=" Un asesor formulario informacion personal" width="1920"/>
+                <img src="e162f9b61b360700ec5063676b7e135a5a47161a9421ff3a7e5c9a26dada4e12.png" title=" un asesor enters 'Morales' into el primer apellido" width="1920"/>
+                <img src="fd3335009d2c6e6826f22ae4062b3ff3aa2e132ac9d5a938800bb591b98fe311.png" title=" un asesor enters 'Morales' into el primer apellido (completed)" width="1920"/>
+                <img src="fd3335009d2c6e6826f22ae4062b3ff3aa2e132ac9d5a938800bb591b98fe311.png" title=" un asesor enters 'Carmona' into el segundo apellido" width="1920"/>
+                <img src="e6530d8119feec1ea5f2a47bd0509dfff92ab6a53bceafe1e04b00a72ebc27bb.png" title=" un asesor enters 'Carmona' into el segundo apellido (completed)" width="1920"/>
+                <img src="e6530d8119feec1ea5f2a47bd0509dfff92ab6a53bceafe1e04b00a72ebc27bb.png" title=" un asesor enters 'Maria' into el primer nombre" width="1920"/>
+                <img src="75fee4db3540e2752946099072f3bba5a7be0fffec206871d6842f557c8203df.png" title=" un asesor enters 'Maria' into el primer nombre (completed)" width="1920"/>
+                <img src="75fee4db3540e2752946099072f3bba5a7be0fffec206871d6842f557c8203df.png" title=" un asesor enters 'Jose' into el segundo nombre" width="1920"/>
+                <img src="01196b1b0264c95d393109987dcb9ea22e5425de22d4e975ed11f5cdb79570ec.png" title=" un asesor enters 'Jose' into el segundo nombre (completed)" width="1920"/>
+                <img src="01196b1b0264c95d393109987dcb9ea22e5425de22d4e975ed11f5cdb79570ec.png" title=" un asesor clicks on el tipo de documento" width="1920"/>
+                <img src="eefba23f99e95c7cad4b3993969d43616ec58a6ffce790add675d8998abf7f9c.png" title=" un asesor clicks on el tipo de documento (completed)" width="1920"/>
+                <img src="eefba23f99e95c7cad4b3993969d43616ec58a6ffce790add675d8998abf7f9c.png" title=" un asesor clicks on la tipo de documento" width="1920"/>
+                <img src="dace08d6ae916174487d8fabc4b72c2f235dbef5d9860f25f15fa8f8814d53d1.png" title=" un asesor clicks on la tipo de documento (completed)" width="1920"/>
+                <img src="dace08d6ae916174487d8fabc4b72c2f235dbef5d9860f25f15fa8f8814d53d1.png" title=" un asesor clicks on el lugar de expedicion" width="1920"/>
+                <img src="da34cb01a18db81da5d60b85c067ff5a93d260b1462f41a8c310e8efcea0d30c.png" title=" un asesor clicks on el lugar de expedicion (completed)" width="1920"/>
+                <img src="da34cb01a18db81da5d60b85c067ff5a93d260b1462f41a8c310e8efcea0d30c.png" title=" un asesor enters 'BOLIVAR - ANTIOQUIA' then hits [ENTER] into el lugar de expedicion" width="1920"/>
+                <img src="74519615885736c1c8dc34a6c035ca4cdd9d5caeb16a963fc1344aff3a9e601d.png" title=" un asesor enters 'BOLIVAR - ANTIOQUIA' then hits [ENTER] into el lugar de expedicion (completed)" width="1920"/>
+                <img src="74519615885736c1c8dc34a6c035ca4cdd9d5caeb16a963fc1344aff3a9e601d.png" title=" un asesor clicks on la fecha de expedicion" width="1920"/>
+                <img src="d3c7b19e85b6226159beb39cd8c82933353de8ae45c8288839e89dc476808f99.png" title=" un asesor clicks on la fecha de expedicion (completed)" width="1920"/>
+                <img src="d3c7b19e85b6226159beb39cd8c82933353de8ae45c8288839e89dc476808f99.png" title=" un asesor clicks on El boton del calendario en dias" width="1920"/>
+                <img src="8ed1d3ce9152ec4a288013623e3432b60d26303ef66686a67565e8d1da1f5801.png" title=" un asesor clicks on El boton del calendario en dias (completed)" width="1920"/>
+                <img src="8ed1d3ce9152ec4a288013623e3432b60d26303ef66686a67565e8d1da1f5801.png" title=" un asesor clicks on El boton del calendario de mes" width="1920"/>
+                <img src="d720427ed5542d4f04d80ee6873357cce723a6e1b6389f9d8416e1be04ab113d.png" title=" un asesor clicks on El boton del calendario de mes (completed)" width="1920"/>
+                <img src="7343f3841f49fdfb65728e6763e0f672df1543078fc09cd0dd80afcfa9f78cc9.png" title=" un asesor clicks on El calendario en a&ntilde;os" width="1920"/>
+                <img src="db144b408601aeed7c9a7b5cad9a36042af6f812ef7e77d82b8f05e80382c6fd.png" title=" un asesor clicks on El calendario en a&ntilde;os (completed)" width="1920"/>
+                <img src="db144b408601aeed7c9a7b5cad9a36042af6f812ef7e77d82b8f05e80382c6fd.png" title=" un asesor clicks on El calendario en meses" width="1920"/>
+                <img src="58f7862f8edb01028a61b268e3273dcb21276ebc4ffd0c59c69b90d8194fccf0.png" title=" un asesor clicks on El calendario en meses (completed)" width="1920"/>
+                <img src="58f7862f8edb01028a61b268e3273dcb21276ebc4ffd0c59c69b90d8194fccf0.png" title=" un asesor clicks on El calendario en dias" width="1920"/>
+                <img src="d5100500dab727182ac4a8e056ed8adde6877b3fdd50a942d73f80dd773c862d.png" title=" un asesor clicks on El calendario en dias (completed)" width="1920"/>
+                <img src="d5100500dab727182ac4a8e056ed8adde6877b3fdd50a942d73f80dd773c862d.png" title=" un asesor clicks on el sexo" width="1920"/>
+                <img src="b84d041279012a3d10fb07ea642c3ce08697b3aaa55ab7c0dff55dd39a28a408.png" title=" un asesor clicks on el sexo (completed)" width="1920"/>
+                <img src="b84d041279012a3d10fb07ea642c3ce08697b3aaa55ab7c0dff55dd39a28a408.png" title=" un asesor clicks on las opciones de lista" width="1920"/>
+                <img src="e4bf1546ab54e16355ecb28a840549e56e8f93d843d4d679511c4c34ea124a3c.png" title=" un asesor clicks on las opciones de lista (completed)" width="1920"/>
+                <img src="e4bf1546ab54e16355ecb28a840549e56e8f93d843d4d679511c4c34ea124a3c.png" title=" un asesor clicks on la fecha de nacimiento" width="1920"/>
+                <img src="e230a6eeeedd1c9a60e12379ce1db2fdb5ce5ef0ad92c2a5caeb6a6abedb0221.png" title=" un asesor clicks on la fecha de nacimiento (completed)" width="1920"/>
+                <img src="e230a6eeeedd1c9a60e12379ce1db2fdb5ce5ef0ad92c2a5caeb6a6abedb0221.png" title=" un asesor clicks on El boton del calendario en dias" width="1920"/>
+                <img src="2ef8af90aa2b3c3c30cb5a2f95ded7e20a21df546b46a4835306cdf339dcd858.png" title=" un asesor clicks on El boton del calendario en dias (completed)" width="1920"/>
+                <img src="2ef8af90aa2b3c3c30cb5a2f95ded7e20a21df546b46a4835306cdf339dcd858.png" title=" un asesor clicks on El boton del calendario de mes" width="1920"/>
+                <img src="6c4dbab46c7e41bd802548a4ed2591bb54d5a5b7c1766e34bfe62b89cab4abd5.png" title=" un asesor clicks on El boton del calendario de mes (completed)" width="1920"/>
+                <img src="92554acb3c097ebcb97467f75299a824630c61bdc758c6dc8ce55e61bb7fed12.png" title=" un asesor clicks on El calendario en a&ntilde;os" width="1920"/>
+                <img src="0a7ed0effc8b964af26a73eaa15271a8b208e406db8a0531c97ff7947c23d29e.png" title=" un asesor clicks on El calendario en a&ntilde;os (completed)" width="1920"/>
+                <img src="0a7ed0effc8b964af26a73eaa15271a8b208e406db8a0531c97ff7947c23d29e.png" title=" un asesor clicks on El calendario en meses" width="1920"/>
+                <img src="fea1c795f51b39ab38258a039e36f151717a33003ef390063e9614e025332f1c.png" title=" un asesor clicks on El calendario en meses (completed)" width="1920"/>
+                <img src="fea1c795f51b39ab38258a039e36f151717a33003ef390063e9614e025332f1c.png" title=" un asesor clicks on El calendario en dias" width="1920"/>
+                <img src="e02dad64a94dbd073b1036db9bfa2c8417cc7e5881a199213644534e344c5c9f.png" title=" un asesor clicks on El calendario en dias (completed)" width="1920"/>
+                <img src="e02dad64a94dbd073b1036db9bfa2c8417cc7e5881a199213644534e344c5c9f.png" title=" un asesor clicks on el lugar de nacimiento" width="1920"/>
+                <img src="9d7056bd873c4acccface74dc8172e24dc2f78dd25f68f922be49cdd2d814997.png" title=" un asesor clicks on el lugar de nacimiento (completed)" width="1920"/>
+                <img src="9d7056bd873c4acccface74dc8172e24dc2f78dd25f68f922be49cdd2d814997.png" title=" un asesor enters 'AMAGA - ANTIOQUIA' then hits [ENTER] into el lugar de expedicion" width="1920"/>
+                <img src="c12b9818d26c301ea0451f37b4403f646054dc2c83ae86b96bac77e558ecdc63.png" title=" un asesor enters 'AMAGA - ANTIOQUIA' then hits [ENTER] into el lugar de expedicion (completed)" width="1920"/>
+                <img src="c12b9818d26c301ea0451f37b4403f646054dc2c83ae86b96bac77e558ecdc63.png" title=" un asesor clicks on el estado civil" width="1920"/>
+                <img src="f613ada20867e2f4112830bcca01c681847b2752dc726075807646eda73d6544.png" title=" un asesor clicks on el estado civil (completed)" width="1920"/>
+                <img src="f613ada20867e2f4112830bcca01c681847b2752dc726075807646eda73d6544.png" title=" un asesor clicks on las opciones de lista" width="1920"/>
+                <img src="337a1cedc9e6df2508197bf6484773fefb016fe41206e33c39dc1967ce07da79.png" title=" un asesor clicks on las opciones de lista (completed)" width="1920"/>
+                <img src="337a1cedc9e6df2508197bf6484773fefb016fe41206e33c39dc1967ce07da79.png" title=" un asesor clicks on la ciudad y departamento" width="1920"/>
+                <img src="d31b53cb652538bda9da2519a8654b502a3bb7b5ce801de3003601eaef537cef.png" title=" un asesor clicks on la ciudad y departamento (completed)" width="1920"/>
+                <img src="d31b53cb652538bda9da2519a8654b502a3bb7b5ce801de3003601eaef537cef.png" title=" un asesor enters 'MEDELLIN - ANTIOQUIA' then hits [ENTER] into el lugar de expedicion" width="1920"/>
+                <img src="cc16effea5e60c9a4b31ff2e8c820bacf2cc4befbbd0a568ef46a6ef4b4c70d7.png" title=" un asesor enters 'MEDELLIN - ANTIOQUIA' then hits [ENTER] into el lugar de expedicion (completed)" width="1920"/>
+                <img src="cc16effea5e60c9a4b31ff2e8c820bacf2cc4befbbd0a568ef46a6ef4b4c70d7.png" title=" un asesor clicks on el tipo de vivienda" width="1920"/>
+                <img src="8931f9b94b70a14619cf181b3e51442615351934b2f4bf2b8f4001b4ae307a58.png" title=" un asesor clicks on el tipo de vivienda (completed)" width="1920"/>
+                <img src="8931f9b94b70a14619cf181b3e51442615351934b2f4bf2b8f4001b4ae307a58.png" title=" un asesor clicks on las opciones de lista" width="1920"/>
+                <img src="0520107351c57d608553a65467ae956cf3af2f1fe470b2c6e90f9e2eb41c87ac.png" title=" un asesor clicks on las opciones de lista (completed)" width="1920"/>
+                <img src="0520107351c57d608553a65467ae956cf3af2f1fe470b2c6e90f9e2eb41c87ac.png" title=" un asesor clicks on el estrato" width="1920"/>
+                <img src="06353f9ceb52f40eeb41ddbaa7fdf7c8339b7e6c8c17cf32657ee6b1ca3cd83b.png" title=" un asesor clicks on el estrato (completed)" width="1920"/>
+                <img src="5676933277e57e21cb29a2c8c2a9aa005558b272d975b880dc0667efe72218f1.png" title=" un asesor enters 'CL 80 35 20' into la direccion" width="1920"/>
+                <img src="795c9836ac98f35567c8355fcebd21557ba6863522a67fa41a34915031a3d0cb.png" title=" un asesor enters 'CL 80 35 20' into la direccion (completed)" width="1920"/>
+                <img src="795c9836ac98f35567c8355fcebd21557ba6863522a67fa41a34915031a3d0cb.png" title=" un asesor clicks on cerrar direccion" width="1920"/>
+                <img src="1af2b692ac9a286fd515100c353c3c6a49f3954acf6b7df9249be9d5017abc04.png" title=" un asesor clicks on cerrar direccion (completed)" width="1920"/>
+                <img src="1af2b692ac9a286fd515100c353c3c6a49f3954acf6b7df9249be9d5017abc04.png" title=" un asesor enters 'Estadio' into el barrio" width="1920"/>
+                <img src="2ee9f7ba2e351d9d05879c3407c2faf773b79929059271b06523f5341df22f7a.png" title=" un asesor enters 'Estadio' into el barrio (completed)" width="1920"/>
+                <img src="2ee9f7ba2e351d9d05879c3407c2faf773b79929059271b06523f5341df22f7a.png" title=" un asesor enters '2800000' into el telefono de residencia" width="1920"/>
+                <img src="10d70caf031fa2eff08a4b350bdd1565d135eb3d7b1614c9eef15a32d9ced0c3.png" title=" un asesor enters '2800000' into el telefono de residencia (completed)" width="1920"/>
+                <img src="10d70caf031fa2eff08a4b350bdd1565d135eb3d7b1614c9eef15a32d9ced0c3.png" title=" un asesor enters '3002002020' into el celular" width="1920"/>
+                <img src="a63751fc3440dc92657ccb8fc9ff2bbbc55c9212268f326d3f6e6f10feec8ddc.png" title=" un asesor enters '3002002020' into el celular (completed)" width="1920"/>
+                <img src="a63751fc3440dc92657ccb8fc9ff2bbbc55c9212268f326d3f6e6f10feec8ddc.png" title=" un asesor clicks on el lugar de correspondecia" width="1920"/>
+                <img src="f200823e0ea589932c004578b38aba9534b65ae4163cf3f42e8c4d67a8a1cd56.png" title=" un asesor clicks on el lugar de correspondecia (completed)" width="1920"/>
+                <img src="f200823e0ea589932c004578b38aba9534b65ae4163cf3f42e8c4d67a8a1cd56.png" title=" un asesor clicks on las opciones de lista" width="1920"/>
+                <img src="9254530268febb5b5faa907cafe93cdff6ea5a2bc6bb3187c64ece58e1e9f2db.png" title=" un asesor clicks on las opciones de lista (completed)" width="1920"/>
+                <img src="9254530268febb5b5faa907cafe93cdff6ea5a2bc6bb3187c64ece58e1e9f2db.png" title=" un asesor enters 'risetzu@gmail.com' into el email" width="1920"/>
+                <img src="1b9698d40a3a5047829739b53b7601bbea5f9b82f948a627d92adf05d74f7c0c.png" title=" un asesor enters 'risetzu@gmail.com' into el email (completed)" width="1920"/>
+                <img src="1b9698d40a3a5047829739b53b7601bbea5f9b82f948a627d92adf05d74f7c0c.png" title=" un asesor enters '5' into los a&ntilde;os de residencia" width="1920"/>
+                <img src="08a95dc4dbde687f89b83bdb440ab11952ca8e59fa5c5ed9b8fbd6fcf438ea89.png" title=" un asesor enters '5' into los a&ntilde;os de residencia (completed)" width="1920"/>
+                <img src="08a95dc4dbde687f89b83bdb440ab11952ca8e59fa5c5ed9b8fbd6fcf438ea89.png" title=" un asesor enters '2' into los meses de residencia" width="1920"/>
+                <img src="77eafa4b6f4116303404c93761d1b9ed9ff07b421905c7ba9af73e37f7dc8d3c.png" title=" un asesor enters '2' into los meses de residencia (completed)" width="1920"/>
+                <img src="77eafa4b6f4116303404c93761d1b9ed9ff07b421905c7ba9af73e37f7dc8d3c.png" title=" un asesor enters 'Salud Total' into el nombre de la E.P.S" width="1920"/>
+                <img src="3a8a381104e9fb16f93023793b00d92bbd8498d6b67667a066663d691c8ee474.png" title=" un asesor enters 'Salud Total' into el nombre de la E.P.S (completed)" width="1920"/>
+                <img src="3a8a381104e9fb16f93023793b00d92bbd8498d6b67667a066663d691c8ee474.png" title=" un asesor enters '0' into el numero de adultos" width="1920"/>
+                <img src="d8d0ffb2d419995087558314a4b9e60753b5e4a567f634c402e57435f0f0c374.png" title=" un asesor enters '0' into el numero de adultos (completed)" width="1920"/>
+                <img src="d8d0ffb2d419995087558314a4b9e60753b5e4a567f634c402e57435f0f0c374.png" title=" un asesor enters '0' into personas menores de 18 a&ntilde;os" width="1920"/>
+                <img src="21b4bd552fa74da5122cda40409ae3b811e0bf709f7be5a2f2f28495a4545f74.png" title=" un asesor enters '0' into personas menores de 18 a&ntilde;os (completed)" width="1920"/>
+                <img src="21b4bd552fa74da5122cda40409ae3b811e0bf709f7be5a2f2f28495a4545f74.png" title=" un asesor clicks on el nivel de estudios" width="1920"/>
+                <img src="afe0cf5b306b0b89bffe87ba19ed9733c9d80fb0667b6c59346cd243a8e0ec4c.png" title=" un asesor clicks on el nivel de estudios (completed)" width="1920"/>
+                <img src="e4ca493c797aa669d0ac5d84e911adb84baa4ecca79367522f9e8bac3ff9da8b.png" title=" un asesor clicks on la profesion" width="1920"/>
+                <img src="e8189f606e3f36015426f1309e6c8c87818bc39bd0d10d6dbfede41cb6373128.png" title=" un asesor clicks on la profesion (completed)" width="1920"/>
+                <img src="ec7bb211d0206460eb0c6cfc533ec0a93c21b5f22fff529bd11bd4acf319296e.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="5cd8d8a12a1bf828a10d950ab1d126969e031febe44abba35081d7817f47158a.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="5cd8d8a12a1bf828a10d950ab1d126969e031febe44abba35081d7817f47158a.png" title=" Un asesor formulario informacion laboral" width="1920"/>
+                <img src="5cd8d8a12a1bf828a10d950ab1d126969e031febe44abba35081d7817f47158a.png" title=" un asesor clicks on la opcion de ocupacion" width="1920"/>
+                <img src="1947b973c5b54ac4dcdd89f5386f3eb5b2242b1296c5694e43dc23e7af4a9690.png" title=" un asesor clicks on la opcion de ocupacion (completed)" width="1920"/>
+                <img src="1947b973c5b54ac4dcdd89f5386f3eb5b2242b1296c5694e43dc23e7af4a9690.png" title=" un asesor clicks on la opcion de declara renta" width="1920"/>
+                <img src="94b173ae1b7664f0bf778587bf7cd6d2826ca12d6fa99e3df2e239ea4fa64edf.png" title=" un asesor clicks on la opcion de declara renta (completed)" width="1920"/>
+                <img src="94b173ae1b7664f0bf778587bf7cd6d2826ca12d6fa99e3df2e239ea4fa64edf.png" title=" un asesor clicks on la opcion de influencia del cargo para la sociedad" width="1920"/>
+                <img src="faf9cb16cb1287f236c8cf2482e5827ee5a80b67289d60bd0ca8fd2381cf3c39.png" title=" un asesor clicks on la opcion de influencia del cargo para la sociedad (completed)" width="1920"/>
+                <img src="faf9cb16cb1287f236c8cf2482e5827ee5a80b67289d60bd0ca8fd2381cf3c39.png" title=" un asesor clicks on la opcion de si maneja recursos publicos" width="1920"/>
+                <img src="ccf5cffd2de98337eb9366561b1daa4a59ae50ff7631325d498b5d6457d4490d.png" title=" un asesor clicks on la opcion de si maneja recursos publicos (completed)" width="1920"/>
+                <img src="ccf5cffd2de98337eb9366561b1daa4a59ae50ff7631325d498b5d6457d4490d.png" title=" un asesor clicks on la opcion de si es un personaje publico" width="1920"/>
+                <img src="386a4e841e7296e954b562172aedf569f7fc67d53da9f69f7d733a14a9455414.png" title=" un asesor clicks on la opcion de si es un personaje publico (completed)" width="1920"/>
+                <img src="386a4e841e7296e954b562172aedf569f7fc67d53da9f69f7d733a14a9455414.png" title=" un asesor clicks on la empresa donde trabaja" width="1920"/>
+                <img src="6c956df15c8c521d046087726f9653c4aa1e451913e4af6465a12e1e94876d1f.png" title=" un asesor clicks on la empresa donde trabaja (completed)" width="1920"/>
+                <img src="6c956df15c8c521d046087726f9653c4aa1e451913e4af6465a12e1e94876d1f.png" title=" un asesor enters 'COLPENSIONES' then hits [ENTER] into el filtro de la lista" width="1920"/>
+                <img src="9ef0facba3f152965cf521be25138e50ef32a60b1e710f4094c70a1505d02a47.png" title=" un asesor enters 'COLPENSIONES' then hits [ENTER] into el filtro de la lista (completed)" width="1920"/>
+                <img src="9ef0facba3f152965cf521be25138e50ef32a60b1e710f4094c70a1505d02a47.png" title=" un asesor enters 'Profesor' into el cargo" width="1920"/>
+                <img src="14fb4a5ffdb29a664ba2057f8f85930de0a4703611067b86028535d962c038ce.png" title=" un asesor enters 'Profesor' into el cargo (completed)" width="1920"/>
+                <img src="14fb4a5ffdb29a664ba2057f8f85930de0a4703611067b86028535d962c038ce.png" title=" un asesor clicks on la fecha de vinculacion" width="1920"/>
+                <img src="56456e61ffa80e766f114dc56bbaf57e1d1b85b504f746163a700ff09a937287.png" title=" un asesor clicks on la fecha de vinculacion (completed)" width="1920"/>
+                <img src="56456e61ffa80e766f114dc56bbaf57e1d1b85b504f746163a700ff09a937287.png" title=" un asesor clicks on El boton del calendario en dias" width="1920"/>
+                <img src="17884951b5fb626a2637d502c56ab9600677edc8bdfc06fdfddea7fc878ffc62.png" title=" un asesor clicks on El boton del calendario en dias (completed)" width="1920"/>
+                <img src="17884951b5fb626a2637d502c56ab9600677edc8bdfc06fdfddea7fc878ffc62.png" title=" un asesor clicks on El boton del calendario de mes" width="1920"/>
+                <img src="a153b187a88d3300d6dcf02cd281367dc88a5351e63569ea8e0b39da72746150.png" title=" un asesor clicks on El boton del calendario de mes (completed)" width="1920"/>
+                <img src="a153b187a88d3300d6dcf02cd281367dc88a5351e63569ea8e0b39da72746150.png" title=" un asesor clicks on El calendario en a&ntilde;os" width="1920"/>
+                <img src="268d7f10978ba1f619bc1ef437b7417380f743d8493191748746dab637b8853b.png" title=" un asesor clicks on El calendario en a&ntilde;os (completed)" width="1920"/>
+                <img src="268d7f10978ba1f619bc1ef437b7417380f743d8493191748746dab637b8853b.png" title=" un asesor clicks on El calendario en meses" width="1920"/>
+                <img src="05fb5c9a067fe869c5f01159d93be83717caae5d224cdc555b97e85acb92cc3d.png" title=" un asesor clicks on El calendario en meses (completed)" width="1920"/>
+                <img src="05fb5c9a067fe869c5f01159d93be83717caae5d224cdc555b97e85acb92cc3d.png" title=" un asesor clicks on El calendario en dias" width="1920"/>
+                <img src="8d881000ff599cb072b48c60fcb9c1d77b773b83ddfc4be3ded0956d59cdc7f8.png" title=" un asesor clicks on El calendario en dias (completed)" width="1920"/>
+                <img src="8d881000ff599cb072b48c60fcb9c1d77b773b83ddfc4be3ded0956d59cdc7f8.png" title=" un asesor enters 'BRR CALASANZ' into la opcion de declara renta" width="1920"/>
+                <img src="9a5d0ff4a7489701ed200c209d0c81242c4caeff1237abf95c62034b1555db23.png" title=" un asesor enters 'BRR CALASANZ' into la opcion de declara renta (completed)" width="1920"/>
+                <img src="9a5d0ff4a7489701ed200c209d0c81242c4caeff1237abf95c62034b1555db23.png" title=" un asesor clicks on cerrar direccion del trabajo" width="1920"/>
+                <img src="6fc0e8626ece275f4ac02838bad59958a62bb2068ac00827df8009beffc1c7db.png" title=" un asesor clicks on cerrar direccion del trabajo (completed)" width="1920"/>
+                <img src="6fc0e8626ece275f4ac02838bad59958a62bb2068ac00827df8009beffc1c7db.png" title=" un asesor clicks on la ciudad de trabajo" width="1920"/>
+                <img src="0460a271d239324a50596c04f02f8188a055950c82f09496b1f82ab1ce7b926e.png" title=" un asesor clicks on la ciudad de trabajo (completed)" width="1920"/>
+                <img src="0460a271d239324a50596c04f02f8188a055950c82f09496b1f82ab1ce7b926e.png" title=" un asesor enters 'BARRANQUILLA - ATLANTICO' then hits [ENTER] into el filtro de la lista" width="1920"/>
+                <img src="b206ac5848be8479da3bfc0aa62b8e104098530b5933ca8ee5f17cf3288fac6a.png" title=" un asesor enters 'BARRANQUILLA - ATLANTICO' then hits [ENTER] into el filtro de la lista (completed)" width="1920"/>
+                <img src="b206ac5848be8479da3bfc0aa62b8e104098530b5933ca8ee5f17cf3288fac6a.png" title=" un asesor enters '2306060' into la telefono del trabajo" width="1920"/>
+                <img src="974d7a1a768ce075a51ea775506ff2e3ec2fa212b59b8d67b8aaf7fc91b44e15.png" title=" un asesor enters '2306060' into la telefono del trabajo (completed)" width="1920"/>
+                <img src="974d7a1a768ce075a51ea775506ff2e3ec2fa212b59b8d67b8aaf7fc91b44e15.png" title=" un asesor enters '0' into la extension del trabajo" width="1920"/>
+                <img src="95c5029ae9ee1a6a1c1b74e0e3f719919aaf1b1f490ebef6288a5e9f24c5f8e7.png" title=" un asesor enters '0' into la extension del trabajo (completed)" width="1920"/>
+                <img src="95c5029ae9ee1a6a1c1b74e0e3f719919aaf1b1f490ebef6288a5e9f24c5f8e7.png" title=" un asesor clicks on el tipo de empresa" width="1920"/>
+                <img src="d87a2fce15078ceb3bf1e74df57776725abc14ee77495a8670648f1111ad22ff.png" title=" un asesor clicks on el tipo de empresa (completed)" width="1920"/>
+                <img src="bbeb3193d861370533485ffab46aa434bfe3a2fd3933f791d3c6135e69db7d04.png" title=" un asesor clicks on el tipo de contrato" width="1920"/>
+                <img src="93f986a9457d3c866b9b8702a1f2b614188c93891ae542c30ad258de2d60c647.png" title=" un asesor clicks on el tipo de contrato (completed)" width="1920"/>
+                <img src="3977256df15ebe153109e928ddaaa05e92d02d856bd5c9c7322ee2a33011c389.png" title=" un asesor clicks on el tipo de actividad economica" width="1920"/>
+                <img src="9957c7a5c5066888d4ea47ddde11ec892682d6c7392a58ec56af5d69face89cb.png" title=" un asesor clicks on el tipo de actividad economica (completed)" width="1920"/>
+                <img src="9957c7a5c5066888d4ea47ddde11ec892682d6c7392a58ec56af5d69face89cb.png" title=" un asesor clicks on la lista de actividad economica" width="1920"/>
+                <img src="286c593bb20f45e6fc19db7f7e2b2a22b7bdf788fb14b9e1c3fc82478ebdf96f.png" title=" un asesor clicks on la lista de actividad economica (completed)" width="1920"/>
+                <img src="286c593bb20f45e6fc19db7f7e2b2a22b7bdf788fb14b9e1c3fc82478ebdf96f.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="7378fbaa07309fe55bc345e79dade41e0fa806141ebf2ea309481685f88428b5.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="7378fbaa07309fe55bc345e79dade41e0fa806141ebf2ea309481685f88428b5.png" title=" Un asesor formulario balance personal" width="1920"/>
+                <img src="7378fbaa07309fe55bc345e79dade41e0fa806141ebf2ea309481685f88428b5.png" title=" un asesor enters '25000000' into el valor de activos corrientes" width="1920"/>
+                <img src="6bcad93c53a0c25c98c886e32c0d0bd566285ac60660bbb36e9c6116d0fdaa26.png" title=" un asesor enters '25000000' into el valor de activos corrientes (completed)" width="1920"/>
+                <img src="6bcad93c53a0c25c98c886e32c0d0bd566285ac60660bbb36e9c6116d0fdaa26.png" title=" un asesor enters '48000000' into el valor de activos fijos" width="1920"/>
+                <img src="869ed385ff59d855f1c2e201394f641b98bf16e4037184072cef6ceda4c43ec2.png" title=" un asesor enters '48000000' into el valor de activos fijos (completed)" width="1920"/>
+                <img src="869ed385ff59d855f1c2e201394f641b98bf16e4037184072cef6ceda4c43ec2.png" title=" un asesor enters '800000' into el valor de otros activos" width="1920"/>
+                <img src="9dc186d2990e6763c4121cc24b631518e03678780897331401d71f4824f35cb6.png" title=" un asesor enters '800000' into el valor de otros activos (completed)" width="1920"/>
+                <img src="9dc186d2990e6763c4121cc24b631518e03678780897331401d71f4824f35cb6.png" title=" un asesor enters 'Arriendos' into cuales activos?" width="1920"/>
+                <img src="e4fcaec630944dba44d39ad03bbc3c95db412f22d8ff0775129421554d5e4587.png" title=" un asesor enters 'Arriendos' into cuales activos? (completed)" width="1920"/>
+                <img src="e4fcaec630944dba44d39ad03bbc3c95db412f22d8ff0775129421554d5e4587.png" title=" un asesor enters '15000000' into El valor de pasivos financieros" width="1920"/>
+                <img src="cf5ef837362619486ead47012abf795c8d2964233108015b31ab9646ea4a16b3.png" title=" un asesor enters '15000000' into El valor de pasivos financieros (completed)" width="1920"/>
+                <img src="cf5ef837362619486ead47012abf795c8d2964233108015b31ab9646ea4a16b3.png" title=" un asesor enters '0' into El valor de otros pasivos" width="1920"/>
+                <img src="fc952d0743161f56aaa88b71e6352a0c13067578eafb136573ea2fdd7168cf54.png" title=" un asesor enters '0' into El valor de otros pasivos (completed)" width="1920"/>
+                <img src="fc952d0743161f56aaa88b71e6352a0c13067578eafb136573ea2fdd7168cf54.png" title=" un asesor enters 'Manuntencion' into cuales pasivos" width="1920"/>
+                <img src="e56ad2e084b57d2cdff2ac6baa9244f36c91eb63ba7172738daaed07d1707cb0.png" title=" un asesor enters 'Manuntencion' into cuales pasivos (completed)" width="1920"/>
+                <img src="e56ad2e084b57d2cdff2ac6baa9244f36c91eb63ba7172738daaed07d1707cb0.png" title=" Un asesor formulario informacion activos" width="1920"/>
+                <img src="e56ad2e084b57d2cdff2ac6baa9244f36c91eb63ba7172738daaed07d1707cb0.png" title=" un asesor enters 'Casa' into el tipo de inmueble" width="1920"/>
+                <img src="41e88b5031b1107d91099ef965b84cf230e8a615f22aa725e43cd5dd643fa19e.png" title=" un asesor enters 'Casa' into el tipo de inmueble (completed)" width="1920"/>
+                <img src="41e88b5031b1107d91099ef965b84cf230e8a615f22aa725e43cd5dd643fa19e.png" title=" un asesor enters '120000000' into el valor comercial" width="1920"/>
+                <img src="91f1d04e4925e8a79aa671876d113801003a8e2e267ed5746ed522c6836a3b23.png" title=" un asesor enters '120000000' into el valor comercial (completed)" width="1920"/>
+                <img src="91f1d04e4925e8a79aa671876d113801003a8e2e267ed5746ed522c6836a3b23.png" title=" un asesor enters 'Banco' into hipotecado a" width="1920"/>
+                <img src="6e27bf5da8c75fada46478bfa0d442f5164b835a841a4fe7d86e2fdc06a8277d.png" title=" un asesor enters 'Banco' into hipotecado a (completed)" width="1920"/>
+                <img src="6e27bf5da8c75fada46478bfa0d442f5164b835a841a4fe7d86e2fdc06a8277d.png" title=" un asesor enters 'CL 80 35 20' into direccion" width="1920"/>
+                <img src="6a4b893b9ad5d22c789014680123401cfdacc87a369fb7369bcbc1d9563c80ee.png" title=" un asesor enters 'CL 80 35 20' into direccion (completed)" width="1920"/>
+                <img src="6a4b893b9ad5d22c789014680123401cfdacc87a369fb7369bcbc1d9563c80ee.png" title=" un asesor clicks on cerrar direccion del trabajo" width="1920"/>
+                <img src="d74e957ad34102f379f81313ad98ba4af9815ae4168f434e326f1e337a3203fe.png" title=" un asesor clicks on cerrar direccion del trabajo (completed)" width="1920"/>
+                <img src="d74e957ad34102f379f81313ad98ba4af9815ae4168f434e326f1e337a3203fe.png" title=" un asesor enters '50000000' into el saldo del credito de inmueble" width="1920"/>
+                <img src="0614c59946e5abc20f6e408e6370cd09db153a9e4f8f6e82427ec72fce47e887.png" title=" un asesor enters '50000000' into el saldo del credito de inmueble (completed)" width="1920"/>
+                <img src="0614c59946e5abc20f6e408e6370cd09db153a9e4f8f6e82427ec72fce47e887.png" title=" un asesor enters 'Swift' into la clase del vehiculo" width="1920"/>
+                <img src="44183acced888c3a255d2f54f4c5d8418e35e86b330eec9aa5d0ea2a84740257.png" title=" un asesor enters 'Swift' into la clase del vehiculo (completed)" width="1920"/>
+                <img src="44183acced888c3a255d2f54f4c5d8418e35e86b330eec9aa5d0ea2a84740257.png" title=" un asesor enters '2018' into la marca y modelo del vehiculo" width="1920"/>
+                <img src="3653aab77738f04ab0853c0326ce00a0bf4b07e818ad495cd999d7152aee4647.png" title=" un asesor enters '2018' into la marca y modelo del vehiculo (completed)" width="1920"/>
+                <img src="3653aab77738f04ab0853c0326ce00a0bf4b07e818ad495cd999d7152aee4647.png" title=" un asesor enters 'EFY260' into el numero de placa" width="1920"/>
+                <img src="b6e8256c8184597fb3d0c658fa2c8762892772f17d36c75e9b961c442191be08.png" title=" un asesor enters 'EFY260' into el numero de placa (completed)" width="1920"/>
+                <img src="b6e8256c8184597fb3d0c658fa2c8762892772f17d36c75e9b961c442191be08.png" title=" un asesor enters '51000000' into el valor comercial del vehiculo" width="1920"/>
+                <img src="f42cc82efaed0848148c62553b84fcc74616f955545de10beed511273c893978.png" title=" un asesor enters '51000000' into el valor comercial del vehiculo (completed)" width="1920"/>
+                <img src="f42cc82efaed0848148c62553b84fcc74616f955545de10beed511273c893978.png" title=" un asesor enters '38000000' into el saldo del credito del vehiculo" width="1920"/>
+                <img src="a5da85c5d8eb004d0a8e7952d9c3f925e71488079fd511700f7eab9641e25ec5.png" title=" un asesor enters '38000000' into el saldo del credito del vehiculo (completed)" width="1920"/>
+                <img src="a5da85c5d8eb004d0a8e7952d9c3f925e71488079fd511700f7eab9641e25ec5.png" title=" un asesor enters 'No' into la prenda a favor" width="1920"/>
+                <img src="46f561adab61093b0eb34548d006e1fae3113908ffe96b59bede2fd472e7119b.png" title=" un asesor enters 'No' into la prenda a favor (completed)" width="1920"/>
+                <img src="f4fccda62404ed461b20983922265febd5e2c11ba1ba4f5b18a03c1e049755d1.png" title=" Un asesor formulario informacion financiera" width="1920"/>
+                <img src="f4fccda62404ed461b20983922265febd5e2c11ba1ba4f5b18a03c1e049755d1.png" title=" un asesor enters '4500000' into el salario fijo" width="1920"/>
+                <img src="55fcf0edcdd32846d117ac7089bbb28161c174d5a81505c3cc59d59b05b8f98b.png" title=" un asesor enters '4500000' into el salario fijo (completed)" width="1920"/>
+                <img src="55fcf0edcdd32846d117ac7089bbb28161c174d5a81505c3cc59d59b05b8f98b.png" title=" un asesor enters '0' into el salario variable o comisiones" width="1920"/>
+                <img src="7bd6460a113088e06d7810b983c9011ecefd48c088266dc8db98fb0e1cf93392.png" title=" un asesor enters '0' into el salario variable o comisiones (completed)" width="1920"/>
+                <img src="7bd6460a113088e06d7810b983c9011ecefd48c088266dc8db98fb0e1cf93392.png" title=" un asesor enters '500000' into el arriendo" width="1920"/>
+                <img src="25561977775a7e42e4c7237634ebba01722cd00ccf2f81cdd3f8097720200afd.png" title=" un asesor enters '500000' into el arriendo (completed)" width="1920"/>
+                <img src="25561977775a7e42e4c7237634ebba01722cd00ccf2f81cdd3f8097720200afd.png" title=" un asesor enters '0' into el rendimiento financiero" width="1920"/>
+                <img src="94684e7dfd458fc1710c65100668bc415379084bfc59d76c520ebe1c9df46178.png" title=" un asesor enters '0' into el rendimiento financiero (completed)" width="1920"/>
+                <img src="94684e7dfd458fc1710c65100668bc415379084bfc59d76c520ebe1c9df46178.png" title=" un asesor enters '0' into los honorarios" width="1920"/>
+                <img src="c988a4ed67c3c6d7b24534d88c60d74e7ba1ee5b61921d56fc1d47c0e822278a.png" title=" un asesor enters '0' into los honorarios (completed)" width="1920"/>
+                <img src="c988a4ed67c3c6d7b24534d88c60d74e7ba1ee5b61921d56fc1d47c0e822278a.png" title=" un asesor enters '0' into otros ingresos" width="1920"/>
+                <img src="d3aebfb9b7b8d7318d52c741a8b99ab89904c3c36c06b51be72ece4de26ce14e.png" title=" un asesor enters '0' into otros ingresos (completed)" width="1920"/>
+                <img src="d3aebfb9b7b8d7318d52c741a8b99ab89904c3c36c06b51be72ece4de26ce14e.png" title=" un asesor enters 'No aplica' into cuales ingresos" width="1920"/>
+                <img src="7e39b9068ed005eb9262d0b9a4276bf209fcfecfcf15cb1554ca6888ae1daabf.png" title=" un asesor enters 'No aplica' into cuales ingresos (completed)" width="1920"/>
+                <img src="7e39b9068ed005eb9262d0b9a4276bf209fcfecfcf15cb1554ca6888ae1daabf.png" title=" un asesor enters '800000' into el total de arriendos" width="1920"/>
+                <img src="290f517b3bcb23206cacc2a487cd00cffb0653fb96c99c12d5caf0d4295dd1fc.png" title=" un asesor enters '800000' into el total de arriendos (completed)" width="1920"/>
+                <img src="290f517b3bcb23206cacc2a487cd00cffb0653fb96c99c12d5caf0d4295dd1fc.png" title=" un asesor enters '1000000' into los gastos personales" width="1920"/>
+                <img src="90b8cdaaa6d86b9c6708b1d0445087b722de62bf674e11d634c8484b55cf8e68.png" title=" un asesor enters '1000000' into los gastos personales (completed)" width="1920"/>
+                <img src="90b8cdaaa6d86b9c6708b1d0445087b722de62bf674e11d634c8484b55cf8e68.png" title=" un asesor enters '0' into los prestamos en otras instituciones" width="1920"/>
+                <img src="7c41ed89bd7df798ff409d28702f7dc0a7a6445a32c6d773754d97ecd8d903b1.png" title=" un asesor enters '0' into los prestamos en otras instituciones (completed)" width="1920"/>
+                <img src="7c41ed89bd7df798ff409d28702f7dc0a7a6445a32c6d773754d97ecd8d903b1.png" title=" un asesor enters '0' into deducciones de nomina" width="1920"/>
+                <img src="924f930bab39f5793414fdce13d7351ba30839367a38f1d86ddbfd39d4e64c48.png" title=" un asesor enters '0' into deducciones de nomina (completed)" width="1920"/>
+                <img src="924f930bab39f5793414fdce13d7351ba30839367a38f1d86ddbfd39d4e64c48.png" title=" un asesor enters '0' into tarjetas de credito" width="1920"/>
+                <img src="71e7ba6732d3bbb18721d0e795934f97919071017284c7f3f7b73822903cc525.png" title=" un asesor enters '0' into tarjetas de credito (completed)" width="1920"/>
+                <img src="71e7ba6732d3bbb18721d0e795934f97919071017284c7f3f7b73822903cc525.png" title=" un asesor enters '0' into otros gastos" width="1920"/>
+                <img src="84ec60c462a71b7aef7e2cf4a101b8d8d0cf856e045fc74a6e03bbb73868db31.png" title=" un asesor enters '0' into otros gastos (completed)" width="1920"/>
+                <img src="84ec60c462a71b7aef7e2cf4a101b8d8d0cf856e045fc74a6e03bbb73868db31.png" title=" un asesor enters 'No aplica' into cuales gastos" width="1920"/>
+                <img src="3d02ee6018dc689af827dbaacdbaeb826fd6003164cc72de10bd60409b658cc5.png" title=" un asesor enters 'No aplica' into cuales gastos (completed)" width="1920"/>
+                <img src="3d02ee6018dc689af827dbaacdbaeb826fd6003164cc72de10bd60409b658cc5.png" title=" un asesor enters 'SI' into pago hipoteca" width="1920"/>
+                <img src="1f1d493bf2f4bb4dc7f02ccc53a06d31d0b88ea0093564cbeaf21d94b99ef0ac.png" title=" un asesor enters 'SI' into pago hipoteca (completed)" width="1920"/>
+                <img src="1f1d493bf2f4bb4dc7f02ccc53a06d31d0b88ea0093564cbeaf21d94b99ef0ac.png" title=" un asesor enters '120000000' into el valor de la vivienda" width="1920"/>
+                <img src="28b76a66dbff1f6d8a07af423a03ce9255cdf8de8f2b860b8f0ebbea073080c7.png" title=" un asesor enters '120000000' into el valor de la vivienda (completed)" width="1920"/>
+                <img src="28b76a66dbff1f6d8a07af423a03ce9255cdf8de8f2b860b8f0ebbea073080c7.png" title=" un asesor enters 'Bogota' into donde le gustaria vivir" width="1920"/>
+                <img src="78616bf06b70029736e630824ca2076da2e323f388365869d3d84d02dcca8596.png" title=" un asesor enters 'Bogota' into donde le gustaria vivir (completed)" width="1920"/>
+                <img src="78616bf06b70029736e630824ca2076da2e323f388365869d3d84d02dcca8596.png" title=" un asesor clicks on la opcion de comprar vivienda" width="1920"/>
+                <img src="28a569bf9a0ced9b7966b7b08f3a70e08101d499eab9e5010b02ad9172c89f61.png" title=" un asesor clicks on la opcion de comprar vivienda (completed)" width="1920"/>
+                <img src="28a569bf9a0ced9b7966b7b08f3a70e08101d499eab9e5010b02ad9172c89f61.png" title=" un asesor clicks on la opcion de cupo de libranza" width="1920"/>
+                <img src="c5cd7fb9e39e7e562e43dcb2660ca8b4f4380d18ead78c930e2645692c356e3c.png" title=" un asesor clicks on la opcion de cupo de libranza (completed)" width="1920"/>
+                <img src="c5cd7fb9e39e7e562e43dcb2660ca8b4f4380d18ead78c930e2645692c356e3c.png" title=" un asesor clicks on la razon del credito" width="1920"/>
+                <img src="ba3fa6c2ccd92c48c21911ac7cf198fa905b04f790ccf78995a734ef184abb5e.png" title=" un asesor clicks on la razon del credito (completed)" width="1920"/>
+                <img src="a4fccabdcd06d6ce63093fc295b9cc0298fc785875ad014ee8941a71367de8dd.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="cebcea0a6425424ffd64301ce80bef2452a16c0e2d0b024530659412138783b8.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="cebcea0a6425424ffd64301ce80bef2452a16c0e2d0b024530659412138783b8.png" title=" Un asesor formulario informacion conyugue" width="1920"/>
+                <img src="cebcea0a6425424ffd64301ce80bef2452a16c0e2d0b024530659412138783b8.png" title=" un asesor enters 'Andres' into el primer nombre" width="1920"/>
+                <img src="b8070eddf85a7f7efec53d8abc1a04fc1ed4b581303a54b26cb350fd0f270d95.png" title=" un asesor enters 'Andres' into el primer nombre (completed)" width="1920"/>
+                <img src="b8070eddf85a7f7efec53d8abc1a04fc1ed4b581303a54b26cb350fd0f270d95.png" title=" un asesor enters 'Juan' into el segundo nombre" width="1920"/>
+                <img src="e29a242fe22d10bd8c967c3d61b06a5937dd2fd15a05ed084fe34b4990a66009.png" title=" un asesor enters 'Juan' into el segundo nombre (completed)" width="1920"/>
+                <img src="e29a242fe22d10bd8c967c3d61b06a5937dd2fd15a05ed084fe34b4990a66009.png" title=" un asesor enters 'Cardona' into el primer apellido" width="1920"/>
+                <img src="d249ecf4484ef94dec09fb449c4f57409b11d2fbb32dd1a240e1954ae050f80a.png" title=" un asesor enters 'Cardona' into el primer apellido (completed)" width="1920"/>
+                <img src="d249ecf4484ef94dec09fb449c4f57409b11d2fbb32dd1a240e1954ae050f80a.png" title=" un asesor enters 'Lopez' into el segundo apellido" width="1920"/>
+                <img src="f45a5c695e54cd85d218877aa18a6dc68941683cea5f30939f8a1bc14ee5b815.png" title=" un asesor enters 'Lopez' into el segundo apellido (completed)" width="1920"/>
+                <img src="f45a5c695e54cd85d218877aa18a6dc68941683cea5f30939f8a1bc14ee5b815.png" title=" un asesor clicks on el tipo de documento" width="1920"/>
+                <img src="b9abc2f748489cddedde090aade60d2c24e0b34f86cec33cd2c465d7ed6b734f.png" title=" un asesor clicks on el tipo de documento (completed)" width="1920"/>
+                <img src="b9abc2f748489cddedde090aade60d2c24e0b34f86cec33cd2c465d7ed6b734f.png" title=" un asesor clicks on el filtro de lista" width="1920"/>
+                <img src="2a3978d6ae5d815ed36c18ebc97bab0255b1fc5257c91b009be27d0fb0f32356.png" title=" un asesor clicks on el filtro de lista (completed)" width="1920"/>
+                <img src="2a3978d6ae5d815ed36c18ebc97bab0255b1fc5257c91b009be27d0fb0f32356.png" title=" un asesor enters '10101020' into el numero de documento" width="1920"/>
+                <img src="1b89666ce1f2701aa10a43ad075781d50745c344567af6de22dc9d48c9ec0a76.png" title=" un asesor enters '10101020' into el numero de documento (completed)" width="1920"/>
+                <img src="1b89666ce1f2701aa10a43ad075781d50745c344567af6de22dc9d48c9ec0a76.png" title=" un asesor clicks on el fecha de expedicion del documento" width="1920"/>
+                <img src="115e8db8bc575c00db7e3fda5b563f8889e3d83b6f7e5224bee618b8dcb78be7.png" title=" un asesor clicks on el fecha de expedicion del documento (completed)" width="1920"/>
+                <img src="115e8db8bc575c00db7e3fda5b563f8889e3d83b6f7e5224bee618b8dcb78be7.png" title=" un asesor clicks on El boton del calendario en dias" width="1920"/>
+                <img src="d86a05b20e71686eb496912f1e7c3ec31a731679125085ee39094bb5c8468c66.png" title=" un asesor clicks on El boton del calendario en dias (completed)" width="1920"/>
+                <img src="d86a05b20e71686eb496912f1e7c3ec31a731679125085ee39094bb5c8468c66.png" title=" un asesor clicks on El boton del calendario de mes" width="1920"/>
+                <img src="e7c0c8bbbeea84e8603d1447e6eeb9bf0137185532f71b2a58b57a1d49bf69a6.png" title=" un asesor clicks on El boton del calendario de mes (completed)" width="1920"/>
+                <img src="8c4645c7b829688779fbfa15d3e9cb48545f05ea93ecaffaf0b032981257b800.png" title=" un asesor clicks on El calendario en a&ntilde;os" width="1920"/>
+                <img src="8c5e9afecec43d08ff48b9de22ac5f935ace1e2aaa2b84d0e04bbd2596bd07c5.png" title=" un asesor clicks on El calendario en a&ntilde;os (completed)" width="1920"/>
+                <img src="8c5e9afecec43d08ff48b9de22ac5f935ace1e2aaa2b84d0e04bbd2596bd07c5.png" title=" un asesor clicks on El calendario en meses" width="1920"/>
+                <img src="71d4a6f087c2b215841239dbb6a282c1954ad60b2821fcbe47d6cadb45c12b52.png" title=" un asesor clicks on El calendario en meses (completed)" width="1920"/>
+                <img src="71d4a6f087c2b215841239dbb6a282c1954ad60b2821fcbe47d6cadb45c12b52.png" title=" un asesor clicks on El calendario en dias" width="1920"/>
+                <img src="2fd553c5b5515c77864065e37657cd931d64064b776143239f527345b8097562.png" title=" un asesor clicks on El calendario en dias (completed)" width="1920"/>
+                <img src="2fd553c5b5515c77864065e37657cd931d64064b776143239f527345b8097562.png" title=" un asesor clicks on el lugar de expedicion del documento" width="1920"/>
+                <img src="5409ec364c694da087bca7cb10bd10682c7ed4265bddc2a85122144cb7b4217a.png" title=" un asesor clicks on el lugar de expedicion del documento (completed)" width="1920"/>
+                <img src="5409ec364c694da087bca7cb10bd10682c7ed4265bddc2a85122144cb7b4217a.png" title=" un asesor enters 'ARENAL - BOLIVAR' then hits [ENTER] into el lugar de expedicion" width="1920"/>
+                <img src="dc7b2891ba6aa51b8a702679c4f8f9584340e9a88421803ec83af6c43a37de59.png" title=" un asesor enters 'ARENAL - BOLIVAR' then hits [ENTER] into el lugar de expedicion (completed)" width="1920"/>
+                <img src="dc7b2891ba6aa51b8a702679c4f8f9584340e9a88421803ec83af6c43a37de59.png" title=" un asesor clicks on la fecha de nacimiento" width="1920"/>
+                <img src="c6c91284191ac4c0b04f7d7a780ba1a65dfd287168b4de4991022c7877dd59b3.png" title=" un asesor clicks on la fecha de nacimiento (completed)" width="1920"/>
+                <img src="c6c91284191ac4c0b04f7d7a780ba1a65dfd287168b4de4991022c7877dd59b3.png" title=" un asesor clicks on El boton del calendario en dias" width="1920"/>
+                <img src="a2a09bc2f25d78155754397b14065e14dcdf29e0c7a494d205696c20ef064697.png" title=" un asesor clicks on El boton del calendario en dias (completed)" width="1920"/>
+                <img src="a2a09bc2f25d78155754397b14065e14dcdf29e0c7a494d205696c20ef064697.png" title=" un asesor clicks on El boton del calendario de mes" width="1920"/>
+                <img src="655bd6f8fa61d48d2e14f7c6a42e9722b0e128ffd6805a55d86bcebb73db21a3.png" title=" un asesor clicks on El boton del calendario de mes (completed)" width="1920"/>
+                <img src="eb02ca6383e1b48841e9dfac26180c79bd298e60ab609c180728e20a155705a9.png" title=" un asesor clicks on El calendario en a&ntilde;os" width="1920"/>
+                <img src="fafda14791d5c18d33ab1384b0010a807976d05a16718c00b1a601e2bcaa1ef3.png" title=" un asesor clicks on El calendario en a&ntilde;os (completed)" width="1920"/>
+                <img src="fafda14791d5c18d33ab1384b0010a807976d05a16718c00b1a601e2bcaa1ef3.png" title=" un asesor clicks on El calendario en meses" width="1920"/>
+                <img src="6167a5df9faeb47a92abaff1c3cf98a9f26e8fe96946178fcfeba8864ef51dbd.png" title=" un asesor clicks on El calendario en meses (completed)" width="1920"/>
+                <img src="6167a5df9faeb47a92abaff1c3cf98a9f26e8fe96946178fcfeba8864ef51dbd.png" title=" un asesor clicks on El calendario en dias" width="1920"/>
+                <img src="1650c0badd2f99698edb50d372fc6813785477f967e2d29b431041780e4b6c85.png" title=" un asesor clicks on El calendario en dias (completed)" width="1920"/>
+                <img src="1650c0badd2f99698edb50d372fc6813785477f967e2d29b431041780e4b6c85.png" title=" un asesor clicks on el lugar de nacimiento" width="1920"/>
+                <img src="d695e52ea5a43043e313d26bf4ae62d7ba913547a2a6567b80356091336b8cb5.png" title=" un asesor clicks on el lugar de nacimiento (completed)" width="1920"/>
+                <img src="d695e52ea5a43043e313d26bf4ae62d7ba913547a2a6567b80356091336b8cb5.png" title=" un asesor enters 'ARENAL - BOLIVAR' then hits [ENTER] into el lugar de expedicion" width="1920"/>
+                <img src="f04e1ef4c42063591c29d7a62c60d682148d5f5fbb6b6fccfa4e15d0d52e6593.png" title=" un asesor enters 'ARENAL - BOLIVAR' then hits [ENTER] into el lugar de expedicion (completed)" width="1920"/>
+                <img src="f04e1ef4c42063591c29d7a62c60d682148d5f5fbb6b6fccfa4e15d0d52e6593.png" title=" un asesor clicks on el sexo" width="1920"/>
+                <img src="1ece4e5721931207b0b6ba263f27e41d9c3a36f172bea964b141aae0ac064813.png" title=" un asesor clicks on el sexo (completed)" width="1920"/>
+                <img src="1ece4e5721931207b0b6ba263f27e41d9c3a36f172bea964b141aae0ac064813.png" title=" un asesor clicks on el filtro de lista" width="1920"/>
+                <img src="135554f06ba5c4c25927eca784c3b05cc085784fa720378561169cf2912f493e.png" title=" un asesor clicks on el filtro de lista (completed)" width="1920"/>
+                <img src="135554f06ba5c4c25927eca784c3b05cc085784fa720378561169cf2912f493e.png" title=" un asesor enters 'Accenture' into el lugar donde trabaja" width="1920"/>
+                <img src="906040c5286a06726714ffdb6787475628dc1b9502d4307349c413197955c143.png" title=" un asesor enters 'Accenture' into el lugar donde trabaja (completed)" width="1920"/>
+                <img src="906040c5286a06726714ffdb6787475628dc1b9502d4307349c413197955c143.png" title=" un asesor clicks on la ocupacion" width="1920"/>
+                <img src="3de3022025712064cc3aaedb0db61c29c48791cd504f7b49ef27b203aedd9318.png" title=" un asesor clicks on la ocupacion (completed)" width="1920"/>
+                <img src="3de3022025712064cc3aaedb0db61c29c48791cd504f7b49ef27b203aedd9318.png" title=" un asesor clicks on dependecia economica" width="1920"/>
+                <img src="2cd211b1f40bc9bc7c71b8b793bb1dad4b50f7117ec8c29c4faf9245a81a18c4.png" title=" un asesor clicks on dependecia economica (completed)" width="1920"/>
+                <img src="2cd211b1f40bc9bc7c71b8b793bb1dad4b50f7117ec8c29c4faf9245a81a18c4.png" title=" un asesor clicks on la fecha de ingreso" width="1920"/>
+                <img src="d74053594c760273c4c16edbde62b035958606e0992031d1dac901458f1292e3.png" title=" un asesor clicks on la fecha de ingreso (completed)" width="1920"/>
+                <img src="d74053594c760273c4c16edbde62b035958606e0992031d1dac901458f1292e3.png" title=" un asesor clicks on El boton del calendario en dias" width="1920"/>
+                <img src="b50ab47ef16a6655248c8186ca4551d164d84a2385ea6ac2ed2404944bb92912.png" title=" un asesor clicks on El boton del calendario en dias (completed)" width="1920"/>
+                <img src="b50ab47ef16a6655248c8186ca4551d164d84a2385ea6ac2ed2404944bb92912.png" title=" un asesor clicks on El boton del calendario de mes" width="1920"/>
+                <img src="91640fab56d49478713b35a0002fab6c4b4a04587718a65115380a6e42baf3f9.png" title=" un asesor clicks on El boton del calendario de mes (completed)" width="1920"/>
+                <img src="17206d681650575e1f32600170f1083acbdab13d7359f94e50329573f2d3b8eb.png" title=" un asesor clicks on El calendario en a&ntilde;os" width="1920"/>
+                <img src="9d7738f930749ca475754b93692a3fed9a679a519002c1f2c78da244064b5424.png" title=" un asesor clicks on El calendario en a&ntilde;os (completed)" width="1920"/>
+                <img src="9d7738f930749ca475754b93692a3fed9a679a519002c1f2c78da244064b5424.png" title=" un asesor clicks on El calendario en meses" width="1920"/>
+                <img src="4f498cd9eab73447cd20d2288738480de31ab26e3fe6d28378ae8253dd96d8f6.png" title=" un asesor clicks on El calendario en meses (completed)" width="1920"/>
+                <img src="4f498cd9eab73447cd20d2288738480de31ab26e3fe6d28378ae8253dd96d8f6.png" title=" un asesor clicks on El calendario en dias" width="1920"/>
+                <img src="ae84f92e06ce0f286fd26e3f9a07b1752cef086ffeb5071fbac6226ca2a831b5.png" title=" un asesor clicks on El calendario en dias (completed)" width="1920"/>
+                <img src="ae84f92e06ce0f286fd26e3f9a07b1752cef086ffeb5071fbac6226ca2a831b5.png" title=" un asesor enters 'Sicologa' into el cargo actual" width="1920"/>
+                <img src="0c5b255f3b2819a928468da4bd668cfbca8607aa7fe12b041025e6c81df9f593.png" title=" un asesor enters 'Sicologa' into el cargo actual (completed)" width="1920"/>
+                <img src="0c5b255f3b2819a928468da4bd668cfbca8607aa7fe12b041025e6c81df9f593.png" title=" un asesor enters '2000000' into el total de ingresos" width="1920"/>
+                <img src="3f7370c01d4d6926fdb7392fc8e6383d2a4eaf7fe9c834e129d9895918cf589a.png" title=" un asesor enters '2000000' into el total de ingresos (completed)" width="1920"/>
+                <img src="3f7370c01d4d6926fdb7392fc8e6383d2a4eaf7fe9c834e129d9895918cf589a.png" title=" un asesor enters '1500000' into el total de egresos" width="1920"/>
+                <img src="c2ee6d54e635d982a257e06f0f9099a5d18aa916b5733c314ac093102d94079b.png" title=" un asesor enters '1500000' into el total de egresos (completed)" width="1920"/>
+                <img src="c2ee6d54e635d982a257e06f0f9099a5d18aa916b5733c314ac093102d94079b.png" title=" un asesor enters 'Salud Total' into el nombre de la eps" width="1920"/>
+                <img src="89d0c2a7204eb4d5509259cafa72988e01f74dd9e81274699f2e7395e97c0526.png" title=" un asesor enters 'Salud Total' into el nombre de la eps (completed)" width="1920"/>
+                <img src="89d0c2a7204eb4d5509259cafa72988e01f74dd9e81274699f2e7395e97c0526.png" title=" un asesor enters '3005656231' into el numero del celular" width="1920"/>
+                <img src="8124efc56eab350966a03231769dd4d63b020268541785de42944330b714160a.png" title=" un asesor enters '3005656231' into el numero del celular (completed)" width="1920"/>
+                <img src="8124efc56eab350966a03231769dd4d63b020268541785de42944330b714160a.png" title=" un asesor select Universitario on el nivel de estudios" width="1920"/>
+                <img src="f60ed8ca64e4e243fde312b893b1881a5f4e6430c7f289405297a6104c38d7bf.png" title=" un asesor select Universitario on el nivel de estudios (completed)" width="1920"/>
+                <img src="f60ed8ca64e4e243fde312b893b1881a5f4e6430c7f289405297a6104c38d7bf.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="6a682786b96e318ccc3990f3039230bf52134c6aa37e6f56b7ca19f1808f2979.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="6a682786b96e318ccc3990f3039230bf52134c6aa37e6f56b7ca19f1808f2979.png" title=" Un asesor formulario informacion referencias" width="1920"/>
+                <img src="6a682786b96e318ccc3990f3039230bf52134c6aa37e6f56b7ca19f1808f2979.png" title=" un asesor enters 'Cristian Morales' into el nombre y apellido de un familiar (Que no vive con usted)" width="1920"/>
+                <img src="c9ab350725b98a3947f42ab76cf9b5eeba97553dddccb125a5080b797ae63afe.png" title=" un asesor enters 'Cristian Morales' into el nombre y apellido de un familiar (Que no vive con usted) (completed)" width="1920"/>
+                <img src="c9ab350725b98a3947f42ab76cf9b5eeba97553dddccb125a5080b797ae63afe.png" title=" un asesor enters 'Hermano' into el parentesco que tiene el familiar)" width="1920"/>
+                <img src="976e8ea15dc3c16a56ac77b654fcda9751c476eaa39f2c6cbfe98d186671c90c.png" title=" un asesor enters 'Hermano' into el parentesco que tiene el familiar) (completed)" width="1920"/>
+                <img src="976e8ea15dc3c16a56ac77b654fcda9751c476eaa39f2c6cbfe98d186671c90c.png" title=" un asesor enters '2606060' into el numero de telefono de la referencia familiar" width="1920"/>
+                <img src="9dad12d7866248873043ea4c6240b30c947847bc07a1c14ca801179571d6513b.png" title=" un asesor enters '2606060' into el numero de telefono de la referencia familiar (completed)" width="1920"/>
+                <img src="9dad12d7866248873043ea4c6240b30c947847bc07a1c14ca801179571d6513b.png" title=" un asesor enters '2606060' into el numero de telefono de la referencia familiar" width="1920"/>
+                <img src="9dad12d7866248873043ea4c6240b30c947847bc07a1c14ca801179571d6513b.png" title=" un asesor enters '2606060' into el numero de telefono de la referencia familiar (completed)" width="1920"/>
+                <img src="9dad12d7866248873043ea4c6240b30c947847bc07a1c14ca801179571d6513b.png" title=" un asesor clicks on la ciudad de la referencia familiar" width="1920"/>
+                <img src="6acc8ab0b98a6f3c6a94d72db111416223fa07dfd948f35ecb795d763424c0cd.png" title=" un asesor clicks on la ciudad de la referencia familiar (completed)" width="1920"/>
+                <img src="6acc8ab0b98a6f3c6a94d72db111416223fa07dfd948f35ecb795d763424c0cd.png" title=" un asesor enters 'BARRANQUILLA' then hits [ENTER] into la lista ciudad de la referencia familiar" width="1920"/>
+                <img src="ee7440583bde2d1aaccea6160ce4e9ad5d49368830265296e2d2e9345b39dc72.png" title=" un asesor enters 'BARRANQUILLA' then hits [ENTER] into la lista ciudad de la referencia familiar (completed)" width="1920"/>
+                <img src="ee7440583bde2d1aaccea6160ce4e9ad5d49368830265296e2d2e9345b39dc72.png" title=" un asesor enters '3002005656' into el numero celular de la referencia familiar" width="1920"/>
+                <img src="8e48559219acf1a9ae3328bc1292617ec2ddb393539528c893d5e76b65ecb16f.png" title=" un asesor enters '3002005656' into el numero celular de la referencia familiar (completed)" width="1920"/>
+                <img src="8e48559219acf1a9ae3328bc1292617ec2ddb393539528c893d5e76b65ecb16f.png" title=" un asesor enters 'CR 99 90 90' into la direccion de la referencia familiar" width="1920"/>
+                <img src="bb5dc4f034ae44f6a0d50504f52f91508e855ca5414fba8325f5260b3fe9cffb.png" title=" un asesor enters 'CR 99 90 90' into la direccion de la referencia familiar (completed)" width="1920"/>
+                <img src="bb5dc4f034ae44f6a0d50504f52f91508e855ca5414fba8325f5260b3fe9cffb.png" title=" un asesor clicks on el boton cerrar direccion" width="1920"/>
+                <img src="92ba167ece9feb5a624e918d02fb96aecd1ef1134ae297e24278002bf5798630.png" title=" un asesor clicks on el boton cerrar direccion (completed)" width="1920"/>
+                <img src="92ba167ece9feb5a624e918d02fb96aecd1ef1134ae297e24278002bf5798630.png" title=" un asesor enters 'Laura Mejia' into el nombre y apellido de una referencia personal (Que no vive con usted)" width="1920"/>
+                <img src="19ae70fdae044ed199b897154c16beb3980a44f17de4adcaf3ae6c6b5bea5749.png" title=" un asesor enters 'Laura Mejia' into el nombre y apellido de una referencia personal (Que no vive con usted) (completed)" width="1920"/>
+                <img src="19ae70fdae044ed199b897154c16beb3980a44f17de4adcaf3ae6c6b5bea5749.png" title=" un asesor enters 'Compa&ntilde;era del Trabajo' into el parentesco que tiene la referencia personal)" width="1920"/>
+                <img src="32b75b1a3cf3a7dbe43c5a4a6230a6d2d0fc7a9665ae80948647fc05753c432b.png" title=" un asesor enters 'Compa&ntilde;era del Trabajo' into el parentesco que tiene la referencia personal) (completed)" width="1920"/>
+                <img src="32b75b1a3cf3a7dbe43c5a4a6230a6d2d0fc7a9665ae80948647fc05753c432b.png" title=" un asesor enters '2505050' into el numero de telefono de la referencia personal" width="1920"/>
+                <img src="f2cc4d9411efc614045b50847a8aa3c1e654c61aa418f031debee3bb75ca0247.png" title=" un asesor enters '2505050' into el numero de telefono de la referencia personal (completed)" width="1920"/>
+                <img src="f2cc4d9411efc614045b50847a8aa3c1e654c61aa418f031debee3bb75ca0247.png" title=" un asesor enters '2505050' into el numero de telefono de la referencia personal" width="1920"/>
+                <img src="f2cc4d9411efc614045b50847a8aa3c1e654c61aa418f031debee3bb75ca0247.png" title=" un asesor enters '2505050' into el numero de telefono de la referencia personal (completed)" width="1920"/>
+                <img src="f2cc4d9411efc614045b50847a8aa3c1e654c61aa418f031debee3bb75ca0247.png" title=" un asesor clicks on la ciudad de la referencia personal" width="1920"/>
+                <img src="e37fc47a20ca330842c4c1cc7812288ea77d1de6209b9d9ed7fe3d5d4619a2cb.png" title=" un asesor clicks on la ciudad de la referencia personal (completed)" width="1920"/>
+                <img src="e37fc47a20ca330842c4c1cc7812288ea77d1de6209b9d9ed7fe3d5d4619a2cb.png" title=" un asesor enters 'BARRANQUILLA' then hits [ENTER] into la lista de la referencia personal" width="1920"/>
+                <img src="fcbfbb372c074d27cadc22792d52d3d3a6a9d5697efa77f4c3f80e2d56303959.png" title=" un asesor enters 'BARRANQUILLA' then hits [ENTER] into la lista de la referencia personal (completed)" width="1920"/>
+                <img src="fcbfbb372c074d27cadc22792d52d3d3a6a9d5697efa77f4c3f80e2d56303959.png" title=" un asesor enters '3002809010' into el numero celular de la referencia personal" width="1920"/>
+                <img src="012d1ec693ac69a6e461588de2c3abe24c2302b533db8dbbd909cb4eb22ceb20.png" title=" un asesor enters '3002809010' into el numero celular de la referencia personal (completed)" width="1920"/>
+                <img src="012d1ec693ac69a6e461588de2c3abe24c2302b533db8dbbd909cb4eb22ceb20.png" title=" un asesor enters 'CL 99 35 90' into la direccion de la referencia personal" width="1920"/>
+                <img src="19eaefcfc8682a36693f356409b9c97c679ea61f9748bc90958f7e104fdf68ce.png" title=" un asesor enters 'CL 99 35 90' into la direccion de la referencia personal (completed)" width="1920"/>
+                <img src="19eaefcfc8682a36693f356409b9c97c679ea61f9748bc90958f7e104fdf68ce.png" title=" un asesor clicks on el boton cerrar direccion" width="1920"/>
+                <img src="45c010be9de6e8eb438bb8a48730356051d420f504496465d111aafc3db9b6b9.png" title=" un asesor clicks on el boton cerrar direccion (completed)" width="1920"/>
+                <img src="45c010be9de6e8eb438bb8a48730356051d420f504496465d111aafc3db9b6b9.png" title=" un asesor enters 'BANCOMEVA' into el nombre de la entidad financiera" width="1920"/>
+                <img src="e1183ad362dbcbc05eb6bf8b0c1ed221915c4723f674869698e0d6a30236bdc4.png" title=" un asesor enters 'BANCOMEVA' into el nombre de la entidad financiera (completed)" width="1920"/>
+                <img src="e1183ad362dbcbc05eb6bf8b0c1ed221915c4723f674869698e0d6a30236bdc4.png" title=" un asesor enters 'Cali' into la sucursal" width="1920"/>
+                <img src="8c184247ad962ff7177135aa28e294bc7ccf6cd73cf09637ebcc564b8aa08c22.png" title=" un asesor enters 'Cali' into la sucursal (completed)" width="1920"/>
+                <img src="8c184247ad962ff7177135aa28e294bc7ccf6cd73cf09637ebcc564b8aa08c22.png" title=" un asesor clicks on el tipo de producto" width="1920"/>
+                <img src="faf69bc6e1e28d00299cd1ee976deb1d568420dd8208aa20b475e9b48834dfaf.png" title=" un asesor clicks on el tipo de producto (completed)" width="1920"/>
+                <img src="82845429eb22c861779a8505335dc0fd5f8f47207d479a7cfd725c6abc618ecc.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="316fc12429d7ad47e5d15c832e7e08d225518014a236c065604b07ad06971dc9.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="316fc12429d7ad47e5d15c832e7e08d225518014a236c065604b07ad06971dc9.png" title=" un asesor clicks on el boton guardar y continuar" width="1920"/>
+                <img src="8b0c191e6542397bad47a36c3c2e5db2164272a972744235509bd1e4d9680c60.png" title=" un asesor clicks on el boton guardar y continuar (completed)" width="1920"/>
+                <img src="8b0c191e6542397bad47a36c3c2e5db2164272a972744235509bd1e4d9680c60.png" title=" un asesor clicks on el boton enviar" width="1920"/>
+                <img src="d7d0db0d5eb2a640573c876354a8e29886e44ff71c4a22958d3363c8f9eb1747.png" title=" un asesor clicks on el boton enviar (completed)" width="1920"/>
+                <img src="d7d0db0d5eb2a640573c876354a8e29886e44ff71c4a22958d3363c8f9eb1747.png" title=" un asesor clicks on el boton de encuesta" width="1920"/>
+                <img src="300be9d380dc0f2b96a286b2c817bb27d62a9d35ebde53ad334299f3b271ef55.png" title=" un asesor clicks on el boton de encuesta (completed)" width="1920"/>
+                <img src="300be9d380dc0f2b96a286b2c817bb27d62a9d35ebde53ad334299f3b271ef55.png" title=" un asesor clicks on el boton enviar encuesta" width="1920"/>
+                <img src="e3aa8667a947bc274885715d1e16ad1d4c660167b98e5767bbcfd608a52e42ee.png" title=" un asesor clicks on el boton enviar encuesta (completed)" width="1920"/>
+                <img src="e3aa8667a947bc274885715d1e16ad1d4c660167b98e5767bbcfd608a52e42ee.png" title=" un asesor clicks on el boton aceptar encuesta" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" un asesor clicks on el boton aceptar encuesta (completed)" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" Un asesor cerrar pestana" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" Un asesor cerrar pestana (completed)" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" Un asesor cambiar pestana" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" Un asesor cambiar pestana (completed)" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" Un asesor cambiar pestana" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" Un asesor cambiar pestana (completed)" width="1920"/>
+                <img src="adc3929a9278a60d976f88f59c3175b0f846f2472c0fca8ea84a81b8e52f13d5.png" title=" un asesor clicks on el link de la pagina principal" width="1920"/>
+                <img src="dec61a312847f5c2fbc5b35abeb0b4e7db42390ba552121d94b2da6ac1a442a3.png" title=" un asesor clicks on el link de la pagina principal (completed)" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el link de originacion" width="1920"/>
+                <img src="b10101d82ff379626f649377ae85b7911b1adb2ed49bcb6d4545868ce6d3646d.png" title=" un asesor clicks on el link de originacion (completed)" width="1920"/>
+                <img src="b10101d82ff379626f649377ae85b7911b1adb2ed49bcb6d4545868ce6d3646d.png" title=" Un asesor informacion chequeo documento" width="1920"/>
+                <img src="b10101d82ff379626f649377ae85b7911b1adb2ed49bcb6d4545868ce6d3646d.png" title=" un asesor clicks on la opcion de la tabla del nombre" width="1920"/>
+                <img src="e200a3c0d93bd3c4ee5110ce4d1a989a110bfaad6c36b3227da891ed2a17a0cb.png" title=" un asesor clicks on la opcion de la tabla del nombre (completed)" width="1920"/>
+                <img src="e200a3c0d93bd3c4ee5110ce4d1a989a110bfaad6c36b3227da891ed2a17a0cb.png" title=" un asesor clicks on el boton papeleria antigua" width="1920"/>
+                <img src="0c4efb4003f12a3221250779615b74fc68bdf457fed99f1d738a60032a7229e9.png" title=" un asesor clicks on el boton papeleria antigua (completed)" width="1920"/>
+                <img src="0c4efb4003f12a3221250779615b74fc68bdf457fed99f1d738a60032a7229e9.png" title=" un asesor clicks on el boton aceptar del primer pop up" width="1920"/>
+                <img src="4a9e2e750cd7d63317408ed16c62739c0d11fa2a54446d77fef9129654c9bb07.png" title=" un asesor clicks on el boton aceptar del primer pop up (completed)" width="1920"/>
+                <img src="4a9e2e750cd7d63317408ed16c62739c0d11fa2a54446d77fef9129654c9bb07.png" title=" un asesor clicks on el boton de actival de afianzados" width="1920"/>
+                <img src="31fefa5413d7f77aa9e944b022db8da341ec2bc0f7f98a5f7d34e79f8955eab4.png" title=" un asesor clicks on el boton de actival de afianzados (completed)" width="1920"/>
+                <img src="31fefa5413d7f77aa9e944b022db8da341ec2bc0f7f98a5f7d34e79f8955eab4.png" title=" un asesor clicks on el boton aceptar del segundo pop up" width="1920"/>
+                <img src="3edea829a33fb34e755906d5a8c6e8f672407a6625a43c4a9d94f69407dc8c72.png" title=" un asesor clicks on el boton aceptar del segundo pop up (completed)" width="1920"/>
+                <img src="3edea829a33fb34e755906d5a8c6e8f672407a6625a43c4a9d94f69407dc8c72.png" title=" un asesor clicks on el boton aceptar" width="1920"/>
+                <img src="d6dcc9f7cb9d613fd3a37c4ebcd94e00a8d379d1ca3ab35c303972bcb79ae8c1.png" title=" un asesor clicks on el boton aceptar (completed)" width="1920"/>
+                <img src="d6dcc9f7cb9d613fd3a37c4ebcd94e00a8d379d1ca3ab35c303972bcb79ae8c1.png" title=" un asesor enters '880' into el puntaje de la CIFIN" width="1920"/>
+                <img src="61de6ad127e78192024c27f5272c91e5d15b9e578b0bc5169102eda965e2612d.png" title=" un asesor enters '880' into el puntaje de la CIFIN (completed)" width="1920"/>
+                <img src="61de6ad127e78192024c27f5272c91e5d15b9e578b0bc5169102eda965e2612d.png" title=" un asesor enters '660' into acierta datacredito" width="1920"/>
+                <img src="b4bc9ea8bab30e2495e4662a3a675abf6197592b94a11acfeee6fd983fe57f72.png" title=" un asesor enters '660' into acierta datacredito (completed)" width="1920"/>
+                <img src="b4bc9ea8bab30e2495e4662a3a675abf6197592b94a11acfeee6fd983fe57f72.png" title=" Un asesor subir archivos chequeo documento" width="1920"/>
+                <img src="2f598aaf2a1004633e408a1e43ba058e804b1598d3b60798be89c1050f4dca10.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="b4bc9ea8bab30e2495e4662a3a675abf6197592b94a11acfeee6fd983fe57f72.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="b4bc9ea8bab30e2495e4662a3a675abf6197592b94a11acfeee6fd983fe57f72.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="c9a5ed0579652856932560a15bcec4eee2e87fec09ca8b061fb5a29e89f84329.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="c9a5ed0579652856932560a15bcec4eee2e87fec09ca8b061fb5a29e89f84329.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="a2da87ac512100975624d6f055957caa24c5f539038cd774a641c1debd464bfd.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="087ae972a2be7ceedb2cc546a1b62cf188320fd0d2290f5ab1f2a7e114cf0ed4.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="f062941d728df18108c688b3ec8df9012afda1c87257ba7c5a5c6eca785de8df.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="f062941d728df18108c688b3ec8df9012afda1c87257ba7c5a5c6eca785de8df.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="0d079754dd053c94db1f505f97178123be1009f952356b723b22713fc52fc883.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="087ae972a2be7ceedb2cc546a1b62cf188320fd0d2290f5ab1f2a7e114cf0ed4.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="2dd52c7ab9b91fa03c2761fe119c29f82e224dc5b92b183a7c65c18258c212d0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="2dd52c7ab9b91fa03c2761fe119c29f82e224dc5b92b183a7c65c18258c212d0.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="c8ad868ae7d39bf8a997843713ce066094edb1633c57ec591c35e6b27b0a7163.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="087ae972a2be7ceedb2cc546a1b62cf188320fd0d2290f5ab1f2a7e114cf0ed4.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="fa436c96841cf215001c5a1c1c4d80acb358a26fa0ca560be6215955f5ddfe92.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="fa436c96841cf215001c5a1c1c4d80acb358a26fa0ca560be6215955f5ddfe92.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="981c5b3aac31f1b4054e276c4c10768049a6b102197561bc16f322f8e321f01f.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="68ddf50d7eb2012bf840a2c196c129b8d1dceb0da2018ff55f7290eaa799b512.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="6b7709b212f70211f84c9c8d29eddbee9721d3cfc6eef51a7e2b383164700053.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="4e929dc4fe950dd6da60b196bcadebcb0691951c07764b87949a3a641581f342.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="4e929dc4fe950dd6da60b196bcadebcb0691951c07764b87949a3a641581f342.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="d7e669b2e9b0f8f20cd1ff4db0c06f1f6306769471805da900e5b6319a3d6b0a.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="aaabff38dea8253dd3c0b3c27a497da20d16be56bdd0dbc6c17ebeb5e8c106ef.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="db32e982fa44a15030c3fc451014c12cb00b00b8925a02d84ad6fa009d10e124.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="db32e982fa44a15030c3fc451014c12cb00b00b8925a02d84ad6fa009d10e124.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="ef51ab0e6602aa64cee19d2546d3713e0910a628a23bc01b69b4e7c21987465b.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="15782608434b13759dc3768fa786886bdddf78193a79dcbf2937c2238072ff81.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="b46ad3500499c1263982ddb2654b4a9e6ed8233ad0246ae582da680e7728c96e.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="b46ad3500499c1263982ddb2654b4a9e6ed8233ad0246ae582da680e7728c96e.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="d562af94177e7ad9f0bfe8c9e4d4176478c23fc370783bf7761a5cc944acb218.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="15782608434b13759dc3768fa786886bdddf78193a79dcbf2937c2238072ff81.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor" width="1920"/>
+                <img src="8df3781ce6a35d41ff021226c678918d47914bb7bad78b46fe4ca3eb48a1ac45.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivor (completed)" width="1920"/>
+                <img src="8df3781ce6a35d41ff021226c678918d47914bb7bad78b46fe4ca3eb48a1ac45.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos" width="1920"/>
+                <img src="5d6cd0c9fd9975270710dfae8c83440fd09dfc758d044cd9002b3fe7747593a5.png" title=" un asesor clicks on Enviar motivo en chequeo de documentos (completed)" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" Un asesor subir archivos chequeo documento (completed)" width="1920"/>
+                <img src="d0d763e9661945c622af8ca4720edca63ef4530a2b48b9c9961350c5c567b925.png" title=" un asesor clicks on el boton guardar" width="1920"/>
+                <img src="e57806c16738ca0b2bf63dd274451c55232d534e79b8dd406c4677b7ce5ee548.png" title=" un asesor clicks on el boton guardar (completed)" width="1920"/>
+                <img src="e57806c16738ca0b2bf63dd274451c55232d534e79b8dd406c4677b7ce5ee548.png" title=" un asesor clicks on el boton aceptar" width="1920"/>
+                <img src="f9511cc0db29817fbc79e78e07252096df41c683e1186ea2614142dd22f2e057.png" title=" un asesor clicks on el boton aceptar (completed)" width="1920"/>
+                <img src="f9511cc0db29817fbc79e78e07252096df41c683e1186ea2614142dd22f2e057.png" title=" un asesor clicks on El menu de originacion" width="1920"/>
+                <img src="3f97a7659cef9a59060482e94d977dddfc1c8defda7ce6db6301c82dee0e199f.png" title=" un asesor clicks on El menu de originacion (completed)" width="1920"/>
+                <img src="3f97a7659cef9a59060482e94d977dddfc1c8defda7ce6db6301c82dee0e199f.png" title=" Un asesor informacion confirmacion" width="1920"/>
+                <img src="3f97a7659cef9a59060482e94d977dddfc1c8defda7ce6db6301c82dee0e199f.png" title=" un asesor clicks on el boton de accion" width="1920"/>
+                <img src="1df3216d1bafcfbc13a13a8e3b8c1d775ce7fd2c7be0f0d15cda91f186f06668.png" title=" un asesor clicks on el boton de accion (completed)" width="1920"/>
+                <img src="1df3216d1bafcfbc13a13a8e3b8c1d775ce7fd2c7be0f0d15cda91f186f06668.png" title=" un asesor clicks on el menu de acciones de confirmacion" width="1920"/>
+                <img src="5cf890afc0d350edc9d93563af2251c7e5640c8c7824a2d9a52351f3842c418f.png" title=" un asesor clicks on el menu de acciones de confirmacion (completed)" width="1920"/>
+                <img src="5cf890afc0d350edc9d93563af2251c7e5640c8c7824a2d9a52351f3842c418f.png" title=" un asesor clicks on el boton ok de confirmacion" width="1920"/>
+                <img src="5cf890afc0d350edc9d93563af2251c7e5640c8c7824a2d9a52351f3842c418f.png" title=" un asesor clicks on el boton ok de confirmacion (completed)" width="1920"/>
+                <img src="5cf890afc0d350edc9d93563af2251c7e5640c8c7824a2d9a52351f3842c418f.png" title=" un asesor clicks on El menu de originacion" width="1920"/>
+                <img src="907f22099f0de97c738143518d4ad8ee8f66e8e72bd1e51b8a1eab08f69980fb.png" title=" un asesor clicks on El menu de originacion (completed)" width="1920"/>
+                <img src="907f22099f0de97c738143518d4ad8ee8f66e8e72bd1e51b8a1eab08f69980fb.png" title=" Un asesor aprobacion de credito" width="1920"/>
+                <img src="907f22099f0de97c738143518d4ad8ee8f66e8e72bd1e51b8a1eab08f69980fb.png" title=" un asesor clicks on boton de mi cuenta" width="1920"/>
+                <img src="d286c5b5f825a860abadfa3fa30f43544ef82b49567a6fb87725b3a5b6495a08.png" title=" un asesor clicks on boton de mi cuenta (completed)" width="1920"/>
+                <img src="d286c5b5f825a860abadfa3fa30f43544ef82b49567a6fb87725b3a5b6495a08.png" title=" un asesor clicks on el submenu de mi cuenta" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" un asesor clicks on el submenu de mi cuenta (completed)" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor informacion login" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" un asesor enters 'jcastro' into usuario" width="1920"/>
+                <img src="c966ef34bdfac3367c8124f279f10d9103947a7629dc868f3235f86d1e2e2437.png" title=" un asesor enters 'jcastro' into usuario (completed)" width="1920"/>
+                <img src="c966ef34bdfac3367c8124f279f10d9103947a7629dc868f3235f86d1e2e2437.png" title=" un asesor enters 'Nicolas32@' into contrase&ntilde;a" width="1920"/>
+                <img src="36e231b5ac2a76289acaf362185297022d52304ed9f3b0eb2344f551377ac082.png" title=" un asesor enters 'Nicolas32@' into contrase&ntilde;a (completed)" width="1920"/>
+                <img src="36e231b5ac2a76289acaf362185297022d52304ed9f3b0eb2344f551377ac082.png" title=" un asesor clicks on el boton iniciar sesion" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" un asesor clicks on el boton iniciar sesion (completed)" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" un asesor enters 'a' into codigo" width="1920"/>
+                <img src="090badd2d1bd17b8b984b976b23c2a7e1c4aaa3535ea893bd9943f50bff7bb95.png" title=" un asesor enters 'a' into codigo (completed)" width="1920"/>
+                <img src="090badd2d1bd17b8b984b976b23c2a7e1c4aaa3535ea893bd9943f50bff7bb95.png" title=" un asesor clicks on el boton enviar" width="1920"/>
+                <img src="cfe922880ad23e6eed166d7b9d09651b29dad86beb5a1fa5e45a5cc4b1a78684.png" title=" un asesor clicks on el boton enviar (completed)" width="1920"/>
+                <img src="9be2e9badd63bd94f703b42fa7807857475a25ba96a7c3ac15d3d2533af8b3a3.png" title=" un asesor clicks on el link de originacion" width="1920"/>
+                <img src="595cbd83beb2472786dfa489197fb91055751796c5f1cc98b989ed01b49a9347.png" title=" un asesor clicks on el link de originacion (completed)" width="1920"/>
+                <img src="595cbd83beb2472786dfa489197fb91055751796c5f1cc98b989ed01b49a9347.png" title=" un asesor clicks on El menu de originacion" width="1920"/>
+                <img src="4a3d659beb87ef115fef0dd139f49bbf6a64d41b20cb4238afc0278b3470b8e8.png" title=" un asesor clicks on El menu de originacion (completed)" width="1920"/>
+                <img src="4a3d659beb87ef115fef0dd139f49bbf6a64d41b20cb4238afc0278b3470b8e8.png" title=" un asesor clicks on la opcion de la tabla del nombre" width="1920"/>
+                <img src="69bc309f8563cc31288affce17314bf064c0f31fa3ab13a51a9f231a2c0c0abe.png" title=" un asesor clicks on la opcion de la tabla del nombre (completed)" width="1920"/>
+                <img src="69bc309f8563cc31288affce17314bf064c0f31fa3ab13a51a9f231a2c0c0abe.png" title=" un asesor clicks on El boton aprobar" width="1920"/>
+                <img src="69bc309f8563cc31288affce17314bf064c0f31fa3ab13a51a9f231a2c0c0abe.png" title=" un asesor clicks on El boton aprobar (completed)" width="1920"/>
+                <img src="106067a9f5ddc300f7c5eee7d6d32f372d913e5b3adcd2c63c4d20457055e746.png" title=" un asesor clicks on El boton ok" width="1920"/>
+                <img src="d4a50f6820270f11452be776453e6aab1a5687a3809d5ee373cb4cfaf29c2f16.png" title=" un asesor clicks on El boton ok (completed)" width="1920"/>
+                <img src="d4a50f6820270f11452be776453e6aab1a5687a3809d5ee373cb4cfaf29c2f16.png" title=" un asesor clicks on boton de mi cuenta" width="1920"/>
+                <img src="c69b3da30e6a75bc5db965d04f4c4c6760fa237c610cb367ffedc9f243ef0221.png" title=" un asesor clicks on boton de mi cuenta (completed)" width="1920"/>
+                <img src="c69b3da30e6a75bc5db965d04f4c4c6760fa237c610cb367ffedc9f243ef0221.png" title=" un asesor clicks on el submenu de mi cuenta" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" un asesor clicks on el submenu de mi cuenta (completed)" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Un asesor informacion login" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" un asesor enters 'ochinchilla' into usuario" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" un asesor enters 'ochinchilla' into usuario (completed)" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" un asesor enters 'Nicolas32@' into contrase&ntilde;a" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" un asesor enters 'Nicolas32@' into contrase&ntilde;a (completed)" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" un asesor clicks on el boton iniciar sesion" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" un asesor clicks on el boton iniciar sesion (completed)" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" un asesor enters '123456' into codigo" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" un asesor enters '123456' into codigo (completed)" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" un asesor clicks on el boton enviar" width="1920"/>
+                <img src="dec61a312847f5c2fbc5b35abeb0b4e7db42390ba552121d94b2da6ac1a442a3.png" title=" un asesor clicks on el boton enviar (completed)" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el link de originacion" width="1920"/>
+                <img src="f9511cc0db29817fbc79e78e07252096df41c683e1186ea2614142dd22f2e057.png" title=" un asesor clicks on el link de originacion (completed)" width="1920"/>
+                <img src="f9511cc0db29817fbc79e78e07252096df41c683e1186ea2614142dd22f2e057.png" title=" un asesor clicks on El menu de originacion" width="1920"/>
+                <img src="5b0d6770274a16f61867aabd3d778821f535d7df52a18d7fd9449f34d6434a08.png" title=" un asesor clicks on El menu de originacion (completed)" width="1920"/>
+                <img src="5b0d6770274a16f61867aabd3d778821f535d7df52a18d7fd9449f34d6434a08.png" title=" Un asesor aprobacion incorporacion" width="1920"/>
+                <img src="5b0d6770274a16f61867aabd3d778821f535d7df52a18d7fd9449f34d6434a08.png" title=" un asesor clicks on la lista de solicitado por del cuadro emergente" width="1920"/>
+                <img src="8667213e2e561793f2346beae68654aa6d82034707ec2fba06b7ee6616f02f81.png" title=" un asesor clicks on la lista de solicitado por del cuadro emergente (completed)" width="1920"/>
+                <img src="8667213e2e561793f2346beae68654aa6d82034707ec2fba06b7ee6616f02f81.png" title=" un asesor clicks on el boton actualizar gestion" width="1920"/>
+                <img src="8667213e2e561793f2346beae68654aa6d82034707ec2fba06b7ee6616f02f81.png" title=" un asesor clicks on el boton actualizar gestion (completed)" width="1920"/>
+                <img src="10eeb751e03bfadb7d463d0b447357ee477a236221b26bf55bbfef18d2fd101a.png" title=" un asesor select Incorporado on la lista de seleccionar gestion" width="1920"/>
+                <img src="f07a35cae2e9757271e3132473012573943f7ebfb9a03033ccde26faf24430b6.png" title=" un asesor select Incorporado on la lista de seleccionar gestion (completed)" width="1920"/>
+                <img src="f07a35cae2e9757271e3132473012573943f7ebfb9a03033ccde26faf24430b6.png" title=" un asesor enters 'Prueba' into el detalle de gestion" width="1920"/>
+                <img src="7af490036db2ce03b881dab3d37822bfc8eae64d071610b63178370cb2242596.png" title=" un asesor enters 'Prueba' into el detalle de gestion (completed)" width="1920"/>
+                <img src="7af490036db2ce03b881dab3d37822bfc8eae64d071610b63178370cb2242596.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el link de subida del archivo" width="1920"/>
+                <img src="c3504537bdf453780427d54930f36243ae30a814af0378d5e43394bce1ac65a7.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el link de subida del archivo (completed)" width="1920"/>
+                <img src="faa9ba029da4e991c46c8c9324db90be3302b88e2795dcb79ec3a2f828e3197a.png" title=" un asesor clicks on el boton de registro" width="1920"/>
+                <img src="aaab22584b55d2d1935e9b39eb0669f320b9d203a4630974ea2c13cee5ce83ec.png" title=" un asesor clicks on el boton de registro (completed)" width="1920"/>
+                <img src="509086f9536c07486960854b0d12e59e8fdee64f0dec3871f56016b636130c22.png" title=" un asesor select 2020 on el a&ntilde;o de inicio de descuento" width="1920"/>
+                <img src="a0514e1c1a670699befa34e96c3a23e1af93694404f4175f56fd702c55588b86.png" title=" un asesor select 2020 on el a&ntilde;o de inicio de descuento (completed)" width="1920"/>
+                <img src="a0514e1c1a670699befa34e96c3a23e1af93694404f4175f56fd702c55588b86.png" title=" un asesor selects 01 in el mes de inicio de descuento" width="1920"/>
+                <img src="f86adc33cc9bfae6c8b29930ada38bbc5f56e68a49e9dd5233f6c08f3dbd5bec.png" title=" un asesor selects 01 in el mes de inicio de descuento (completed)" width="1920"/>
+                <img src="f86adc33cc9bfae6c8b29930ada38bbc5f56e68a49e9dd5233f6c08f3dbd5bec.png" title=" un asesor clicks on el boton aprobar" width="1920"/>
+                <img src="cd4b18d0bcaef91529fb813ea897869b0fe0bf8a1c815aae8ee2cbccc5a0a05a.png" title=" un asesor clicks on el boton aprobar (completed)" width="1920"/>
+                <img src="a246a93f597ad441248a1348535eec6f7dd0d1ae9be69bf5668d844f603b8142.png" title=" un asesor clicks on el boton aceptar" width="1920"/>
+                <img src="f6e48a189e02649f23e293c68e05305055caeb33e236ad4c51178f2baaf77f04.png" title=" un asesor clicks on el boton aceptar (completed)" width="1920"/>
+                <img src="f6e48a189e02649f23e293c68e05305055caeb33e236ad4c51178f2baaf77f04.png" title=" un asesor clicks on El menu hamburguesa" width="1920"/>
+                <img src="e30b77c756546b93167ebfcae8cb13005328c2503b16009e86ec2e0af48e8d08.png" title=" un asesor clicks on El menu hamburguesa (completed)" width="1920"/>
+                <img src="e30b77c756546b93167ebfcae8cb13005328c2503b16009e86ec2e0af48e8d08.png" title=" un asesor clicks on El menu nuevo de originacion" width="1920"/>
+                <img src="20d2355e599aee3aca584cf9d734ff0e93df0b731d5feef4a5d9212841a8b4eb.png" title=" un asesor clicks on El menu nuevo de originacion (completed)" width="1920"/>
+                <img src="20d2355e599aee3aca584cf9d734ff0e93df0b731d5feef4a5d9212841a8b4eb.png" title=" Un asesor aprobacion formalizacion" width="1920"/>
+                <img src="20d2355e599aee3aca584cf9d734ff0e93df0b731d5feef4a5d9212841a8b4eb.png" title=" un asesor clicks on la columna nombre de la de formalizacion" width="1920"/>
+                <img src="af853ae9ff9c613ef1da28079d5488bfcf75f87fc1ce21fac31511aa33fd0423.png" title=" un asesor clicks on la columna nombre de la de formalizacion (completed)" width="1920"/>
+                <img src="af853ae9ff9c613ef1da28079d5488bfcf75f87fc1ce21fac31511aa33fd0423.png" title=" un asesor clicks on El boton de subir documentos de formalizacion" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" un asesor clicks on El boton de subir documentos de formalizacion (completed)" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" Un asesor cambiar pestana actual" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" Un asesor wait for" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" Un asesor wait for (completed)" width="1920"/>
+                <img src="618c5f14550f27f1cb44d44a15bd1bd43b2ebf87783fd0eb781bbee75a3d5915.png" title=" Un asesor cambiar pestana actual (completed)" width="1920"/>
+                <img src="618c5f14550f27f1cb44d44a15bd1bd43b2ebf87783fd0eb781bbee75a3d5915.png" title=" Un asesor subir archivos formalizacion" width="1920"/>
+                <img src="618c5f14550f27f1cb44d44a15bd1bd43b2ebf87783fd0eb781bbee75a3d5915.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="c7132a73ac47dc0923a1a0938c89428958b53cf3b1c4111e7f6e61d5209644c5.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="c7132a73ac47dc0923a1a0938c89428958b53cf3b1c4111e7f6e61d5209644c5.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="917b5dda405c62ffd051057953667315b92885e38226145f0942449d5f9f28b1.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="917b5dda405c62ffd051057953667315b92885e38226145f0942449d5f9f28b1.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="7cdce5aa554cde2ed35019062ff7add9b0049f427c5998cc84252a9444d41229.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="7cdce5aa554cde2ed35019062ff7add9b0049f427c5998cc84252a9444d41229.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="6971def4b78d9ede8ec10de61569a0c1792cf3385e3f0675adec4575cdaba7fc.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="1fec77c36650497530eccb5a268794932bef8e985654d5001f650caccb3e9a7d.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="959eeaf298e99add389c0d83bff39add207a237d1f73c9a38d1c89cdc9a51449.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="959eeaf298e99add389c0d83bff39add207a237d1f73c9a38d1c89cdc9a51449.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="01338ffc9fc77491f2338f4286f824f625a4bef70081f00857afaffaa3f2cffe.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="01338ffc9fc77491f2338f4286f824f625a4bef70081f00857afaffaa3f2cffe.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="a36970f171985259feb64ce85c68f1aeaa64e4ee64d3b14f6875c71720d07206.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="a36970f171985259feb64ce85c68f1aeaa64e4ee64d3b14f6875c71720d07206.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="cb884e6974e47802512a59aa7c1944da35edd52e195c07860f56bd78cb0a8e0d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="8acc463b2532f83549ee2ea9331250113b3c3d305ebf34bed652eb972d125eec.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="4db97c748c3f23f88ead662251603ca9167964f22147d8894ec3dba755723ccd.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="4db97c748c3f23f88ead662251603ca9167964f22147d8894ec3dba755723ccd.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="397a010f0876938048491038df04709a2238290fafa86d98946958f3570c97e4.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="397a010f0876938048491038df04709a2238290fafa86d98946958f3570c97e4.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="6dd7a08e24a67f018b8932fab183cc111c412690d0aa72672b4cbb9c9eba5593.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="6dd7a08e24a67f018b8932fab183cc111c412690d0aa72672b4cbb9c9eba5593.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="6eb911ac04963e4d53568ab77d9bfc4804dbafdb7836e4b7f4fee8bc2ce657b3.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="e685eb7812f4fd1220dc1e3a2c3a7f7e93bb45adf19a82abcbb1a34f165390be.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="489550817f4efd252e50e70c2fd1ff876ef722cfa1d9c95670639e460fc1891c.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="489550817f4efd252e50e70c2fd1ff876ef722cfa1d9c95670639e460fc1891c.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="9d28cc506817bd7f2fc85d6e6b777d9db55559f5a9ce1e7630065917624859a4.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="9d28cc506817bd7f2fc85d6e6b777d9db55559f5a9ce1e7630065917624859a4.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="648dee92f30aa9bfda567fbd22735fc348fa89c962e25dd2e5803f662cd8ad25.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="648dee92f30aa9bfda567fbd22735fc348fa89c962e25dd2e5803f662cd8ad25.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="d3a19430b393c346ae3a4381b91a52825a5327c764c8782e122271315a59b060.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="18e01f4aeddb223daa369f18e9a1635f5de3f13174c69cce6bf11b72cd6cc238.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="f3905b4d5d838ada1e2c0effaeba2648f604b9e6584c85f36b7eb6b2116acb76.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="f3905b4d5d838ada1e2c0effaeba2648f604b9e6584c85f36b7eb6b2116acb76.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="f3e98a9f22ad9ef21d719c823f84068300804ec918f247c6f2c4e0633df7f2d6.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="f3e98a9f22ad9ef21d719c823f84068300804ec918f247c6f2c4e0633df7f2d6.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="9ac99052cc251ab3a92f79b8ac8b95d68812c3162e3301065b4f040547eaf04d.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="9ac99052cc251ab3a92f79b8ac8b95d68812c3162e3301065b4f040547eaf04d.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="1a3f46252c572ddc8a4b7fbc8d75d2307dda611c89ad6e4767252c3470bf46d0.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="2c5a3609a0905f63a8a553481ce0fba1a5945e045d98becb9a6f1202eec433f1.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="d4fb8e49631ef4c9e2a7a283357ce2f100e22ff8af94e54f582126a7de6be54a.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="d4fb8e49631ef4c9e2a7a283357ce2f100e22ff8af94e54f582126a7de6be54a.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="3258ae087c4a67cb8bf75f5da164c5686c058ffe358329b04ab42234515f4cdb.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="3258ae087c4a67cb8bf75f5da164c5686c058ffe358329b04ab42234515f4cdb.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="e11c60367ed05aa96fb25d7e1d35377613f3e5cf59c9acc8ae44bc39be926a06.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="e11c60367ed05aa96fb25d7e1d35377613f3e5cf59c9acc8ae44bc39be926a06.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="1e8aa4c2bbc5e277e29c26ad2b7dbe826809030ee8c3bb21196e57bc41c4dcc7.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="1e8aa4c2bbc5e277e29c26ad2b7dbe826809030ee8c3bb21196e57bc41c4dcc7.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="091f39dbb0bdd9bd4e0db69950b2c3fd9f8aa72104d1f4accaf107ff018b958b.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="091f39dbb0bdd9bd4e0db69950b2c3fd9f8aa72104d1f4accaf107ff018b958b.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="4823d2159b4f3452fd13a38524a8f8c1c04828bb9a4bc90db901df11fecc05e6.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="4823d2159b4f3452fd13a38524a8f8c1c04828bb9a4bc90db901df11fecc05e6.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="f3e5fac1d8e3bb040abfed50b57e7fec94ee9ff72de5aeba1d985bf27965a802.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="f3e5fac1d8e3bb040abfed50b57e7fec94ee9ff72de5aeba1d985bf27965a802.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="8264c1b0f73adb511634cdfd4b99cde7e559507225667c1ef0fd1b5dd3119769.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="8264c1b0f73adb511634cdfd4b99cde7e559507225667c1ef0fd1b5dd3119769.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="1e8aa4c2bbc5e277e29c26ad2b7dbe826809030ee8c3bb21196e57bc41c4dcc7.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="1e8aa4c2bbc5e277e29c26ad2b7dbe826809030ee8c3bb21196e57bc41c4dcc7.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="c9b0819810e68050c9eb25d1ba731d53738def22396490260729f8d343a94997.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="31f31762bbee99820bbda1c377f9f28d1e14b2e862e784a885ddb40fbfac09c0.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="c80a192929bd737667abff992265788b4848d5558f9f471c853b267744f0038d.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="be0e8f10bc4951e1546ce0ccefebee9d70fbe0d086791dc5b36f5fcac2edb504.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="887b863ab0713fef68acb752211507554906f0595c191801294e28950f317776.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="887b863ab0713fef68acb752211507554906f0595c191801294e28950f317776.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="4c2efecd67dcfa31d0bf57f6742582832ce8b1590293e69f4a2567bbd674af91.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="4c2efecd67dcfa31d0bf57f6742582832ce8b1590293e69f4a2567bbd674af91.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="7e26277c2d9484d983bf28920858761ff74b3ef1c9495212df4a1a32e7cdecf9.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="7e26277c2d9484d983bf28920858761ff74b3ef1c9495212df4a1a32e7cdecf9.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="b8e6577777e8458fb0cee56dfde7804649f7b4be2ad0273b0c794b5e14ad5133.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="d609f701f9b143dc39dde8088437721b5f7332bfdcfa0f0a2b0b7b73ab3181f8.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="3e77fb33c7775602937b4764a74aebc83a7cc74ae0af632b74b7315d16701917.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="3e77fb33c7775602937b4764a74aebc83a7cc74ae0af632b74b7315d16701917.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="a2e6b7cd0052c32c9cc4fb3eba0e98c628a40331e1e502759dda296b7ad2ad50.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="a2e6b7cd0052c32c9cc4fb3eba0e98c628a40331e1e502759dda296b7ad2ad50.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="890ba0fe0e383853be6ba40f5fd77263858c35194b246c28c1542cc719072c61.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="890ba0fe0e383853be6ba40f5fd77263858c35194b246c28c1542cc719072c61.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="a29c02e309b7711134255ffff5ccccb14dc05f5fcb384f2c589ade6e0f5bc138.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="7787f9431e7b5bce52536f640e4994ce3cd54310a8047a6bbfcb36cd22cc60aa.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="c6ce29e997f831beb15e236b7b911be2bb5c10372e11d5fe4cc332e75411ee51.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="c6ce29e997f831beb15e236b7b911be2bb5c10372e11d5fe4cc332e75411ee51.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="72fd7977c1eba4a8da5c88e34bd430d6287e8b2f60c89d3fa3c30130492c0e2f.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="cf93cb9cc72c94c00172cd5246db4e8c27ca6e63711c58e285e9775ce2b84cd5.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="1ef90940bae8a9ad3ebc0fbf9306aac4f1de4934f28d9ab6d481015d96198117.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="1ef90940bae8a9ad3ebc0fbf9306aac4f1de4934f28d9ab6d481015d96198117.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="72fd7977c1eba4a8da5c88e34bd430d6287e8b2f60c89d3fa3c30130492c0e2f.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="cf93cb9cc72c94c00172cd5246db4e8c27ca6e63711c58e285e9775ce2b84cd5.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="0606878501fe6fce3d76e8ad97c8f43652cb1f0d18dbbc107f7344e8673335cb.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="0606878501fe6fce3d76e8ad97c8f43652cb1f0d18dbbc107f7344e8673335cb.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="72fd7977c1eba4a8da5c88e34bd430d6287e8b2f60c89d3fa3c30130492c0e2f.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="cf93cb9cc72c94c00172cd5246db4e8c27ca6e63711c58e285e9775ce2b84cd5.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="6f6355501a4be7ef1b51f17c3cfc91c78e3868469fad2711adf1fec25b5e05be.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="6f6355501a4be7ef1b51f17c3cfc91c78e3868469fad2711adf1fec25b5e05be.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="72fd7977c1eba4a8da5c88e34bd430d6287e8b2f60c89d3fa3c30130492c0e2f.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="cf93cb9cc72c94c00172cd5246db4e8c27ca6e63711c58e285e9775ce2b84cd5.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="76d8e5c2f0ae6140bd45f6ddbfb8606bfd091b67c7d28102f8e887af5d5558f0.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="76d8e5c2f0ae6140bd45f6ddbfb8606bfd091b67c7d28102f8e887af5d5558f0.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="400f8a4cf61e223824c59b2d016c23396c3cc8736a8c74321340ad62efaea7ce.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="4e9b2c4d6977229e2d78573c876afbba106f078712e0e8166812c901280e507c.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="72fd7977c1eba4a8da5c88e34bd430d6287e8b2f60c89d3fa3c30130492c0e2f.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="cf93cb9cc72c94c00172cd5246db4e8c27ca6e63711c58e285e9775ce2b84cd5.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="9215e8d4bd7c8ce47637150279b2ce2095a1919c76091c93f831f00e83ae2a50.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="9215e8d4bd7c8ce47637150279b2ce2095a1919c76091c93f831f00e83ae2a50.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="ad0c70795ab9a32fca45ee3bcf2cf490b252840f0672285f7c812a4cdf2cf8c8.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="04e1639421618f518a72c2c6d594525ec9d347858d2aca2d890985af0553698b.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="2baa54a2077753ea92c529e065b33fee130019c9b25234576e998824384fefce.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="2baa54a2077753ea92c529e065b33fee130019c9b25234576e998824384fefce.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="ad0c70795ab9a32fca45ee3bcf2cf490b252840f0672285f7c812a4cdf2cf8c8.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="04e1639421618f518a72c2c6d594525ec9d347858d2aca2d890985af0553698b.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="e23bc8781a810c8c2bf8118580ff75eae554d0189377f1efd1cb668d169cead7.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="e23bc8781a810c8c2bf8118580ff75eae554d0189377f1efd1cb668d169cead7.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="ad0c70795ab9a32fca45ee3bcf2cf490b252840f0672285f7c812a4cdf2cf8c8.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="04e1639421618f518a72c2c6d594525ec9d347858d2aca2d890985af0553698b.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="b1ed75b7511cf15689c3ad15a32d32833d4f7e85dad8adad7651e6977f87bead.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="b1ed75b7511cf15689c3ad15a32d32833d4f7e85dad8adad7651e6977f87bead.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="ad0c70795ab9a32fca45ee3bcf2cf490b252840f0672285f7c812a4cdf2cf8c8.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="04e1639421618f518a72c2c6d594525ec9d347858d2aca2d890985af0553698b.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]]" width="1920"/>
+                <img src="53185269d761e211ba0c221d5b73c92c32906c73751c81de7936248807fc9b25.png" title=" un asesor clicks on [[ChromeDriver: chrome on WINDOWS (0c8ccabaf7469af15957af1c6ef9a71e)] -&gt; xpath: //i[contains(@class,'fa-upload')]] (completed)" width="1920"/>
+                <img src="53185269d761e211ba0c221d5b73c92c32906c73751c81de7936248807fc9b25.png" title=" un asesor clicks on El boton de seleccionar archivo" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" un asesor clicks on El boton de seleccionar archivo (completed)" width="1920"/>
+                <img src="166c5379eae6497e978ac27f90dc7b3572125b57a1dd8349b4ed636b25e56596.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" Upload file at .\src\test\resources\file\prueba.pdf to el input del archivo (completed)" width="1920"/>
+                <img src="a92f852f47fcf50c3ebe661a70cee9bd866f918aafe95cf401a114cef5fc9b95.png" title=" un asesor clicks on el boton enviar archivo" width="1920"/>
+                <img src="ad0c70795ab9a32fca45ee3bcf2cf490b252840f0672285f7c812a4cdf2cf8c8.png" title=" un asesor clicks on el boton enviar archivo (completed)" width="1920"/>
+                <img src="04e1639421618f518a72c2c6d594525ec9d347858d2aca2d890985af0553698b.png" title=" Un asesor subir archivos formalizacion (completed)" width="1920"/>
+                <img src="04e1639421618f518a72c2c6d594525ec9d347858d2aca2d890985af0553698b.png" title=" Un asesor cerrar pestana" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" Un asesor cerrar pestana (completed)" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" Un asesor cambiar pestana" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" Un asesor cambiar pestana (completed)" width="1920"/>
+                <img src="8c26c8af5ed02b345a19c1ffcefa7ab8d477790665eacda0095194c3041c9ae7.png" title=" un asesor clicks on el boton guardar" width="1920"/>
+                <img src="2b1650f70bd0a8984d88da0baca950165952ef68b4d49c105b9acd358beab77d.png" title=" un asesor clicks on el boton guardar (completed)" width="1920"/>
+                <img src="c21996cba2cf8ff93c5127cd1880f0189533d2ce827957276ae422700c2cc4b0.png" title=" un asesor clicks on el boton Ok" width="1920"/>
+                <img src="6f91625004e39701f750208ed7eb9750b70f9004a9720e0b31e8b6503a2233c3.png" title=" un asesor clicks on el boton Ok (completed)" width="1920"/>
+                <img src="6f91625004e39701f750208ed7eb9750b70f9004a9720e0b31e8b6503a2233c3.png" title=" Un asesor modulo llamada" width="1920"/>
+                <img src="6f91625004e39701f750208ed7eb9750b70f9004a9720e0b31e8b6503a2233c3.png" title=" un asesor clicks on El menu hamburguesa" width="1920"/>
+                <img src="7622487b17316fd522b314863cd327c5d61edb9713948ac5cf629d58d213e2a6.png" title=" un asesor clicks on El menu hamburguesa (completed)" width="1920"/>
+                <img src="7622487b17316fd522b314863cd327c5d61edb9713948ac5cf629d58d213e2a6.png" title=" un asesor clicks on el logo de finsonet" width="1920"/>
+                <img src="dec61a312847f5c2fbc5b35abeb0b4e7db42390ba552121d94b2da6ac1a442a3.png" title=" un asesor clicks on el logo de finsonet (completed)" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el logo de llamadas" width="1920"/>
+                <img src="e7f8ee3d68739928a6bdd6618faf0d69908baceb3c479c9661399cf1355323c5.png" title=" un asesor clicks on el logo de llamadas (completed)" width="1920"/>
+                <img src="aae4647b3040e66b69fec72cbb93c1d58b0d9f4538ff620b68c1731823ddfdf7.png" title=" Un asesor asignacion llamadas" width="1920"/>
+                <img src="aae4647b3040e66b69fec72cbb93c1d58b0d9f4538ff620b68c1731823ddfdf7.png" title=" un asesor clicks on menu de acceso modulo llamadas" width="1920"/>
+                <img src="9fbb89000a22e11b9ff60e7a267ae401084e02a827d71b126ceb460045e33ed7.png" title=" un asesor clicks on menu de acceso modulo llamadas (completed)" width="1920"/>
+                <img src="01e1d543e0b82839f35f691241eb4bcd9cf5c591870bb3fa5edc4a59eff6905b.png" title=" un asesor clicks on boton de asignacion credito libranza" width="1920"/>
+                <img src="01e1d543e0b82839f35f691241eb4bcd9cf5c591870bb3fa5edc4a59eff6905b.png" title=" un asesor clicks on boton de asignacion credito libranza (completed)" width="1920"/>
+                <img src="e85b678ceb2675436b9687c8914ab185cdf9aa0bc00c51fcd518d5e41fa0fa42.png" title=" un asesor clicks on menu de acceso modulo llamadas" width="1920"/>
+                <img src="96c24eabe253b762e63872383ee7f71c94c628fb9cf4a811d25beaf07e56fe97.png" title=" un asesor clicks on menu de acceso modulo llamadas (completed)" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" Un asesor se procesa" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" un asesor clicks on la fila de llamadas asignadas" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" un asesor clicks on la fila de llamadas asignadas (completed)" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" Un asesor cambiar pestana actual" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" Un asesor wait for" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" Un asesor wait for (completed)" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" Un asesor cambiar pestana actual (completed)" width="1920"/>
+                <img src="3fefca021b07dcda9d52c9ff931fb4447cb37937300aa743e4df56dd271cce40.png" title=" un asesor clicks on Seleccionar la cuarta pregunta" width="1920"/>
+                <img src="c0e28a653c00f6a2c78475e3fe98e8cf277c4c542d903f2c170c82ab31d9fc1a.png" title=" un asesor clicks on Seleccionar la cuarta pregunta (completed)" width="1920"/>
+                <img src="c0e28a653c00f6a2c78475e3fe98e8cf277c4c542d903f2c170c82ab31d9fc1a.png" title=" un asesor clicks on Seleccionar la quinta pregunta" width="1920"/>
+                <img src="b438ed5b960b8eff5c572c4735e9ededbc9e0e012c46affdfaec8dbb40c16172.png" title=" un asesor clicks on Seleccionar la quinta pregunta (completed)" width="1920"/>
+                <img src="b438ed5b960b8eff5c572c4735e9ededbc9e0e012c46affdfaec8dbb40c16172.png" title=" un asesor enters 'Proceso Exitoso' into Campo de observacion llamada" width="1920"/>
+                <img src="50e92efb787b4d9e3145ce443e1d79b9eb5f7d4c04a9463e2c49358b35948f44.png" title=" un asesor enters 'Proceso Exitoso' into Campo de observacion llamada (completed)" width="1920"/>
+                <img src="50e92efb787b4d9e3145ce443e1d79b9eb5f7d4c04a9463e2c49358b35948f44.png" title=" un asesor clicks on Campo para guardar la gesti&oacute;n" width="1920"/>
+                <img src="563598d1a719e3ef5765565924f71687d21718a4c9fdb88df45355e943fcb22e.png" title=" un asesor clicks on Campo para guardar la gesti&oacute;n (completed)" width="1920"/>
+                <img src="563598d1a719e3ef5765565924f71687d21718a4c9fdb88df45355e943fcb22e.png" title=" un asesor clicks on Campo de advertencia para guardar" width="1920"/>
+                <img src="a303f9b873dde2ceacba664624430309c784ba0037303ab4b8d6199698cdaf17.png" title=" un asesor clicks on Campo de advertencia para guardar (completed)" width="1920"/>
+                <img src="a303f9b873dde2ceacba664624430309c784ba0037303ab4b8d6199698cdaf17.png" title=" un asesor clicks on Campo de certificaci&oacute;n de la llamada" width="1920"/>
+                <img src="a7f5bb73a0889bb1dfc8e809dbbbf3c394cd6cca485d07591b63da19e4c9943e.png" title=" un asesor clicks on Campo de certificaci&oacute;n de la llamada (completed)" width="1920"/>
+                <img src="8b6ae6035174ca10bcf43ee3941f7cd02749e559fe74a6c3193cfdd4dd267915.png" title=" un asesor clicks on el logo de finsonet" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el logo de finsonet (completed)" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" un asesor clicks on el link de CDAS" width="1920"/>
+                <img src="4cb40518c3d3c0248f2959119b603c87558464f36bd13fcfa472d9cefc0fe8ac.png" title=" un asesor clicks on el link de CDAS (completed)" width="1920"/>
+                <img src="4cb40518c3d3c0248f2959119b603c87558464f36bd13fcfa472d9cefc0fe8ac.png" title=" Dado que un asesor esta en el modulo de CDAS con la informacion previa completa (completed)" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" Cuando el asesor diligencia los CDAS del credito con excepcion" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" Un asesor cdas" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" un asesor clicks on el criterio de busqueda" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" un asesor enters '89380' into el valor de busqueda" width="1920"/>
+                <img src="dd1a195d4f88a857630a02f9b6aebf85506465925b57d0b9b600cff961f05f22.png" title=" un asesor enters '89380' into el valor de busqueda (completed)" width="1920"/>
+                <img src="dd1a195d4f88a857630a02f9b6aebf85506465925b57d0b9b600cff961f05f22.png" title=" un asesor clicks on el boton de busqueda" width="1920"/>
+                <img src="7309ba5eb76998380c9f3785b10473c058829341e71f1ae17e1b51f9c7936fa8.png" title=" un asesor clicks on el boton de busqueda (completed)" width="1920"/>
+                <img src="7309ba5eb76998380c9f3785b10473c058829341e71f1ae17e1b51f9c7936fa8.png" title=" un asesor clicks on el boton del detalle de gestion" width="1920"/>
+                <img src="fcfc1027d2d8ac286b07fb456727b06e70f0be937ca2902947e8d4bcf1f55303.png" title=" un asesor clicks on el boton del detalle de gestion (completed)" width="1920"/>
+                <img src="fcfc1027d2d8ac286b07fb456727b06e70f0be937ca2902947e8d4bcf1f55303.png" title=" Un asesor cerrar pestana" width="1920"/>
+                <img src="7ca24f0431cf9b7846c62c87b1eef7329c850f63b21cf99d46aa8a5fc97966c0.png" title=" Un asesor cerrar pestana (completed)" width="1920"/>
+                <img src="7ca24f0431cf9b7846c62c87b1eef7329c850f63b21cf99d46aa8a5fc97966c0.png" title=" Un asesor cambiar pestana actual" width="1920"/>
+                <img src="7ca24f0431cf9b7846c62c87b1eef7329c850f63b21cf99d46aa8a5fc97966c0.png" title=" Un asesor wait for" width="1920"/>
+                <img src="7ca24f0431cf9b7846c62c87b1eef7329c850f63b21cf99d46aa8a5fc97966c0.png" title=" Un asesor wait for (completed)" width="1920"/>
+                <img src="c164618c5e89d986dadb1b8fe75aa90ab12e018790c3f27939950ba16ee67207.png" title=" Un asesor cambiar pestana actual (completed)" width="1920"/>
+                <img src="c164618c5e89d986dadb1b8fe75aa90ab12e018790c3f27939950ba16ee67207.png" title=" Un asesor completar" width="1920"/>
+                <img src="c164618c5e89d986dadb1b8fe75aa90ab12e018790c3f27939950ba16ee67207.png" title=" Un asesor completar (completed)" width="1920"/>
+                <img src="c164618c5e89d986dadb1b8fe75aa90ab12e018790c3f27939950ba16ee67207.png" title=" un asesor clicks on el boton atras" width="1920"/>
+                <img src="9e6b4bbc5f66b603503d3c2ac1ba350f28c9d6c08d7a636bf351e91b86a09153.png" title=" un asesor clicks on el boton atras (completed)" width="1920"/>
+                <img src="9e6b4bbc5f66b603503d3c2ac1ba350f28c9d6c08d7a636bf351e91b86a09153.png" title=" Cuando el asesor diligencia los CDAS del credito con excepcion (completed)" width="1920"/>
+                <img src="9e6b4bbc5f66b603503d3c2ac1ba350f28c9d6c08d7a636bf351e91b86a09153.png" title=" Entonces el podra ver el credito en estado INCOMPLETO" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" Then gestion documental should be 'INCOMPLETO'" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" un asesor clicks on el criterio de busqueda" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" un asesor clicks on el criterio de busqueda (completed)" width="1920"/>
+                <img src="aa860e35e91015d71f71a23cb878d2e859ef1fe0b514878bb089366f281a9cb0.png" title=" un asesor enters '89380' into el valor de busqueda" width="1920"/>
+                <img src="dd1a195d4f88a857630a02f9b6aebf85506465925b57d0b9b600cff961f05f22.png" title=" un asesor enters '89380' into el valor de busqueda (completed)" width="1920"/>
+                <img src="dd1a195d4f88a857630a02f9b6aebf85506465925b57d0b9b600cff961f05f22.png" title=" un asesor clicks on el boton de busqueda" width="1920"/>
+                <img src="3a2ad34e34c8783395ffd124ade03cc5f756b42c471cbfea17b650c669e07781.png" title=" un asesor clicks on el boton de busqueda (completed)" width="1920"/>
+                <img src="173cf5a1e72d6c17c7be5c2e62bc9b53cfe8aef7eabcee6b1307dcb97ffeea28.png" title=" Then gestion documental should be 'INCOMPLETO' (completed): <span class='failing-color'>FAILURE</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.8</span>
+</div>
+</body>
+</html>

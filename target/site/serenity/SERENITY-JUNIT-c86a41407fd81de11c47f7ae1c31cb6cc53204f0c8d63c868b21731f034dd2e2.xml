@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Originacion" skipped="0" tests="1" time="299.64" timestamp="2020-03-26 07:31:22"><testcase name="Incorporacion - Aprobar el credito desde incorporacion"><error message="stale element reference: element is not attached to the page document&#10;  (Session info: chrome=80.0.3987.149)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65248}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: e0d88b81c2ab9a3f6ba2b8da02dffbe1" type="org.openqa.selenium.StaleElementReferenceException">stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.149)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65248}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e0d88b81c2ab9a3f6ba2b8da02dffbe1</error><system-err>stale element reference: element is not attached to the page document
+  (Session info: chrome=80.0.3987.149)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:65248}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e0d88b81c2ab9a3f6ba2b8da02dffbe1&#13;
+co.com.red5g.finsonet.interacions.SubirArchivosChequeoDocumento.performAs(SubirArchivosChequeoDocumento.java:26)&#13;
+co.com.red5g.finsonet.tasks.InformacionChequeoDocumento.performAs(InformacionChequeoDocumento.java:32)&#13;
+co.com.red5g.finsonet.tasks.Confirmacion.performAs(Confirmacion.java:26)&#13;
+co.com.red5g.finsonet.tasks.AprobacionCreditos.performAs(AprobacionCreditos.java:16)&#13;
+co.com.red5g.finsonet.tasks.Incorporacion.performAs(Incorporacion.java:27)&#13;
+co.com.red5g.finsonet.stepdefinitions.IncorporacionStepDefinition.ingresarIncorporacion(IncorporacionStepDefinition.java:21)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase></testsuite>

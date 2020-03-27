@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Originacion" skipped="0" tests="2" time="867.18" timestamp="2020-03-26 01:05:58"><testcase name="Tesoreria - Regresar el credito desde tesoreria"><failure message="&#13;&#10;Expected: an element that is present&#13;&#10;     but: the element identified by xpath: //div[@class='sweet-alert showSweetAlert visible'] [Credito registrado satisfactoriamente.&#10;OK] was not present" type="java.lang.AssertionError">&#13;
+Expected: an element that is present&#13;
+     but: the element identified by xpath: //div[@class='sweet-alert showSweetAlert visible'] [Credito registrado satisfactoriamente.
+OK] was not present</failure><system-err>&#13;
+Expected: an element that is present&#13;
+     but: the element identified by xpath: //div[@class='sweet-alert showSweetAlert visible'] [Credito registrado satisfactoriamente.
+OK] was not present&#13;
+co.com.red5g.finsonet.tasks.InformacionCredito.performAs(InformacionCredito.java:29)&#13;
+co.com.red5g.finsonet.tasks.SolicitudCredito.performAs(SolicitudCredito.java:16)&#13;
+co.com.red5g.finsonet.tasks.Confirmacion.performAs(Confirmacion.java:26)&#13;
+co.com.red5g.finsonet.tasks.AprobacionCreditos.performAs(AprobacionCreditos.java:16)&#13;
+co.com.red5g.finsonet.tasks.Incorporacion.performAs(Incorporacion.java:27)&#13;
+co.com.red5g.finsonet.tasks.Formalizacion.performAs(Formalizacion.java:19)&#13;
+co.com.red5g.finsonet.tasks.Tesoreria.performAs(Tesoreria.java:20)&#13;
+co.com.red5g.finsonet.stepdefinitions.TesoreriaStepDefinition.ingresarTesoreria(TesoreriaStepDefinition.java:21)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase><testcase name="Tesoreria - Marcar el credito como pendiente en tesoreria"/></testsuite>

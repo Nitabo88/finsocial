@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="1" name="Cdas" skipped="0" tests="3" time="3254.63" timestamp="2020-03-26 10:13:56"><testcase name="Cdas - Completo"/><testcase name="Cdas - Incompleto"><error message="element not interactable&#10;  (Session info: chrome=80.0.3987.149)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 18c667e2d346867b02b5377507480c3a" type="org.openqa.selenium.ElementNotInteractableException">element not interactable
+  (Session info: chrome=80.0.3987.149)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 18c667e2d346867b02b5377507480c3a</error><system-err>element not interactable
+  (Session info: chrome=80.0.3987.149)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 18c667e2d346867b02b5377507480c3a&#13;
+co.com.red5g.finsonet.tasks.Cdas.performAs(Cdas.java:33)&#13;
+co.com.red5g.finsonet.stepdefinitions.CdasStepDefinition.diligenciarCdas(CdasStepDefinition.java:30)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase><testcase name="Cdas - Excepcion"><failure message="&#13;&#10;Expected: &quot;INCOMPLETO&quot;&#13;&#10;     but: was &quot;COMPLETO&quot;" type="java.lang.AssertionError">&#13;
+Expected: "INCOMPLETO"&#13;
+     but: was "COMPLETO"</failure><system-err>&#13;
+Expected: "INCOMPLETO"&#13;
+     but: was "COMPLETO"&#13;
+co.com.red5g.finsonet.stepdefinitions.CdasStepDefinition.verificarEstadoCompleto(CdasStepDefinition.java:40)&#13;
+✽.el podra ver el credito en estado INCOMPLETO(src/test/resources/features/cdas.feature:21)&#13;
+</system-err></testcase></testsuite>

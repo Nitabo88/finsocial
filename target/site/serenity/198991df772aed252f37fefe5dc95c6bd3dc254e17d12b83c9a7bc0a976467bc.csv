@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Originacion","Incorporacion - Marcar el credito como pendiente en incorporacion","SUCCESS","2020-03-26T14:49:20.339-05:00[America/Bogota]","0.0","579.74"
+"Originacion","Incorporacion - Regresar el credito desde incorporacion","SUCCESS","2020-03-26T15:29:46.31-05:00[America/Bogota]","0.0","639.46"
+"Originacion","Incorporacion - Aprobar el credito desde incorporacion","ERROR","2020-03-26T19:31:22.28-05:00[America/Bogota]","0.0","299.64"

@@ -1,0 +1,569 @@
+<html lang="en" class=""><head>
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Finsonet</title>
+    <!--  Hojas de estilos principales-->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/new_styles.css?rv=76">
+    <link rel="stylesheet" href="/css/jquery.autocomplete.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select1.13.9.min.css">
+    <link rel="stylesheet" href="/css/datepicker.min.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/jquery.tablesorter.pager.css">
+    <link rel="stylesheet" href="/css/jquery.tablesorter.theme.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/sweetalert/css/sweetalert2.css">
+    <link rel="stylesheet" href="/js/source/jquery.fancybox.css?v=2.1.0" media="screen">
+    <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/assets/css/fixed-table.css">
+    <link rel="icon" href="/assets/images/fav-ico.ico">
+<style>@charset "UTF-8";@-webkit-keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-shown{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:initial;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon::before{display:flex;align-items:center;font-size:2em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon::before{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 .0625em #fff,0 0 0 .125em rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:2em;height:2.8125em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.25em;left:-.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:2em 2em;transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;-webkit-transform-origin:0 2em;transform-origin:0 2em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:showSweetToast .5s;animation:showSweetToast .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:hideSweetToast .2s forwards;animation:hideSweetToast .2s forwards}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:animate-toast-success-tip .75s;animation:animate-toast-success-tip .75s}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:animate-toast-success-long .75s;animation:animate-toast-success-long .75s}@-webkit-keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@-webkit-keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-shown{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent}body.swal2-no-backdrop .swal2-shown>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-shown.swal2-top{top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-top-left,body.swal2-no-backdrop .swal2-shown.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-top-end,body.swal2-no-backdrop .swal2-shown.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-shown.swal2-center{top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-left,body.swal2-no-backdrop .swal2-shown.swal2-center-start{top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-end,body.swal2-no-backdrop .swal2-shown.swal2-center-right{top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom{bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom-left,body.swal2-no-backdrop .swal2-shown.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-bottom-end,body.swal2-no-backdrop .swal2-shown.swal2-bottom-right{right:0;bottom:0}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;background-color:transparent;-webkit-overflow-scrolling:touch}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-container.swal2-fade{transition:background-color .1s}.swal2-container.swal2-shown{background-color:rgba(0,0,0,.4)}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-popup .swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-popup .swal2-title{display:block;position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-popup .swal2-actions{z-index:1;flex-wrap:wrap;align-items:center;justify-content:center;margin:1.25em auto 0}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm{box-sizing:border-box;width:2.5em;height:2.5em;margin:.46875em;padding:0;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{content:'';display:inline-block;width:15px;height:15px;margin-left:5px;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff}.swal2-popup .swal2-styled{margin:.3125em;padding:.625em 2em;box-shadow:none;font-weight:500}.swal2-popup .swal2-styled:not([disabled]){cursor:pointer}.swal2-popup .swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled:focus{outline:0;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(50,100,150,.4)}.swal2-popup .swal2-styled::-moz-focus-inner{border:0}.swal2-popup .swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-popup .swal2-image{max-width:100%;margin:1.25em auto}.swal2-popup .swal2-close{position:absolute;top:0;right:0;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:0;outline:initial;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-popup .swal2-close:hover{-webkit-transform:none;transform:none;color:#f27474}.swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{display:none}.swal2-popup .swal2-content{z-index:1;justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:300;line-height:normal;word-wrap:break-word}.swal2-popup #swal2-content{text-align:center}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-radio,.swal2-popup .swal2-select,.swal2-popup .swal2-textarea{margin:1em auto}.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);font-size:1.125em}.swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-popup .swal2-file::-webkit-input-placeholder,.swal2-popup .swal2-input::-webkit-input-placeholder,.swal2-popup .swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-popup .swal2-file:-ms-input-placeholder,.swal2-popup .swal2-input:-ms-input-placeholder,.swal2-popup .swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::-ms-input-placeholder,.swal2-popup .swal2-input::-ms-input-placeholder,.swal2-popup .swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::placeholder,.swal2-popup .swal2-input::placeholder,.swal2-popup .swal2-textarea::placeholder{color:#ccc}.swal2-popup .swal2-range{margin:1em auto;background:inherit}.swal2-popup .swal2-range input{width:80%}.swal2-popup .swal2-range output{width:20%;font-weight:600;text-align:center}.swal2-popup .swal2-range input,.swal2-popup .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-popup .swal2-input{height:2.625em;padding:0 .75em}.swal2-popup .swal2-input[type=number]{max-width:10em}.swal2-popup .swal2-file{background:inherit;font-size:1.125em}.swal2-popup .swal2-textarea{height:6.75em;padding:.75em}.swal2-popup .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:#545454;font-size:1.125em}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-radio{align-items:center;justify-content:center;background:inherit}.swal2-popup .swal2-checkbox label,.swal2-popup .swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-popup .swal2-checkbox input,.swal2-popup .swal2-radio input{margin:0 .4em}.swal2-popup .swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-popup .swal2-validation-message::before{content:'!';display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;zoom:normal;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;zoom:normal;border:.25em solid transparent;border-radius:50%;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon::before{display:flex;align-items:center;height:92%;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-warning::before{content:'!'}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-info::before{content:'i'}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-question::before{content:'?'}.swal2-icon.swal2-question.swal2-arabic-question-mark::before{content:'؟'}.swal2-icon.swal2-success{border-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:3.75em 3.75em;transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 3.75em;transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.875em;width:1.5625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-progress-steps{align-items:center;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#3085d6}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;width:2.5em;height:.4em;margin:0 -1px;background:#3085d6}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-show.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-hide.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-animate-success-icon .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-animate-error-icon{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-animate-error-icon .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}@-webkit-keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:initial!important}}</style></head>
+<body class="" style="padding-right: 0px;"><header class="template-green" aria-hidden="true">
+        <!-- Area swipe para cerrar menu -->
+    <div id="menu">
+        <div id="menu-content" class="swipe-area">
+            <div class="text-center divlogo pl-42 mt-20">
+                <a href="/index.php">
+                    <img src="/assets/images/logo_finsonet.svg" class="icon icon-finsonetlogo" alt="Finsonet">
+                </a>
+            </div>
+            <div class="text-center divlogo2 oculto">
+                <a href="/index.php">
+                    <img src="/assets/images/huy.png" class="icon icon-finsonetlogo2" alt="Finsonet">
+                </a>
+            </div>
+            <div class="menu-mobile mt-80"></div>
+        </div>
+    </div>
+    <!-- Primera parte -->
+    <div class="container header-main mt-4">
+        <div class="row mt-4">
+            <div class="col-sm-12 col-md-3 col-lg-2 div-logo">
+                <!-- Logo -->
+                <a href="/index.php">
+                    <img src="/assets/images/logo_finsonet.svg" class="icon icon-finsonetlogo" alt="Finsonet" title="Inicio">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 div-search">
+                <!-- Caja de texto para busqueda de cliente -->
+                <div class="input-group">
+                    <input type="search" id="txtDocs" class="form-control ui-autocomplete-input" onkeypress="return validaNumericos(event);" autocomplete="off">
+                    <div class="input-group-append input-group-green">
+                        <button class="btn btn-little-green" type="button" onclick="consultar_doc()"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Identificar usuario con sesion iniciada  -->
+            <div class="div-user col-md-3 col-lg-4 text-right mt-2 pr-3">
+                <div class="dropdown account-wrapper">
+                    <p class="user-name">Bienvenido/a ORLANDO</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2 text-right">
+                <!-- Menu de usuario  -->
+                <div class="dropdown show account-button">
+                    <a class="btn btn-blue dropdown-toggle" id="dropdownCuenta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownCuenta">
+                        <a class="dropdown-item" href="/actDatosVen.php">Actualizar datos</a>
+                        <a class="dropdown-item" href="/cambiarCont.php">Cambio de contraseña</a>
+                        <a class="dropdown-item" href="/logOut.php">Salir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Barra de menu --> 
+    <div class="header-title mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 header-menu">
+                    <div class="header-decoration"></div>
+                    <a id="openPageslide2" href="#menu-content" class="oculto"></a>
+                    <!-- Icono para menu lateral  -->
+                    <div class="menu-hamburger oculto">
+                        <div id="hamburger" onclick="showDeskMenu();">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="hamburger2" onclick="showModalMenu();">
+                            <i class="far fa-bars fa-25"></i>
+                        </div>
+                    </div>
+                    <div class="menu-back " onclick="location.href=&quot;docsVal.php&quot;" id="btn-back">
+                    <i class="far fa-arrow-left fa-25"></i>
+                    </div>
+                    <a>
+                    <div class="menu-back2 oculto float-left">
+                    <i class="fal fa-arrow-left fa-25"></i>
+                    </div>
+                    </a>
+                    <!-- Identificacion ubicacion de modulo y opcion  -->
+                    <h2 class="title-breadcrumbs title-breadcrumbs--principal mt-1 ml-40" id="uno"></h2>
+                </div>
+                <div class="col-5 text-right header-alerta">
+                    <!-- Opcion de soporte -->
+                    <div class="support-wrapper">
+                        <a href="/soporte2.php?tick=1" class="support-text">
+                            <h3><i class="fas fa-question-circle fa-25 pr-2 icon-support"></i><span>Soporte</span></h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    <!-- Módulo Reportes -->
+    
+    
+    
+    
+    <!--  Módulo Vetados -->
+                        </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<link rel="stylesheet" href="/assets/css/cdas.css?rv=853" aria-hidden="true">
+<input type="hidden" id="hddIdCred" name="crid" value="89370" aria-hidden="true">
+<input type="hidden" id="hddDocs" name="docs" aria-hidden="true">
+<input type="hidden" id="hddObs" name="obs" aria-hidden="true">
+<input type="hidden" id="hddHayExc" name="hayexc" aria-hidden="true">
+<input type="hidden" id="hddMotivo" name="motivo" aria-hidden="true">
+<div class="container container-body" data-site="plan-chequeo" aria-hidden="true">
+    <h1 class="mt-30">Listado de chequeo</h1>
+    <input type="hidden" id="hdIdCredito" value="89370">
+            <div class="row">
+            <div class="col-12 mt-30">
+                <div id="panel-cliente" class="panel panel-green">
+                    <div class="panel-heading">
+                        <span class="pull-right clickable">
+                        <i class="fas fa-arrow-up rotate white"></i>
+                        </span>
+                        <h2 class="text-white"><i class="fas fa-head-side pr-15"></i>Información del cliente</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="mt-30">
+                            <h2 class="text-green mt-30">Datos básicos del cliente</h2>
+                            <div class="row mt-20">
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtNombre" class="mb-10">Nombre</label>
+                                        <input type="text" name="txtNombre" id="txtNombre" class="form-control" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtDocumento" class="mb-10">Documento</label>
+                                        <input type="text" name="txtDocumento" id="txtDocumento" class="form-control" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtTipoCredito" class="mb-10">Tipo crédito</label>
+                                        <input type="text" name="txtTipoCredito" id="txtTipoCredito" class="form-control" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtIdCredito" class="mb-10">ID crédito</label>
+                                        <input type="text" name="txtIdCredito" id="txtIdCredito" class="form-control" value="89370" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtPagaduria" class="mb-10">Pagaduría</label>
+                                        <input type="text" name="txtPagaduria" id="txtPagaduria" class="form-control" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtVendedor" class="mb-10">Vendedor</label>
+                                        <input type="text" name="txtVendedor" id="txtVendedor" class="form-control" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtAfianzador" class="mb-10">Afianzador</label>
+                                        <input type="text" name="txtAfianzador" id="txtAfianzador" class="form-control" readonly="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="row">
+        <div class="col-12 mt-30">
+            <div id="panel-cliente" class="panel panel-green">
+                <div class="panel-heading">
+                    <span class="pull-right clickable">
+                    <i class="fas fa-arrow-up rotate white"></i>
+                    </span>
+                    <h2 class="text-white"><i class="fas fa-tasks pr-15"></i>Chequeo de documentos</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="mt-30">
+                                                    <h2 class="text-green mt-30">Centrales de riesgo</h2>
+                            <div class="row mt-20">
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtRevisado" class="mb-10">Revisado por</label>
+                                        <input type="text" name="txtRevisado" id="txtRevisado" class="form-control" readonly="" value="ORLANDO NICOLAS CHINCHILLA VEGA">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtCifin" class="mb-10">Puntaje Cifin</label>
+                                        <input type="text" name="txtCifin" id="txtCifin" class="form-control" maxlength="5">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-lg-3 pb-20">
+                                    <div class="form-group">
+                                        <label for="txtDatacredito" class="mb-10">Acierta Datacrédito</label>
+                                        <input type="text" name="txtDatacredito" id="txtDatacredito" class="form-control" maxlength="5">
+                                    </div>
+                                </div>
+                            </div>
+                                                    <h2 class="text-green mt-10">Listado de subida</h2>
+                            <form id="formArchivo">
+                                <input style="display:none" type="file" id="fileUpload" accept=".pdf, .jpg, .jpeg, .png, .txt">
+                                <input type="hidden" id="fileDocumento" value=""> 
+                                <input type="hidden" id="fileCredito" value="">
+                            </form>
+                            <div id="documentos-chequeo" class="mt-30"><table class="table-incorporacion br-right mb-30"><thead><tr><th style="width:50%;">Documento</th><th>Estado</th><th>Acción</th></tr></thead><tbody><tr id="doc-54"><td>Libranza completa</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,54)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-54" class="bg-square-button white bg-blue" onclick="vistaPrevia(54,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/86425e737f2dda3f7421adf7d6e6fc065b60057d_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,54)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr><tr id="doc-43"><td>Volante de nómina</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,43)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-43" class="bg-square-button white bg-blue" onclick="vistaPrevia(43,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/99202ae57dccf757c585d73eb05511231bd7516f_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,43)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr><tr id="doc-1"><td>Cédula</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,1)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-1" class="bg-square-button white bg-blue" onclick="vistaPrevia(1,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/a521906e5d1b8961ec44373eaaf9aa0f960df407_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,1)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr><tr id="doc-24"><td>Merge Data-Cifin</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,24)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-24" class="bg-square-button white bg-blue" onclick="vistaPrevia(24,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/793dc7b11fe76167fc4fbad5647cb9ae2de6b6d1_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,24)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr><tr id="doc-49"><td>Certificaciones</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,49)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-49" class="bg-square-button white bg-blue" onclick="vistaPrevia(49,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/44d076da734a6baaac4f81eb2581a60ea0b6d299_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,49)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr><tr id="doc-53"><td>Legal check</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,53)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-53" class="bg-square-button white bg-blue" onclick="vistaPrevia(53,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/a2488e2b336ffcc9ad6540587aedff722af55ea5_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,53)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr><tr id="doc-23"><td>Otros</td><td><div class="label-eye-icon completo-color"><p>COMPLETO</p><button onclick="verGestionDocumento(89370,23)"><i class="fas fa-eye"></i></button> </div></td><td><div class="flex-iconButtons flex-iconButtons2"><button id="btn-vista-23" class="bg-square-button white bg-blue" onclick="vistaPrevia(23,2)" data-toggle="tooltip" data-placement="bottom" title="" data-url="/upload/454b3ec8956d1e5d02348b29fa6fd15ce14c129d_prueba.pdf" data-original-title="Ver documento subido"><i class="fas fa-file-search white"></i></button> <button class="bg-square-button white bg-red" onclick="elimDocumento(89370,23)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Eliminar documento"><i class="fas fa-trash-alt"></i></button> </div></td></tr></tbody></table></div>
+                                            </div>
+                    <div class="row mt-30" id="divPapeleria">
+                       <div class="col-12 mb-20">
+                           <p class="text-green">Papelería</p>
+                       </div>
+                       <div class="col-md-2 col-lg-2 pb-20">
+                           <div class="form-group">
+                           <label for="codPapeleria" class="mb-10">Código de papelería</label>
+                               <div class="select-awesome select-awesome-green">
+                                   <select name="codPapeleria" id="codPapeleria" class="form-control-select grupoGestion">
+                                       <option value="0" id="0">Seleccione...</option>
+                                                                               <option selected="selected" value="1" id="No tiene">No tiene</option>
+                                                                                <option value="2" id="L-191128">L-191128</option>
+                                                                               <!-- <option value="1">L-191128</option> -->
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="col-md-2 col-lg-2 pb-20">
+                           <div class="form-group">
+                               <label for="txtAfianzador" class="mb-10">¿Qué es esto?</label>
+                               <div>
+                                   <button class="btn btn-green" type="button" onclick="modalEjem();">
+                                       <i class="fas fa-lightbulb-exclamation mr-10"></i>Ejemplo
+                                   </button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+                    <div class="col-12 mt-20">
+                <div class="col-md-12 w-padding text-right row_buttons">
+                                            <button class="btn btn-red btn_accion" id="btn-guardar" onclick="modNegar();"><i class="fas fa-times pr-10"></i>Negar
+                        </button>
+                                            <button class="btn btn-green btn_accion ml-10" id="btn-guardar" onclick="validateDocs(function() {});"><i class="fas fa-save pr-10"></i>Guardar
+                    </button>
+                                    </div>
+            </div>
+            </div>
+    </div>
+<div class="container" aria-hidden="true">
+    <div class="foot col-12">
+        
+<!--  Librerias javascript principales-->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="/js/jquery.sticky.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script type="text/javascript" src="/js/validacion.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap-select.1.13.9.min.js"></script>
+<script src="/assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/assets/sweetalert/js/sweetalert2.all.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/assets/js/popper.js"></script>
+<script type="text/javascript" src="/assets/js/fixed-table.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+<script src="/js/bootstrap-datepicker.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-filestyle.min.js"></script>
+<script type="text/javascript" src="/admin/js/script.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.widgets.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.pager.js"></script>
+<script type="text/javascript" src="/js/source/jquery.fancybox.js?v=2.1.0"></script>
+<script type="text/javascript" src="/admin/js/adminCalculo.js"></script>
+<script type="text/javascript" src="/js/calculo.js?nocache=927560073"></script>
+
+<script type="text/javascript" src="/mensajeria/assets/js/jquery.dm-uploader.min.js"></script>
+<script type="text/javascript" src="/mensajeria/assets/js/demo-ui.js"></script>
+
+<!-- Librerias temporales -->
+<link href="/css/sexyalertbox.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/sexyalertbox.js"></script>
+<script type="text/javascript" src="/js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript">
+
+
+        var usuario = {
+        perfil:3,
+        nombre: 'ORLANDO NICOLAS CHINCHILLA VEGA',
+        id_user: '2256'
+    };
+    
+    var reestructurando = 0;
+    var libAnterior = 0;
+</script>
+<script language="JavaScript">
+    //Código para colocar
+    //los indicadores de miles mientras se escribe
+    //script por tunait!
+    $(document).ready(function() {
+        setInterval(function () {
+            //Consulta de sesión
+                        consultarSession();
+                    }, 200000);
+    });
+</script>
+<script type="text/javascript" src="/assets/js/new_age.js?nocache=140127211"></script>
+<!-- Copyright página -->
+<footer class="mt-5 mb-25">© 2020 finsocial.co</footer>
+<!-- Botón para ir al inicio de una página en dispositivo móvil -->
+<a class="go-top" href="#"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+
+
+
+        <script type="text/javascript" src="/assets/js/cdas.js?nocache=1779747456"></script>
+        <script type="text/javascript" src="/assets/js/chequeo.js?nocache=232672925"></script>
+    </div>
+</div>
+<div id="modales" aria-hidden="true">
+    <!-- Modal Detalle Bitácora -->
+    <div id="modBitacora" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog popup-class" role="document">
+            <div class="modal-content">
+                <div class="swal2-header header-class-green text-center">
+                    <h2 class="swal2-title title-class">Bitácora de gestión</h2>
+                    <button type="button" class="close-button-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body content-class">
+                    <div class="row pl-30 pr-30">
+                        <div class="col-12 text-center">
+                            <i class="far fa-history bg-circle-icon-x text-green bg-green-l"></i>
+                        </div>
+                        <div id="detalleGestion" class="col-12 text-left">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-class text-center">
+                    <button id="btn-cerrar-bitacora" type="button" class="btn confirm-button-class-green" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal tipo de papelería -->
+    <div id="modPapeleria" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog popup-class" role="document">
+            <div class="modal-content">
+                <div class="swal2-header header-class-green text-center">
+                    <h4 class="swal2-title title-class text-center">¡Esto es muy importante!</h4>
+                </div>
+                <div class="modal-body content-class">
+                    <div class="row pl-30 pr-30">
+                        <div class="col-12 text-left">
+                            <div class="grid-papeleria">
+                                <div class="grid-item">
+                                    <label class="label-papeleria">
+                                    <input type="radio" id="rdPapeleria1" class="radio-papeleria" name="rdPapeleria" value="2">
+                                    <i class="far fa-scroll bg-circle-icon-x text-grey bg-grey-l activa"></i>
+                                    <i class="far fa-scroll bg-circle-icon-x text-green bg-green-l hidden inactiva"></i>
+                                    <p class="text-green">Papelería Nueva</p>
+                                </label>
+                                </div>
+                                <div class="grid-item">
+                                    <label class="label-papeleria">
+                                    <input type="radio" id="rdPapeleria2" class="radio-papeleria" name="rdPapeleria" value="1">
+                                    <i class="far fa-scroll-old bg-circle-icon-x text-grey bg-grey-l activa"></i>
+                                    <i class="far fa-scroll-old bg-circle-icon-x text-green bg-green-l hidden inactiva"></i>
+                                    <p class="text-green">Papelería Antigua</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mt-10">
+                            <p class="p-sweet">Antes de confirmar este crédito, indícanos que documentación fue diligenciada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-class text-center">
+                    <button id="btn-aceptar-1" type="button" class="btn btn-green" disabled="">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal empresa afianzadora -->
+    <div id="modAfianzado" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog popup-class" role="document">
+            <div class="modal-content">
+                <div class="swal2-header header-class-green text-center">
+                    <h4 class="swal2-title title-class text-center">¡Esto es muy importante!</h4>
+                </div>
+                <div class="modal-body content-class">
+                    <div class="row pl-30 pr-30">
+                        <div class="col-12 text-left">
+                            <div class="grid-papeleria">
+                                <div class="grid-item">
+                                    <label class="label-papeleria">
+                                        <input type="radio" id="rdAfianzado1" class="radio-papeleria" name="rdAfianzado" value="1">
+                                        <img src="/assets/images/log_cop_inactivo.svg" alt="Coophumana" class="inactiva" width="71" height="71">
+                                        <img src="/assets/images/log_cop.svg" alt="Coophumana" class="activa hidden" width="71" height="71">
+                                        <p class="text-green mt-10">Coophumana</p>
+                                    </label>
+                                </div>
+                                <div class="grid-item">
+                                    <label class="label-papeleria">
+                                        <input type="radio" id="rdAfianzado2" class="radio-papeleria" name="rdAfianzado" value="2">
+                                        <img src="/assets/images/log_act_inactivo.svg" alt="Actival" class="inactiva" width="71" height="71">
+                                        <img src="/assets/images/log_act.svg" alt="Actival" class="activa hidden" width="71" height="71">
+                                        <p class="text-green mt-10">Actival</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mt-10">
+                            <p class="p-sweet">Ahora dinos con qué documentación de afianzados fue firmada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-class text-center">
+                    <button id="btn-aceptar-2" type="button" class="btn btn-green" disabled="">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Negación de crédito -->
+    <div id="modNegar" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog popup-class" role="document">
+            <div class="modal-content">
+                <div class="swal2-header header-class-danger text-center">
+                    <h2 class="swal2-title title-class">Motivo de negación</h2>
+                    <button type="button" class="close-button-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body content-class">
+                    <div class="row pl-30 pr-30">
+                        <div class="col-12 text-center">
+                            <i class="far fa-scroll bg-circle-icon-x text-danger bg-pink-l"></i>
+                        </div>
+                        <div class="col-12 text-left">
+                            <div class="form-group">
+                                <label for="txtMotivo" class="mb-10">Seleccione un motivo</label>
+                                <div class="select-awesome select-awesome-red">
+                                    <select name="txtMotivo" id="txtMotivo" class="form-control-select">
+                                    <option value="0">Seleccione motivo</option>
+                                        <option value="CAMBIO EN CONDICIONES POR PAGADURIA">CAMBIO EN CONDICIONES POR PAGADURIA</option><option value="CERTIFICACIONES ILEGIBLES">CERTIFICACIONES ILEGIBLES</option><option value="CERTIFICACIONES VENCIDAS">CERTIFICACIONES VENCIDAS</option><option value="CLIENTE NO CONTACTADO">CLIENTE NO CONTACTADO</option><option value="COPIA DE CEDULA ILEGIBLE">COPIA DE CEDULA ILEGIBLE</option><option value="CREDITO MAL RADICADO">CREDITO MAL RADICADO</option><option value="CUPO MAL CALCULADO">CUPO MAL CALCULADO</option><option value="FIRMAS NO COINCIDEN Y/O FALTANTES">FIRMAS NO COINCIDEN Y/O FALTANTES</option><option value="HUELLAS MAL TOMADAS">HUELLAS MAL TOMADAS</option><option value="INCONSISTENCIA EN INFORMACION DEL CLIENTE">INCONSISTENCIA EN INFORMACION DEL CLIENTE</option><option value="INCONSISTENCIA PAPELERIA">INCONSISTENCIA PAPELERIA</option><option value="NO SE HA RECIBIDO DOCUMENTACION ORIGINAL">NO SE HA RECIBIDO DOCUMENTACION ORIGINAL</option><option value="PAPELERIA INCOMPLETA">PAPELERIA INCOMPLETA</option><option value="RECHAZADO POR PROFORENSE">RECHAZADO POR PROFORENSE</option><option value="REPLANTEAR NUEVAS CONDICIONES">REPLANTEAR NUEVAS CONDICIONES</option><option value="SIN CERTIFICACIONES">SIN CERTIFICACIONES</option><option value="SOPORTES INCOMPLETOS">SOPORTES INCOMPLETOS</option>                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-20">
+                            <div class="form-group">
+                                <label for="txtDetalle" class="mb-10">Detalle</label>
+                                <textarea name="txtDetalle" id="txtDetalle" class="form-control" rows="4" maxlength="100"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions-class text-center">
+                    <button type="button" class="btn confirm-button-class-danger" id="btn-aceptar-negar" onclick="negarCredito(1)">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Eliminar Documento -->
+<div id="modEliminar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup-class" role="document">
+        <div class="modal-content">
+            <div class="swal2-header header-class-danger text-center">
+                <h2 class="swal2-title title-class">Eliminar documento</h2>
+                <button type="button" class="close-button-modal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body content-class">
+                <input type="hidden" id="elimDocumento">
+                <input type="hidden" id="elimCredito">
+                <div class="row pl-30 pr-30">
+                    <div class="col-12 text-center">
+                        <i class="far fa-trash-alt bg-circle-icon-1x text-danger bg-pink-l"></i>
+                    </div>
+                    <div class="col-12 text-left mt-10">
+                        <div class="form-group">
+                            <label for="txtMotivo3" class="mb-10">Describa el motivo de eliminación del documento</label>
+                            <textarea name="elimMotivo" id="elimMotivo" class="form-control" rows="4" maxlength="100"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions-class text-center">
+                <button id="btn-eliminar-documento" type="button" class="btn confirm-button-class-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de ejemplo -->
+<div id="modPapel" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup-class" role="document">
+        <div class="modal-content">
+            <div class="swal2-header header-class-green text-center">
+                <h4 class="swal2-title title-class text-center">Código papeleria</h4>
+            </div>
+            <button type="button" class="close-button-modal" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <div class="modal-body content-class">
+                <div class="row pl-30 pr-30">
+                    <div class="col-12 text-center mt-10">
+                        <p class="p-sweet">Digíta el código que aparece en la parte inferior derecha de la papelería.</p>
+                    </div>
+                    <div class="col-12 mt-20 imgPapeleria p-0">
+                        <div class="imgEjem"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions-class text-center">
+                <button id="btn-aceptar" type="button" class="btn btn-green" data-dismiss="modal" aria-label="Close" onclick="acceptModal(id)">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div><style aria-hidden="true">body.tablesorter-disableSelection { -ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none; -webkit-user-select: none; user-select: none; }.tablesorter-resizable-container { position: relative; height: 1px; }.tablesorter-resizable-handle { position: absolute; display: inline-block; width: 8px;top: 1px; cursor: ew-resize; z-index: 3; user-select: none; -moz-user-select: none; }</style><div id="BoxOverlay" style="position: absolute; top: 0px; left: 0px; opacity: 0.7; background-color: rgb(0, 0, 0); z-index: 65555; height: 1123px; width: 1903px; display: none;" aria-hidden="true"></div><div id="SexyAlertBox-Box" style="display: none; position: absolute; top: 0px; left: 0px; z-index: 65557; width: 500px;" aria-hidden="true"><div id="SexyAlertBox-InBox"><div id="SexyAlertBox-BoxContent"><div id="SexyAlertBox-BoxContenedor"></div></div></div></div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;" aria-hidden="true"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible" aria-hidden="true"></div></body></html>

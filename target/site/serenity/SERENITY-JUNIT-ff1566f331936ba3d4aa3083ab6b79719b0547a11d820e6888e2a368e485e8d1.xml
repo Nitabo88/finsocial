@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Creacion credito nuevo finsonet" skipped="0" tests="3" time="166.19" timestamp="2020-03-26 02:20:55"><testcase name="Creacion nuevo credito"/><testcase name="Creacion nuevo credito huy"/><testcase name="Creacion nuevo credito - Campos faltantes"/></testsuite>

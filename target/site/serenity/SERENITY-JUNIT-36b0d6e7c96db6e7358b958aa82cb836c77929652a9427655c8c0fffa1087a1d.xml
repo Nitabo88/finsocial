@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Creacion credito nuevo finsonet" skipped="0" tests="3" time="162.6" timestamp="2020-03-26 02:14:35"><testcase name="Creacion nuevo credito huy"/><testcase name="Creacion nuevo credito - Campos faltantes"/><testcase name="Creacion nuevo credito"><failure message="&#13;&#10;Expected: an element that is present&#13;&#10;     but: the element identified by xpath: //div[@class='sweet-alert showSweetAlert visible'] [Credito registrado satisfactoriamente.&#10;OK] was not present" type="java.lang.AssertionError">&#13;
+Expected: an element that is present&#13;
+     but: the element identified by xpath: //div[@class='sweet-alert showSweetAlert visible'] [Credito registrado satisfactoriamente.
+OK] was not present</failure><system-err>&#13;
+Expected: an element that is present&#13;
+     but: the element identified by xpath: //div[@class='sweet-alert showSweetAlert visible'] [Credito registrado satisfactoriamente.
+OK] was not present&#13;
+co.com.red5g.finsonet.tasks.InformacionCredito.performAs(InformacionCredito.java:29)&#13;
+co.com.red5g.finsonet.stepdefinitions.CreacionCreditoStepDefinition.ingresarInformacionCredito(CreacionCreditoStepDefinition.java:39)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase></testsuite>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.red5g.finsonet.runners.regresion.CdasRunner" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="DESKTOP-O0K77AF" time="0.0">
+  <properties/>
+  <system-out><![CDATA[
+?[31mFailed scenarios:?[0m
+?[31msrc/test/resources/features/cdas.feature:13 ?[0m# Cdas - Incompleto
+?[31msrc/test/resources/features/cdas.feature:18 ?[0m# Cdas - Excepcion
+
+3 Scenarios (?[31m2 failed?[0m, ?[32m1 passed?[0m)
+9 Steps (?[31m2 failed?[0m, ?[36m1 skipped?[0m, ?[32m6 passed?[0m)
+54m14.783s
+
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=80.0.3987.149)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-O0K77AF', ip: '192.168.0.99', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\Licet\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 18c667e2d346867b02b5377507480c3a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at net.serenitybdd.core.pages.WebElementFacadeImpl.click(WebElementFacadeImpl.java:1231)
+	at net.serenitybdd.screenplay.actions.ClickOnTarget.performAs(ClickOnTarget.java:13)
+	at net.serenitybdd.screenplay.actions.ClickOnTarget$ByteBuddy$slWBmmCK.performAs$accessor$PCi1iwWl(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:488)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:468)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:441)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:197)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:184)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:77)
+	at net.serenitybdd.screenplay.actions.ClickOnTarget$ByteBuddy$slWBmmCK.performAs(Unknown Source)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:248)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:229)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:175)
+	at co.com.red5g.finsonet.tasks.Cdas.performAs(Cdas.java:33)
+	at co.com.red5g.finsonet.tasks.Cdas$ByteBuddy$D1UHsWYf.performAs$accessor$xSxYp5AU(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:488)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:468)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:441)
+	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:197)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:184)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:77)
+	at co.com.red5g.finsonet.tasks.Cdas$ByteBuddy$D1UHsWYf.performAs(Unknown Source)
+	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:248)
+	at net.serenitybdd.screenplay.Actor.perform(Actor.java:229)
+	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:175)
+	at co.com.red5g.finsonet.stepdefinitions.CdasStepDefinition.diligenciarCdas(CdasStepDefinition.java:30)
+	at ✽.el asesor diligencia los CDAS del credito como completos(src/test/resources/features/cdas.feature:15)
+
+java.lang.AssertionError: 
+Expected: "INCOMPLETO"
+     but: was "COMPLETO"
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:316)
+	at co.com.red5g.finsonet.stepdefinitions.CdasStepDefinition.verificarEstadoCompleto(CdasStepDefinition.java:40)
+	at ✽.el podra ver el credito en estado INCOMPLETO(src/test/resources/features/cdas.feature:21)
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

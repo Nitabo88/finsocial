@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Pruebas FINSONET</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="2331309320d27fc12c414ba25df2d399065e7adea88ba8009da47634fd997f7e.html">Vetados</a></span>
+                > <span class="truncate-60"><a
+                    href="37b6b966aab6442a761fd7827637cec4e0c041df36a7a6366d242433a2679108.html">Asignar veto interno persona natural </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 26-03-2020 15:16</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Vetados </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como asesor finsonet<br />
+Quiero vetar a un cliente<br />
+Para verlo en lista de vetados<br />
+y negar la creacion de un credito
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Asignar veto interno persona natural
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador eliminar" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador veto cliente" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador home" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador abre la pagina" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador opens the Login finsonet page" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador informacion login" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Administrador enters 'ochinchilla' into usuario" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" Administrador enters 'ochinchilla' into usuario (completed)" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" Administrador enters 'Nicolas32@' into contrase&ntilde;a" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" Administrador enters 'Nicolas32@' into contrase&ntilde;a (completed)" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" Administrador clicks on el boton iniciar sesion" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" Administrador clicks on el boton iniciar sesion (completed)" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" Administrador enters '123456' into codigo" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" Administrador enters '123456' into codigo (completed)" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" Administrador clicks on el boton enviar" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" Administrador clicks on el boton enviar (completed)" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" Administrador modulo vetados" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" Administrador ingresa a vetados" width="1920"/>
+                <img src="3b6ef6c8b5b223222f27612cdb748f0a73455049030dde3587944c9d5f95b8eb.png" title=" Administrador opens the Vetados page" width="1920"/>
+                <img src="b80459c43e2cc346f02cecc8d245525ab8a3a5c465a0170a4ba43ccd1ae5e52e.png" title=" Administrador opens the Vetados page (completed)" width="1920"/>
+                <img src="b80459c43e2cc346f02cecc8d245525ab8a3a5c465a0170a4ba43ccd1ae5e52e.png" title=" Administrador ingresa a vetados (completed)" width="1920"/>
+                <img src="b80459c43e2cc346f02cecc8d245525ab8a3a5c465a0170a4ba43ccd1ae5e52e.png" title=" Administrador clicks on Menu de riesgo" width="1920"/>
+                <img src="83924798304fb9c31fdfac7da5ab198a30daf73fa673173a44afbc2e64be14f1.png" title=" Administrador clicks on Menu de riesgo (completed)" width="1920"/>
+                <img src="83924798304fb9c31fdfac7da5ab198a30daf73fa673173a44afbc2e64be14f1.png" title=" Administrador clicks on Menu lista de vetados" width="1920"/>
+                <img src="1f40e3f569541797f914781a456785ee9ab3ed1938517073bc089b7368e44183.png" title=" Administrador clicks on Menu lista de vetados (completed)" width="1920"/>
+                <img src="f8bf93eaf60cd803406b5a7aaf59f9ef94ff9fc6718287761a64ee1afa1364a3.png" title=" Administrador clicks on boton de mi cuenta" width="1920"/>
+                <img src="f738e9a67fc055662a0d302697b203e4a348866a0e4dfc921567ead392837d46.png" title=" Administrador clicks on boton de mi cuenta (completed)" width="1920"/>
+                <img src="f738e9a67fc055662a0d302697b203e4a348866a0e4dfc921567ead392837d46.png" title=" Administrador clicks on el submenu de mi cuenta" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Administrador clicks on el submenu de mi cuenta (completed)" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Dado que el asesor quiere asignar un veto interno" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Asesor veto cliente" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Asesor home" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" Asesor abre la pagina" width="1920"/>
+                <img src="5141f85f0b00021a5876a292304ddd64bdb961be269939bc1044746ccfcb5690.png" title=" asesor opens the Login finsonet page" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" asesor opens the Login finsonet page (completed)" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" Asesor informacion login" width="1920"/>
+                <img src="469c8d3dd5de1c8175d8fbc4fb8b3c871c6a9a21f6b7e5194b84e3da8351e240.png" title=" asesor enters 'ochinchilla' into usuario" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" asesor enters 'ochinchilla' into usuario (completed)" width="1920"/>
+                <img src="d77022990706ffcbfc40b13cab8ee0c93ab21521aa067f581a8e69888b942949.png" title=" asesor enters 'Nicolas32@' into contrase&ntilde;a" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" asesor enters 'Nicolas32@' into contrase&ntilde;a (completed)" width="1920"/>
+                <img src="df6973ffc7ef7e2cd468ba489e3f98bb074f8b50de84ddb6bd99c3a5c12f0f6c.png" title=" asesor clicks on el boton iniciar sesion" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" asesor clicks on el boton iniciar sesion (completed)" width="1920"/>
+                <img src="77596805ab0033c0ff10b8f0d712b6cb11ab084d0606e8219d01dcf8cb689fd6.png" title=" asesor enters '123456' into codigo" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" asesor enters '123456' into codigo (completed)" width="1920"/>
+                <img src="86075dedbda97fb2da214e7a548c530524cd9af6e9de86f2e6049018ccc1ac48.png" title=" asesor clicks on el boton enviar" width="1920"/>
+                <img src="aeff091e1a5ad2ba537cc5095846b4c1c4c9abd63d9ec056832f3ac4a29b74b4.png" title=" asesor clicks on el boton enviar (completed)" width="1920"/>
+                <img src="aeff091e1a5ad2ba537cc5095846b4c1c4c9abd63d9ec056832f3ac4a29b74b4.png" title=" Asesor modulo vetados" width="1920"/>
+                <img src="aeff091e1a5ad2ba537cc5095846b4c1c4c9abd63d9ec056832f3ac4a29b74b4.png" title=" Asesor ingresa a vetados" width="1920"/>
+                <img src="aeff091e1a5ad2ba537cc5095846b4c1c4c9abd63d9ec056832f3ac4a29b74b4.png" title=" asesor opens the Vetados page" width="1920"/>
+                <img src="b80459c43e2cc346f02cecc8d245525ab8a3a5c465a0170a4ba43ccd1ae5e52e.png" title=" asesor opens the Vetados page (completed)" width="1920"/>
+                <img src="b80459c43e2cc346f02cecc8d245525ab8a3a5c465a0170a4ba43ccd1ae5e52e.png" title=" Asesor ingresa a vetados (completed)" width="1920"/>
+                <img src="b80459c43e2cc346f02cecc8d245525ab8a3a5c465a0170a4ba43ccd1ae5e52e.png" title=" Dado que el asesor quiere asignar un veto interno (completed)" width="1920"/>
+                <img src="912f2289a25bb381227f5cd8c5e4b256b12d365c8500055d6f2f6265cbba0671.png" title=" Cuando el asesor asigne un veto interno a un cliente" width="1920"/>
+                <img src="912f2289a25bb381227f5cd8c5e4b256b12d365c8500055d6f2f6265cbba0671.png" title=" Asesor realizar veto" width="1920"/>
+                <img src="912f2289a25bb381227f5cd8c5e4b256b12d365c8500055d6f2f6265cbba0671.png" title=" asesor enters '10040048' into input de documento a realizar nuevo veto" width="1920"/>
+                <img src="912f2289a25bb381227f5cd8c5e4b256b12d365c8500055d6f2f6265cbba0671.png" title=" asesor select Sin motivo on lista de motivos para nuevo veto" width="1920"/>
+                <img src="f12d27e13a9f7aca1286507926023f9312eb78705564cf48c0143d5f8430b7d2.png" title=" asesor select Sin motivo on lista de motivos para nuevo veto (completed)" width="1920"/>
+                <img src="ef360f59e0f2e0c01afefbf6d5d4e73649d52324f59b4b1d1387bf89606db5b6.png" title=" asesor enters 'Usuario con problemas penales' into detalle del nuevo vetados" width="1920"/>
+                <img src="874a0ed2a85b9d65b6723d563ff86163a5951160bb2d14d603104b92e205eb6a.png" title=" asesor enters 'Usuario con problemas penales' into detalle del nuevo vetados (completed)" width="1920"/>
+                <img src="874a0ed2a85b9d65b6723d563ff86163a5951160bb2d14d603104b92e205eb6a.png" title=" asesor clicks on boton agregar nuevo veto" width="1920"/>
+                <img src="d0fb5b9697f65a7efa5dac3b4a5d5b3f5524cc7f1c2e551cd4606a7d0e35b742.png" title=" asesor clicks on boton agregar nuevo veto (completed)" width="1920"/>
+                <img src="d0fb5b9697f65a7efa5dac3b4a5d5b3f5524cc7f1c2e551cd4606a7d0e35b742.png" title=" asesor clicks on boton aceptar veto" width="1920"/>
+                <img src="31a75976695566299e4c9e200e0d2065d4300f7c52e136b0aba0dbdc56c69e94.png" title=" asesor clicks on boton aceptar veto (completed)" width="1920"/>
+                <img src="31a75976695566299e4c9e200e0d2065d4300f7c52e136b0aba0dbdc56c69e94.png" title=" Cuando el asesor asigne un veto interno a un cliente (completed)" width="1920"/>
+                <img src="e52cf08e123e0fbd69cce7faf9d56f8b738b29aad33563dd80c808eb11f772bb.png" title=" Entonces el asesor deberia ver al cliente en el listado de vetados" width="1920"/>
+                <img src="e61f5a1312814487dfbb84c82544f7df0d047cd5ae23911c36059dfc6f64da36.png" title=" Y el asesor no deberia poder crear un credito con este usuario" width="1920"/>
+                <img src="e61f5a1312814487dfbb84c82544f7df0d047cd5ae23911c36059dfc6f64da36.png" title=" Asesor intenta crear" width="1920"/>
+                <img src="e61f5a1312814487dfbb84c82544f7df0d047cd5ae23911c36059dfc6f64da36.png" title=" asesor clicks on el logo de finsonet" width="1920"/>
+                <img src="e61f5a1312814487dfbb84c82544f7df0d047cd5ae23911c36059dfc6f64da36.png" title=" asesor clicks on el link comercial" width="1920"/>
+                <img src="a841683da64be370323797a647619f7fa2ddc5ff49634f55c66fb6d075165ad0.png" title=" asesor clicks on el link comercial (completed)" width="1920"/>
+                <img src="a841683da64be370323797a647619f7fa2ddc5ff49634f55c66fb6d075165ad0.png" title=" asesor clicks on el link nuevo_credito" width="1920"/>
+                <img src="aca4132186170f300460cdb4db2e0d6f871c5a0867919b66d9d764f38315f5c8.png" title=" asesor clicks on el link nuevo_credito (completed)" width="1920"/>
+                <img src="aca4132186170f300460cdb4db2e0d6f871c5a0867919b66d9d764f38315f5c8.png" title=" asesor enters '10040048' then hits [ENTER] into documento" width="1920"/>
+                <img src="cba2997103a3150da2e52c0d97ba7138ff9fa5c94b6ecb6cd1c55bd718aa278b.png" title=" asesor enters '10040048' then hits [ENTER] into documento (completed)" width="1920"/>
+                <img src="fb5bd2cc541820df2b3ba7f7f5496ad153ee38a263d6e068a48cfd6c8154e9e8.png" title=" Y el asesor no deberia poder crear un credito con este usuario (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.8</span>
+</div>
+</body>
+</html>

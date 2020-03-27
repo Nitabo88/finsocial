@@ -1,0 +1,427 @@
+<html lang="en" class=""><head>
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Finsonet</title>
+    <!--  Hojas de estilos principales-->
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/assets/css/new_styles.css?rv=244">
+    <link rel="stylesheet" href="/css/jquery.autocomplete.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-select1.13.9.min.css">
+    <link rel="stylesheet" href="/css/datepicker.min.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/jquery.tablesorter.pager.css">
+    <link rel="stylesheet" href="/css/jquery.tablesorter.theme.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/sweetalert/css/sweetalert2.css">
+    <link rel="stylesheet" href="/js/source/jquery.fancybox.css?v=2.1.0" media="screen">
+    <link rel="stylesheet" href="/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/assets/css/fixed-table.css">
+    <link rel="icon" href="/assets/images/fav-ico.ico">
+<style>@charset "UTF-8";@-webkit-keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes swal2-show{0%{-webkit-transform:scale(.7);transform:scale(.7)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{-webkit-transform:scale(1);transform:scale(1);opacity:1}100%{-webkit-transform:scale(.5);transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.875em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}100%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}50%{margin-top:1.625em;-webkit-transform:scale(.4);transform:scale(.4);opacity:0}80%{margin-top:-.375em;-webkit-transform:scale(1.15);transform:scale(1.15)}100%{margin-top:0;-webkit-transform:scale(1);transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}100%{-webkit-transform:rotateX(0);transform:rotateX(0);opacity:1}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-shown{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:initial;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon::before{display:flex;align-items:center;font-size:2em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon::before{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 .0625em #fff,0 0 0 .125em rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:2em;height:2.8125em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.25em;left:-.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:2em 2em;transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;-webkit-transform-origin:0 2em;transform-origin:0 2em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:showSweetToast .5s;animation:showSweetToast .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:hideSweetToast .2s forwards;animation:hideSweetToast .2s forwards}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:animate-toast-success-tip .75s;animation:animate-toast-success-tip .75s}.swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:animate-toast-success-long .75s;animation:animate-toast-success-long .75s}@-webkit-keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@keyframes showSweetToast{0%{-webkit-transform:translateY(-.625em) rotateZ(2deg);transform:translateY(-.625em) rotateZ(2deg);opacity:0}33%{-webkit-transform:translateY(0) rotateZ(-2deg);transform:translateY(0) rotateZ(-2deg);opacity:.5}66%{-webkit-transform:translateY(.3125em) rotateZ(2deg);transform:translateY(.3125em) rotateZ(2deg);opacity:.7}100%{-webkit-transform:translateY(0) rotateZ(0);transform:translateY(0) rotateZ(0);opacity:1}}@-webkit-keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@keyframes hideSweetToast{0%{opacity:1}33%{opacity:.5}100%{-webkit-transform:rotateZ(1deg);transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes animate-toast-success-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes animate-toast-success-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-shown{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent}body.swal2-no-backdrop .swal2-shown>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-shown.swal2-top{top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-top-left,body.swal2-no-backdrop .swal2-shown.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-top-end,body.swal2-no-backdrop .swal2-shown.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-shown.swal2-center{top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-left,body.swal2-no-backdrop .swal2-shown.swal2-center-start{top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-center-end,body.swal2-no-backdrop .swal2-shown.swal2-center-right{top:50%;right:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom{bottom:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}body.swal2-no-backdrop .swal2-shown.swal2-bottom-left,body.swal2-no-backdrop .swal2-shown.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-shown.swal2-bottom-end,body.swal2-no-backdrop .swal2-shown.swal2-bottom-right{right:0;bottom:0}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;background-color:transparent;-webkit-overflow-scrolling:touch}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-container.swal2-fade{transition:background-color .1s}.swal2-container.swal2-shown{background-color:rgba(0,0,0,.4)}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-popup .swal2-header{display:flex;flex-direction:column;align-items:center}.swal2-popup .swal2-title{display:block;position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-popup .swal2-actions{z-index:1;flex-wrap:wrap;align-items:center;justify-content:center;margin:1.25em auto 0}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm{box-sizing:border-box;width:2.5em;height:2.5em;margin:.46875em;padding:0;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{content:'';display:inline-block;width:15px;height:15px;margin-left:5px;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff}.swal2-popup .swal2-styled{margin:.3125em;padding:.625em 2em;box-shadow:none;font-weight:500}.swal2-popup .swal2-styled:not([disabled]){cursor:pointer}.swal2-popup .swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-popup .swal2-styled:focus{outline:0;box-shadow:0 0 0 2px #fff,0 0 0 4px rgba(50,100,150,.4)}.swal2-popup .swal2-styled::-moz-focus-inner{border:0}.swal2-popup .swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-popup .swal2-image{max-width:100%;margin:1.25em auto}.swal2-popup .swal2-close{position:absolute;top:0;right:0;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:0;outline:initial;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-popup .swal2-close:hover{-webkit-transform:none;transform:none;color:#f27474}.swal2-popup>.swal2-checkbox,.swal2-popup>.swal2-file,.swal2-popup>.swal2-input,.swal2-popup>.swal2-radio,.swal2-popup>.swal2-select,.swal2-popup>.swal2-textarea{display:none}.swal2-popup .swal2-content{z-index:1;justify-content:center;margin:0;padding:0;color:#545454;font-size:1.125em;font-weight:300;line-height:normal;word-wrap:break-word}.swal2-popup #swal2-content{text-align:center}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-radio,.swal2-popup .swal2-select,.swal2-popup .swal2-textarea{margin:1em auto}.swal2-popup .swal2-file,.swal2-popup .swal2-input,.swal2-popup .swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);font-size:1.125em}.swal2-popup .swal2-file.swal2-inputerror,.swal2-popup .swal2-input.swal2-inputerror,.swal2-popup .swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-popup .swal2-file:focus,.swal2-popup .swal2-input:focus,.swal2-popup .swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-popup .swal2-file::-webkit-input-placeholder,.swal2-popup .swal2-input::-webkit-input-placeholder,.swal2-popup .swal2-textarea::-webkit-input-placeholder{color:#ccc}.swal2-popup .swal2-file:-ms-input-placeholder,.swal2-popup .swal2-input:-ms-input-placeholder,.swal2-popup .swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::-ms-input-placeholder,.swal2-popup .swal2-input::-ms-input-placeholder,.swal2-popup .swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-popup .swal2-file::placeholder,.swal2-popup .swal2-input::placeholder,.swal2-popup .swal2-textarea::placeholder{color:#ccc}.swal2-popup .swal2-range{margin:1em auto;background:inherit}.swal2-popup .swal2-range input{width:80%}.swal2-popup .swal2-range output{width:20%;font-weight:600;text-align:center}.swal2-popup .swal2-range input,.swal2-popup .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-popup .swal2-input{height:2.625em;padding:0 .75em}.swal2-popup .swal2-input[type=number]{max-width:10em}.swal2-popup .swal2-file{background:inherit;font-size:1.125em}.swal2-popup .swal2-textarea{height:6.75em;padding:.75em}.swal2-popup .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:#545454;font-size:1.125em}.swal2-popup .swal2-checkbox,.swal2-popup .swal2-radio{align-items:center;justify-content:center;background:inherit}.swal2-popup .swal2-checkbox label,.swal2-popup .swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-popup .swal2-checkbox input,.swal2-popup .swal2-radio input{margin:0 .4em}.swal2-popup .swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-popup .swal2-validation-message::before{content:'!';display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;zoom:normal;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;zoom:normal;border:.25em solid transparent;border-radius:50%;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon::before{display:flex;align-items:center;height:92%;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-warning::before{content:'!'}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-info::before{content:'i'}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-question::before{content:'?'}.swal2-icon.swal2-question.swal2-arabic-question-mark::before{content:'؟'}.swal2-icon.swal2-success{border-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:3.75em 3.75em;transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 3.75em;transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.875em;width:1.5625em;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal2-progress-steps{align-items:center;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#3085d6}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;width:2.5em;height:.4em;margin:0 -1px;background:#3085d6}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-show.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-hide.swal2-noanimation{-webkit-animation:none;animation:none}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-animate-success-icon .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-animate-success-icon .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-animate-success-icon .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-animate-error-icon{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-animate-error-icon .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}@-webkit-keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:initial!important}}</style></head>
+<body class="" style="padding-right: 0px;"><header class="template-green" aria-hidden="true">
+        <!-- Area swipe para cerrar menu -->
+    <div id="menu">
+        <div id="menu-content" class="swipe-area">
+            <div class="text-center divlogo pl-42 mt-20">
+                <a href="/index.php">
+                    <img src="/assets/images/logo_finsonet.svg" class="icon icon-finsonetlogo" alt="Finsonet">
+                </a>
+            </div>
+            <div class="text-center divlogo2 oculto">
+                <a href="/index.php">
+                    <img src="/assets/images/huy.png" class="icon icon-finsonetlogo2" alt="Finsonet">
+                </a>
+            </div>
+            <div class="menu-mobile mt-80"></div>
+        </div>
+    </div>
+    <!-- Primera parte -->
+    <div class="container header-main mt-4">
+        <div class="row mt-4">
+            <div class="col-sm-12 col-md-3 col-lg-2 div-logo">
+                <!-- Logo -->
+                <a href="/index.php">
+                    <img src="/assets/images/logo_finsonet.svg" class="icon icon-finsonetlogo" alt="Finsonet" title="Inicio">
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 div-search">
+                <!-- Caja de texto para busqueda de cliente -->
+                <div class="input-group">
+                    <input type="search" id="txtDocs" class="form-control ui-autocomplete-input" onkeypress="return validaNumericos(event);" autocomplete="off">
+                    <div class="input-group-append input-group-green">
+                        <button class="btn btn-little-green" type="button" onclick="consultar_doc()"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- Identificar usuario con sesion iniciada  -->
+            <div class="div-user col-md-3 col-lg-4 text-right mt-2 pr-3">
+                <div class="dropdown account-wrapper">
+                    <p class="user-name">Bienvenido/a ORLANDO</p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2 text-right">
+                <!-- Menu de usuario  -->
+                <div class="dropdown show account-button">
+                    <a class="btn btn-blue dropdown-toggle" id="dropdownCuenta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownCuenta">
+                        <a class="dropdown-item" href="/actDatosVen.php">Actualizar datos</a>
+                        <a class="dropdown-item" href="/cambiarCont.php">Cambio de contraseña</a>
+                        <a class="dropdown-item" href="/logOut.php">Salir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Barra de menu --> 
+    <div class="header-title mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 header-menu">
+                    <div class="header-decoration"></div>
+                    <a id="openPageslide2" href="#menu-content" class="oculto"></a>
+                    <!-- Icono para menu lateral  -->
+                    <div class="menu-hamburger oculto">
+                        <div id="hamburger" onclick="showDeskMenu();">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="hamburger2" onclick="showModalMenu();">
+                            <i class="far fa-bars fa-25"></i>
+                        </div>
+                    </div>
+                    <div class="menu-back " onclick="backMenu();" id="btn-back">
+                    <i class="far fa-arrow-left fa-25"></i>
+                    </div>
+                    <a>
+                    <div class="menu-back2 oculto float-left">
+                    <i class="fal fa-arrow-left fa-25"></i>
+                    </div>
+                    </a>
+                    <!-- Identificacion ubicacion de modulo y opcion  -->
+                    <h2 class="title-breadcrumbs title-breadcrumbs--principal mt-1 ml-40" id="uno"><span class="menu-glass">Riesgos</span><span class="menu-glass">Búsqueda de vetados</span>Detalle de Veto</h2>
+                </div>
+                <div class="col-5 text-right header-alerta">
+                    <!-- Opcion de soporte -->
+                    <div class="support-wrapper">
+                        <a href="/soporte2.php?tick=1" class="support-text">
+                            <h3><i class="fas fa-question-circle fa-25 pr-2 icon-support"></i><span>Soporte</span></h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    <!-- Módulo Reportes -->
+    
+    
+    
+    
+    <!--  Módulo Vetados -->
+            <div id="menuCrm" class="div-menu">
+            <ul class="mega-dropdown-menu row">
+                <li class="li-line col-md-4 col-lg-2 pb-10 pr-2">
+                    <a id="busq-vetados" href="/vetados/busquedaVetados.php" title="Administrador cazador">
+                        <i class="fas fa-file-search"></i>&nbsp;&nbsp;Búsqueda vetados
+                    </a>
+                </li>
+                <li class="li-line col-md-4 col-lg-2 pb-10 pr-2 ">
+                    <a id="veto-interno" title="Cazador" class="a-disabled">
+                        <i class="fas fa-user-slash"></i>&nbsp;&nbsp;Veto interno
+                    </a>
+                </li>
+                <li class="li-line col-md-4 col-lg-2 pb-10 pr-2">
+                    <a id="listado-vetados" href="/vetados/listadoVetados.php" title="Generador de enlaces">
+                        <i class="fas fa-clipboard-list-check"></i>&nbsp;&nbsp;Listado de vetados
+                    </a>
+                </li>
+                <li class="li-line col-md-4 col-lg-2 pb-10 pr-2">
+                    <a href="/controlUsura.php" title="Control de usura" id="cont-usura">
+                        <i class="fas fa-chart-line"></i>&nbsp;&nbsp;Control de usura
+                    </a>
+                </li>
+            </ul>
+        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<link rel="stylesheet" href="./css/vetados.css?rv=92" aria-hidden="true">
+<div class="container container-body" data-menu="veto-interno" data-site="veto-interno" aria-hidden="true">
+    <input type="hidden" id="cc" value="10040048">
+    <input type="hidden" id="nit" value="0">
+    <input type="hidden" id="idUser" value="">
+
+
+    <div id="infoCliente">
+        <h1 id="historial" class="my-30-2">Detalle de Veto</h1>
+                    <div class="panel panel-green">
+                <div class="panel-heading">
+                    <span class="pull-right clickable">
+                        <i class="fas fa-arrow-up rotate white"></i>
+                    </span>
+                    <h2 class="text-white" id="borrar"><i class="fas fa-head-side pr-15"></i>Información del cliente</h2>
+                </div>
+                <div class="panel-body">
+                    <h2 class="text-green mt-30">Datos del cliente</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 pt-20">
+                            <div class="form-group">
+                                <label for="fullName" class="mb-10">Nombre completo</label>
+                                <input type="text" name="fullName" id="fullName" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20">
+                            <div class="form-group">
+                                <label for="txtTipoCc" class="mb-10">Tipo de documento</label>
+                                <input type="text" name="txtTipoCc" id="txtTipoCc" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20">
+                            <div class="form-group">
+                                <label for="txtDocumento" class="mb-10">Número de identificación</label>
+                                <input type="text" name="txtDocumento" id="txtDocumento" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20" id="divFecha">
+                            <div class="form-group">
+                                <label for="txtFechaExp" class="mb-10">Fecha de exp.</label>
+                                <input type="text" name="txtFechaExp" id="txtFechaExp" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20" id="divLugar">
+                            <div class="form-group">
+                                <label for="txtLugarNac" class="mb-10">Lugar de nacimiento</label>
+                                <input type="text" name="txtLugarNac" id="txtLugarNac" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20" id="divNac">
+                            <div class="form-group">
+                                <label for="txtFecha" class="mb-10">Fecha de nacimiento</label>
+                                <input type="text" name="txtFecha" id="txtFecha" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20" id="divEdad">
+                            <div class="form-group">
+                                <label for="txtEdad" class="mb-10">Edad</label>
+                                <input type="text" name="txtEdad" id="txtEdad" class="form-control" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3 pt-20" id="divCiud">
+                            <div class="form-group">
+                                <label for="txtResidencia" class="mb-10">Ciudad de residencia</label>
+                                <input type="text" name="txtResidencia" id="txtResidencia" class="form-control" readonly="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+       
+        <div class="panel panel-green mt-30" id="registroVeto">
+            <div class="panel-heading">
+                <span class="pull-right clickable">
+                    <i class="fas fa-arrow-up rotate white"></i>
+                </span>
+                <h2 class="text-white" id="borrar"><i class="fas fa-user-slash pr-15"></i>Registro de Veto</h2>
+            </div>
+            <div class="panel-body">
+                <div id="datosVetoInt" class="mt-30 mb-20 dnt">
+                    <!-- <h2 class="text-green mt-30 mb-20">Datos del veto</h2>
+                        <div class="row mt-20">
+                         <div class="col-md-6 col-lg-4 pb-20">
+                            <div class="form-group">
+                                <label for="txtTipoInt" class="mb-10">Tipo Veto</label>
+                                <input type="text" name="txtTipoInt" id="txtTipoInt" class="form-control" value="Interno" readonly/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 pb-20">
+                            <div class="form-group">
+                                <label for="txtFechaInt" class="mb-10">Fecha</label>
+                                <input type="text" name="txtFechaInt" id="txtFechaInt" class="form-control" value="2019-11-2019" readonly/>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 pb-20">
+                            <div class="form-group">
+                                <label for="txtMotivoInt" class="mb-10">Motivo</label>
+                                <input type="text" name="txtMotivoInt" id="txtMotivoInt" class="form-control" value="Cliente problematico" readonly/>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 col-lg-12">
+                            <div class="form-group">
+                                <label for="txtDetalleInt" class="mb-10">Detalle</label>
+                                <input type="text" name="txtDetalleInt" id="txtDetalleInt"  class="form-control" value="Prueba" readonly/>
+                            </div>
+                        </div>
+                    </div>  -->
+                <div id="365"><h2 class="text-green mt-30 mb-20">Datos del veto</h2><div class="row mt-20"><div class="col-md-6 col-lg-4 pb-20"><div class="form-group"><label for="txtTipoInt" class="mb-10">Tipo Veto</label><input type="text" name="txtTipoInt" id="txtTipoInt" class="form-control" value="Interno" readonly=""></div></div><div class="col-md-6 col-lg-4 pb-20"><div class="form-group"><label for="txtFechaInt" class="mb-10">Fecha</label><input type="text" name="txtFechaInt" id="txtFecha365" class="form-control" value="2020-03-26 13:26:37" readonly=""></div></div><div class="col-md-6 col-lg-4 pb-20"><div class="form-group"><label for="txtMotivoInt" class="mb-10">Motivo</label><input type="text" name="txtMotivoInt" class="form-control" value="Sin motivo" readonly=""></div></div><div class="col-md-12 col-lg-12"><div class="form-group"><label for="txtDetalleInt" class="mb-10">Detalle</label><input type="text" name="txtDetalleInt" class="form-control" value="Usuario con problemas penales" readonly=""></div></div></div><div class="col-md-12 w-padding text-right row_buttons mt-30 mb-30" id="btnAnular"><button class="btn btn-green text-white" onclick="anularVeto(365);"><i class="fas fa-user-slash mr-10"></i>&nbsp;Anular veto</button></div></div></div>
+                                            <input type="hidden" val="1" id="accion_anular">
+                     
+                <div id="datosVetoExt" class="mt-30 mb-20 hidden"></div>
+            </div>
+        </div>
+        
+            <div class="panel panel-green mt-30" id="listasConsultadas">
+            <div class="panel-heading">
+                <span class="pull-right clickable">
+                    <i class="fas fa-arrow-up rotate white"></i>
+                </span>
+                <h2 class="text-white" id="borrar"><i class="fas fa-list-ol pr-15"></i>Listas consultadas</h2>
+            </div>
+            <div class="panel-body">
+                <h2 class="text-green mt-30 mb-20">Internacionales</h2>
+                <div class="mt-20" id="tableInternacionales">
+                    <div class="fixed-table-container mb-0 ml-0" id="fixed-table-container-" style="overflow: auto; position: relative;">
+                        <table class="listInternacionales" id="listInternacionales">
+                            <thead id="thInter" style="width: 1329px; position: absolute; top: 0px; left: 442px; z-index: 10;">
+                                <tr>
+                                    <th class="text-center" style="width: 442px; position: absolute; top: 0px; left: -442px;">Fuente</th>
+                                    <th class="text-center" style="width: 830px;">Nombre</th>
+                                    <th class="text-center" style="width: 298px;">Estado</th>
+                                    <th class="text-center" style="width: 201px;">Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="truoraInternacional" style="display: block; width: 1771px; margin-top: 46px;">
+                                
+                            <tr style="display: block; padding-left: 442px;"><td class="text-center" id="13549" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13549m" style="width: 830px;">Office of Foreign Assets Control</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13549b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13559" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13559m" style="width: 830px;">Most Wanted Fugitives by the DEA</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13559b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13560" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13560m" style="width: 830px;">Federal Bureau Of Prisons</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13560b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13563" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13563m" style="width: 830px;">Consolidated Screening Lists</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13563b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13564" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13564m" style="width: 830px;">EU list of the most wanted</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13564b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13565" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13565m" style="width: 830px;">DSS Most Wanted - Bureau of Diplomatic Security</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13565b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13566" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13566m" style="width: 830px;">World Bank Debarred Firms</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13566b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13567" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13567m" style="width: 830px;">Inter-American Development Bank</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13567b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13569" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13569m" style="width: 830px;">Reported in the EU financial system</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13569b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13571" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13571m" style="width: 830px;">United Nations Security Council Consolidate List</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13571b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13573" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13573m" style="width: 830px;">FBI</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13573b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 442px;"><td class="text-center" id="13574" style="width: 442px; position: absolute; left: 0px;">International background</td><td class="text-center" id="13574m" style="width: 830px;">Interpol list of the most wanted</td><td class="text-center pb-8" style="width: 298px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 201px;"><div class="text-center" id="13574b"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h2 class="text-green mt-30 mb-20">Nacionales</h2>
+                <div class="mt-20" id="tableNacionales">
+                    <div class="fixed-table-container thisTbl mb-0 ml-0" id="fixed-table-container-" style="overflow: auto; position: relative;">
+                        <table class="listNacionales" id="listNacionales">
+                            <thead id="thNac" style="width: 1396px; position: absolute; top: 0px; left: 375px; z-index: 10;">
+                                <tr>
+                                    <th class="text-center" style="width: 375px; position: absolute; top: 0px; left: -375px;">Fuente</th>
+                                    <th class="text-center" style="width: 985px;">Nombre</th>
+                                    <th class="text-center" style="width: 246px;">Estado</th>
+                                    <th class="text-center" style="width: 165px;">Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="truoraNacional" style="display: block; width: 1771px; margin-top: 46px;">
+                                <!-- <tr>
+                                    <td class="text-center">Legal background</td>
+                                    <td class="text-center">Sistema Penal Oral Acusatorio Colombiano - Notificación a deudores</td>
+                                    <td class="text-center pb-8">
+                                        <div class="btnTable completo-color" onclick="">
+                                            <p class="btn-check">VERIFICADO</p>
+                                        </div>
+                                    </td>
+                                    <td class="text-center pb-8">
+                                        <div class="text-center">
+                                            <button id ="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title="">
+                                                <span class="fas fa-check"></span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr> -->
+                            <tr style="display: block; padding-left: 375px;"><td class="text-center" id="13529" style="width: 375px; position: absolute; left: 0px;">Legal background</td><td class="text-center" id="13529n" style="width: 985px;">Procesos Judiciales de Colombia</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13529bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13534" style="width: 375px; position: absolute; left: 0px;">Criminal record</td><td class="text-center" id="13534n" style="width: 985px;">Procuraduría</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13534bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13535" style="width: 375px; position: absolute; left: 0px;">No fuente</td><td class="text-center" id="13535n" style="width: 985px;">Registro Único de Afiliados</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13535bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13536" style="width: 375px; position: absolute; left: 0px;">No fuente</td><td class="text-center" id="13536n" style="width: 985px;">Permiso Especial de Permanencia</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13536bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13538" style="width: 375px; position: absolute; left: 0px;">Criminal record</td><td class="text-center" id="13538n" style="width: 985px;">Juzgados De Ejecución De Penas Y Medidas De Seguridad</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13538bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13539" style="width: 375px; position: absolute; left: 0px;">Behavior</td><td class="text-center" id="13539n" style="width: 985px;">Reputational Score</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13539bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13540" style="width: 375px; position: absolute; left: 0px;">No fuente</td><td class="text-center" id="13540n" style="width: 985px;">Certificación del estado de Cédula de Extranjería</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13540bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13541" style="width: 375px; position: absolute; left: 0px;">No fuente</td><td class="text-center" id="13541n" style="width: 985px;">Policía: Registro Nacional de Medidas Correctivas</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13541bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13543" style="width: 375px; position: absolute; left: 0px;">Personal identity</td><td class="text-center" id="13543n" style="width: 985px;">Situación Militar</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13543bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13544" style="width: 375px; position: absolute; left: 0px;">Personal identity</td><td class="text-center" id="13544n" style="width: 985px;">Lugar de votación</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13544bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13545" style="width: 375px; position: absolute; left: 0px;">Legal background</td><td class="text-center" id="13545n" style="width: 985px;">Sistema Penal Oral Acusatorio Colombiano - Notificación a deudores</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13545bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13547" style="width: 375px; position: absolute; left: 0px;">Legal background</td><td class="text-center" id="13547n" style="width: 985px;">Contraloría</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13547bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13548" style="width: 375px; position: absolute; left: 0px;">No fuente</td><td class="text-center" id="13548n" style="width: 985px;">Certificado antecedentes fiscales persona jurídica</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13548bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13550" style="width: 375px; position: absolute; left: 0px;">Criminal record</td><td class="text-center" id="13550n" style="width: 985px;">Policía Nacional de Colombia</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13550bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13552" style="width: 375px; position: absolute; left: 0px;">Professional background</td><td class="text-center" id="13552n" style="width: 985px;">Consulta antecedentes disciplinarios Colombia</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13552bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13553" style="width: 375px; position: absolute; left: 0px;">Affiliations and insurances</td><td class="text-center" id="13553n" style="width: 985px;">Fondo de Pensiones Públicas</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13553bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13554" style="width: 375px; position: absolute; left: 0px;">Personal identity</td><td class="text-center" id="13554n" style="width: 985px;">Sistema de Selección de Beneficiarios Para Programas Sociales - SISBEN</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13554bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13555" style="width: 375px; position: absolute; left: 0px;">Professional background</td><td class="text-center" id="13555n" style="width: 985px;">Certificados Digitales SENA</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13555bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13556" style="width: 375px; position: absolute; left: 0px;">Affiliations and insurances</td><td class="text-center" id="13556n" style="width: 985px;">Afiliados del régimen contributivo y subsidiado</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13556bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13568" style="width: 375px; position: absolute; left: 0px;">Criminal record</td><td class="text-center" id="13568n" style="width: 985px;">Instituto Nacional Penitenciario y Carcelario</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13568bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13570" style="width: 375px; position: absolute; left: 0px;">Legal background</td><td class="text-center" id="13570n" style="width: 985px;">SPOA - Notificaciones Administrativas</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13570bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13572" style="width: 375px; position: absolute; left: 0px;">Alert in media</td><td class="text-center" id="13572n" style="width: 985px;">Google</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13572bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr><tr style="display: block; padding-left: 375px;"><td class="text-center" id="13575" style="width: 375px; position: absolute; left: 0px;">Criminal record</td><td class="text-center" id="13575n" style="width: 985px;">Sistema Penal Oral Acusatorio Colombiano - Sentencias crímenes contra sindicalistas de Colombia</td><td class="text-center pb-8" style="width: 246px;"><div class="btnTable completo-color" onclick=""><p class="btn-check">VERIFICADO</p></div></td><td class="text-center pb-8" style="width: 165px;"><div class="text-center" id="13575bt"><button id="" class="bg-square-button white btn-check" data-toggle="tooltip" data-placement="bottom" title=""><span class="fas fa-check"></span></button></div></td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 w-padding text-right row_buttons mt-30 mb-30">
+            <!-- <label for="cargoAprob" class="mb-10 text-left">Ver PDF</label> -->
+            <div class="clear-fix"></div>
+            <a class="btn btn-green" id="verReporte" name="verReporte" href="/upload/CHK7e6edc3107388809524e28ab0751df5c.pdf" target="_blank" aria-haspopup="true" aria-expanded="false">
+                <i class="mr-10 ml-20 fas fa-eye"></i>&nbsp;Ver PDF
+            </a>
+        </div>
+    </div>
+<div class="container" aria-hidden="true">
+    <div class="foot col-12">
+        
+<!--  Librerias javascript principales-->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/assets/js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="/js/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="/js/jquery.sticky.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script type="text/javascript" src="/js/validacion.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap-select.1.13.9.min.js"></script>
+<script src="/assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/assets/sweetalert/js/sweetalert2.all.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/assets/js/popper.js"></script>
+<script type="text/javascript" src="/assets/js/fixed-table.js"></script>
+<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/js/dataTables.bootstrap.min.js"></script>
+<script src="/js/bootstrap-datepicker.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-filestyle.min.js"></script>
+<script type="text/javascript" src="/admin/js/script.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.widgets.js"></script>
+<script type="text/javascript" src="/js/jquery.tablesorter.pager.js"></script>
+<script type="text/javascript" src="/js/source/jquery.fancybox.js?v=2.1.0"></script>
+<script type="text/javascript" src="/admin/js/adminCalculo.js"></script>
+<script type="text/javascript" src="/js/calculo.js?nocache=1319479456"></script>
+
+<script type="text/javascript" src="/mensajeria/assets/js/jquery.dm-uploader.min.js"></script>
+<script type="text/javascript" src="/mensajeria/assets/js/demo-ui.js"></script>
+
+<!-- Librerias temporales -->
+<link href="/css/sexyalertbox.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/js/sexyalertbox.js"></script>
+<script type="text/javascript" src="/js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript">
+
+
+        var usuario = {
+        perfil:3,
+        nombre: 'ORLANDO NICOLAS CHINCHILLA VEGA',
+        id_user: '2256'
+    };
+    
+    var reestructurando = 0;
+    var libAnterior = 0;
+</script>
+<script language="JavaScript">
+    //Código para colocar
+    //los indicadores de miles mientras se escribe
+    //script por tunait!
+    $(document).ready(function() {
+        setInterval(function () {
+            //Consulta de sesión
+                        consultarSession();
+                    }, 200000);
+    });
+</script>
+<script type="text/javascript" src="/assets/js/new_age.js?nocache=344966177"></script>
+<!-- Copyright página -->
+<footer class="mt-5 mb-25">© 2020 finsocial.co</footer>
+<!-- Botón para ir al inicio de una página en dispositivo móvil -->
+<a class="go-top" href="#"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+
+
+
+        <script type="text/javascript" src="./js/vetados.js?nocache=453657126"></script>
+        <script type="text/javascript" src="./js/vetoMain.js?nocache=1812532286"></script>
+        <script type="text/javascript" src="./js/detalleVeto.js?nocache=912752447"></script>
+        <script type="text/javascript" src="/assets/js/funcionesBasicas.js?nocache=1755642250"></script>
+    </div>
+</div><style aria-hidden="true">body.tablesorter-disableSelection { -ms-user-select: none; -moz-user-select: -moz-none;-khtml-user-select: none; -webkit-user-select: none; user-select: none; }.tablesorter-resizable-container { position: relative; height: 1px; }.tablesorter-resizable-handle { position: absolute; display: inline-block; width: 8px;top: 1px; cursor: ew-resize; z-index: 3; user-select: none; -moz-user-select: none; }</style><div id="BoxOverlay" style="position: absolute; top: 0px; left: 0px; opacity: 0.7; background-color: rgb(0, 0, 0); z-index: 65555; height: 1087px; width: 1903px; display: none;" aria-hidden="true"></div><div id="SexyAlertBox-Box" style="display: none; position: absolute; top: 0px; left: 0px; z-index: 65557; width: 500px;" aria-hidden="true"><div id="SexyAlertBox-InBox"><div id="SexyAlertBox-BoxContent"><div id="SexyAlertBox-BoxContenedor"></div></div></div></div><ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;" aria-hidden="true"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible" aria-hidden="true"></div></body></html>

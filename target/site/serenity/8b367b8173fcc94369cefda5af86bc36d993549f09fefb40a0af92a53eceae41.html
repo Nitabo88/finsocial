@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Originacion","type":"feature","href":"8b367b8173fcc94369cefda5af86bc36d993549f09fefb40a0af92a53eceae41.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e17 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Pruebas FINSONET</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                > <span class="truncate-40">Originacion</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 26-03-2020 10:17</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  Originacion</h2>
+                                        </span>
+                                </div>
+                                    <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="fd3ecac0925272ceeba4d1ab92be69918db08099fb1bfb52c195293bec0e6fd6.html">Formalizacion
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                        </span>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                Como asesor finsonet<br />
+Quiero tramitar un credito<br />
+Para revisar el proceso de originacion
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#9823c20e44043e4d5a8647d34d9db44edc4ef70ebbd9fb92a8384d325015a9f2" title="View scenario details" >Aprobacion de creditos - aprobar el credito desde aprobacion de creditos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="b6f00502a6acefa9fdac633928c62fd924aa9e5f35b3f8ccc34e24897e2a571b.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="b6f00502a6acefa9fdac633928c62fd924aa9e5f35b3f8ccc34e24897e2a571b.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6803be645ca9e9e1ad3de02c5e3a91d6e86c8198fdb0730d2de7b41cd9fa254b" title="View scenario details" >Aprobacion de creditos - marcar el credito como pendiente en aprobacion de creditos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="91d793a64c32d3ae1787fcff017c1fea2cdddd2149e2d39d367ae966f9f4961d.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="91d793a64c32d3ae1787fcff017c1fea2cdddd2149e2d39d367ae966f9f4961d.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#87098a56c70cea3eecf947b2d07158d1e84d0b8eebbbf7e0d234eec288470276" title="View scenario details" >Aprobacion de creditos - regresar el credito desde aprobacion de creditos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="934ec8cdf96524a8156817c9b667f882be158a5153512b944cc1a68a2fa643b1.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="934ec8cdf96524a8156817c9b667f882be158a5153512b944cc1a68a2fa643b1.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#998df810f4d78ee1d89bffa7cca3f378a35d7f644e4e3c442118049afd1e6ffb" title="View scenario details" >Chequeo documentos - aprobacion chequeo de documentos</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="2e0c16441ca76a665cb9eb69aafb5a8d6ccc29bec0e9b9fca94f777fb3650b65.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="2e0c16441ca76a665cb9eb69aafb5a8d6ccc29bec0e9b9fca94f777fb3650b65.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#0813c7552f3447deb2450c739414da864049bf6dc1942667b689cac8958551dc" title="View scenario details" >Chequeo documentos - aprobacion chequeo documentos no exitosa</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="259509a5fd86909cb486755be0637f8423d20ff3462b72b168be4fb001cba1bc.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="259509a5fd86909cb486755be0637f8423d20ff3462b72b168be4fb001cba1bc.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#349533a0237da882752d881892378241dc8683bd5f9c9d017a93d6e9661bc37d" title="View scenario details" >Chequeo documentos - chequeo de documentos estado pendiente</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="f2c9314b2302a143dc12e067bcee93c1d99cb239d6dcbd1f7647f7b212295968.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="f2c9314b2302a143dc12e067bcee93c1d99cb239d6dcbd1f7647f7b212295968.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#4a56fa687928853db4dc78967c43b9e1cd6470479d1e3e148bb3dee252ddef82" title="View scenario details" >Confirmacion - aprobacion del paso de confirmacion de un credito</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="bf266461577a61f94ed3eaf2ddb4d3d703761cb1f699be9e0cac73f10c92abb4.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="bf266461577a61f94ed3eaf2ddb4d3d703761cb1f699be9e0cac73f10c92abb4.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#720fbf0fc61b89de429f49187244f72c1d5ec7f04cf8d61bc2b81b03a2d7af86" title="View scenario details" >Confirmacion - regresar el credito desde el paso de confirmacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="6706224c6762d8e44fd3a1e3b1967d8057675acd670b11b9b21ddb04761a915b.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="6706224c6762d8e44fd3a1e3b1967d8057675acd670b11b9b21ddb04761a915b.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#d5bfd36a999122c12fd8da9a6712212085360cc2a2bf8c49b230de2467c7836c" title="View scenario details" >Confirmacion - marcar como pendiente el credito en el paso de confirmacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="2e4cba21942c12093acc793eca9e305a434ffeb50af8a34bd62afe0ca801aefb.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="2e4cba21942c12093acc793eca9e305a434ffeb50af8a34bd62afe0ca801aefb.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#ec4e1f5ff4c1e2810bce113cf1b0f0111638075e66c052a410f912f9e03e99d4" title="View scenario details" >Formalizacion - regresar el credito desde formalizacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="687f1db4dc897789fd3ed4e158c5a4e3b629582a16f33ff5e8aea31314061e31.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="687f1db4dc897789fd3ed4e158c5a4e3b629582a16f33ff5e8aea31314061e31.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6bc7e6281c70cf4bd39a3e105ea3b519a652a7650e346d2e6c0de97bb9496420" title="View scenario details" >Formalizacion - marcar el credito como pendiente en formalizacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="c3457ce1fc40329d4c51db3eb34ab1aae3d8eb725aaaef1e930c62e41c7affa3.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="c3457ce1fc40329d4c51db3eb34ab1aae3d8eb725aaaef1e930c62e41c7affa3.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#03cc1f6f1c5bd2ab2270025481266e6e94f9b3c9f577d50a05b12a5fc6598670" title="View scenario details" >Tesoreria - regresar el credito desde tesoreria</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="dadc33e5e1ef0477fcd71b6837957d37436c2a542d2aad26057e4cded7310494.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="dadc33e5e1ef0477fcd71b6837957d37436c2a542d2aad26057e4cded7310494.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#a59e88cc742da2fe700a4ebe011615644ed24816e0616ef117c48894290bc390" title="View scenario details" >Tesoreria - marcar el credito como pendiente en tesoreria</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="df43a1b46a319cbba3bd3aa039fadd08be238e0aa04ca3b0f359b81879dad832.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="df43a1b46a319cbba3bd3aa039fadd08be238e0aa04ca3b0f359b81879dad832.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#52fd65f3edd0cf76c5097ae34cc27128ec012250b94e7f5f07ba1d1203ad8477" title="View scenario details" >Incorporacion - marcar el credito como pendiente en incorporacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="5e07eda4089e0de99dd5253b4ef76e28e2e0892bf0ee8202e29309485e60d513.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="5e07eda4089e0de99dd5253b4ef76e28e2e0892bf0ee8202e29309485e60d513.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#e3f6158fbcc8e24432afbd027e6b6f294a7cbfc849a286bf0ef8bc0b9db6ab73" title="View scenario details" >Incorporacion - regresar el credito desde incorporacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="42ce75b9b4e3bcd4e0364fa13403a56eed21026ddc5b5b3cf5f56c4ff428f1ad.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="42ce75b9b4e3bcd4e0364fa13403a56eed21026ddc5b5b3cf5f56c4ff428f1ad.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5917af984c3959c17408197a7871b8292cf056cf76ac6389d5cd308a0a27b432" title="View scenario details" >Incorporacion - aprobar el credito desde incorporacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="c86a41407fd81de11c47f7ae1c31cb6cc53204f0c8d63c868b21731f034dd2e2.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="c86a41407fd81de11c47f7ae1c31cb6cc53204f0c8d63c868b21731f034dd2e2.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#5e01cb95d04623786711c676b26ba6deb0dadef6fbdc489b5cb0e61037ba52b4" title="View scenario details" >Formalizacion - aprobar el credito desde formalizacion</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="bb94ca9cd0789f54812e5cbb7ab5031397d0e59845f42cb62ca3e3c5c21b2d08.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="bb94ca9cd0789f54812e5cbb7ab5031397d0e59845f42cb62ca3e3c5c21b2d08.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="9823c20e44043e4d5a8647d34d9db44edc4ef70ebbd9fb92a8384d325015a9f2">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="b6f00502a6acefa9fdac633928c62fd924aa9e5f35b3f8ccc34e24897e2a571b.html" title="View test results">Aprobacion de Creditos - Aprobar el credito desde aprobacion de creditos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de aprobacion de creditos</p>
+                                                            <p>Cuando el asesor aprueba el credito</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de incorporacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6803be645ca9e9e1ad3de02c5e3a91d6e86c8198fdb0730d2de7b41cd9fa254b">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="91d793a64c32d3ae1787fcff017c1fea2cdddd2149e2d39d367ae966f9f4961d.html" title="View test results">Aprobacion de Creditos - Marcar el credito como pendiente en aprobacion de creditos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de aprobacion de creditos</p>
+                                                            <p>Cuando el asesor pone el credito como pendiente</p>
+                                                            <p>Entonces el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="87098a56c70cea3eecf947b2d07158d1e84d0b8eebbbf7e0d234eec288470276">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="934ec8cdf96524a8156817c9b667f882be158a5153512b944cc1a68a2fa643b1.html" title="View test results">Aprobacion de Creditos - Regresar el credito desde aprobacion de creditos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de aprobacion de creditos</p>
+                                                            <p>Cuando el asesor regresa el credito a confirmacion</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de confirmacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="998df810f4d78ee1d89bffa7cca3f378a35d7f644e4e3c442118049afd1e6ffb">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="2e0c16441ca76a665cb9eb69aafb5a8d6ccc29bec0e9b9fca94f777fb3650b65.html" title="View test results">Chequeo Documentos - Aprobacion chequeo de documentos</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de chequeo de un documentos</p>
+                                                            <p>Cuando el asesor adjunta toda la informacion de el chequeo de documentos</p>
+                                                            <p>Entonces deberia ver el credito en el paso de confirmacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="0813c7552f3447deb2450c739414da864049bf6dc1942667b689cac8958551dc">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="259509a5fd86909cb486755be0637f8423d20ff3462b72b168be4fb001cba1bc.html" title="View test results">Chequeo Documentos - Aprobacion chequeo documentos no exitosa</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que el asesor esta en el paso de chequeo de un documentos</p>
+                                                            <p>Cuando el asesor complete el chequeo de credito del cliente</p>
+                                                            <p>Entonces deberia ver el mensaje de adjuntar informacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="349533a0237da882752d881892378241dc8683bd5f9c9d017a93d6e9661bc37d">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="f2c9314b2302a143dc12e067bcee93c1d99cb239d6dcbd1f7647f7b212295968.html" title="View test results">Chequeo Documentos - Chequeo de documentos estado Pendiente</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de chequeo de un documentos</p>
+                                                            <p>Cuando el asesor decline el chequeo del credito del cliente</p>
+                                                            <p>Entonces el auxiliar de documentacion deberia verlo</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="4a56fa687928853db4dc78967c43b9e1cd6470479d1e3e148bb3dee252ddef82">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="bf266461577a61f94ed3eaf2ddb4d3d703761cb1f699be9e0cac73f10c92abb4.html" title="View test results">Confirmacion - Aprobacion del paso de confirmacion de un credito</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de confirmacion</p>
+                                                            <p>Cuando el asesor apruebe el paso de confirmacion</p>
+                                                            <p>Entonces el asesor deberia ver el crédito en el paso de aprobacion de creditos</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="720fbf0fc61b89de429f49187244f72c1d5ec7f04cf8d61bc2b81b03a2d7af86">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="6706224c6762d8e44fd3a1e3b1967d8057675acd670b11b9b21ddb04761a915b.html" title="View test results">Confirmacion - Regresar el credito desde el paso de confirmacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de confirmacion</p>
+                                                            <p>Cuando el asesor regresa el credito a chequeo de documentos</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de chequeo de documentos</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="d5bfd36a999122c12fd8da9a6712212085360cc2a2bf8c49b230de2467c7836c">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="2e4cba21942c12093acc793eca9e305a434ffeb50af8a34bd62afe0ca801aefb.html" title="View test results">Confirmacion - Marcar como pendiente el credito en el paso de confirmacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de confirmacion</p>
+                                                            <p>Cuando el asesor marque como pendiente el paso de confirmacion</p>
+                                                            <p>Entonces el asesor deberia ver el crédito en confirmacion de creditos en la lista de pendientes</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="ec4e1f5ff4c1e2810bce113cf1b0f0111638075e66c052a410f912f9e03e99d4">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="687f1db4dc897789fd3ed4e158c5a4e3b629582a16f33ff5e8aea31314061e31.html" title="View test results">Formalizacion - Regresar el credito desde formalizacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de formalizacion</p>
+                                                            <p>Cuando el asesor regresa el credito desde formalizacion</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de incorporacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6bc7e6281c70cf4bd39a3e105ea3b519a652a7650e346d2e6c0de97bb9496420">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="c3457ce1fc40329d4c51db3eb34ab1aae3d8eb725aaaef1e930c62e41c7affa3.html" title="View test results">Formalizacion - Marcar el credito como pendiente en formalizacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de formalizacion</p>
+                                                            <p>Cuando el asesor pone el credito como pendiente en formalizacion</p>
+                                                            <p>Entonces el asesor debera ver el credito en formalizacion en la lista de pendientes</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="03cc1f6f1c5bd2ab2270025481266e6e94f9b3c9f577d50a05b12a5fc6598670">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="dadc33e5e1ef0477fcd71b6837957d37436c2a542d2aad26057e4cded7310494.html" title="View test results">Tesoreria - Regresar el credito desde tesoreria</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de tesoreria</p>
+                                                            <p>Cuando el asesor regresa el credito desde tesoreria</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de formalizacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="a59e88cc742da2fe700a4ebe011615644ed24816e0616ef117c48894290bc390">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="df43a1b46a319cbba3bd3aa039fadd08be238e0aa04ca3b0f359b81879dad832.html" title="View test results">Tesoreria - Marcar el credito como pendiente en tesoreria</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de tesoreria</p>
+                                                            <p>Cuando el asesor pone el credito como pendiente en tesoreria</p>
+                                                            <p>Entonces el asesor debera ver el credito en tesoreria en la lista de pendientes</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="52fd65f3edd0cf76c5097ae34cc27128ec012250b94e7f5f07ba1d1203ad8477">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="5e07eda4089e0de99dd5253b4ef76e28e2e0892bf0ee8202e29309485e60d513.html" title="View test results">Incorporacion - Marcar el credito como pendiente en incorporacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de incorporacion</p>
+                                                            <p>Cuando el asesor pone el credito como pendiente en incorporacion</p>
+                                                            <p>Entonces el asesor debera ver el credito en incorporacion en la lista de pendientes</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="e3f6158fbcc8e24432afbd027e6b6f294a7cbfc849a286bf0ef8bc0b9db6ab73">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="42ce75b9b4e3bcd4e0364fa13403a56eed21026ddc5b5b3cf5f56c4ff428f1ad.html" title="View test results">Incorporacion - Regresar el credito desde incorporacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de incorporacion</p>
+                                                            <p>Cuando el asesor regresa el credito a aprobacion de creditos</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de aprobacion de creditos</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5917af984c3959c17408197a7871b8292cf056cf76ac6389d5cd308a0a27b432">
+                                                    <div class="scenario-docs card-header error" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="c86a41407fd81de11c47f7ae1c31cb6cc53204f0c8d63c868b21731f034dd2e2.html" title="View test results">Incorporacion - Aprobar el credito desde incorporacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de incorporacion</p>
+                                                            <p>Cuando el asesor aprueba el credito en incorporacion</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de formalizacion</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="5e01cb95d04623786711c676b26ba6deb0dadef6fbdc489b5cb0e61037ba52b4">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="bb94ca9cd0789f54812e5cbb7ab5031397d0e59845f42cb62ca3e3c5c21b2d08.html" title="View test results">Formalizacion - Aprobar el credito desde formalizacion</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Dado que un asesor esta en el paso de formalizacion</p>
+                                                            <p>Cuando el asesor aprueba el credito en formalizacion</p>
+                                                            <p>Entonces el asesor debera ver el credito en el paso de tesoreria</p>
+                                                        <div class="examples">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['88%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '6%', ' ', '6%', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 15}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="59a871c32ba5fbac197387f7a139f33b3603aba055482cc0bf7f8723da8c9293.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">15</td>
+                                                <td class="automated-stats">88%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                             <td colspan="3"><a href="be637034ec01d9b0c7eecbe856ca8eff1b32a59959cc3976386cb9f155a98a3b.html"><i
+                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="56aaad5fb1f9e0296c076105a638b753a5137c5d23769916de404284b865471d.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">6%</td>
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="b39dd59eab73dbacd63104cc5e1e3dae5b66d38a5cb6e3e79387b6d0b9e8d87d.html"><i
+                                                                                class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                    </td>
+                                                <td class="automated-stats">1</td>
+                                                <td class="automated-stats">6%</td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">17</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td> 2h  9m 49s</td>
+                                                        <td> 9h  27m 3s</td>
+                                                        <td>44s</td>
+                                                        <td> 14m 26s</td>
+                                                        <td> 7m 38s</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b6f00502a6acefa9fdac633928c62fd924aa9e5f35b3f8ccc34e24897e2a571b.html">Aprobacion de Creditos - Aprobar el credito desde aprobacion de creditos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>10:17:09</td>
+                                                    <td>8m 16s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="91d793a64c32d3ae1787fcff017c1fea2cdddd2149e2d39d367ae966f9f4961d.html">Aprobacion de Creditos - Marcar el credito como pendiente en aprobacion de creditos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>10:25:25</td>
+                                                    <td>6m 13s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="934ec8cdf96524a8156817c9b667f882be158a5153512b944cc1a68a2fa643b1.html">Aprobacion de Creditos - Regresar el credito desde aprobacion de creditos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>10:31:38</td>
+                                                    <td>6m 4s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="2e0c16441ca76a665cb9eb69aafb5a8d6ccc29bec0e9b9fca94f777fb3650b65.html">Chequeo Documentos - Aprobacion chequeo de documentos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:06:52</td>
+                                                    <td>5m 14s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="259509a5fd86909cb486755be0637f8423d20ff3462b72b168be4fb001cba1bc.html">Chequeo Documentos - Aprobacion chequeo documentos no exitosa</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:12:06</td>
+                                                    <td>4m 31s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f2c9314b2302a143dc12e067bcee93c1d99cb239d6dcbd1f7647f7b212295968.html">Chequeo Documentos - Chequeo de documentos estado Pendiente</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:16:37</td>
+                                                    <td>4m 53s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bf266461577a61f94ed3eaf2ddb4d3d703761cb1f699be9e0cac73f10c92abb4.html">Confirmacion - Aprobacion del paso de confirmacion de un credito</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:23:28</td>
+                                                    <td>5m 35s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="6706224c6762d8e44fd3a1e3b1967d8057675acd670b11b9b21ddb04761a915b.html">Confirmacion - Regresar el credito desde el paso de confirmacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:29:03</td>
+                                                    <td>5m 48s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="2e4cba21942c12093acc793eca9e305a434ffeb50af8a34bd62afe0ca801aefb.html">Confirmacion - Marcar como pendiente el credito en el paso de confirmacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:34:51</td>
+                                                    <td>5m 34s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="687f1db4dc897789fd3ed4e158c5a4e3b629582a16f33ff5e8aea31314061e31.html">Formalizacion - Regresar el credito desde formalizacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:44:55</td>
+                                                    <td>12m 22s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="c3457ce1fc40329d4c51db3eb34ab1aae3d8eb725aaaef1e930c62e41c7affa3.html">Formalizacion - Marcar el credito como pendiente en formalizacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>11:57:16</td>
+                                                    <td>11m 8s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                            <a href="dadc33e5e1ef0477fcd71b6837957d37436c2a542d2aad26057e4cded7310494.html">Tesoreria - Regresar el credito desde tesoreria</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>13:05:58</td>
+                                                    <td>44s 541ms</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                style="display:none">FAILURE</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="df43a1b46a319cbba3bd3aa039fadd08be238e0aa04ca3b0f359b81879dad832.html">Tesoreria - Marcar el credito como pendiente en tesoreria</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>13:06:43</td>
+                                                    <td>13m 43s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5e07eda4089e0de99dd5253b4ef76e28e2e0892bf0ee8202e29309485e60d513.html">Incorporacion - Marcar el credito como pendiente en incorporacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>14:49:20</td>
+                                                    <td>9m 40s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="42ce75b9b4e3bcd4e0364fa13403a56eed21026ddc5b5b3cf5f56c4ff428f1ad.html">Incorporacion - Regresar el credito desde incorporacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:29:46</td>
+                                                    <td>10m 39s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result ERROR">
+                                                    <td>
+                                                            <a href="c86a41407fd81de11c47f7ae1c31cb6cc53204f0c8d63c868b21731f034dd2e2.html">Incorporacion - Aprobar el credito desde incorporacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>19:31:22</td>
+                                                    <td>5m</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></a> <span
+                                                                style="display:none">ERROR</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bb94ca9cd0789f54812e5cbb7ab5031397d0e59845f42cb62ca3e3c5c21b2d08.html">Formalizacion - Aprobar el credito desde formalizacion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>19:44:12</td>
+                                                    <td>14m 26s</td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.1.8</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
