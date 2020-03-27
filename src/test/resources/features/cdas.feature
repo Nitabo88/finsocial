@@ -5,7 +5,6 @@ Característica: Cdas
   Quiero diligenciar los cdas del cliente
   Para verificar que queden en el estado correcto
 
-  @Completo
   Escenario: Cdas - Completo
     Dado que un asesor esta en el modulo de CDAS con la informacion previa completa
     Cuando el asesor diligencia los CDAS del credito como completos
