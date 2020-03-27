@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutentico.MENSAJE_LOGUEO_NO_EXITOSO;
+import static co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutenticoException.MENSAJE_LOGUEO_NO_EXITOSO;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutentico;
+import co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutenticoException;
 import co.com.red5g.finsonet.interacions.AbreLaPagina;
 import co.com.red5g.finsonet.questions.Mensaje;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
@@ -37,6 +37,6 @@ public class LoginFinsonetStepDefinition {
 
     @Entonces("el debería ver (.*)")
     public void verificarIngreso(final String strMensaje) {
-        theActorInTheSpotlight().should(seeThat(Mensaje.deBienvenidaEs(strMensaje)).orComplainWith(ElUsuarioNoSeAutentico.class, MENSAJE_LOGUEO_NO_EXITOSO));
+        theActorInTheSpotlight().should(seeThat(Mensaje.deBienvenidaEs(strMensaje)).orComplainWith(ElUsuarioNoSeAutenticoException.class, MENSAJE_LOGUEO_NO_EXITOSO));
     }
 }

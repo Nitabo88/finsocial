@@ -18,8 +18,10 @@ public class Formalizacion implements Task {
   public <T extends Actor> void performAs(final T actor) {
     actor.attemptsTo(
         Consulta.elCreditoEnIncorporacion(),
-        Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()),
-        Click.on(MNU_HAMBURGUESA),
+        Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()));
+    actor.attemptsTo(
+        Click.on(MNU_HAMBURGUESA));
+    actor.attemptsTo(
         Click.on(MNU_NUEVO_ORIGINACION.of(FORMALIZACION)));
   }
 }

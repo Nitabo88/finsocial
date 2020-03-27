@@ -11,7 +11,7 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
 
-import co.com.red5g.finsonet.interacions.Subir;
+import co.com.red5g.finsonet.interacions.factories.Subir;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -38,7 +38,7 @@ public class InformacionChequeoDocumento implements Task {
             Click.on(BTN_ACEPTAR),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
-            Subir.losArchivos(),
+            Subir.losArchivosDeChequeoDocumentos(),
             Click.on(BTN_GUARDAR),
             Click.on(BTN_ACEPTAR)
         );
