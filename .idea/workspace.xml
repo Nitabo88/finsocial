@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad1eb4cf-fdb1-4e04-a176-770ec44e0703" name="Default Changelist" comment="" />
+    <list default="true" id="ad1eb4cf-fdb1-4e04-a176-770ec44e0703" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/Interaction/EncontrarCedula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/Interaction/IngresoPorEstado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/Interaction/interaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/question/RegistroChequeo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/question/RegistroConfirm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/question/VerificarEstado.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/question/VerificarIngreso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/AbrirEstadoOrig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/AprobarCred.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/ChequearCred.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/ConfirmarCred.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/FormaCred.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/IncorpCred.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/Ingreso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/Sesion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/task/TesCred.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/AntecarteraPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/AprobacionPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/ChequeoPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/ConfirmPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/EstadosPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/FinsocialPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/FormalizacionPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/IncorporacionPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/LoginFinsocialComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/OriginacionPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/com/red5g/userinterfaces/TesoreriaPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/AprobRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/ChequeoRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/ConfirmRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/FormRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/IncorpRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/OrigRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/runners/TesoRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/AprobStepDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/ChequeoStepsDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/ConfirmStepsDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/FinsocialLoginStepDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/FormStepDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/IncorpStepDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/OrigStepDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/co/com/red5g/stepdefinitions/TesoStepDefinitions.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +97,11 @@
   </component>
   <component name="ProjectId" id="1ZhH8lN6BudVNV9FUDQwgwsd3To" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -74,6 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563554556977</updated>
       <workItem from="1585284250552" duration="44000" />
+      <workItem from="1585285058546" duration="258000" />
     </task>
     <servers />
   </component>
