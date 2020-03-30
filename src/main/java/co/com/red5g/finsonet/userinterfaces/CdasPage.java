@@ -29,7 +29,7 @@ public class CdasPage {
     public static final Target BTN_ATRAS = Target.the("el boton atras")
         .locatedBy("#btn-back");
     public static final Target BTN_ACCION_GESTION = Target.the("el boton accion gestion")
-        .located(By.className("fas fa-thumbs-up"));
+        .located(By.xpath("//button[@class='bg-square-button white bg-green']"));
 
 
     private CdasPage() {

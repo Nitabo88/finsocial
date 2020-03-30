@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.finsonet.interacions.CerrarPestanaAnterior.cerrarPestanaAnterior;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_ADVERTENCIA_GUARDAR;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_CERTIFICACION_LLAMADAS;
@@ -33,6 +34,7 @@ public class SeProcesa implements Task {
         theActorInTheSpotlight().attemptsTo(
             WaitUntil.the(LST_FILA_LLAMADAS.of(numeroCredito), isVisible()),
             JavaScriptClick.on(LST_FILA_LLAMADAS.of(numeroCredito)),
+            cerrarPestanaAnterior(),
             cambiarPestanaActual(),
             Click.on(CHK_RESPUESTA_CUATRO.of(numeroCredito)),
             Click.on(CHK_RESPUESTA_QUINTO.of(numeroCredito)),

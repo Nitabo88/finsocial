@@ -7,15 +7,12 @@ import net.serenitybdd.screenplay.Question;
 
 public class ElMensaje implements Question<String> {
 
-    public ElMensaje() {
-    }
+  public static ElMensaje noRegistra() {
+    return new ElMensaje();
+  }
 
-    public static ElMensaje noRegistra() {
-        return new ElMensaje();
-    }
-
-    @Override
-    public String answeredBy(final Actor actor) {
-        return (TXT_NOMBRE_COMPLETO.resolveFor(actor).getValue());
-    }
+  @Override
+  public String answeredBy(final Actor actor) {
+    return (TXT_NOMBRE_COMPLETO.resolveFor(actor).getValue());
+  }
 }

@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
 import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
+import static co.com.red5g.finsonet.interacions.CerrarPestanaAnterior.cerrarPestanaAnterior;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ATRAS;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_BUSQUEDA;
@@ -35,7 +36,7 @@ public class Cdas implements Task {
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
         JavaScriptClick.on(BTN_BUSQUEDA),
         JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
-        cerrarPestana(),
+        cerrarPestanaAnterior(),
         cambiarPestanaActual(),
         Completar.lasAccionesDeGestionCdas(accionCdas),
         Click.on(BTN_ATRAS)

@@ -6,6 +6,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Subir {
 
+  private Subir() {
+  }
+
   public static Performable losArchivosDeChequeoDocumentos() {
     return new SubirArchivosChequeoDocumento();
   }

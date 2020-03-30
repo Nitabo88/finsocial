@@ -8,6 +8,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Realiza {
 
+  private Realiza() {
+  }
+
   public static Performable unChequeoDeDocumento() {
     return instrumented(ChequeoDocumento.class);
   }

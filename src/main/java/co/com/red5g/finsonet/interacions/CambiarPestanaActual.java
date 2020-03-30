@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
 public class CambiarPestanaActual implements Interaction {
 
-  private static final int TIEMPO = 10;
+  private static final int TIEMPO = 5;
 
   public static Performable cambiarPestanaActual() {
     return instrumented(CambiarPestanaActual.class);

@@ -17,7 +17,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 public class Eliminar implements Task {
 
     private static final String SALIR = "Salir";
-    Vetados vetados;
+    final Vetados vetados;
 
     public Eliminar(final Vetados vetados) {
         this.vetados = vetados;

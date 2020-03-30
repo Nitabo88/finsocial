@@ -8,7 +8,6 @@ import static org.hamcrest.Matchers.containsString;
 import co.com.red5g.finsonet.questions.ValidarLlamada;
 import co.com.red5g.finsonet.tasks.AsignacionLlamadas;
 import co.com.red5g.finsonet.tasks.SeProcesa;
-import co.com.red5g.finsonet.tasks.SeValida;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -17,35 +16,32 @@ import cucumber.api.java.es.Y;
 
 public class LlamadasStepDefinition {
 
-    private static final String ESTADO_COMPLETO = "Visto bueno";
+  private static final String ESTADO_COMPLETO = "Visto bueno";
 
-    @Dado("que un (.*) quiere asignar una llamada para el credito")
-    public void queUnAsesorQuiereAsignarUnaLlamadaParaElCredito(String nombreActor) {
-        theActorCalled(nombreActor).attemptsTo(
-            Ubicarse.enLlamada()
-        );
-    }
+  @Dado("que (.*) quiere gestiona la llamada para un credito")
+  public void ingresarModuloLlamadas(String nombreActor) {
+    theActorCalled(nombreActor).attemptsTo(
+        Ubicarse.enLlamada()
+    );
+  }
 
-    @Cuando("el realiza el proceso de asignacion")
-    public void elRealizaElProcesoDeAsignacion() {
-        theActorInTheSpotlight().attemptsTo(
-            AsignacionLlamadas.asignarllamada()
-        );
-    }
+  @Cuando("el asesor se asigne")
+  public void asignarLLamada() {
+    theActorInTheSpotlight().attemptsTo(
+        AsignacionLlamadas.asignarllamada()
+    );
+  }
 
-    @Y("^procesa la llamada$")
-    public void procesaLaLlamada() {
-        theActorInTheSpotlight().attemptsTo(
-            SeProcesa.laLlamada()
-        );
-    }
+  @Y("^posteriormente procese la llamada$")
+  public void procesarLlamada() {
+    theActorInTheSpotlight().attemptsTo(
+        SeProcesa.laLlamada()
+    );
+  }
 
-    @Entonces("^la gestion quedara confirmado$")
-    public void elCreditoQuedaraConfirmado() {
-        theActorInTheSpotlight().attemptsTo(
-            SeValida.queLaLlamada()
-        );
-        theActorInTheSpotlight().should
-            (seeThat(ValidarLlamada.estaConfirmada(), containsString(ESTADO_COMPLETO)));
-    }
+  @Entonces("^la llamada para la gestion del credito quedara confirmada$")
+  public void confirmarLlamada() {
+    theActorInTheSpotlight().should
+        (seeThat(ValidarLlamada.estaConfirmada(), containsString(ESTADO_COMPLETO)));
+  }
 }
