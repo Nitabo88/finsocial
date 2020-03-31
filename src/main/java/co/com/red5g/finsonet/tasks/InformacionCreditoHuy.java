@@ -17,6 +17,7 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
+  private static final int TIEMPO = 30;
   private final Credito credito;
 
   public InformacionCreditoHuy(Credito credito) {
@@ -31,7 +32,7 @@ public class InformacionCreditoHuy implements Task {
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
         Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
         JavaScriptClick.on(BTN_CREAR_CREDITO),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(10).seconds(),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         JavaScriptClick.on(BTN_OK)
     );
   }

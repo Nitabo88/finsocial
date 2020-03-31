@@ -10,7 +10,6 @@ public final class NuevoCreditoPage {
     public static final Target TBL_INFORMACION_CREDITOS=Target.the("La Tabla de informacion este visible").located(By.id("tablaInfo"));
     public static final Target BTN_OK = Target.the("el boton OK").located(By.xpath("//button[contains(text(),'OK')]"));
     public static final Target BTN_CREAR_CREDITO = Target.the("el boton crear credito").located(By.id("btn_Dif"));
-    public static final Target FRM_EMERGENTE =  Target.the("la ventana con el mensaje").located(By.xpath("//div[@class='sweet-alert showSweetAlert visible']"));
     public static final Target LBL_MENSAJE_FALLIDO = Target.the("el mensaje de falla").located(
         By.xpath("//div[@class='sweet-alert showSweetAlert visible']//h2//following-sibling::p"));
     public static final Target TXT_NOMBRE_COMPLETO = Target.the("el input de nombre completo").located(By.id("textoNom"));
