@@ -22,7 +22,7 @@ public class InformacionCredito implements Task {
     private final Credito credito;
     public static final String CEDULA_ACTOR = "cedula actor";
     public static final String FECHA_CREDITO = "fecha credito";
-    public static final int TIEMPO = 30;
+    public static final int TIEMPO = 40;
 
     public InformacionCredito(Credito credito) {
         this.credito = credito;

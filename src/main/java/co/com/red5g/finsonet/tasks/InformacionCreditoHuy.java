@@ -17,7 +17,7 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
-  private static final int TIEMPO = 30;
+  private static final int TIEMPO = 40;
   private final Credito credito;
 
   public InformacionCreditoHuy(Credito credito) {
