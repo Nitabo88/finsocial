@@ -14,11 +14,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.Upload;
 import org.openqa.selenium.JavascriptExecutor;
 
-public class Subir implements Interaction {
-
-    public static Subir losArchivos() {
-        return new Subir();
-    }
+public class SubirArchivosChequeoDocumento implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {

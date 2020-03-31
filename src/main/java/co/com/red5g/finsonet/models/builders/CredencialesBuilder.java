@@ -7,67 +7,98 @@ import static co.com.red5g.finsonet.utils.Credenciales.USUARIO_FINSOCIAL;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.utils.Builder;
 
-public final class CredencialesBuilder implements Builder<Credenciales> {
+public class CredencialesBuilder implements Builder<Credenciales> {
 
-    private String usuario;
-    private String contrasena;
-    private String codigo;
+  private String usuario;
+  private String contrasena;
+  private String codigo;
+  private String celular;
+  private String email;
 
-    @Override
-    public Credenciales build() {
-        return new Credenciales(this);
-    }
+  @Override
+  public Credenciales build() {
+    return new Credenciales(this);
+  }
 
-    private CredencialesBuilder() {
-      this.usuario = "";
-      this.contrasena = "";
-      this.codigo = "";
-    }
+  private CredencialesBuilder() {
+    usuario = "";
+    contrasena = "";
+    codigo = "";
+    celular = "";
+    email = "";
+  }
 
-    public static CredencialesBuilder de(){
-       return new CredencialesBuilder();
-    }
+  public static CredencialesBuilder de() {
+    return new CredencialesBuilder();
+  }
 
-    private CredencialesBuilder conUsuario(String usuario) {
-        this.usuario = usuario;
-        return this;
-    }
+  private CredencialesBuilder conCelular(final String celular) {
+    this.celular = celular;
+    return this;
+  }
 
-    private CredencialesBuilder conContrasena(String contrasena) {
-        this.contrasena = contrasena;
-        return this;
-    }
+  private CredencialesBuilder conEmail(final String email) {
+    this.email = email;
+    return this;
+  }
 
-    private CredencialesBuilder conCodigo(String codigo) {
-        this.codigo = codigo;
-        return this;
-    }
+  private CredencialesBuilder conUsuario(final String usuario) {
+    this.usuario = usuario;
+    return this;
+  }
 
-    public String getUsuario() {
-        return usuario;
-    }
+  private CredencialesBuilder conContrasena(final String contrasena) {
+    this.contrasena = contrasena;
+    return this;
+  }
 
-    public String getContrasena() {
-        return contrasena;
-    }
+  private CredencialesBuilder conCodigo(final String codigo) {
+    this.codigo = codigo;
+    return this;
+  }
 
-    public String getCodigo() {
-        return codigo;
-    }
+  public String getUsuario() {
+    return this.usuario;
+  }
 
-    public Credenciales unUsuarioBasico() {
-      this.conUsuario(USUARIO_FINSOCIAL.getUsuario());
-      this.conContrasena(USUARIO_FINSOCIAL.getContrasena());
-      this.conCodigo(USUARIO_FINSOCIAL.getCodigo());
-        return this.build();
-    }
+  public String getCelular() {
+    return celular;
+  }
 
-    public Credenciales unUsuarioDeDocumentacion() {
-      this.conUsuario(USUARIO_DOCUMENTOS.getUsuario());
-      this.conContrasena(USUARIO_DOCUMENTOS.getContrasena());
-      this.conCodigo(USUARIO_DOCUMENTOS.getCodigo());
-        return this.build();
-    }
+  public String getEmail() {
+    return email;
+  }
+
+  public String getContrasena() {
+    return this.contrasena;
+  }
+
+  public String getCodigo() {
+    return this.codigo;
+  }
+
+  public Credenciales unUsuarioBasico() {
+    conUsuario(USUARIO_FINSOCIAL.getUsuario());
+    conContrasena(USUARIO_FINSOCIAL.getContrasena());
+    conCodigo(USUARIO_FINSOCIAL.getCodigo());
+    conCelular("3045341711");
+    conEmail("sqa4@finsocial.co");
+    return build();
+  }
+
+  public Credenciales unUsuarioDeDocumentacion() {
+    conUsuario(USUARIO_DOCUMENTOS.getUsuario());
+    conContrasena(USUARIO_DOCUMENTOS.getContrasena());
+    conCodigo(USUARIO_DOCUMENTOS.getCodigo());
+    return build();
+  }
+
+  public Credenciales unUsuarioBasico(final String usuario, final String contrasena, final String codigo) {
+    conUsuario(usuario);
+    conContrasena(contrasena);
+    conCodigo(codigo);
+    return build();
+  }
 
   public Credenciales unUsuarioDeAprobacionCreditos() {
     this.conUsuario(USUARIO_APROBACION_CREDITOS.getUsuario());
@@ -75,13 +106,4 @@ public final class CredencialesBuilder implements Builder<Credenciales> {
     this.conCodigo(USUARIO_APROBACION_CREDITOS.getCodigo());
     return this.build();
   }
-
-
-
-    public Credenciales unUsuarioBasico(String usuario, String contrasena, String codigo) {
-      this.conUsuario(usuario);
-      this.conContrasena(contrasena);
-      this.conCodigo(codigo);
-        return this.build();
-    }
 }

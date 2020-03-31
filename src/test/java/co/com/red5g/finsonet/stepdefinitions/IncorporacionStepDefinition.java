@@ -47,7 +47,7 @@ public class IncorporacionStepDefinition {
   }
 
   @Entonces("^el asesor debera ver el credito en el paso de formalizacion$")
-  public void elAsesorDeberaVerElCreditoEnElPasoDeFormalizacion() {
+  public void verificarCreditoEnFormalizacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enLaListDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 

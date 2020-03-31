@@ -13,6 +13,7 @@ public final class NuevoCreditoPage {
     public static final Target FRM_EMERGENTE =  Target.the("la ventana con el mensaje").located(By.xpath("//div[@class='sweet-alert showSweetAlert visible']"));
     public static final Target LBL_MENSAJE_FALLIDO = Target.the("el mensaje de falla").located(
         By.xpath("//div[@class='sweet-alert showSweetAlert visible']//h2//following-sibling::p"));
+    public static final Target TXT_NOMBRE_COMPLETO = Target.the("el input de nombre completo").located(By.id("textoNom"));
 
     private NuevoCreditoPage() {
         throw new IllegalStateException("Utility class");

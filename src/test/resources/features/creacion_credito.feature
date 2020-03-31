@@ -19,4 +19,3 @@ Característica: Creacion credito nuevo finsonet
     Dado que un asesor quiere crear un credito
     Cuando el ingresa el numero de documento 12000092 con el valor 2500000 y a un plazo de "48" meses
     Entonces el podra ver un credito creado
-
