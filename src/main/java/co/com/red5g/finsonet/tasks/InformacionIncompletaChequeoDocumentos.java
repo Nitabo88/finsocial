@@ -4,9 +4,8 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR1_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2_POP_UP;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACTIVAL;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA_ANTIGUA;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
@@ -35,9 +34,9 @@ public class InformacionIncompletaChequeoDocumentos implements Task {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito)),
-            Click.on(BTN_PAPELERIA_ANTIGUA),
+            Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
             Click.on(BTN_ACEPTAR1_POP_UP),
-            Click.on(BTN_ACTIVAL),
+            Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
             Click.on(BTN_ACEPTAR2_POP_UP),
             Click.on(BTN_ACEPTAR),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),

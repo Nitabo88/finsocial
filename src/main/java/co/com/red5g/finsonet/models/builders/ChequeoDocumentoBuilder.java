@@ -3,17 +3,22 @@ package co.com.red5g.finsonet.models.builders;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.utils.Builder;
 
-public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
+public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
+
     private String puntajeCifin;
     private String aciertaDatacredito;
     private String seleccionMotivo;
     private String razonMotivo;
+    private String papeleria;
+    private String afianzado;
 
     private ChequeoDocumentoBuilder() {
-      this.puntajeCifin = "";
-      this.aciertaDatacredito = "";
-      this.seleccionMotivo = "";
-      this.razonMotivo = "";
+        this.puntajeCifin = "";
+        this.aciertaDatacredito = "";
+        this.seleccionMotivo = "";
+        this.razonMotivo = "";
+        this.papeleria = "";
+        this.afianzado = "";
     }
 
     public static ChequeoDocumentoBuilder con() {
@@ -33,11 +38,12 @@ public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
         return aciertaDatacredito;
     }
 
-    public ChequeoDocumento centralesDeRiesgo(){
-      this.conPuntajeCifin("660");
-      this.conAciertaDatacredito("880");
+    public ChequeoDocumento centralesDeRiesgo() {
+        this.conPuntajeCifin("660");
+        this.conAciertaDatacredito("880");
+        this.conPapeleria("Papelería Antigua");
+        this.conAfianzado("Coophumana");
         return this.build();
-
     }
 
     private ChequeoDocumentoBuilder conAciertaDatacredito(String puntajeCifin) {
@@ -66,11 +72,29 @@ public class ChequeoDocumentoBuilder  implements Builder<ChequeoDocumento> {
         return this;
     }
 
+    private ChequeoDocumentoBuilder conPapeleria(String papeleria) {
+        this.papeleria = papeleria;
+        return this;
+    }
+
+    private ChequeoDocumentoBuilder conAfianzado(String afianzado) {
+        this.afianzado = afianzado;
+        return this;
+    }
+
     public String getSeleccionMotivo() {
         return seleccionMotivo;
     }
 
     public String getRazonMotivo() {
         return razonMotivo;
+    }
+
+    public String getPapeleria() {
+        return papeleria;
+    }
+
+    public String getAfianzado() {
+        return afianzado;
     }
 }
