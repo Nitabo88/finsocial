@@ -9,7 +9,7 @@ public final class FormularioSolicitudPaso1Page {
     public static final Target BTN_CIUDADES = Target.the("seleccionar la ciudad").located(By.xpath("//button[@data-id='txtCiuC']"));
     public static final Target FILTRO_CIUDADES = Target.the("lista de ciudades").located(By.xpath("//div[contains(@class,'requerir dropup open')]//input[@class='form-control']"));
     public static final Target TXT_CALIFICACION = Target.the("la calificacion").located(By.id("txtCalf"));
-    public static final Target RBN_INSTRUCCIONES = Target.the("Selecciona la opcion").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]");
+    public static final Target RDB_INSTRUCCIONES = Target.the("Selecciona la opcion").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]");
     public static final Target BTN_AGENCIA_VINCULACION = Target.the("seleccionar la agencia de vinculacion").located(By.xpath("//button[@data-id='a_vinculacion']"));
     public static final Target FILTRO_AGENCIA_VINCULACION = Target.the("lista de las agencias de vinculacion")
         .locatedBy("//div[contains(@class,'input-form requerir dropup open')]//li[contains(.,'{0}')]");

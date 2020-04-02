@@ -6,12 +6,12 @@ import org.openqa.selenium.By;
 
 public final class ChequeoDocumentosPage {
 
-    public static final Target LST_FILA_CHEQUEO_DOCUMENTOS = Target.the("la fila de la tabla")
-        .locatedBy("//tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
+    public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA = Target.the("la fila de la tabla")
+        .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
     public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_PENDIENTE = Target.the("la fila de la tabla documentos pendiente")
         .locatedBy("//table[@id='table_p']//a[@class='faq-link'][contains(@href,'{0}')]");
-    public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE = Target.the("la opcion de la tabla del nombre")
-        .locatedBy("//tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA = Target.the("la opcion de la tabla del nombre")
+        .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target TXT_PUNTAJE_CIFIN = Target.the("el puntaje de la CIFIN").located(By.id("txtCifin"));
     public static final Target TXT_ACIERTA_DATACREDITO = Target.the("acierta datacredito").located(By.id("txtDatacredito"));
     public static final Target BTN_PAPELERIA = Target.the("el boton  de papeleria").locatedBy("//p[text()='{0}']");
@@ -32,6 +32,8 @@ public final class ChequeoDocumentosPage {
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
         org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
+    public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO = Target.the("la opcion de la tabla del nombre")
+        .locatedBy("//td[text()='Finsoamigo']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");

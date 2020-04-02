@@ -46,6 +46,13 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this.build();
     }
 
+    public ChequeoDocumento finsoamigo() {
+        this.conPuntajeCifin("660");
+        this.conAciertaDatacredito("880");
+        return this.build();
+    }
+
+
     private ChequeoDocumentoBuilder conAciertaDatacredito(String puntajeCifin) {
         this.puntajeCifin = puntajeCifin;
         return this;

@@ -6,6 +6,8 @@ import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
+import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
 import co.com.red5g.finsonet.tasks.InformacionCredito;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
@@ -85,5 +87,13 @@ public final class Ingresa {
 
     public static Performable alModuloCDASCompleto() {
         return instrumented(ModuloCdasCompleto.class);
+    }
+
+  public static Performable aChequeoDocumentosFinsoamigo() {
+        return instrumented(ChequeoDocumentoFinsoamigo.class);
+  }
+
+    public static Performable aAprobacionFinsoamigo() {
+        return instrumented(AprobacionCreditoFinsoamigo.class);
     }
 }

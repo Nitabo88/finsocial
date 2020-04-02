@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_HAMBURGUESA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_NUEVO_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
 
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -20,8 +20,8 @@ public class Formalizacion implements Task {
         Consulta.elCreditoEnIncorporacion(),
         Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()));
     actor.attemptsTo(
-        Click.on(MNU_HAMBURGUESA));
+        Click.on(MNM_HAMBURGUESA));
     actor.attemptsTo(
-        Click.on(MNU_NUEVO_ORIGINACION.of(FORMALIZACION)));
+        Click.on(MNM_NUEVO_ORIGINACION.of(FORMALIZACION)));
   }
 }

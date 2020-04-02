@@ -23,11 +23,11 @@ public class FormularioInformacionLaboral implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(RBN_OCUPACION.of(actividadLaboral.getOcupacion())),
-                Click.on(RBN_DECLARA_RENTA.of(actividadLaboral.getDeclaraRenta())),
-                Click.on(RBN_IMPACTO_CARGO.of(actividadLaboral.getImpactoDecision())),
-                Click.on(RBN_RECURSOS_PUBLICOS.of(actividadLaboral.getManejoRecursosPublicos())),
-                Click.on(RBN_PERSONAJE_PUBLICO.of(actividadLaboral.getPersonaPublica())),
+                Click.on(RDB_OCUPACION.of(actividadLaboral.getOcupacion())),
+                Click.on(RDB_DECLARA_RENTA.of(actividadLaboral.getDeclaraRenta())),
+                Click.on(RDB_IMPACTO_CARGO.of(actividadLaboral.getImpactoDecision())),
+                Click.on(RDB_RECURSOS_PUBLICOS.of(actividadLaboral.getManejoRecursosPublicos())),
+                Click.on(RDB_PERSONAJE_PUBLICO.of(actividadLaboral.getPersonaPublica())),
                 Click.on(BTN_EMPRESA),
                 Enter.theValue(actividadLaboral.getEmpresa()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
                 Enter.theValue(actividadLaboral.getCargo()).into(TXT_CARGO),

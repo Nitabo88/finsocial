@@ -9,9 +9,9 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.red5g.finsonet.userinterfaces.ListadoVetadosPage.*;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNU_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.VetadosPage.MNU_LST_VETADOS;
-import static co.com.red5g.finsonet.userinterfaces.VetadosPage.MNU_RIESGOS;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
+import static co.com.red5g.finsonet.userinterfaces.VetadosPage.MNM_LST_VETADOS;
+import static co.com.red5g.finsonet.userinterfaces.VetadosPage.MNM_RIESGOS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Eliminar implements Task {
@@ -32,8 +32,8 @@ public class Eliminar implements Task {
         String numeroDocumento = vetados.getDocumentoVetados();
         actor.attemptsTo(
                 Ubicarse.enVetados(),
-                Click.on(MNU_RIESGOS),
-                Click.on(MNU_LST_VETADOS));
+                Click.on(MNM_RIESGOS),
+                Click.on(MNM_LST_VETADOS));
         actor.attemptsTo(
                 Check.whether(BTN_DETALLE_VETO.of(numeroDocumento).resolveFor(actor).isPresent())
                         .andIfSo(
@@ -43,6 +43,6 @@ public class Eliminar implements Task {
                                 Click.on(BTN_ACEPTAR)));
         actor.attemptsTo(
                 Click.on(BTN_MI_CUENTA),
-                Click.on(MNU_MI_CUENTA.of(SALIR)));
+                Click.on(MNM_MI_CUENTA.of(SALIR)));
     }
 }

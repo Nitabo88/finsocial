@@ -5,9 +5,17 @@ Característica: Realizar gestion de llamada
   Quiero ingresar a la pagina de finsonet
   Para confirmar la llamada  realizada a un cliente para un nuevo credito
 
-  Escenario: Asignar una llamada para nuevo credito
-    Dado que un asesor quiere gestiona la llamada para un credito
-    Cuando el asesor se asigne
+  Escenario: Gestion llamada para nuevo crédito finsoamigo
+    Dado que un asesor debe gestionar la llamada para un crédito finsoamigo
+    Cuando el asesor se asigne la gestión de la llamada para un credito finsoamigo
+    Y posteriormente procese la llamada del credito finsoamigo
+    Entonces deberá ver que la gestión del credito finsoamigo fue exitosa
+
+  Escenario: Gestion llamada para nuevo crédito de libranza
+    Dado que un asesor debe gestionar la llamada para un crédito de libranza
+    Cuando el asesor se asigne la gestión de la llamada del crédito de libranza
     Y posteriormente procese la llamada
-    Entonces la llamada para la gestion del credito quedara confirmada
+    Entonces deberá ver que la llamada quedo confirmada
+
+
 

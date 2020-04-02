@@ -6,7 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
 
@@ -18,10 +18,11 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
-public class InformacionChequeoDocumento implements Task {
+public class InformacionChequeoDocumentoLibranza implements Task {
+
     private final ChequeoDocumento chequeoDocumento;
 
-    public InformacionChequeoDocumento(ChequeoDocumento chequeoDocumento) {
+    public InformacionChequeoDocumentoLibranza(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 
@@ -29,10 +30,8 @@ public class InformacionChequeoDocumento implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito)));
-        actor.attemptsTo(
-            Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())));
-        actor.attemptsTo(
+            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),
+            Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
             Click.on(BTN_ACEPTAR1_POP_UP),
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
             Click.on(BTN_ACEPTAR2_POP_UP),

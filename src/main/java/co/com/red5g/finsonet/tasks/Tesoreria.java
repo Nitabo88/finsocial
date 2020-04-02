@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
@@ -20,7 +20,7 @@ public class Tesoreria implements Task {
     actor.attemptsTo(
         Consulta.elCreditoEnFormalizacion(),
         Diligencia.laAprobacionDelCreditoEnFormalizacion(),
-        Click.on(MNU_ORIGINACION.of(TESORERIA)),
+        Click.on(MNM_ORIGINACION.of(TESORERIA)),
         WaitUntil.the(SPN_CARGANDO,isNotVisible()).forNoMoreThan(100).seconds()
     );
   }

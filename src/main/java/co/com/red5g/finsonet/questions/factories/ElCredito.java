@@ -11,6 +11,7 @@ import co.com.red5g.finsonet.questions.PasoPendienteConfirmacion;
 import co.com.red5g.finsonet.questions.PasoPendienteFormalizacion;
 import co.com.red5g.finsonet.questions.PasoPendienteTesoreria;
 import co.com.red5g.finsonet.questions.PasoTesoreria;
+import co.com.red5g.finsonet.questions.TesoreriaFinsoamigo;
 import net.serenitybdd.screenplay.Question;
 
 public final class ElCredito {
@@ -62,5 +63,9 @@ public final class ElCredito {
   }
 
   public static Question<Boolean> enListaPendienteDeTesoreria() {return new PasoPendienteTesoreria();
+  }
+
+  public static Question<Boolean> enTesoreriaFinsoamigo() {
+    return new TesoreriaFinsoamigo();
   }
 }

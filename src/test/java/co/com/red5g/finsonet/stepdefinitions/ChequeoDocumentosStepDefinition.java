@@ -53,7 +53,7 @@ public class ChequeoDocumentosStepDefinition {
   @Cuando("^el asesor adjunta toda la informacion de el chequeo de documentos$")
   public void adjuntarDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeChequeoDeDocumentos(con().centralesDeRiesgo())
+        Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().centralesDeRiesgo())
     );
   }
 
