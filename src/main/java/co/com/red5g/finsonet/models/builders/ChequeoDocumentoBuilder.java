@@ -11,6 +11,7 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     private String razonMotivo;
     private String papeleria;
     private String afianzado;
+    private String codigoPapeleria;
 
     private ChequeoDocumentoBuilder() {
         this.puntajeCifin = "";
@@ -19,6 +20,7 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         this.razonMotivo = "";
         this.papeleria = "";
         this.afianzado = "";
+        this.codigoPapeleria = "";
     }
 
     public static ChequeoDocumentoBuilder con() {
@@ -43,6 +45,7 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         this.conAciertaDatacredito("880");
         this.conPapeleria("Papelería Antigua");
         this.conAfianzado("Coophumana");
+        this.conCodigoPapeleria("No tiene");
         return this.build();
     }
 
@@ -95,6 +98,11 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this;
     }
 
+    private ChequeoDocumentoBuilder conCodigoPapeleria(String codigoPapeleria) {
+        this.codigoPapeleria = codigoPapeleria;
+        return this;
+    }
+
     public String getSeleccionMotivo() {
         return seleccionMotivo;
     }
@@ -109,5 +117,9 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
 
     public String getAfianzado() {
         return afianzado;
+    }
+
+    public String getCodigoPapeleria() {
+        return codigoPapeleria;
     }
 }

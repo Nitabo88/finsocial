@@ -10,6 +10,7 @@ public class ChequeoDocumento {
     private final String razonMotivo;
     private final String papeleria;
     private final String afianzado;
+    private String codigoPapeleria;
 
     public ChequeoDocumento(ChequeoDocumentoBuilder chequeoDocumentoBuilder) {
         this.puntajeCifin = chequeoDocumentoBuilder.getPuntajeCifin();
@@ -18,6 +19,7 @@ public class ChequeoDocumento {
         this.razonMotivo = chequeoDocumentoBuilder.getRazonMotivo();
         this.papeleria = chequeoDocumentoBuilder.getPapeleria();
         this.afianzado = chequeoDocumentoBuilder.getAfianzado();
+        this.codigoPapeleria = chequeoDocumentoBuilder.getCodigoPapeleria();
     }
 
     public String getSeleccionMotivo() {
@@ -42,5 +44,9 @@ public class ChequeoDocumento {
 
     public String getAfianzado() {
         return afianzado;
+    }
+
+    public String getCodigoPapeleria() {
+        return codigoPapeleria;
     }
 }
