@@ -6,22 +6,22 @@ Característica: Originacion
   Para revisar el proceso de originacion
 
   @ChequeoDocumentos
-  Escenario: Chequeo Documentos - Aprobacion chequeo de documentos
-    Dado que un asesor esta en el paso de chequeo de un documentos
-    Cuando el asesor adjunta toda la informacion de el chequeo de documentos
-    Entonces deberia ver el credito en el paso de confirmacion
-
-  @ChequeoDocumentos
-  Escenario: Chequeo Documentos - Aprobacion chequeo documentos no exitosa
-    Dado que el asesor esta en el paso de chequeo de un documentos
-    Cuando el asesor complete el chequeo de credito del cliente
-    Entonces deberia ver el mensaje de adjuntar informacion
+  Escenario: Chequeo Documentos - Aprobación chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
+    Cuando el asesor adjunta toda la información de el chequeo de documentos
+    Entonces deberá ver el crédito en el paso de confirmación
 
   @ChequeoDocumentos
   Escenario: Chequeo Documentos - Chequeo de documentos estado Pendiente
-    Dado que un asesor esta en el paso de chequeo de un documentos
-    Cuando el asesor decline el chequeo del credito del cliente
-    Entonces el auxiliar de documentacion deberia verlo
+    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
+    Cuando el asesor decline el chequeo del crédito de libranza del cliente
+    Entonces el auxiliar de documentación debería verlo en su lista de chequeo de documentos
+
+  @ChequeoDocumentos
+  Escenario: Chequeo Documentos - Aprobación chequeo documentos no exitosa
+    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
+    Cuando el asesor complete el chequeo de crédito del cliente
+    Entonces deberá ver el mensaje de adjuntar información
 
   @Confirmacion
   Escenario: Confirmacion - Aprobacion del paso de confirmacion de un credito

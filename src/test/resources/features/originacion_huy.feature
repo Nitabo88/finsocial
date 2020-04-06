@@ -5,6 +5,12 @@ Característica: Originacion - Huy
   Quiero tramitar un credito tipo Huy
   Para revisar el proceso de originacion
 
+  @ChequeoDocumentosHuy
+  Escenario: Chequeo Documentos Huy - Aprobación chequeo de documentos
+    Dado que un asesor quiere  aprobar un chequeo de documentos de un crédito huy
+    Cuando ingrese toda la información del chequeo de documentos del crédito huy
+    Entonces deberá ver el crédito en el paso de aprobación créditos Huy
+
   @AprobacionCreditosHuy
   Escenario:  credito huy - aprobacion
     Dado que un asesor quiere aprobar un credito huy

@@ -14,25 +14,24 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-public class ChequeoDocumentosFinsoamigoStepDefinition {
+public class ChequeoDocumentosHuyStepDefinition {
 
-  @Dado("^que (.*) esta en el paso de chequeo de documentos finsoamigo$")
-  public void ingresarChequeoDocumentos(String actor) {
+  @Dado("^que (.*) quiere  aprobar un chequeo de documentos de un crédito huy$")
+  public void ingresarChequeoDocumento(String actor) {
     theActorCalled(actor).wasAbleTo(
-        Ingresa.aChequeoDocumentosFinsoamigo());
-  }
-
-  @Cuando("^el asesor adjunta toda la información de el chequeo de documentos finsoamigo$")
-  public void adjuntarInformacion() {
-    theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeChequeoDeDocumentosFinsoamigo(con().finsoamigo())
+        Ingresa.aChequeoDocumentosHuy()
     );
   }
 
-  @Entonces("^el asesor deberá ver el crédito en el paso de aprobación créditos finsoamigos$")
-  public void verificarCreditoAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+  @Cuando("^ingrese toda la información del chequeo de documentos del crédito huy$")
+  public void diligenciarInformacionChequeoDocumento() {
+    theActorInTheSpotlight().attemptsTo(
+        Diligencia.laInformacionDeChequeoDeDocumentosHuy(con().huy())
+    );
   }
 
-
+  @Entonces("^deberá ver el crédito en el paso de aprobación créditos Huy$")
+  public void verificarCredito() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+  }
 }

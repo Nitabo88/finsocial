@@ -30,7 +30,7 @@ public class Confirmacion implements Task {
         Click.on(LNK_HOME),
         WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_ORIGINACION),
-        Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().centralesDeRiesgo()),
+        Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza()),
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(MNM_ORIGINACION.of(CONFIRMACION))
     );

@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.questions.factories;
 
+import co.com.red5g.finsonet.questions.AprobacionCreditoHuy;
 import co.com.red5g.finsonet.questions.PasoAprobacionDeCreditos;
 import co.com.red5g.finsonet.questions.PasoChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.PasoConfirmacionExitosa;
@@ -67,5 +68,9 @@ public final class ElCredito {
 
   public static Question<Boolean> enTesoreriaFinsoamigo() {
     return new TesoreriaFinsoamigo();
+  }
+
+  public static Question<Boolean>  enAprobacionDeCreditoHuy() {
+    return new AprobacionCreditoHuy();
   }
 }

@@ -14,8 +14,8 @@ public class ChequeoDocumentoFinsoamigo implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.remember(NUMERO_CREDITO, "90568");
     actor.attemptsTo(
-        Loguearse.enFinsonet(),
-        Click.on(LNK_ORIGINACION)
+            Loguearse.enFinsonet(),
+            Click.on(LNK_ORIGINACION)
     );
   }
 }

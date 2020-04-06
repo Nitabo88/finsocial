@@ -4,7 +4,9 @@ import static co.com.red5g.finsonet.userinterfaces.ComercialPage.LNK_NUEVO_CREDI
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_NOMBRE_COMPLETO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Vetados;
 import net.serenitybdd.screenplay.Actor;
@@ -12,9 +14,12 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
 public class IntentaCrear implements Task {
+
+    private static final int TIEMPO = 60;
     private final Vetados vetados;
 
     public IntentaCrear(Vetados vetados) {
@@ -31,7 +36,8 @@ public class IntentaCrear implements Task {
             Click.on(IMG_FINSONET),
             Click.on(LNK_COMERCIAL),
             Click.on(LNK_NUEVO_CREDITO),
-            Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER)
+            Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
+            WaitUntil.the(TXT_NOMBRE_COMPLETO, isVisible()).forNoMoreThan(TIEMPO).seconds()
         );
     }
 }

@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.interacions.factories;
 
 import co.com.red5g.finsonet.interacions.SubirArchivosChequeoDocumento;
+import co.com.red5g.finsonet.interacions.SubirArchivosChequeoDocumentoHuy;
 import co.com.red5g.finsonet.interacions.SubirArchivosFormalizacion;
 import net.serenitybdd.screenplay.Performable;
 
@@ -15,5 +16,9 @@ public class Subir {
 
   public static Performable losArchivosDeFormalizacion() {
     return new SubirArchivosFormalizacion();
+  }
+
+  public static Performable losArchivosDeChequeoDocumentosHuy() {
+    return new SubirArchivosChequeoDocumentoHuy();
   }
 }

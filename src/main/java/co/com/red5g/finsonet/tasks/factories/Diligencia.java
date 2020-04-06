@@ -19,6 +19,7 @@ import co.com.red5g.finsonet.tasks.Cdas;
 import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
 import co.com.red5g.finsonet.tasks.IncorporacionPendiente;
 import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionConfirmacion;
 import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
@@ -121,4 +122,8 @@ public final class Diligencia {
   public static Performable laInformacionDeAprobacionDeCreditoFinsoamigo() {
       return instrumented(AprobacionDeCreditoFinsoamigo.class);
   }
+
+    public static Performable laInformacionDeChequeoDeDocumentosHuy(ChequeoDocumento chequeoDocumento) {
+        return instrumented(InformacionChequeoDocumentoHuy.class, chequeoDocumento);
+    }
 }

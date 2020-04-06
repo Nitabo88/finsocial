@@ -22,7 +22,8 @@ public final class AprobacionCreditoPage {
   public static final Target TXT_MOTIVO = Target.the("motivo de regresar el credito").located(By.id("area"));
   public static final Target LBL_NOMBRE_FINSOAMIGO = Target.the("la columna del nombre del finsoamigo")
       .locatedBy("//td[text()='Finsoamigo']//parent::tr//a[@class='faq-link'][contains(@href,'{0}')]");
-
+  public static final Target LST_FILA_APROBACION_CREDITO_HUY = Target.the("la fila de la tabla de aprobacion creditos huy")
+      .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//ancestor::tr");
 
   private AprobacionCreditoPage() {
     throw new IllegalStateException("Utility class");

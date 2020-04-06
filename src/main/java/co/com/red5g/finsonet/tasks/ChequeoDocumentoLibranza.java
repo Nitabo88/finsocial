@@ -13,7 +13,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-public class ChequeoDocumento implements Task {
+public class ChequeoDocumentoLibranza implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {

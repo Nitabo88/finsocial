@@ -38,8 +38,8 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return aciertaDatacredito;
     }
 
-    public ChequeoDocumento centralesDeRiesgo() {
-        this.conPuntajeCifin("660");
+    public ChequeoDocumento libranza() {
+        this.conPuntajeCifin("900");
         this.conAciertaDatacredito("880");
         this.conPapeleria("Papelería Antigua");
         this.conAfianzado("Coophumana");
@@ -47,11 +47,17 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     }
 
     public ChequeoDocumento finsoamigo() {
-        this.conPuntajeCifin("660");
-        this.conAciertaDatacredito("880");
+        this.conPuntajeCifin("1000");
+        this.conAciertaDatacredito("1000");
         return this.build();
     }
 
+    public ChequeoDocumento huy() {
+        this.conPuntajeCifin("900");
+        this.conAciertaDatacredito("900");
+        this.conPapeleria("Papelería Nueva");
+        return this.build();
+    }
 
     private ChequeoDocumentoBuilder conAciertaDatacredito(String puntajeCifin) {
         this.puntajeCifin = puntajeCifin;
