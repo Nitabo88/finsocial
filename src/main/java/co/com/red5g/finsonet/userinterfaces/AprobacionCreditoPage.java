@@ -74,6 +74,11 @@ public final class AprobacionCreditoPage {
       .locatedBy("//td[text()='Finsoamigo']//parent::tr//a[@class='faq-link'][contains(@href,'{0}')]");
   public static final Target LST_FILA_APROBACION_CREDITO_HUY = Target.the("la fila de la tabla de aprobacion creditos huy")
       .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//ancestor::tr");
+  public static final Target LST_NOMBRE_APROBACION_CREDITO_HUY = Target.the("el nombre de la tabla de aprobacion creditos huy")
+      .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//ancestor::tr//a[@class='faq-link']");
+  public static final Target BTN_NORMALIZAR_CREDITO_HUY = Target.the("el boton de normalizar credito")
+      .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'64597')]//ancestor::tr//button");
+
 
   private AprobacionCreditoPage() {
     throw new IllegalStateException("Utility class");

@@ -12,11 +12,10 @@ Característica: Originacion - Huy
     Entonces deberá ver el crédito en el paso de aprobación créditos Huy
 
   @AprobacionCreditosHuy
-  Escenario:  credito huy - aprobacion
-    Dado que un asesor quiere aprobar un credito huy
-    Cuando el asesor normalice el credito
-    Y apruebe el credito
-    Entonces el podra ver el credito en incorporacion
+  Escenario:  Crédito Huy - Aprobación
+    Dado que un asesor quiere aprobar un crédito huy
+    Cuando el asesor diligencia la información de aprobación de crédito huy
+    Entonces el podrá ver el crédito en incorporación huy
 
   @AprobacionCreditosHuy
   Escenario:  credito huy - pendiente
