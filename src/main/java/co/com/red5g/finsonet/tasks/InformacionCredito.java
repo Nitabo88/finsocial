@@ -2,8 +2,8 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_CREAR_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_OK;
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_INFORMACION_ADICIONAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERIA;
-import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TBL_INFORMACION_CREDITOS;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_VALOR_CUOTA;
@@ -23,7 +23,7 @@ public class InformacionCredito implements Task {
     private final Credito credito;
     public static final String CEDULA_ACTOR = "cedula actor";
     public static final String FECHA_CREDITO = "fecha credito";
-    public static final int TIEMPO = 100;
+    public static final int TIEMPO = 200;
 
     public InformacionCredito(Credito credito) {
         this.credito = credito;
@@ -36,7 +36,7 @@ public class InformacionCredito implements Task {
         actor.attemptsTo(
             WaitUntil.the(TXT_DOCUMENTO, isVisible()),
             Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
-            WaitUntil.the(TBL_INFORMACION_CREDITOS, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Enter.theValue(credito.getValorCuota()).into(TXT_VALOR_CUOTA).thenHit(Keys.TAB),
             Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
             SelectFromOptions.byVisibleText(credito.getCodigoPapeleria()).from(LST_PAPELERIA),

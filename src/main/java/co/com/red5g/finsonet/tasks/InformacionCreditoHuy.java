@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_CREAR_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_OK;
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_INFORMACION_ADICIONAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
@@ -17,7 +18,7 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
-  private static final int TIEMPO = 40;
+  private static final int TIEMPO = 100;
   private final Credito credito;
 
   public InformacionCreditoHuy(Credito credito) {
@@ -30,6 +31,7 @@ public class InformacionCreditoHuy implements Task {
     actor.remember(InformacionCredito.FECHA_CREDITO, formatearFechaServidorUTC());
     actor.attemptsTo(
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
+        WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
         JavaScriptClick.on(BTN_CREAR_CREDITO),
         WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),

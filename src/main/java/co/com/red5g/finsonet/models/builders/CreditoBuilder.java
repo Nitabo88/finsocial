@@ -71,7 +71,7 @@ public final class CreditoBuilder implements Builder<Credito> {
   }
 
   public Credito informacionDelCreditoHuy() {
-    this.conDocumento("22548586");
+    this.conDocumento("10000622");
     this.a("72");
     return this.build();
   }
