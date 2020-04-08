@@ -8,6 +8,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Asignarse {
 
+  private Asignarse() {
+  }
+
   public static Performable laLlamadaDeLibranza() {
     return instrumented(AsignacionLlamadaLibranza.class);
   }

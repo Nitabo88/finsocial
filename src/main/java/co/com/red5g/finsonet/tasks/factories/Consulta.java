@@ -2,7 +2,6 @@ package co.com.red5g.finsonet.tasks.factories;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import co.com.red5g.finsonet.models.AprobacionCredito;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.AprobacionCreditos;
 import co.com.red5g.finsonet.tasks.Confirmacion;

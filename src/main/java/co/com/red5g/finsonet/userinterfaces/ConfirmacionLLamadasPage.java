@@ -11,4 +11,7 @@ public class ConfirmacionLLamadasPage {
   public static final Target BTN_ACEPTAR = Target.the("Campo de advertencia para guardar").locatedBy("//button[text()='Aceptar']");
   public static final Target BTN_GUARDAR = Target.the("Campo para guardar la gestión").locatedBy("//button[@onclick='marcaLlamadaExitosa({0}, 1);']");
 
+  private ConfirmacionLLamadasPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

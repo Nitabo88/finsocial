@@ -11,4 +11,7 @@ public class BusquedaGestionPage {
   public static final Target LBL_GESTION = Target.the("boton gestionar").locatedBy("//div[contains(@class,'label-eye-icon')]//p");
 
 
+  private BusquedaGestionPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }
