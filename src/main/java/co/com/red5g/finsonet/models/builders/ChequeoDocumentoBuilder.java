@@ -52,6 +52,7 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     public ChequeoDocumento finsoamigo() {
         this.conPuntajeCifin("1000");
         this.conAciertaDatacredito("1000");
+        this.conPapeleria("Papelería Nueva");
         return this.build();
     }
 

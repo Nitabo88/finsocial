@@ -22,7 +22,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionIncompletaChequeoDocumentos implements Task {
 
-    private static final int TIEMPO = 10;
+    private static final int TIEMPO = 100;
     private final ChequeoDocumento chequeoDocumento;
 
     public InformacionIncompletaChequeoDocumentos(ChequeoDocumento chequeoDocumento) {

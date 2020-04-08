@@ -7,7 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -19,7 +19,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Confirmacion implements Task {
 
-  private static final int TIEMPO = 10;
+  private static final int TIEMPO = 100;
 
   @Override
   public <T extends Actor> void performAs(T actor) {
@@ -28,7 +28,7 @@ public class Confirmacion implements Task {
         Diligencia.laSolicitudDeCredito(),
         cambiarPestana(),
         Click.on(LNK_HOME),
-        WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(LNK_ORIGINACION, isClickable()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_ORIGINACION),
         Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza()),
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),

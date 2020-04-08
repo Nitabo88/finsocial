@@ -22,7 +22,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ChequeoDocumentoHuy implements Task {
 
-  private static final int TIEMPO = 40;
+  private static final int TIEMPO = 100;
 
   @Override
   public <T extends Actor> void performAs(T actor) {

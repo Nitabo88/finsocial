@@ -16,6 +16,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 import co.com.red5g.finsonet.interacions.factories.Subir;
@@ -30,7 +31,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionChequeoDocumentoLibranza implements Task {
 
-    private static final int TIEMPO = 150;
+    private static final int TIEMPO = 500;
     private final ChequeoDocumento chequeoDocumento;
 
     public InformacionChequeoDocumentoLibranza(ChequeoDocumento chequeoDocumento) {
@@ -52,7 +53,8 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
             Click.on(BTN_MODIFICAR_CREDITO),
             Click.on(MNM_HAMBURGUESA),
-            Click.on(IMG_FINSONET),
+            Click.on(IMG_FINSONET));
+        actor.attemptsTo(
             WaitUntil.the(LNK_ORIGINACION, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(LNK_ORIGINACION),
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),

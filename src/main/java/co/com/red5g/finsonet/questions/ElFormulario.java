@@ -13,7 +13,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ElFormulario implements Question<Boolean> {
 
-    private static final int TIEMPO = 30;
+    private static final int TIEMPO = 100;
 
     public static Question<Boolean> fueEnviado() {
         return new ElFormulario();

@@ -15,6 +15,8 @@ public final class NuevoCreditoPage {
     public static final Target LBL_MENSAJE_FALLIDO = Target.the("el mensaje de falla").located(
         By.xpath("//div[@class='sweet-alert showSweetAlert visible']//h2//following-sibling::p"));
     public static final Target TXT_NOMBRE_COMPLETO = Target.the("el input de nombre completo").located(By.id("textoNom"));
+    public static final Target LBL_MENSAJE_BLOQUEADO = Target.the("el texto de documento bloqueado")
+        .located(By.xpath("//ul[@class='ui-autocomplete ui-front ui-menu ui-widget ui-widget-content']//li[text()='bloqueado.']"));
 
     private NuevoCreditoPage() {
         throw new IllegalStateException("Utility class");

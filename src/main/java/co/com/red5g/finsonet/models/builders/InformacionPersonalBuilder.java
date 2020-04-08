@@ -194,7 +194,7 @@ public final class InformacionPersonalBuilder implements Builder<InformacionPers
       this.conNumeroDocumento("10101020");
       this.conFechaExpedicion("1999-Jan-28");
       this.conLugarExpedicion("ARENAL - BOLIVAR");
-      this.conFechaNacimiento("1879-Dec-25");
+      this.conFechaNacimiento("1900-Dec-25");
       this.conLugarNacimiento("ARENAL - BOLIVAR");
       this.conSexo("M");
       this.conEps("Salud Total");

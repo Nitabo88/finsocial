@@ -12,7 +12,7 @@ public class ChequeoDocumentoFinsoamigo implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    actor.remember(NUMERO_CREDITO, "90568");
+    actor.remember(NUMERO_CREDITO, "90145");
     actor.attemptsTo(
             Loguearse.enFinsonet(),
             Click.on(LNK_ORIGINACION)
