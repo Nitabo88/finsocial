@@ -32,8 +32,7 @@ public class ChequeoDocumentosRechazo implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS.of(numeroCredito)));
-        actor.attemptsTo(
+            JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS.of(numeroCredito)),
             SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
             WaitUntil.the(BTN_ENVIAR, isEnabled()),

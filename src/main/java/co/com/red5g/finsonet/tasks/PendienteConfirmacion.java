@@ -5,7 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_C
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.LST_MOTIVO_PENDIENTE;
-import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.MNU_ACCION;
+import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.TXT_MOTIVO_PENDIENTE;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -32,7 +32,7 @@ public class PendienteConfirmacion implements Task {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         JavaScriptClick.on(BTN_ACCION_CONFIRMACION.of(numeroCredito)),
-        JavaScriptClick.on(MNU_ACCION.of(this.confirmacion.getAccion())),
+        JavaScriptClick.on(MNM_ACCION.of(this.confirmacion.getAccion())),
         SelectFromOptions.byVisibleText(this.confirmacion.getMotivo()).from(LST_MOTIVO_PENDIENTE),
         Enter.theValue(this.confirmacion.getRazonMotivo()).into(TXT_MOTIVO_PENDIENTE),
         Click.on(BTN_ACEPTAR),

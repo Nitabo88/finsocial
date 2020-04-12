@@ -6,6 +6,9 @@ import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
+import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
 import co.com.red5g.finsonet.tasks.InformacionCredito;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
@@ -16,6 +19,7 @@ import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
 import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
 import co.com.red5g.finsonet.tasks.ModuloCdas;
 import co.com.red5g.finsonet.tasks.ModuloCdasCompleto;
+import co.com.red5g.finsonet.tasks.NuevoCreditoHuy;
 import co.com.red5g.finsonet.tasks.ReporteAntecartera;
 import co.com.red5g.finsonet.tasks.ReporteOriginacion;
 import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
@@ -85,5 +89,21 @@ public final class Ingresa {
 
     public static Performable alModuloCDASCompleto() {
         return instrumented(ModuloCdasCompleto.class);
+    }
+
+  public static Performable aChequeoDocumentosFinsoamigo() {
+        return instrumented(ChequeoDocumentoFinsoamigo.class);
+  }
+
+    public static Performable aAprobacionFinsoamigo() {
+        return instrumented(AprobacionCreditoFinsoamigo.class);
+    }
+
+    public static Performable aChequeoDocumentosHuy() {
+        return instrumented(ChequeoDocumentoHuy.class);
+    }
+
+    public static Performable enNuevoCreditoHuy() {
+        return instrumented(NuevoCreditoHuy.class);
     }
 }

@@ -16,14 +16,10 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-public class ValidarLlamada implements Question<String> {
+public class ValidarLlamadaLibranza implements Question<String> {
 
   private static final String LLAMADA = "Llamada";
   private static final int TIEMPO = 120;
-
-  public static ValidarLlamada estaConfirmada() {
-    return new ValidarLlamada();
-  }
 
   @Override
   public String answeredBy(final Actor actor) {

@@ -11,13 +11,17 @@ import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.models.Tesoreria;
 import co.com.red5g.finsonet.models.Vetados;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoPendiente;
-import co.com.red5g.finsonet.tasks.AprobacionDeCredito;
+import co.com.red5g.finsonet.tasks.AprobacionDeCreditoFinsoamigo;
+import co.com.red5g.finsonet.tasks.AprobacionDeCreditoLibranza;
 import co.com.red5g.finsonet.tasks.AprobacionFormalizacion;
 import co.com.red5g.finsonet.tasks.AprobacionIncorporacion;
 import co.com.red5g.finsonet.tasks.Cdas;
 import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
 import co.com.red5g.finsonet.tasks.IncorporacionPendiente;
-import co.com.red5g.finsonet.tasks.InformacionChequeoDocumento;
+import co.com.red5g.finsonet.tasks.InformacionAprobacionHuy;
+import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoHuy;
+import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionConfirmacion;
 import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
 import co.com.red5g.finsonet.tasks.PendienteConfirmacion;
@@ -36,8 +40,8 @@ public final class Diligencia {
     private Diligencia() {
     }
 
-    public static Performable laInformacionDeChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
-        return instrumented(InformacionChequeoDocumento.class, chequeoDocumento);
+    public static Performable laInformacionDeChequeoDeDocumentosLibranza(ChequeoDocumento chequeoDocumento) {
+        return instrumented(InformacionChequeoDocumentoLibranza.class, chequeoDocumento);
     }
 
     public static Performable laSolicitudDeCredito() {
@@ -65,7 +69,7 @@ public final class Diligencia {
     }
 
     public static Performable laInformacionDeAprobacionDeCredito() {
-        return instrumented(AprobacionDeCredito.class);
+        return instrumented(AprobacionDeCreditoLibranza.class);
     }
 
     public static Performable laInformacionDeRegresoDeIncorporacion(final Incorporacion motivoRegreso) {
@@ -110,5 +114,21 @@ public final class Diligencia {
 
     public static Performable laInformacionDeLosDocumentos(AccionCdas accionCdas) {
         return instrumented(Cdas.class, accionCdas);
+    }
+
+    public static Performable laInformacionDeChequeoDeDocumentosFinsoamigo(ChequeoDocumento chequeoDocumento) {
+        return instrumented(InformacionChequeoDocumentoFinsoamigo.class, chequeoDocumento);
+    }
+
+  public static Performable laInformacionDeAprobacionDeCreditoFinsoamigo() {
+      return instrumented(AprobacionDeCreditoFinsoamigo.class);
+  }
+
+    public static Performable laInformacionDeChequeoDeDocumentosHuy(ChequeoDocumento chequeoDocumento) {
+        return instrumented(InformacionChequeoDocumentoHuy.class, chequeoDocumento);
+    }
+
+    public static Performable laAprobacionDelCreditonEnIncorporacionHuy() {
+        return instrumented(InformacionAprobacionHuy.class);
     }
 }

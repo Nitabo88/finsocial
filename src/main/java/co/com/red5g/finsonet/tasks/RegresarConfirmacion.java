@@ -4,7 +4,7 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_CONFIRMACION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.LBL_CREDITO_REGRESADO;
-import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.MNU_ACCION;
+import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.TXT_MOTIVO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -29,7 +29,7 @@ public class RegresarConfirmacion implements Task {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
         JavaScriptClick.on(BTN_ACCION_CONFIRMACION.of(numeroCredito)),
-        JavaScriptClick.on(MNU_ACCION.of(this.confirmacion.getAccion())),
+        JavaScriptClick.on(MNM_ACCION.of(this.confirmacion.getAccion())),
         Enter.theValue(confirmacion.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_OK),
         WaitUntil.the(LBL_CREDITO_REGRESADO, isVisible()).forNoMoreThan(TIEMPO).seconds(),

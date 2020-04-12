@@ -20,8 +20,8 @@ public final class IncorporacionPage {
   public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
   public static final Target BTN_OK = Target.the("el boton aceptar").located(By.xpath("//button[text()='OK']"));
   public static final Target BTN_APROBAR = Target.the("el boton aprobar").located(By.xpath("//button[text()='Aprobar']"));
-  public static final Target MNU_HAMBURGUESA = Target.the("el menu hamburguesa").located(By.id("hamburger"));
-  public static final Target MNU_APROBACION_CREDITO = Target.the("el menu aprobacion credito").located(By.id("or-aprob"));
+  public static final Target MNM_HAMBURGUESA = Target.the("el menu hamburguesa").located(By.id("hamburger"));
+  public static final Target MNM_APROBACION_CREDITO = Target.the("el menu aprobacion credito").located(By.id("or-aprob"));
   public static final Target BTN_REGRESAR_INCORPORACION = Target.the("el boton regresar")
       .locatedBy("//tr[@role='row']//td[contains(text(),'{0}')]//parent::tr//button[@data-original-title='Regresar']");
   public static final Target BTN_PENDIENTE_INCORPORACION = Target.the("el boton pendiente")

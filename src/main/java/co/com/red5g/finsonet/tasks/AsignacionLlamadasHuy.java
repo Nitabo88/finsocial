@@ -20,12 +20,12 @@ public class AsignacionLlamadasHuy implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-                WaitUntil.the(CHK_ID_LLAMADAS.of(numeroCredito), isPresent()).forNoMoreThan(100).seconds(),
-                JavaScriptClick.on(CHK_ID_LLAMADAS.of(numeroCredito)),
+                WaitUntil.the(CHK_ID_LLAMADAS_LIBRANZA.of(numeroCredito), isPresent()).forNoMoreThan(100).seconds(),
+                JavaScriptClick.on(CHK_ID_LLAMADAS_LIBRANZA.of(numeroCredito)),
                 WaitUntil.the(BTN_ASIGNACION_HUY, isPresent()).forNoMoreThan(100).seconds(),
                 JavaScriptClick.on(BTN_ASIGNACION_HUY),
-                WaitUntil.the(BTN_CONFIRMAR_LLAMADAS, isPresent()).forNoMoreThan(100).seconds(),
-                JavaScriptClick.on(BTN_CONFIRMAR_LLAMADAS)
+                WaitUntil.the(BTN_ACEPTAR, isPresent()).forNoMoreThan(100).seconds(),
+                JavaScriptClick.on(BTN_ACEPTAR)
         );
     }
 }

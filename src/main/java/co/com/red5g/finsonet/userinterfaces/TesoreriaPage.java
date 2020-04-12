@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 public class TesoreriaPage {
 
     public static final Target LST_FILA_TESORERIA = Target.the("la lista de tesoreria").locatedBy("//div[@id='fixed-table-container-1']//td[text()='{0}']//parent::tr");
+    public static final Target LST_FILA_TESORERIA_FINSOAMIGO = Target.the("la lista de tesoreria de finsoamigo").locatedBy("//tbody[@id='tablaAmigo']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_PENDIENTE = Target.the("la lista pendientes de tesoreria").locatedBy("//div[@id='fixed-table-container-2']//td[text()='{0}']//parent::tr");
     public static final Target BTN_ACCION_TESORERIA = Target.the("el boton accion de tesoreria").locatedBy("//td[text()='{0}']//parent::tr//button[@data-original-title='{1}']");
     public static final Target LST_SOLICITADO_POR = Target.the("la lista de quien solicita el regreso").locatedBy("#txtAut");

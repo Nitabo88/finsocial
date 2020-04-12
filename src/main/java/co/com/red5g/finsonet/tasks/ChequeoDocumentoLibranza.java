@@ -13,7 +13,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-public class ChequeoDocumento implements Task {
+public class ChequeoDocumentoLibranza implements Task {
+
+    private static final int TIEMPO = 100;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -22,7 +24,7 @@ public class ChequeoDocumento implements Task {
             Diligencia.laSolicitudDeCredito(),
             cambiarPestana(),
             Click.on(LNK_HOME),
-            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(10).seconds(),
+            WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(LNK_ORIGINACION)
         );
     }

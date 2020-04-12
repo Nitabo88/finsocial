@@ -11,8 +11,8 @@ public final class FormularioSolicitudPaso4Page {
     public static final Target TXT_PASIVOS_FINANCIEROS = Target.the("El valor de pasivos financieros").located(By.id("pasivos_financieros"));
     public static final Target TXT_OTROS_PASIVOS = Target.the("El valor de otros pasivos").located(By.id("pasivos_corrientes"));
     public static final Target TXT_CUALES_PASIVOS = Target.the("cuales pasivos").located(By.id("cuales_pasivos"));
-    public static final Target RBN_COMPRAR_VIVIENDA = Target.the("la opcion de comprar vivienda").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCompViv']");
-    public static final Target RBN_CUPO_EXTRA_LIBRANZA = Target.the("la opcion de cupo de libranza").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCupoExtra']");
+    public static final Target RDB_COMPRAR_VIVIENDA = Target.the("la opcion de comprar vivienda").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCompViv']");
+    public static final Target RDB_CUPO_EXTRA_LIBRANZA = Target.the("la opcion de cupo de libranza").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCupoExtra']");
     public static final Target TXT_TIPO_INMUEBLE = Target.the("el tipo de inmueble").located(By.id("txtTipoInm"));
     public static final Target TXT_VALOR_COMERCIAL_INMUEBLE = Target.the("el valor comercial").located(By.id("txtValorComInm"));
     public static final Target TXT_HIPOTECADO = Target.the("hipotecado a").located(By.id("txtHipotecado"));

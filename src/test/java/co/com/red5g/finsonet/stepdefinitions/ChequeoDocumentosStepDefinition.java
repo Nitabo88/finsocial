@@ -24,48 +24,47 @@ public class ChequeoDocumentosStepDefinition {
 
   private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
-  @Dado("^que (.*) esta en el paso de chequeo de un documentos$")
-  public void ingresarChequeo(final String actor) {
+  @Dado("^que (.*) esta en el paso de chequeo de documentos de un crédito de libranza$")
+  public void ingresarChequeoDocumentos(final String actor) {
     theActorCalled(actor).attemptsTo(
         Realiza.unChequeoDeDocumento()
     );
   }
 
-  @Cuando("^el asesor decline el chequeo del credito del cliente$")
+  @Cuando("^el asesor decline el chequeo del crédito de libranza del cliente$")
   public void rechazarChequeoDocumentos() {
     theActorInTheSpotlight().attemptsTo(
         Ingresa.elRechazoDelCredito(con().motivo())
     );
   }
 
-  @Cuando("^el asesor complete el chequeo de credito del cliente$")
+  @Cuando("^el asesor complete el chequeo de crédito del cliente$")
   public void diligenciarChequeoDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().centralesDeRiesgo())
+        Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().libranza())
     );
   }
 
-  @Entonces("^deberia ver el mensaje de adjuntar informacion$")
+  @Entonces("^deberá ver el mensaje de adjuntar información$")
   public void verificarNoCreacionCredito() {
     theActorInTheSpotlight().should(seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString(ChequeoDocumentosStepDefinition.ESTADO_NO_EXITOSO)));
   }
 
-  @Cuando("^el asesor adjunta toda la informacion de el chequeo de documentos$")
+  @Cuando("^el asesor adjunta toda la información de el chequeo de documentos$")
   public void adjuntarDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeChequeoDeDocumentos(con().centralesDeRiesgo())
+        Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza())
     );
   }
 
-  @Entonces("^deberia ver el credito en el paso de confirmacion$")
+  @Entonces("^deberá ver el crédito en el paso de confirmación$")
   public void verificarCreacionCredito() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
-  @Entonces("^el auxiliar de documentacion deberia verlo$")
+  @Entonces("^el auxiliar de documentación debería verlo en su lista de chequeo de documentos$")
   public void verificarRevisionDocumentacion() {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
     theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, MENSAJE_CREDITO_RECHAZADO));
   }
-
 }

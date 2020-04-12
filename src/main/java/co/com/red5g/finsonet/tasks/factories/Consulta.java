@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.tasks.factories;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.com.red5g.finsonet.tasks.AprobacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.AprobacionCreditos;
 import co.com.red5g.finsonet.tasks.Confirmacion;
 import co.com.red5g.finsonet.tasks.Formalizacion;
@@ -32,13 +33,19 @@ public final class Consulta {
         return instrumented(AprobacionCreditos.class);
     }
 
-    public static Performable elCreditoEnIncorporacion() {
-        return instrumented(Incorporacion.class);
-    }
-
-  public static Performable elCreditoEnFormalizacion() {
-        return instrumented(Formalizacion.class);
+  public static Performable elCreditoEnIncorporacion() {
+    return instrumented(Incorporacion.class);
   }
 
-    public static Performable elCreditoEnTesoreria() { return instrumented( Tesoreria.class);}
+  public static Performable elCreditoEnFormalizacion() {
+    return instrumented(Formalizacion.class);
+  }
+
+  public static Performable elCreditoEnTesoreria() {
+    return instrumented(Tesoreria.class);
+  }
+
+  public static Performable elCreditoEnAprobacionDeCreditosHuy() {
+    return instrumented(AprobacionCreditoHuy.class);
+  }
 }

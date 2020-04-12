@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNU_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -16,7 +16,7 @@ public class AprobacionCreditos implements Task {
     actor.attemptsTo(
         Consulta.elCreditoEnConfirmacion(),
         Diligencia.laInformacionDeConfirmacion(),
-        Click.on(MNU_ORIGINACION.of(APROBACION_CREDITO))
+        Click.on(MNM_ORIGINACION.of(APROBACION_CREDITO))
         );
   }
 }

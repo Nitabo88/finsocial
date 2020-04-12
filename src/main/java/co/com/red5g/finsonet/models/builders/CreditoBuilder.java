@@ -4,69 +4,84 @@ import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.utils.Builder;
 
 public final class CreditoBuilder implements Builder<Credito> {
-    private String strNumeroDocumento;
-    private String strValorCuota;
-    private String strPlazo;
 
-    public static CreditoBuilder la(){
-        return new CreditoBuilder();
-    }
+  private String strNumeroDocumento;
+  private String strValorCuota;
+  private String strPlazo;
+  private String codigoPapeleria;
 
-    private CreditoBuilder conDocumento(String strNumeroDocumento) {
-        this.strNumeroDocumento = strNumeroDocumento;
-        return this;
-    }
 
-    private CreditoBuilder conValor(String strValorCuota) {
-        this.strValorCuota = strValorCuota;
-        return this;
-    }
+  public static CreditoBuilder la() {
+    return new CreditoBuilder();
+  }
 
-    private CreditoBuilder a(String strPlazo) {
-        this.strPlazo = strPlazo;
-        return this;
-    }
+  private CreditoBuilder conDocumento(String strNumeroDocumento) {
+    this.strNumeroDocumento = strNumeroDocumento;
+    return this;
+  }
 
-    public String getStrNumeroDocumento() {
-        return strNumeroDocumento;
-    }
+  private CreditoBuilder conValor(String strValorCuota) {
+    this.strValorCuota = strValorCuota;
+    return this;
+  }
 
-    public String getStrValorCuota() {
-        return strValorCuota;
-    }
+  private CreditoBuilder conCodigoPapeleria(String codigoPapeleria) {
+    this.codigoPapeleria = codigoPapeleria;
+    return this;
+  }
 
-    public String getStrPlazo() {
-        return strPlazo;
-    }
+  private CreditoBuilder a(String strPlazo) {
+    this.strPlazo = strPlazo;
+    return this;
+  }
 
-    private CreditoBuilder() {
-      this.strNumeroDocumento = "";
-      this.strValorCuota = "";
-      this.strPlazo = "";
-    }
+  public String getStrNumeroDocumento() {
+    return strNumeroDocumento;
+  }
 
-    public Credito informacionDelCredito() {
-      this.conDocumento("10000060");
-      this.conValor("1200000");
-      this.a("48");
-        return this.build();
-    }
+  public String getStrValorCuota() {
+    return strValorCuota;
+  }
 
-    public Credito informacionDelCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
-      this.conDocumento(strNumeroDocumento);
-      this.conValor(strValorCuota);
-      this.a(strPlazo);
-        return this.build();
-    }
+  public String getStrPlazo() {
+    return strPlazo;
+  }
 
-  public Credito informacionDelCreditoHuy() {
-    this.conDocumento("10000622");
+  private CreditoBuilder() {
+    this.strNumeroDocumento = "";
+    this.strValorCuota = "";
+    this.strPlazo = "";
+    this.codigoPapeleria = "";
+  }
+
+  public Credito informacionDelCredito() {
+    this.conDocumento("10000060");
+    this.conValor("1200000");
     this.a("48");
+    this.conCodigoPapeleria("No tiene");
     return this.build();
   }
 
-    @Override
-    public Credito build() {
-        return new Credito(this);
-    }
+  public Credito informacionDelCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
+    this.conDocumento(strNumeroDocumento);
+    this.conValor(strValorCuota);
+    this.a(strPlazo);
+    this.conCodigoPapeleria("No tiene");
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoHuy() {
+    this.conDocumento("10000622");
+    this.a("72");
+    return this.build();
+  }
+
+  @Override
+  public Credito build() {
+    return new Credito(this);
+  }
+
+  public String getCodigoPapeleria() {
+    return codigoPapeleria;
+  }
 }

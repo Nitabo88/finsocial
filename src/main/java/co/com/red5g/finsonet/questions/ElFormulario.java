@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_FILA_CHEQUEO_DOCUMENTOS;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -13,7 +13,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ElFormulario implements Question<Boolean> {
 
-    private static final int TIEMPO = 30;
+    private static final int TIEMPO = 100;
 
     public static Question<Boolean> fueEnviado() {
         return new ElFormulario();
@@ -27,6 +27,6 @@ public class ElFormulario implements Question<Boolean> {
             WaitUntil.the(LNK_ORIGINACION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(LNK_ORIGINACION));
         String numeroCredito = actor.recall(NUMERO_CREDITO);
-        return LST_FILA_CHEQUEO_DOCUMENTOS.of(numeroCredito).resolveFor(actor).isPresent();
+        return LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA.of(numeroCredito).resolveFor(actor).isPresent();
     }
 }
