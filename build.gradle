@@ -38,6 +38,7 @@ dependencies {
     implementation group: 'net.serenity-bdd', name: 'serenity-single-page-report', version: "${serenityVersion}"
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
     implementation group: 'co.com.devco.automation', name: 'automationDevcoLibrary', version: "${automationDevcoVersion}"
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: "${serenityVersion}"
 }
 
 tasks.withType(Test) {
