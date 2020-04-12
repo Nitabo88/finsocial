@@ -5,7 +5,7 @@ Característica: Consulta Creditos
   Quiero ingresar la informacion de los clientes
   Para verificar que este tenga creditos pendientes
 
-  Escenario: Consulta creditos en curso
-    Dado que un administrador quiere conocer los creditos en curso de un cliente
-    Cuando el asesor ingresa la informacion del cliente
-    Entonces el podra ver los creditos en curso
+  Escenario: Consulta créditos en curso
+    Dado que un administrador quiere conocer los créditos en curso de un cliente
+    Cuando el administrador ingresa la información del cliente
+    Entonces el podrá ver los creditos en curso

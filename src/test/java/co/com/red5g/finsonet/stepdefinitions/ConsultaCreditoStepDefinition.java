@@ -1,25 +1,42 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import cucumber.api.java.Before;
-import io.restassured.RestAssured;
-import net.serenitybdd.junit.runners.SerenityRunner;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import cucumber.api.java.es.Cuando;
+import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
+import net.serenitybdd.screenplay.rest.interactions.Get;
+import net.serenitybdd.screenplay.rest.interactions.Post;
+import net.thucydides.core.util.EnvironmentVariables;
 
-import static net.serenitybdd.rest.SerenityRest.given;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-@RunWith(SerenityRunner.class)
 public class ConsultaCreditoStepDefinition {
+    private String theRestApiBaseUrl;
+    private EnvironmentVariables environmentVariables;
 
     @Before
-    public void prepare_rest_config() {
-        RestAssured.baseURI = "http://192.168.0.48:82";
+    public void configureBaseUrl() {
+        theRestApiBaseUrl = environmentVariables.getProperty("webdriver.base.url");
     }
 
-    @Test
-    public void should_return_name_and_sector() {
-        String newClient = "{\"user\":\"ochinchilla\",\"pass\":\"Nicolas32@\"}\n";
-        given().body(newClient).when().post("/login.php")
-                .then().statusCode(200);
+
+    @Dado("que (.*) quiere conocer los créditos en curso de un cliente")
+    public void ingresarSistema(String actor) {
+        theActorCalled(actor).whoCan(CallAnApi.at(theRestApiBaseUrl));
+        theActorInTheSpotlight().attemptsTo(
+                Get.resource("login.php")
+        );
+    }
+
+    @Cuando("^el administrador ingresa la información del cliente$")
+    public void diligenciarInformacionCliente() {
+
+    }
+
+    @Entonces("^el podrá ver los creditos en curso$")
+    public void verificarCreditos() {
     }
 }
