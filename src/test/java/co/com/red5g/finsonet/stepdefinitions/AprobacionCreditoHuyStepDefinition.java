@@ -16,14 +16,14 @@ import cucumber.api.java.es.Entonces;
 
 public class AprobacionCreditoHuyStepDefinition {
 
-  @Dado("^que (.*) quiere aprobar un crédito huy$")
-  public void consultarCredito(final String actor) {
+  @Dado("^que (.*) quiere (.*) un crédito huy en aprobación de créditos$")
+  public void consultarCredito(final String actor, String accion) {
     theActorCalled(actor).attemptsTo(
         Consulta.elCreditoEnAprobacionDeCreditosHuy()
     );
   }
 
-  @Cuando("^el asesor normalice el credito$")
+  @Cuando("^el asesor normalice el crédito$")
   public void normalizarCredito() {
     theActorInTheSpotlight().attemptsTo(
         Normalizar.elCredito()

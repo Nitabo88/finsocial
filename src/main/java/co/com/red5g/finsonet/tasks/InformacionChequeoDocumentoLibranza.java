@@ -16,9 +16,11 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.factories.Subir;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.screenplay.Actor;
@@ -31,7 +33,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionChequeoDocumentoLibranza implements Task {
 
-    private static final int TIEMPO = 500;
+    private static final int TIEMPO = 400;
     private final ChequeoDocumento chequeoDocumento;
 
     public InformacionChequeoDocumentoLibranza(ChequeoDocumento chequeoDocumento) {
@@ -53,7 +55,8 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
             Click.on(BTN_MODIFICAR_CREDITO),
             Click.on(MNM_HAMBURGUESA),
-            Click.on(IMG_FINSONET));
+            Click.on(IMG_FINSONET),
+            WaitFor.seconds(3));
         actor.attemptsTo(
             WaitUntil.the(LNK_ORIGINACION, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(LNK_ORIGINACION),
@@ -61,6 +64,7 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
             Subir.losArchivosDeChequeoDocumentos(),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(BTN_GUARDAR),
             Click.on(BTN_ACEPTAR)
         );

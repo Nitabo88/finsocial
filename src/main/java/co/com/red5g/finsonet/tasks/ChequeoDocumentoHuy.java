@@ -6,9 +6,9 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.questions.ObtenerUrl.obtenerUrl;
 import static co.com.red5g.finsonet.questions.SeleccionarFila.seleccionarFila;
-import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
-import static co.com.red5g.finsonet.tasks.InformacionCredito.FECHA_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_FILA_CREDITOS;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA_CREDITO;
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_COLUMNA_PROCESO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
@@ -31,7 +31,7 @@ public class ChequeoDocumentoHuy implements Task {
         Ingresa.laInformacionDelCreditoHuy(la().informacionDelCreditoHuy()));
     actor.attemptsTo(
         Click.on(seleccionarFila(
-            LST_FILA_CREDITOS, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_CREDITO)).answeredBy(actor)),
+            LST_COLUMNA_PROCESO, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_CREDITO)).answeredBy(actor)),
         cambiarPestanaActual());
     actor.remember(NUMERO_CREDITO, obtenerUrl().answeredBy(actor));
     actor.attemptsTo(

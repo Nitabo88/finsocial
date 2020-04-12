@@ -16,7 +16,7 @@ import cucumber.api.java.es.Entonces;
 
 public class ChequeoDocumentosHuyStepDefinition {
 
-  @Dado("^que (.*) quiere  aprobar un chequeo de documentos de un crédito huy$")
+  @Dado("^que (.*) quiere aprobar un chequeo de documentos de un crédito huy$")
   public void ingresarChequeoDocumento(String actor) {
     theActorCalled(actor).wasAbleTo(
         Ingresa.aChequeoDocumentosHuy()

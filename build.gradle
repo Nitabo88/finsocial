@@ -10,8 +10,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:2.1.8")
-        classpath("net.serenity-bdd:serenity-single-page-report:2.1.8")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.1.2")
+        classpath("net.serenity-bdd:serenity-single-page-report:2.1.2")
     }
 }
 
@@ -22,7 +22,7 @@ apply plugin: 'net.serenity-bdd.aggregator'
 sourceCompatibility = 1.8
 
 ext{
-    serenityVersion = '2.1.8'
+    serenityVersion = '2.1.2'
     serenityCucumberVersion = '1.9.51'
     hamcrestVersion = '2.2'
     automationDevcoVersion = '1.3.1'

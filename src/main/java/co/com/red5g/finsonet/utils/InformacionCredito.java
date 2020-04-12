@@ -1,16 +1,16 @@
 package co.com.red5g.finsonet.utils;
 
 public enum InformacionCredito {
-    INFORMACION_CREDITO ("10040048" ,"1200000", "48");
+    INFORMACION_CREDITO ();
 
     private final String numeroDocumento;
     private final String valorCuota;
     private final String numerdoCuotas;
 
-    InformacionCredito(final String numeroDocumento, final String valorCuota, final String numerdoCuotas) {
-        this.numeroDocumento = numeroDocumento;
-        this.valorCuota = valorCuota;
-        this.numerdoCuotas = numerdoCuotas;
+    InformacionCredito() {
+        this.numeroDocumento = "10040048";
+        this.valorCuota = "1200000";
+        this.numerdoCuotas = "48";
     }
 
     public String getNumeroDocumento() {

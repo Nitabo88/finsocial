@@ -190,15 +190,15 @@ public final class InformacionPersonalBuilder implements Builder<InformacionPers
       this.conSegundoApellido("Lopez");
       this.conPrimerNombre("Andres");
       this.conSegundoNombre("Juan");
-      this.conTipoDocumento("CC");
+      this.conTipoDocumento();
       this.conNumeroDocumento("10101020");
       this.conFechaExpedicion("1999-Jan-28");
       this.conLugarExpedicion("ARENAL - BOLIVAR");
       this.conFechaNacimiento("1900-Dec-25");
       this.conLugarNacimiento("ARENAL - BOLIVAR");
       this.conSexo("M");
-      this.conEps("Salud Total");
-      this.conNivelEstudios("Universitario");
+      this.conEps();
+      this.conNivelEstudios();
       this.conCelular("3005656231");
         return this.build();
     }
@@ -208,75 +208,75 @@ public final class InformacionPersonalBuilder implements Builder<InformacionPers
       this.conSegundoApellido("Carmona");
       this.conPrimerNombre("Maria");
       this.conSegundoNombre("Jose");
-      this.conTipoDocumento("CC");
+      this.conTipoDocumento();
       this.conNumeroDocumento("10000060");
       this.conLugarExpedicion("BOLIVAR - ANTIOQUIA");
       this.conFechaExpedicion("2002-Mar-1");
       this.conFechaNacimiento("1990-Mar-1");
       this.conSexo("Femenino");
       this.conLugarNacimiento("AMAGA - ANTIOQUIA");
-      this.conEstadoCivil("UNIÓN LIBRE");
-      this.conCiudadDepartamento("MEDELLIN - ANTIOQUIA");
-      this.conTipoVivienda("Familiar");
-      this.conEstrato("4");
-      this.conDireccion("CL 80 35 20");
-      this.conBarrio("Estadio");
-      this.conTelefono("2800000");
+      this.conEstadoCivil();
+      this.conCiudadDepartamento();
+      this.conTipoVivienda();
+      this.conEstrato();
+      this.conDireccion();
+      this.conBarrio();
+      this.conTelefono();
       this.conCelular("3002002020");
-      this.conCorreoElectronico("risetzu@gmail.com");
-      this.conCorrespondencia("E-mail");
-      this.conTiempoResidenciaAnios("5");
-      this.conTiempoResidenciaMeses("2");
-      this.conAdultosCargo("0");
-      this.conMenoresCargo("0");
-      this.conEps("Salud Total");
-      this.conNivelEstudios("Universitario");
-      this.conProfesion("ARQUITECTO");
+      this.conCorreoElectronico();
+      this.conCorrespondencia();
+      this.conTiempoResidenciaAnios();
+      this.conTiempoResidenciaMeses();
+      this.conAdultosCargo();
+      this.conMenoresCargo();
+      this.conEps();
+      this.conNivelEstudios();
+      this.conProfesion();
         return this.build();
     }
 
-    private InformacionPersonalBuilder conProfesion(String profesion) {
-        this.profesion = profesion;
+    private InformacionPersonalBuilder conProfesion() {
+        this.profesion = "ARQUITECTO";
         return this;
     }
 
-    private InformacionPersonalBuilder conNivelEstudios(String nivelEstudios) {
-        this.nivelEstudios = nivelEstudios;
+    private InformacionPersonalBuilder conNivelEstudios() {
+        this.nivelEstudios = "Universitario";
         return this;
     }
 
-    private InformacionPersonalBuilder conEps(String eps) {
-        this.eps = eps;
+    private InformacionPersonalBuilder conEps() {
+        this.eps = "Salud Total";
         return this;
     }
 
-    private InformacionPersonalBuilder conMenoresCargo(String menoresCargo) {
-        this.menoresCargo = menoresCargo;
+    private InformacionPersonalBuilder conMenoresCargo() {
+        this.menoresCargo = "0";
         return this;
     }
 
-    private InformacionPersonalBuilder conAdultosCargo(String adultosCargo) {
-        this.adultosCargo = adultosCargo;
+    private InformacionPersonalBuilder conAdultosCargo() {
+        this.adultosCargo = "0";
         return this;
     }
 
-    private InformacionPersonalBuilder conTiempoResidenciaMeses(String tiempoResidenciaMeses) {
-        this.tiempoResidenciaMeses = tiempoResidenciaMeses;
+    private InformacionPersonalBuilder conTiempoResidenciaMeses() {
+        this.tiempoResidenciaMeses = "2";
         return this;
     }
 
-    private InformacionPersonalBuilder conTiempoResidenciaAnios(String tiempoResidenciaAnios) {
-        this.tiempoResidenciaAnios = tiempoResidenciaAnios;
+    private InformacionPersonalBuilder conTiempoResidenciaAnios() {
+        this.tiempoResidenciaAnios = "5";
         return this;
     }
 
-    private InformacionPersonalBuilder conCorrespondencia(String correpondencia) {
-        this.correpondencia = correpondencia;
+    private InformacionPersonalBuilder conCorrespondencia() {
+        this.correpondencia = "E-mail";
         return this;
     }
 
-    private InformacionPersonalBuilder conCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
+    private InformacionPersonalBuilder conCorreoElectronico() {
+        this.correoElectronico = "risetzu@gmail.com";
         return this;
     }
 
@@ -285,33 +285,33 @@ public final class InformacionPersonalBuilder implements Builder<InformacionPers
         return this;
     }
 
-    private InformacionPersonalBuilder conTelefono(String telefono) {
-        this.telefono = telefono;
+    private InformacionPersonalBuilder conTelefono() {
+        this.telefono = "2800000";
         return this;
     }
 
-    private InformacionPersonalBuilder conBarrio(String barrio) {
-        this.barrio = barrio;
+    private InformacionPersonalBuilder conBarrio() {
+        this.barrio = "Estadio";
         return this;
     }
 
-    private InformacionPersonalBuilder conDireccion(String direccion) {
-        this.direccion = direccion;
+    private InformacionPersonalBuilder conDireccion() {
+        this.direccion = "CL 80 35 20";
         return this;
     }
 
-    private InformacionPersonalBuilder conEstrato(String estrato) {
-        this.estrato = estrato;
+    private InformacionPersonalBuilder conEstrato() {
+        this.estrato = "4";
         return this;
     }
 
-    private InformacionPersonalBuilder conCiudadDepartamento(String ciudadDepartamento) {
-        this.ciudadDepartamento = ciudadDepartamento;
+    private InformacionPersonalBuilder conCiudadDepartamento() {
+        this.ciudadDepartamento = "MEDELLIN - ANTIOQUIA";
         return this;
     }
 
-    private InformacionPersonalBuilder conEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
+    private InformacionPersonalBuilder conEstadoCivil() {
+        this.estadoCivil = "UNIÓN LIBRE";
         return this;
     }
 
@@ -320,8 +320,8 @@ public final class InformacionPersonalBuilder implements Builder<InformacionPers
         return this;
     }
 
-    private InformacionPersonalBuilder conTipoVivienda(String tipoVivienda) {
-        this.tipoVivienda = tipoVivienda;
+    private InformacionPersonalBuilder conTipoVivienda() {
+        this.tipoVivienda = "Familiar";
         return this;
     }
 
@@ -350,8 +350,8 @@ public final class InformacionPersonalBuilder implements Builder<InformacionPers
         return this;
     }
 
-    private InformacionPersonalBuilder conTipoDocumento(String tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
+    private InformacionPersonalBuilder conTipoDocumento() {
+        this.tipoDocumento = "CC";
         return this;
     }
 

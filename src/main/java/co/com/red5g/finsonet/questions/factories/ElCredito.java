@@ -1,6 +1,9 @@
 package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.AprobacionCreditoHuy;
+import co.com.red5g.finsonet.questions.CreditoHuy;
+import co.com.red5g.finsonet.questions.CreditoLibranza;
+import co.com.red5g.finsonet.questions.CreditoLibranzaFallido;
 import co.com.red5g.finsonet.questions.PasoAprobacionDeCreditos;
 import co.com.red5g.finsonet.questions.PasoChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.PasoConfirmacionExitosa;
@@ -56,21 +59,35 @@ public final class ElCredito {
     return new PasoPendienteConfirmacion();
   }
 
-  public static Question<Boolean> enListaPendienteDeFormalizacion() { return new PasoPendienteFormalizacion();
+  public static Question<Boolean> enListaPendienteDeFormalizacion() {
+    return new PasoPendienteFormalizacion();
   }
 
   public static Question<Boolean> enTesoreria() {
     return new PasoTesoreria();
   }
 
-  public static Question<Boolean> enListaPendienteDeTesoreria() {return new PasoPendienteTesoreria();
+  public static Question<Boolean> enListaPendienteDeTesoreria() {
+    return new PasoPendienteTesoreria();
   }
 
   public static Question<Boolean> enTesoreriaFinsoamigo() {
     return new TesoreriaFinsoamigo();
   }
 
-  public static Question<Boolean>  enAprobacionDeCreditoHuy() {
+  public static Question<Boolean> enAprobacionDeCreditoHuy() {
     return new AprobacionCreditoHuy();
+  }
+
+  public static Question<Boolean> deLibranzaExiste() {
+    return new CreditoLibranza();
+  }
+
+  public static Question<Boolean> huyExiste() {
+    return new CreditoHuy();
+  }
+
+  public static Question<String> deLibranzaNoExiste() {
+    return new CreditoLibranzaFallido();
   }
 }

@@ -44,8 +44,8 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         this.conPuntajeCifin("900");
         this.conAciertaDatacredito("880");
         this.conPapeleria("Papelería Antigua");
-        this.conAfianzado("Coophumana");
-        this.conCodigoPapeleria("No tiene");
+        this.conAfianzado();
+        this.conCodigoPapeleria();
         return this.build();
     }
 
@@ -74,18 +74,18 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     }
 
     public ChequeoDocumento motivo() {
-      this.conSeleccionMotivo("Datos incompleto");
-      this.conRazonMotivo("El usuario tiene los documentos incompletos");
+      this.conSeleccionMotivo();
+      this.conRazonMotivo();
         return this.build();
     }
 
-    private ChequeoDocumentoBuilder conRazonMotivo(String razonMotivo) {
-        this.razonMotivo = razonMotivo;
+    private ChequeoDocumentoBuilder conRazonMotivo() {
+        this.razonMotivo = "El usuario tiene los documentos incompletos";
         return this;
     }
 
-    private ChequeoDocumentoBuilder conSeleccionMotivo(String seleccionMotivo) {
-        this.seleccionMotivo = seleccionMotivo;
+    private ChequeoDocumentoBuilder conSeleccionMotivo() {
+        this.seleccionMotivo = "Datos incompleto";
         return this;
     }
 
@@ -94,13 +94,13 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this;
     }
 
-    private ChequeoDocumentoBuilder conAfianzado(String afianzado) {
-        this.afianzado = afianzado;
+    private ChequeoDocumentoBuilder conAfianzado() {
+        this.afianzado = "Coophumana";
         return this;
     }
 
-    private ChequeoDocumentoBuilder conCodigoPapeleria(String codigoPapeleria) {
-        this.codigoPapeleria = codigoPapeleria;
+    private ChequeoDocumentoBuilder conCodigoPapeleria() {
+        this.codigoPapeleria = "No tiene";
         return this;
     }
 

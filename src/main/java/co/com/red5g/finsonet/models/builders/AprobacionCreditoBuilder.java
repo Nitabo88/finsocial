@@ -37,7 +37,7 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
   }
 
   public AprobacionCredito motivoPendiente() {
-    this.conSeleccionMotivo("Pendiente Certificaciones");
+    this.conSeleccionMotivo();
     this.conRazonMotivo("El usuario aun no entrega los certificados");
     return this.build();
   }
@@ -47,8 +47,8 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     return this;
   }
 
-  private AprobacionCreditoBuilder conSeleccionMotivo(String seleccionMotivo) {
-    this.seleccionMotivo = seleccionMotivo;
+  private AprobacionCreditoBuilder conSeleccionMotivo() {
+    this.seleccionMotivo = "Pendiente Certificaciones";
     return this;
   }
 }

@@ -10,7 +10,6 @@ public final class CreditoBuilder implements Builder<Credito> {
   private String strPlazo;
   private String codigoPapeleria;
 
-
   public static CreditoBuilder la() {
     return new CreditoBuilder();
   }
@@ -25,8 +24,8 @@ public final class CreditoBuilder implements Builder<Credito> {
     return this;
   }
 
-  private CreditoBuilder conCodigoPapeleria(String codigoPapeleria) {
-    this.codigoPapeleria = codigoPapeleria;
+  private CreditoBuilder conCodigoPapeleria() {
+    this.codigoPapeleria = "No tiene";
     return this;
   }
 
@@ -58,7 +57,7 @@ public final class CreditoBuilder implements Builder<Credito> {
     this.conDocumento("10000060");
     this.conValor("1200000");
     this.a("48");
-    this.conCodigoPapeleria("No tiene");
+    this.conCodigoPapeleria();
     return this.build();
   }
 
@@ -66,7 +65,7 @@ public final class CreditoBuilder implements Builder<Credito> {
     this.conDocumento(strNumeroDocumento);
     this.conValor(strValorCuota);
     this.a(strPlazo);
-    this.conCodigoPapeleria("No tiene");
+    this.conCodigoPapeleria();
     return this.build();
   }
 

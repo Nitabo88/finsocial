@@ -29,20 +29,20 @@ public final class IncorporacionBuilder implements Builder<Incorporacion> {
   }
 
   public Incorporacion motivoRegreso() {
-    this.solicitadoPor("COORDINADOR-ZN2");
+    this.solicitadoPor();
     this.razonMotivo("El usuario tiene los documentos incompletos");
     return this.build();
   }
 
   public Incorporacion motivoPendiente() {
-    this.tipoDevolucion("Pendiente");
-    this.motivo("Otros");
+    this.tipoDevolucion();
+    this.motivo();
     this.razonMotivo("Prueba");
     return this.build();
   }
 
   public Incorporacion aprobacion() {
-    this.seleccionarGestion("Incorporado");
+    this.seleccionarGestion();
     this.razonMotivo("Prueba");
     return this.build();
   }
@@ -52,23 +52,23 @@ public final class IncorporacionBuilder implements Builder<Incorporacion> {
     return this;
   }
 
-  private IncorporacionBuilder solicitadoPor(String solicitadoPor) {
-    this.solicitadoPor = solicitadoPor;
+  private IncorporacionBuilder solicitadoPor() {
+    this.solicitadoPor = "COORDINADOR-ZN2";
     return this;
   }
 
-  private IncorporacionBuilder seleccionarGestion(String seleccionarGestion) {
-    this.seleccionarGestion = seleccionarGestion;
+  private IncorporacionBuilder seleccionarGestion() {
+    this.seleccionarGestion = "Incorporado";
     return this;
   }
 
-  private IncorporacionBuilder tipoDevolucion(String tipoDevolucion) {
-    this.tipoDevolucion = tipoDevolucion;
+  private IncorporacionBuilder tipoDevolucion() {
+    this.tipoDevolucion = "Pendiente";
     return this;
   }
 
-  private IncorporacionBuilder motivo(String motivo) {
-    this.motivo = motivo;
+  private IncorporacionBuilder motivo() {
+    this.motivo = "Otros";
     return this;
   }
 

@@ -8,8 +8,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
-import co.com.red5g.finsonet.questions.Credito;
-import co.com.red5g.finsonet.questions.LaNoCreacionDelCredito;
+import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import co.com.red5g.finsonet.tasks.factories.Loguearse;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
@@ -50,16 +49,16 @@ public class CreacionCreditoStepDefinition {
 
     @Entonces("el podrá ver un crédito de libranza creado")
     public void verificarCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(Credito.existe()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaExiste()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
     }
 
     @Entonces("el podrá ver un crédito Huy creado")
     public void verificarCreacionCreditoHuy() {
-        theActorInTheSpotlight().should(seeThat(Credito.existe()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.huyExiste()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
     }
 
     @Entonces("el no podrá crear un crédito")
     public void verificarNoCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(LaNoCreacionDelCredito.valor(), containsString(ESTADO_NO_EXITOSO)));
+        theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaNoExiste(), containsString(ESTADO_NO_EXITOSO)));
     }
 }

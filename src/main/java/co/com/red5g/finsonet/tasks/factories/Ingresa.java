@@ -10,7 +10,7 @@ import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
-import co.com.red5g.finsonet.tasks.InformacionCredito;
+import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.InformacionLogin;
 import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
@@ -48,7 +48,7 @@ public final class Ingresa {
     }
 
     public static Performable laInformacionDelCredito(Credito credito) {
-        return instrumented(InformacionCredito.class, credito);
+        return instrumented(InformacionCreditoLibranza.class, credito);
     }
 
     public static Performable lasCredenciales(Credenciales credenciales) {

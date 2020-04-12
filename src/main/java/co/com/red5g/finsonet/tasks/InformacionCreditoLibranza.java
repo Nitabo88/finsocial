@@ -15,17 +15,19 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
-public class InformacionCredito implements Task {
+public class InformacionCreditoLibranza implements Task {
+
     private final Credito credito;
     public static final String CEDULA_ACTOR = "cedula actor";
     public static final String FECHA_CREDITO = "fecha credito";
     public static final int TIEMPO = 200;
 
-    public InformacionCredito(Credito credito) {
+    public InformacionCreditoLibranza(Credito credito) {
         this.credito = credito;
     }
 
@@ -38,9 +40,11 @@ public class InformacionCredito implements Task {
             Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
             WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Enter.theValue(credito.getValorCuota()).into(TXT_VALOR_CUOTA).thenHit(Keys.TAB),
+            MoveMouse.to(TXT_PLAZO),
             Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
             SelectFromOptions.byVisibleText(credito.getCodigoPapeleria()).from(LST_PAPELERIA),
             WaitUntil.the(BTN_CREAR_CREDITO, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            MoveMouse.to(BTN_CREAR_CREDITO),
             Click.on(BTN_CREAR_CREDITO),
             WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(BTN_OK)

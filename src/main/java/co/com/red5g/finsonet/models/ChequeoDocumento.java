@@ -10,7 +10,7 @@ public class ChequeoDocumento {
     private final String razonMotivo;
     private final String papeleria;
     private final String afianzado;
-    private String codigoPapeleria;
+    private final String codigoPapeleria;
 
     public ChequeoDocumento(ChequeoDocumentoBuilder chequeoDocumentoBuilder) {
         this.puntajeCifin = chequeoDocumentoBuilder.getPuntajeCifin();
