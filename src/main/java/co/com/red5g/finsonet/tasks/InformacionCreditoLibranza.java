@@ -1,5 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ComercialPage.LNK_MIS_CREDITOS;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_CREAR_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_INFORMACION_ADICIONAL;
@@ -7,6 +10,7 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERI
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_VALOR_CUOTA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -47,7 +51,11 @@ public class InformacionCreditoLibranza implements Task {
             MoveMouse.to(BTN_CREAR_CREDITO),
             Click.on(BTN_CREAR_CREDITO),
             WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            Click.on(BTN_OK)
+            Click.on(BTN_OK),
+            Click.on(MNM_HAMBURGUESA),
+            Click.on(IMG_FINSONET),
+            Click.on(LNK_COMERCIAL),
+            Click.on(LNK_MIS_CREDITOS)
         );
     }
 }

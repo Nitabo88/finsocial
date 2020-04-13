@@ -20,7 +20,7 @@ public final class FormularioSolicitudPaso3Page {
     public static final Target BTN_TIPO_CONTRATO = Target.the("el tipo de contrato").located(By.xpath("//button[@data-id='cmbTipoContrato']"));
     public static final Target BTN_ACTIVIDAD_ECONOMICA = Target.the("el tipo de actividad economica").located(By.xpath("//button[@data-id='cmbActEcon']"));
     public static final Target LST_ACTIVIDAD_ECONOMICA = Target.the("la lista de actividad economica").locatedBy("//select[@id='cmbActEcon']/following-sibling::div//ul[@class='dropdown-menu inner']//li[contains(.,'{0}')]");
-    public static final Target BTN_CIUDAD_TRABAJO = Target.the("la ciudad de trabajo").located(By.xpath("//button[@data-id='cmbCiudad2']"));
+    public static final Target BTN_CIUDAD_TRABAJO = Target.the("la ciudad de trabajo").located(By.xpath("//button[@data-id='cmbCiudad2']//parent::div"));
     public static final Target TXT_TELEFONO_TRABAJO = Target.the("la telefono del trabajo").located(By.id("txtTelEmpresa"));
     public static final Target TXT_EXTENSION = Target.the("la extension del trabajo").located(By.id("txtExt"));
     public static final Target BTN_CERRAR_DIRECCION = Target.the("cerrar direccion del trabajo").located(By.xpath("//button[@class='btn btn-default']"));

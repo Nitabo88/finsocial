@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ElFormulario implements Question<Boolean> {
@@ -23,9 +23,10 @@ public class ElFormulario implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         actor.attemptsTo(
             WaitUntil.the(LNK_HOME, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            JavaScriptClick.on(LNK_HOME),
+            Click.on(LNK_HOME));
+        actor.attemptsTo(
             WaitUntil.the(LNK_ORIGINACION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            JavaScriptClick.on(LNK_ORIGINACION));
+            Click.on(LNK_ORIGINACION));
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         return LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA.of(numeroCredito).resolveFor(actor).isPresent();
     }
