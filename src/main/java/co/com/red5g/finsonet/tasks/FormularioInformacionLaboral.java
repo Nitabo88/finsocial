@@ -19,7 +19,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_EXTENSION;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_FECHA_VINCULACION;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_TELEFONO_TRABAJO;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
@@ -28,6 +28,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
@@ -56,8 +58,8 @@ public class FormularioInformacionLaboral implements Task {
                 TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion()),
             Enter.theValue(actividadLaboral.getDireccionTrabajo()).into(TXT_DIRECCION_TRABAJO),
             Click.on(BTN_CERRAR_DIRECCION),
-            WaitUntil.the(BTN_CIUDAD_TRABAJO, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            Click.on(BTN_CIUDAD_TRABAJO),
+            WaitUntil.the(BTN_CIUDAD_TRABAJO, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+            JavaScriptClick.on(BTN_CIUDAD_TRABAJO),
             Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
             Enter.theValue(actividadLaboral.getTelefonoTrabajo()).into(TXT_TELEFONO_TRABAJO),
             Enter.theValue(actividadLaboral.getExtension()).into(TXT_EXTENSION),
