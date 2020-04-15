@@ -33,7 +33,6 @@ public class InformacionCreditoHuy implements Task {
   @Override
   public <T extends Actor> void performAs(final T actor) {
     actor.remember(InformacionCreditoLibranza.CEDULA_ACTOR, credito.getNumeroDocumento());
-    actor.remember(InformacionCreditoLibranza.FECHA_CREDITO, formatearFechaServidorUTC());
     actor.attemptsTo(
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
         WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),

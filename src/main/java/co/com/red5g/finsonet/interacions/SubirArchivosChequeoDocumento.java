@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_UPL
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LNK_FILE_UPLOAD;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import net.serenitybdd.screenplay.Actor;
@@ -26,7 +27,8 @@ public class SubirArchivosChequeoDocumento implements Interaction {
                 actor.attemptsTo(
                     JavaScriptClick.on(BTN_UPLOAD.resolveAllFor(actor).get(i)),
                     Upload.theFile(path).to(LNK_FILE_UPLOAD),
-                    Click.on(BTN_CERRAR)
+                    Click.on(BTN_CERRAR),
+                    WaitFor.seconds(3)
                 );
             }
         }

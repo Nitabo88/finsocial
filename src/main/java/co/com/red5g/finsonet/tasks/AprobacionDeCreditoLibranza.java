@@ -12,6 +12,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -31,7 +32,7 @@ public class AprobacionDeCreditoLibranza implements Task {
         JavaScriptClick.on(BTN_MI_CUENTA),
         JavaScriptClick.on(MNM_MI_CUENTA.of(AprobacionDeCreditoLibranza.SALIR)),
         Ingresa.lasCredenciales(de().unUsuarioDeAprobacionCreditos()),
-        WaitUntil.the(LNK_ORIGINACION, isVisible()).forNoMoreThan(AprobacionDeCreditoLibranza.TIEMPO).seconds(),
+        WaitFor.seconds(2),
         JavaScriptClick.on(LNK_ORIGINACION),
         JavaScriptClick.on(MNM_ORIGINACION.of(AprobacionDeCreditoLibranza.APROBACION_CREDITO)),
         JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),

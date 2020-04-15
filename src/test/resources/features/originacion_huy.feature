@@ -17,16 +17,16 @@ Característica: Originacion - Huy
     Cuando el asesor diligencia la información de aprobación de crédito huy
     Entonces el podrá ver el crédito en incorporación huy
 
-  @AprobacionCreditosHuy
-  Escenario:  credito huy - pendiente
-    Dado que un asesor quiere normalizar un crédito huy en aprobación de créditos
-    Cuando el asesor normalice el crédito
-    Y el crédito se ponga en la lista de pendientes
-    Entonces el podra ver el crédito en pendiente por documentacion
-
-  @AprobacionCreditosHuy
-  Escenario: credito huy - negar
-    Dado que un asesor quiere negar un crédito huy en aprobación de créditos
-    Cuando el asesor normalice el crédito
-    Y niegue el crédito
-    Entonces el podra ver el crédito en el listado de negado
+#  @AprobacionCreditosHuy
+#  Escenario:  credito huy - pendiente
+#    Dado que un asesor quiere normalizar un crédito huy en aprobación de créditos
+#    Cuando el asesor normalice el crédito
+#    Y el crédito se ponga en la lista de pendientes
+#    Entonces el podra ver el crédito en pendiente por documentacion
+                                                           #
+#  @AprobacionCreditosHuy
+#  Escenario: credito huy - negar
+#    Dado que un asesor quiere negar un crédito huy en aprobación de créditos
+#    Cuando el asesor normalice el crédito
+#    Y niegue el crédito
+#    Entonces el podra ver el crédito en el listado de negado

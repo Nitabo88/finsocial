@@ -7,9 +7,9 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import net.serenitybdd.screenplay.Actor;
@@ -28,7 +28,7 @@ public class Confirmacion implements Task {
         Diligencia.laSolicitudDeCredito(),
         cambiarPestana(),
         Click.on(LNK_HOME),
-        WaitUntil.the(LNK_ORIGINACION, isClickable()).forNoMoreThan(TIEMPO).seconds(),
+        WaitFor.seconds(2),
         Click.on(LNK_ORIGINACION),
         Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza()),
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
