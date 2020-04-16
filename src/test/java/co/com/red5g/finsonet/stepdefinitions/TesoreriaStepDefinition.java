@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.TesoreriaBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -18,7 +19,7 @@ public class TesoreriaStepDefinition {
 
   @Dado("^que (.*) esta en el paso de tesoreria$")
   public void ingresarTesoreria(String actor) {
-    theActorCalled(actor).attemptsTo(Consulta.elCreditoEnTesoreria());
+    theActorCalled(actor).attemptsTo(Consulta.elCreditoEnTesoreria(la().informacionDelCreditoTesoreria()));
   }
 
   @Cuando("^el asesor regresa el credito desde tesoreria$")

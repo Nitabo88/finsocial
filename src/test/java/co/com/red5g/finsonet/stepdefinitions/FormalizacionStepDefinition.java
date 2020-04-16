@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.FormalizacionBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -18,7 +19,7 @@ public class FormalizacionStepDefinition {
 
   @Dado("^que (.*) esta en el paso de formalizacion$")
   public void consultarCredito(String actor) {
-    theActorCalled(actor).attemptsTo(Consulta.elCreditoEnFormalizacion());
+    theActorCalled(actor).attemptsTo(Consulta.elCreditoEnFormalizacion(la().informacionDelCreditoFormalizacion()));
   }
 
   @Cuando("^el asesor regresa el credito desde formalizacion$")

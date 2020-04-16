@@ -12,7 +12,7 @@ public class LlamadaFinsoamigo implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    actor.remember(NUMERO_CREDITO, "90962");
+    actor.remember(NUMERO_CREDITO, "90914");
     actor.attemptsTo(
         Loguearse.enFinsonet(),
         Click.on(LNK_LLAMADAS)

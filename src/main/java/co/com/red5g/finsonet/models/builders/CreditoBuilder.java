@@ -19,7 +19,7 @@ public final class CreditoBuilder implements Builder<Credito> {
     return this;
   }
 
-  private CreditoBuilder conValor(String strValorCuota) {
+  private CreditoBuilder conValorCuota(String strValorCuota) {
     this.strValorCuota = strValorCuota;
     return this;
   }
@@ -53,9 +53,81 @@ public final class CreditoBuilder implements Builder<Credito> {
     this.codigoPapeleria = "";
   }
 
-  public Credito informacionDelCredito() {
-    this.conDocumento("10000060");
-    this.conValor("1200000");
+  public Credito informacionDelCreditoChequeoDocumento() {
+    this.conDocumento("7447352");
+    this.conValorCuota("1200000");
+    this.a("48");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoFormulario() {
+    this.conDocumento("19362753");
+    this.conValorCuota("1200000");
+    this.a("48");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoAprobacion() {
+    this.conDocumento("19186577");
+    this.conValorCuota("800000");
+    this.a("60");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoConfirmacion() {
+    this.conDocumento("1129573950");
+    this.conValorCuota("400000");
+    this.a("72");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoCdas() {
+    this.conDocumento("64585528");
+    this.conValorCuota("1050000");
+    this.a("60");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoCdasCompleto() {
+    this.conDocumento("8663397");
+    this.conValorCuota("1020000");
+    this.a("55");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoFormalizacion() {
+    this.conDocumento("10094548");
+    this.conValorCuota("1300000");
+    this.a("60");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoIncorporacion() {
+    this.conDocumento("12370816");
+    this.conValorCuota("750000");
+    this.a("50");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoTesoreria() {
+    this.conDocumento("6615550");
+    this.conValorCuota("580000");
+    this.a("57");
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoLlamadaLibranza() {
+    this.conDocumento("24313904");
+    this.conValorCuota("97000");
     this.a("48");
     this.conCodigoPapeleria();
     return this.build();
@@ -63,7 +135,7 @@ public final class CreditoBuilder implements Builder<Credito> {
 
   public Credito informacionDelCredito(String strNumeroDocumento, String strValorCuota, String strPlazo) {
     this.conDocumento(strNumeroDocumento);
-    this.conValor(strValorCuota);
+    this.conValorCuota(strValorCuota);
     this.a(strPlazo);
     this.conCodigoPapeleria();
     return this.build();

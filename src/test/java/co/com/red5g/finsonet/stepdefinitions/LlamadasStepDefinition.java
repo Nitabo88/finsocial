@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -23,7 +24,7 @@ public class LlamadasStepDefinition {
   @Dado("que (.*) debe gestionar la llamada para un crédito de libranza")
   public void ingresarModuloLlamadas(String actor) {
     theActorCalled(actor).attemptsTo(
-        Ubicarse.enLlamada()
+        Ubicarse.enLlamada(la().informacionDelCreditoLlamadaLibranza())
     );
   }
 

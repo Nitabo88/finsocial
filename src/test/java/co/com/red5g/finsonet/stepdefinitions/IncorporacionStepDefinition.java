@@ -9,6 +9,7 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -19,7 +20,7 @@ public class IncorporacionStepDefinition {
   @Dado("^que (.*) esta en el paso de incorporacion$")
   public void ingresarIncorporacion(final String actor) {
     theActorCalled(actor).attemptsTo(
-            Consulta.elCreditoEnIncorporacion()
+            Consulta.elCreditoEnIncorporacion(la().informacionDelCreditoIncorporacion())
     );
   }
 

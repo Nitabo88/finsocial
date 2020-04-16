@@ -20,7 +20,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
@@ -57,7 +56,7 @@ public class AprobacionIncorporacion implements Task {
         SelectFromOptions.byValue(obtenerPeriodoActual().split("-")[1]).from(LST_MES_DESCUENTO),
         JavaScriptClick.on(BTN_APROBAR),
         WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
-        Click.on(BTN_OK)
+        JavaScriptClick.on(BTN_OK)
     );
   }
 }

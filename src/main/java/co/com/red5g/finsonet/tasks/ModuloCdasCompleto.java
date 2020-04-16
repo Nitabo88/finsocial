@@ -6,6 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGAND
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Realiza;
@@ -16,12 +17,18 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ModuloCdasCompleto implements Task {
 
+  private Credito credito;
+
   private static final int TIEMPO = 120;
+
+  public ModuloCdasCompleto(Credito credito) {
+    this.credito = credito;
+  }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        Consulta.elCreditoEnFormalizacion(),
+        Consulta.elCreditoEnFormalizacion(credito),
         Diligencia.laAprobacionDelCreditoEnFormalizacion(),
         Realiza.laLlamada(),
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),

@@ -4,6 +4,7 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.questions.ObtenerUrl.obtenerUrl;
 import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_COLUMNA_CHEQUEO_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
@@ -25,8 +26,9 @@ public class ChequeoDocumentoHuy implements Task {
         Ingresa.enNuevoCreditoHuy(),
         Ingresa.laInformacionDelCreditoHuy(la().informacionDelCreditoHuy()));
     String numeroCedula = actor.recall(CEDULA_ACTOR);
+    String fecha = actor.recall(FECHA);
     actor.attemptsTo(
-        Click.on(LST_COLUMNA_CHEQUEO_DOCUMENTO.of(numeroCedula).resolveAllFor(actor).get(0)));
+        Click.on(LST_COLUMNA_CHEQUEO_DOCUMENTO.of(numeroCedula,fecha).resolveAllFor(actor).get(0)));
     actor.remember(NUMERO_CREDITO, obtenerUrl().answeredBy(actor));
     actor.attemptsTo(
         Click.on(MNM_HAMBURGUESA),

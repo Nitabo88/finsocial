@@ -7,6 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
+import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
@@ -20,10 +21,16 @@ public class Incorporacion implements Task {
   private static final String SALIR = "Salir";
   private static final String INCORPORACION = "Incorporación";
 
+  private Credito credito;
+
+  public Incorporacion(Credito credito) {
+    this.credito = credito;
+  }
+
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        Consulta.elCreditoEnAprobacionDeCreditos(),
+        Consulta.elCreditoEnAprobacionDeCreditos(credito),
         Diligencia.laInformacionDeAprobacionDeCredito(),
         JavaScriptClick.on(BTN_MI_CUENTA),
         JavaScriptClick.on(MNM_MI_CUENTA.of(Incorporacion.SALIR)),

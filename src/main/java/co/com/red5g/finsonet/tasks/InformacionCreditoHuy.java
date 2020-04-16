@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
 import static co.com.red5g.finsonet.userinterfaces.ComercialPage.LNK_MIS_CREDITOS;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
@@ -33,6 +34,7 @@ public class InformacionCreditoHuy implements Task {
   @Override
   public <T extends Actor> void performAs(final T actor) {
     actor.remember(InformacionCreditoLibranza.CEDULA_ACTOR, credito.getNumeroDocumento());
+    actor.remember(FECHA, formatearFechaServidorUTC());
     actor.attemptsTo(
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
         WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),

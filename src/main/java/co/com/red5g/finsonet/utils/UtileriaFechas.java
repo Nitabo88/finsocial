@@ -14,19 +14,9 @@ public class UtileriaFechas {
         throw new IllegalStateException("Utileria Fechas");
     }
 
-    public static String masUnMinuto(String minuto) {
-        String[] hora = minuto.split(":");
-        return Integer.parseInt(hora[1]) + 1 < 10 ? hora[0] + ":0" + (Integer.parseInt(hora[1]) + 1) : hora[0] + ":" + (Integer.parseInt(hora[1]) + 1);
-    }
-
-    public static String menosUnMinuto(String minuto) {
-        String[] hora = minuto.split(":");
-        return Integer.parseInt(hora[1]) + 1 < 10 ? hora[0] + ":0" + (Integer.parseInt(hora[1]) -1) : hora[0] + ":" + (Integer.parseInt(hora[1]) - 1);
-    }
-
     public static String formatearFechaServidorUTC() {
         Date fecha = new Date(System.currentTimeMillis());
-        DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-dd HH:");
         return fechaFormateada.format(fecha);
     }
 

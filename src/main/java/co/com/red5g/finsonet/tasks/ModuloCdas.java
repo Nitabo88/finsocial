@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import net.serenitybdd.screenplay.Actor;
@@ -14,12 +15,17 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class ModuloCdas implements Task {
 
+  private Credito credito;
   private static final int TIEMPO = 10;
+
+  public ModuloCdas(Credito credito) {
+    this.credito = credito;
+  }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        Consulta.elCreditoEnIncorporacion(),
+        Consulta.elCreditoEnIncorporacion(credito),
         Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()),
         Click.on(IMG_FINSONET),
         WaitUntil.the(LNK_CDAS, isVisible()).forNoMoreThan(TIEMPO).seconds(),

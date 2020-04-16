@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.interacions;
 
 import static co.com.red5g.finsonet.questions.ObtenerUrl.obtenerUrl;
 import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_COLUMNA_FORMULARIO_SOLICITUD;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -23,7 +24,8 @@ public class Ingresar implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         String numeroCedula = actor.recall(CEDULA_ACTOR);
-        List<WebElementFacade> lstCredito = LST_COLUMNA_FORMULARIO_SOLICITUD.of(numeroCedula).resolveAllFor(actor);
+        String fecha = actor.recall(FECHA);
+        List<WebElementFacade> lstCredito = LST_COLUMNA_FORMULARIO_SOLICITUD.of(numeroCedula, fecha).resolveAllFor(actor);
         actor.attemptsTo(
             Click.on(lstCredito.get(0))
         );

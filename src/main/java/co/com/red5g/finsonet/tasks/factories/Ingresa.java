@@ -83,11 +83,11 @@ public final class Ingresa {
         return instrumented(InformacionCreditoHuy.class, informacionDelCreditoHuy);
     }
 
-    public static Performable alModuloCDAS() {
-        return instrumented(ModuloCdas.class);
+    public static Performable alModuloCDAS(Credito credito) {
+        return instrumented(ModuloCdas.class, credito);
     }
 
-    public static Performable alModuloCDASCompleto() {
+    public static Performable alModuloCDASCompleto(Credito credito) {
         return instrumented(ModuloCdasCompleto.class);
     }
 

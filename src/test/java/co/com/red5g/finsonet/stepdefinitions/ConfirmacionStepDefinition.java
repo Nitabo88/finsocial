@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.ConfirmacionBuilder.con;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -19,7 +20,7 @@ public class ConfirmacionStepDefinition {
   @Dado("^que (.*) esta en el paso de confirmacion$")
   public void consultarCredito(String actor) {
     theActorCalled(actor).attemptsTo(
-        Consulta.elCreditoEnConfirmacion()
+        Consulta.elCreditoEnConfirmacion(la().informacionDelCreditoConfirmacion())
     );
   }
 
