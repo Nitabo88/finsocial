@@ -19,6 +19,7 @@ public final class ChequeoDocumentosPage {
     public static final Target BTN_ACEPTAR2_POP_UP = Target.the("el boton aceptar del segundo pop up").located(By.id("btn-aceptar-2"));
     public static final Target LST_CODIGO_PAPELERIA = Target.the("el codigo de papeleria").located(By.id("codPapeleria"));
     public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
+    public static final Target BTN_FORMULARIO_SOLICITUD = Target.the("el boton aceptar").located(By.xpath("//a[text()='Formulario de solicitud']"));
     public static final Target BTN_ACEPTAR2 = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']"));
     public static final Target BTN_MODIFICAR_CREDITO = Target.the("el boton modificar credito").located(By.id("btn_Dif"));
     public static final Target BTN_ACEPTAR_HUY = Target.the("el boton aceptar de papeleria del credito huy").located(By.id("btn-aceptar-1"));
@@ -40,7 +41,7 @@ public final class ChequeoDocumentosPage {
     public static final Target BTN_CERRAR_POP_UP = Target.the("Cerrar pop up").located(By.xpath("//a[@title='Close']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO = Target.the("la opcion de la tabla del nombre")
-        .locatedBy("//td[text()='Finsoamigo']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+        .locatedBy("//td[text()='Finsoamigo']//parent::tr[@role='row']//td[@style='text-align: left']//a");
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY = Target.the("la opcion de la tabla del nombre")
         .locatedBy("//td[text()='CrediHuy']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
 

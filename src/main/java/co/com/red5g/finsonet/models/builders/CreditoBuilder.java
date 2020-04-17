@@ -1,5 +1,19 @@
 package co.com.red5g.finsonet.models.builders;
 
+import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_APROBACION_HUY;
+import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_CHEQUEO_HUY;
+import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_CREDITO_HUY;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_APROBACION_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CDAS_COMPLETO_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CDAS_INCOMPLETO_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CHEQUEO_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CONFIRMACION_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_FORMALIZACION_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_FORMULARIO_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_INCORPORACION_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_LLAMADA_LIBRANZA;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_TESORERIA_LIBRANZA;
+
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.utils.Builder;
 
@@ -8,7 +22,8 @@ public final class CreditoBuilder implements Builder<Credito> {
   private String strNumeroDocumento;
   private String strValorCuota;
   private String strPlazo;
-  private String codigoPapeleria;
+  private String strCodigoPapeleria;
+  private String strValorCredito;
 
   public static CreditoBuilder la() {
     return new CreditoBuilder();
@@ -25,7 +40,12 @@ public final class CreditoBuilder implements Builder<Credito> {
   }
 
   private CreditoBuilder conCodigoPapeleria() {
-    this.codigoPapeleria = "No tiene";
+    this.strCodigoPapeleria = "No tiene";
+    return this;
+  }
+
+  private CreditoBuilder conValorCredito(String strValorCredito) {
+    this.strValorCredito = strValorCredito;
     return this;
   }
 
@@ -46,90 +66,102 @@ public final class CreditoBuilder implements Builder<Credito> {
     return strPlazo;
   }
 
+  public String getStrValorCredito() {
+    return strValorCredito;
+  }
+
   private CreditoBuilder() {
     this.strNumeroDocumento = "";
     this.strValorCuota = "";
     this.strPlazo = "";
-    this.codigoPapeleria = "";
-  }
-
-  public Credito informacionDelCreditoChequeoDocumento() {
-    this.conDocumento("7447352");
-    this.conValorCuota("1200000");
-    this.a("48");
-    this.conCodigoPapeleria();
-    return this.build();
+    this.strCodigoPapeleria = "";
+    this.strValorCredito = "";
   }
 
   public Credito informacionDelCreditoFormulario() {
-    this.conDocumento("19362753");
-    this.conValorCuota("1200000");
-    this.a("48");
+    this.conDocumento(INFORMACION_FORMULARIO_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_FORMULARIO_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_FORMULARIO_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
     return this.build();
   }
 
-  public Credito informacionDelCreditoAprobacion() {
-    this.conDocumento("19186577");
-    this.conValorCuota("800000");
-    this.a("60");
+  public Credito informacionDelCreditoChequeoDocumento() {
+    this.conDocumento(INFORMACION_CHEQUEO_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_CHEQUEO_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_CHEQUEO_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
     return this.build();
   }
 
   public Credito informacionDelCreditoConfirmacion() {
-    this.conDocumento("1129573950");
-    this.conValorCuota("400000");
-    this.a("72");
+    this.conDocumento(INFORMACION_CONFIRMACION_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_CONFIRMACION_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_CONFIRMACION_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
     return this.build();
   }
 
-  public Credito informacionDelCreditoCdas() {
-    this.conDocumento("64585528");
-    this.conValorCuota("1050000");
-    this.a("60");
-    this.conCodigoPapeleria();
-    return this.build();
-  }
-
-  public Credito informacionDelCreditoCdasCompleto() {
-    this.conDocumento("8663397");
-    this.conValorCuota("1020000");
-    this.a("55");
-    this.conCodigoPapeleria();
-    return this.build();
-  }
-
-  public Credito informacionDelCreditoFormalizacion() {
-    this.conDocumento("10094548");
-    this.conValorCuota("1300000");
-    this.a("60");
+  public Credito informacionDelCreditoAprobacion() {
+    this.conDocumento(INFORMACION_APROBACION_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_APROBACION_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_APROBACION_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
     return this.build();
   }
 
   public Credito informacionDelCreditoIncorporacion() {
-    this.conDocumento("12370816");
-    this.conValorCuota("750000");
-    this.a("50");
+    this.conDocumento(INFORMACION_INCORPORACION_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_INCORPORACION_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_INCORPORACION_LIBRANZA.getNumeroCuotas());
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoFormalizacion() {
+    this.conDocumento(INFORMACION_FORMALIZACION_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_FORMALIZACION_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_FORMALIZACION_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
     return this.build();
   }
 
   public Credito informacionDelCreditoTesoreria() {
-    this.conDocumento("6615550");
-    this.conValorCuota("580000");
-    this.a("57");
+    this.conDocumento(INFORMACION_TESORERIA_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_TESORERIA_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_TESORERIA_LIBRANZA.getNumeroCuotas());
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoCdas() {
+    this.conDocumento(INFORMACION_CDAS_INCOMPLETO_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_CDAS_INCOMPLETO_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_CDAS_INCOMPLETO_LIBRANZA.getNumeroCuotas());
+    this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoCdasCompleto() {
+    this.conDocumento(INFORMACION_CDAS_COMPLETO_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_CDAS_COMPLETO_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_CDAS_COMPLETO_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
     return this.build();
   }
 
   public Credito informacionDelCreditoLlamadaLibranza() {
-    this.conDocumento("24313904");
-    this.conValorCuota("97000");
-    this.a("48");
+    this.conDocumento(INFORMACION_LLAMADA_LIBRANZA.getNumeroDocumento());
+    this.conValorCuota(INFORMACION_LLAMADA_LIBRANZA.getValorCuota());
+    this.a(INFORMACION_LLAMADA_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionChequeHuy() {
+    this.conDocumento(INFORMACION_CHEQUEO_HUY.getNumeroDocumento());
+    this.a(INFORMACION_CHEQUEO_HUY.getNumeroCuotas());
+    this.conValorCredito(INFORMACION_CHEQUEO_HUY.getValorCredito());
     return this.build();
   }
 
@@ -142,8 +174,16 @@ public final class CreditoBuilder implements Builder<Credito> {
   }
 
   public Credito informacionDelCreditoHuy() {
-    this.conDocumento("10000622");
-    this.a("72");
+    this.conDocumento(INFORMACION_CREDITO_HUY.getNumeroDocumento());
+    this.a(INFORMACION_CREDITO_HUY.getNumeroCuotas());
+    this.conValorCredito(INFORMACION_CREDITO_HUY.getValorCredito());
+    return this.build();
+  }
+
+  public Credito informacionAprobacionHuy() {
+    this.conDocumento(INFORMACION_APROBACION_HUY.getNumeroDocumento());
+    this.a(INFORMACION_APROBACION_HUY.getNumeroCuotas());
+    this.conValorCredito(INFORMACION_APROBACION_HUY.getValorCredito());
     return this.build();
   }
 
@@ -152,7 +192,9 @@ public final class CreditoBuilder implements Builder<Credito> {
     return new Credito(this);
   }
 
-  public String getCodigoPapeleria() {
-    return codigoPapeleria;
+  public String getStrCodigoPapeleria() {
+    return strCodigoPapeleria;
   }
+
+
 }

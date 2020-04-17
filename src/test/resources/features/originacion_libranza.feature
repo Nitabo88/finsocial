@@ -5,24 +5,6 @@ Característica: Originacion
   Quiero tramitar un credito
   Para revisar el proceso de originacion
 
-  @ChequeoDocumentos
-  Escenario: Chequeo Documentos - Aprobación chequeo de documentos
-    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
-    Cuando el asesor adjunta toda la información de el chequeo de documentos
-    Entonces deberá ver el crédito en el paso de confirmación
-
-  @ChequeoDocumentos
-  Escenario: Chequeo Documentos - Chequeo de documentos estado Pendiente
-    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
-    Cuando el asesor decline el chequeo del crédito de libranza del cliente
-    Entonces el auxiliar de documentación debería verlo en su lista de chequeo de documentos
-
-  @ChequeoDocumentos
-  Escenario: Chequeo Documentos - Aprobación chequeo documentos no exitosa
-    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
-    Cuando el asesor complete el chequeo de crédito del cliente
-    Entonces deberá ver el mensaje de adjuntar información
-
   @Confirmacion
   Escenario: Confirmacion - Aprobacion del paso de confirmacion de un credito
     Dado que un asesor esta en el paso de confirmacion
@@ -40,24 +22,6 @@ Característica: Originacion
     Dado que un asesor esta en el paso de confirmacion
     Cuando el asesor marque como pendiente el paso de confirmacion
     Entonces el asesor deberia ver el crédito en confirmacion de creditos en la lista de pendientes
-
-  @AprobacionCreditos
-  Escenario: Aprobacion de Creditos - Aprobar el credito desde aprobacion de creditos
-    Dado que un asesor esta en el paso de aprobacion de creditos
-    Cuando el asesor aprueba el credito
-    Entonces el asesor debera ver el credito en el paso de incorporacion
-
-  @AprobacionCreditos
-  Escenario: Aprobacion de Creditos - Marcar el credito como pendiente en aprobacion de creditos
-    Dado que un asesor esta en el paso de aprobacion de creditos
-    Cuando el asesor pone el credito como pendiente
-    Entonces el asesor debera ver el credito en aprobacion de creditos en la lista de pendientes
-
-  @AprobacionCreditos
-  Escenario: Aprobacion de Creditos - Regresar el credito desde aprobacion de creditos
-    Dado que un asesor esta en el paso de aprobacion de creditos
-    Cuando el asesor regresa el credito a confirmacion
-    Entonces el asesor debera ver el credito en el paso de confirmacion
 
   @Incorporacion
   Escenario: Incorporacion - Aprobar el credito desde incorporacion
@@ -77,7 +41,7 @@ Característica: Originacion
     Cuando el asesor regresa el credito a aprobacion de creditos
     Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
 
-  @Formalizacion
+
   Escenario: Formalizacion - Aprobar el credito desde formalizacion
     Dado que un asesor esta en el paso de formalizacion
     Cuando el asesor aprueba el credito en formalizacion

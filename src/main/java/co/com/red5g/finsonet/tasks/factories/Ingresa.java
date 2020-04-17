@@ -88,7 +88,7 @@ public final class Ingresa {
     }
 
     public static Performable alModuloCDASCompleto(Credito credito) {
-        return instrumented(ModuloCdasCompleto.class);
+        return instrumented(ModuloCdasCompleto.class, credito);
     }
 
   public static Performable aChequeoDocumentosFinsoamigo() {
@@ -99,8 +99,8 @@ public final class Ingresa {
         return instrumented(AprobacionCreditoFinsoamigo.class);
     }
 
-    public static Performable aChequeoDocumentosHuy() {
-        return instrumented(ChequeoDocumentoHuy.class);
+    public static Performable aChequeoDocumentosHuy(Credito credito) {
+        return instrumented(ChequeoDocumentoHuy.class, credito);
     }
 
     public static Performable enNuevoCreditoHuy() {

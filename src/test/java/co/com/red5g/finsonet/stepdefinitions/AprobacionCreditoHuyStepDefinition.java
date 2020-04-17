@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -19,7 +20,7 @@ public class AprobacionCreditoHuyStepDefinition {
   @Dado("^que (.*) quiere (.*) un crédito huy en aprobación de créditos$")
   public void consultarCredito(final String actor, String accion) {
     theActorCalled(actor).attemptsTo(
-        Consulta.elCreditoEnAprobacionDeCreditosHuy()
+        Consulta.elCreditoEnAprobacionDeCreditosHuy(la().informacionAprobacionHuy())
     );
   }
 
