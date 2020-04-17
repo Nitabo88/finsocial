@@ -19,7 +19,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class ValidarLlamadaLibranza implements Question<String> {
 
   private static final String LLAMADA = "Llamada";
-  private static final int TIEMPO = 120;
+  private static final int TIEMPO = 150;
 
   @Override
   public String answeredBy(final Actor actor) {

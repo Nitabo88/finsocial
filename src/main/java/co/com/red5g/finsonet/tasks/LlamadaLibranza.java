@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import net.serenitybdd.screenplay.Actor;
@@ -27,6 +28,7 @@ public class LlamadaLibranza implements Task {
             Consulta.elCreditoEnAprobacionDeCreditos(credito),
             Click.on(MNM_HAMBURGUESA),
             Click.on(IMG_FINSONET),
+            WaitFor.seconds(3),
             WaitUntil.the(LNK_LLAMADAS, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(LNK_LLAMADAS));
     }

@@ -35,10 +35,10 @@ public class LlamadasStepDefinition {
     );
   }
 
-  @Y("^posteriormente procese la llamada$")
+  @Y("^posteriormente procese la llamada del crédito de libranza$")
   public void procesarLlamada() {
     theActorInTheSpotlight().attemptsTo(
-        SeProcesa.laLlamada()
+        SeProcesa.laLlamadaLibranza()
     );
   }
 
@@ -55,22 +55,22 @@ public class LlamadasStepDefinition {
     );
   }
 
-  @Cuando("^el asesor se asigne la gestión de la llamada para un credito finsoamigo$")
+  @Cuando("^el asesor se asigne la gestión de la llamada para un crédito finsoamigo$")
   public void asignarLlamadaFinsoamigo() {
     theActorInTheSpotlight().attemptsTo(
         Asignarse.laLlamadaDeFinsoamigo()
     );
   }
 
-  @Y("^posteriormente procese la llamada del credito finsoamigo$")
+  @Y("^posteriormente procese la llamada del crédito finsoamigo$")
   public void gestionarLlamadaFinsoamigo() {
     theActorInTheSpotlight().attemptsTo(
         Gestionar.laLlamadaFinsoamigo()
     );
   }
 
-  @Entonces("^deberá ver que la gestión del credito finsoamigo fue exitosa$")
-  public void verificarGestionLLamadaFinsoamigo() {
+  @Entonces("^deberá ver que la gestión del credito (.*) fue exitosa$")
+  public void verificarGestionLLamadaFinsoamigo(String llamada) {
     theActorInTheSpotlight().should
         (seeThat(LaLlamada.fueExitosa(), containsString(ESTADO_LLAMADA)));
   }

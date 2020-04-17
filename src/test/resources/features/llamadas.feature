@@ -8,16 +8,16 @@ Característica: Realizar gestion de llamada
   @LlamadaFinsoamigo
   Escenario: Gestion llamada para nuevo crédito finsoamigo
     Dado que un asesor debe gestionar la llamada para un crédito finsoamigo
-    Cuando el asesor se asigne la gestión de la llamada para un credito finsoamigo
-    Y posteriormente procese la llamada del credito finsoamigo
+    Cuando el asesor se asigne la gestión de la llamada para un crédito finsoamigo
+    Y posteriormente procese la llamada del crédito finsoamigo
     Entonces deberá ver que la gestión del credito finsoamigo fue exitosa
 
   @LlamadaLibranza
   Escenario: Gestion llamada para nuevo crédito de libranza
     Dado que un asesor debe gestionar la llamada para un crédito de libranza
     Cuando el asesor se asigne la gestión de la llamada del crédito de libranza
-    Y posteriormente procese la llamada
-    Entonces deberá ver que la llamada quedo confirmada
+    Y posteriormente procese la llamada del crédito de libranza
+    Entonces deberá ver que la gestión del credito libranza fue exitosa
 
 
 

@@ -23,6 +23,6 @@ public class ModuloLlamada implements Task {
         WaitUntil.the(LNK_LLAMADAS, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_LLAMADAS),
         Asignarse.laLlamadaDeLibranza(),
-        SeProcesa.laLlamada());
+        SeProcesa.laLlamadaLibranza());
   }
 }
