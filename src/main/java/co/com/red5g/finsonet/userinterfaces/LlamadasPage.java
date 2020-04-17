@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class LlamadasPage {
 
     public static final Target CHK_ID_LLAMADAS_LIBRANZA = Target.the("checkbok del credito de libranza").locatedBy("//td[text()='libranza']//parent::tr//input[@id='chk-{0}']");
-    public static final Target CHK_ID_LLAMADAS_FINSOAMIGO = Target.the("checkbok del credito finsoamigo").locatedBy("//td[text()='FinsoAmigo']//parent::tr//input[@id='chk-{0}']");
+    public static final Target CHK_ID_LLAMADAS_FINSOAMIGO = Target.the("checkbok del credito finsoamigo").locatedBy("//td[text()='FinsoAmigo']//parent::tr//input");
     public static final Target BTN_ASIGNACION_LIBRANZA = Target.the("boton de asignacion credito libranza").located(By.id("botonLibranza"));
     public static final Target BTN_ASIGNACION_FINSOAMIGOS = Target.the("boton de asignacion credito libranza").located(By.id("botonFinsoAmigos"));
     public static final Target BTN_ASIGNACION_HUY = Target.the("boton de asignacion credito huy").located(By.id("botonHuy"));

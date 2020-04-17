@@ -17,6 +17,7 @@ import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -31,7 +32,7 @@ public class Gestionar implements Task {
   private static final String BUSQUEDA_GESTION = "Búsqueda de gestión";
   private static final String CRITERIO_BUSQUEDA = "ID";
   private static final String LLAMADA = "Observacion Finsoamigo";
-  private static final int TIEMPO = 120;
+  private static final int TIEMPO = 150;
 
   public static Performable laLlamadaFinsoamigo() {
     return instrumented(Gestionar.class);
@@ -44,8 +45,10 @@ public class Gestionar implements Task {
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(MNU_HAMBURGUESA_LLAMADAS),
         Click.on(MNU_LLAMADAS.of(BUSQUEDA_GESTION)),
+        WaitUntil.the(TXT_BUSQUEDA, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(RDB_CRITERIO_BUSQUEDA.of(CRITERIO_BUSQUEDA)),
         Enter.theValue(numeroCredito).into(TXT_BUSQUEDA).thenHit(Keys.ENTER),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(BTN_GESTIONAR.of(numeroCredito)),
         cerrarPestanaAnterior(),
         cambiarPestanaActual(),
