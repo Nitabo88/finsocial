@@ -15,6 +15,7 @@ import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class ChequeoDocumentoHuy implements Task {
 
@@ -32,12 +33,12 @@ public class ChequeoDocumentoHuy implements Task {
     String numeroCedula = actor.recall(CEDULA_ACTOR);
     String fecha = actor.recall(FECHA);
     actor.attemptsTo(
-        Click.on(LST_COLUMNA_CHEQUEO_DOCUMENTO.of(numeroCedula, fecha).resolveAllFor(actor).get(0)));
+        JavaScriptClick.on(LST_COLUMNA_CHEQUEO_DOCUMENTO.of(numeroCedula, fecha).resolveAllFor(actor).get(0)));
     actor.remember(NUMERO_CREDITO, obtenerUrl().answeredBy(actor));
     actor.attemptsTo(
         Click.on(MNM_HAMBURGUESA),
         Click.on(IMG_FINSONET),
-        WaitFor.seconds(5),
+        WaitFor.seconds(3),
         Click.on(LNK_ORIGINACION));
   }
 }

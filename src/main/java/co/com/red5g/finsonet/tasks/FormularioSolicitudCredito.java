@@ -11,7 +11,7 @@ import static co.com.red5g.finsonet.models.builders.InformacionPrestamoBuilder.l
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page.BTN_ACEPTAR_ENCUESTA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page.BTN_ENCUESTA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page.BTN_ENVIAR_ENCUESTA;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static co.com.red5g.finsonet.utils.Utilerias.random;
 
 import co.com.red5g.finsonet.models.builders.InformacionBalancePersonalBuilder;
 import co.com.red5g.finsonet.models.builders.InformacionFinancieraBuilder;
@@ -28,15 +28,12 @@ import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class FormularioSolicitudCredito implements Task {
 
-    public static final String VISITA_COLEGIO = "Visita al colegio";
-    private static final int TIEMPO = 20;
-
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String respuestaEncuesta = String.valueOf(random(1, 5));
         actor.attemptsTo(
             Escribe.losDocumentosRequeridos(los().documentosSolicitante()),
             Escribe.laInformacionDelPrestamo(la().informacionPrestamo()),
@@ -58,8 +55,7 @@ public class FormularioSolicitudCredito implements Task {
             Click.on(FormularioSolicitudPaso6Page.BTN_GUARDAR_CONTINUAR),
             Click.on(FormularioSolicitudPaso7Page.BTN_GUARDAR_CONTINUAR),
             Click.on(FormularioSolicitudPaso8Page.BTN_ENVIAR),
-            WaitUntil.the(BTN_ENCUESTA.of(VISITA_COLEGIO), isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            Click.on(BTN_ENCUESTA.of(VISITA_COLEGIO)),
+            Click.on(BTN_ENCUESTA.of(respuestaEncuesta)),
             Click.on(BTN_ENVIAR_ENCUESTA),
             Click.on(BTN_ACEPTAR_ENCUESTA),
             cerrarPestana(),

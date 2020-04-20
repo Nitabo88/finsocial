@@ -20,7 +20,7 @@ public class ChequeoDocumentosHuyStepDefinition {
   @Dado("^que (.*) quiere aprobar un chequeo de documentos de un crédito huy$")
   public void ingresarChequeoDocumento(String actor) {
     theActorCalled(actor).wasAbleTo(
-        Ingresa.aChequeoDocumentosHuy(la().informacionChequeHuy())
+        Ingresa.aChequeoDocumentosHuy(la().informacionChequeoHuy())
     );
   }
 

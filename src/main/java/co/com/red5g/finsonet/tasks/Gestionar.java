@@ -15,6 +15,7 @@ import static co.com.red5g.finsonet.userinterfaces.ConfirmacionLLamadasPage.TXT_
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_HAMBURGUESA_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.finsonet.utils.Utilerias.random;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -31,16 +32,18 @@ public class Gestionar implements Task {
 
   private static final String BUSQUEDA_GESTION = "Búsqueda de gestión";
   private static final String CRITERIO_BUSQUEDA = "ID";
-  private static final String LLAMADA = "Observacion Finsoamigo";
+  private static final String LLAMADA = "Llamada Verificada";
   private static final int TIEMPO = 150;
 
-  public static Performable laLlamadaFinsoamigo() {
+  public static Performable laLlamada() {
     return instrumented(Gestionar.class);
   }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
+    String respuestaCuatro = String.valueOf(random(1, 4));
+    String respuestaCinco = String.valueOf(random(7, 10));
     actor.attemptsTo(
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(MNU_HAMBURGUESA_LLAMADAS),
@@ -52,8 +55,8 @@ public class Gestionar implements Task {
         Click.on(BTN_GESTIONAR.of(numeroCredito)),
         cerrarPestanaAnterior(),
         cambiarPestanaActual(),
-        Click.on(CHK_RESPUESTA_CUATRO.of(numeroCredito)),
-        Click.on(CHK_RESPUESTA_QUINTO.of(numeroCredito)),
+        Click.on(CHK_RESPUESTA_CUATRO.of(respuestaCuatro)),
+        Click.on(CHK_RESPUESTA_QUINTO.of(respuestaCinco)),
         Enter.theValue(LLAMADA).into(TXT_OBSERVACION_LLAMADA.of(numeroCredito)),
         Click.on(BTN_GUARDAR.of(numeroCredito)),
         Click.on(BTN_ACEPTAR),

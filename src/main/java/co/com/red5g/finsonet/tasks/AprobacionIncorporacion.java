@@ -62,9 +62,9 @@ public class AprobacionIncorporacion implements Task {
         WaitFor.seconds(4));
     actor.attemptsTo(
         MoveMouse.to(BTN_APROBAR),
-        JavaScriptClick.on(BTN_APROBAR),
+        Click.on(BTN_APROBAR),
         WaitFor.seconds(3),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
-        JavaScriptClick.on(BTN_OK));
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        Click.on(BTN_OK));
   }
 }

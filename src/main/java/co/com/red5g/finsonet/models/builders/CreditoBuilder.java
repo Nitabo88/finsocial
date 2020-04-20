@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.models.builders;
 import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_APROBACION_HUY;
 import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_CHEQUEO_HUY;
 import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_CREDITO_HUY;
+import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.INFORMACION_LLAMADA_HUY;
 import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_APROBACION_LIBRANZA;
 import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CDAS_COMPLETO_LIBRANZA;
 import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CDAS_INCOMPLETO_LIBRANZA;
@@ -158,7 +159,7 @@ public final class CreditoBuilder implements Builder<Credito> {
     return this.build();
   }
 
-  public Credito informacionChequeHuy() {
+  public Credito informacionChequeoHuy() {
     this.conDocumento(INFORMACION_CHEQUEO_HUY.getNumeroDocumento());
     this.a(INFORMACION_CHEQUEO_HUY.getNumeroCuotas());
     this.conValorCredito(INFORMACION_CHEQUEO_HUY.getValorCredito());
@@ -184,6 +185,13 @@ public final class CreditoBuilder implements Builder<Credito> {
     this.conDocumento(INFORMACION_APROBACION_HUY.getNumeroDocumento());
     this.a(INFORMACION_APROBACION_HUY.getNumeroCuotas());
     this.conValorCredito(INFORMACION_APROBACION_HUY.getValorCredito());
+    return this.build();
+  }
+
+  public Credito informacionDelCreditoLlamadaCrediHuy() {
+    this.conDocumento(INFORMACION_LLAMADA_HUY.getNumeroDocumento());
+    this.a(INFORMACION_LLAMADA_HUY.getNumeroCuotas());
+    this.conValorCredito(INFORMACION_LLAMADA_HUY.getValorCredito());
     return this.build();
   }
 

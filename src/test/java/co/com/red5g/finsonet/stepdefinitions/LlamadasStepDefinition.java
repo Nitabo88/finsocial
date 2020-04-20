@@ -8,7 +8,6 @@ import static org.hamcrest.Matchers.containsString;
 
 import co.com.red5g.finsonet.questions.factories.LaLlamada;
 import co.com.red5g.finsonet.tasks.Gestionar;
-import co.com.red5g.finsonet.tasks.SeProcesa;
 import co.com.red5g.finsonet.tasks.factories.Asignarse;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.es.Cuando;
@@ -22,7 +21,7 @@ public class LlamadasStepDefinition {
   private static final String ESTADO_LLAMADA = "EXITOSA";
 
   @Dado("que (.*) debe gestionar la llamada para un crédito de libranza")
-  public void ingresarModuloLlamadas(String actor) {
+  public void ingresarLlamadasLibranza(String actor) {
     theActorCalled(actor).attemptsTo(
         Ubicarse.enLlamada(la().informacionDelCreditoLlamadaLibranza())
     );
@@ -35,13 +34,6 @@ public class LlamadasStepDefinition {
     );
   }
 
-  @Y("^posteriormente procese la llamada del crédito de libranza$")
-  public void procesarLlamada() {
-    theActorInTheSpotlight().attemptsTo(
-        SeProcesa.laLlamadaLibranza()
-    );
-  }
-
   @Entonces("^deberá ver que la llamada quedo confirmada$")
   public void confirmarLlamada() {
     theActorInTheSpotlight().should
@@ -49,7 +41,7 @@ public class LlamadasStepDefinition {
   }
 
   @Dado("^que (.*) debe gestionar la llamada para un crédito finsoamigo$")
-  public void ingresarModuloLlamada(String actor) {
+  public void ingresarLlamadaFinsoamigo(String actor) {
     theActorCalled(actor).attemptsTo(
         Ubicarse.enLlamadaFinsoamigo()
     );
@@ -62,10 +54,10 @@ public class LlamadasStepDefinition {
     );
   }
 
-  @Y("^posteriormente procese la llamada del crédito finsoamigo$")
-  public void gestionarLlamadaFinsoamigo() {
+  @Y("^posteriormente procese la llamada del crédito (.*)$")
+  public void gestionarLlamadaFinsoamigo(String tipoCredito) {
     theActorInTheSpotlight().attemptsTo(
-        Gestionar.laLlamadaFinsoamigo()
+        Gestionar.laLlamada()
     );
   }
 
@@ -73,5 +65,19 @@ public class LlamadasStepDefinition {
   public void verificarGestionLLamadaFinsoamigo(String llamada) {
     theActorInTheSpotlight().should
         (seeThat(LaLlamada.fueExitosa(), containsString(ESTADO_LLAMADA)));
+  }
+
+  @Dado("^que (.*) debe gestionar la llamada para un crédito Huy$")
+  public void ingresarLlamadaCrediHuy(String actor) {
+    theActorCalled(actor).attemptsTo(
+      Ubicarse.enLlamadaCrediHuy(la().informacionDelCreditoLlamadaCrediHuy())
+  );
+  }
+
+  @Cuando("^el asesor se asigne la gestión de la llamada del crédito Huy$")
+  public void asignarLlamadaCrediHuy(){
+    theActorInTheSpotlight().attemptsTo(
+        Asignarse.laLlamadaCrediHuy()
+    );
   }
 }

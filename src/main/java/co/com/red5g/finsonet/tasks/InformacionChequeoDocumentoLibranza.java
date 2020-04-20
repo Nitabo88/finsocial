@@ -32,6 +32,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionChequeoDocumentoLibranza implements Task {
@@ -54,18 +55,23 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
             Click.on(BTN_ACEPTAR2_POP_UP),
             Click.on(BTN_ACEPTAR),
-            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_CODIGO_PAPELERIA),
-            Click.on(BTN_ACEPTAR2),
-            WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            MoveMouse.to(LST_PAPELERIA),
-            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
-            Click.on(BTN_MODIFICAR_CREDITO),
-            Click.on(MNM_HAMBURGUESA),
-            Click.on(IMG_FINSONET),
-            WaitFor.seconds(6),
-            JavaScriptClick.on(LNK_ORIGINACION),
-            MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),
-            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),
+            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_CODIGO_PAPELERIA));
+        actor.attemptsTo(
+            Check.whether(BTN_ACEPTAR2.resolveFor(actor).isVisible()).andIfSo(
+                Click.on(BTN_ACEPTAR2),
+                WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+                MoveMouse.to(LST_PAPELERIA),
+                SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
+                Click.on(BTN_MODIFICAR_CREDITO),
+                Click.on(MNM_HAMBURGUESA),
+                Click.on(IMG_FINSONET),
+                WaitFor.seconds(5),
+                JavaScriptClick.on(LNK_ORIGINACION),
+                MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),
+                JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito))
+            )
+        );
+        actor.attemptsTo(
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
             Subir.losArchivosDeChequeoDocumentos(),

@@ -31,7 +31,7 @@ public class SeProcesa implements Task {
 
     private static final String BUSQUEDA_GESTION = "Búsqueda de gestión";
     private static final String LLAMADA = "Proceso Exitoso";
-    private static final int TIEMPO = 150;
+    private static final int TIEMPO = 300;
     public static Performable laLlamadaLibranza() {
         return instrumented(SeProcesa.class);
     }
@@ -50,6 +50,7 @@ public class SeProcesa implements Task {
             Click.on(BTN_GUARDAR.of(numeroCredito)),
             Click.on(BTN_ACEPTAR),
             Click.on(BTN_CERTIFICACION_LLAMADAS),
+            Click.on(BTN_ACEPTAR),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(MNU_HAMBURGUESA_LLAMADAS),
             Click.on(MNU_LLAMADAS.of(BUSQUEDA_GESTION)),

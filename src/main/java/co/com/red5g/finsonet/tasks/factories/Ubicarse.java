@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.tasks.factories;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import co.com.red5g.finsonet.models.Credito;
+import co.com.red5g.finsonet.tasks.LlamadaCrediHuy;
 import co.com.red5g.finsonet.tasks.LlamadaFinsoamigo;
 import co.com.red5g.finsonet.tasks.LlamadaLibranza;
 import co.com.red5g.finsonet.tasks.NuevoCredito;
@@ -33,5 +34,9 @@ public final class Ubicarse {
 
   public static Performable enLlamadaFinsoamigo() {
     return instrumented(LlamadaFinsoamigo.class);
+  }
+
+  public static Performable enLlamadaCrediHuy(Credito credito) {
+    return instrumented(LlamadaCrediHuy.class, credito);
   }
 }
