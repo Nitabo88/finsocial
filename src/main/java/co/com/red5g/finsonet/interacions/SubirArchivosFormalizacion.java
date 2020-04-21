@@ -20,13 +20,11 @@ public class SubirArchivosFormalizacion implements Interaction {
     Path path = Paths.get("./src/test/resources/file/prueba.pdf");
     Desactivar.ventanaSubirArchivo();
     while (!BTN_UPLOAD.resolveAllFor(actor).isEmpty()) {
-      for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
         actor.attemptsTo(
-            JavaScriptClick.on(BTN_UPLOAD.resolveAllFor(actor).get(i)),
+            JavaScriptClick.on(BTN_UPLOAD.resolveFor(actor)),
             JavaScriptClick.on(BTN_SELECCIONAR_ARCHIVO),
             Upload.theFile(path).to(LNK_FILE),
             Click.on(BTN_ENVIAR_FILE));
       }
-    }
   }
 }

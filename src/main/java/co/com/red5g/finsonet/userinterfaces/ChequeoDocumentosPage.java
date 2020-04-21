@@ -34,12 +34,13 @@ public final class ChequeoDocumentosPage {
     public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2"));
     public static final Target BTN_OK = Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]"));
-    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//button[@class='bg-square-button white bg-green']"));
+    public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//i[@class='fas fa-upload white']"));
     public static final Target LNK_FILE_UPLOAD = Target.the("el input del archivor").located(By.id("fileUpload"));
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
         org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_CERRAR_POP_UP = Target.the("Cerrar pop up").located(By.xpath("//a[@title='Close']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
+    public static final Target LBL_LISTADO_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla del listado chequeo de documentos").located(By.xpath("//h1[text()='Listado de chequeo']"));
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO = Target.the("la opcion de la tabla del nombre")
         .locatedBy("//td[text()='Finsoamigo']//parent::tr[@role='row']//td[@style='text-align: left']//a");
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY = Target.the("la opcion de la tabla del nombre")

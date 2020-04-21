@@ -18,15 +18,13 @@ public class SubirArchivosChequeoDocumentoHuy implements Performable {
   @Override
   public <T extends Actor> void performAs(T actor) {
     Desactivar.ventanaSubirArchivo();
+    Path path = Paths.get("./src/test/resources/file/prueba.pdf");
     while (!BTN_UPLOAD.resolveAllFor(actor).isEmpty()) {
-      Path path = Paths.get("./src/test/resources/file/prueba.pdf");
-      for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
-        actor.attemptsTo(
-            JavaScriptClick.on(BTN_UPLOAD.resolveAllFor(actor).get(i)),
-            JavaScriptClick.on(BTN_SELECCIONAR_ARCHIVO),
-            Upload.theFile(path).to(LNK_FILE),
-            Click.on(BTN_ENVIAR_FILE));
-      }
+      actor.attemptsTo(
+          JavaScriptClick.on(BTN_UPLOAD.resolveFor(actor)),
+          JavaScriptClick.on(BTN_SELECCIONAR_ARCHIVO),
+          Upload.theFile(path).to(LNK_FILE),
+          Click.on(BTN_ENVIAR_FILE));
     }
   }
 }

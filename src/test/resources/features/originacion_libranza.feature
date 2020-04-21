@@ -23,7 +23,7 @@ Característica: Originacion
     Cuando el asesor marque como pendiente el paso de confirmacion
     Entonces el asesor deberia ver el crédito en confirmacion de creditos en la lista de pendientes
 
-  @Incorporacion
+  @Tesoreria
   Escenario: Incorporacion - Aprobar el credito desde incorporacion
     Dado que un asesor esta en el paso de incorporacion
     Cuando el asesor aprueba el credito en incorporacion
@@ -35,7 +35,7 @@ Característica: Originacion
     Cuando el asesor pone el credito como pendiente en incorporacion
     Entonces el asesor debera ver el credito en incorporacion en la lista de pendientes
 
-  @Incorporacion
+  @Tesoreria
   Escenario: Incorporacion - Regresar el credito desde incorporacion
     Dado que un asesor esta en el paso de incorporacion
     Cuando el asesor regresa el credito a aprobacion de creditos
@@ -47,7 +47,7 @@ Característica: Originacion
     Cuando el asesor aprueba el crédito en formalización
     Entonces el asesor deberá ver el crédito en el paso de tesoreria
 
-  @Formalizacion
+  @Tesoreria
   Escenario: Formalización - Regresar el crédito desde formalización
     Dado que un asesor esta en el paso de formalización
     Cuando el asesor regresa el crédito desde formalización
