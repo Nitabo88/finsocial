@@ -13,6 +13,10 @@ public class AbreLaPagina implements Task {
 
     private LoginFinsonetPage loginFinsocialPage;
 
+    public AbreLaPagina(LoginFinsonetPage loginFinsocialPage) {
+        this.loginFinsocialPage = loginFinsocialPage;
+    }
+
     public static Performable finsonet() {
         return instrumented(AbreLaPagina.class);
     }

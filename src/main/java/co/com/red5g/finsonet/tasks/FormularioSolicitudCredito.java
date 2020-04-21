@@ -28,6 +28,7 @@ import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class FormularioSolicitudCredito implements Task {
 
@@ -55,9 +56,9 @@ public class FormularioSolicitudCredito implements Task {
             Click.on(FormularioSolicitudPaso6Page.BTN_GUARDAR_CONTINUAR),
             Click.on(FormularioSolicitudPaso7Page.BTN_GUARDAR_CONTINUAR),
             Click.on(FormularioSolicitudPaso8Page.BTN_ENVIAR),
-            Click.on(BTN_ENCUESTA.of(respuestaEncuesta)),
-            Click.on(BTN_ENVIAR_ENCUESTA),
-            Click.on(BTN_ACEPTAR_ENCUESTA),
+            JavaScriptClick.on(BTN_ENCUESTA.of(respuestaEncuesta)),
+            JavaScriptClick.on(BTN_ENVIAR_ENCUESTA),
+            JavaScriptClick.on(BTN_ACEPTAR_ENCUESTA),
             cerrarPestana(),
             cambiarPestana()
         );

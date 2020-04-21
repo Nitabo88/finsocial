@@ -55,11 +55,10 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
             Click.on(BTN_ACEPTAR2_POP_UP),
             Click.on(BTN_ACEPTAR),
-            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_CODIGO_PAPELERIA));
+            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_CODIGO_PAPELERIA),
+            Click.on(BTN_ACEPTAR2));
         actor.attemptsTo(
-            Check.whether(BTN_ACEPTAR2.resolveFor(actor).isVisible()).andIfSo(
-                Click.on(BTN_ACEPTAR2),
-                WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            Check.whether(LBL_INFORMACION_ADICIONAL.resolveFor(actor).isVisible()).andIfSo(
                 MoveMouse.to(LST_PAPELERIA),
                 SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
                 Click.on(BTN_MODIFICAR_CREDITO),
