@@ -29,6 +29,7 @@ public final class IncorporacionPage {
   public static final Target BTN_REGISTRAR_REGRESAR = Target.the("el boton de registro de regresar").located(By.id("btn-aceptar-regreso"));
   public static final Target BTN_REGISTRAR_PENDIENTE = Target.the("el boton de registro de pendiente").located(By.id("btn-aceptar-pendiente2"));
 
+
   private IncorporacionPage() {
     throw new IllegalStateException("Utility class");
   }

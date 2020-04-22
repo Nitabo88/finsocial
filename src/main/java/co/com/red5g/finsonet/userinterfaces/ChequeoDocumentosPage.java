@@ -35,6 +35,7 @@ public final class ChequeoDocumentosPage {
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2"));
     public static final Target BTN_OK = Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]"));
     public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//i[@class='fas fa-upload white']"));
+    public static final Target BTN_UPLOAD_HUY = Target.the("icono de cargar Huy").located(By.xpath("//i[@class='fa fa-upload']"));
     public static final Target LNK_FILE_UPLOAD = Target.the("el input del archivor").located(By.id("fileUpload"));
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
         org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
