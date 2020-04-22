@@ -45,7 +45,7 @@ public class InformacionChequeoDocumentoHuy implements Task {
         WaitFor.seconds(2),
         Subir.losArchivosDeChequeoDocumentosHuy(),
         Click.on(BTN_CERRAR_POP_UP),
-        Click.on(BTN_FORMULARIO_SOLICITUD),
+        JavaScriptClick.on(BTN_FORMULARIO_SOLICITUD),
         cambiarPestanaActual(),
         Diligencia.laSolicitudDeCredito(),
         cerrarPestana(),

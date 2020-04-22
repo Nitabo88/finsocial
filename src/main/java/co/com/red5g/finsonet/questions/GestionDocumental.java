@@ -11,6 +11,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class GestionDocumental implements Question<String> {
 
@@ -25,7 +26,7 @@ public class GestionDocumental implements Question<String> {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     getProxiedDriver().navigate().refresh();
     actor.attemptsTo(
-        Click.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
+        JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
         Click.on(BTN_BUSQUEDA));
     return LBL_GESTION_DOCUMENTAL.of(numeroCredito).resolveFor(actor).getText();

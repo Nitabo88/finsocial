@@ -15,11 +15,13 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class RegresoTesoreria implements Task {
 
+  private static final int TIEMPO = 120;
   private final Tesoreria tesoreria;
 
   public RegresoTesoreria(Tesoreria tesoreria) {
@@ -30,11 +32,12 @@ public class RegresoTesoreria implements Task {
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
+        MoveMouse.to(BTN_ACCION_TESORERIA.of(numeroCredito, tesoreria.getAccion())),
         JavaScriptClick.on(BTN_ACCION_TESORERIA.of(numeroCredito, tesoreria.getAccion())),
         SelectFromOptions.byVisibleText(tesoreria.getSolicitadoPor()).from(LST_SOLICITADO_POR),
         Enter.theValue(tesoreria.getMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_REGISTRAR),
         JavaScriptClick.on(BTN_ACEPTAR),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(100).seconds());
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds());
   }
 }

@@ -24,7 +24,7 @@ public class AprobacionDeCreditoFinsoamigo implements Task {
   public <T extends Actor> void performAs(T actor) {
     List<WebElementFacade> lstNombreAprobacionFinsoamigo = LBL_NOMBRE_FINSOAMIGO.resolveAllFor(actor);
     actor.attemptsTo(
-        JavaScriptClick.on(lstNombreAprobacionFinsoamigo.get(1)));
+        JavaScriptClick.on(lstNombreAprobacionFinsoamigo.get(2)));
     actor.remember(NUMERO_CREDITO, obtenerUrl());
     actor.attemptsTo(
         WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO).seconds(),

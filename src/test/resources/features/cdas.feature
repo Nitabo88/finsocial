@@ -11,13 +11,13 @@ Característica: Cdas
     Cuando el asesor diligencia los CDAS del credito como completos
     Entonces el podra ver el credito en estado INCOMPLETO
 
-  @CdaLibranza
+
   Escenario: Cdas - Completo
     Dado que un asesor esta en el modulo de CDAS con la informacion previa completa
     Cuando el asesor diligencia los CDAS del credito como completos
     Entonces el podra ver el credito en estado COMPLETO
 
-  @CdaLibranza
+
   Escenario: Cdas - Excepcion
     Dado que un asesor esta en el modulo de CDAS con la informacion previa completa
     Cuando el asesor diligencia los CDAS del credito con excepcion

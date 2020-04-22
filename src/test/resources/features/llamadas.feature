@@ -25,6 +25,3 @@ Característica: Realizar gestion de llamada
     Cuando el asesor se asigne la gestión de la llamada del crédito Huy
     Y posteriormente procese la llamada del crédito Huy
     Entonces deberá ver que la gestión del credito Huy fue exitosa
-
-
-
