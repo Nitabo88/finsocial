@@ -7,7 +7,7 @@ public class CdasPage {
     public static final Target RDB_CRITERIO_BUSQUEDA = Target.the("el criterio de busqueda")
         .locatedBy("//div[@class='grid-criterio']//label[contains(.,'{0}')]");
     public static final Target TXT_VALOR_BUSQUEDA = Target.the("el valor de busqueda")
-        .locatedBy("#txtParBusqueda");
+        .located(By.xpath("//input[@id='txtParBusqueda']"));
     public static final Target BTN_BUSQUEDA = Target.the("el boton de busqueda")
         .locatedBy("#btn-parametro-busqueda");
     public static final Target BTN_DETALLE_GESTION = Target.the("el boton del detalle de gestion")

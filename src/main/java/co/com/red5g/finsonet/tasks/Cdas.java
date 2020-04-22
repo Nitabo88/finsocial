@@ -33,7 +33,7 @@ public class Cdas implements Task {
     actor.attemptsTo(
         JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
-        JavaScriptClick.on(BTN_BUSQUEDA),
+        Click.on(BTN_BUSQUEDA),
         JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
         cerrarPestanaAnterior(),
         cambiarPestanaActual(),

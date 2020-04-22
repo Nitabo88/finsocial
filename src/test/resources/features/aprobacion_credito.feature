@@ -18,7 +18,7 @@ Característica:  Aprobación Crédito
     Entonces el podrá ver el crédito en incorporación huy
 
   @AprobacionCreditosHuy
-  Escenario:  credito huy - pendiente
+  Escenario:  Crédito Huy - Marcar el crédito como pendiente en aprobación de créditos
     Dado que un asesor quiere normalizar un crédito huy en aprobación de créditos
     Cuando el crédito se ponga en la lista de pendientes
     Entonces el podrá ver el crédito en pendiente por documentación
