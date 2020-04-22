@@ -41,13 +41,13 @@ Característica: Originacion
     Cuando el asesor regresa el credito a aprobacion de creditos
     Entonces el asesor debera ver el credito en el paso de aprobacion de creditos
 
-
+  @Formalizacion
   Escenario: Formalización - Aprobar el crédito desde formalización
     Dado que un asesor esta en el paso de formalización
     Cuando el asesor aprueba el crédito en formalización
     Entonces el asesor deberá ver el crédito en el paso de tesoreria
 
-
+  @Formalizacion
   Escenario: Formalización - Regresar el crédito desde formalización
     Dado que un asesor esta en el paso de formalización
     Cuando el asesor regresa el crédito desde formalización

@@ -16,6 +16,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class PendienteFormalizacion implements Task {
@@ -39,6 +40,13 @@ public class PendienteFormalizacion implements Task {
         Click.on(BTN_ENVIAR),
         WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(BTN_OK)
+    );
+    actor.attemptsTo(
+        Check.whether(BTN_ENVIAR.resolveFor(actor).isPresent()).andIfSo(
+            Click.on(BTN_ENVIAR),
+            WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            Click.on(BTN_OK)
+        )
     );
   }
 }
