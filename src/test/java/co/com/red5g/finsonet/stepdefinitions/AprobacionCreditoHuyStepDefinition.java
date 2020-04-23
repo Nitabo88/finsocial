@@ -1,21 +1,22 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
-import static co.com.red5g.finsonet.models.builders.AprobacionCreditoBuilder.con;
-import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
+import co.com.red5g.finsonet.tasks.Negar;
 import co.com.red5g.finsonet.tasks.Normalizar;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-import cucumber.api.java.es.Y;
+
+import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.AprobacionCreditoBuilder.con;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
 public class AprobacionCreditoHuyStepDefinition {
 
@@ -45,7 +46,7 @@ public class AprobacionCreditoHuyStepDefinition {
     theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
-  @Y("^el crédito se ponga en la lista de pendientes$")
+  @Cuando("^el crédito se ponga en la lista de pendientes$")
   public void marcarCreditoPendiente() {
     theActorInTheSpotlight().attemptsTo(
             Diligencia.laInformacionDeCreditoHuyPendiente(con().motivoPendiente())
@@ -55,5 +56,16 @@ public class AprobacionCreditoHuyStepDefinition {
   @Entonces("^el podrá ver el crédito en pendiente por documentación$")
   public void verificarCreditoPendiente() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+  }
+
+  @Cuando("^el asesor rechace el crédito$")
+  public void rechazarCredito() {
+    theActorInTheSpotlight().attemptsTo(
+            Negar.laAprobacionDelCredito(con().motivoNegacionCredito()));
+  }
+
+  @Entonces("^el podrá ver el crédito en estado (.*)$")
+  public void verificarCreditoRechazado(String estado) {
+    theActorInTheSpotlight().should(seeThat(ElCredito.rechazado(), containsString(estado)));
   }
 }

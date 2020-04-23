@@ -22,13 +22,12 @@ Característica:  Aprobación Crédito
     Dado que un asesor quiere normalizar un crédito huy en aprobación de créditos
     Cuando el crédito se ponga en la lista de pendientes
     Entonces el podrá ver el crédito en pendiente por documentación
- #                                                          #
- # @AprobacionCreditosHuy
- # Escenario: credito huy - negar
- #   Dado que un asesor quiere negar un crédito huy en aprobación de créditos
- #   Cuando el asesor normalice el crédito
- #   Y niegue el crédito
- #   Entonces el podra ver el crédito en el listado de negado
+
+  @AprobacionCreditosHuy
+  Escenario: Crédito Huy - Negar aprobación del crédito
+    Dado que un asesor quiere negar un crédito huy en aprobación de créditos
+    Cuando el asesor rechace el crédito
+    Entonces el podrá ver el crédito en estado RECHAZADO
 
   @AprobacionCreditos
   Escenario: Aprobación de Créditos - Aprobar el crédito desde aprobación de créditos

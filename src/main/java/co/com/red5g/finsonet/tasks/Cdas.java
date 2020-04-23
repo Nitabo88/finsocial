@@ -19,8 +19,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class Cdas implements Task {
 
-  final AccionCdas accionCdas;
-
+  private AccionCdas accionCdas;
   private static final String ID_CREDITO = "ID crédito";
 
   public Cdas(AccionCdas accionCdas) {

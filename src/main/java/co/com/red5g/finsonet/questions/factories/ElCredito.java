@@ -79,4 +79,8 @@ public final class ElCredito {
     public static Question<Boolean> enPendientesAprobacionCreditoHuy() {
       return new PasoPendienteAprobacionDeCreditosHuy();
     }
+
+  public static Question<String> rechazado() {
+    return new RechazoAprobacionCreditoHuy();
+  }
 }
