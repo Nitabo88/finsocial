@@ -17,43 +17,43 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class IncorporacionStepDefinition {
 
-  @Dado("^que (.*) esta en el paso de incorporacion$")
+  @Dado("^que (.*) esta en el paso de incorporación$")
   public void ingresarIncorporacion(final String actor) {
     theActorCalled(actor).attemptsTo(
             Consulta.elCreditoEnIncorporacion(la().informacionDelCreditoIncorporacion())
     );
   }
 
-  @Cuando("^el asesor regresa el credito a aprobacion de creditos$")
+  @Cuando("^el asesor regresa el crédito a aprobación de créditos$")
   public void regresarCredito() {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laInformacionDeRegresoDeIncorporacion(con().motivoRegreso()));
   }
 
-  @Cuando("^el asesor pone el credito como pendiente en incorporacion$")
+  @Cuando("^el asesor pone el crédito como pendiente en incorporación$")
   public void marcarPendienteCredito() {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laInformacionDeCreditoPendienteEnIncorporacion(con().motivoPendiente()));
   }
 
-  @Cuando("^el asesor aprueba el credito en incorporacion$")
+  @Cuando("^el asesor aprueba el crédito en incorporación$")
   public void aprobarCredito() {
     theActorInTheSpotlight().attemptsTo(
         Diligencia.laAprobacionDelCreditoEnIncorporacion(con().aprobacion()));
   }
 
-  @Entonces("^el asesor debera ver el credito en el paso de aprobacion de creditos$")
+  @Entonces("^el asesor debera ver el crédito en el paso de aprobación de créditos$")
   public void verificarElCreditoEnAprobacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
-  @Entonces("^el asesor debera ver el credito en el paso de formalizacion$")
+  @Entonces("^el asesor deberá ver el crédito en el paso de formalización$")
   public void verificarCreditoEnFormalizacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enLaListDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
 
-  @Entonces("^el asesor debera ver el credito en incorporacion en la lista de pendientes$")
+  @Entonces("^el asesor deberá ver el crédito en incorporación en la lista de pendientes$")
   public void verificarElCreditoEnPendienteAprobacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaPendienteDeIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }
-  }
+}

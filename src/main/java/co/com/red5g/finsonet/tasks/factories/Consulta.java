@@ -3,14 +3,7 @@ package co.com.red5g.finsonet.tasks.factories;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.finsonet.tasks.AprobacionCreditoHuy;
-import co.com.red5g.finsonet.tasks.AprobacionCreditos;
-import co.com.red5g.finsonet.tasks.Confirmacion;
-import co.com.red5g.finsonet.tasks.Formalizacion;
-import co.com.red5g.finsonet.tasks.Incorporacion;
-import co.com.red5g.finsonet.tasks.ReporteLiquidacionComisiones;
-import co.com.red5g.finsonet.tasks.Reportes;
-import co.com.red5g.finsonet.tasks.Tesoreria;
+import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
 
 public final class Consulta {
@@ -49,4 +42,8 @@ public final class Consulta {
   public static Performable elCreditoEnAprobacionDeCreditosHuy(Credito credito) {
     return instrumented(AprobacionCreditoHuy.class, credito);
   }
+
+    public static Performable elCreditoEnIncorporacionHuy(Credito informacionCredito) {
+      return instrumented(IncorporacionCreditoHuy.class, informacionCredito);
+    }
 }

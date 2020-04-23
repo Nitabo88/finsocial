@@ -28,7 +28,8 @@ public final class IncorporacionPage {
       .locatedBy("//tr[@role='row']//td[contains(text(),'{0}')]//parent::tr//button[@data-original-title='Pendiente']");
   public static final Target BTN_REGISTRAR_REGRESAR = Target.the("el boton de registro de regresar").located(By.id("btn-aceptar-regreso"));
   public static final Target BTN_REGISTRAR_PENDIENTE = Target.the("el boton de registro de pendiente").located(By.id("btn-aceptar-pendiente2"));
-
+  public static final Target LST_INCORPORACION_HUY_NOMBRE = Target.the("la columna del nombre del credito")
+          .locatedBy("//td[contains(text(),'{0}')]//parent::tr//a[@href='formOrigHuy.php?crid={0}']");
 
   private IncorporacionPage() {
     throw new IllegalStateException("Utility class");
