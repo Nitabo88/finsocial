@@ -19,7 +19,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 public class Incorporacion implements Task {
 
   private static final String SALIR = "Salir";
-  private static final String INCORPORACION = "Incorporación";
+  private static final String MNM_INCORPORACION = "Incorporación";
 
   private Credito credito;
 
@@ -37,7 +37,7 @@ public class Incorporacion implements Task {
         Ingresa.lasCredenciales(de().unUsuarioBasico()),
         WaitFor.seconds(3),
         JavaScriptClick.on(LNK_ORIGINACION),
-        Click.on(MNM_ORIGINACION.of(INCORPORACION))
+        Click.on(MNM_ORIGINACION.of(MNM_INCORPORACION))
     );
   }
 }

@@ -14,7 +14,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 
 public class Tesoreria implements Task {
 
-  private static final String TESORERIA = "Tesorería";
+  private static final String MNM_TESORERIA = "Tesorería";
   private static final int TIEMPO = 150;
   private Credito credito;
 
@@ -27,7 +27,7 @@ public class Tesoreria implements Task {
     actor.attemptsTo(
         Consulta.elCreditoEnFormalizacion(credito),
         Diligencia.laAprobacionDelCreditoEnFormalizacion(),
-        Click.on(MNM_ORIGINACION.of(TESORERIA)),
+        Click.on(MNM_ORIGINACION.of(MNM_TESORERIA)),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds()
     );
   }

@@ -18,7 +18,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Formalizacion implements Task {
 
-  private static final String FORMALIZACION = "Formalización";
+  private static final String MNM_FORMALIZACION = "Formalización";
   private static final int TIEMPO = 200;
 
   private Credito credito;
@@ -35,10 +35,10 @@ public class Formalizacion implements Task {
     actor.attemptsTo(
         Check.whether(!LBL_INCORPORACION.resolveFor(actor).isVisible())
             .andIfSo(
-                Click.on(MNM_ORIGINACION.of(FORMALIZACION))
+                Click.on(MNM_ORIGINACION.of(MNM_FORMALIZACION))
             ).otherwise(
             WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(MNM_HAMBURGUESA),
-            Click.on(MNM_NUEVO_ORIGINACION.of(FORMALIZACION))));
+            Click.on(MNM_NUEVO_ORIGINACION.of(MNM_FORMALIZACION))));
   }
 }

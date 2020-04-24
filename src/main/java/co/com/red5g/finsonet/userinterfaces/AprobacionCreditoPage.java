@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 
 
 
-public final class AprobacionCreditoPage {
+public class AprobacionCreditoPage {
   public static final Target BTN_APROBAR = Target.the("El boton aprobar").located(By.xpath("//button[contains(.,'Aprobar')]"));
   public static final Target LBL_POLITICAS_CREDITO = Target.the("El label de politicas de credito").located(By.xpath("//h3[contains(.,'Políticas del crédito')]"));
   public static final Target BTN_OK = Target.the("El boton ok").located(By.xpath("//button[@class='confirm'][contains(.,'OK')]"));

@@ -9,7 +9,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.*;
