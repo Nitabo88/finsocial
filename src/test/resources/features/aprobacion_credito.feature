@@ -6,7 +6,7 @@ Característica:  Aprobación Crédito
   para revisar que el proceso funcione correctamente
 
   @AprobacionCreditosFinsoamigos
-  Escenario: Aprobación Finsoamigos - Aprobación chequeo de documentos
+  Escenario: Aprobación Finsoamigos - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo
     Cuando el asesor diligencia la información de aprobación de crédito finsoamigo
     Entonces deberá ver el crédito en el paso de tesorería de finsoamigos
@@ -17,13 +17,13 @@ Característica:  Aprobación Crédito
     Cuando el asesor diligencia la información de aprobación de crédito huy
     Entonces el podrá ver el crédito en incorporación huy
 
-
+  @AprobacionCreditosHuy
   Escenario:  Crédito Huy - Marcar el crédito como pendiente en aprobación de créditos
     Dado que un asesor quiere normalizar un crédito huy en aprobación de créditos
     Cuando el crédito se ponga en la lista de pendientes
     Entonces el podrá ver el crédito en pendiente por documentación
 
-
+  @AprobacionCreditosHuy
   Escenario: Crédito Huy - Negar aprobación del crédito
     Dado que un asesor quiere negar un crédito huy en aprobación de créditos
     Cuando el asesor rechace el crédito
