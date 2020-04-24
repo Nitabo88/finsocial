@@ -6,8 +6,11 @@ import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
+import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
-import co.com.red5g.finsonet.tasks.InformacionCredito;
+import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.InformacionLogin;
 import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
@@ -16,6 +19,7 @@ import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
 import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
 import co.com.red5g.finsonet.tasks.ModuloCdas;
 import co.com.red5g.finsonet.tasks.ModuloCdasCompleto;
+import co.com.red5g.finsonet.tasks.NuevoCreditoHuy;
 import co.com.red5g.finsonet.tasks.ReporteAntecartera;
 import co.com.red5g.finsonet.tasks.ReporteOriginacion;
 import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
@@ -44,7 +48,7 @@ public final class Ingresa {
     }
 
     public static Performable laInformacionDelCredito(Credito credito) {
-        return instrumented(InformacionCredito.class, credito);
+        return instrumented(InformacionCreditoLibranza.class, credito);
     }
 
     public static Performable lasCredenciales(Credenciales credenciales) {
@@ -79,11 +83,27 @@ public final class Ingresa {
         return instrumented(InformacionCreditoHuy.class, informacionDelCreditoHuy);
     }
 
-    public static Performable alModuloCDAS() {
-        return instrumented(ModuloCdas.class);
+    public static Performable alModuloCDAS(Credito credito) {
+        return instrumented(ModuloCdas.class, credito);
     }
 
-    public static Performable alModuloCDASCompleto() {
-        return instrumented(ModuloCdasCompleto.class);
+    public static Performable alModuloCDASCompleto(Credito credito) {
+        return instrumented(ModuloCdasCompleto.class, credito);
+    }
+
+  public static Performable aChequeoDocumentosFinsoamigo() {
+        return instrumented(ChequeoDocumentoFinsoamigo.class);
+  }
+
+    public static Performable aAprobacionFinsoamigo() {
+        return instrumented(AprobacionCreditoFinsoamigo.class);
+    }
+
+    public static Performable aChequeoDocumentosHuy(Credito credito) {
+        return instrumented(ChequeoDocumentoHuy.class, credito);
+    }
+
+    public static Performable enNuevoCreditoHuy() {
+        return instrumented(NuevoCreditoHuy.class);
     }
 }

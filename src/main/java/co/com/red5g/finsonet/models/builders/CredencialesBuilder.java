@@ -32,13 +32,13 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     return new CredencialesBuilder();
   }
 
-  private CredencialesBuilder conCelular(final String celular) {
-    this.celular = celular;
+  private CredencialesBuilder conCelular() {
+    this.celular = "3014573510";
     return this;
   }
 
-  private CredencialesBuilder conEmail(final String email) {
-    this.email = email;
+  private CredencialesBuilder conEmail() {
+    this.email = "sqa4@finsocial.co";
     return this;
   }
 
@@ -81,8 +81,8 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     conUsuario(USUARIO_FINSOCIAL.getUsuario());
     conContrasena(USUARIO_FINSOCIAL.getContrasena());
     conCodigo(USUARIO_FINSOCIAL.getCodigo());
-    conCelular("3045341711");
-    conEmail("sqa4@finsocial.co");
+    conCelular();
+    conEmail();
     return build();
   }
 
@@ -90,6 +90,8 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     conUsuario(USUARIO_DOCUMENTOS.getUsuario());
     conContrasena(USUARIO_DOCUMENTOS.getContrasena());
     conCodigo(USUARIO_DOCUMENTOS.getCodigo());
+    conCelular();
+    conEmail();
     return build();
   }
 
@@ -97,6 +99,8 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     conUsuario(usuario);
     conContrasena(contrasena);
     conCodigo(codigo);
+    conCelular();
+    conEmail();
     return build();
   }
 
@@ -104,6 +108,8 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     this.conUsuario(USUARIO_APROBACION_CREDITOS.getUsuario());
     this.conContrasena(USUARIO_APROBACION_CREDITOS.getContrasena());
     this.conCodigo(USUARIO_APROBACION_CREDITOS.getCodigo());
+    conCelular();
+    conEmail();
     return this.build();
   }
 }

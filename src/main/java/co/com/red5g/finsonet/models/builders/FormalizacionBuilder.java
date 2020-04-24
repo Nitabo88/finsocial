@@ -33,7 +33,7 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
   public Formalizacion motivoPendiente() {
     this.accion("Pendiente");
     this.motivo("Espera de papeleria");
-    this.detalleMotivo("El usuario tiene los documentos incompletos");
+    this.detalleMotivo();
     return this.build();
   }
 
@@ -47,8 +47,8 @@ public class FormalizacionBuilder implements Builder<Formalizacion> {
     return this;
   }
 
-  private FormalizacionBuilder detalleMotivo(String detalleMotivo) {
-    this.detalleMotivo = detalleMotivo;
+  private FormalizacionBuilder detalleMotivo() {
+    this.detalleMotivo = "El usuario tiene los documentos incompletos";
     return this;
   }
 

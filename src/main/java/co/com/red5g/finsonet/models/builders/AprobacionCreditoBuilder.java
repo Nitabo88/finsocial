@@ -42,6 +42,12 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     return this.build();
   }
 
+  public AprobacionCredito motivoNegacionCredito() {
+    this.conSeleccionMotivo("ALTO RIESGO");
+    this.conRazonMotivo("El usuario es de alto riesgo");
+    return this.build();
+  }
+
   private AprobacionCreditoBuilder conRazonMotivo(String razonMotivo) {
     this.razonMotivo = razonMotivo;
     return this;

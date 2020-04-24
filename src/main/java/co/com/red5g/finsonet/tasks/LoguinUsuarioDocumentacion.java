@@ -5,10 +5,11 @@ import static co.com.red5g.finsonet.userinterfaces.AuxiliarOperativoPage.LNK_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_CHEQUEO_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_AUXILIAR_OPERATIVO;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNU_MI_CUENTA;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -24,9 +25,9 @@ public class LoguinUsuarioDocumentacion implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Click.on(BTN_MI_CUENTA),
-        Click.on(MNU_MI_CUENTA.of(OPCION_SALIR)),
+        Click.on(MNM_MI_CUENTA.of(OPCION_SALIR)),
         Ingresa.lasCredenciales(de().unUsuarioDeDocumentacion()),
-        WaitUntil.the(LNK_AUXILIAR_OPERATIVO, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+        WaitFor.seconds(3),
         Click.on(LNK_AUXILIAR_OPERATIVO),
         WaitUntil.the(LNK_CHEQUEO_DOCUMENTOS, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(LNK_CHEQUEO_DOCUMENTOS),

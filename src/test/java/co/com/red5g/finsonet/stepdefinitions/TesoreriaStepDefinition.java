@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.TesoreriaBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -16,24 +17,24 @@ import cucumber.api.java.es.Entonces;
 
 public class TesoreriaStepDefinition {
 
-  @Dado("^que (.*) esta en el paso de tesoreria$")
+  @Dado("^que (.*) esta en el paso de tesorería$")
   public void ingresarTesoreria(String actor) {
-    theActorCalled(actor).attemptsTo(Consulta.elCreditoEnTesoreria());
+    theActorCalled(actor).attemptsTo(Consulta.elCreditoEnTesoreria(la().informacionDelCreditoTesoreria()));
   }
 
-  @Cuando("^el asesor regresa el credito desde tesoreria$")
+  @Cuando("^el asesor regresa el crédito desde tesorería$")
   public void regresarCredito() {
     theActorInTheSpotlight()
         .attemptsTo(Diligencia.laInformacionDeRegresoDeTesoreria(con().motivoRegreso()));
   }
 
-  @Cuando("^el asesor pone el credito como pendiente en tesoreria$")
+  @Cuando("^el asesor pone el crédito como pendiente en tesorería$")
   public void creditoPendiente() {
     theActorInTheSpotlight()
         .attemptsTo(Diligencia.laInformacionTesoreriaPendiente(con().motivoPendiente()));
   }
 
-  @Entonces("^el asesor debera ver el credito en tesoreria en la lista de pendientes$")
+  @Entonces("^el asesor deberá ver el crédito en tesorería en la lista de pendientes$")
   public void verificarCreditoPendiente() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeTesoreria()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
   }

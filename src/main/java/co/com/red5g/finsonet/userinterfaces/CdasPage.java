@@ -7,7 +7,7 @@ public class CdasPage {
     public static final Target RDB_CRITERIO_BUSQUEDA = Target.the("el criterio de busqueda")
         .locatedBy("//div[@class='grid-criterio']//label[contains(.,'{0}')]");
     public static final Target TXT_VALOR_BUSQUEDA = Target.the("el valor de busqueda")
-        .locatedBy("#txtParBusqueda");
+        .located(By.xpath("//input[@id='txtParBusqueda']"));
     public static final Target BTN_BUSQUEDA = Target.the("el boton de busqueda")
         .locatedBy("#btn-parametro-busqueda");
     public static final Target BTN_DETALLE_GESTION = Target.the("el boton del detalle de gestion")
@@ -30,6 +30,8 @@ public class CdasPage {
         .locatedBy("#btn-back");
     public static final Target BTN_ACCION_GESTION = Target.the("el boton accion gestion")
         .located(By.xpath("//button[@class='bg-square-button white bg-green']"));
+    public static final Target LBL_ESTADO_ACTUAL = Target.the("el estado del credito")
+            .locatedBy("//td[text()='{0}']//parent::tr");
 
 
     private CdasPage() {

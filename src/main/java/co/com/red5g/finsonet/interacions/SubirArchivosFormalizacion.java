@@ -4,7 +4,6 @@ import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ENVIAR_
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_SELECCIONAR_ARCHIVO;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_UPLOAD;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LNK_FILE;
-import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,24 +12,19 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.Upload;
-import org.openqa.selenium.JavascriptExecutor;
 
 public class SubirArchivosFormalizacion implements Interaction {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     Path path = Paths.get("./src/test/resources/file/prueba.pdf");
-    ((JavascriptExecutor) getProxiedDriver())
-        .executeScript(
-            "HTMLInputElement.prototype.click = function() { if(this.type !== 'file') HTMLElement.prototype.click.call(this); };");
+    Desactivar.ventanaSubirArchivo();
     while (!BTN_UPLOAD.resolveAllFor(actor).isEmpty()) {
-      for (int i = 0; i < BTN_UPLOAD.resolveAllFor(actor).size(); i++) {
         actor.attemptsTo(
-            JavaScriptClick.on(BTN_UPLOAD.resolveAllFor(actor).get(i)),
+            JavaScriptClick.on(BTN_UPLOAD.resolveFor(actor)),
             JavaScriptClick.on(BTN_SELECCIONAR_ARCHIVO),
             Upload.theFile(path).to(LNK_FILE),
             Click.on(BTN_ENVIAR_FILE));
       }
-    }
   }
 }

@@ -19,8 +19,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class Cdas implements Task {
 
-  final AccionCdas accionCdas;
-
+  private AccionCdas accionCdas;
   private static final String ID_CREDITO = "ID crédito";
 
   public Cdas(AccionCdas accionCdas) {
@@ -33,7 +32,7 @@ public class Cdas implements Task {
     actor.attemptsTo(
         JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
         Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
-        JavaScriptClick.on(BTN_BUSQUEDA),
+        Click.on(BTN_BUSQUEDA),
         JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
         cerrarPestanaAnterior(),
         cambiarPestanaActual(),

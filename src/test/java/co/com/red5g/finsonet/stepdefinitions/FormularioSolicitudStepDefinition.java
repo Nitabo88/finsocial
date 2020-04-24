@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.questions.ElFormulario.fueEnviado;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -18,7 +19,7 @@ public class FormularioSolicitudStepDefinition {
     @Dado("que un (.*) quiere llenar el formulario de solicitud de credito")
     public void ingresarFormularioSolicitud(String actor) {
         theActorCalled(actor).attemptsTo(
-                Ubicarse.enElFormulario()
+                Ubicarse.enElFormulario(la().informacionDelCreditoFormulario())
         );
     }
 

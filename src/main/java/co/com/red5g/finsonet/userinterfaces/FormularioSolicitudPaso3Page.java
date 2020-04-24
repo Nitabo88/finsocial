@@ -5,11 +5,11 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public final class FormularioSolicitudPaso3Page {
-    public static final Target RBN_DECLARA_RENTA = Target.the("la opcion de declara renta").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtDeRenta']");
-    public static final Target RBN_OCUPACION = Target.the("la opcion de ocupacion").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdOcupacion']");
-    public static final Target RBN_IMPACTO_CARGO = Target.the("la opcion de influencia del cargo para la sociedad").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtDesicionCargo']");
-    public static final Target RBN_RECURSOS_PUBLICOS = Target.the("la opcion de si maneja recursos publicos").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtrecPublicos']");
-    public static final Target RBN_PERSONAJE_PUBLICO = Target.the("la opcion de si es un personaje publico").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtPerPubl']");
+    public static final Target RDB_DECLARA_RENTA = Target.the("la opcion de declara renta").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtDeRenta']");
+    public static final Target RDB_OCUPACION = Target.the("la opcion de ocupacion").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdOcupacion']");
+    public static final Target RDB_IMPACTO_CARGO = Target.the("la opcion de influencia del cargo para la sociedad").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtDesicionCargo']");
+    public static final Target RDB_RECURSOS_PUBLICOS = Target.the("la opcion de si maneja recursos publicos").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtrecPublicos']");
+    public static final Target RDB_PERSONAJE_PUBLICO = Target.the("la opcion de si es un personaje publico").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtPerPubl']");
     public static final Target LST_OPCIONES = Target.the("las opciones de lista").locatedBy("//ul[@class='dropdown-menu inner']");
     public static final Target FILTRO_LISTA= Target.the("el filtro de la lista").locatedBy("//div[@class='btn-group bootstrap-select input-form pen dropup open']//input[@class='form-control']");
     public static final Target BTN_EMPRESA = Target.the("la empresa donde trabaja").located(By.xpath("//button[@data-id='txtEmpresa']"));

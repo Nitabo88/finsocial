@@ -17,7 +17,7 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class RealizarVeto implements Task {
-    private static final int TIEMPO = 1;
+    private static final int TIEMPO = 40;
     private final Vetados vetados;
 
     public RealizarVeto(Vetados vetados) {
