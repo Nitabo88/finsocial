@@ -16,3 +16,21 @@ Característica:  Tesorería
     Dado que un asesor esta en el paso de tesorería
     Cuando el asesor pone el crédito como pendiente en tesorería
     Entonces el asesor deberá ver el crédito en tesorería en la lista de pendientes
+
+  @Tesoreria
+  Escenario: Tesorería - Aprobación del crédito en tesorería
+    Dado que un asesor esta en el paso de tesorería
+    Cuando el asesor aprueba el crédito en tesorería
+    Entonces el asesor deberá ver el crédito en cartera
+
+  @TesoreriaHuy
+  Escenario: Tesorería CrediHuy - Aprobación del crédito en tesorería
+    Dado que un asesor esta en el paso de tesorería credihuy
+    Cuando el asesor aprueba el crédito en tesorería credihuy
+    Entonces el asesor deberá ver el crédito en carteraó
+
+  @TesoreriaFinsoamigo
+  Escenario: Tesorería Finsoamigo - Aprobación del crédito en tesorería
+    Dado que un asesor esta en el paso de tesorería finsoamigos
+    Cuando el asesor aprueba el crédito en tesorería finsoamitgos
+    Entonces el asesor deberá ver el crédito en cartera
