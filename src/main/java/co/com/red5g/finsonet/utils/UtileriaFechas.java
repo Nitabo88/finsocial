@@ -7,21 +7,16 @@ import java.util.Date;
 
 public class UtileriaFechas {
 
-    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) - 1);
-    private static String anio = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
+    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) + 1);
+    private static String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {
         throw new IllegalStateException("Utileria Fechas");
     }
 
-    public static String masUnMinuto(String minuto) {
-        String[] hora = minuto.split(":");
-        return Integer.parseInt(hora[1]) + 1 < 10 ? hora[0] + ":0" + (Integer.parseInt(hora[1]) + 1) : hora[0] + ":" + (Integer.parseInt(hora[1]) + 1);
-    }
-
     public static String formatearFechaServidorUTC() {
         Date fecha = new Date(System.currentTimeMillis());
-        DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-dd HH:");
         return fechaFormateada.format(fecha);
     }
 
@@ -33,6 +28,6 @@ public class UtileriaFechas {
         if (mes.length() < 2) {
             mes = "0" + mes;
         }
-        return UtileriaFechas.anio + "-" + UtileriaFechas.mes;
+        return UtileriaFechas.year + "-" + UtileriaFechas.mes;
     }
 }

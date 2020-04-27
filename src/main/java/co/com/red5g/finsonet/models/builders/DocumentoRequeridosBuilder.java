@@ -42,37 +42,37 @@ public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos
         return strVinculacion;
     }
 
-    private DocumentoRequeridosBuilder conTipoSolicitud(String strTipoSolicitud) {
-        this.strTipoSolicitud = strTipoSolicitud;
+    private DocumentoRequeridosBuilder conTipoSolicitud() {
+        this.strTipoSolicitud = "Solicitante";
         return this;
     }
 
-    private DocumentoRequeridosBuilder conCiudad(String strCiudad) {
-        this.strCiudad = strCiudad;
+    private DocumentoRequeridosBuilder conCiudad() {
+        this.strCiudad = "MEDELLIN - ANTIOQUIA";
         return this;
     }
 
-    private DocumentoRequeridosBuilder conCalificacion(String strCalificacion) {
-        this.strCalificacion = strCalificacion;
+    private DocumentoRequeridosBuilder conCalificacion() {
+        this.strCalificacion = "660";
         return this;
     }
 
-    private DocumentoRequeridosBuilder conAgenciaVinculacion(String strAgenciaVinculacion) {
-        this.strAgenciaVinculacion = strAgenciaVinculacion;
+    private DocumentoRequeridosBuilder conAgenciaVinculacion() {
+        this.strAgenciaVinculacion = "Institucional Medellin";
         return this;
     }
 
-    private DocumentoRequeridosBuilder conVinculacion(String strVinculacion) {
-        this.strVinculacion = strVinculacion;
+    private DocumentoRequeridosBuilder conVinculacion() {
+        this.strVinculacion = "Sí";
         return this;
     }
 
     public DocumentosRequeridos documentosSolicitante() {
-      this.conTipoSolicitud("Solicitante");
-      this.conCiudad("MEDELLIN - ANTIOQUIA");
-      this.conAgenciaVinculacion("Institucional Medellin");
-      this.conCalificacion("660");
-      this.conVinculacion("Sí");
+      this.conTipoSolicitud();
+      this.conCiudad();
+      this.conAgenciaVinculacion();
+      this.conCalificacion();
+      this.conVinculacion();
         return this.build();
     }
 

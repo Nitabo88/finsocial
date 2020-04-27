@@ -55,7 +55,7 @@ public class SeleccionarFecha implements Interaction {
                 Click.on(DTP_DIA.of(opcionDia)));
     }
 
-    public static SeleccionarFecha ofConsult(Target calendar, String date) {
+    public static SeleccionarFecha deConsulta(Target calendar, String date) {
         return new SeleccionarFecha(calendar, date);
     }
 

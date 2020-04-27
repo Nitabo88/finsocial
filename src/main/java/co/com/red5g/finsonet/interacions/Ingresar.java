@@ -1,10 +1,9 @@
 package co.com.red5g.finsonet.interacions;
 
 import static co.com.red5g.finsonet.questions.ObtenerUrl.obtenerUrl;
-import static co.com.red5g.finsonet.questions.SeleccionarColumna.seleccionarColumna;
-import static co.com.red5g.finsonet.tasks.InformacionCredito.CEDULA_ACTOR;
-import static co.com.red5g.finsonet.tasks.InformacionCredito.FECHA_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_FILA_CREDITOS;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_COLUMNA_FORMULARIO_SOLICITUD;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import java.util.List;
@@ -24,9 +23,11 @@ public class Ingresar implements Interaction {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        List<WebElementFacade> lstCredito = seleccionarColumna(LST_FILA_CREDITOS, actor.recall(CEDULA_ACTOR), actor.recall(FECHA_CREDITO)).answeredBy(actor);
+        String numeroCedula = actor.recall(CEDULA_ACTOR);
+        String fecha = actor.recall(FECHA);
+        List<WebElementFacade> lstCredito = LST_COLUMNA_FORMULARIO_SOLICITUD.of(numeroCedula, fecha).resolveAllFor(actor);
         actor.attemptsTo(
-            Click.on(lstCredito.get(2))
+            Click.on(lstCredito.get(0))
         );
         String url = obtenerUrl().answeredBy(actor);
         actor.remember(NUMERO_CREDITO, url);

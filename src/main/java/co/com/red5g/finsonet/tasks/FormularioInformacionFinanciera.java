@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.*;
 
 public class FormularioInformacionFinanciera implements Task {
-    co.com.red5g.finsonet.models.InformacionFinanciera informacionFinanciera;
+    final co.com.red5g.finsonet.models.InformacionFinanciera informacionFinanciera;
 
     public FormularioInformacionFinanciera(co.com.red5g.finsonet.models.InformacionFinanciera informacionFinanciera) {
         this.informacionFinanciera = informacionFinanciera;
@@ -35,8 +35,8 @@ public class FormularioInformacionFinanciera implements Task {
                 Enter.theValue(informacionFinanciera.getPagoHipoteca()).into(TXT_PAGO_HIPOTECA),
                 Enter.theValue(informacionFinanciera.getValorComercialVivienda()).into(TXT_VALOR_COMERCIAL_VIVIENDA),
                 Enter.theValue(informacionFinanciera.getDondeVivir()).into(TXT_DONDE_VIVIR),
-                Click.on(RBN_COMPRAR_VIVIENDA.of(informacionFinanciera.getComprarVivienda())),
-                Click.on(RBN_CUPO_EXTRA_LIBRANZA.of(informacionFinanciera.getCupoExtraLibranza())),
+                Click.on(RDB_COMPRAR_VIVIENDA.of(informacionFinanciera.getComprarVivienda())),
+                Click.on(RDB_CUPO_EXTRA_LIBRANZA.of(informacionFinanciera.getCupoExtraLibranza())),
                 Seleccionar.opcionLista(informacionFinanciera.getUsoCredito(), BTN_RAZON_CREDITO, LST_RAZON_CREDITO)
         );
     }

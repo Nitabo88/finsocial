@@ -60,48 +60,48 @@ public class InformacionConyugueBuilder implements Builder<InformacionConyugue> 
     }
 
     public InformacionConyugue informacionLaboralConyugue() {
-      this.conLugarDondeTrabaja("Accenture");
-      this.conOcupacion("Empleado");
-      this.conDependenciaEconomica("NO");
-      this.conFechaIngreso("2018-May-2");
-      this.conCargoActual("Sicologa");
-      this.conTotalIngresos("2000000");
-      this.conTotalEgresos("1500000");
+      this.conLugarDondeTrabaja();
+      this.conOcupacion();
+      this.conDependenciaEconomica();
+      this.conFechaIngreso();
+      this.conCargoActual();
+      this.conTotalIngresos();
+      this.conTotalEgresos();
         return this.build();
     }
 
-    private InformacionConyugueBuilder conTotalEgresos(String totalEgresos) {
-        this.totalEgresos = totalEgresos;
+    private InformacionConyugueBuilder conTotalEgresos() {
+        this.totalEgresos = "1500000";
         return this;
     }
 
-    private InformacionConyugueBuilder conTotalIngresos(String totalIngresos) {
-        this.totalIngresos = totalIngresos;
+    private InformacionConyugueBuilder conTotalIngresos() {
+        this.totalIngresos = "2000000";
         return this;
     }
 
-    private InformacionConyugueBuilder conCargoActual(String cargoActual) {
-        this.cargoActual = cargoActual;
+    private InformacionConyugueBuilder conCargoActual() {
+        this.cargoActual = "Sicologa";
         return this;
     }
 
-    private InformacionConyugueBuilder conFechaIngreso(String fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
+    private InformacionConyugueBuilder conFechaIngreso() {
+        this.fechaIngreso = "2018-May-2";
         return this;
     }
 
-    private InformacionConyugueBuilder conDependenciaEconomica(String dependenciaEconomica) {
-        this.dependenciaEconomica = dependenciaEconomica;
+    private InformacionConyugueBuilder conDependenciaEconomica() {
+        this.dependenciaEconomica = "NO";
         return this;
     }
 
-    private InformacionConyugueBuilder conOcupacion(String ocupacion) {
-        this.ocupacion = ocupacion;
+    private InformacionConyugueBuilder conOcupacion() {
+        this.ocupacion = "Empleado";
         return this;
     }
 
-    private InformacionConyugueBuilder conLugarDondeTrabaja(String lugarDondeTrabaja) {
-        this.lugarDondeTrabaja = lugarDondeTrabaja;
+    private InformacionConyugueBuilder conLugarDondeTrabaja() {
+        this.lugarDondeTrabaja = "Accenture";
         return this;
     }
 }

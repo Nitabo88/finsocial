@@ -8,15 +8,11 @@ public final class FormularioSolicitudPaso4Page {
     public static final Target TXT_ACTIVOS_FIJOS = Target.the("el valor de activos fijos").located(By.id("activos_fijos"));
     public static final Target TXT_OTROS_ACTIVOS = Target.the("el valor de otros activos").located(By.id("otros_activos"));
     public static final Target TXT_CUALES_ACTIVOS = Target.the("cuales activos?").located(By.id("cuales_activos"));
-    public static final Target TXT_PASIVOS_CORRIENTES = Target.the("El valor de pasivos corrientes").located(By.id("pasivos_corrientes"));
     public static final Target TXT_PASIVOS_FINANCIEROS = Target.the("El valor de pasivos financieros").located(By.id("pasivos_financieros"));
     public static final Target TXT_OTROS_PASIVOS = Target.the("El valor de otros pasivos").located(By.id("pasivos_corrientes"));
     public static final Target TXT_CUALES_PASIVOS = Target.the("cuales pasivos").located(By.id("cuales_pasivos"));
-    public static final Target TXT_TOTAL_ACTIVOS = Target.the("El valor total activos").located(By.id("total_activos"));
-    public static final Target TXT_TOTAL_PASIVOS = Target.the("El valor total pasivos").located(By.id("total_pasivos"));
-    public static final Target RBN_COMPRAR_VIVIENDA = Target.the("la opcion de comprar vivienda").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCompViv']");
-    public static final Target RBN_CUPO_EXTRA_LIBRANZA = Target.the("la opcion de cupo de libranza").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCupoExtra']");
-    public static final Target LST_USO_CREDITO = Target.the("como va utilizar el dinero").located(By.id("cmbRazondecredito"));
+    public static final Target RDB_COMPRAR_VIVIENDA = Target.the("la opcion de comprar vivienda").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCompViv']");
+    public static final Target RDB_CUPO_EXTRA_LIBRANZA = Target.the("la opcion de cupo de libranza").locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdCupoExtra']");
     public static final Target TXT_TIPO_INMUEBLE = Target.the("el tipo de inmueble").located(By.id("txtTipoInm"));
     public static final Target TXT_VALOR_COMERCIAL_INMUEBLE = Target.the("el valor comercial").located(By.id("txtValorComInm"));
     public static final Target TXT_HIPOTECADO = Target.the("hipotecado a").located(By.id("txtHipotecado"));
@@ -36,7 +32,6 @@ public final class FormularioSolicitudPaso4Page {
     public static final Target TXT_HONORARIOS = Target.the("los honorarios").located(By.id("txtHonorarios"));
     public static final Target TXT_OTRO_INGRESOS = Target.the("otros ingresos").located(By.id("txtOtrosIng"));
     public static final Target TXT_CUALES_INGRESOS = Target.the("cuales ingresos").located(By.id("txtCualesIng"));
-    public static final Target TXT_TOTAL_INGRESOS = Target.the("el total de ingresos").located(By.id("txtTIngresos"));
     public static final Target TXT_ARRIENDOS = Target.the("el total de arriendos").located(By.id("txtArriendos"));
     public static final Target TXT_GASTOS_PERSONALES = Target.the("los gastos personales").located(By.id("txtGastosPer"));
     public static final Target TXT_PRESTAMOS_DIFERENTES = Target.the("los prestamos en otras instituciones").located(By.id("txtPresDfFin"));
@@ -49,7 +44,6 @@ public final class FormularioSolicitudPaso4Page {
     public static final Target TXT_DONDE_VIVIR = Target.the("donde le gustaria vivir").located(By.id("txtGustaVivir"));
     public static final Target BTN_RAZON_CREDITO = Target.the("la razon del credito").located(By.xpath("//button[@data-id='cmbRazondecredito']"));
     public static final Target LST_RAZON_CREDITO = Target.the("la razon del credito").locatedBy("//div[@class='btn-group bootstrap-select input-form requerir dropup open']//ul[@class='dropdown-menu inner']");
-    public static final Target BTN_REGRESAR = Target.the("el boton regresar").located(By.id("btnRegresar_4"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_4"));
 
     private FormularioSolicitudPaso4Page() {

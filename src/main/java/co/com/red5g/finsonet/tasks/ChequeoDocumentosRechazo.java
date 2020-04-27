@@ -7,8 +7,8 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PEN
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_AREA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -32,22 +32,21 @@ public class ChequeoDocumentosRechazo implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS.of(numeroCredito)));
-        actor.attemptsTo(
+            JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS.of(numeroCredito)),
             SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
             WaitUntil.the(BTN_ENVIAR, isEnabled()),
             Click.on(BTN_ENVIAR),
-            WaitFor.seconds(TIEMPO),
-            Click.on(BTN_OK),
+            WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            Click.on(BTN_OK));
+        actor.attemptsTo(
             Check.whether(
                 BTN_ENVIAR.resolveFor(actor).isPresent())
                 .andIfSo(
                     Click.on(BTN_ENVIAR),
-                    WaitFor.seconds(TIEMPO),
+                    WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
                     Click.on(BTN_OK)
                 )
-                .otherwise(WaitFor.seconds(TIEMPO))
         );
     }
 }

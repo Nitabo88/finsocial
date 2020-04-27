@@ -14,7 +14,6 @@ public class ObtenerUrl implements Question<String> {
   public String answeredBy(Actor actor) {
     String url = BrowseTheWeb.as(actor).getDriver().getCurrentUrl();
     String[] lstUrl = url.split("=");
-    return lstUrl[1];
+    return lstUrl[1].replaceAll("[^\\d]", "");
   }
-
 }

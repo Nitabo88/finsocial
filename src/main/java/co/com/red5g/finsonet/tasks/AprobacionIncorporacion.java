@@ -7,7 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_INCORPORACION_NOMBRE;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.BTN_ACTUALIZAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.BTN_REGISTRAR;
-import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.BTN_SELECCIONE_ARCHIVO;
+import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LNK_FILE_UPLOAD;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_ANIO_DESCUENTO;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_MES_DESCUENTO;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_SELECCIONAR_GESTION;
@@ -15,22 +15,23 @@ import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_D
 import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AprobacionIncorporacion implements Task {
 
-  private static final int TIEMPO = 100;
-  Logger logger;
-
+  private static final int TIEMPO = 200;
   private final Incorporacion incorporacion;
 
   public AprobacionIncorporacion(Incorporacion incorporacion) {
@@ -39,31 +40,31 @@ public class AprobacionIncorporacion implements Task {
 
   @Override
   public <T extends Actor> void performAs(final T actor) {
+    Path path = Paths.get("./src/test/resources/file/prueba.pdf");
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        WaitUntil.the(LST_INCORPORACION_NOMBRE.of(numeroCredito),isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(LST_INCORPORACION_NOMBRE.of(numeroCredito), isVisible()).forNoMoreThan(TIEMPO).seconds(),
         JavaScriptClick.on(LST_INCORPORACION_NOMBRE.of(numeroCredito)),
         WaitUntil.the(BTN_ACTUALIZAR_GESTION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-        JavaScriptClick.on(BTN_ACTUALIZAR_GESTION),
+        MoveMouse.to(BTN_ACTUALIZAR_GESTION),
+        Click.on(BTN_ACTUALIZAR_GESTION),
         WaitUntil.the(LST_SELECCIONAR_GESTION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
         SelectFromOptions.byVisibleText(this.incorporacion.getSeleccionarGestion()).from(LST_SELECCIONAR_GESTION),
         Enter.theValue(this.incorporacion.getRazonMotivo()).into(TXT_DETALLE_GESTION),
-        JavaScriptClick.on(BTN_SELECCIONE_ARCHIVO));
-    try {
-      final String RUTA_SCRIPT = "./src/test/resources/scripts/ScriptUploadFile.exe";
-      Runtime.getRuntime().exec(RUTA_SCRIPT);
-    } catch (IOException e) {
-      logger.log(Level.INFO, String.valueOf(e));
-    }
-    actor.attemptsTo(
+        Upload.theFile(path).to(LNK_FILE_UPLOAD),
         WaitUntil.the(BTN_REGISTRAR, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
         JavaScriptClick.on(BTN_REGISTRAR),
+        WaitFor.seconds(3),
         WaitUntil.the(LST_ANIO_DESCUENTO, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
+        MoveMouse.to(LST_ANIO_DESCUENTO),
         SelectFromOptions.byVisibleText(obtenerPeriodoActual().split("-")[0]).from(LST_ANIO_DESCUENTO),
         SelectFromOptions.byValue(obtenerPeriodoActual().split("-")[1]).from(LST_MES_DESCUENTO),
-        JavaScriptClick.on(BTN_APROBAR),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
-        JavaScriptClick.on(BTN_OK)
-    );
+        WaitFor.seconds(4));
+    actor.attemptsTo(
+        MoveMouse.to(BTN_APROBAR),
+        Click.on(BTN_APROBAR),
+        WaitFor.seconds(3),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        Click.on(BTN_OK));
   }
 }

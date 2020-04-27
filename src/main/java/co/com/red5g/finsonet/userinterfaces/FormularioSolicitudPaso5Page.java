@@ -18,9 +18,9 @@ public final class FormularioSolicitudPaso5Page {
     public static final Target BTN_LUGAR_NACIMIENTO = Target.the("el lugar de nacimiento").located(By.xpath("//button[@data-id='txtLugarNacCon']"));
     public static final Target BTN_SEXO = Target.the("el sexo").located(By.xpath("//button[@data-id='cmbSexoCon']"));
     public static final Target TXT_LUGAR_TRABAJO = Target.the("el lugar donde trabaja").located(By.id("txtLugTrabCon"));
-    public static final Target RBN_OCUPACION = Target.the("la ocupacion")
+    public static final Target RDB_OCUPACION = Target.the("la ocupacion")
         .locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='rdOcupacionCon']");
-    public static final Target RBN_DEPENDENCIA_ECONOMICA = Target.the("dependecia economica")
+    public static final Target RDB_DEPENDENCIA_ECONOMICA = Target.the("dependecia economica")
         .locatedBy("//label[@class='radio-inline'][contains(.,'{0}')]/input[@name='txtDepEco']");
     public static final Target TXT_FECHA_INGRESO = Target.the("la fecha de ingreso").located(By.id("txtFecIngr"));
     public static final Target TXT_CARGO_ACTUAL = Target.the("el cargo actual").located(By.id("txtCargoCon"));
@@ -32,7 +32,6 @@ public final class FormularioSolicitudPaso5Page {
     public static final Target FILTRO_LUGARES= Target.the("el lugar de expedicion").located(
        By.xpath("//div[contains(@class,'disabled input-form open')]//input[@class='form-control requerir']"));
     public static final Target FILTRO_LUGAR_NACIMIENTO= Target.the("el lugar de expedicion").located(By.xpath("//button[@data-id='txtLugarNacCon']//following-sibling::div//input"));
-    public static final Target BTN_REGRESAR = Target.the("el boton de regresar").located(By.id("btnRegresar_5"));
     public static final Target BTN_GUARDAR_CONTINUAR = Target.the("el boton guardar y continuar").located(By.id("btnEnviar_5"));
 
     private FormularioSolicitudPaso5Page() {

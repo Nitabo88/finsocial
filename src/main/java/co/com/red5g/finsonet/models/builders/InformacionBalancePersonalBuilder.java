@@ -25,54 +25,54 @@ public class InformacionBalancePersonalBuilder implements Builder<InformacionBal
     }
 
     public InformacionBalancePersonal persona() {
-      this.conActivosCorrientes("25000000");
-      this.conActivosFijos("48000000");
-      this.conOtrosActivos("800000");
-      this.conRazonOtrosActivos("Arriendos");
-      this.conPasivosFinancieros("15000000");
-      this.conPasivosCorrientes("0");
-      this.conOtrosPasivos("250000");
-      this.conRazonOtrosPasivos("Manuntencion");
+      this.conActivosCorrientes();
+      this.conActivosFijos();
+      this.conOtrosActivos();
+      this.conRazonOtrosActivos();
+      this.conPasivosFinancieros();
+      this.conPasivosCorrientes();
+      this.conOtrosPasivos();
+      this.conRazonOtrosPasivos();
         return this.build();
     }
 
-    private InformacionBalancePersonalBuilder conRazonOtrosPasivos(String razonOtrosPasivos) {
-        this.razonOtrosPasivos = razonOtrosPasivos;
+    private InformacionBalancePersonalBuilder conRazonOtrosPasivos() {
+        this.razonOtrosPasivos = "Manuntencion";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conOtrosPasivos(String otrosPasivos) {
-        this.otrosPasivos = otrosPasivos;
+    private InformacionBalancePersonalBuilder conOtrosPasivos() {
+        this.otrosPasivos = "250000";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conPasivosCorrientes(String pasivosCorrientes) {
-        this.pasivosCorrientes = pasivosCorrientes;
+    private InformacionBalancePersonalBuilder conPasivosCorrientes() {
+        this.pasivosCorrientes = "0";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conPasivosFinancieros(String pasivosFinancieros) {
-        this.pasivosFinancieros = pasivosFinancieros;
+    private InformacionBalancePersonalBuilder conPasivosFinancieros() {
+        this.pasivosFinancieros = "15000000";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conRazonOtrosActivos(String razonOtrosActivos) {
-        this.razonOtrosActivos = razonOtrosActivos;
+    private InformacionBalancePersonalBuilder conRazonOtrosActivos() {
+        this.razonOtrosActivos = "Arriendos";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conOtrosActivos(String otrosActivos) {
-        this.otrosActivos = otrosActivos;
+    private InformacionBalancePersonalBuilder conOtrosActivos() {
+        this.otrosActivos = "800000";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conActivosFijos(String activosFijos) {
-        this.activosFijos = activosFijos;
+    private InformacionBalancePersonalBuilder conActivosFijos() {
+        this.activosFijos = "48000000";
         return this;
     }
 
-    private InformacionBalancePersonalBuilder conActivosCorrientes(String activosCorrientes) {
-        this.activosCorrientes = activosCorrientes;
+    private InformacionBalancePersonalBuilder conActivosCorrientes() {
+        this.activosCorrientes = "25000000";
         return this;
     }
 

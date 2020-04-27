@@ -11,7 +11,6 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
     private String manejoRecursosPublicos;
     private String empresa;
     private String direccionTrabajo;
-    private String nit;
     private String tipoEmpresa;
     private String cargo;
     private String ciudadTrabajo;
@@ -22,22 +21,21 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
     private String tipoContrato;
 
     private ActividadLaboralBuilder() {
-      this.impactoDecision = "";
-      this.ocupacion = "";
-      this.declaraRenta = "";
-      this.personaPublica = "";
-      this.manejoRecursosPublicos = "";
-      this.empresa = "";
-      this.direccionTrabajo = "";
-      this.nit = "";
-      this.tipoEmpresa = "";
-      this.cargo = "";
-      this.ciudadTrabajo = "";
-      this.telefonoTrabajo = "";
-      this.actividadEconomica = "";
-      this.fechaVinculacion = "";
-      this.extension = "";
-      this.tipoContrato = "";
+        this.impactoDecision = "";
+        this.ocupacion = "";
+        this.declaraRenta = "";
+        this.personaPublica = "";
+        this.manejoRecursosPublicos = "";
+        this.empresa = "";
+        this.direccionTrabajo = "";
+        this.tipoEmpresa = "";
+        this.cargo = "";
+        this.ciudadTrabajo = "";
+        this.telefonoTrabajo = "";
+        this.actividadEconomica = "";
+        this.fechaVinculacion = "";
+        this.extension = "";
+        this.tipoContrato = "";
     }
 
     @Override
@@ -77,10 +75,6 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
         return direccionTrabajo;
     }
 
-    public String getNit() {
-        return nit;
-    }
-
     public String getTipoEmpresa() {
         return tipoEmpresa;
     }
@@ -113,103 +107,97 @@ public class ActividadLaboralBuilder implements Builder<ActividadLaboral> {
         return tipoContrato;
     }
 
+    private ActividadLaboralBuilder conActividadEconomica() {
+        this.actividadEconomica = "OTRA";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conExtension() {
+        this.extension = "0";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conTipoContrato() {
+        this.tipoContrato = "INDEFINIDO";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conTipoEmpresa() {
+        this.tipoEmpresa = "MIXTA";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conTelefonoTrabajo() {
+        this.telefonoTrabajo = "2306060";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conCiudadTrabajo() {
+        this.ciudadTrabajo = "BARRANQUILLA - ATLANTICO";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conDireccionTrabajo() {
+        this.direccionTrabajo = "BRR CALASANZ";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conFechaVinculacion() {
+        this.fechaVinculacion = "2018-Mar-5";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conCargo() {
+        this.cargo = "Profesor";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conEmpresa() {
+        this.empresa = "COLPENSIONES";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conManejoRecursosPublicos() {
+        this.manejoRecursosPublicos = "NO";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conPersonaPublica() {
+        this.personaPublica = "NO";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conImpactoDecision() {
+        this.impactoDecision = "NO";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conDeclaracionRenta() {
+        this.declaraRenta = "SI";
+        return this;
+    }
+
+    private ActividadLaboralBuilder conOcupacion() {
+        this.ocupacion = "Pensionado";
+        return this;
+    }
+
     public ActividadLaboral actividadLaboral() {
-      this.conOcupacion("Pensionado");
-      this.conDeclaracionRenta("SI");
-      this.conImpactoDecision("NO");
-      this.conPersonaPublica("NO");
-      this.conManejoRecursosPublicos("NO");
-      this.conEmpresa("COLPENSIONES");
-      this.conCargo("Profesor");
-      this.conFechaVinculacion("2018-Mar-5");
-      this.conDireccionTrabajo("BRR CALASANZ");
-      this.conCiudadTrabajo("BARRANQUILLA - ATLANTICO");
-      this.conNit("900336604-7");
-      this.conTelefonoTrabajo("2306060");
-      this.conExtension("0");
-      this.conTipoEmpresa("MIXTA");
-      this.conActividadEconomica("OTRA");
-      this.conTipoContrato("INDEFINIDO");
+        this.conOcupacion();
+        this.conDeclaracionRenta();
+        this.conImpactoDecision();
+        this.conPersonaPublica();
+        this.conManejoRecursosPublicos();
+        this.conEmpresa();
+        this.conCargo();
+        this.conFechaVinculacion();
+        this.conDireccionTrabajo();
+        this.conCiudadTrabajo();
+        this.conTelefonoTrabajo();
+        this.conExtension();
+        this.conTipoEmpresa();
+        this.conActividadEconomica();
+        this.conTipoContrato();
         return this.build();
-    }
-
-    private ActividadLaboralBuilder conActividadEconomica(String actividadEconomica) {
-        this.actividadEconomica = actividadEconomica;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conExtension(String extension) {
-        this.extension = extension;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conTipoContrato(String tipoContrato) {
-        this.tipoContrato = tipoContrato;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conTipoEmpresa(String tipoEmpresa) {
-        this.tipoEmpresa = tipoEmpresa;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conTelefonoTrabajo(String telefonoTrabajo) {
-        this.telefonoTrabajo = telefonoTrabajo;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conNit(String nit) {
-        this.nit = nit;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conCiudadTrabajo(String ciudadTrabajo) {
-        this.ciudadTrabajo = ciudadTrabajo;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conDireccionTrabajo(String direccionTrabajo) {
-        this.direccionTrabajo = direccionTrabajo;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conFechaVinculacion(String fechaVinculacion) {
-        this.fechaVinculacion = fechaVinculacion;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conCargo(String cargo) {
-        this.cargo = cargo;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conEmpresa(String empresa) {
-        this.empresa = empresa;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conManejoRecursosPublicos(String manejoRecursosPublicos) {
-        this.manejoRecursosPublicos = manejoRecursosPublicos;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conPersonaPublica(String personaPublica) {
-        this.personaPublica = personaPublica;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conImpactoDecision(String impactoDecision) {
-        this.impactoDecision = impactoDecision;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conDeclaracionRenta(String declaraRenta) {
-        this.declaraRenta = declaraRenta;
-        return this;
-    }
-
-    private ActividadLaboralBuilder conOcupacion(String ocupacion) {
-        this.ocupacion = ocupacion;
-        return this;
     }
 }
