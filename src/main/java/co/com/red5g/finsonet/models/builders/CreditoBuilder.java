@@ -1,19 +1,10 @@
 package co.com.red5g.finsonet.models.builders;
 
-import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.*;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_APROBACION_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CDAS_COMPLETO_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CDAS_INCOMPLETO_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CHEQUEO_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_CONFIRMACION_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_FORMALIZACION_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_FORMULARIO_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_INCORPORACION_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_LLAMADA_LIBRANZA;
-import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.INFORMACION_TESORERIA_LIBRANZA;
-
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.utils.Builder;
+
+import static co.com.red5g.finsonet.utils.InformacionCreditoHuy.*;
+import static co.com.red5g.finsonet.utils.InformacionCreditoLibranza.*;
 
 public final class CreditoBuilder implements Builder<Credito> {
 

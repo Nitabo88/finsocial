@@ -16,7 +16,7 @@ public class EquipoSatisfaccionStepDefinition {
     @Dado("^que el (.*) generar una PQR$")
     public void queElAsesorGenerarUnaPQR(String nombreActor) {
         theActorCalled(nombreActor).attemptsTo(
-                Ubicarse.enContact()
+                Ubicarse.enElModuloContact()
         );
     }
 

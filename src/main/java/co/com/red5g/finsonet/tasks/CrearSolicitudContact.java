@@ -10,7 +10,8 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.userinterfaces.EquipoSatisfaccionPage.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
+import static co.com.red5g.finsonet.utils.Utilerias.random;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 
 public class CrearSolicitudContact implements Task {
     private EquipoSatisfaccion equipoSatisfaccion;
@@ -21,9 +22,10 @@ public class CrearSolicitudContact implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String canalContacto = String.valueOf(random(2, 11));
         actor.attemptsTo(
                 Click.on(BTN_NUEVO_CONTACT),
-                Click.on(BTN_CANAL_CONTACTO),
+                Click.on(BTN_CANAL_CONTACTO.of(canalContacto)),
                 Enter.theValue(equipoSatisfaccion.getDocumentoEquipoSatisfaccion()).into(TXT_DOCUMENTO),
                 SelectFromOptions.byVisibleText("SOLICITUD DE DETALLE DE CRÉDITO").from(LST_ASUNTO),
                 Enter.theValue(equipoSatisfaccion.getDetalleEquipoSatisfaccion()).into(TXT_DETALLE),
