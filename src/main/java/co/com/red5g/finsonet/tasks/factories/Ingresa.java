@@ -32,7 +32,7 @@ public final class Ingresa {
     }
 
     public static Performable laInformacionDelCredito(Credito credito) {
-        return Tasks.instrumented(InformacionCreditoLibranza.class, credito);
+        return instrumented(InformacionCreditoLibranza.class, credito);
     }
 
     public static Performable lasCredenciales(Credenciales credenciales) {
@@ -92,6 +92,10 @@ public final class Ingresa {
     }
 
     public static Performable lasCredencialesWiipo(co.com.red5g.wiipo.models.Credenciales credenciales) {
-        return Tasks.instrumented(InformacionLoginWiipo.class, credenciales);
+        return instrumented(InformacionLoginWiipo.class, credenciales);
+    }
+
+    public static Performable laInformacionIncompletaDelCredito(Credito credito) {
+        return Tasks.instrumented(InformacionIncompletaCreditoLibranza.class, credito);
     }
 }

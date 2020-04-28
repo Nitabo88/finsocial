@@ -30,7 +30,7 @@ public final class Ubicarse {
   }
 
   public static Performable enLlamada(Credito credito) {
-    return Tasks.instrumented(LlamadaLibranza.class,credito);
+    return Tasks.instrumented(LlamadaLibranza.class, credito);
   }
 
   public static Performable enLlamadaFinsoamigo() {
