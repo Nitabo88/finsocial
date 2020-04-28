@@ -1,0 +1,28 @@
+package co.com.red5g.tasks.finsonet;
+
+import co.com.red5g.models.finsonet.InformacionPrestamo;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Enter;
+
+import static co.com.red5g.userinterfaces.finsonet.FormularioSolicitudPaso1Page.*;
+
+public class FormularioInformacionPrestamo implements Task {
+    private final InformacionPrestamo informacionPrestamo;
+
+    public FormularioInformacionPrestamo(InformacionPrestamo informacionPrestamo) {
+        this.informacionPrestamo = informacionPrestamo;
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Enter.theValue(informacionPrestamo.getStrMonto()).into(TXT_MONTO),
+                Enter.theValue(informacionPrestamo.getStrCuota()).into(TXT_CUOTA),
+                Enter.theValue(informacionPrestamo.getStrPlazo()).into(TXT_PLAZO),
+                Enter.theValue(informacionPrestamo.getStrTasaInteres()).into(TXT_TASA_INTERES),
+                Enter.theValue(informacionPrestamo.getStrTasaMora()).into(TXT_TASA_MORA),
+                Enter.theValue(informacionPrestamo.getStrTasaMaximaInteresVigente()).into(TXT_TASA_MAXIMA_VIGENTE)
+        );
+    }
+}
