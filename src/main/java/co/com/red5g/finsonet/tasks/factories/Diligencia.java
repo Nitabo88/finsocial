@@ -1,18 +1,14 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-
-import co.com.red5g.finsonet.models.AccionCdas;
-import co.com.red5g.finsonet.models.AprobacionCredito;
-import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.models.Tesoreria;
-import co.com.red5g.finsonet.models.Vetados;
+import co.com.red5g.finsonet.models.*;
 import co.com.red5g.finsonet.tasks.*;
-import co.com.red5g.wiipo.tasks.finsonet.*;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public final class Diligencia {
 

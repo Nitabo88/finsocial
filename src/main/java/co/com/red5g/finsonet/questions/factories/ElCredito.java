@@ -1,7 +1,6 @@
 package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.*;
-import co.com.red5g.wiipo.questions.finsonet.*;
 import net.serenitybdd.screenplay.Question;
 
 public final class ElCredito {

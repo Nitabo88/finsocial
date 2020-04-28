@@ -4,7 +4,6 @@ import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.*;
-import co.com.red5g.wiipo.tasks.finsonet.*;
 import co.com.red5g.wiipo.tasks.InformacionLoginWiipo;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
