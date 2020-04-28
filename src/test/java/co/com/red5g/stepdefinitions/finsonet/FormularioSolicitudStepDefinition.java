@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import co.com.red5g.exceptions.finsonet.NoSeVeElCreditoException;
 import co.com.red5g.tasks.factories.finsonet.Diligencia;
 import co.com.red5g.tasks.factories.finsonet.Ubicarse;
-import co.com.red5g.questions.ElFormulario;
+import co.com.red5g.questions.finsonet.ElFormulario;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;

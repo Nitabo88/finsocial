@@ -1,14 +1,14 @@
 package co.com.red5g.questions.factories;
 
-import co.com.red5g.questions.CreditosDetalleReporteVentaLiberada;
-import co.com.red5g.questions.CreditosDetalleReporteVentaNueva;
-import co.com.red5g.questions.CreditosLiquidacionComision;
-import co.com.red5g.questions.CreditosReporteAntecartera;
-import co.com.red5g.questions.CreditosReporteOriginacion;
-import co.com.red5g.questions.CreditosReporteVentaLiberada;
-import co.com.red5g.questions.CreditosReporteVentaNueva;
-import co.com.red5g.questions.CreditosVentaLiberadaLiquidacionComisiones;
-import co.com.red5g.questions.CreditosVentaNuevaLiquidacionComisiones;
+import co.com.red5g.questions.finsonet.CreditosDetalleReporteVentaLiberada;
+import co.com.red5g.questions.finsonet.CreditosDetalleReporteVentaNueva;
+import co.com.red5g.questions.finsonet.CreditosLiquidacionComision;
+import co.com.red5g.questions.finsonet.CreditosReporteAntecartera;
+import co.com.red5g.questions.finsonet.CreditosReporteOriginacion;
+import co.com.red5g.questions.finsonet.CreditosReporteVentaLiberada;
+import co.com.red5g.questions.finsonet.CreditosReporteVentaNueva;
+import co.com.red5g.questions.finsonet.CreditosVentaLiberadaLiquidacionComisiones;
+import co.com.red5g.questions.finsonet.CreditosVentaNuevaLiquidacionComisiones;
 import net.serenitybdd.screenplay.Question;
 
 public final class ElNumero {

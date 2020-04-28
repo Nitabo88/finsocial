@@ -4,7 +4,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import java.util.List;
 
-import co.com.red5g.questions.ObtenerUrl;
+import co.com.red5g.questions.finsonet.ObtenerUrl;
 import co.com.red5g.tasks.finsonet.InformacionCreditoLibranza;
 import co.com.red5g.userinterfaces.finsonet.MisCreditosPage;
 import net.serenitybdd.core.pages.WebElementFacade;

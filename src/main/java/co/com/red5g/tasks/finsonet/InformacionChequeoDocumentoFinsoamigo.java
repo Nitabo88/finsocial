@@ -13,7 +13,7 @@ import co.com.red5g.interacions.factories.Subir;
 import co.com.red5g.models.finsonet.ChequeoDocumento;
 import java.util.List;
 
-import co.com.red5g.questions.ObtenerUrl;
+import co.com.red5g.questions.finsonet.ObtenerUrl;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

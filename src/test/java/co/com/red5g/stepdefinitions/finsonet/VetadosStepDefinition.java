@@ -7,8 +7,8 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.exceptions.finsonet.NoSeMarcaElVetoException;
-import co.com.red5g.questions.ElMensaje;
-import co.com.red5g.questions.Veto;
+import co.com.red5g.questions.finsonet.ElMensaje;
+import co.com.red5g.questions.finsonet.Veto;
 import co.com.red5g.tasks.finsonet.Eliminar;
 import co.com.red5g.tasks.finsonet.IntentaCrear;
 import co.com.red5g.tasks.factories.finsonet.Diligencia;

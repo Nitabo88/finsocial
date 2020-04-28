@@ -1,15 +1,15 @@
 package co.com.red5g.questions.factories;
 
-import co.com.red5g.questions.ValorComisionAsesores;
-import co.com.red5g.questions.ValorConsolidadoLiquidadorComisiones;
-import co.com.red5g.questions.ValorDetalleReporteVentaLiberada;
-import co.com.red5g.questions.ValorDetalleReporteVentaNueva;
-import co.com.red5g.questions.ValorReporteOriginacion;
-import co.com.red5g.questions.ValorReporteVentaLiberada;
-import co.com.red5g.questions.ValorReporteVentaNueva;
-import co.com.red5g.questions.ValorTotalComision;
-import co.com.red5g.questions.ValorVentaLiberadaLiquidacionComisiones;
-import co.com.red5g.questions.ValorVentaNuevaLiquidacionComisiones;
+import co.com.red5g.questions.finsonet.ValorComisionAsesores;
+import co.com.red5g.questions.finsonet.ValorConsolidadoLiquidadorComisiones;
+import co.com.red5g.questions.finsonet.ValorDetalleReporteVentaLiberada;
+import co.com.red5g.questions.finsonet.ValorDetalleReporteVentaNueva;
+import co.com.red5g.questions.finsonet.ValorReporteOriginacion;
+import co.com.red5g.questions.finsonet.ValorReporteVentaLiberada;
+import co.com.red5g.questions.finsonet.ValorReporteVentaNueva;
+import co.com.red5g.questions.finsonet.ValorTotalComision;
+import co.com.red5g.questions.finsonet.ValorVentaLiberadaLiquidacionComisiones;
+import co.com.red5g.questions.finsonet.ValorVentaNuevaLiquidacionComisiones;
 import net.serenitybdd.screenplay.Question;
 
 public final class ElValor {

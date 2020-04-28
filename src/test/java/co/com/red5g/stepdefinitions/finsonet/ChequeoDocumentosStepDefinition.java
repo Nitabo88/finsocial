@@ -9,8 +9,8 @@ import static org.hamcrest.Matchers.containsString;
 
 import co.com.red5g.exceptions.finsonet.ElCreditoNoFueRechazadoException;
 import co.com.red5g.exceptions.finsonet.NoSeVeElCreditoException;
-import co.com.red5g.questions.QueAparece;
-import co.com.red5g.questions.QueElChequeoDeDocumentos;
+import co.com.red5g.questions.finsonet.QueAparece;
+import co.com.red5g.questions.finsonet.QueElChequeoDeDocumentos;
 import co.com.red5g.questions.factories.ElCredito;
 import co.com.red5g.tasks.factories.finsonet.Diligencia;
 import co.com.red5g.tasks.factories.finsonet.Ingresa;

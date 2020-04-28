@@ -1,0 +1,19 @@
+package co.com.red5g.questions.finsonet;
+
+import static co.com.red5g.userinterfaces.finsonet.ReporteVentasPage.LST_VALOR_DETALLE_VENTA_LIBERADA;
+import static co.com.red5g.utils.Utilerias.suma;
+
+import java.util.List;
+import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Question;
+
+public class ValorDetalleReporteVentaLiberada implements Question<String> {
+
+    @Override
+    public String answeredBy(Actor actor) {
+        List<WebElementFacade> lstValoresCredito = LST_VALOR_DETALLE_VENTA_LIBERADA.resolveAllFor(actor);
+        lstValoresCredito.remove(0);
+        return String.valueOf(suma(lstValoresCredito));
+    }
+}

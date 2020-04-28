@@ -1,7 +1,7 @@
 package co.com.red5g.questions.factories;
 
-import co.com.red5g.questions.ValidarLlamadaFinsoamigo;
-import co.com.red5g.questions.ValidarLlamadaLibranza;
+import co.com.red5g.questions.finsonet.ValidarLlamadaFinsoamigo;
+import co.com.red5g.questions.finsonet.ValidarLlamadaLibranza;
 import net.serenitybdd.screenplay.Question;
 
 public class LaLlamada {

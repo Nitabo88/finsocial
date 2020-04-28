@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 import co.com.red5g.models.finsonet.Credito;
 import co.com.red5g.tasks.factories.finsonet.Diligencia;
 import co.com.red5g.tasks.factories.finsonet.Realiza;
-import co.com.red5g.questions.PasoConfirmacionExitosa;
+import co.com.red5g.questions.finsonet.PasoConfirmacionExitosa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

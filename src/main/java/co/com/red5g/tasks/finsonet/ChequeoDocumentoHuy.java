@@ -9,7 +9,7 @@ import static co.com.red5g.userinterfaces.finsonet.OriginacionPage.MNM_HAMBURGUE
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.models.finsonet.Credito;
 import co.com.red5g.tasks.factories.finsonet.Ingresa;
-import co.com.red5g.questions.ObtenerUrl;
+import co.com.red5g.questions.finsonet.ObtenerUrl;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

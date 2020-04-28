@@ -7,7 +7,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
 
-import co.com.red5g.questions.GestionDocumental;
+import co.com.red5g.questions.finsonet.GestionDocumental;
 import co.com.red5g.tasks.factories.finsonet.Diligencia;
 import co.com.red5g.tasks.factories.finsonet.Ingresa;
 import cucumber.api.java.es.Cuando;
