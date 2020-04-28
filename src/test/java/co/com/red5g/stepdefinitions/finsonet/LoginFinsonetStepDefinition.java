@@ -6,7 +6,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 import co.com.red5g.exceptions.finsonet.ElUsuarioNoSeAutenticoException;
-import co.com.red5g.interacions.AbreLaPagina;
+import co.com.red5g.interacions.finsonet.AbreLaPagina;
 import co.com.red5g.questions.finsonet.Mensaje;
 import co.com.red5g.tasks.factories.finsonet.Ingresa;
 import cucumber.api.java.es.Cuando;

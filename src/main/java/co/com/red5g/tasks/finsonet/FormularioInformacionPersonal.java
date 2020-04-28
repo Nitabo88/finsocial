@@ -34,8 +34,8 @@ import static co.com.red5g.userinterfaces.finsonet.FormularioSolicitudPaso2Page.
 import static co.com.red5g.userinterfaces.finsonet.FormularioSolicitudPaso2Page.TXT_TELEFONO_RESIDENCIA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-import co.com.red5g.interacions.Seleccionar;
-import co.com.red5g.interacions.SeleccionarFecha;
+import co.com.red5g.interacions.finsonet.Seleccionar;
+import co.com.red5g.interacions.finsonet.SeleccionarFecha;
 import co.com.red5g.models.finsonet.InformacionPersonal;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

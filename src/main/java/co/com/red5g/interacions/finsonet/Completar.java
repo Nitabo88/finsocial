@@ -1,4 +1,4 @@
-package co.com.red5g.interacions;
+package co.com.red5g.interacions.finsonet;
 
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.BTN_ACCION_GESTION;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.BTN_CERRAR;

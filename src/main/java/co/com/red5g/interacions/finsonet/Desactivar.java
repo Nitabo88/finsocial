@@ -1,4 +1,4 @@
-package co.com.red5g.interacions;
+package co.com.red5g.interacions.finsonet;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 

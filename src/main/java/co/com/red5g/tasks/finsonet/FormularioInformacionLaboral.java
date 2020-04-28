@@ -21,8 +21,8 @@ import static co.com.red5g.userinterfaces.finsonet.FormularioSolicitudPaso3Page.
 import static co.com.red5g.userinterfaces.finsonet.FormularioSolicitudPaso3Page.TXT_TELEFONO_TRABAJO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-import co.com.red5g.interacions.Seleccionar;
-import co.com.red5g.interacions.SeleccionarFecha;
+import co.com.red5g.interacions.finsonet.Seleccionar;
+import co.com.red5g.interacions.finsonet.SeleccionarFecha;
 import co.com.red5g.models.finsonet.ActividadLaboral;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

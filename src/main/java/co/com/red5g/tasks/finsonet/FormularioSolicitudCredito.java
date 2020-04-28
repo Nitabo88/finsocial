@@ -1,7 +1,7 @@
 package co.com.red5g.tasks.finsonet;
 
-import static co.com.red5g.interacions.CambiarPestana.cambiarPestana;
-import static co.com.red5g.interacions.CerrarPestana.cerrarPestana;
+import static co.com.red5g.interacions.finsonet.CambiarPestana.cambiarPestana;
+import static co.com.red5g.interacions.finsonet.CerrarPestana.cerrarPestana;
 import static co.com.red5g.models.builders.finsonet.ActividadLaboralBuilder.es;
 import static co.com.red5g.models.builders.finsonet.DescripcionActivosBuilder.por;
 import static co.com.red5g.models.builders.finsonet.DocumentoRequeridosBuilder.los;

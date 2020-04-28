@@ -1,4 +1,4 @@
-package co.com.red5g.interacions;
+package co.com.red5g.interacions.finsonet;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;

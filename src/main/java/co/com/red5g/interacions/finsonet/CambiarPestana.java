@@ -1,4 +1,4 @@
-package co.com.red5g.interacions;
+package co.com.red5g.interacions.finsonet;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -8,16 +8,15 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
-public class CerrarPestana implements Interaction {
+public class CambiarPestana implements Interaction {
 
-  public static Performable cerrarPestana() {
-    return instrumented(CerrarPestana.class);
+  public static Performable cambiarPestana() {
+    return instrumented(CambiarPestana.class);
   }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     ArrayList<String> lstVentanas = new ArrayList<>(BrowseTheWeb.as(actor).getDriver().getWindowHandles());
-    BrowseTheWeb.as(actor).getDriver().switchTo().window(lstVentanas.get(1)).close();
     BrowseTheWeb.as(actor).getDriver().switchTo().window(lstVentanas.get(0));
   }
 }

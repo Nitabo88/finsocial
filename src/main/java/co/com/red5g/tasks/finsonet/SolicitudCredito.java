@@ -1,6 +1,6 @@
 package co.com.red5g.tasks.finsonet;
 
-import co.com.red5g.interacions.Ingresar;
+import co.com.red5g.interacions.finsonet.Ingresar;
 import co.com.red5g.models.finsonet.Credito;
 import co.com.red5g.tasks.factories.finsonet.Ingresa;
 import co.com.red5g.tasks.factories.finsonet.Loguearse;

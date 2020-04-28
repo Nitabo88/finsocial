@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.*;
 import static co.com.red5g.userinterfaces.finsonet.IncorporacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.userinterfaces.finsonet.ModulosAdministracionPage.IMG_FINSONET;

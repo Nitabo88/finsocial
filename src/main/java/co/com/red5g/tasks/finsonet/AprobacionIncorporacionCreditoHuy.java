@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.IncorporacionPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

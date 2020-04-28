@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.AprobacionCreditoPage.*;
 import static co.com.red5g.userinterfaces.finsonet.ConfirmacionPage.BTN_ACCION_PENDIENTE_HUY;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;

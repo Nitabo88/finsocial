@@ -6,10 +6,10 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.interacions.CambiarPestana.cambiarPestana;
-import static co.com.red5g.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.interacions.CerrarPestana.cerrarPestana;
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.CambiarPestana.cambiarPestana;
+import static co.com.red5g.interacions.finsonet.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.interacions.finsonet.CerrarPestana.cerrarPestana;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.FormalizacionPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

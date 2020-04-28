@@ -1,4 +1,4 @@
-package co.com.red5g.interacions;
+package co.com.red5g.interacions.finsonet;
 
 import static co.com.red5g.userinterfaces.finsonet.FormalizacionPage.BTN_ENVIAR_FILE;
 import static co.com.red5g.userinterfaces.finsonet.FormalizacionPage.BTN_SELECCIONAR_ARCHIVO;

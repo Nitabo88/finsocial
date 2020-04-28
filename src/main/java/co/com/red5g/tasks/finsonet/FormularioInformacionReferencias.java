@@ -1,6 +1,6 @@
 package co.com.red5g.tasks.finsonet;
 
-import co.com.red5g.interacions.Seleccionar;
+import co.com.red5g.interacions.finsonet.Seleccionar;
 import co.com.red5g.models.finsonet.Referencias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

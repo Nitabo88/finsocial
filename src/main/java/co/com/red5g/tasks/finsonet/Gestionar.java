@@ -1,8 +1,8 @@
 package co.com.red5g.tasks.finsonet;
 
-import static co.com.red5g.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.interacions.CerrarPestana.cerrarPestana;
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.interacions.finsonet.CerrarPestana.cerrarPestana;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.BusquedaGestionPage.BTN_GESTIONAR;
 import static co.com.red5g.userinterfaces.finsonet.BusquedaGestionPage.RDB_CRITERIO_BUSQUEDA;
 import static co.com.red5g.userinterfaces.finsonet.BusquedaGestionPage.TXT_BUSQUEDA;
@@ -18,7 +18,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-import co.com.red5g.interacions.CerrarPestanaAnterior;
+import co.com.red5g.interacions.finsonet.CerrarPestanaAnterior;
 import co.com.red5g.utils.Utilerias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;

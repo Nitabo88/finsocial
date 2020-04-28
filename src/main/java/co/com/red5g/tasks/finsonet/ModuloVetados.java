@@ -4,7 +4,7 @@ import static co.com.red5g.userinterfaces.finsonet.VetadosPage.BTN_NUEVO_VETO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-import co.com.red5g.interacions.IngresaAVetados;
+import co.com.red5g.interacions.finsonet.IngresaAVetados;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

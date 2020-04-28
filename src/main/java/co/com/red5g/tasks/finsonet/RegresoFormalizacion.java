@@ -1,6 +1,6 @@
 package co.com.red5g.tasks.finsonet;
 
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.FormalizacionPage.BTN_ACCION_FORMALIZACION;
 import static co.com.red5g.userinterfaces.finsonet.FormalizacionPage.BTN_OK;
 import static co.com.red5g.userinterfaces.finsonet.FormalizacionPage.LST_ACCION_FORMALIZACION;

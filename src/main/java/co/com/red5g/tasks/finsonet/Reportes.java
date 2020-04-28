@@ -3,7 +3,7 @@ package co.com.red5g.tasks.finsonet;
 import static co.com.red5g.userinterfaces.finsonet.ModulosAdministracionPage.LNK_REPORTES;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
-import co.com.red5g.interacions.AbreLaPagina;
+import co.com.red5g.interacions.finsonet.AbreLaPagina;
 import co.com.red5g.models.builders.finsonet.CredencialesBuilder;
 import co.com.red5g.tasks.factories.finsonet.Ingresa;
 import net.serenitybdd.screenplay.Actor;

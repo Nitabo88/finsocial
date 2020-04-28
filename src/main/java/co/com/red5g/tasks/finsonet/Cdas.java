@@ -1,16 +1,16 @@
 package co.com.red5g.tasks.finsonet;
 
-import static co.com.red5g.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.BTN_ATRAS;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.BTN_BUSQUEDA;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.BTN_DETALLE_GESTION;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.RDB_CRITERIO_BUSQUEDA;
 import static co.com.red5g.userinterfaces.finsonet.CdasPage.TXT_VALOR_BUSQUEDA;
 
-import co.com.red5g.interacions.Completar;
+import co.com.red5g.interacions.finsonet.Completar;
 import co.com.red5g.models.finsonet.AccionCdas;
-import co.com.red5g.interacions.CerrarPestanaAnterior;
+import co.com.red5g.interacions.finsonet.CerrarPestanaAnterior;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

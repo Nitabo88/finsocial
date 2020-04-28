@@ -1,6 +1,6 @@
 package co.com.red5g.tasks.finsonet;
 
-import static co.com.red5g.interacions.CambiarPestana.cambiarPestana;
+import static co.com.red5g.interacions.finsonet.CambiarPestana.cambiarPestana;
 import static co.com.red5g.userinterfaces.finsonet.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.userinterfaces.finsonet.ModulosAdministracionPage.LNK_ORIGINACION;
 

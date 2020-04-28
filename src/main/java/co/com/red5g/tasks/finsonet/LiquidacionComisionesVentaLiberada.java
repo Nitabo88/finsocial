@@ -7,7 +7,7 @@ import static co.com.red5g.userinterfaces.finsonet.ReporteVentasPage.SPN_FINSONE
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
-import co.com.red5g.interacions.IngresaAReporte;
+import co.com.red5g.interacions.finsonet.IngresaAReporte;
 import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

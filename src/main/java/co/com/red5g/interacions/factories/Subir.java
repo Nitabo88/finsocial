@@ -1,8 +1,8 @@
 package co.com.red5g.interacions.factories;
 
-import co.com.red5g.interacions.SubirArchivosChequeoDocumento;
-import co.com.red5g.interacions.SubirArchivosChequeoDocumentoHuy;
-import co.com.red5g.interacions.SubirArchivosFormalizacion;
+import co.com.red5g.interacions.finsonet.SubirArchivosChequeoDocumento;
+import co.com.red5g.interacions.finsonet.SubirArchivosChequeoDocumentoHuy;
+import co.com.red5g.interacions.finsonet.SubirArchivosFormalizacion;
 import net.serenitybdd.screenplay.Performable;
 
 public class Subir {

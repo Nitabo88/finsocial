@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.models.builders.finsonet.CredencialesBuilder.de;
 import static co.com.red5g.userinterfaces.finsonet.AprobacionCreditoPage.*;
 import static co.com.red5g.userinterfaces.finsonet.ModulosAdministracionPage.*;

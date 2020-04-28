@@ -1,6 +1,6 @@
 package co.com.red5g.tasks.finsonet;
 
-import co.com.red5g.interacions.SeleccionarFecha;
+import co.com.red5g.interacions.finsonet.SeleccionarFecha;
 import co.com.red5g.models.finsonet.InformacionConyugue;
 import co.com.red5g.models.finsonet.InformacionPersonal;
 import net.serenitybdd.screenplay.Actor;

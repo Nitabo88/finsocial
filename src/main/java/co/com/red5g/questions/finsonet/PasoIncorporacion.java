@@ -1,6 +1,6 @@
 package co.com.red5g.questions.finsonet;
 
-import static co.com.red5g.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.interacions.finsonet.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.userinterfaces.finsonet.IncorporacionPage.LBL_INCORPORACION;
 import static co.com.red5g.userinterfaces.finsonet.IncorporacionPage.LST_FILA_INCORPORACION;
 import static co.com.red5g.userinterfaces.finsonet.OriginacionPage.MNM_ORIGINACION;
