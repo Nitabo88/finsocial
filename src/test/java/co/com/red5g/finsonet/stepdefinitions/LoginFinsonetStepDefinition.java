@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.ElUsuarioNoSeAutenticoException.MENSAJE_LOGUEO_NO_EXITOSO;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -13,6 +12,7 @@ import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.GivenWhenThen;
 
 public class LoginFinsonetStepDefinition {
 
@@ -37,6 +37,6 @@ public class LoginFinsonetStepDefinition {
 
     @Entonces("el debería ver (.*)")
     public void verificarIngreso(final String strMensaje) {
-        theActorInTheSpotlight().should(seeThat(Mensaje.deBienvenidaEs(strMensaje)).orComplainWith(ElUsuarioNoSeAutenticoException.class, MENSAJE_LOGUEO_NO_EXITOSO));
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(Mensaje.deBienvenidaEs(strMensaje)).orComplainWith(ElUsuarioNoSeAutenticoException.class, ElUsuarioNoSeAutenticoException.MENSAJE_LOGUEO_NO_EXITOSO));
     }
 }

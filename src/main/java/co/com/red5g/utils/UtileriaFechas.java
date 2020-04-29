@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.utils;
+package co.com.red5g.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

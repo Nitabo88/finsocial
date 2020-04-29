@@ -8,7 +8,6 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -32,6 +31,6 @@ public class IncorporacionHuyStepDefinition {
 
     @Entonces("^el asesor deberá ver el crédito en el paso de formalización huy$")
     public void verificarCredito() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.enLaListDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.enLaListDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
     }
 }

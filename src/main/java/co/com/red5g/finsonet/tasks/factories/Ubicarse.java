@@ -10,6 +10,7 @@ import co.com.red5g.finsonet.tasks.NuevoCredito;
 import co.com.red5g.finsonet.tasks.SolicitudCredito;
 import co.com.red5g.finsonet.tasks.VetoCliente;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Tasks;
 
 public final class Ubicarse {
 
@@ -21,7 +22,7 @@ public final class Ubicarse {
   }
 
   public static Performable enElFormulario(Credito credito) {
-    return instrumented(SolicitudCredito.class, credito);
+    return Tasks.instrumented(SolicitudCredito.class, credito);
   }
 
   public static Performable enVetados() {
@@ -29,7 +30,7 @@ public final class Ubicarse {
   }
 
   public static Performable enLlamada(Credito credito) {
-    return instrumented(LlamadaLibranza.class,credito);
+    return Tasks.instrumented(LlamadaLibranza.class, credito);
   }
 
   public static Performable enLlamadaFinsoamigo() {

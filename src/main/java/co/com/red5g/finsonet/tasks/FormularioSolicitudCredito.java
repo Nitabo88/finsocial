@@ -11,7 +11,6 @@ import static co.com.red5g.finsonet.models.builders.InformacionPrestamoBuilder.l
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page.BTN_ACEPTAR_ENCUESTA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page.BTN_ENCUESTA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page.BTN_ENVIAR_ENCUESTA;
-import static co.com.red5g.finsonet.utils.Utilerias.random;
 
 import co.com.red5g.finsonet.models.builders.InformacionBalancePersonalBuilder;
 import co.com.red5g.finsonet.models.builders.InformacionFinancieraBuilder;
@@ -25,6 +24,7 @@ import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso6Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso7Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page;
+import co.com.red5g.utils.Utilerias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -34,7 +34,7 @@ public class FormularioSolicitudCredito implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String respuestaEncuesta = String.valueOf(random(1, 5));
+        String respuestaEncuesta = String.valueOf(Utilerias.random(1, 5));
         actor.attemptsTo(
             Escribe.losDocumentosRequeridos(los().documentosSolicitante()),
             Escribe.laInformacionDelPrestamo(la().informacionPrestamo()),

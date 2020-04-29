@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -31,7 +30,7 @@ public class ChequeoDocumentosFinsoamigoStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en el paso de aprobación créditos finsoamigos$")
   public void verificarCreditoAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
 

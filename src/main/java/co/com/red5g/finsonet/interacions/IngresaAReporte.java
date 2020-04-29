@@ -1,11 +1,10 @@
 package co.com.red5g.finsonet.interacions;
 
-import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LST_PERIODO;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 import co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage;
+import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
@@ -24,8 +23,8 @@ public class IngresaAReporte implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Open.browserOn(liquidadorComisionesPage),
-                WaitUntil.the(LST_PERIODO,isEnabled()).forNoMoreThan(10).seconds(),
-            SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO)
+                WaitUntil.the(LiquidadorComisionesPage.LST_PERIODO,isEnabled()).forNoMoreThan(10).seconds(),
+            SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoActual()).from(LiquidadorComisionesPage.LST_PERIODO)
         );
     }
 }

@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.ChequeoDocumento;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
 

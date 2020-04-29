@@ -10,7 +10,6 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.AprobacionCreditoBuilder.con;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -43,7 +42,7 @@ public class AprobacionCreditoHuyStepDefinition {
 
   @Entonces("^el podrá ver el crédito en incorporación huy$")
   public void verificarCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
   @Cuando("^el crédito se ponga en la lista de pendientes$")
@@ -55,7 +54,7 @@ public class AprobacionCreditoHuyStepDefinition {
 
   @Entonces("^el podrá ver el crédito en pendiente por documentación$")
   public void verificarCreditoPendiente() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor rechace el crédito$")

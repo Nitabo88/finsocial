@@ -8,7 +8,6 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -44,16 +43,16 @@ public class IncorporacionStepDefinition {
 
   @Entonces("^el asesor debera ver el crédito en el paso de aprobación de créditos$")
   public void verificarElCreditoEnAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
   @Entonces("^el asesor deberá ver el crédito en el paso de formalización$")
   public void verificarCreditoEnFormalizacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enLaListDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enLaListDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
   @Entonces("^el asesor deberá ver el crédito en incorporación en la lista de pendientes$")
   public void verificarElCreditoEnPendienteAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaPendienteDeIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaPendienteDeIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 }
