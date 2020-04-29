@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Tesoreria;
 import co.com.red5g.finsonet.userinterfaces.ReporteVentasPage;
 import co.com.red5g.finsonet.userinterfaces.TesoreriaPage;
@@ -31,8 +32,9 @@ public class PendienteTesoreria implements Task {
             SelectFromOptions.byVisibleText(tesoreria.getMotivo()).from(TesoreriaPage.LST_MOTIVO),
             Enter.theValue(tesoreria.getDetalleMotivo()).into(TesoreriaPage.TXT_DETALLE),
             JavaScriptClick.on(TesoreriaPage.BTN_REGISTRAR_PENDIENTE),
+            WaitFor.seconds(2),
             JavaScriptClick.on(TesoreriaPage.BTN_ACEPTAR),
-            WaitUntil.the(ReporteVentasPage.SPN_CARGANDO, isNotVisible()).forNoMoreThan(100).seconds()
+            WaitUntil.the(ReporteVentasPage.SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds()
     );
   }
 }

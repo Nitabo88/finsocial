@@ -4,7 +4,7 @@ Característica:  Formalización
   Como asesor de finsonet
   quiero tramitar el paso de formalización de un crédito
   para revisar que el proceso funcione correctamente
-ó
+
   @Formalizacion
   Escenario: Formalización - Aprobar el crédito desde formalización
     Dado que un asesor esta en el paso de formalización
