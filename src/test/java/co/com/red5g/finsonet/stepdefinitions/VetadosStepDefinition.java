@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException.MENSAJE_VETO;
 import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -19,6 +18,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
+import net.serenitybdd.screenplay.GivenWhenThen;
 
 public class VetadosStepDefinition {
 
@@ -47,7 +47,7 @@ public class VetadosStepDefinition {
     @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
       theActorInTheSpotlight().should
-          (seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVetoException.class, MENSAJE_VETO));
+          (GivenWhenThen.seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVetoException.class, NoSeMarcaElVetoException.MENSAJE_VETO));
     }
 
     @Y("el asesor no deberia poder crear un credito con este usuario")
@@ -55,6 +55,6 @@ public class VetadosStepDefinition {
       theActorInTheSpotlight().attemptsTo(
           IntentaCrear.unCredito(a().unCliente()));
       theActorInTheSpotlight()
-          .should(seeThat(ElMensaje.noRegistra(), equalTo(NO_REGISTRA)));
+          .should(GivenWhenThen.seeThat(ElMensaje.noRegistra(), equalTo(NO_REGISTRA)));
     }
 }

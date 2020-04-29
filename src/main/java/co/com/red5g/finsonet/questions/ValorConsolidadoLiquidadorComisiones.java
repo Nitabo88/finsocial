@@ -6,7 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LBL_
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LST_TOTALES_VALORES_CREDITOS;
 import static co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage.LST_VALOR_CREDITOS;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.finsonet.utils.Utilerias.suma;
+import static co.com.red5g.utils.Utilerias.suma;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import java.util.List;

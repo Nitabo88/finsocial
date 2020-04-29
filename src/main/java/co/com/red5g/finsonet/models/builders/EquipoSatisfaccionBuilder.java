@@ -28,7 +28,7 @@ public class EquipoSatisfaccionBuilder {
     public String getDetalleEquipoSatisfaccion() { return detalleEquipoSatisfaccion;    }
 
     public EquipoSatisfaccion Cliente() {
-        this.conDocumentoEquipoSatisfaccion("10040048");
+        this.conDocumentoEquipoSatisfaccion("32630669");
         this.conDetalleEquipoSatisfaccion("Detalle de la nueva solicitud contact");
         this.conAsunto("SOLICITUD DE DETALLE DE CRÉDITO");
         this.conProtocolo("Envio detalle de credito");

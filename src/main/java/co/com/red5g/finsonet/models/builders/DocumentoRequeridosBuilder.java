@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.DocumentosRequeridos;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
-public class DocumentoRequeridosBuilder implements Builder <DocumentosRequeridos> {
+public class DocumentoRequeridosBuilder implements Builder<DocumentosRequeridos> {
     private String strTipoSolicitud;
     private String strCiudad;
     private String strAgenciaVinculacion;

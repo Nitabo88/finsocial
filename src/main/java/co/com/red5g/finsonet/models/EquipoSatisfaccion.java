@@ -13,7 +13,7 @@ public class EquipoSatisfaccion {
         this.documentoEquipoSatisfaccion = equipoSatisfaccionBuilder.getDocumentoEquipoSatisfaccion();
         this.detalleEquipoSatisfaccion = equipoSatisfaccionBuilder.getDetalleEquipoSatisfaccion();
         this.asunto = equipoSatisfaccionBuilder.getAsunto();
-        this.asunto = equipoSatisfaccionBuilder.getProtocolo();
+        this.protocolo = equipoSatisfaccionBuilder.getProtocolo();
     }
 
     public String getDocumentoEquipoSatisfaccion() {

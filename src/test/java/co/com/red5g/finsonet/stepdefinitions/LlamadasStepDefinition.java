@@ -14,6 +14,7 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
+import net.serenitybdd.screenplay.GivenWhenThen;
 
 public class LlamadasStepDefinition {
 
@@ -37,7 +38,7 @@ public class LlamadasStepDefinition {
   @Entonces("^deberá ver que la llamada quedo confirmada$")
   public void confirmarLlamada() {
     theActorInTheSpotlight().should
-        (seeThat(LaLlamada.estaConfirmada(), containsString(ESTADO_COMPLETO)));
+        (GivenWhenThen.seeThat(LaLlamada.estaConfirmada(), containsString(ESTADO_COMPLETO)));
   }
 
   @Dado("^que (.*) debe gestionar la llamada para un crédito finsoamigo$")

@@ -6,6 +6,7 @@ import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentoLibranza;
 import co.com.red5g.finsonet.tasks.ModuloLlamada;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Tasks;
 
 public class Realiza {
 
@@ -13,7 +14,7 @@ public class Realiza {
   }
 
   public static Performable unChequeoDeDocumento(Credito credito) {
-    return instrumented(ChequeoDocumentoLibranza.class, credito);
+    return Tasks.instrumented(ChequeoDocumentoLibranza.class, credito);
   }
 
   public static Performable laLlamada() {

@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -30,6 +29,6 @@ public class AprobacionCreditoFinsoamigoStepDefinition {
 
   @Entonces("^deberá ver el crédito en el paso de tesorería de finsoamigos$")
   public void verificarCreditoTesoreria() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaFinsoamigo()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaFinsoamigo()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 }

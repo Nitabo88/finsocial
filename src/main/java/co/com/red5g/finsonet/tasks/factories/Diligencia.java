@@ -1,18 +1,16 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-
-import co.com.red5g.finsonet.models.AccionCdas;
-import co.com.red5g.finsonet.models.AprobacionCredito;
-import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.models.Formalizacion;
 import co.com.red5g.finsonet.models.EquipoSatisfaccion;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.models.Tesoreria;
-import co.com.red5g.finsonet.models.Vetados;
+import co.com.red5g.finsonet.models.*;
 import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Tasks;
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public final class Diligencia {
 
@@ -20,7 +18,7 @@ public final class Diligencia {
     }
 
     public static Performable laInformacionDeChequeoDeDocumentosLibranza(ChequeoDocumento chequeoDocumento) {
-        return instrumented(InformacionChequeoDocumentoLibranza.class, chequeoDocumento);
+        return Tasks.instrumented(InformacionChequeoDocumentoLibranza.class, chequeoDocumento);
     }
 
     public static Performable laSolicitudDeCredito() {
@@ -28,7 +26,7 @@ public final class Diligencia {
     }
 
     public static Performable laInformacionIncompletaDeChequeoDeDocumentos(ChequeoDocumento chequeoDocumento) {
-        return instrumented(InformacionIncompletaChequeoDocumentos.class, chequeoDocumento);
+        return Tasks.instrumented(InformacionIncompletaChequeoDocumentos.class, chequeoDocumento);
     }
 
     public static Performable laInformacionDeConfirmacion() {
@@ -36,7 +34,7 @@ public final class Diligencia {
     }
 
     public static Performable laInformacionDeRegresoDeConfirmacion(Confirmacion confirmacion) {
-        return instrumented(RegresarConfirmacion.class, confirmacion);
+        return Tasks.instrumented(RegresarConfirmacion.class, confirmacion);
     }
 
     public static Performable laInformacionDeRegresoDeAprobacionDeCredito(AprobacionCredito aprobacionCredito) {
@@ -71,7 +69,7 @@ public final class Diligencia {
         return instrumented(AprobacionIncorporacion.class, aprobacion);
     }
 
-    public static Performable laInformacionDeRegresoDeFormalizacion(final Formalizacion motivoRegreso) {
+    public static Performable laInformacionDeRegresoDeFormalizacion(final co.com.red5g.finsonet.models.Formalizacion motivoRegreso) {
         return instrumented(RegresoFormalizacion.class, motivoRegreso);
     }
 
@@ -79,7 +77,7 @@ public final class Diligencia {
         return instrumented(PendienteConfirmacion.class,motivoPendiente);
     }
 
-    public static Performable laInformacionFormalizacionPendiente(Formalizacion motivoPendiente) {
+    public static Performable laInformacionFormalizacionPendiente(co.com.red5g.finsonet.models.Formalizacion motivoPendiente) {
         return instrumented(PendienteFormalizacion.class, motivoPendiente);
     }
 

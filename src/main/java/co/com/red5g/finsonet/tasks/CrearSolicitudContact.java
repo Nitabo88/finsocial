@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.userinterfaces.EquipoSatisfaccionPage.*;
-import static co.com.red5g.finsonet.utils.Utilerias.random;
+import static co.com.red5g.utils.Utilerias.random;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 
 public class CrearSolicitudContact implements Task {

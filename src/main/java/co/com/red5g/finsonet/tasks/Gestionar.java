@@ -2,7 +2,6 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
 import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
-import static co.com.red5g.finsonet.interacions.CerrarPestanaAnterior.cerrarPestanaAnterior;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionPage.BTN_GESTIONAR;
 import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionPage.RDB_CRITERIO_BUSQUEDA;
@@ -15,11 +14,12 @@ import static co.com.red5g.finsonet.userinterfaces.ConfirmacionLLamadasPage.TXT_
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_HAMBURGUESA_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.finsonet.utils.Utilerias.random;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.red5g.finsonet.interacions.CerrarPestanaAnterior;
+import co.com.red5g.utils.Utilerias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -42,8 +42,8 @@ public class Gestionar implements Task {
   @Override
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
-    String respuestaCuatro = String.valueOf(random(1, 4));
-    String respuestaCinco = String.valueOf(random(7, 10));
+    String respuestaCuatro = String.valueOf(Utilerias.random(1, 4));
+    String respuestaCinco = String.valueOf(Utilerias.random(7, 10));
     actor.attemptsTo(
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(MNU_HAMBURGUESA_LLAMADAS),
@@ -53,7 +53,7 @@ public class Gestionar implements Task {
         Enter.theValue(numeroCredito).into(TXT_BUSQUEDA).thenHit(Keys.ENTER),
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(BTN_GESTIONAR.of(numeroCredito)),
-        cerrarPestanaAnterior(),
+        CerrarPestanaAnterior.cerrarPestanaAnterior(),
         cambiarPestanaActual(),
         Click.on(CHK_RESPUESTA_CUATRO.of(respuestaCuatro)),
         Click.on(CHK_RESPUESTA_QUINTO.of(respuestaCinco)),

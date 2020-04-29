@@ -1,16 +1,8 @@
 package co.com.red5g.finsonet.interacions;
 
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_ANIO;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_DIA;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_FLECHA_DERECHA;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_FLECHA_IZQUIERDA;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.BTN_MES;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_ANIO;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_DIA;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_MES;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.separarFecha;
-import static co.com.red5g.finsonet.utils.Utilerias.between;
-
+import co.com.red5g.finsonet.userinterfaces.DataPickerPage;
+import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.Utilerias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
@@ -38,21 +30,21 @@ public class SeleccionarFecha implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(fecha),
-                Click.on(BTN_DIA),
-                Click.on(BTN_MES)
+                Click.on(DataPickerPage.BTN_DIA),
+                Click.on(DataPickerPage.BTN_MES)
         );
-        String[] anios = separarFecha(BTN_ANIO.resolveFor(actor).getText());
+        String[] anios = UtileriaFechas.separarFecha(DataPickerPage.BTN_ANIO.resolveFor(actor).getText());
         int numeroMovimientos = desplazamientoAnios(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]));
         String desplazamiento = direccionDesplazamiento(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]));
         actor.attemptsTo(
-                Check.whether(between(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]), Integer.parseInt(anios[1])))
+                Check.whether(Utilerias.between(Integer.parseInt(opcionAnio), Integer.parseInt(anios[0]), Integer.parseInt(anios[1])))
                         .andIfSo(
-                                Click.on(DTP_ANIO.of(opcionAnio)))
+                                Click.on(DataPickerPage.DTP_ANIO.of(opcionAnio)))
                         .otherwise(
-                                SeleccionarElAnio.list(BTN_FLECHA_IZQUIERDA, BTN_FLECHA_DERECHA, numeroMovimientos, desplazamiento),
-                                Click.on(DTP_ANIO.of(opcionAnio))),
-                Click.on(DTP_MES.of(opcionMes)),
-                Click.on(DTP_DIA.of(opcionDia)));
+                                SeleccionarElAnio.list(DataPickerPage.BTN_FLECHA_IZQUIERDA, DataPickerPage.BTN_FLECHA_DERECHA, numeroMovimientos, desplazamiento),
+                                Click.on(DataPickerPage.DTP_ANIO.of(opcionAnio))),
+                Click.on(DataPickerPage.DTP_MES.of(opcionMes)),
+                Click.on(DataPickerPage.DTP_DIA.of(opcionDia)));
     }
 
     public static SeleccionarFecha deConsulta(Target calendar, String date) {

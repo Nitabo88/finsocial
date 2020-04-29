@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.tasks.factories;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Tasks;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -16,7 +17,7 @@ public final class Ubicarse {
   }
 
   public static Performable enElFormulario(Credito credito) {
-    return instrumented(SolicitudCredito.class, credito);
+    return Tasks.instrumented(SolicitudCredito.class, credito);
   }
 
   public static Performable enVetados() {

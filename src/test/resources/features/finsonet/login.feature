@@ -10,6 +10,6 @@ Característica: Login Finsonet
     Cuando ingresa su informacion de autenticacion
     Entonces el debería ver Bienvenido/a
 
-  Escenario: Loguin Alternativo
+  Escenario: Login Alternativo
     Cuando un asesor se autentica en finsonet con el usuario ochinchilla, la contraseña Nicolas32@ y el codigo 123456
     Entonces el debería ver Bienvenido/a

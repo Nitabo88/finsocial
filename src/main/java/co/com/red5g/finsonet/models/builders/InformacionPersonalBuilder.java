@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.InformacionPersonal;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public final class InformacionPersonalBuilder implements Builder<InformacionPersonal> {
     private String primerApellido;

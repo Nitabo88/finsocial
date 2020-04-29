@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.utils;
+package co.com.red5g.utils;
 
 public enum InformacionCreditoLibranza {
     INFORMACION_FORMULARIO_LIBRANZA("19362753", "1300000", "48"),

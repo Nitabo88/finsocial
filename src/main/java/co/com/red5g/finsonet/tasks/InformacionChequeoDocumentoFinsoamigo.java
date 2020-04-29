@@ -1,7 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.questions.ObtenerUrl.obtenerUrl;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR1_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
@@ -13,6 +12,8 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUN
 import co.com.red5g.finsonet.interacions.factories.Subir;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import java.util.List;
+
+import co.com.red5g.finsonet.questions.ObtenerUrl;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -23,7 +24,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 public class InformacionChequeoDocumentoFinsoamigo implements Task {
 
-  private co.com.red5g.finsonet.models.ChequeoDocumento chequeoDocumento;
+  private ChequeoDocumento chequeoDocumento;
 
   public InformacionChequeoDocumentoFinsoamigo(ChequeoDocumento chequeoDocumento) {
     this.chequeoDocumento = chequeoDocumento;
@@ -34,7 +35,7 @@ public class InformacionChequeoDocumentoFinsoamigo implements Task {
     List<WebElementFacade> lstNombreChequeoDocumento = LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.resolveAllFor(actor);
     actor.attemptsTo(
         JavaScriptClick.on(lstNombreChequeoDocumento.get(0)));
-    actor.remember(NUMERO_CREDITO, obtenerUrl());
+    actor.remember(NUMERO_CREDITO, ObtenerUrl.obtenerUrl());
     actor.attemptsTo(
         Check.whether(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria()).resolveFor(actor).isVisible()).andIfSo(
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
