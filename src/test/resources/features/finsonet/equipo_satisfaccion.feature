@@ -8,7 +8,7 @@ Característica: Equipo de satisfaccion
   Escenario: Generar PQR a una persona natural
     Dado que el asesor generar una PQR
     Cuando el asesor genere una nueva PQR
-    Entonces el asesor deberia verlo en listado de nuevos ingresos
+    Entonces el asesor deberá verlo en Solicitudes Contact Center
 
 
 

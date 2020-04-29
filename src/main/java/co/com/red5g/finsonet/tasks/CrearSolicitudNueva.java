@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.EquipoSatisfaccion;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -7,25 +8,33 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.finsonet.userinterfaces.EquipoSatisfaccionPage.*;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
+import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionRadicadosPage.BTN_NUEVO_SOLICITUD;
+import static co.com.red5g.finsonet.userinterfaces.EnquestaFidelizacionPage.*;
+import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.*;
+import static co.com.red5g.utils.UtileriaFechas.formatearFechaServidorUTC;
 import static co.com.red5g.utils.Utilerias.random;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 
-public class CrearSolicitudContact implements Task {
+public class CrearSolicitudNueva implements Task {
+
     private EquipoSatisfaccion equipoSatisfaccion;
 
-    public CrearSolicitudContact(EquipoSatisfaccion equipoSatisfaccion) {
+    public CrearSolicitudNueva(EquipoSatisfaccion equipoSatisfaccion) {
         this.equipoSatisfaccion = equipoSatisfaccion;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        actor.remember(FECHA, formatearFechaServidorUTC());
+        actor.remember(CEDULA_ACTOR, equipoSatisfaccion.getDocumentoEquipoSatisfaccion());
         String canalContacto = String.valueOf(random(2, 11));
         actor.attemptsTo(
-                Click.on(BTN_NUEVO_CONTACT),
-                Click.on(BTN_CANAL_CONTACTO.of(canalContacto)),
+                Click.on(BTN_NUEVO_SOLICITUD),
+                WaitFor.seconds(1),
+                Click.on(BTN_CANAL_CONTACTO.of(canalContacto)));
+        actor.attemptsTo(
                 Enter.theValue(equipoSatisfaccion.getDocumentoEquipoSatisfaccion()).into(TXT_DOCUMENTO),
                 SelectFromOptions.byVisibleText(equipoSatisfaccion.getAsunto()).from(LST_ASUNTO),
                 Enter.theValue(equipoSatisfaccion.getDetalleEquipoSatisfaccion()).into(TXT_DETALLE),
@@ -35,12 +44,15 @@ public class CrearSolicitudContact implements Task {
                 Enter.theValue(equipoSatisfaccion.getDetalleEquipoSatisfaccion()).into(TXT_DETALLE_PROTOCOLO),
                 Click.on(BTN_ENVIAR_PROTOCOLO),
                 JavaScriptClick.on(BTN_CLOSE_PROTOCOLO),
-                JavaScriptClick.on(BTN_REALIZAR_ENCUESTA),
+                JavaScriptClick.on(BTN_REALIZAR_ENCUESTA));
+        actor.attemptsTo(
                 Enter.theValue(equipoSatisfaccion.getDocumentoEquipoSatisfaccion()).into(TXT_DOCUMENTO_ENCUESTA),
-                JavaScriptClick.on(SPN_PREGUNTA_1),
-                JavaScriptClick.on(SPN_PREGUNTA_2),
-                WaitUntil.the(BTN_ENCUESTA_GUARDAR, isCurrentlyVisible()).forNoMoreThan(3).seconds(),
-                JavaScriptClick.on(BTN_ENCUESTA_GUARDAR)
+                JavaScriptClick.on(RDB_PREGUNTA_1),
+                JavaScriptClick.on(RDB_PREGUNTA_2),
+                WaitFor.seconds(1),
+                JavaScriptClick.on(BTN_ENCUESTA_GUARDAR),
+                WaitFor.seconds(1),
+                Click.on(BTN_ACEPTAR)
         );
     }
 }

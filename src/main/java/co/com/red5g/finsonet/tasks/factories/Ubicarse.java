@@ -36,7 +36,7 @@ public final class Ubicarse {
     return instrumented(LlamadaCrediHuy.class, credito);
   }
 
-  public static Performable enElModuloContact() {
+  public static Performable enElModuloEquipoSatisfaccion() {
     return instrumented(EquipoSatisfaccion.class);
   }
 
