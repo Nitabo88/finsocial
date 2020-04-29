@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.userinterfaces;
 
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.targets.Target;
+import org.openqa.selenium.By;
 
 public class BusquedaGestionRadicadosPage {
 
@@ -12,7 +12,7 @@ public class BusquedaGestionRadicadosPage {
     public static final Target TXT_BUSQUEDA = Target.the("input de busqueda").located(By.id("buscarInput"));
     public static final Target LST_SOLICITUD_CONTACT_CENTER = Target.the("la solicitud de contact center").locatedBy("//td[contains(text(),'{0}')]//parent::tr//td//p");
 
-    public BusquedaGestionRadicadosPage() {
+    private BusquedaGestionRadicadosPage() {
         throw new IllegalStateException("Utility class");
     }
 }

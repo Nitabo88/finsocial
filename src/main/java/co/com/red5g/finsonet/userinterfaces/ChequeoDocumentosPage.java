@@ -19,8 +19,8 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_ACEPTAR2_POP_UP = Target.the("el boton aceptar del segundo pop up").located(By.id("btn-aceptar-2"));
     public static final Target LST_CODIGO_PAPELERIA = Target.the("el codigo de papeleria").located(By.id("codPapeleria"));
     public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
-    public static final Target BTN_FORMULARIO_SOLICITUD = Target.the("el boton aceptar").located(By.xpath("//a[text()='Formulario de solicitud']"));
-    public static final Target BTN_ACEPTAR2 = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']"));
+    public static final Target BTN_FORMULARIO_SOLICITUD = Target.the("el boton formulario de solicitud").located(By.xpath("//a[text()='Formulario de solicitud']"));
+    public static final Target BTN_ACEPTAR2 = Target.the("el boton aceptar 2").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']"));
     public static final Target BTN_MODIFICAR_CREDITO = Target.the("el boton modificar credito").located(By.id("btn_Dif"));
     public static final Target BTN_ACEPTAR_HUY = Target.the("el boton aceptar de papeleria del credito huy").located(By.id("btn-aceptar-1"));
     public static final Target BTN_ACEPTAR_ACCION_HUY = Target.the("el boton aceptar de aviso de papeleria del credito huy").located(By.xpath("//button[@class='btn btn-light-blue']"));
