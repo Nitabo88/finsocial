@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.TesoreriaBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -36,6 +35,6 @@ public class TesoreriaStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en tesorería en la lista de pendientes$")
   public void verificarCreditoPendiente() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeTesoreria()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeTesoreria()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 }

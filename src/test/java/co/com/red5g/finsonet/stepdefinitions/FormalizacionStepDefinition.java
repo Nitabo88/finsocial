@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.FormalizacionBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -36,7 +35,7 @@ public class FormalizacionStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en formalización en la lista de pendientes$")
   public void verificarCreditoPendiente() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeFormalizacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor aprueba el crédito en formalización$")
@@ -47,6 +46,6 @@ public class FormalizacionStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en el paso de tesoreria$")
   public void verificarCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreria()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreria()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 }

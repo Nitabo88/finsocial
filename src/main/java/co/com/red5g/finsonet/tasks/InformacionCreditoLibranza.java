@@ -11,10 +11,10 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENT
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_VALOR_CUOTA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.formatearFechaServidorUTC;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Credito;
+import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -38,7 +38,7 @@ public class InformacionCreditoLibranza implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.remember(CEDULA_ACTOR, credito.getNumeroDocumento());
-        actor.remember(FECHA, formatearFechaServidorUTC());
+        actor.remember(FECHA, UtileriaFechas.formatearFechaServidorUTC());
         actor.attemptsTo(
             WaitUntil.the(TXT_DOCUMENTO, isVisible()),
             Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),

@@ -1,12 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
-import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
-
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
@@ -15,6 +8,12 @@ import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
+
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
 public class CreacionCreditoStepDefinition {
 
@@ -49,16 +48,23 @@ public class CreacionCreditoStepDefinition {
 
     @Entonces("el podrá ver un crédito de libranza creado")
     public void verificarCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaExiste()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaExiste()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
     }
 
     @Entonces("el podrá ver un crédito Huy creado")
     public void verificarCreacionCreditoHuy() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.huyExiste()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.huyExiste()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
     }
 
     @Entonces("el no podrá crear un crédito")
     public void verificarNoCreacionCredito() {
         theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaNoExiste(), containsString(ESTADO_NO_EXITOSO)));
+    }
+
+    @Cuando("^el diligencia el número de documento (.*) con el valor (.*) y a un plazo de (.*) meses$")
+    public void diligenciarInformacionIncompleta(String strNumeroDocumento, String strValorCuota, String strPlazo) {
+        theActorInTheSpotlight().attemptsTo(
+                Ingresa.laInformacionIncompletaDelCredito(la().informacionDelCredito(strNumeroDocumento, strValorCuota, strPlazo))
+        );
     }
 }

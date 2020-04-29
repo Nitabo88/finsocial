@@ -12,13 +12,14 @@ import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_A
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_MES_DESCUENTO;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_SELECCIONAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_DETALLE_GESTION;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -57,8 +58,8 @@ public class AprobacionIncorporacion implements Task {
         WaitFor.seconds(3),
         WaitUntil.the(LST_ANIO_DESCUENTO, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
         MoveMouse.to(LST_ANIO_DESCUENTO),
-        SelectFromOptions.byVisibleText(obtenerPeriodoActual().split("-")[0]).from(LST_ANIO_DESCUENTO),
-        SelectFromOptions.byValue(obtenerPeriodoActual().split("-")[1]).from(LST_MES_DESCUENTO),
+        SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoActual().split("-")[0]).from(LST_ANIO_DESCUENTO),
+        SelectFromOptions.byValue(UtileriaFechas.obtenerPeriodoActual().split("-")[1]).from(LST_MES_DESCUENTO),
         WaitFor.seconds(4));
     actor.attemptsTo(
         MoveMouse.to(BTN_APROBAR),

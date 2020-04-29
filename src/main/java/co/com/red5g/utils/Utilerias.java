@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.utils;
+package co.com.red5g.utils;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;

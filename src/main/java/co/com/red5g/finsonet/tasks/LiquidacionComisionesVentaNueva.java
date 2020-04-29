@@ -4,11 +4,11 @@ import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_NUMERO_
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LBL_VALOR_VENTA_NUEVA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_PERIODO;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
-import static co.com.red5g.finsonet.utils.UtileriaFechas.obtenerPeriodoActual;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.IngresaAReporte;
+import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
@@ -24,7 +24,7 @@ public class LiquidacionComisionesVentaNueva implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            SelectFromOptions.byVisibleText(obtenerPeriodoActual()).from(LST_PERIODO),
+            SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoActual()).from(LST_PERIODO),
             WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             WaitFor.seconds(ESPERA)
         );

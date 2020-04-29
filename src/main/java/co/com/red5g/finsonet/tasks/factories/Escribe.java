@@ -21,6 +21,7 @@ import co.com.red5g.finsonet.tasks.FormularioInformacionPersonal;
 import co.com.red5g.finsonet.tasks.FormularioInformacionPrestamo;
 import co.com.red5g.finsonet.tasks.FormularioInformacionReferencias;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.Tasks;
 
 public final class Escribe {
 
@@ -28,16 +29,16 @@ public final class Escribe {
     }
 
     public static Performable elDetalleDeLaInformacionFinanciera(InformacionFinanciera informacionFinanciera) {
-        return instrumented(FormularioInformacionFinanciera.class, informacionFinanciera);
+        return Tasks.instrumented(FormularioInformacionFinanciera.class, informacionFinanciera);
     }
 
     public static Performable laInformacionDeLasReferencias(Referencias informacionReferenciaFamiliar, Referencias informacionReferenciaPersonal,
-        Referencias informacionReferenciaFinanciera) {
+                                                            Referencias informacionReferenciaFinanciera) {
         return instrumented(FormularioInformacionReferencias.class, informacionReferenciaFamiliar, informacionReferenciaPersonal, informacionReferenciaFinanciera);
     }
 
     public static Performable laInformacionDelBalancePersonal(InformacionBalancePersonal informacionBalancePersonal) {
-        return instrumented(FormularioBalancePersonal.class, informacionBalancePersonal);
+        return Tasks.instrumented(FormularioBalancePersonal.class, informacionBalancePersonal);
     }
 
     public static Performable laInformacionDelConyugue(InformacionPersonal informacionPersonalConyugue, InformacionConyugue informacionConyugue) {
@@ -45,7 +46,7 @@ public final class Escribe {
     }
 
     public static Performable laInformacionDeLosActivos(DescripcionActivos descripcionActivos) {
-        return instrumented(FormularioInformacionActivos.class, descripcionActivos);
+        return Tasks.instrumented(FormularioInformacionActivos.class, descripcionActivos);
     }
 
     public static Performable laInformacionDelPrestamo(InformacionPrestamo informacionPrestamo) {

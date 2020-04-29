@@ -1,9 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada.NUMERO_CREDITOS_VENTA_LIBERADA;
-import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada.VALOR_VENTA_LIBERADA;
-import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva.NUMERO_CREDITOS_VENTA_NUEVA;
-import static co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva.VALOR_VENTA_NUEVA;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -13,6 +9,8 @@ import co.com.red5g.finsonet.questions.factories.ElNumero;
 import co.com.red5g.finsonet.questions.factories.ElValor;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada;
+import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -51,25 +49,25 @@ public class LiquidadorComisionesStepDefinition {
     @Entonces("^el observara que el valor de venta nueva es consistente$")
     public void verificarValorVentaNueva() {
         theActorInTheSpotlight().should(
-            seeThat(ElValor.deVentaNuevaEsConsistente(), containsString(theActorInTheSpotlight().recall(VALOR_VENTA_NUEVA))));
+            seeThat(ElValor.deVentaNuevaEsConsistente(), containsString(theActorInTheSpotlight().recall(LiquidacionComisionesVentaNueva.VALOR_VENTA_NUEVA))));
     }
 
     @Y("^que el numero de creditos de venta nueva es consistente$")
     public void verificarNumeroCreditosVentaNueva() {
         theActorInTheSpotlight().should(
-            seeThat(ElNumero.deCreditosDeVentaNuevaEsConsistente(), containsString(theActorInTheSpotlight().recall(NUMERO_CREDITOS_VENTA_NUEVA))));
+            seeThat(ElNumero.deCreditosDeVentaNuevaEsConsistente(), containsString(theActorInTheSpotlight().recall(LiquidacionComisionesVentaNueva.NUMERO_CREDITOS_VENTA_NUEVA))));
     }
 
     @Y("^que el numero de creditos de venta liberada es consistente$")
     public void verificarNumeroCreditosVentaLiberada() {
         theActorInTheSpotlight().should(
-            seeThat(ElNumero.deCreditosDeVentaLiberadaEsConsistente(), containsString(theActorInTheSpotlight().recall(NUMERO_CREDITOS_VENTA_LIBERADA))));
+            seeThat(ElNumero.deCreditosDeVentaLiberadaEsConsistente(), containsString(theActorInTheSpotlight().recall(LiquidacionComisionesVentaLiberada.NUMERO_CREDITOS_VENTA_LIBERADA))));
     }
 
     @Entonces("^el observara que el valor de venta liberada es consistente$")
     public void verificarValorVentaLiberada() {
         theActorInTheSpotlight().should(
-            seeThat(ElValor.deVentaLiberadaEsConsistente(), containsString(theActorInTheSpotlight().recall(VALOR_VENTA_LIBERADA))));
+            seeThat(ElValor.deVentaLiberadaEsConsistente(), containsString(theActorInTheSpotlight().recall(LiquidacionComisionesVentaLiberada.VALOR_VENTA_LIBERADA))));
     }
 
     @Entonces("^el observara que el numero de creditos consolidado y el detalle del reporte de liquidacion de comisiones es consistente$")
