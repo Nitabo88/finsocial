@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks.factories;
 
 import co.com.red5g.finsonet.models.Confirmacion;
+import co.com.red5g.finsonet.models.EquipoSatisfaccion;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.models.Tesoreria;
 import co.com.red5g.finsonet.models.*;
@@ -53,6 +54,10 @@ public final class Diligencia {
 
     public static Performable laInformacionDeCreditoPendienteEnIncorporacion(final Incorporacion motivoPendiente) {
         return instrumented(IncorporacionPendiente.class, motivoPendiente);
+    }
+
+    public static Performable unaNuevaSolicitud(EquipoSatisfaccion equipoSatisfaccion) {
+        return instrumented(CrearSolicitudNueva.class, equipoSatisfaccion);
     }
 
     public static Performable elVetoInterno(final Vetados vetados) {

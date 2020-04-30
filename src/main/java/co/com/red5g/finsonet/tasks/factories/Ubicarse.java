@@ -1,16 +1,11 @@
 package co.com.red5g.finsonet.tasks.factories;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
-
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.finsonet.tasks.LlamadaCrediHuy;
-import co.com.red5g.finsonet.tasks.LlamadaFinsoamigo;
-import co.com.red5g.finsonet.tasks.LlamadaLibranza;
-import co.com.red5g.finsonet.tasks.NuevoCredito;
-import co.com.red5g.finsonet.tasks.SolicitudCredito;
-import co.com.red5g.finsonet.tasks.VetoCliente;
+import co.com.red5g.finsonet.tasks.*;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public final class Ubicarse {
 
@@ -30,7 +25,7 @@ public final class Ubicarse {
   }
 
   public static Performable enLlamada(Credito credito) {
-    return Tasks.instrumented(LlamadaLibranza.class, credito);
+    return instrumented(LlamadaLibranza.class, credito);
   }
 
   public static Performable enLlamadaFinsoamigo() {
@@ -39,5 +34,13 @@ public final class Ubicarse {
 
   public static Performable enLlamadaCrediHuy(Credito credito) {
     return instrumented(LlamadaCrediHuy.class, credito);
+  }
+
+  public static Performable enElModuloEquipoSatisfaccion() {
+    return instrumented(EquipoSatisfaccion.class);
+  }
+
+  public static Performable enContactCenter() {
+    return instrumented(ContactCenter.class);
   }
 }

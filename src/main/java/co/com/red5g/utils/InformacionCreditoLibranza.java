@@ -12,7 +12,6 @@ public enum InformacionCreditoLibranza {
     INFORMACION_CDAS_COMPLETO_LIBRANZA("359982", "1050000", "55"),
     INFORMACION_LLAMADA_LIBRANZA("24313904", "97000", "48");
 
-
     private final String numeroDocumento;
     private final String valorCuota;
     private final String numeroCuotas;
