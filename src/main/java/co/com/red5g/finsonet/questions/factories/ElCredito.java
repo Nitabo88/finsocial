@@ -83,4 +83,7 @@ public final class ElCredito {
   public static Question<String> rechazado() {
     return new RechazoAprobacionCreditoHuy();
   }
+
+  public static Question<Boolean> enAntecartera() { return new AntecarteraLibranza();
+  }
 }

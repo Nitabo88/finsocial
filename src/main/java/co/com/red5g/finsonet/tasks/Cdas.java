@@ -9,13 +9,17 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.*;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class Cdas implements Task {
 
+  private static final int TIEMPO = 120;
   private AccionCdas accionCdas;
   private static final String ID_CREDITO = "ID crédito";
 
@@ -34,6 +38,7 @@ public class Cdas implements Task {
             JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
             CerrarPestanaAnterior.cerrarPestanaAnterior(),
             cambiarPestanaActual(),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Completar.lasAccionesDeGestionCdas(accionCdas),
             Click.on(BTN_ATRAS)
     );

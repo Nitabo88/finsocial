@@ -73,19 +73,33 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this;
     }
 
-    public ChequeoDocumento motivo() {
-      this.conSeleccionMotivo();
-      this.conRazonMotivo();
+    public ChequeoDocumento motivoLibranza() {
+        this.conSeleccionMotivo("Datos incompleto");
+        this.conRazonMotivo("El usuario tiene los documentos incompletos");
         return this.build();
     }
 
-    private ChequeoDocumentoBuilder conRazonMotivo() {
-        this.razonMotivo = "El usuario tiene los documentos incompletos";
+
+    public ChequeoDocumento motivoCrediHuy() {
+        this.conSeleccionMotivo("Certificaciones vencidas");
+        this.conRazonMotivo("Se deben actualizar las certificaciones");
+        return this.build();
+    }
+
+    public ChequeoDocumento motivoNegacionCrediHuy() {
+        this.conPapeleria("Papelería Nueva");
+        this.conSeleccionMotivo("INCONSISTENCIA PAPELERIA");
+        this.conRazonMotivo("Se deben revisar la papeleria");
+        return this.build();
+    }
+
+    private ChequeoDocumentoBuilder conRazonMotivo(String razonMotivo) {
+        this.razonMotivo = razonMotivo;
         return this;
     }
 
-    private ChequeoDocumentoBuilder conSeleccionMotivo() {
-        this.seleccionMotivo = "Datos incompleto";
+    private ChequeoDocumentoBuilder conSeleccionMotivo(String seleccionMotivo) {
+        this.seleccionMotivo = seleccionMotivo;
         return this;
     }
 

@@ -33,8 +33,8 @@ public class CrearSolicitudNueva implements Task {
         actor.attemptsTo(
                 Click.on(BTN_NUEVO_SOLICITUD),
                 WaitFor.seconds(1),
-                Click.on(BTN_CANAL_CONTACTO.of(canalContacto)));
-        actor.attemptsTo(
+                Click.on(BTN_CANAL_CONTACTO.of(canalContacto)),
+                WaitFor.seconds(1),
                 Enter.theValue(equipoSatisfaccion.getDocumentoEquipoSatisfaccion()).into(TXT_DOCUMENTO),
                 SelectFromOptions.byVisibleText(equipoSatisfaccion.getAsunto()).from(LST_ASUNTO),
                 Enter.theValue(equipoSatisfaccion.getDetalleEquipoSatisfaccion()).into(TXT_DETALLE),
@@ -46,6 +46,7 @@ public class CrearSolicitudNueva implements Task {
                 JavaScriptClick.on(BTN_CLOSE_PROTOCOLO),
                 JavaScriptClick.on(BTN_REALIZAR_ENCUESTA));
         actor.attemptsTo(
+                WaitFor.seconds(1),
                 Enter.theValue(equipoSatisfaccion.getDocumentoEquipoSatisfaccion()).into(TXT_DOCUMENTO_ENCUESTA),
                 JavaScriptClick.on(RDB_PREGUNTA_1),
                 JavaScriptClick.on(RDB_PREGUNTA_2),

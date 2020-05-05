@@ -1,11 +1,9 @@
 package co.com.red5g.finsonet.tasks;
 
-import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.factories.Subir;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -24,10 +22,10 @@ public class AprobacionFormalizacion implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-                WaitFor.seconds(3),
                 WaitUntil.the(LBL_FORMALIZACION, isPresent()).forNoMoreThan(TIEMPO).seconds(),
-                MoveMouse.to(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)),
-                JavaScriptClick.on(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)),
+                MoveMouse.to(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)));
+        actor.attemptsTo(
+                Click.on(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)),
                 Click.on(BTN_SUBIR_DOCUMENTOS),
                 cambiarPestanaActual(),
                 Subir.losArchivosDeFormalizacion(),

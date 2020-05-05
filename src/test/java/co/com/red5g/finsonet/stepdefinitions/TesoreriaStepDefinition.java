@@ -37,4 +37,14 @@ public class TesoreriaStepDefinition {
   public void verificarCreditoPendiente() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeTesoreria()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
+
+  @Cuando("^el asesor aprueba el crédito en tesorería$")
+  public void aprobarCredito() {
+    theActorInTheSpotlight().attemptsTo(Diligencia.laInformacionDeAprobacionDeTesoreria());
+  }
+
+  @Entonces("^el asesor deberá ver el crédito en antecartera$")
+  public void verificarCreditoAntecartera() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAntecartera()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+  }
 }

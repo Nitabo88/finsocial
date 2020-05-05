@@ -1,12 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
-
 import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
 import co.com.red5g.finsonet.questions.QueAparece;
@@ -19,6 +12,13 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.GivenWhenThen;
+
+import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
 public class ChequeoDocumentosStepDefinition {
 
@@ -34,7 +34,7 @@ public class ChequeoDocumentosStepDefinition {
   @Cuando("^el asesor decline el chequeo del crédito de libranza del cliente$")
   public void rechazarChequeoDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Ingresa.elRechazoDelCredito(con().motivo())
+            Ingresa.elRechazoDelCredito(con().motivoLibranza())
     );
   }
 
@@ -53,7 +53,7 @@ public class ChequeoDocumentosStepDefinition {
   @Cuando("^el asesor adjunta toda la información de el chequeo de documentos$")
   public void adjuntarDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza())
+            Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza())
     );
   }
 
@@ -65,6 +65,6 @@ public class ChequeoDocumentosStepDefinition {
   @Entonces("^el auxiliar de documentación debería verlo en su lista de chequeo de documentos$")
   public void verificarRevisionDocumentacion() {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
-    theActorInTheSpotlight().should(GivenWhenThen.seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO));
+    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO));
   }
 }

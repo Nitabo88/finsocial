@@ -5,9 +5,11 @@ import org.openqa.selenium.By;
 
 public class TesoreriaPage {
 
-    public static final Target LST_FILA_TESORERIA = Target.the("la lista de tesoreria").locatedBy("//div[@id='fixed-table-container-1']//td[text()='{0}']//parent::tr");
+    public static final Target LST_FILA_TESORERIA_LIBRANZA = Target.the("la lista de tesoreria").locatedBy("//tbody[@id='tablaLib']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_FINSOAMIGO = Target.the("la lista de tesoreria de finsoamigo").locatedBy("//tbody[@id='tablaAmigo']//td[text()='{0}']//parent::tr");
+    public static final Target LST_FILA_TESORERIA_HUY = Target.the("la lista de tesoreria de credihuy").locatedBy("//tbody[@id='tablaHuy']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_PENDIENTE = Target.the("la lista pendientes de tesoreria").locatedBy("//div[@id='fixed-table-container-2']//td[text()='{0}']//parent::tr");
+    public static final Target LST_NOMBRE_TESORERIA_LIBRANZA = Target.the("la columna nombre de tesoreria").locatedBy("//tbody[@id='tablaLib']//td[text()='{0}']//parent::tr//a[@href='formOrig.php?crid={0}']");
     public static final Target BTN_ACCION_TESORERIA = Target.the("el boton accion de tesoreria").locatedBy("//td[text()='{0}']//parent::tr//button[@data-original-title='{1}']");
     public static final Target LST_SOLICITADO_POR = Target.the("la lista de quien solicita el regreso").locatedBy("#txtAut");
     public static final Target TXT_MOTIVO = Target.the("el motivo del regreso").locatedBy("#txtMotivo");
@@ -16,7 +18,7 @@ public class TesoreriaPage {
     public static final Target BTN_REGISTRAR = Target.the("el boton de registro del regreso").locatedBy("#btn-aceptar-regreso");
     public static final Target BTN_REGISTRAR_PENDIENTE = Target.the("el boton de registro de pendiente").locatedBy("#btn-aceptar-pendiente");
     public static final Target BTN_ACEPTAR = Target.the("el boton Ok").located(By.xpath("//button[text()='Aceptar']"));
-
+    public static final Target BTN_ENVIAR_ANTECARTERA = Target.the("el boton enviar antecartera").located(By.xpath("//button[contains(text(), 'Enviar Ante Cartera')]"));
 
     private TesoreriaPage() {
         throw new IllegalStateException("Utility class");

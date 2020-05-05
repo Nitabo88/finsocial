@@ -119,4 +119,16 @@ public final class Diligencia {
     public static Performable laAprobacionDelCreditoEnIncorporacionHuy(Incorporacion aprobacion) {
         return instrumented(AprobacionIncorporacionCreditoHuy.class, aprobacion);
     }
+
+    public static Performable laInformacionDeAprobacionDeTesoreria() {
+        return instrumented(AprobacionTesoreriaLibranza.class);
+    }
+
+    public static Performable elCreditoHuyComoPendiente(ChequeoDocumento motivo) {
+        return instrumented(PendienteCrediHuy.class, motivo);
+    }
+
+    public static Performable laNegaciondelCreditoHuy(ChequeoDocumento motivoNegacion) {
+        return instrumented(NegacionChequeoDocumento.class, motivoNegacion);
+    }
 }
