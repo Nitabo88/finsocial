@@ -14,6 +14,7 @@ public class PlanillaOriginacionPage {
   public static final Target LNK_FILE_UPLOAD = Target.the("el link de subida del archivo").inIFrame(PlanillaOriginacionPage.FRAME).located(By.id("fileGestion"));
   public static final Target LST_ANIO_DESCUENTO = Target.the("el año de inicio de descuento").located(By.id("comboAnoLiq"));
   public static final Target LST_MES_DESCUENTO = Target.the("el mes de inicio de descuento").located(By.id("comboMesLiq"));
+  public static final Target TXT_FECHA_LIQUIDACION_CREDITO = Target.the("fecha de liquidacion del credito").located(By.id("textoIniDesc"));
 
   private PlanillaOriginacionPage() {throw new IllegalStateException("Utility class");
   }
