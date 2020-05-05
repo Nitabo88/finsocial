@@ -2,7 +2,6 @@ package co.com.red5g.finsonet.tasks;
 
 
 import co.com.devco.automation.mobile.actions.WaitFor;
-import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
@@ -14,7 +13,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.DataPickerPage.DTP_DIA;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.*;
 import static co.com.red5g.utils.UtileriaFechas.manana;
@@ -51,12 +49,7 @@ public class AprobacionIncorporacion implements Task {
             MoveMouse.to(LST_ANIO_DESCUENTO),
             SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoActual().split("-")[0]).from(LST_ANIO_DESCUENTO),
             SelectFromOptions.byValue(UtileriaFechas.obtenerPeriodoActual().split("-")[1]).from(LST_MES_DESCUENTO),
-            MoveMouse.to(TXT_FECHA_LIQUIDACION_CREDITO),
             WaitFor.seconds(4));
-    actor.attemptsTo(
-            Click.on(TXT_FECHA_LIQUIDACION_CREDITO));
-    actor.attemptsTo(
-            Click.on(DTP_DIA.of(diaManana)));
     actor.attemptsTo(
             MoveMouse.to(BTN_APROBAR),
             Click.on(BTN_APROBAR),

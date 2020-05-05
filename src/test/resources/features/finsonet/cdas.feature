@@ -22,4 +22,3 @@ Característica: Cdas
     Dado que un asesor esta en el modulo de CDAS con la informacion previa completa
     Cuando el asesor diligencia los CDAS del credito con excepcion
     Entonces el podra ver el credito en estado COMPLETO
-
