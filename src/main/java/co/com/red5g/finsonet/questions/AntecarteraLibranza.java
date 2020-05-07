@@ -4,15 +4,19 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.AntecarteraPage.LST_FILA_ANTECARTERA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class AntecarteraLibranza implements Question<Boolean> {
 
     private static final String ANTECARTERA = "Antecartera";
+    private static final int TIEMPO = 120;
 
     @Override
     public Boolean answeredBy(Actor actor) {
@@ -20,6 +24,7 @@ public class AntecarteraLibranza implements Question<Boolean> {
         actor.attemptsTo(
                 Click.on(MNM_HAMBURGUESA),
                 Click.on(MNM_NUEVO_ORIGINACION.of(ANTECARTERA)),
+                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
                 MoveMouse.to(LST_FILA_ANTECARTERA.of(numeroCredito))
         );
         return LST_FILA_ANTECARTERA.of(numeroCredito).resolveFor(actor).isPresent();

@@ -19,7 +19,7 @@ Característica:  Tesorería
 
   @Tesoreria
   Escenario: Tesorería - Aprobación del crédito en tesorería
-    Dado que un asesor esta en el paso de tesorería
+    Dado que un asesor esta en el paso de tesorería prueba
     Cuando el asesor aprueba el crédito en tesorería
     Entonces el asesor deberá ver el crédito en antecartera
 

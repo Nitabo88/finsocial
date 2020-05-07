@@ -19,6 +19,7 @@ public class TesoreriaPage {
     public static final Target BTN_REGISTRAR_PENDIENTE = Target.the("el boton de registro de pendiente").locatedBy("#btn-aceptar-pendiente");
     public static final Target BTN_ACEPTAR = Target.the("el boton Ok").located(By.xpath("//button[text()='Aceptar']"));
     public static final Target BTN_ENVIAR_ANTECARTERA = Target.the("el boton enviar antecartera").located(By.xpath("//button[contains(text(), 'Enviar Ante Cartera')]"));
+    public static final Target BTN_ENVIAR = Target.the("el boton enviar").located(By.xpath("//button[@class='btn btn-warning boton_planilla']"));
 
     private TesoreriaPage() {
         throw new IllegalStateException("Utility class");
