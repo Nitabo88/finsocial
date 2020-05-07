@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.tasks;
 
 
 import co.com.devco.automation.mobile.actions.WaitFor;
+import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.utils.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
@@ -15,7 +16,7 @@ import java.nio.file.Paths;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.*;
-import static co.com.red5g.utils.UtileriaFechas.manana;
+import static co.com.red5g.utils.UtileriaFechas.sumarRestarDias;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AprobacionIncorporacion implements Task {
@@ -31,7 +32,7 @@ public class AprobacionIncorporacion implements Task {
   public <T extends Actor> void performAs(final T actor) {
     Path path = Paths.get("./src/test/resources/file/prueba.pdf");
     String numeroCredito = actor.recall(NUMERO_CREDITO);
-    String diaManana = manana();
+    String fechaPosterior = sumarRestarDias(1);
     actor.attemptsTo(
             WaitUntil.the(LST_INCORPORACION_NOMBRE.of(numeroCredito), isVisible()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(LST_INCORPORACION_NOMBRE.of(numeroCredito)),
@@ -44,16 +45,18 @@ public class AprobacionIncorporacion implements Task {
             Upload.theFile(path).to(LNK_FILE_UPLOAD),
             WaitUntil.the(BTN_REGISTRAR, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
             JavaScriptClick.on(BTN_REGISTRAR),
-            WaitFor.seconds(3),
+            WaitFor.seconds(4),
             WaitUntil.the(LST_ANIO_DESCUENTO, isVisible()).forNoMoreThan(AprobacionIncorporacion.TIEMPO).seconds(),
             MoveMouse.to(LST_ANIO_DESCUENTO),
             SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoActual().split("-")[0]).from(LST_ANIO_DESCUENTO),
             SelectFromOptions.byValue(UtileriaFechas.obtenerPeriodoActual().split("-")[1]).from(LST_MES_DESCUENTO),
+            MoveMouse.to(LBL_DATOS_LIBRANZA),
+            SeleccionarFecha.deConsulta(TXT_FECHA_LIQUIDACION_CREDITO, fechaPosterior),
             WaitFor.seconds(4));
     actor.attemptsTo(
             MoveMouse.to(BTN_APROBAR),
             Click.on(BTN_APROBAR),
-            WaitFor.seconds(3),
+            WaitFor.seconds(5),
             WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(BTN_OK));
   }

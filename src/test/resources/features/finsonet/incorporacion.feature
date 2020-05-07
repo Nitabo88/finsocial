@@ -11,13 +11,13 @@ Característica:  Incorporación
     Cuando el asesor aprueba el crédito en incorporación
     Entonces el asesor deberá ver el crédito en el paso de formalización
 
-
+  @Incorporacion
   Escenario: Incorporación - Marcar el crédito como pendiente en incorporación
     Dado que un asesor esta en el paso de incorporación
     Cuando el asesor pone el crédito como pendiente en incorporación
     Entonces el asesor deberá ver el crédito en incorporación en la lista de pendientes
 
-
+  @Incorporacion
   Escenario: Incorporación - Regresar el crédito desde incorporación
     Dado que un asesor esta en el paso de incorporación
     Cuando el asesor regresa el crédito a aprobación de créditos
