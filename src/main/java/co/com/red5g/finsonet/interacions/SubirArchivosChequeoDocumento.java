@@ -15,13 +15,12 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 
 public class SubirArchivosChequeoDocumento implements Interaction {
 
-  private int tiempo = 60;
-
   @Override
   public <T extends Actor> void performAs(T actor) {
     Path path = Paths.get("./src/test/resources/file/prueba.pdf");
     actor.attemptsTo(Desactivar.ventanaSubirArchivo());
     while (!BTN_UPLOAD.resolveAllFor(actor).isEmpty()) {
+      int tiempo = 60;
       actor.attemptsTo(
               Click.on(BTN_UPLOAD.resolveFor(actor)),
               Upload.theFile(path).to(LNK_FILE_UPLOAD),

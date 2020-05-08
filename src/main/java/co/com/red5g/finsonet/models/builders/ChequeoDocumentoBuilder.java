@@ -5,6 +5,7 @@ import co.com.red5g.utils.Builder;
 
 public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
 
+    private static final String PAPELERIA_NUEVA = "Papelería Nueva";
     private String puntajeCifin;
     private String aciertaDatacredito;
     private String seleccionMotivo;
@@ -52,14 +53,14 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     public ChequeoDocumento finsoamigo() {
         this.conPuntajeCifin("1000");
         this.conAciertaDatacredito("1000");
-        this.conPapeleria("Papelería Nueva");
+        this.conPapeleria(PAPELERIA_NUEVA);
         return this.build();
     }
 
     public ChequeoDocumento huy() {
         this.conPuntajeCifin("900");
         this.conAciertaDatacredito("900");
-        this.conPapeleria("Papelería Nueva");
+        this.conPapeleria(PAPELERIA_NUEVA);
         return this.build();
     }
 
@@ -87,7 +88,7 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     }
 
     public ChequeoDocumento motivoNegacionCrediHuy() {
-        this.conPapeleria("Papelería Nueva");
+        this.conPapeleria(PAPELERIA_NUEVA);
         this.conSeleccionMotivo("INCONSISTENCIA PAPELERIA");
         this.conRazonMotivo("Se deben revisar la papeleria");
         return this.build();

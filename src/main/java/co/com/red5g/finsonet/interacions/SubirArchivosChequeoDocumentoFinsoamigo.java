@@ -14,13 +14,13 @@ import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGAND
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class SubirArchivosChequeoDocumentoFinsoamigo implements Performable {
-    private int tiempo = 60;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         Path path = Paths.get("./src/test/resources/file/prueba.pdf");
         actor.attemptsTo(Desactivar.ventanaSubirArchivo());
         while (!BTN_UPLOAD_FINSOAMIGO.resolveAllFor(actor).isEmpty()) {
+            int tiempo = 60;
             actor.attemptsTo(
                     Click.on(BTN_UPLOAD_FINSOAMIGO.resolveFor(actor)),
                     Upload.theFile(path).to(LNK_FILE_UPLOAD),

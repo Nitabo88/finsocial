@@ -1,21 +1,18 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
-import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.*;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
+import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.*;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AprobacionDeCreditoLibranza implements Task {
 

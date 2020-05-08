@@ -7,6 +7,9 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class Negar {
 
+    private Negar() {
+    }
+
     public static Performable laAprobacionDelCreditoHuy(AprobacionCredito motivoNegacionCredito) {
         return instrumented(NegacionCreditoHuy.class, motivoNegacionCredito);
     }
