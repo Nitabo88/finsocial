@@ -16,7 +16,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 
 public class PendienteTesoreria implements Task {
 
-  private static final int TIEMPO = 150;
+  private static final int TIEMPO = 300;
   private final Tesoreria tesoreria;
 
   public PendienteTesoreria(Tesoreria tesoreria) {

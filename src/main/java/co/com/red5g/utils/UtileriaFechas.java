@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class UtileriaFechas {
 
-    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) + 1);
+    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH));
     private static String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {

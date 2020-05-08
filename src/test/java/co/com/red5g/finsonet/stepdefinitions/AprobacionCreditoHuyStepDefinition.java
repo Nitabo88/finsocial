@@ -57,10 +57,10 @@ public class AprobacionCreditoHuyStepDefinition {
     theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
-  @Cuando("^el asesor rechace el crédito$")
+  @Cuando("^el asesor niegue el crédito Huy$")
   public void rechazarCredito() {
     theActorInTheSpotlight().attemptsTo(
-            Negar.laAprobacionDelCredito(con().motivoNegacionCredito()));
+            Negar.laAprobacionDelCreditoHuy(con().motivoNegacionCreditoHuy()));
   }
 
   @Entonces("^el podrá ver el crédito en estado (.*)$")

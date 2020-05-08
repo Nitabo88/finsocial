@@ -67,4 +67,11 @@ public class ChequeoDocumentosStepDefinition {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
     theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO));
   }
+
+  @Cuando("^el asesor niegue el chequeo de documentos$")
+  public void negarChequeoDocumentos() {
+    theActorInTheSpotlight().attemptsTo(
+            Diligencia.laNegaciondelCreditodeLibranza(con().motivoNegacionCreditoLibranza())
+    );
+  }
 }

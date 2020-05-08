@@ -27,21 +27,26 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_GUARDAR = Target.the("el boton guardar").located(By.xpath("//button[contains(.,'Guardar')]"));
     public static final Target BTN_GUARDAR_DATOS = Target.the("el boton guardar").located(By.id("btnGuardar"));
     public static final Target LBL_MENSAJE = Target.the("el mensaje de advertencia").located(
-        org.openqa.selenium.By.xpath("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
+            org.openqa.selenium.By.xpath("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
     public static final Target BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_LIBRANZA = Target.the("Boton de estado en chequeo de documentos")
-        .locatedBy("//td[text()='Libranza']//parent::tr//a[contains(@href,'93471')]//parent::td//parent::tr//child::td//*[@id='boton']");
+            .locatedBy("//td[text()='Libranza']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
     public static final Target LST_MOTIVO = Target.the("Lista de motivos en chequeo de documentos").located(By.id("motivo"));
+    public static final Target LST_MOTIVO_NEGACION = Target.the("Lista de motivos en chequeo de documentos").located(By.id("txtMotivo"));
     public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));
+    public static final Target TXT_DETALLE = Target.the("la razon de la negacion").located(By.id("txtDetalle"));
     public static final Target BTN_ENVIAR = Target.the("Enviar motivo en chequeo de documentos").located(By.id("boton2"));
     public static final Target BTN_OK = Target.the("boton OK").located(By.xpath("//button[contains(.,'OK')]"));
     public static final Target BTN_NEGAR = Target.the("boton negar").located(By.id("btnRech"));
+    public static final Target BTN_NEGAR_LIBRANZA = Target.the("boton negar").located(By.xpath("//button[contains(text(),'Negar')]"));
     public static final Target BTN_ENVIAR_NEGACION = Target.the("boton enviar negacion").located(By.id("botonRechazoChequeo"));
-    public static final Target BTN_CERARA_NEGACION = Target.the("boton cerrar negacion").located(By.id("cerrar"));
+    public static final Target BTN_ACEPTAR_NEGACION = Target.the("boton aceptar negacion")
+            .located(By.xpath("//button[@id='btn-aceptar-negar'][@class='btn confirm-button-class-danger']"));
     public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//i[@class='fas fa-upload white']"));
+    public static final Target BTN_UPLOAD_FINSOAMIGO = Target.the("icono de cargar").located(By.xpath("//div[@id='documentos-chequeo']//table[@class='table-incorporacion br-right mb-30']//i[@class='fas fa-upload white']"));
     public static final Target BTN_UPLOAD_HUY = Target.the("icono de cargar Huy").located(By.xpath("//i[@class='fa fa-upload']"));
     public static final Target LNK_FILE_UPLOAD = Target.the("el input del archivor").located(By.id("fileUpload"));
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
-        org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
+            org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_CERRAR_POP_UP = Target.the("Cerrar pop up").located(By.xpath("//a[@title='Close']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS_NEGADO = Target.the("El texto de negado chequeo de documentos").located(By.xpath("//p[contains(text(),'Crédito negado.')]"));

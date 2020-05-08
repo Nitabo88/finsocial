@@ -5,6 +5,7 @@ Característica:  Aprobación Crédito
   quiero tramitar la aprobación de un crédito
   para revisar que el proceso funcione correctamente
 
+  @Pending
   @AprobacionCreditosFinsoamigos
   Escenario: Aprobación Finsoamigos - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo
@@ -24,15 +25,15 @@ Característica:  Aprobación Crédito
     Entonces el podrá ver el crédito en pendiente por documentación
 
   @AprobacionCreditosHuy
-  Escenario: Crédito Huy - Negar aprobación del crédito
+  Escenario: Aprobacion Crédito Huy - Negar aprobación del crédito
     Dado que un asesor quiere negar un crédito huy en aprobación de créditos
-    Cuando el asesor rechace el crédito
+    Cuando el asesor niegue el crédito Huy
     Entonces el podrá ver el crédito en estado RECHAZADO
 
   @AprobacionCreditos
   Escenario: Aprobación de Créditos - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos
-    Cuando el asesor aprueba el crédito
+    Cuando el asesor aprueba el crédito de libranza
     Entonces el asesor deberá ver el crédito en el paso de incorporación
 
   @AprobacionCreditos

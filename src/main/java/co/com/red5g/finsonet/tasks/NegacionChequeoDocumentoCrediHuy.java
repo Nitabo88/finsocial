@@ -11,11 +11,11 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class NegacionChequeoDocumento implements Task {
+public class NegacionChequeoDocumentoCrediHuy implements Task {
     private static final int TIEMPO = 300;
     private ChequeoDocumento chequeoDocumento;
 
-    public NegacionChequeoDocumento(ChequeoDocumento chequeoDocumento) {
+    public NegacionChequeoDocumentoCrediHuy(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 

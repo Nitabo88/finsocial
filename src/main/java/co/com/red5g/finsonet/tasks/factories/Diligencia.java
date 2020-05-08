@@ -129,6 +129,14 @@ public final class Diligencia {
     }
 
     public static Performable laNegaciondelCreditoHuy(ChequeoDocumento motivoNegacion) {
-        return instrumented(NegacionChequeoDocumento.class, motivoNegacion);
+        return instrumented(NegacionChequeoDocumentoCrediHuy.class, motivoNegacion);
+    }
+
+    public static Performable laAprobacionDeTesoreriaFinsoamigo() {
+        return instrumented(AprobacionTesoreriaFinsoamigo.class);
+    }
+
+    public static Performable laNegaciondelCreditodeLibranza(ChequeoDocumento motivoNegacionCreditoLibranza) {
+        return instrumented(NegacionChequeoDocumentoLibranza.class, motivoNegacionCreditoLibranza);
     }
 }

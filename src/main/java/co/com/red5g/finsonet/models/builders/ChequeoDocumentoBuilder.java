@@ -93,6 +93,13 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this.build();
     }
 
+    public ChequeoDocumento motivoNegacionCreditoLibranza() {
+        this.conPapeleria("Papelería Antigua");
+        this.conAfianzado();
+        this.conSeleccionMotivo("CREDITO MAL RADICADO");
+        this.conRazonMotivo("Se debe radicar de nuevo el credito");
+        return this.build();
+    }
     private ChequeoDocumentoBuilder conRazonMotivo(String razonMotivo) {
         this.razonMotivo = razonMotivo;
         return this;

@@ -31,6 +31,8 @@ public class AprobacionCreditoPage {
           .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'64597')]//ancestor::tr//button");
   public static final Target LST_PENDIENTE_APROBACION_CREDIHUY = Target.the("Fila de los crediHuy pendientes en aprobacion de credito")
           .locatedBy("//table[@id='table_p']//td[text()='CrediHuy']//parent::tr//a[@class='faq-link'][contains(@href,'{0}')]//ancestor::tr");
+  public static final Target LST_NOMBRE_APROBACION_LIBRANZA = Target.the("el nombre de la tabla de libranza en aprobacion")
+          .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
 
   private AprobacionCreditoPage() {
     throw new IllegalStateException("Utility class");

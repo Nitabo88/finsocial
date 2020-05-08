@@ -19,7 +19,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 
 public class Cdas implements Task {
 
-  private static final int TIEMPO = 120;
+  private static final int TIEMPO = 300;
   private AccionCdas accionCdas;
   private static final String ID_CREDITO = "ID crédito";
 
@@ -40,6 +40,7 @@ public class Cdas implements Task {
             cambiarPestanaActual(),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Completar.lasAccionesDeGestionCdas(accionCdas),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Click.on(BTN_ATRAS)
     );
   }
