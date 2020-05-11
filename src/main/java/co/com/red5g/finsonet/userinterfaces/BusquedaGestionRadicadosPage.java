@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 public class BusquedaGestionRadicadosPage {
 
     public static final Target BTN_NUEVO_SOLICITUD = Target.the("boton nueva solicitud").located(By.id("NuevaSolicitud"));
+    public static final Target BTN_NUEVO_PQRS = Target.the("boton nuevo PQRS").located(By.id("NuevoPQR"));
     public static final Target BTN_BUSQUEDA = Target.the("boton busqueda").located(By.id("buscarBtn"));
     public static final Target RDB_DOCUMENTO = Target.the("opcion documento").located(By.id("doc"));
     public static final Target RDB_RADICADO = Target.the("opcion radicado").located(By.id("rad"));

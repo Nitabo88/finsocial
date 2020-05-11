@@ -35,6 +35,7 @@ public class Cdas implements Task {
             JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
             Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
             Click.on(BTN_BUSQUEDA),
+            WaitFor.seconds(2),
             JavaScriptClick.on(BTN_DETALLE_GESTION.of(numeroCredito)),
             CerrarPestanaAnterior.cerrarPestanaAnterior(),
             cambiarPestanaActual(),

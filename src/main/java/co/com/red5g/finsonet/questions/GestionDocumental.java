@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.questions;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
@@ -21,9 +22,10 @@ public class GestionDocumental implements Question<String> {
   public String answeredBy(Actor actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
-        Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
-        Click.on(BTN_BUSQUEDA));
+            JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
+            Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
+            Click.on(BTN_BUSQUEDA),
+            WaitFor.seconds(2));
     return LBL_GESTION_DOCUMENTAL.of(numeroCredito).resolveFor(actor).getText();
   }
 }

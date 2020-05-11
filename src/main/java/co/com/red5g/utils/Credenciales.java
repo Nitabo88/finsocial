@@ -4,6 +4,7 @@ public enum Credenciales {
     USUARIO_FINSOCIAL("ochinchilla", "Nicolas32@", "1234"),
     USUARIO_DOCUMENTOS("mvargas", "Nicolas32@", "5678"),
     USUARIO_APROBACION_CREDITOS("jcastro", "Nicolas32@", "abcd"),
+    USUARIO_PQRS("kcampo", "Nicolas32@", "adf"),
     USUARIO_WIIPO("1045705851", "qazwsx123", "");
 
     private final String usuario;
