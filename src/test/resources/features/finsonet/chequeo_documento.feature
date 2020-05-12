@@ -5,6 +5,7 @@ Característica: Chequeo documento
   quiero tramitar el chequeo documentos de un credito
   para revisar que el proceso funcione correctamente
 
+  @ChequeoDocumentos
   Escenario: Chequeo Documentos - Aprobación chequeo de documentos
     Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
     Cuando el asesor adjunta toda la información de el chequeo de documentos
@@ -16,13 +17,13 @@ Característica: Chequeo documento
     Cuando el asesor niegue el chequeo de documentos
     Entonces el podrá ver el crédito en estado RECHAZADO
 
-
+  @ChequeoDocumentos
   Escenario: Chequeo Documentos Libranza - Chequeo de documentos estado pendiente
     Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
     Cuando el asesor decline el chequeo del crédito de libranza del cliente
     Entonces el auxiliar de documentación debería verlo en su lista de chequeo de documentos
 
-
+  @ChequeoDocumentos
   Escenario: Chequeo Documentos - Aprobación chequeo documentos no exitosa
     Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
     Cuando el asesor complete el chequeo de crédito del cliente
