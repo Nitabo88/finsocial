@@ -9,6 +9,3 @@ Característica: Equipo de satisfaccion
     Dado que el asesor generar una PQR
     Cuando el asesor genere una nueva PQR
     Entonces el asesor deberá verlo en el listado de nuevos ingresos
-
-
-
