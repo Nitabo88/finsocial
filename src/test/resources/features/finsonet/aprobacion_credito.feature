@@ -47,3 +47,9 @@ Característica:  Aprobación Crédito
     Dado que un asesor esta en el paso de aprobación de créditos
     Cuando el asesor regresa el crédito a confirmación
     Entonces el asesor deberá ver el crédito en el paso de confirmación
+
+  @AprobacionCreditos
+  Escenario: Aprobacion de Creditos - Negar el crédito desde aprobación de créditos
+    Dado que un asesor esta en el paso de aprobación de créditos
+    Cuando el asesor niegue el crédito de libranza
+    Entonces el podrá ver el crédito en estado RECHAZADO
