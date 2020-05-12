@@ -5,11 +5,10 @@ Característica: Equipo de satisfaccion
   Quiero realizar una nueva solicitud PQR
   Para que el asesor pueda realizar la respectiva gestión
 
-  @Pending
   Escenario: Generar PQR a una persona natural
     Dado que el asesor generar una PQR
     Cuando el asesor genere una nueva PQR
-    Entonces el asesor deberá verlo en Solicitudes Contact Center
+    Entonces el asesor deberá verlo en el listado de nuevos ingresos
 
 
 

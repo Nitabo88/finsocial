@@ -31,7 +31,7 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     return new AprobacionCredito(this);
   }
 
-  public AprobacionCredito motivoRegreso() {
+  public AprobacionCredito motivoRegresoLibranza() {
     this.conRazonMotivo("El usuario tiene los documentos incompletos");
     return this.build();
   }
@@ -61,6 +61,11 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     public AprobacionCredito motivoNegacionCreditoLibranza() {
       this.conSeleccionMotivo("CREDITO NO VIABLE");
       this.conRazonMotivo("No es posible dar el credito");
+      return this.build();
+    }
+
+    public AprobacionCredito motivoRegresoCrediHuy() {
+      this.conRazonMotivo("El usuario tiene los documentos incompletos");
       return this.build();
     }
 }

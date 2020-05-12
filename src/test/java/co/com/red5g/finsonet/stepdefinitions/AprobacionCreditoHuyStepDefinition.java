@@ -67,4 +67,5 @@ public class AprobacionCreditoHuyStepDefinition {
   public void verificarCreditoRechazado(String estado) {
     theActorInTheSpotlight().should(seeThat(ElCredito.rechazado(), containsString(estado)));
   }
+
 }

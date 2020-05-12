@@ -8,6 +8,7 @@ public class NuevaSolicitudPage {
     public static final Target BTN_RESPUESTA_PROTOCOLO = Target.the("boton respuesta del protocolo").locatedBy(("//button[@onclick='getCertificados();']"));
     public static final Target BTN_CANAL_CONTACTO = Target.the("boton canal contacto").locatedBy(("//div[@option='{0}']"));
     public static final Target BTN_GUARDAR = Target.the("boton guardar creacion PQRS").located(By.id("Creacion"));
+    public static final Target BTN_ACEPTAR = Target.the("boton guardar creacion PQRS").located(By.xpath("//button[text()='Aceptar']"));
     public static final Target BTN_CLOSE_PROTOCOLO = Target.the("boton cerrar protocolo").locatedBy(("//button[@class='swal2-confirm swal2-styled']"));
     public static final Target TXT_DOCUMENTO = Target.the("input text documento").located(By.id("documento"));
     public static final Target LST_ASUNTO = Target.the("lista de asuntos").located(By.id("asunto"));

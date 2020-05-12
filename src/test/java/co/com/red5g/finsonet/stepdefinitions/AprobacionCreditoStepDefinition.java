@@ -27,7 +27,7 @@ public class AprobacionCreditoStepDefinition {
   @Cuando("^el asesor regresa el crédito a confirmación$")
   public void regresarCredito() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeRegresoDeAprobacionDeCredito(con().motivoRegreso())
+        Diligencia.laInformacionDeRegresoDeAprobacionDeCredito(con().motivoRegresoLibranza())
     );
   }
 

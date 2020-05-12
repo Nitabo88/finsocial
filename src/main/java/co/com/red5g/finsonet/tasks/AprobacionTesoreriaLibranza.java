@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
@@ -19,9 +20,11 @@ public class AprobacionTesoreriaLibranza implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String numeroCredito = actor.recall(NUMERO_CREDITO);
+        String numeroCredito = "94951";
         actor.attemptsTo(
                 WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+                MoveMouse.to(LST_NOMBRE_TESORERIA_LIBRANZA.of(numeroCredito)));
+        actor.attemptsTo(
                 Click.on(LST_NOMBRE_TESORERIA_LIBRANZA.of(numeroCredito)),
                 cambiarPestanaActual(),
                 Click.on(BTN_ENVIAR_ANTECARTERA),
