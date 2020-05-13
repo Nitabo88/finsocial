@@ -2,7 +2,6 @@ package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.interacions.AbreLaPagina;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
-import co.com.red5g.finsonet.tasks.factories.Loguearse;
 import co.com.red5g.finsonet.tasks.factories.Ubicarse;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

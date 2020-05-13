@@ -63,9 +63,4 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
       this.conRazonMotivo("No es posible dar el credito");
       return this.build();
     }
-
-    public AprobacionCredito motivoRegresoCrediHuy() {
-      this.conRazonMotivo("El usuario tiene los documentos incompletos");
-      return this.build();
-    }
 }
