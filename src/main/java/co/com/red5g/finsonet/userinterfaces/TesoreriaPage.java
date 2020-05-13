@@ -26,6 +26,7 @@ public class TesoreriaPage {
     public static final Target LST_TIPO_GIRO = Target.the("el tipo de giro").located(By.id("t_giro"));
     public static final Target TXT_CUOTA_RETENIDA = Target.the("la cuota retenida").located(By.id("textoCuotaRet1"));
     public static final Target LBL_VALOR_GIRO = Target.the("el valor del giro").located(By.id("tdVlrGiro"));
+    public static final Target TXT_VALOR_GIRO = Target.the("el input del valor del giro").located(By.id("textoVlrGiro1"));
 
     private TesoreriaPage() {
         throw new IllegalStateException("Utility class");
