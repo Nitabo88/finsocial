@@ -11,11 +11,12 @@ import static co.com.red5g.finsonet.models.builders.EquipoSatisfaccionBuilder.aU
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 public class EquipoSatisfaccionStepDefinition {
 
-    private static final String GESTION = "1ER CONTACTO";
+    private static final String GESTION = "NUEVO";
 
     @Dado("^que el (.*) generar una PQR$")
     public void queElAsesorGenerarUnaPQR(String nombreActor) {
@@ -30,8 +31,8 @@ public class EquipoSatisfaccionStepDefinition {
                 (Diligencia.unaNuevaSolicitud(aUn().cliente()));
     }
 
-    @Entonces("^el asesor deberá verlo en Solicitudes Contact Center$")
+    @Entonces("^el asesor deberá verlo en el listado de nuevos ingresos$")
     public void verificarNuevoIngreso() {
-        theActorInTheSpotlight().should(seeThat(LaSolicitud.deContacto(), equalTo(GESTION)));
+        theActorInTheSpotlight().should(seeThat(LaSolicitud.deContacto(), containsString(GESTION)));
     }
 }

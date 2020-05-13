@@ -15,12 +15,12 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ChequeoDocumentosRechazo implements Task {
+public class PendienteCrediHuy implements Task {
 
-    private static final int TIEMPO = 3;
-    private final ChequeoDocumento chequeoDocumento;
+    private static final int TIEMPO = 20;
+    private ChequeoDocumento chequeoDocumento;
 
-    public ChequeoDocumentosRechazo(ChequeoDocumento chequeoDocumento) {
+    public PendienteCrediHuy(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;
     }
 
@@ -28,7 +28,7 @@ public class ChequeoDocumentosRechazo implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-                JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_LIBRANZA.of(numeroCredito)),
+                JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY.of(numeroCredito)),
                 SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
                 Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
                 WaitUntil.the(BTN_ENVIAR, isEnabled()),
@@ -36,13 +36,13 @@ public class ChequeoDocumentosRechazo implements Task {
                 WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
                 Click.on(BTN_OK));
         actor.attemptsTo(
-            Check.whether(
-                BTN_ENVIAR.resolveFor(actor).isPresent())
-                .andIfSo(
-                    Click.on(BTN_ENVIAR),
-                    WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-                    Click.on(BTN_OK)
-                )
+                Check.whether(
+                        BTN_ENVIAR.resolveFor(actor).isPresent())
+                        .andIfSo(
+                                Click.on(BTN_ENVIAR),
+                                WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+                                Click.on(BTN_OK)
+                        )
         );
     }
 }

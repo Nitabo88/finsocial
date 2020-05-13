@@ -31,7 +31,7 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     return new AprobacionCredito(this);
   }
 
-  public AprobacionCredito motivoRegreso() {
+  public AprobacionCredito motivoRegresoLibranza() {
     this.conRazonMotivo("El usuario tiene los documentos incompletos");
     return this.build();
   }
@@ -42,7 +42,7 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     return this.build();
   }
 
-  public AprobacionCredito motivoNegacionCredito() {
+  public AprobacionCredito motivoNegacionCreditoHuy() {
     this.conSeleccionMotivo("ALTO RIESGO");
     this.conRazonMotivo("El usuario es de alto riesgo");
     return this.build();
@@ -57,4 +57,10 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     this.seleccionMotivo = seleccionMotivo;
     return this;
   }
+
+    public AprobacionCredito motivoNegacionCreditoLibranza() {
+      this.conSeleccionMotivo("CREDITO NO VIABLE");
+      this.conRazonMotivo("No es posible dar el credito");
+      return this.build();
+    }
 }

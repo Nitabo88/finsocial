@@ -15,8 +15,8 @@ public class CreditoLibranza implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         String numeroCedula = actor.recall(CEDULA_ACTOR);
-        String fecha = actor.recall(FECHA);
-        List<WebElementFacade> lstFila = LST_FILA_CREDITO_LIBRANZA.of(numeroCedula, fecha).resolveAllFor(actor);
+        String fechaCredito = actor.recall(FECHA);
+        List<WebElementFacade> lstFila = LST_FILA_CREDITO_LIBRANZA.of(numeroCedula, fechaCredito).resolveAllFor(actor);
         actor.attemptsTo(MoveMouse.to(lstFila.get(0)));
         return lstFila.get(0).isPresent();
     }

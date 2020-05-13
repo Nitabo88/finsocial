@@ -5,6 +5,7 @@ import co.com.red5g.utils.Builder;
 
 public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
 
+    private static final String PAPELERIA_NUEVA = "Papelería Nueva";
     private String puntajeCifin;
     private String aciertaDatacredito;
     private String seleccionMotivo;
@@ -52,14 +53,14 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     public ChequeoDocumento finsoamigo() {
         this.conPuntajeCifin("1000");
         this.conAciertaDatacredito("1000");
-        this.conPapeleria("Papelería Nueva");
+        this.conPapeleria(PAPELERIA_NUEVA);
         return this.build();
     }
 
     public ChequeoDocumento huy() {
         this.conPuntajeCifin("900");
         this.conAciertaDatacredito("900");
-        this.conPapeleria("Papelería Nueva");
+        this.conPapeleria(PAPELERIA_NUEVA);
         return this.build();
     }
 
@@ -73,19 +74,40 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this;
     }
 
-    public ChequeoDocumento motivo() {
-      this.conSeleccionMotivo();
-      this.conRazonMotivo();
+    public ChequeoDocumento motivoLibranza() {
+        this.conSeleccionMotivo("Datos incompleto");
+        this.conRazonMotivo("El usuario tiene los documentos incompletos");
         return this.build();
     }
 
-    private ChequeoDocumentoBuilder conRazonMotivo() {
-        this.razonMotivo = "El usuario tiene los documentos incompletos";
+
+    public ChequeoDocumento motivoCrediHuy() {
+        this.conSeleccionMotivo("Certificaciones vencidas");
+        this.conRazonMotivo("Se deben actualizar las certificaciones");
+        return this.build();
+    }
+
+    public ChequeoDocumento motivoNegacionCrediHuy() {
+        this.conPapeleria(PAPELERIA_NUEVA);
+        this.conSeleccionMotivo("INCONSISTENCIA PAPELERIA");
+        this.conRazonMotivo("Se deben revisar la papeleria");
+        return this.build();
+    }
+
+    public ChequeoDocumento motivoNegacionCreditoLibranza() {
+        this.conPapeleria("Papelería Antigua");
+        this.conAfianzado();
+        this.conSeleccionMotivo("CREDITO MAL RADICADO");
+        this.conRazonMotivo("Se debe radicar de nuevo el credito");
+        return this.build();
+    }
+    private ChequeoDocumentoBuilder conRazonMotivo(String razonMotivo) {
+        this.razonMotivo = razonMotivo;
         return this;
     }
 
-    private ChequeoDocumentoBuilder conSeleccionMotivo() {
-        this.seleccionMotivo = "Datos incompleto";
+    private ChequeoDocumentoBuilder conSeleccionMotivo(String seleccionMotivo) {
+        this.seleccionMotivo = seleccionMotivo;
         return this;
     }
 

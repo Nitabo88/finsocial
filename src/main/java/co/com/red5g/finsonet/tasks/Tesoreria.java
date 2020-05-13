@@ -25,9 +25,9 @@ public class Tesoreria implements Task {
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        Consulta.elCreditoEnFormalizacion(credito),
-        Diligencia.laAprobacionDelCreditoEnFormalizacion(),
-        Click.on(MNM_ORIGINACION.of(MNM_TESORERIA)),
+            Consulta.elCreditoEnFormalizacion(credito),
+            Diligencia.laAprobacionDelCreditoEnFormalizacion(),
+            Click.on(MNM_ORIGINACION.of(MNM_TESORERIA)),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds()
     );
   }

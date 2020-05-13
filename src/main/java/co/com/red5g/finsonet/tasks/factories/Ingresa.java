@@ -6,7 +6,6 @@ import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.*;
 import co.com.red5g.wiipo.tasks.InformacionLoginWiipo;
 import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.Tasks;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -96,6 +95,10 @@ public final class Ingresa {
     }
 
     public static Performable laInformacionIncompletaDelCredito(Credito credito) {
-        return Tasks.instrumented(InformacionIncompletaCreditoLibranza.class, credito);
+        return instrumented(InformacionIncompletaCreditoLibranza.class, credito);
+    }
+
+    public static Performable aTesoreriaFinsoamigo() {
+        return instrumented(TesoreriaFinsoamigo.class);
     }
 }

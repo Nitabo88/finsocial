@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class UtileriaFechas {
 
-    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) + 1);
+    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH));
     private static String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {
@@ -29,5 +29,14 @@ public class UtileriaFechas {
             mes = "0" + mes;
         }
         return UtileriaFechas.year + "-" + UtileriaFechas.mes;
+    }
+
+    public static String sumarRestarDias(int dias) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.DAY_OF_YEAR, dias);
+        DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MMM-d");
+        String fecha = fechaFormateada.format(calendar.getTime());
+        return fecha.substring(0, 6).toUpperCase() + fecha.substring(6);
     }
 }

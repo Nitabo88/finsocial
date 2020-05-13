@@ -29,7 +29,7 @@ public class CdasPage {
     public static final Target BTN_ATRAS = Target.the("el boton atras")
         .locatedBy("#btn-back");
     public static final Target BTN_ACCION_GESTION = Target.the("el boton accion gestion")
-        .located(By.xpath("//button[@class='bg-square-button white bg-green']"));
+        .located(By.xpath("//table[@class='table-incorporacion br-right mb-20']//button[@class='bg-square-button white bg-green']"));
     public static final Target LBL_ESTADO_ACTUAL = Target.the("el estado del credito")
             .locatedBy("//td[text()='{0}']//parent::tr");
 

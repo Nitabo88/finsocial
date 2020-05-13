@@ -1,19 +1,18 @@
 package co.com.red5g.finsonet.questions;
 
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import java.util.List;
-
-import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
-import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionRadicadosPage.*;
+import static co.com.red5g.finsonet.tasks.CrearSolicitudNueva.NUMERO_PQRS;
+import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionRadicadosPage.LST_NUEVOS_INGRESOS;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class LaSolicitud implements Question<String> {
+
+    private static final int TIEMPO = 60;
 
     public static LaSolicitud deContacto() {
         return new LaSolicitud();
@@ -21,13 +20,10 @@ public class LaSolicitud implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        String fecha = actor.recall(FECHA);
-        String numeroDocumento = actor.recall(CEDULA_ACTOR);
+        String numeroPqrs = actor.recall(NUMERO_PQRS);
         actor.attemptsTo(
-                JavaScriptClick.on(RDB_DOCUMENTO),
-                Enter.theValue(numeroDocumento).into(TXT_BUSQUEDA),
-                Click.on(BTN_BUSQUEDA));
-        List<WebElementFacade> lstSolicitudContactCenter = LST_SOLICITUD_CONTACT_CENTER.of(fecha).resolveAllFor(actor);
-        return lstSolicitudContactCenter.get(0).getText();
+                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+                MoveMouse.to(LST_NUEVOS_INGRESOS.of(numeroPqrs)));
+        return LST_NUEVOS_INGRESOS.of(numeroPqrs).resolveFor(actor).getTextContent();
     }
 }

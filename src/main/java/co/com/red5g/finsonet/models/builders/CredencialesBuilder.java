@@ -82,6 +82,15 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     return build();
   }
 
+  public Credenciales unUsuarioPQRS() {
+    conUsuario(co.com.red5g.utils.Credenciales.USUARIO_PQRS.getUsuario());
+    conContrasena(co.com.red5g.utils.Credenciales.USUARIO_PQRS.getContrasena());
+    conCodigo(co.com.red5g.utils.Credenciales.USUARIO_PQRS.getCodigo());
+    conCelular();
+    conEmail();
+    return build();
+  }
+
   public Credenciales unUsuarioDeDocumentacion() {
     conUsuario(co.com.red5g.utils.Credenciales.USUARIO_DOCUMENTOS.getUsuario());
     conContrasena(co.com.red5g.utils.Credenciales.USUARIO_DOCUMENTOS.getContrasena());
