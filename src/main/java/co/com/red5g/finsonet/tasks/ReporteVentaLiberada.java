@@ -19,7 +19,7 @@ public class ReporteVentaLiberada implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-            SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoActual()).from(LST_PERIODO),
+            SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoAnterior()).from(LST_PERIODO),
             WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
             Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_VENTA_LIBERADA)
         );

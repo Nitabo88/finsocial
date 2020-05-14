@@ -17,10 +17,10 @@ Característica:  Tesorería
     Cuando el asesor pone el crédito como pendiente en tesorería
     Entonces el asesor deberá ver el crédito en tesorería en la lista de pendientes
 
-  @Pending
+
   @Tesoreria
   Escenario: Tesorería - Aprobación del crédito en tesorería
-    Dado que un asesor esta en el paso de tesorería prueba
+    Dado que un asesor esta en el paso de tesorería
     Cuando el asesor aprueba el crédito en tesorería
     Entonces el asesor deberá ver el crédito en antecartera
 
