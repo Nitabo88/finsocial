@@ -7,7 +7,6 @@ import java.util.Date;
 
 public class UtileriaFechas {
 
-    private static String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH));
     private static String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {
@@ -25,10 +24,19 @@ public class UtileriaFechas {
     }
 
     public static String obtenerPeriodoActual() {
+        String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH) + 1);
         if (mes.length() < 2) {
             mes = "0" + mes;
         }
-        return UtileriaFechas.year + "-" + UtileriaFechas.mes;
+        return UtileriaFechas.year + "-" + mes;
+    }
+
+    public static String obtenerPeriodoAnterior() {
+        String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH));
+        if (mes.length() < 2) {
+            mes = "0" + mes;
+        }
+        return UtileriaFechas.year + "-" + mes;
     }
 
     public static String sumarRestarDias(int dias) {

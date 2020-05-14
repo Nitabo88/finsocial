@@ -2,7 +2,7 @@ package co.com.red5g.finsonet.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -22,8 +22,8 @@ public class AntecarteraLibranza implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-                Click.on(MNM_HAMBURGUESA),
-                Click.on(MNM_NUEVO_ORIGINACION.of(ANTECARTERA)),
+                JavaScriptClick.on(MNM_HAMBURGUESA),
+                JavaScriptClick.on(MNM_NUEVO_ORIGINACION.of(ANTECARTERA)),
                 WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
                 MoveMouse.to(LST_FILA_ANTECARTERA.of(numeroCredito))
         );

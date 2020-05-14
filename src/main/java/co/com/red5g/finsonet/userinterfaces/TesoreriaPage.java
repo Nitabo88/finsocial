@@ -21,7 +21,8 @@ public class TesoreriaPage {
     public static final Target BTN_REGISTRAR_PENDIENTE = Target.the("el boton de registro de pendiente").locatedBy("#btn-aceptar-pendiente");
     public static final Target BTN_ACEPTAR = Target.the("el boton Ok").located(By.xpath("//button[text()='Aceptar']"));
     public static final Target BTN_ENVIAR_ANTECARTERA = Target.the("el boton enviar antecartera").located(By.xpath("//button[contains(text(), 'Enviar Ante Cartera')]"));
-    public static final Target BTN_ENVIAR = Target.the("el boton enviar").located(By.xpath("//button[@class='btn btn-warning boton_planilla']"));
+    public static final Target BTN_ENVIAR = Target.the("el boton enviar").located(By.id("botonSelectEnviar"));
+    public static final Target BTN_OK = Target.the("el boton OK").located(By.xpath("//button[text()='OK']"));
     public static final Target LST_PAGADURIA = Target.the("la pagaduria").located(By.id("textoPagadura"));
     public static final Target LST_TIPO_GIRO = Target.the("el tipo de giro").located(By.id("t_giro"));
     public static final Target TXT_CUOTA_RETENIDA = Target.the("la cuota retenida").located(By.id("textoCuotaRet1"));

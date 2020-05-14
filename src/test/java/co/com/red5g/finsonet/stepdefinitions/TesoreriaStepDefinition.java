@@ -51,12 +51,4 @@ public class TesoreriaStepDefinition {
   public void verificarCreditoAntecartera() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enAntecartera()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
-
-  @Dado("^que (.*) esta en el paso de tesorería prueba$")
-  public void queUnAsesorEstaEnElPasoDeTesoreríaPrueba(String actor) {
-    theActorCalled(actor).attemptsTo(
-            Loguearse.enFinsonet(),
-            Click.on(LNK_ORIGINACION),
-            Click.on(MNM_ORIGINACION.of("Tesorería")));
-  }
 }
