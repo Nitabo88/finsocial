@@ -9,7 +9,7 @@ Característica:  Formalización
   Escenario: Formalización Credito Libranza - Aprobar el crédito en formalización
     Dado que un asesor esta en el paso de formalización
     Cuando el asesor aprueba el crédito en formalización
-    Entonces el asesor deberá ver el crédito en el paso de tesoreria
+    Entonces el asesor deberá ver el crédito en el paso de tesorería
 
   @Formalizacion
   Escenario: Formalización Credito Libranza - Regresar el crédito desde formalización
@@ -27,5 +27,5 @@ Característica:  Formalización
   Escenario: Formalización CrediHuy - Aprobar el crédito en formalización
     Dado que un asesor esta en el paso de formalización CrediHuy
     Cuando el asesor aprueba el crédito en formalización CrediHuy
-    Entonces el asesor deberá ver el crédito en el paso de tesoreria
+    Entonces el asesor deberá ver el crédito en el paso de tesorería crediHuy
 

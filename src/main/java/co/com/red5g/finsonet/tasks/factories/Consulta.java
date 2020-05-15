@@ -48,7 +48,7 @@ public final class Consulta {
     return instrumented(IncorporacionCreditoHuy.class, informacionCredito);
   }
 
-  public static Performable elCreditoEnFormalizacionCrediHuy(Credito informacionIncorporacionHuy) {
-    return instrumented(IncorporacionCreditoHuy.class, informacionIncorporacionHuy);
+  public static Performable elCreditoEnFormalizacionCrediHuy() {
+    return instrumented(FormalizacionCreditoHuy.class);
   }
 }
