@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
@@ -21,7 +22,8 @@ public class TesoreriaCrediHuy implements Question<Boolean> {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
                 Click.on(MNM_ORIGINACION.of(TESORERIA)),
-                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds());
+                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+                MoveMouse.to(LST_FILA_TESORERIA_HUY.of(numeroCredito)));
         return LST_FILA_TESORERIA_HUY.of(numeroCredito).resolveFor(actor).isPresent();
     }
 }
