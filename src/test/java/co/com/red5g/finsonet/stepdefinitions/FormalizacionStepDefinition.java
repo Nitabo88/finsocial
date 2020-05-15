@@ -44,7 +44,7 @@ public class FormalizacionStepDefinition {
             Diligencia.laAprobacionDelCreditoEnFormalizacion());
   }
 
-  @Entonces("^el asesor deberá ver el crédito en el paso de tesoreria$")
+  @Entonces("^el asesor deberá ver el crédito en el paso de tesorería$")
   public void verificarCredito() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreria()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }

@@ -189,6 +189,13 @@ public final class CreditoBuilder implements Builder<Credito> {
     return this.build();
   }
 
+  public Credito informacionFormalizacionHuy() {
+    this.conDocumento(InformacionCreditoHuy.INFORMACION_FORMALIZACION_HUY.getNumeroDocumento());
+    this.a(InformacionCreditoHuy.INFORMACION_FORMALIZACION_HUY.getNumeroCuotas());
+    this.conValorCredito(InformacionCreditoHuy.INFORMACION_FORMALIZACION_HUY.getValorCredito());
+    return this.build();
+  }
+
   @Override
   public Credito build() {
     return new Credito(this);
@@ -197,6 +204,7 @@ public final class CreditoBuilder implements Builder<Credito> {
   public String getStrCodigoPapeleria() {
     return strCodigoPapeleria;
   }
+
 
 
 }

@@ -29,7 +29,9 @@ public final class FormalizacionPage {
   public static final Target BTN_ENVIAR_FILE = Target.the("el boton enviar archivo").inIFrame(FRAME).located(By.name("submit"));
   public static final Target BTN_CERRAR = Target.the("el boton enviar archivo").inIFrame(FRAME).located(By.xpath("//a[@class='fancybox-item fancybox-close']"));
   public static final Target BTN_UPLOAD = Target.the("icono de cargar").located(By.xpath("//i[contains(@class,'fa-upload')]"));
+  public static final Target BTN_GUARDAR = Target.the("el boton guardar").located(By.id("btnGuardar"));
   public static final Target LBL_FORMALIZACION = Target.the("el titulo de formalizacion").located(By.xpath("//h3[text()='Formalización']"));
+  public static final Target LST_NOMBRE_FORMALIZACION_CREDIHUY = Target.the("la columna de nombre de formalizacion huy").locatedBy("//td[text()='CrediHuy']//parent::tr//a[@href='/chequeo_docs_huy.php?crid={0}&act=1']");
 
   private FormalizacionPage() {
     throw new IllegalStateException("Utility class");

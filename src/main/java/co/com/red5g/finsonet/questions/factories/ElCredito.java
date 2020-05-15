@@ -86,4 +86,7 @@ public final class ElCredito {
 
   public static Question<Boolean> enAntecartera() { return new AntecarteraLibranza();
   }
+
+    public static Question<Boolean> enTesoreriaCrediHuy() {return new TesoreriaCrediHuy();
+    }
 }
