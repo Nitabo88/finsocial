@@ -10,6 +10,7 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class NegacionChequeoDocumentoLibranza implements Task {
     private static final int TIEMPO = 60;
@@ -30,6 +31,7 @@ public class NegacionChequeoDocumentoLibranza implements Task {
                 Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
                 Click.on(BTN_ACEPTAR2_POP_UP),
                 Click.on(BTN_ACEPTAR),
+                WaitUntil.the(BTN_NEGAR_LIBRANZA, isPresent()).forNoMoreThan(TIEMPO).seconds(),
                 Click.on(BTN_NEGAR_LIBRANZA),
                 SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO_NEGACION),
                 Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_DETALLE),

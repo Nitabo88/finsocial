@@ -1,11 +1,5 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.equalTo;
-
 import co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException;
 import co.com.red5g.finsonet.questions.ElMensaje;
 import co.com.red5g.finsonet.questions.Veto;
@@ -20,10 +14,15 @@ import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 import net.serenitybdd.screenplay.GivenWhenThen;
 
+import static co.com.red5g.finsonet.models.builders.VetadosBuilder.a;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.equalTo;
+
 public class VetadosStepDefinition {
 
-   private static final String ACTOR = "Administrador";
-   private static final String NO_REGISTRA = "NO REGISTRA";
+    private static String ACTOR = "Administrador";
+    private static String NO_REGISTRA = "NO REGISTRA";
 
 
     @Before("@Vetados")
