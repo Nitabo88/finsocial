@@ -32,6 +32,7 @@ public class CdasPage {
         .located(By.xpath("//table[@class='table-incorporacion br-right mb-20']//button[@class='bg-square-button white bg-green']"));
     public static final Target LBL_ESTADO_ACTUAL = Target.the("el estado del credito")
             .locatedBy("//td[text()='{0}']//parent::tr");
+    public static final Target LBL_CDAS = Target.the("el titulo de cdas").located(By.id("historial"));
 
 
     private CdasPage() {

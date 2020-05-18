@@ -7,15 +7,18 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.*;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RechazoAprobacionCreditoHuy implements Question<String> {
     private static final String ID_CREDITO = "ID crédito";
+    private static final int TIEMPO = 60;
 
     @Override
     public String answeredBy(Actor actor) {
@@ -26,6 +29,7 @@ public class RechazoAprobacionCreditoHuy implements Question<String> {
                 MoveMouse.to(LNK_CDAS),
                 Click.on(LNK_CDAS));
         actor.attemptsTo(
+                WaitUntil.the(LBL_CDAS, isVisible()).forNoMoreThan(TIEMPO).seconds(),
                 JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
                 Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
                 Click.on(BTN_BUSQUEDA),
