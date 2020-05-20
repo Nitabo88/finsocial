@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -25,6 +26,7 @@ public class AprobacionFormalizacionCrediHuy implements Task {
                 Click.on(LST_NOMBRE_FORMALIZACION_CREDIHUY.of(numeroCredito)),
                 WaitUntil.the(BTN_GUARDAR, isVisible()).forNoMoreThan(TIEMPO).seconds(),
                 Click.on(BTN_GUARDAR),
+                WaitFor.seconds(2),
                 WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
                 Click.on(BTN_OK)
         );

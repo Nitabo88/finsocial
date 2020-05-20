@@ -13,7 +13,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 public class NegacionChequeoDocumentoLibranza implements Task {
-    private static final int TIEMPO = 60;
+    private static final int TIEMPO = 120;
     private ChequeoDocumento chequeoDocumento;
 
     public NegacionChequeoDocumentoLibranza(ChequeoDocumento chequeoDocumento) {

@@ -5,6 +5,8 @@ import co.com.red5g.utils.Builder;
 import co.com.red5g.utils.InformacionCreditoHuy;
 import co.com.red5g.utils.InformacionCreditoLibranza;
 
+import static co.com.red5g.utils.InformacionCreditoHuy.INFORMACION_TESORERIA_HUY;
+
 public final class CreditoBuilder implements Builder<Credito> {
 
   private String strNumeroDocumento;
@@ -205,6 +207,10 @@ public final class CreditoBuilder implements Builder<Credito> {
     return strCodigoPapeleria;
   }
 
-
-
+  public Credito informacionDelCreditoTesoreriaCrediHuy() {
+    this.conDocumento(INFORMACION_TESORERIA_HUY.getNumeroDocumento());
+    this.a(InformacionCreditoHuy.INFORMACION_TESORERIA_HUY.getNumeroCuotas());
+    this.conValorCredito(InformacionCreditoHuy.INFORMACION_TESORERIA_HUY.getValorCredito());
+    return this.build();
+  }
 }

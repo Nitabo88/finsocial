@@ -14,7 +14,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
-public class ValidarLlamadaFinsoamigo implements Question<String> {
+public class ValidarLlamada implements Question<String> {
 
   private static final String CRITERIO_BUSQUEDA = "ID";
   private static final int TIEMPO = 150;

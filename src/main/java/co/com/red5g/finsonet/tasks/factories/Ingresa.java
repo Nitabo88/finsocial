@@ -101,4 +101,8 @@ public final class Ingresa {
     public static Performable aTesoreriaFinsoamigo() {
         return instrumented(TesoreriaFinsoamigo.class);
     }
+
+    public static Performable enElReporteDeFinsoamigo() {
+        return instrumented(ReporteFinsoamigo.class);
+    }
 }

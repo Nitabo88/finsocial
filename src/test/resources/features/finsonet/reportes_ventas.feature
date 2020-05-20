@@ -5,6 +5,12 @@ Característica: Reportes de venta Finsonet
   Quiero ingresar a la seccion de reportes de venta
   Para revisar el estado de las ventas del mes
 
+  Escenario: Reporte de venta - Venta Finsoamigo
+    Dado que un asesor quiere consultar un reporte
+    Cuando el ingresa al reporte del mes de finsoamigo
+    Entonces el observara que el valor consolidado y el detalle del reporte de finsoamigo son consistentes
+    Y que el numero de creditos consolidado y el detalle del reporte de finsoamigo son consistentes
+
   Escenario: Reporte de venta - Antecartera
     Dado que un asesor quiere consultar un reporte
     Cuando el ingresa al reporte del mes de antecartera

@@ -18,6 +18,7 @@ public final class ModulosAdministracionPage {
                     "//div[@id='menu-content']//div[@class='text-center divlogo']//img | //div[@class='col-sm-12 col-md-3 col-lg-2 div-logo']//img[@class='icon icon-finsonetlogo']"));
     public static final Target LNK_LLAMADAS = Target.the("el logo de llamadas").located(By.id("call"));
     public static final Target LNK_EQUIPO_SATISFACCION = Target.the("el link de equipo de satisfaccion").located(By.id("juridico"));
+    public static final Target LBL_MODULOS_ADMINISTRACION = Target.the("el label de modulos de administracion").located(By.xpath("//h2[text()='Módulos de Administración']"));
 
     private ModulosAdministracionPage() {
         throw new IllegalStateException("Utility class");
