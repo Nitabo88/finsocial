@@ -1,15 +1,6 @@
 package co.com.red5g.finsonet.questions.factories;
 
-import co.com.red5g.finsonet.questions.ValorComisionAsesores;
-import co.com.red5g.finsonet.questions.ValorConsolidadoLiquidadorComisiones;
-import co.com.red5g.finsonet.questions.ValorDetalleReporteVentaLiberada;
-import co.com.red5g.finsonet.questions.ValorDetalleReporteVentaNueva;
-import co.com.red5g.finsonet.questions.ValorReporteOriginacion;
-import co.com.red5g.finsonet.questions.ValorReporteVentaLiberada;
-import co.com.red5g.finsonet.questions.ValorReporteVentaNueva;
-import co.com.red5g.finsonet.questions.ValorTotalComision;
-import co.com.red5g.finsonet.questions.ValorVentaLiberadaLiquidacionComisiones;
-import co.com.red5g.finsonet.questions.ValorVentaNuevaLiquidacionComisiones;
+import co.com.red5g.finsonet.questions.*;
 import net.serenitybdd.screenplay.Question;
 
 public final class ElValor {
@@ -55,5 +46,9 @@ public final class ElValor {
 
   public static Question<Boolean> delDetalleDeLaComisionPorAsesor() {
     return new ValorComisionAsesores();
+  }
+
+  public static Question<String> delReporteDeFinsoamigo() {
+    return new ValorReporteFinsoamigo();
   }
 }

@@ -1,8 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_ANTECARTERA;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_VALOR_DETALLE_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -95,5 +93,25 @@ public class ReporteVentasStepDefinition {
     public void verificarValorVentaLiberada() {
         theActorInTheSpotlight()
             .should(seeThat(ElValor.delReporteDeVentaLiberada(), containsString(theActorInTheSpotlight().asksFor(ElValor.delDetalleDelReporteDeVentaLiberada()))));
+    }
+
+    @Cuando("^el ingresa al reporte del mes de finsoamigo$")
+    public void consultarVentaFinsoamigo() {
+        theActorInTheSpotlight().attemptsTo(
+                Ingresa.enElReporteDeFinsoamigo()
+        );
+    }
+
+    @Entonces("^el observara que el valor consolidado y el detalle del reporte de finsoamigo son consistentes$")
+    public void verificarValorVentaFinsoamigo() {
+        theActorInTheSpotlight()
+                .should(seeThat(ElValor.delReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_VALOR_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
+
+    }
+
+    @Y("^que el numero de creditos consolidado y el detalle del reporte de finsoamigo son consistentes$")
+    public void queElNumeroDeCreditosConsolidadoYElDetalleDelReporteDeFinsoamigoSonConsistentes() {
+        theActorInTheSpotlight()
+                .should(seeThat(ElNumero.deCreditosDelReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
     }
 }

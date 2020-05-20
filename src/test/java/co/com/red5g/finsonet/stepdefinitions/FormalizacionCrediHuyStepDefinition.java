@@ -18,7 +18,7 @@ public class FormalizacionCrediHuyStepDefinition {
     @Dado("^que (.*) esta en el paso de formalización CrediHuy$")
     public void ingresarFormalizacionCrediHuy(String actor) {
         theActorCalled(actor).attemptsTo(
-                Consulta.elCreditoEnFormalizacionCrediHuy()
+                Consulta.elCreditoEnFormalizacionCrediHuy(la().informacionFormalizacionHuy())
         );
     }
 

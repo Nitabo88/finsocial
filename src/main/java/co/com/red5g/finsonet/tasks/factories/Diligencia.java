@@ -143,4 +143,8 @@ public final class Diligencia {
     public static Performable laAprobacionDelCreditoEnFormalizacionCrediHuy() {
         return instrumented(AprobacionFormalizacionCrediHuy.class);
     }
+
+    public static Performable laInformacionDeAprobacionDeTesoreriaCrediHuy() {
+        return instrumented(AprobacionTesoreriaCrediHuy.class);
+    }
 }
