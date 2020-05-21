@@ -110,7 +110,7 @@ public class ReporteVentasStepDefinition {
     }
 
     @Y("^que el numero de creditos consolidado y el detalle del reporte de finsoamigo son consistentes$")
-    public void queElNumeroDeCreditosConsolidadoYElDetalleDelReporteDeFinsoamigoSonConsistentes() {
+    public void verificarCreditosVentaFinsoamigo() {
         theActorInTheSpotlight()
                 .should(seeThat(ElNumero.deCreditosDelReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
     }
