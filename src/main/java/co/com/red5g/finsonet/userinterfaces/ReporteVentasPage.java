@@ -25,11 +25,11 @@ public final class ReporteVentasPage {
     public static final Target LST_VALOR_DETALLE_ORIGINACION = Target.the("la lista de valores de originacion").located(
         By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
     public static final Target LST_VALOR_DETALLE_FINSOAMIGO = Target.the("la lista de valores de finsoamigo").located(
-            By.xpath("//div[@class='table-Rventa02 table-Rventa-6-0']//p[contains(.,'$')]"));
+            By.id("val_vn_fa"));
     public static final Target LST_CREDITO_DETALLE_ORIGINACION = Target.the("la lista de creditos de originacion").located(
         By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'CR')]"));
     public static final Target LST_CREDITO_DETALLE_FINSOAMIGO = Target.the("la lista de creditos de finsoamigo").located(
-            By.xpath("//div[@class='table-Rventa02 table-Rventa-6-0']//label[contains(.,'CR')]"));
+            By.id("cant_vn_fa"));
     public static final Target LST_CREDITO_DETALLE_ANTECARTERA = Target.the("la lista de creditos de antecartera").located(
         By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'CR')]"));
     public static final Target LST_VALOR_DETALLE_VENTA_NUEVA = Target.the("la lista de valores de venta nueva").located(
