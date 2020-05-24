@@ -22,7 +22,7 @@ public class AprobacionCreditoPage {
   public static final Target TXT_MOTIVO = Target.the("motivo de regresar el credito").located(By.id("area"));
   public static final Target TXT_MOTIVO_NEGACION = Target.the("motivo de negar el credito").located(By.id("area4"));
   public static final Target LBL_NOMBRE_FINSOAMIGO = Target.the("la columna del nombre del finsoamigo")
-          .locatedBy("//td[text()='Finsoamigo']//parent::tr//a[@class='faq-link']");
+          .locatedBy("//td[text()='Finsoamigo']//parent::tr//a[@href='formOrig.php?crid={0}']");
   public static final Target LST_FILA_APROBACION_CREDITO_HUY = Target.the("la fila de la tabla de aprobacion creditos huy")
           .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//ancestor::tr");
   public static final Target LST_NOMBRE_APROBACION_CREDITO_HUY = Target.the("el nombre de la tabla de aprobacion creditos huy")
@@ -33,6 +33,7 @@ public class AprobacionCreditoPage {
           .locatedBy("//table[@id='table_p']//td[text()='CrediHuy']//parent::tr//a[@class='faq-link'][contains(@href,'{0}')]//ancestor::tr");
   public static final Target LST_NOMBRE_APROBACION_LIBRANZA = Target.the("el nombre de la tabla de libranza en aprobacion")
           .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+  public static final Target LST_PERFIL_RIESGO = Target.the("el tipo de perfil de riesgo").located(By.id("combo_linea_credito"));
 
   private AprobacionCreditoPage() {
     throw new IllegalStateException("Utility class");

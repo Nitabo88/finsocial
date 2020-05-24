@@ -12,29 +12,29 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
-import static co.com.red5g.utils.NumeroCreditoFinsoamigo.CHEQUEO_DOCUMENTO_EXITOSO;
 
 public class InformacionChequeoDocumentoFinsoamigo implements Task {
 
   private ChequeoDocumento chequeoDocumento;
+  private String numeroCredito;
 
-  public InformacionChequeoDocumentoFinsoamigo(ChequeoDocumento chequeoDocumento) {
+  public InformacionChequeoDocumentoFinsoamigo(ChequeoDocumento chequeoDocumento, String numeroCredito) {
     this.chequeoDocumento = chequeoDocumento;
+    this.numeroCredito = numeroCredito;
   }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    String numeroCredito = CHEQUEO_DOCUMENTO_EXITOSO.getNumeroCredito();
     actor.remember(NUMERO_CREDITO, numeroCredito);
     actor.attemptsTo(
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)),
             Check.whether(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria()).resolveFor(actor).isVisible()).andIfSo(
                     Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
                     Click.on(BTN_ACEPTAR1_POP_UP),
-                    Click.on(BTN_ACEPTAR),
-                    WaitFor.seconds(2)),
+                    Click.on(BTN_ACEPTAR)),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
+            WaitFor.seconds(2),
             Subir.losArchivosDeChequeoDocumentosFinsoamigo(),
             Click.on(BTN_GUARDAR),
             Click.on(BTN_ACEPTAR)

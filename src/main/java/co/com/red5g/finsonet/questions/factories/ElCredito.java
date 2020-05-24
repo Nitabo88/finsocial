@@ -89,4 +89,8 @@ public final class ElCredito {
 
     public static Question<Boolean> enTesoreriaCrediHuy() {return new TesoreriaCrediHuy();
     }
+
+  public static Question<Boolean> enLaListaDeCreditosPorConfirmar() {
+    return new CreditosPorConfirmar();
+  }
 }

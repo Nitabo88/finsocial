@@ -14,21 +14,26 @@ import cucumber.api.java.es.Entonces;
 
 public class AprobacionCreditoFinsoamigoStepDefinition {
 
-  @Dado("^que (.*) esta en el paso de aprobación de créditos finsoamigo$")
-  public void ingresarAprobacionCreditos(String actor) {
+  @Dado("^que (.*) esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil (.*)$")
+  public void ingresarAprobacionCreditos(String actor, String perfilRiesgo) {
     theActorCalled(actor).wasAbleTo(
-        Ingresa.aAprobacionFinsoamigo());
+        Ingresa.aAprobacionFinsoamigo(perfilRiesgo));
   }
 
-  @Cuando("^el asesor diligencia la información de aprobación de crédito finsoamigo$")
-  public void diligenciarInformacion() {
+  @Cuando("^el asesor diligencia la información del cliente con perfil (.*) en aprobación de crédito$")
+  public void diligenciarInformacion(String perfilRiesgo) {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeAprobacionDeCreditoFinsoamigo()
+        Diligencia.laInformacionDeAprobacionDeCreditoFinsoamigo(perfilRiesgo)
     );
   }
 
-  @Entonces("^deberá ver el crédito en el paso de tesorería de finsoamigos$")
+  @Entonces("^el asesor deberá ver el crédito en el paso de tesorería de finsoamigos$")
   public void verificarCreditoTesoreria() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaFinsoamigo()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+  }
+
+  @Entonces("^el asesor deberá ver el crédito en el creditos por confirmar$")
+  public void verificarCreditosPorConfirmar() {
+    theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaDeCreditosPorConfirmar()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 }

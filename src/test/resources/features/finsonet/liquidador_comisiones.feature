@@ -6,7 +6,7 @@ Característica: Liquidador de comisiones Finsonet
   Para revisar el estado de las comisiones del mes
 
   @Colocacion
-  Esquema del escenario: : Liquidador de Comisiones - Colocacion
+  Esquema del escenario: Liquidador de Comisiones - Colocacion
     Dado que un asesor quiere consultar el reporte actual de liquidacion de comisiones
     Cuando el ingresa al reporte de liquidacion de comisiones - Venta Nueva del ciclo <Ciclo>
     Entonces el observara que el numero de creditos consolidado y el detalle del reporte de liquidacion de comisiones es consistente
