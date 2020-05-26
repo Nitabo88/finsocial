@@ -56,8 +56,8 @@ public final class ElCredito {
     return new PasoPendienteTesoreria();
   }
 
-  public static Question<Boolean> enTesoreriaFinsoamigo() {
-    return new TesoreriaFinsoamigo();
+  public static Question<Boolean> enTesoreriaPendientePorFirma() {
+    return new TesoreriaPendienteFirma();
   }
 
   public static Question<Boolean> enAprobacionDeCreditoHuy() {

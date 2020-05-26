@@ -34,6 +34,9 @@ public class AprobacionCreditoPage {
   public static final Target LST_NOMBRE_APROBACION_LIBRANZA = Target.the("el nombre de la tabla de libranza en aprobacion")
           .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
   public static final Target LST_PERFIL_RIESGO = Target.the("el tipo de perfil de riesgo").located(By.id("combo_linea_credito"));
+  public static final Target LST_PAGADURIA = Target.the("la pagaduria").located(By.id("textoPagadura"));
+  public static final Target LBL_CREDITO_CREADO = Target.the("el mensaje de credito registrado exitosamente").located(By.xpath("//p[contains(text(),'Credito registrado satisfactoriamente.')]"));
+  public static final Target TXT_CENTRO_COSTO = Target.the("el centro de costo").located(By.id("textoCol"));
 
   private AprobacionCreditoPage() {
     throw new IllegalStateException("Utility class");

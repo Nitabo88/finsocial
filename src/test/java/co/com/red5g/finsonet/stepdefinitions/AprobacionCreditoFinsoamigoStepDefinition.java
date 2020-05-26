@@ -27,12 +27,12 @@ public class AprobacionCreditoFinsoamigoStepDefinition {
     );
   }
 
-  @Entonces("^el asesor deberá ver el crédito en el paso de tesorería de finsoamigos$")
+  @Entonces("^el asesor deberá ver el crédito en el paso de tesorería en pendiente por firma$")
   public void verificarCreditoTesoreria() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaFinsoamigo()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaPendientePorFirma()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }
 
-  @Entonces("^el asesor deberá ver el crédito en el creditos por confirmar$")
+  @Entonces("^el asesor deberá ver el crédito en el módulo creditos por confirmar$")
   public void verificarCreditosPorConfirmar() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaDeCreditosPorConfirmar()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
   }

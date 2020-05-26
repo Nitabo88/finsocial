@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
@@ -27,7 +28,9 @@ public class InformacionChequeoDocumentoFinsoamigo implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.remember(NUMERO_CREDITO, numeroCredito);
     actor.attemptsTo(
-            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)),
+            MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)),
+            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)));
+    actor.attemptsTo(
             Check.whether(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria()).resolveFor(actor).isVisible()).andIfSo(
                     Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
                     Click.on(BTN_ACEPTAR1_POP_UP),

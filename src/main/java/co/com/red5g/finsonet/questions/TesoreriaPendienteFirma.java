@@ -9,10 +9,10 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_FILA_TESORERIA_FINSOAMIGO;
+import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_FILA_TESORERIA_PENDIENTE_FIRMA;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
-public class TesoreriaFinsoamigo implements Question<Boolean> {
+public class TesoreriaPendienteFirma implements Question<Boolean> {
 
   private static final int TIEMPO = 120;
   private static final String TESORERIA = "Tesorería";
@@ -21,9 +21,9 @@ public class TesoreriaFinsoamigo implements Question<Boolean> {
   public Boolean answeredBy(Actor actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNM_ORIGINACION.of(TESORERIA)),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
-        MoveMouse.to(LST_FILA_TESORERIA_FINSOAMIGO.of(numeroCredito)));
-    return LST_FILA_TESORERIA_FINSOAMIGO.of(numeroCredito).resolveFor(actor).isPresent();
+            Click.on(MNM_ORIGINACION.of(TESORERIA)),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+            MoveMouse.to(LST_FILA_TESORERIA_PENDIENTE_FIRMA.of(numeroCredito)));
+    return LST_FILA_TESORERIA_PENDIENTE_FIRMA.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }
