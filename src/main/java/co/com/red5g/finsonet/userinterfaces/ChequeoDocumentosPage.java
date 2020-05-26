@@ -52,7 +52,7 @@ public class ChequeoDocumentosPage {
     public static final Target LBL_CHEQUEO_DOCUMENTOS_NEGADO = Target.the("El texto de negado chequeo de documentos").located(By.xpath("//p[contains(text(),'Crédito negado.')]"));
     public static final Target LBL_LISTADO_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla del listado chequeo de documentos").located(By.xpath("//h1[text()='Listado de chequeo']"));
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO = Target.the("la columna nombre de la tabla de finsoamigos")
-        .locatedBy("//td[text()='Finsoamigo']//parent::tr[@role='row']//td[@style='text-align: left']//a");
+        .locatedBy("//td[text()='Finsoamigo']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY = Target.the("la columna nombre de la tabla de credihuy")
         .locatedBy("//td[text()='CrediHuy']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY = Target.the("Boton de estado en chequeo de documentos de credihuy")

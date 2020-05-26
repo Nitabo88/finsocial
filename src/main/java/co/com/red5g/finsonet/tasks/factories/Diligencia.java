@@ -96,12 +96,12 @@ public final class Diligencia {
         return instrumented(Cdas.class, accionCdas);
     }
 
-    public static Performable laInformacionDeChequeoDeDocumentosFinsoamigo(ChequeoDocumento chequeoDocumento) {
-        return instrumented(InformacionChequeoDocumentoFinsoamigo.class, chequeoDocumento);
+    public static Performable laInformacionDeChequeoDeDocumentosFinsoamigo(ChequeoDocumento chequeoDocumento, String numeroCredito) {
+        return instrumented(InformacionChequeoDocumentoFinsoamigo.class, chequeoDocumento, numeroCredito);
     }
 
-  public static Performable laInformacionDeAprobacionDeCreditoFinsoamigo() {
-      return instrumented(AprobacionDeCreditoFinsoamigo.class);
+  public static Performable laInformacionDeAprobacionDeCreditoFinsoamigo(String perfilRiesgo) {
+      return instrumented(AprobacionDeCreditoFinsoamigo.class, perfilRiesgo);
   }
 
     public static Performable laInformacionDeChequeoDeDocumentosHuy(ChequeoDocumento chequeoDocumento) {

@@ -5,12 +5,22 @@ Característica:  Aprobación Crédito
   quiero tramitar la aprobación de un crédito
   para revisar que el proceso funcione correctamente
 
-  @Pending
   @AprobacionCreditosFinsoamigos
-  Escenario: Aprobación Finsoamigos - Aprobar el crédito desde aprobación de créditos
-    Dado que un asesor esta en el paso de aprobación de créditos finsoamigo
-    Cuando el asesor diligencia la información de aprobación de crédito finsoamigo
-    Entonces deberá ver el crédito en el paso de tesorería de finsoamigos
+  Escenario: Aprobación Finsoamigos Riesgo Estandar- Aprobar el crédito desde aprobación de créditos
+    Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil estándar
+    Cuando el asesor diligencia la información del cliente con perfil FinsoAmigo_Estandar+IVA en aprobación de crédito
+    Entonces el asesor deberá ver el crédito en el paso de tesorería en pendiente por firma
+
+  @AprobacionCreditosFinsoamigos
+  Esquema del escenario: Aprobación Finsoamigos Riesgo No Estandar- Aprobar el crédito desde aprobación de créditos
+    Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil <Tipo Perfil>
+    Cuando el asesor diligencia la información del cliente con perfil <Perfil Riesgo> en aprobación de crédito
+    Entonces el asesor deberá ver el crédito en el módulo creditos por confirmar
+
+    Ejemplos:
+      | Tipo Perfil | Perfil Riesgo       |
+      | 50%+IVA     | FinsoAmigo_50%+IVA  |
+      | 150%+IVA    | FinsoAmigo_150%+IVA |
 
   @AprobacionCreditosHuy
   Escenario: Aprobacion Crédito Huy - Aprobar el crédito desde aprobación de créditos

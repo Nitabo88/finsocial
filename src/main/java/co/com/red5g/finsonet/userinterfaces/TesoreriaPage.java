@@ -7,6 +7,7 @@ public class TesoreriaPage {
 
     public static final Target LST_FILA_TESORERIA_LIBRANZA = Target.the("la lista de tesoreria").locatedBy("//tbody[@id='tablaLib']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_FINSOAMIGO = Target.the("la lista de tesoreria de finsoamigo").locatedBy("//tbody[@id='tablaAmigo']//td[text()='{0}']//parent::tr");
+    public static final Target LST_FILA_TESORERIA_PENDIENTE_FIRMA = Target.the("la lista de tesoreria de pendiente firma").locatedBy("//tbody[@id='tablaPenFirma']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_FINSOAMIGO1 = Target.the("la lista de tesoreria de finsoamigo temporal").locatedBy("//tbody[@id='tablaAmigo']//p[text()='COMPLETO']//ancestor::tr//td");
     public static final Target LST_FILA_TESORERIA_HUY = Target.the("la lista de tesoreria de credihuy").locatedBy("//tbody[@id='tablaHuy']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_PENDIENTE = Target.the("la lista pendientes de tesoreria").locatedBy("//div[@id='fixed-table-container-2']//td[text()='{0}']//parent::tr");
