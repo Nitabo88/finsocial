@@ -32,8 +32,7 @@ public class AprobacionDeCreditoFinsoamigo implements Task {
             Enter.theValue(CENTRO_COSTO).into(TXT_CENTRO_COSTO),
             SelectFromOptions.byValue(PAGADURIA).from(LST_PAGADURIA),
             SelectFromOptions.byVisibleText(perfilRiesgo).from(LST_PERFIL_RIESGO),
-            WaitFor.seconds(3));
-    actor.attemptsTo(
+            WaitFor.seconds(3),
             MoveMouse.to(BTN_APROBAR),
             Click.on(BTN_APROBAR),
             WaitFor.seconds(3),
