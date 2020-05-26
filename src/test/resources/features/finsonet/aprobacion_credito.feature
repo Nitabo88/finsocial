@@ -5,6 +5,7 @@ Característica:  Aprobación Crédito
   quiero tramitar la aprobación de un crédito
   para revisar que el proceso funcione correctamente
 
+  @AprobacionCreditosFinsoamigos
   Escenario: Aprobación Finsoamigos Riesgo Estandar- Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil estándar
     Cuando el asesor diligencia la información del cliente con perfil FinsoAmigo_Estandar+IVA en aprobación de crédito
