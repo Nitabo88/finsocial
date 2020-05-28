@@ -14,7 +14,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPres
 
 public class NegacionChequeoDocumentoLibranza implements Task {
     private static final int TIEMPO = 120;
-    private ChequeoDocumento chequeoDocumento;
+    private final ChequeoDocumento chequeoDocumento;
 
     public NegacionChequeoDocumentoLibranza(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;

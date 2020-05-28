@@ -18,7 +18,7 @@ public class CrearSolicitudNueva implements Task {
 
     public static final String NUMERO_PQRS = "Numero Pqrs";
     private static final int TIEMPO = 20;
-    private EquipoSatisfaccion equipoSatisfaccion;
+    private final EquipoSatisfaccion equipoSatisfaccion;
 
     public CrearSolicitudNueva(EquipoSatisfaccion equipoSatisfaccion) {
         this.equipoSatisfaccion = equipoSatisfaccion;

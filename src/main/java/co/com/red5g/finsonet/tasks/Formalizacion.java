@@ -1,12 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
-import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LBL_INCORPORACION;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -16,12 +9,17 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
+import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LBL_INCORPORACION;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+
 public class Formalizacion implements Task {
 
   private static final String MNM_FORMALIZACION = "Formalización";
   private static final int TIEMPO = 200;
 
-  private Credito credito;
+  private final Credito credito;
 
   public Formalizacion(Credito credito) {
     this.credito = credito;

@@ -17,7 +17,7 @@ import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACI
 public class IncorporacionCreditoHuy implements Task {
 
     private static final String SALIR = "Salir";
-    private Credito credito;
+    private final Credito credito;
     private static final String INCORPORACION = "Incorporación";
 
     public IncorporacionCreditoHuy(Credito credito) {

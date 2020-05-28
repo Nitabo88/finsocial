@@ -21,7 +21,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 public class TesoreriaCrediHuy implements Task {
     private static final String TESORERIA = "Tesorería";
     private static final int TIEMPO = 60;
-    private Credito credito;
+    private final Credito credito;
 
     public TesoreriaCrediHuy(Credito credito) {
         this.credito = credito;

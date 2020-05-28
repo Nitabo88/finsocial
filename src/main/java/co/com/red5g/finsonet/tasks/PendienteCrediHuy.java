@@ -18,7 +18,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 public class PendienteCrediHuy implements Task {
 
     private static final int TIEMPO = 20;
-    private ChequeoDocumento chequeoDocumento;
+    private final ChequeoDocumento chequeoDocumento;
 
     public PendienteCrediHuy(ChequeoDocumento chequeoDocumento) {
         this.chequeoDocumento = chequeoDocumento;

@@ -16,7 +16,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class InformacionIncompletaCreditoLibranza implements Task {
 
-    private Credito credito;
+    private final Credito credito;
     public static final String FECHA = "fecha credito";
     public static final String CEDULA_ACTOR = "cedula actor";
     public static final int TIEMPO = 100;

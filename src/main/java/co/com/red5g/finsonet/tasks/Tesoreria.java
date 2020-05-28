@@ -16,7 +16,7 @@ public class Tesoreria implements Task {
 
   private static final String MNM_TESORERIA = "Tesorería";
   private static final int TIEMPO = 150;
-  private Credito credito;
+  private final Credito credito;
 
   public Tesoreria(Credito credito) {
     this.credito = credito;

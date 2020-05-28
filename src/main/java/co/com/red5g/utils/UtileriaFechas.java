@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class UtileriaFechas {
 
-    private static String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
+    private static final String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR));
 
     private UtileriaFechas() {
         throw new IllegalStateException("Utileria Fechas");

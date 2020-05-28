@@ -1,10 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
@@ -14,9 +9,14 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 
+import static co.com.red5g.finsonet.models.builders.IncorporacionBuilder.con;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+
 public class ModuloCdas implements Task {
 
-  private Credito credito;
+  private final Credito credito;
   private static final int TIEMPO = 3;
 
   public ModuloCdas(Credito credito) {

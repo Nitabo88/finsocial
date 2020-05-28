@@ -20,7 +20,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 public class Cdas implements Task {
 
   private static final int TIEMPO = 300;
-  private AccionCdas accionCdas;
+  private final AccionCdas accionCdas;
   private static final String ID_CREDITO = "ID crédito";
 
   public Cdas(AccionCdas accionCdas) {

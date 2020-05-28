@@ -1,23 +1,23 @@
 package co.com.red5g.finsonet.tasks;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
+import co.com.red5g.finsonet.models.Credito;
+import co.com.red5g.finsonet.questions.ObtenerUrl;
+import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
+
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_COLUMNA_CHEQUEO_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 
-import co.com.devco.automation.mobile.actions.WaitFor;
-import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.finsonet.tasks.factories.Ingresa;
-import co.com.red5g.finsonet.questions.ObtenerUrl;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
-
 public class ChequeoDocumentoHuy implements Task {
 
-  private Credito credito;
+  private final Credito credito;
 
   public ChequeoDocumentoHuy(Credito credito) {
     this.credito = credito;

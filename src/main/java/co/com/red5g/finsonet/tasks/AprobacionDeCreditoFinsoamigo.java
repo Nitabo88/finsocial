@@ -13,7 +13,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class AprobacionDeCreditoFinsoamigo implements Task {
 
-  private String perfilRiesgo;
+  private final String perfilRiesgo;
   private static final String PAGADURIA = "FINSOCIAL";
   private static final String CENTRO_COSTO = "I.E. Tec. Agrop. Campeche Baranoa";
 

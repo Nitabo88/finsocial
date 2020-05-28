@@ -16,8 +16,8 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
 
 public class InformacionChequeoDocumentoFinsoamigo implements Task {
 
-  private ChequeoDocumento chequeoDocumento;
-  private String numeroCredito;
+  private final ChequeoDocumento chequeoDocumento;
+  private final String numeroCredito;
 
   public InformacionChequeoDocumentoFinsoamigo(ChequeoDocumento chequeoDocumento, String numeroCredito) {
     this.chequeoDocumento = chequeoDocumento;

@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.Question;
 import static co.com.red5g.utils.NumeroCreditoFinsoamigo.*;
 
 public class Obtener implements Question<String> {
-    private String perfilRiesgo;
+    private final String perfilRiesgo;
     private String numeroCredito;
 
     public Obtener(String perfilRiesgo, String numeroCredito) {

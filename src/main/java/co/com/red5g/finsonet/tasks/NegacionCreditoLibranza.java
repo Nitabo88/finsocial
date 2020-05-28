@@ -13,7 +13,7 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.*;
 
 public class NegacionCreditoLibranza implements Task {
-    private AprobacionCredito aprobacionCredito;
+    private final AprobacionCredito aprobacionCredito;
 
     public NegacionCreditoLibranza(AprobacionCredito aprobacionCredito) {
         this.aprobacionCredito = aprobacionCredito;
