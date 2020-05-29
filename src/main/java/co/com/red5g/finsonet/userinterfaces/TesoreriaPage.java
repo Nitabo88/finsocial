@@ -11,9 +11,9 @@ public class TesoreriaPage {
     public static final Target LST_FILA_TESORERIA_FINSOAMIGO1 = Target.the("la lista de tesoreria de finsoamigo temporal").locatedBy("//tbody[@id='tablaAmigo']//p[text()='COMPLETO']//ancestor::tr//td");
     public static final Target LST_FILA_TESORERIA_HUY = Target.the("la lista de tesoreria de credihuy").locatedBy("//tbody[@id='tablaHuy']//td[text()='{0}']//parent::tr");
     public static final Target LST_FILA_TESORERIA_PENDIENTE = Target.the("la lista pendientes de tesoreria").locatedBy("//div[@id='fixed-table-container-2']//td[text()='{0}']//parent::tr");
-    public static final Target LST_NOMBRE_TESORERIA_LIBRANZA = Target.the("la columna nombre de tesoreria del credito de libranza").locatedBy("//tbody[@id='tablaLib']//td[text()='{0}']//parent::tr//a[@href='formOrig.php?crid={0}']");
-    public static final Target LST_NOMBRE_TESORERIA_CREDIHUY = Target.the("la columna nombre de tesoreria credihuy").locatedBy("//tbody[@id='tablaHuy']//td[text()='{0}']//parent::tr//a[@href='formOrigHuy.php?crid={0}']");
-    public static final Target LST_NOMBRE_TESORERIA_FINSOAMIGO = Target.the("la columna nombre de tesoreria finsoamigo").locatedBy("//tbody[@id='tablaAmigo']//td[text()='{0}']//parent::tr//a[@href='formOrig.php?crid={0}']");
+    public static final Target LBL_NOMBRE_TESORERIA_LIBRANZA = Target.the("la columna nombre de tesoreria del credito de libranza").locatedBy("//tbody[@id='tablaLib']//td[text()='{0}']//parent::tr//a[@href='formOrig.php?crid={0}']");
+    public static final Target LBL_NOMBRE_TESORERIA_CREDIHUY = Target.the("la columna nombre de tesoreria credihuy").locatedBy("//tbody[@id='tablaHuy']//td[text()='{0}']//parent::tr//a[@href='formOrigHuy.php?crid={0}']");
+    public static final Target LBL_NOMBRE_TESORERIA_FINSOAMIGO = Target.the("la columna nombre de tesoreria finsoamigo").locatedBy("//tbody[@id='tablaAmigo']//td[text()='{0}']//parent::tr//a[@href='formOrig.php?crid={0}']");
     public static final Target BTN_ACCION_TESORERIA = Target.the("el boton accion de tesoreria").locatedBy("//td[text()='{0}']//parent::tr//button[@data-original-title='{1}']");
     public static final Target LST_SOLICITADO_POR = Target.the("la lista de quien solicita el regreso").locatedBy("#txtAut");
     public static final Target TXT_MOTIVO = Target.the("el motivo del regreso").locatedBy("#txtMotivo");
@@ -31,6 +31,7 @@ public class TesoreriaPage {
     public static final Target TXT_CUOTA_RETENIDA = Target.the("la cuota retenida").located(By.id("textoCuotaRet1"));
     public static final Target LBL_VALOR_GIRO = Target.the("el valor del giro").located(By.id("tdVlrGiro"));
     public static final Target TXT_VALOR_GIRO = Target.the("el input del valor del giro").located(By.id("textoVlrGiro1"));
+    public static final Target LST_TIPO_PAGO = Target.the("el tipo de pago").located(By.id("comboTipoPago2"));
 
     private TesoreriaPage() {
         throw new IllegalStateException("Utility class");

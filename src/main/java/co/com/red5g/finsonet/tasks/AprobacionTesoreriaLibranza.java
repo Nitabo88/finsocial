@@ -24,8 +24,8 @@ public class AprobacionTesoreriaLibranza implements Task {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
                 WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
-                MoveMouse.to(LST_NOMBRE_TESORERIA_LIBRANZA.of(numeroCredito)),
-                Click.on(LST_NOMBRE_TESORERIA_LIBRANZA.of(numeroCredito)),
+                MoveMouse.to(LBL_NOMBRE_TESORERIA_LIBRANZA.of(numeroCredito)),
+                Click.on(LBL_NOMBRE_TESORERIA_LIBRANZA.of(numeroCredito)),
                 cambiarPestanaActual());
         String valorGiro = LBL_VALOR_GIRO.resolveFor(actor).getText().replaceAll("[^\\d]", "");
         actor.attemptsTo(

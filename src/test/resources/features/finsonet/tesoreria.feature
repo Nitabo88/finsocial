@@ -30,9 +30,8 @@ Característica:  Tesorería
     Cuando el asesor aprueba el crédito en tesorería credihuy
     Entonces el asesor deberá ver el crédito en antecartera
 
-  @Pending
   @TesoreriaFinsoamigo
   Escenario: Tesorería Finsoamigo - Aprobación del crédito en tesorería
     Dado que un asesor esta en el paso de tesorería finsoamigos
-    Cuando el asesor aprueba el crédito en tesorería finsoamitgos
+    Cuando el asesor aprueba el crédito en tesorería finsoamigos
     Entonces el asesor deberá ver el crédito en antecartera
