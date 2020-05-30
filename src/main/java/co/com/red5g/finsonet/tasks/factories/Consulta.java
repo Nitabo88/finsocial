@@ -55,4 +55,8 @@ public final class Consulta {
     public static Performable elCreditoEnTesoreriaCrediHuy(Credito informacionCredito) {
       return instrumented(TesoreriaCrediHuy.class,informacionCredito );
     }
+
+  public static Performable laInformacionDeLaBD() {
+      return instrumented(ConsultaBD.class );
+  }
 }
