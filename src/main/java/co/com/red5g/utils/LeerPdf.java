@@ -7,9 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
@@ -33,9 +32,7 @@ public class LeerPdf {
     return contenidoPdf;
   }
 
-  public static List<Map<String, String>> procesarPdf(String pdf) {
-    List<Map<String, String>> lstFila = new ArrayList<Map<String, String>>();
-    pdf.split("\r\n");
-    return lstFila;
+  public static List<String> procesarPdf(String pdf) throws IOException {
+    return Arrays.asList(pdf.split(new PDFTextStripper().getLineSeparator()));
   }
 }

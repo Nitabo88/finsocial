@@ -56,7 +56,7 @@ public final class Consulta {
       return instrumented(TesoreriaCrediHuy.class,informacionCredito );
     }
 
-  public static Performable laInformacionDeLaBD() {
-      return instrumented(ConsultaBD.class );
+  public static Performable laInformacionDeLaBD(String sql) {
+      return instrumented(ConsultaBD.class, sql );
   }
 }

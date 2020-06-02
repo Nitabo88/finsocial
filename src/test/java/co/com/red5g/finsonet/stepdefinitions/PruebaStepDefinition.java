@@ -1,13 +1,20 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import static co.com.red5g.finsonet.tasks.Obtener.INFORMACION_PDF;
+import static co.com.red5g.utils.Queries.SQL_FORMULARIO_SOLICITUD;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
+import co.com.red5g.finsonet.questions.BaseDeDatos;
+import co.com.red5g.finsonet.questions.factories.LaInformacion;
 import co.com.red5g.finsonet.tasks.Obtener;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
 public class PruebaStepDefinition {
@@ -23,8 +30,17 @@ public class PruebaStepDefinition {
     theActorInTheSpotlight().attemptsTo(Obtener.laInformacionDelPdf());
   }
 
-  @Y("^obtiene la  informacion de la BD$")
+  @Y("^obtiene la informacion de la BD$")
   public void obtieneLaInformacionDeLaBD() {
-    theActorInTheSpotlight().attemptsTo(Consulta.laInformacionDeLaBD());
+    theActorInTheSpotlight().attemptsTo(Consulta.laInformacionDeLaBD(SQL_FORMULARIO_SOLICITUD.getSql()));
+  }
+
+  @Entonces("^la informacion corresponde$")
+  public void laInformacionCorresponde() {
+    theActorInTheSpotlight().should(
+        seeThat(LaInformacion.delPdf(), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("email")))),
+        seeThat(LaInformacion.delPdf(), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("nombre")))),
+        seeThat(LaInformacion.delPdf(), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("p_apellido")))),
+        seeThat(LaInformacion.delPdf(), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("no_doc")))));
   }
 }
