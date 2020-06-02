@@ -1,15 +1,28 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.tasks.Obtener.INFORMACION_PDF;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static co.com.red5g.utils.LeerPdf.procesarPdf;
 
+import java.io.IOException;
+import java.util.List;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 public class PDF implements Question<String> {
+  private int i;
+
+  public PDF(int i) {
+    this.i = i;
+  }
 
   @Override
   public String answeredBy(Actor actor) {
-    return theActorInTheSpotlight().recall(INFORMACION_PDF).toString().toLowerCase();
+    List<String> lstPdf = null;
+    try {
+      lstPdf= procesarPdf(actor.recall(INFORMACION_PDF));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return lstPdf.get(i).toLowerCase();
   }
 }

@@ -10,7 +10,7 @@ public class LaInformacion {
     return new BaseDeDatos(columna);
   }
 
-  public static Question<String> delPdf() {
-    return new PDF();
+  public static Question<String> delPdf(int i) {
+    return new PDF(i);
   }
 }
