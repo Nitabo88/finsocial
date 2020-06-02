@@ -1,5 +1,6 @@
 package co.com.red5g.utils;
 
+import static co.com.red5g.utils.ConexionBaseDatos.getLogger;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 import java.io.BufferedInputStream;
@@ -25,9 +26,12 @@ public class LeerPdf {
       documento = PDDocument.load(fileParse);
       contenidoPdf = new PDFTextStripper().getText(documento);
     } catch (MalformedURLException e) {
-      e.printStackTrace();
+      getLogger().info("No encontro la url");
     } catch (IOException e) {
-      e.printStackTrace();
+      getLogger().info(String.valueOf(e));
+    }
+    finally{
+
     }
     return contenidoPdf;
   }
