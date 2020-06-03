@@ -28,13 +28,9 @@ public class ConexionBaseDatos {
   }
 
   public static Connection conectarBaseDatos(
-      String url, String usuario, String contrasena) {
+      String url, String usuario, String contrasena) throws SQLException {
     Connection conexion = null;
-    try {
-      conexion = DriverManager.getConnection(url, usuario, contrasena);
-    } catch (SQLException e) {
-      getLogger().info("No respondió la base de datos");
-    }
+    conexion = DriverManager.getConnection(url, usuario, contrasena);
     return conexion;
   }
 

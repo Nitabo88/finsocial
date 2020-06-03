@@ -22,7 +22,7 @@ public class PDF implements Question<String> {
       List<String> lstPdf = procesarPdf(actor.recall(INFORMACION_PDF));
       return lstPdf.get(i).toLowerCase();
     } catch (IOException e) {
-      getLogger().info("No encontro la url");
+      getLogger().info(String.valueOf(e));
     }
     return "";
   }

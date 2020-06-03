@@ -27,15 +27,18 @@ public class ConsultaBD implements Task {
     this.query = query;
   }
 
-
   @Override
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = NUMERO_CREDITO_FINSOAMIGO.getNumeroCredito();
-    conexion =
-        conectarBaseDatos(
-            credencialesBD.getUrl(),
-            credencialesBD.getUsuario(),
-            credencialesBD.getContrasena());
+    try {
+      conexion =
+          conectarBaseDatos(
+              credencialesBD.getUrl(),
+              credencialesBD.getUsuario(),
+              credencialesBD.getContrasena());
+    } catch (SQLException e) {
+      getLogger().info("Error conexion BD");
+    }
     sql = String.format(query, numeroCredito);
     try {
       resultadoConsulta = ConexionBaseDatos.consultarBaseDatos(conexion, sql);
