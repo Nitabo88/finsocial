@@ -4,9 +4,9 @@ import co.com.red5g.finsonet.models.builders.CredencialesBDBuilder;
 
 public class CredencialesBD {
 
-  private String url;
-  private String usuario;
-  private String contrasena;
+  private final String url;
+  private final String usuario;
+  private final String contrasena;
 
   public CredencialesBD(final CredencialesBDBuilder credencialesBDBuilder) {
     url = credencialesBDBuilder.getUrl();

@@ -27,7 +27,6 @@ public class CredencialesBDBuilder implements Builder<CredencialesBD> {
     return new CredencialesBDBuilder();
   }
 
-
   private CredencialesBDBuilder conUrl(final String url) {
     this.url = url;
     return this;
