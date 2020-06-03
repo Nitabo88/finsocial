@@ -15,7 +15,12 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Y;
 
-public class PruebaStepDefinition {
+public class SoportesTesoreriaFinsoamigoStepDefinition {
+
+  @Dado("^que (.*) esta en el paso de tesorería finsoamigos en un crédito$")
+  public void ingresarCreditoFinsoamigo(String actor) {
+    theActorCalled(actor).wasAbleTo(Ingresa.aUnCreditoEnTesoreriaFinsoamigo());
+  }
 
   @Dado("^que (.*) quiere acceder a un pdf$")
   public void queUnAsesorQuiereAccederAUnPdf(String actor) {
@@ -42,4 +47,6 @@ public class PruebaStepDefinition {
         seeThat(LaInformacion.delPdf(5), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("no_doc")))),
         seeThat(LaInformacion.delPdf(10), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("dir_residencia")))));
   }
+
+
 }
