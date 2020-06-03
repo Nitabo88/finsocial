@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.interacions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.red5g.utils.NumeroCreditoFinsoamigo.*;
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.*;
 
 public class Obtener implements Question<String> {
     private String perfilRiesgo;

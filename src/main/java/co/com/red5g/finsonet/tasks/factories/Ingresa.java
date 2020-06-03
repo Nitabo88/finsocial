@@ -105,4 +105,12 @@ public final class Ingresa {
     public static Performable enElReporteDeFinsoamigo() {
         return instrumented(ReporteFinsoamigo.class);
     }
+
+  public static Performable alPDF() {
+    return instrumented(PDF.class);
+  }
+
+  public static Performable aUnCreditoEnTesoreriaFinsoamigo() {
+    return instrumented(CreditoTesoreriaFinsoamigo.class);
+  }
 }

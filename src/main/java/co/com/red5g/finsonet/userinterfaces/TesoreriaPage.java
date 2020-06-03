@@ -31,6 +31,7 @@ public class TesoreriaPage {
     public static final Target TXT_CUOTA_RETENIDA = Target.the("la cuota retenida").located(By.id("textoCuotaRet1"));
     public static final Target LBL_VALOR_GIRO = Target.the("el valor del giro").located(By.id("tdVlrGiro"));
     public static final Target TXT_VALOR_GIRO = Target.the("el input del valor del giro").located(By.id("textoVlrGiro1"));
+    public static final Target BTN_IMPRIMIR_PLANILLA = Target.the("el boton imprimir plantilla").locatedBy("//td[text()='{0}']//parent::tr//button[@data-original-title='Imprimir planilla']");
 
     private TesoreriaPage() {
         throw new IllegalStateException("Utility class");

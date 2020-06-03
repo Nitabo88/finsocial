@@ -15,7 +15,7 @@ public class TesoreriaFinsoamigoStepDefinition {
         theActorCalled(actor).attemptsTo(Ingresa.aTesoreriaFinsoamigo());
     }
 
-    @Cuando("^el asesor aprueba el crédito en tesorería finsoamitgos$")
+    @Cuando("^el asesor aprueba el crédito en tesorería finsoamigos$")
     public void aprobarCreditoTesoreria() {
         theActorInTheSpotlight().attemptsTo(Diligencia.laAprobacionDeTesoreriaFinsoamigo());
     }
