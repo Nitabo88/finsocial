@@ -8,7 +8,8 @@ import co.com.red5g.finsonet.models.CredencialesBD;
 import co.com.red5g.utils.conexionbd.ConexionBaseDatos;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
@@ -19,7 +20,7 @@ public class ConsultaBD implements Task {
   String query;
   Connection conexion = null;
   String sql = "";
-  HashMap<String, String> resultadoConsulta = null;
+  List<Map<String, String>> resultadoConsulta = null;
 
   public ConsultaBD(CredencialesBD credencialesBD, String query) {
     this.credencialesBD = credencialesBD;

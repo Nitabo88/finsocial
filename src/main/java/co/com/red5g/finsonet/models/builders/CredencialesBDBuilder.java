@@ -55,14 +55,14 @@ public class CredencialesBDBuilder implements Builder<CredencialesBD> {
     return contrasena;
   }
 
-  public CredencialesBD BDEnLineaAutogestion() {
+  public CredencialesBD bdEnLineaAutogestion() {
     conUrl(USUARIO_BD_EN_LINEA_AUTOGESTION.getUrl());
     conUsuario(USUARIO_BD_EN_LINEA_AUTOGESTION.getUsuario());
     conContrasena(USUARIO_BD_EN_LINEA_AUTOGESTION.getContrasena());
     return build();
   }
 
-  public CredencialesBD BDCreditos() {
+  public CredencialesBD bdCreditos() {
     conUrl(USUARIO_BD_CREDITOS.getUrl());
     conUsuario(USUARIO_BD_CREDITOS.getUsuario());
     conContrasena(USUARIO_BD_CREDITOS.getContrasena());

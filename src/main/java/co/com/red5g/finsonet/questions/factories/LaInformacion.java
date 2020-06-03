@@ -7,8 +7,11 @@ import net.serenitybdd.screenplay.Question;
 
 public class LaInformacion {
 
+  private LaInformacion() {
+  }
+
   public static Question<String> deBaseDeDatos(CredencialesBD credencialesBD, String sql, String columna) {
-    return new BaseDeDatos(credencialesBD,sql,columna);
+    return new BaseDeDatos(credencialesBD, sql, columna);
   }
 
   public static Question<String> delPdf(int filaCampo) {

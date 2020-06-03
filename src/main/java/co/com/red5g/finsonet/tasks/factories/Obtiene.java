@@ -9,6 +9,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Obtiene {
 
+  private Obtiene() {
+  }
+
   public static Performable laInformacionDelPdfSeguroDeVidaMundial() {
     return instrumented(SeguroVidaMundialPDF.class);
   }

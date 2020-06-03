@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.tasks.SeguroVidaMundialPDF.INFORMACION_PDF;
+import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
 import static co.com.red5g.utils.pdf.LeerPdf.procesarPdf;
 
 import java.io.IOException;
@@ -17,12 +18,12 @@ public class PDF implements Question<String> {
 
   @Override
   public String answeredBy(Actor actor) {
-    List<String> lstPdf = null;
     try {
-      lstPdf= procesarPdf(actor.recall(INFORMACION_PDF));
+      List<String> lstPdf = procesarPdf(actor.recall(INFORMACION_PDF));
+      return lstPdf.get(i).toLowerCase();
     } catch (IOException e) {
-      e.printStackTrace();
+      getLogger().info("No encontro la url");
     }
-    return lstPdf.get(i).toLowerCase();
+    return "";
   }
 }

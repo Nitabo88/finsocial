@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import net.thucydides.core.steps.StepInterceptor;
@@ -17,6 +19,9 @@ public class ConexionBaseDatos {
 
   private static Statement statement;
   private static ResultSet resultSet;
+
+  private ConexionBaseDatos() {
+  }
 
   public static Logger getLogger() {
     return LoggerFactory.getLogger(StepInterceptor.class);
@@ -33,21 +38,21 @@ public class ConexionBaseDatos {
     return conexion;
   }
 
-  public static HashMap<String, String> consultarBaseDatos(
+  public static List<Map<String, String>> consultarBaseDatos(
       Connection conexion, String sql) throws SQLException {
-    HashMap<String,String> lstFila = new HashMap<String,String>();
+    List<Map<String, String>> lstFila = new ArrayList<>();
     try {
       statement = conexion.createStatement();
       resultSet = statement.executeQuery(sql);
       ResultSetMetaData metaData = resultSet.getMetaData();
       int columnas = metaData.getColumnCount();
       while (resultSet.next()) {
-        Map<String, String> fila = new HashMap<String, String>(columnas);
+        Map<String, String> fila = new HashMap<>(columnas);
         for (int i = 1; i <= columnas; ++i) {
           fila.put(metaData.getColumnName(i), resultSet.getString(i));
           fila.values().removeIf(Objects::isNull);
         }
-        lstFila.putAll(fila);
+        lstFila.add(fila);
       }
     } finally {
       resultSet.close();

@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPest
 import static co.com.red5g.finsonet.interacions.ModificarUrl.modificarUrl;
 import static co.com.red5g.finsonet.userinterfaces.SoportesNuevosPage.LBL_SOPORTES_NUEVOS;
 import static co.com.red5g.finsonet.userinterfaces.SoportesNuevosPage.LNK_FORMATO_SEGURO_VIDA_MUNDIAL;
+import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
 import static co.com.red5g.utils.pdf.LeerPdf.leerPdf;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
@@ -30,7 +31,7 @@ public class SeguroVidaMundialPDF implements Task {
     try {
       actor.remember(INFORMACION_PDF, leerPdf());
     } catch (IOException e) {
-      e.printStackTrace();
+      getLogger().info("No respondió la base de datos");
     }
   }
 }
