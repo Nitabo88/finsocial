@@ -74,27 +74,27 @@ public class CredencialesBuilder implements Builder<Credenciales> {
   }
 
   public Credenciales unUsuarioBasico() {
-    conUsuario(co.com.red5g.utils.Credenciales.USUARIO_FINSOCIAL.getUsuario());
-    conContrasena(co.com.red5g.utils.Credenciales.USUARIO_FINSOCIAL.getContrasena());
-    conCodigo(co.com.red5g.utils.Credenciales.USUARIO_FINSOCIAL.getCodigo());
+    conUsuario(co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL.getUsuario());
+    conContrasena(co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL.getContrasena());
+    conCodigo(co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL.getCodigo());
     conCelular();
     conEmail();
     return build();
   }
 
   public Credenciales unUsuarioPQRS() {
-    conUsuario(co.com.red5g.utils.Credenciales.USUARIO_PQRS.getUsuario());
-    conContrasena(co.com.red5g.utils.Credenciales.USUARIO_PQRS.getContrasena());
-    conCodigo(co.com.red5g.utils.Credenciales.USUARIO_PQRS.getCodigo());
+    conUsuario(co.com.red5g.utils.data.Credenciales.USUARIO_PQRS.getUsuario());
+    conContrasena(co.com.red5g.utils.data.Credenciales.USUARIO_PQRS.getContrasena());
+    conCodigo(co.com.red5g.utils.data.Credenciales.USUARIO_PQRS.getCodigo());
     conCelular();
     conEmail();
     return build();
   }
 
   public Credenciales unUsuarioDeDocumentacion() {
-    conUsuario(co.com.red5g.utils.Credenciales.USUARIO_DOCUMENTOS.getUsuario());
-    conContrasena(co.com.red5g.utils.Credenciales.USUARIO_DOCUMENTOS.getContrasena());
-    conCodigo(co.com.red5g.utils.Credenciales.USUARIO_DOCUMENTOS.getCodigo());
+    conUsuario(co.com.red5g.utils.data.Credenciales.USUARIO_DOCUMENTOS.getUsuario());
+    conContrasena(co.com.red5g.utils.data.Credenciales.USUARIO_DOCUMENTOS.getContrasena());
+    conCodigo(co.com.red5g.utils.data.Credenciales.USUARIO_DOCUMENTOS.getCodigo());
     conCelular();
     conEmail();
     return build();
@@ -110,9 +110,9 @@ public class CredencialesBuilder implements Builder<Credenciales> {
   }
 
   public Credenciales unUsuarioDeAprobacionCreditos() {
-    this.conUsuario(co.com.red5g.utils.Credenciales.USUARIO_APROBACION_CREDITOS.getUsuario());
-    this.conContrasena(co.com.red5g.utils.Credenciales.USUARIO_APROBACION_CREDITOS.getContrasena());
-    this.conCodigo(co.com.red5g.utils.Credenciales.USUARIO_APROBACION_CREDITOS.getCodigo());
+    this.conUsuario(co.com.red5g.utils.data.Credenciales.USUARIO_APROBACION_CREDITOS.getUsuario());
+    this.conContrasena(co.com.red5g.utils.data.Credenciales.USUARIO_APROBACION_CREDITOS.getContrasena());
+    this.conCodigo(co.com.red5g.utils.data.Credenciales.USUARIO_APROBACION_CREDITOS.getCodigo());
     conCelular();
     conEmail();
     return this.build();

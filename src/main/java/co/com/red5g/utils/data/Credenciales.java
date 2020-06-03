@@ -1,4 +1,4 @@
-package co.com.red5g.utils;
+package co.com.red5g.utils.data;
 
 public enum Credenciales {
     USUARIO_FINSOCIAL("ochinchilla", "Nicolas32@", "1234"),

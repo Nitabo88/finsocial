@@ -9,7 +9,7 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static co.com.red5g.utils.NumeroCreditoFinsoamigo.CHEQUEO_DOCUMENTO_EXITOSO;
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.CHEQUEO_DOCUMENTO_EXITOSO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

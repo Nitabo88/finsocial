@@ -1,4 +1,4 @@
-package co.com.red5g.utils;
+package co.com.red5g.utils.data;
 
 public enum InformacionCreditoLibranza {
     INFORMACION_FORMULARIO_LIBRANZA("19362753", "1300000", "52"),

@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.tasks.Obtener.INFORMACION_PDF;
-import static co.com.red5g.utils.LeerPdf.procesarPdf;
+import static co.com.red5g.finsonet.tasks.SeguroVidaMundialPDF.INFORMACION_PDF;
+import static co.com.red5g.utils.pdf.LeerPdf.procesarPdf;
 
 import java.io.IOException;
 import java.util.List;

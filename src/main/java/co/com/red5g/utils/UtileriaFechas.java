@@ -2,6 +2,9 @@ package co.com.red5g.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -46,5 +49,19 @@ public class UtileriaFechas {
         DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MMM-d");
         String fecha = fechaFormateada.format(calendar.getTime());
         return fecha.substring(0, 6).toUpperCase() + fecha.substring(6);
+    }
+
+    public static String fechaPdf(String fechaBaseDeDatos) {
+        String fechaBD = fechaBaseDeDatos.substring(0, 10);
+        String[] fechaPdf = fechaBD.split("-");
+        return fechaPdf[2] + " " + fechaPdf[1] + " " + fechaPdf[0];
+    }
+
+    public static String edad(String fechaNacimiento) {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate fechaNac = LocalDate.parse(fechaNacimiento, formato);
+        LocalDate ahora = LocalDate.now();
+        Period edad = Period.between(fechaNac, ahora);
+        return String.valueOf(edad.getYears());
     }
 }

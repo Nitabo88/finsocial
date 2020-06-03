@@ -1,6 +1,6 @@
-package co.com.red5g.utils;
+package co.com.red5g.utils.pdf;
 
-import static co.com.red5g.utils.ConexionBaseDatos.getLogger;
+import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getProxiedDriver;
 
 import java.io.BufferedInputStream;
@@ -17,22 +17,31 @@ public class LeerPdf {
 
   private static String contenidoPdf;
 
-  public static String leerPdf() {
+  private LeerPdf() {
+  }
+
+  public static String leerPdf() throws IOException {
     PDDocument documento = null;
+    InputStream file = null;
+    BufferedInputStream fileParse = null;
     try {
       URL url = new URL(getProxiedDriver().getCurrentUrl());
-      InputStream file = url.openStream();
-      BufferedInputStream fileParse = new BufferedInputStream(file);
+      file = url.openStream();
+      fileParse = new BufferedInputStream(file);
       documento = PDDocument.load(fileParse);
       contenidoPdf = new PDFTextStripper().getText(documento);
-    } catch (MalformedURLException e) {
+    }  catch (MalformedURLException e) {
       getLogger().info("No encontro la url");
     } catch (IOException e) {
       getLogger().info(String.valueOf(e));
     }
-    finally{
-
-    }
+    finally {
+        assert file != null;
+        file.close();
+        assert documento != null;
+        documento.close();
+        fileParse.close();
+      }
     return contenidoPdf;
   }
 

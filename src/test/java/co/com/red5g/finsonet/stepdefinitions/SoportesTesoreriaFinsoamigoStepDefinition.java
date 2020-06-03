@@ -1,15 +1,25 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.utils.Queries.SQL_FORMULARIO_SOLICITUD;
+import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
+import static co.com.red5g.utils.UtileriaFechas.edad;
+import static co.com.red5g.utils.UtileriaFechas.fechaPdf;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_ANALITICA_FILTRO;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_ASEGURABILIDAD;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_CIUDAD;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_FORMULARIO_SOLICITUD;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_LINEA_CREDITO;
+import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
+import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
+import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
+import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapital;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 
 import co.com.red5g.finsonet.questions.factories.LaInformacion;
-import co.com.red5g.finsonet.tasks.Obtener;
-import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import co.com.red5g.finsonet.tasks.factories.Obtiene;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -22,31 +32,57 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
     theActorCalled(actor).wasAbleTo(Ingresa.aUnCreditoEnTesoreriaFinsoamigo());
   }
 
-  @Dado("^que (.*) quiere acceder a un pdf$")
-  public void queUnAsesorQuiereAccederAUnPdf(String actor) {
-    theActorCalled(actor).attemptsTo(Ingresa.alPDF());
+  @Cuando("^el asesor obtiene la información del pdf de Seguro de Vida Mundial$")
+  public void obtenerInformacionPdfSeguroVidaMundial() {
+    theActorInTheSpotlight().attemptsTo(Obtiene.laInformacionDelPdfSeguroDeVidaMundial());
   }
 
-
-  @Cuando("^obtiene la informacion del pdf$")
-  public void obtieneLaInformacionDelPdf() {
-    theActorInTheSpotlight().attemptsTo(Obtener.laInformacionDelPdf());
+  @Y("^el asesor obtiene la información de la BD de Seguro de Vida Mundial$")
+  public void obtenerInformacionBDSeguroVidaMundial() {
+    theActorInTheSpotlight().attemptsTo(Obtiene.laInformacionDeBDDeSeguroDeVidaMundial(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql()));
   }
 
-  @Y("^obtiene la informacion de la BD$")
-  public void obtieneLaInformacionDeLaBD() {
-    theActorInTheSpotlight().attemptsTo(Consulta.laInformacionDeLaBD(SQL_FORMULARIO_SOLICITUD.getSql()));
-  }
-
-  @Entonces("^la informacion corresponde$")
-  public void laInformacionCorresponde() {
+  @Entonces("^el asesor deberá ver que la información corresponde a la de BD$")
+  public void verificarSegurosVidaMundial() {
     theActorInTheSpotlight().should(
-        seeThat(LaInformacion.delPdf(11), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("email")))),
-        seeThat(LaInformacion.delPdf(3), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("nombre")))),
-        seeThat(LaInformacion.delPdf(3), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("p_apellido")))),
-        seeThat(LaInformacion.delPdf(5), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("no_doc")))),
-        seeThat(LaInformacion.delPdf(10), containsString(theActorInTheSpotlight().asksFor(LaInformacion.deBaseDeDatos("dir_residencia")))));
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Ciudad Solicitud")), containsString("barranquilla")),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Fecha Solicitud")), containsString(fechaPdf(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_ANALITICA_FILTRO.getSql(), "fecha_reg"))))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Nombre o Razon Social")), containsString("finsocial s.a.s")),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Tipo Identificacion Tomador")), containsString("nit")),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Numero Identificacion Tomador")), containsString("900516574-6")),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Credito No")), containsString(" ")),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Valor Capital")), containsString(valorCapital(Integer.parseInt(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDCreditos(), SQL_LINEA_CREDITO.getSql(), "linea_credito_id")))))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Tipo Identificacion Asegurado")), containsString("x")),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Numero Identificacion Asegurado")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Primer Apellido")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "p_apellido")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Segundo Apellido")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_apellido")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Nombres")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "nombre")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Peso")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_ASEGURABILIDAD.getSql(), "peso")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Estatura")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_ASEGURABILIDAD.getSql(), "estatura")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Fecha Nacimiento")), containsString(fechaPdf(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_nac"))))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Edad")), containsString(edad(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_nac"))))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Ocupacion Actual")), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "profesion")))))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Estado Civil")), containsString(estadoCivil(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "estado_civil"))))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Direccion Residencia")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("E-mail")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "email")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Telefono")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))),
+        seeThat(LaInformacion.delPdf(segurosVidaMundial("Ciudad Residencia")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().BDEnLineaAutogestion(), SQL_CIUDAD.getSql(), "ciudad"))))
+    );
   }
-
-
 }
