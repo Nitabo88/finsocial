@@ -12,7 +12,7 @@ public class UtileriasMoneda {
   public static String formatoMoneda(String moneda) {
     Locale locale = new Locale("en", "US");
     NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(locale);
-    return currencyFormatter.format(moneda);
+    String[] formato = currencyFormatter.format(Integer.parseInt(moneda)).split("\\.");
+    return formato[0].replace(",", ".");
   }
-
 }
