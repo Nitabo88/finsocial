@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.tasks.SeguroVidaMundialPDF.INFORMACION_PDF;
+import static co.com.red5g.finsonet.tasks.Obtiene.INFORMACION_PDF;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
 import static co.com.red5g.utils.pdf.LeerPdf.procesarPdf;
 

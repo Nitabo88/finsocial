@@ -8,7 +8,15 @@ Característica:  Validacion Soportes Nuevos
   Antecedentes: El usuario debe estar en un crédito finsoamigo en tesoreria.
     Dado que un asesor esta en el paso de tesorería finsoamigos en un crédito
 
-    Escenario: Soporte Seguro de Vida Mundial
-      Cuando el asesor obtiene la información del pdf de Seguro de Vida Mundial
-      Entonces el asesor deberá ver que la información corresponde a la de BD
+  Escenario: PDF Solicitud de Crédito Finsocial
+    Cuando el asesor obtiene la información del pdf de Solicitud de Crédito
+    Entonces el asesor deberá ver que la información de Solicitud de Crédito corresponde a la de BD
+
+ # Escenario: PDF Seguro de Vida Mundial
+ #   Cuando el asesor obtiene la información del pdf de Formato Seguro de Vida Mundial
+ #   Entonces el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD
+
+
+
+
 

@@ -57,6 +57,14 @@ public class UtileriaFechas {
         return fechaPdf[2] + " " + fechaPdf[1] + " " + fechaPdf[0];
     }
 
+    public static String fechaPdfSolicitud(String fechaBaseDeDatos) {
+        String fechaBD = fechaBaseDeDatos.substring(0, 11);
+        String[] fecha = fechaBD.split("-");
+        fechaBD = " " + fecha[2] + " " + fecha[1] + " " + fecha[0];
+        fechaBD = fechaBD.replace(" ", "");
+        return fechaBD.replace("", " ").trim();
+    }
+
     public static String edad(String fechaNacimiento) {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate fechaNac = LocalDate.parse(fechaNacimiento, formato);

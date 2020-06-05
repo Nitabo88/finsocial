@@ -21,7 +21,6 @@ public class BaseDeDatos implements Question<String> {
     this.columna = columna;
   }
 
-
   @Override
   public String answeredBy(Actor actor) {
     actor.attemptsTo(
