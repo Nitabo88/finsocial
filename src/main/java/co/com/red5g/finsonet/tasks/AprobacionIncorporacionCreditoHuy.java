@@ -13,7 +13,7 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LBL_DATOS_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_FECHA_LIQUIDACION_CREDITO;
-import static co.com.red5g.utils.UtileriaFechas.sumarRestarDias;
+import static co.com.red5g.utils.String.UtileriaFechas.sumarRestarDias;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AprobacionIncorporacionCreditoHuy implements Task {

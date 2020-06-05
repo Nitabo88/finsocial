@@ -4,7 +4,7 @@ package co.com.red5g.finsonet.tasks;
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.Incorporacion;
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.String.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.*;
-import static co.com.red5g.utils.UtileriaFechas.sumarRestarDias;
+import static co.com.red5g.utils.String.UtileriaFechas.sumarRestarDias;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AprobacionIncorporacion implements Task {

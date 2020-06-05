@@ -1,9 +1,10 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
-import static co.com.red5g.utils.UtileriaFechas.edad;
-import static co.com.red5g.utils.UtileriaFechas.fechaPdf;
-import static co.com.red5g.utils.UtileriaFechas.fechaPdfSolicitud;
+import static co.com.red5g.utils.String.UtileriaFechas.edad;
+import static co.com.red5g.utils.String.UtileriaFechas.fechaPdf;
+import static co.com.red5g.utils.String.UtileriaFechas.fechaPdfSolicitud;
+import static co.com.red5g.utils.String.UtileriasMoneda.formatoMoneda;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_ANALITICA_FILTRO;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_ASEGURABILIDAD;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_CIUDAD;
@@ -76,7 +77,7 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat(LaInformacion.delPdf(segurosVidaMundial("E-mail")), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "email")))),
         seeThat(LaInformacion.delPdf(segurosVidaMundial("Telefono")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))),
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "tel_residencia")))),
         seeThat(LaInformacion.delPdf(segurosVidaMundial("Ciudad Residencia")), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD.getSql(), "ciudad"))))
     );
@@ -142,8 +143,8 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_activos")))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Activos Fijos")), containsString("$0")),
         seeThat(LaInformacion.delPdf(solicitudCredito("Otros Activos")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Total Activos")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_activos")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Total Activos")), containsString(formatoMoneda(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_activos"))))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Pasivos Financieros")), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_pasivos")))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Pasivos Corrientes")), containsString("$0")),

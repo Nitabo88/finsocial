@@ -14,7 +14,7 @@ import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUE
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.String.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

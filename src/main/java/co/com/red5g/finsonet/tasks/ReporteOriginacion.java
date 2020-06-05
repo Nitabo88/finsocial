@@ -5,7 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_PERIODO
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.String.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
