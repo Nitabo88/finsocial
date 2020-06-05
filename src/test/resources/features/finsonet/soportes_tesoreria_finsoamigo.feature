@@ -8,13 +8,26 @@ Característica:  Validacion Soportes Nuevos
   Antecedentes: El usuario debe estar en un crédito finsoamigo en tesoreria.
     Dado que un asesor esta en el paso de tesorería finsoamigos en un crédito
 
-  Escenario: PDF Solicitud de Crédito Finsocial
-    Cuando el asesor obtiene la información del pdf de Solicitud de Crédito
+  Esquema del escenario: PDF Solicitud de Crédito Finsocial
+    Cuando el asesor obtiene la información del pdf de Solicitud de Crédito del crédito número <número crédito>
     Entonces el asesor deberá ver que la información de Solicitud de Crédito corresponde a la de BD
 
- # Escenario: PDF Seguro de Vida Mundial
- #   Cuando el asesor obtiene la información del pdf de Formato Seguro de Vida Mundial
- #   Entonces el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD
+    Ejemplos:
+      | número crédito |
+      | 98594          |
+      | 99420          |
+      | 100539         |
+
+
+  Esquema del escenario:  PDF Seguro de Vida Mundial
+    Cuando el asesor obtiene la información del pdf de Formato Seguro de Vida Mundial del crédito número <número crédito>
+    Entonces el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD
+
+    Ejemplos:
+      | número crédito |
+      | 98594          |
+      | 99420          |
+      | 100539         |
 
 
 

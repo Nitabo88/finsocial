@@ -1,5 +1,6 @@
 package co.com.red5g.utils.conexionbd;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import net.thucydides.core.steps.StepInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,7 +46,6 @@ public class ConexionBaseDatos {
         Map<String, String> fila = new HashMap<>(columnas);
         for (int i = 1; i <= columnas; ++i) {
           fila.put(metaData.getColumnName(i), resultSet.getString(i));
-          fila.values().removeIf(Objects::isNull);
         }
         lstFila.add(fila);
       }

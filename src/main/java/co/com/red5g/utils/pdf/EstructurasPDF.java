@@ -1,9 +1,5 @@
 package co.com.red5g.utils.pdf;
 
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static org.hamcrest.Matchers.containsString;
-
-import co.com.red5g.finsonet.questions.factories.LaInformacion;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +36,7 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
-  public static Integer solicitudCredito(String filaCampo) {
+  public static Integer solicitudCredito(String filaCampo, int pdf) {
     Map<String, Integer> map = new HashMap<>();
     map.put("Fecha Solicitud", 0);
     map.put("Tipo Solicitud", 1);
@@ -75,52 +71,30 @@ public class EstructurasPDF {
     map.put("Direccion Trabajo", 16);
     map.put("Ciudad Trabajo", 16);
     map.put("Telefono Trabajo", 16);
-    map.put("Activos Corrientes", 17);
-    map.put("Activos Fijos", 18);
-    map.put("Otros Activos", 19);
-    map.put("Total Activos", 20);
-    map.put("Pasivos Financieros", 21);
-    map.put("Pasivos Corrientes", 22);
-    map.put("Otros Pasivos", 23);
-    map.put("Total Pasivos", 24);
-    map.put("Salario Fijo", 25);
-    map.put("Salario Variable y Comisiones", 26);
-    map.put("Arrendamiento", 27);
-    map.put("Rendimiento Financieros", 28);
-    map.put("Honorarios", 29);
-    map.put("Otros Ingresos", 30);
-    map.put("Total Ingresos", 31);
-    map.put("Arriendos", 32);
-    map.put("Gastos Pesonales,Familiares", 33);
-    map.put("Prestamos diferentes a finsocial", 34);
-    map.put("Deducciones Nomina", 35);
-    map.put("Tarjeta Credito", 36);
-    map.put("Otros Gastos", 37);
-    map.put("Total Egresos", 38);
-    map.put("Datos Operaciones Internacionales",39);
-    map.put("FATCA",40);
-    map.put("Cuenta Exterior",41);
-    map.put("Mutuario",46);
-    map.put("Numero Mutuante",47);
-    map.put("Origen Fondos",48);
-    map.put("Asegurabilidad-1",49);
-    map.put("Asegurabilidad-2",50);
-    map.put("Asegurabilidad-3",51);
-    map.put("Asegurabilidad-4",52);
-    map.put("Asegurabilidad-5",53);
-    map.put("Enfermedad",54);
-    map.put("Declaracion Mutuario-1",55);
-    map.put("Declaracion Mutuario-2",56);
-    map.put("Declaracion Mutuario-3",57);
-    map.put("Declaracion Mutuario-4",58);
-    map.put("Nombres-Firma",59);
-    map.put("Tipo Identificacion-Firma",60);
-    map.put("Numero-Firma",60);
-    map.put("Lugar Expedicion-Firma",60);
-    map.put("Fecha Expedicion-Firma",60);
-    map.put("Ciudad-Firma",61);
-    map.put("Direccion-Firma",61);
-    map.put("Telefono-Firma",61);
+    map.put("Activos Corrientes", 15 + pdf);
+    map.put("Activos Fijos", 16 + pdf);
+    map.put("Otros Activos", 17 + pdf);
+    map.put("Total Activos", 18 + pdf);
+    map.put("Pasivos Financieros", 19 + pdf);
+    map.put("Pasivos Corrientes", 20 + pdf);
+    map.put("Otros Pasivos", 21 + pdf);
+    map.put("Total Pasivos", 22 + pdf);
+    map.put("Salario Fijo", 23 + pdf);
+    map.put("Salario Variable y Comisiones", 24 + pdf);
+    map.put("Arrendamiento", 25 + pdf);
+    map.put("Rendimiento Financieros", 26 + pdf);
+    map.put("Honorarios", 27 + pdf);
+    map.put("Otros Ingresos", 28 + pdf);
+    map.put("Total Ingresos", 29 + pdf);
+    map.put("Arriendos", 30 + pdf);
+    map.put("Gastos Pesonales,Familiares", 31 + pdf);
+    map.put("Prestamos diferentes a finsocial", 32 + pdf);
+    map.put("Deducciones Nomina", 33 + pdf);
+    map.put("Tarjeta Credito", 34 + pdf);
+    map.put("Otros Gastos", 35 + pdf);
+    map.put("Total Egresos", 36 + pdf);
+    map.put("Datos Operaciones Internacionales", 37 + pdf);
+    map.put("FATCA", 38 + pdf);
     return map.get(filaCampo);
   }
 

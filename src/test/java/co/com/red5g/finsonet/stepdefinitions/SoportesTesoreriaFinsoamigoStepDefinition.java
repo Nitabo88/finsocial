@@ -1,15 +1,19 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
+import static co.com.red5g.finsonet.questions.SolicitudCreditoPdf.tipoCliente;
+import static co.com.red5g.finsonet.questions.TotalIngresos.totalIngresos;
 import static co.com.red5g.utils.String.UtileriaFechas.edad;
 import static co.com.red5g.utils.String.UtileriaFechas.fechaPdf;
 import static co.com.red5g.utils.String.UtileriaFechas.fechaPdfSolicitud;
 import static co.com.red5g.utils.String.UtileriasMoneda.formatoMoneda;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_ANALITICA_FILTRO;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_ASEGURABILIDAD;
-import static co.com.red5g.utils.conexionbd.Queries.SQL_CIUDAD;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_CIUDAD_RESIDENCIA;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_FORMULARIO_SOLICITUD;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LINEA_CREDITO;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_EXPEDICION;
+import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_NACIMIENTO;
 import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
 import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
 import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
@@ -34,9 +38,9 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
     theActorCalled(actor).wasAbleTo(Ingresa.aUnCreditoEnTesoreriaFinsoamigo());
   }
 
-  @Cuando("^el asesor obtiene la información del pdf de (.*)$")
-  public void obtenerInformacionPdfSeguroVidaMundial(String pdf) {
-    theActorInTheSpotlight().attemptsTo(Obtiene.laInformacionDelPdf(pdf));
+  @Cuando("^el asesor obtiene la información del pdf de (.*) del crédito número (.*)$")
+  public void obtenerInformacionPdf(String pdf, String numeroCredito) {
+    theActorInTheSpotlight().attemptsTo(Obtiene.laInformacionDelPdf(pdf, numeroCredito));
   }
 
   @Entonces("^el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD$")
@@ -79,125 +83,103 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat(LaInformacion.delPdf(segurosVidaMundial("Telefono")), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "tel_residencia")))),
         seeThat(LaInformacion.delPdf(segurosVidaMundial("Ciudad Residencia")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD.getSql(), "ciudad"))))
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD_RESIDENCIA.getSql(), "ciudad"))))
     );
   }
 
   @Entonces("^el asesor deberá ver que la información de Solicitud de Crédito corresponde a la de BD$")
   public void verificarSolicitudCredito() {
+    int pdf = theActorInTheSpotlight().asksFor(tipoCliente());
+    if (pdf != 0) {
+      theActorInTheSpotlight().should(
+          seeThat(LaInformacion.delPdf(solicitudCredito("Direccion Trabajo", pdf)), containsString(theActorInTheSpotlight()
+              .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_empresa")))),
+          seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Trabajo", pdf)), containsString(theActorInTheSpotlight()
+              .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "telefono_empresa"))))
+      );
+    }
     theActorInTheSpotlight().should(
-        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha Solicitud")), containsString(fechaPdfSolicitud(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha Solicitud", pdf)), containsString(fechaPdfSolicitud(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ANALITICA_FILTRO.getSql(), "fecha_reg"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Tipo Solicitud")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Valor")), containsString("$ 9.000.000")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Linea")), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Numero Cuotas")), containsString("60")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Valor Cuota")), containsString("$ 384.888")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Primer Nombre")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Tipo Solicitud", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Valor", pdf)), containsString("$ 9.000.000")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Linea", pdf)), containsString("finsoamigo")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Numero Cuotas", pdf)), containsString("60")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Valor Cuota", pdf)), containsString("$ 384.888")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Primer Nombre", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "nombre")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Segundo Nombre")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Segundo Nombre", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_nombre")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Primer Apellido")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Primer Apellido", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "p_apellido")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Segundo Apellido")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Segundo Apellido", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_apellido")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Tipo Identificacion")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Numero Identificacion")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Tipo Identificacion", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Numero Identificacion", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha Expedicion")), containsString(fechaPdf(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha Expedicion", pdf)), containsString(fechaPdf(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_exp"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Expedicion")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD.getSql(), "ciudad")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha de Nacimiento")), containsString(fechaPdf(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Expedicion", pdf)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_LUGAR_EXPEDICION.getSql(), "ciudad")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha de Nacimiento", pdf)), containsString(fechaPdf(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_nac"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Sexo")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Nacimiento")), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Estado Civil")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Pais Residencia")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Sexo", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Nacimiento", pdf)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_LUGAR_NACIMIENTO.getSql(), "ciudad")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Estado Civil", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Pais Residencia", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "pais_residencia")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Ciudad y Departamento")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD.getSql(), "ciudad")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Direccion Residencia")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Ciudad y Departamento", pdf)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD_RESIDENCIA.getSql(), "ciudad")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Direccion Residencia", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Residencia")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Residencia", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "tel_residencia")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Celular")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Celular", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Envio Correspondencia")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Correo Electronico")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Envio Correspondencia", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Correo Electronico", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "email")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Ocupacion")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Preguntas Actividad Laboral")), containsString("x xx")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Actividad Economica")), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Ocupacion", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Preguntas Actividad Laboral", pdf)), containsString("x xx")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Actividad Economica", pdf)), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "ocupacion")))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Nombre Empresa")), containsString(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Nombre Empresa", pdf)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "empresa")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Cargo")), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Cargo", pdf)), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "ocupacion")))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Direccion Trabajo")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_empresa")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Ciudad Trabajo")), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Trabajo")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "telefono_empresa")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Activos Corrientes")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Activos Corrientes", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_activos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Activos Fijos")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Activos")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Total Activos")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Activos Fijos", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Activos", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Total Activos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_activos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Pasivos Financieros")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Pasivos Financieros", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_pasivos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Pasivos Corrientes")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Pasivos")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Total Pasivos")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Pasivos Corrientes", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Pasivos", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Total Pasivos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_pasivos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Salario Fijo")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Salario Fijo", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_ingresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Salario Variable y Comisiones")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Arrendamiento")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Rendimiento Financieros")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Honorarios")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Ingresos")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Salario Variable y Comisiones", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Arrendamiento", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Rendimiento Financieros", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Honorarios", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Ingresos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "otros_ingresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Total Ingresos")), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Arriendos")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Gastos Pesonales,Familiares")), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Prestamos diferentes a finsocial")), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Deducciones Nomina")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Tarjeta Credito")), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Gastos")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Total Ingresos", pdf)), containsString(theActorInTheSpotlight().asksFor(totalIngresos()))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Arriendos", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Gastos Pesonales,Familiares", pdf)), containsString("finsoamigo")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Prestamos diferentes a finsocial", pdf)), containsString("finsoamigo")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Deducciones Nomina", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Tarjeta Credito", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Otros Gastos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_egresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Total Egresos")), containsString(formatoMoneda(theActorInTheSpotlight()
+        seeThat(LaInformacion.delPdf(solicitudCredito("Total Egresos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_egresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Datos Operaciones Internacionales")), containsString("x x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("FATCA")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Cuenta Exterior")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Mutuario")), containsString(formatoMoneda(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_egresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Numero Mutuante")), containsString(formatoMoneda(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_egresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Origen Fondos")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Asegurabilidad-1")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Asegurabilidad-2")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Asegurabilidad-3")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Asegurabilidad-4")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Asegurabilidad-5")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Enfermedad")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-1")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-2")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-3")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-4")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Nombres-Firma")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Tipo Identificacion-Firma")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Numero-Firma")), containsString(theActorInTheSpotlight()
-                .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Lugar Expedicion-Firma")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha Expedicion-Firma")), containsString(fechaPdf(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_exp"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Ciudad-Firma")), containsString("x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Direccion-Firma")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono-Firma")), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
+        seeThat(LaInformacion.delPdf(solicitudCredito("Datos Operaciones Internacionales", pdf)), containsString("x x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("FATCA", pdf)), containsString("x")));
+
   }
 }
