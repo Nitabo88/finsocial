@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.conectarBaseDatos;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import co.com.red5g.finsonet.models.CredencialesBD;
 import co.com.red5g.utils.conexionbd.ConexionBaseDatos;
@@ -44,6 +45,9 @@ public class ConsultaBD implements Task {
       resultadoConsulta = ConexionBaseDatos.consultarBaseDatos(conexion, sql);
     } catch (SQLException e) {
       getLogger().info("Error SQL");
+    }
+    if (resultadoConsulta.isEmpty()) {
+      assertThat("El crédito " + numeroCredito + "no esta en BD", false);
     }
     actor.remember(RESULTADO_CONSULTA, resultadoConsulta);
   }

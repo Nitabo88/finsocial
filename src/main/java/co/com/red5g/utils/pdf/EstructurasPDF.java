@@ -120,6 +120,8 @@ public class EstructurasPDF {
     map.put(387, "$ 7.141.504");
     map.put(388, "$ 20.203.544");
     map.put(390, "$ 13.664.882");
+    map.put(391, "$ 7.141.504");
+    map.put(392, "$ 20.203.544");
     return map.get(filaCampo);
   }
 }

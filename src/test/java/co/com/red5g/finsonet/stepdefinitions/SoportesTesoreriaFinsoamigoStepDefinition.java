@@ -92,6 +92,10 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
     int pdf = theActorInTheSpotlight().asksFor(tipoCliente());
     if (pdf != 0) {
       theActorInTheSpotlight().should(
+          seeThat(LaInformacion.delPdf(solicitudCredito("Nombre Empresa", pdf)), containsString(theActorInTheSpotlight()
+              .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "empresa")))),
+          seeThat(LaInformacion.delPdf(solicitudCredito("Cargo", pdf)), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
+              .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "ocupacion")))))),
           seeThat(LaInformacion.delPdf(solicitudCredito("Direccion Trabajo", pdf)), containsString(theActorInTheSpotlight()
               .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_empresa")))),
           seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Trabajo", pdf)), containsString(theActorInTheSpotlight()
@@ -144,10 +148,6 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat(LaInformacion.delPdf(solicitudCredito("Preguntas Actividad Laboral", pdf)), containsString("x xx")),
         seeThat(LaInformacion.delPdf(solicitudCredito("Actividad Economica", pdf)), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "ocupacion")))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Nombre Empresa", pdf)), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "empresa")))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Cargo", pdf)), containsString(ocupacion(Integer.parseInt(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "ocupacion")))))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Activos Corrientes", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_activos"))))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Activos Fijos", pdf)), containsString("$0")),
@@ -168,10 +168,10 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat(LaInformacion.delPdf(solicitudCredito("Honorarios", pdf)), containsString("$0")),
         seeThat(LaInformacion.delPdf(solicitudCredito("Otros Ingresos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "otros_ingresos"))))),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Total Ingresos", pdf)), containsString(theActorInTheSpotlight().asksFor(totalIngresos()))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Total Ingresos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight().asksFor(totalIngresos())))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Arriendos", pdf)), containsString("$0")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Gastos Pesonales,Familiares", pdf)), containsString("finsoamigo")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("Prestamos diferentes a finsocial", pdf)), containsString("finsoamigo")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Gastos Pesonales,Familiares", pdf)), containsString("$0")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Prestamos diferentes a finsocial", pdf)), containsString("$0")),
         seeThat(LaInformacion.delPdf(solicitudCredito("Deducciones Nomina", pdf)), containsString("$0")),
         seeThat(LaInformacion.delPdf(solicitudCredito("Tarjeta Credito", pdf)), containsString("$0")),
         seeThat(LaInformacion.delPdf(solicitudCredito("Otros Gastos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
