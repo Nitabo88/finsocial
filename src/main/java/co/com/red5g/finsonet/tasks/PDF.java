@@ -26,11 +26,11 @@ public class PDF implements Task {
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.remember(NUMERO_CREDITO, numeroCredito);
-    String numeroGestion = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ID_GESTION.getSql(), "id_gestion"));
+    String numeroGestion =
+        actor.asksFor(
+            LaInformacion.deBaseDeDatos(
+                con().bdEnLineaAutogestion(), SQL_ID_GESTION.getSql(), "id_gestion"));
     String pdf = String.format(url, numeroGestion);
-    actor.attemptsTo(
-        Open.browserOn(loginFinsonetPage),
-        modificarUrl(pdf)
-    );
+    actor.attemptsTo(Open.browserOn(loginFinsonetPage), modificarUrl(pdf));
   }
 }

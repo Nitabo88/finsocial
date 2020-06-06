@@ -95,6 +95,15 @@ public class EstructurasPDF {
     map.put("Total Egresos", 36 + pdf);
     map.put("Datos Operaciones Internacionales", 37 + pdf);
     map.put("FATCA", 38 + pdf);
+    map.put("Mutuario", pdf - 20);
+    map.put("Numero Documento Mutuario", pdf - 19);
+    map.put("Origen Fondos", pdf - 18);
+    map.put("Asegurabilidad-1", pdf - 17);
+    map.put("Asegurabilidad-2", pdf - 16);
+    map.put("Asegurabilidad-3", pdf - 15);
+    map.put("Asegurabilidad-4", pdf - 14);
+    map.put("Asegurabilidad-5", pdf - 13);
+    map.put("Enfermedad", pdf - 12);
     map.put("Declaracion Mutuario-1", pdf - 11);
     map.put("Declaracion Mutuario-2", pdf - 10);
     map.put("Declaracion Mutuario-3", pdf - 9);

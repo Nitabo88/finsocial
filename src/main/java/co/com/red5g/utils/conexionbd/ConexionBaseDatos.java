@@ -1,5 +1,8 @@
 package co.com.red5g.utils.conexionbd;
 
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
+import com.jcraft.jsch.Session;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,6 +21,7 @@ public class ConexionBaseDatos {
 
   private static Statement statement;
   private static ResultSet resultSet;
+  public static Session session = null;
 
   private ConexionBaseDatos() {
   }
