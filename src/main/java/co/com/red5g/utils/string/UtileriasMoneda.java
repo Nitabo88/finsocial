@@ -1,4 +1,4 @@
-package co.com.red5g.utils.String;
+package co.com.red5g.utils.string;
 
 import java.text.NumberFormat;
 import java.util.Locale;

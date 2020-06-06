@@ -8,7 +8,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.IngresaAReporte;
-import co.com.red5g.utils.String.UtileriaFechas;
+import co.com.red5g.utils.string.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;

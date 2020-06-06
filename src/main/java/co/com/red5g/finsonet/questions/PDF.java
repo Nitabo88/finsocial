@@ -19,12 +19,12 @@ public class PDF implements Question<String> {
 
   @Override
   public String answeredBy(Actor actor) {
-    List<String> lstPdf = null;
     try {
-      lstPdf = procesarPdf(actor.recall(INFORMACION_PDF));
+      List<String> lstPdf = procesarPdf(actor.recall(INFORMACION_PDF));
+      return lstPdf.get(i).toLowerCase();
     } catch (IOException e) {
       getLogger().info(String.valueOf(e));
     }
-    return lstPdf.get(i).toLowerCase();
+    return "";
   }
 }
