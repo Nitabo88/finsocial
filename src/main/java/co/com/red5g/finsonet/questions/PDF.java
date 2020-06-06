@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 public class PDF implements Question<String> {
+
   private int i;
 
   public PDF(int i) {
@@ -18,12 +19,12 @@ public class PDF implements Question<String> {
 
   @Override
   public String answeredBy(Actor actor) {
+    List<String> lstPdf = null;
     try {
-      List<String> lstPdf = procesarPdf(actor.recall(INFORMACION_PDF));
-      return lstPdf.get(i).toLowerCase();
+      lstPdf = procesarPdf(actor.recall(INFORMACION_PDF));
     } catch (IOException e) {
       getLogger().info(String.valueOf(e));
     }
-    return "";
+    return lstPdf.get(i).toLowerCase();
   }
 }

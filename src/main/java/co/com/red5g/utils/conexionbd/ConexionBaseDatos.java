@@ -1,6 +1,5 @@
 package co.com.red5g.utils.conexionbd;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

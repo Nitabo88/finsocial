@@ -106,8 +106,8 @@ public final class Ingresa {
         return instrumented(ReporteFinsoamigo.class);
     }
 
-  public static Performable alPDF() {
-    return instrumented(PDF.class);
+  public static Performable alPDF(String url, String numeroCredito) {
+    return instrumented(PDF.class,url, numeroCredito);
   }
 
   public static Performable aUnCreditoEnTesoreriaFinsoamigo() {

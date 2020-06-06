@@ -47,7 +47,7 @@ public class ConsultaBD implements Task {
       getLogger().info("Error SQL");
     }
     if (resultadoConsulta.isEmpty()) {
-      assertThat("El crédito " + numeroCredito + "no esta en BD", false);
+      assertThat("El crédito " + numeroCredito + " no esta en BD", false);
     }
     actor.remember(RESULTADO_CONSULTA, resultadoConsulta);
   }

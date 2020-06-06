@@ -1,56 +1,31 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.interacions.ModificarUrl.modificarUrl;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.finsonet.userinterfaces.SoportesNuevosPage.LBL_SOPORTES_NUEVOS;
-import static co.com.red5g.finsonet.userinterfaces.SoportesNuevosPage.LNK_FORMATO;
-import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_NOMBRE_TESORERIA_FINSOAMIGO;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
 import static co.com.red5g.utils.pdf.LeerPdf.leerPdf;
+import static co.com.red5g.utils.pdf.LeerPdf.procesarPdf;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 import java.io.IOException;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Obtiene implements Task {
 
   public static final String INFORMACION_PDF = "Informacion Pdf";
-  private static final int TIEMPO = 60;
-  private String pdf;
-  private String numeroCredito;
+  public static final String NUMERO_FILAS = "numero filas";
 
-  public Obtiene(String pdf, String numeroCredito) {
-    this.pdf = pdf;
-    this.numeroCredito = numeroCredito;
-  }
-
-  public static Performable laInformacionDelPdf(String pdf, String numeroCredito) {
-    return instrumented(Obtiene.class, pdf, numeroCredito);
+  public static Performable laInformacionDelPdf() {
+    return instrumented(Obtiene.class);
   }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    actor.remember(NUMERO_CREDITO, numeroCredito);
-    actor.attemptsTo(
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
-        Click.on(LST_NOMBRE_TESORERIA_FINSOAMIGO.of(numeroCredito)),
-        cambiarPestanaActual(),
-        WaitUntil.the(LBL_SOPORTES_NUEVOS, isPresent()).forNoMoreThan(TIEMPO).seconds(),
-        Click.on(LNK_FORMATO.of(pdf)),
-        cambiarPestanaActual(),
-        modificarUrl());
     try {
       actor.remember(INFORMACION_PDF, leerPdf());
+      actor.remember(NUMERO_FILAS, procesarPdf(leerPdf()).size());
     } catch (IOException e) {
-      getLogger().info("No respondió la base de datos");
+      getLogger().info("No hay información del pdf");
     }
   }
 }

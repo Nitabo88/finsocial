@@ -95,6 +95,18 @@ public class EstructurasPDF {
     map.put("Total Egresos", 36 + pdf);
     map.put("Datos Operaciones Internacionales", 37 + pdf);
     map.put("FATCA", 38 + pdf);
+    map.put("Declaracion Mutuario-1", pdf - 11);
+    map.put("Declaracion Mutuario-2", pdf - 10);
+    map.put("Declaracion Mutuario-3", pdf - 9);
+    map.put("Declaracion Mutuario-4", pdf - 8);
+    map.put("Nombres Y Apellidos Firma", pdf - 7);
+    map.put("Tipo Documento Firma", pdf - 6);
+    map.put("Numero Firma", pdf - 6);
+    map.put("Ciudad Expedicion Firma", pdf - 6);
+    map.put("Fecha Expedicion Firma", pdf - 6);
+    map.put("Ciudad Firma", pdf - 5);
+    map.put("Direccion Firma", pdf - 5);
+    map.put("Telefono Firma", pdf - 5);
     return map.get(filaCampo);
   }
 

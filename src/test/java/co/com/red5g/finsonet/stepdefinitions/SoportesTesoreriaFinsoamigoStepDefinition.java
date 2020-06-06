@@ -1,8 +1,10 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
+import static co.com.red5g.finsonet.questions.NombreCompleto.nombreCompleto;
 import static co.com.red5g.finsonet.questions.SolicitudCreditoPdf.tipoCliente;
 import static co.com.red5g.finsonet.questions.TotalIngresos.totalIngresos;
+import static co.com.red5g.finsonet.tasks.Obtiene.NUMERO_FILAS;
 import static co.com.red5g.utils.String.UtileriaFechas.edad;
 import static co.com.red5g.utils.String.UtileriaFechas.fechaPdf;
 import static co.com.red5g.utils.String.UtileriaFechas.fechaPdfSolicitud;
@@ -19,6 +21,7 @@ import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
 import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
 import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudCredito;
 import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapital;
+import static co.com.red5g.utils.pdf.UrlsPdfs.urlPdf;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -33,14 +36,15 @@ import cucumber.api.java.es.Entonces;
 
 public class SoportesTesoreriaFinsoamigoStepDefinition {
 
-  @Dado("^que (.*) esta en el paso de tesorería finsoamigos en un crédito$")
-  public void ingresarCreditoFinsoamigo(String actor) {
-    theActorCalled(actor).wasAbleTo(Ingresa.aUnCreditoEnTesoreriaFinsoamigo());
+  @Dado("^que (.*) esta en el pdf de (.*) del crédito (.*)$")
+  public void ingresarUrlPdf(String actor, String url, String numeroCredito) {
+    String urlPdf = urlPdf(url);
+    theActorCalled(actor).wasAbleTo(Ingresa.alPDF(urlPdf, numeroCredito));
   }
 
-  @Cuando("^el asesor obtiene la información del pdf de (.*) del crédito número (.*)$")
-  public void obtenerInformacionPdf(String pdf, String numeroCredito) {
-    theActorInTheSpotlight().attemptsTo(Obtiene.laInformacionDelPdf(pdf, numeroCredito));
+  @Cuando("^el asesor obtiene la información del pdf$")
+  public void obtenerInformacionPdf() {
+    theActorInTheSpotlight().attemptsTo(Obtiene.laInformacionDelPdf());
   }
 
   @Entonces("^el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD$")
@@ -90,6 +94,7 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
   @Entonces("^el asesor deberá ver que la información de Solicitud de Crédito corresponde a la de BD$")
   public void verificarSolicitudCredito() {
     int pdf = theActorInTheSpotlight().asksFor(tipoCliente());
+    int filas = theActorInTheSpotlight().recall(NUMERO_FILAS);
     if (pdf != 0) {
       theActorInTheSpotlight().should(
           seeThat(LaInformacion.delPdf(solicitudCredito("Nombre Empresa", pdf)), containsString(theActorInTheSpotlight()
@@ -179,7 +184,25 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat(LaInformacion.delPdf(solicitudCredito("Total Egresos", pdf)), containsString(formatoMoneda(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_egresos"))))),
         seeThat(LaInformacion.delPdf(solicitudCredito("Datos Operaciones Internacionales", pdf)), containsString("x x")),
-        seeThat(LaInformacion.delPdf(solicitudCredito("FATCA", pdf)), containsString("x")));
-
+        seeThat(LaInformacion.delPdf(solicitudCredito("FATCA", pdf)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-1", filas)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-2", filas)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-3", filas)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-4", filas)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Nombres Y Apellidos Firma", filas)), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Tipo Documento Firma", filas)), containsString("x")),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Numero Firma", filas)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Ciudad Expedicion Firma", filas)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_LUGAR_EXPEDICION.getSql(), "ciudad")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Fecha Expedicion Firma", filas)), containsString(fechaPdf(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_exp"))))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Ciudad Firma", filas)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD_RESIDENCIA.getSql(), "ciudad")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Direccion Firma", filas)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
+        seeThat(LaInformacion.delPdf(solicitudCredito("Telefono Firma", filas)), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular"))))
+    );
   }
 }
