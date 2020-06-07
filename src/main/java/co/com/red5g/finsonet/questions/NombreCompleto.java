@@ -15,9 +15,17 @@ public class NombreCompleto implements Question<String> {
 
   @Override
   public String answeredBy(Actor actor) {
-    return actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "nombre"))
-        + " " + actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_nombre"))
-        + " " + actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "p_apellido"))
-        + " " + actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_apellido"));
+    String nombre = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "nombre"));
+    String segundoNombre = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_nombre"));
+    String apellido = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "p_apellido"));
+    String segundoApellido = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_apellido"));
+    if (segundoNombre.isEmpty() && segundoApellido.isEmpty()) {
+      return nombre + " " + apellido;
+    } else if (segundoNombre.isEmpty()) {
+      return nombre + " " + apellido + " " + segundoApellido;
+    } else if (segundoApellido.isEmpty()) {
+      return nombre + " " + segundoNombre + " " + apellido;
+    }
+    return nombre + " " + segundoNombre + " " + apellido + " " + segundoApellido;
   }
 }
