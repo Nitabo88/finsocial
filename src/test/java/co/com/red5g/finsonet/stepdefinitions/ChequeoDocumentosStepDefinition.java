@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException;
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoAssertion;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.QueAparece;
 import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
@@ -59,13 +59,13 @@ public class ChequeoDocumentosStepDefinition {
 
   @Entonces("^deberá ver el crédito en el paso de confirmación$")
   public void verificarCreacionCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Entonces("^el auxiliar de documentación debería verlo en su lista de chequeo de documentos$")
   public void verificarRevisionDocumentacion() {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
-    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO));
+    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoAssertion.class, ElCreditoNoFueRechazadoAssertion.MENSAJE_CREDITO_RECHAZADO));
   }
 
   @Cuando("^el asesor niegue el chequeo de documentos$")
