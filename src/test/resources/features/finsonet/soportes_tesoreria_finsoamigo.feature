@@ -5,10 +5,52 @@ Característica:  Validacion Soportes Nuevos
   quiero validar que la informacion de los soportes nuevos
   para evitar enviar data erronea.
 
-  Antecedentes: El usuario debe estar en un crédito finsoamigo en tesoreria.
-    Dado que un asesor esta en el paso de tesorería finsoamigos en un crédito
+  Esquema del escenario: PDF Solicitud de Crédito Finsocial
+    Dado que un asesor esta en el pdf de Solicitud Crédito Finsocial del crédito <numero credito>
+    Cuando el asesor obtiene la información del pdf
+    Entonces el asesor deberá ver que la información de Solicitud de Crédito corresponde a la de BD
 
-    Escenario: Soporte Seguro de Vida Mundial
-      Cuando el asesor obtiene la información del pdf de Seguro de Vida Mundial
-      Entonces el asesor deberá ver que la información corresponde a la de BD
+    Ejemplos:
+      | numero credito |
+      | 94957          |
+      | 95503          |
+      | 95638          |
+      | 95780          |
+      | 98412          |
+      | 98438          |
+      | 98552          |
+      | 98594          |
+      | 98846          |
+      | 98932          |
+      | 98962          |
+      | 99213          |
+      | 99258          |
+      | 99420          |
+
+
+  Esquema del escenario:  PDF Seguro de Vida Mundial
+    Dado que un asesor esta en el pdf de Seguro de Vida Mundial del crédito <numero credito>
+    Cuando el asesor obtiene la información del pdf
+    Entonces el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD
+
+    Ejemplos:
+      | numero credito |
+      | 94957          |
+      | 95503          |
+      | 95638          |
+      | 95780          |
+      | 98412          |
+      | 98438          |
+      | 98552          |
+      | 98594          |
+      | 98846          |
+      | 98932          |
+      | 98962          |
+      | 99213          |
+      | 99258          |
+      | 99420          |
+
+
+
+
 

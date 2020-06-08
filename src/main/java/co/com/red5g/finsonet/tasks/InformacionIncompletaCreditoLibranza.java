@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.string.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

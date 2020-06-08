@@ -42,6 +42,7 @@ dependencies {
     implementation group: 'co.com.devco.automation', name: 'automationDevcoLibrary', version: "${automationDevcoVersion}"
     implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: "${apache}"
     implementation group: 'mysql', name: 'mysql-connector-java', version: "${mySql}"
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
 }
 
 tasks.withType(Test) {

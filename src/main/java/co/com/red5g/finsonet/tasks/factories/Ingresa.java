@@ -1,13 +1,35 @@
 package co.com.red5g.finsonet.tasks.factories;
 
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.finsonet.tasks.*;
+import co.com.red5g.finsonet.tasks.Aprobacion;
+import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
+import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
+import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
+import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
+import co.com.red5g.finsonet.tasks.InformacionIncompletaCreditoLibranza;
+import co.com.red5g.finsonet.tasks.InformacionLogin;
+import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
+import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaLiberada;
+import co.com.red5g.finsonet.tasks.LiquidacionComisionesVentaNueva;
+import co.com.red5g.finsonet.tasks.LoguinUsuarioDocumentacion;
+import co.com.red5g.finsonet.tasks.ModuloCdas;
+import co.com.red5g.finsonet.tasks.ModuloCdasCompleto;
+import co.com.red5g.finsonet.tasks.NuevoCreditoHuy;
+import co.com.red5g.finsonet.tasks.PDF;
+import co.com.red5g.finsonet.tasks.ReporteAntecartera;
+import co.com.red5g.finsonet.tasks.ReporteFinsoamigo;
+import co.com.red5g.finsonet.tasks.ReporteOriginacion;
+import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
+import co.com.red5g.finsonet.tasks.ReporteVentaNueva;
+import co.com.red5g.finsonet.tasks.TesoreriaFinsoamigo;
 import co.com.red5g.wiipo.tasks.InformacionLoginWiipo;
 import net.serenitybdd.screenplay.Performable;
-
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public final class Ingresa {
 
@@ -106,11 +128,8 @@ public final class Ingresa {
         return instrumented(ReporteFinsoamigo.class);
     }
 
-  public static Performable alPDF() {
-    return instrumented(PDF.class);
+  public static Performable alPDF(String url, String numeroCredito) {
+    return instrumented(PDF.class, url, numeroCredito);
   }
 
-  public static Performable aUnCreditoEnTesoreriaFinsoamigo() {
-    return instrumented(CreditoTesoreriaFinsoamigo.class);
-  }
 }

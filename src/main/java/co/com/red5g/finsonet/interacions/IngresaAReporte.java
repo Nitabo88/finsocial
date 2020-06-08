@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.interacions;
 
 import co.com.red5g.finsonet.userinterfaces.LiquidadorComisionesPage;
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.string.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
