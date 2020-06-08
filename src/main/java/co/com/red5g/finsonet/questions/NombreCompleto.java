@@ -25,7 +25,8 @@ public class NombreCompleto implements Question<String> {
       return nombre + " " + apellido + " " + segundoApellido;
     } else if (segundoApellido.isEmpty()) {
       return nombre + " " + segundoNombre + " " + apellido;
+    } else {
+      return nombre + " " + segundoNombre + " " + apellido + " " + segundoApellido;
     }
-    return nombre + " " + segundoNombre + " " + apellido + " " + segundoApellido;
   }
 }

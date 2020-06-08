@@ -12,6 +12,7 @@ public class UrlsPdfs {
     Map<String, String> map = new HashMap<>();
     map.put("Seguro de Vida Mundial", "https://finsonet.finsocial.com/doc-firmados/firmados/seguroVida_%s.pdf");
     map.put("Solicitud Crédito Finsocial", "https://finsonet.finsocial.com/doc-firmados/firmados/finsocial_%s.pdf");
+    map.put("Seguro de Vida Sura", "https://finsonet.finsocial.com/doc-firmados/firmados/SEGUROSURA_%s.pdf");
     return map.get(tipoDocumento);
   }
 }

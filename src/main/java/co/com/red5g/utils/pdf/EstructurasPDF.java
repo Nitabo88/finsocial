@@ -44,7 +44,10 @@ public class EstructurasPDF {
     map.put("Linea", 2);
     map.put("Numero Cuotas", 2);
     map.put("Valor Cuota", 2);
-    map.put("Nombre Completo", 3);
+    map.put("Primer Nombre", 3);
+    map.put("Segundo Nombre", 3);
+    map.put("Primer Apellido", 3);
+    map.put("Segundo Apellido", 3);
     map.put("Tipo Identificacion", 4);
     map.put("Numero Identificacion", 5);
     map.put("Fecha Expedicion", 5);
