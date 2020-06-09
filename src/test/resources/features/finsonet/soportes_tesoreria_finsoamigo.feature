@@ -5,7 +5,7 @@ Característica:  Validación Soportes Nuevos
   quiero validar que la información de los soportes nuevos
   para evitar enviar data erronea.
 
-  Esquema del escenario:  PDF Seguro de Vida Sura
+  Esquema del escenario:  PDF Boletín de Costos
     Dado que un asesor esta en el pdf de Boletín de Costos del crédito <numero credito>
     Cuando el asesor obtiene la información del pdf
     Entonces el asesor deberá ver que la información del Boletín de Costos corresponde a la de BD
