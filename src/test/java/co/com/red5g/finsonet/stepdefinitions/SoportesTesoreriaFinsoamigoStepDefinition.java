@@ -13,6 +13,7 @@ import static co.com.red5g.utils.conexionbd.Queries.SQL_FORMULARIO_SOLICITUD;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LINEA_CREDITO;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_EXPEDICION;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_NACIMIENTO;
+import static co.com.red5g.utils.pdf.EstructurasPDF.boletinCostos;
 import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
 import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
 import static co.com.red5g.utils.pdf.EstructurasPDF.seguroVidaSura;
@@ -262,5 +263,24 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat("Declaración Asegurabilidad 2", LaInformacion.delPdf(seguroVidaSura("Declaracion Asegurabilidad-2")), containsString("x")),
         seeThat("Fecha de diligenciamiento Formaro (AAAA/MM/DD)", LaInformacion.delPdf(seguroVidaSura("Fecha Diligenciamiento")), containsString(fechaPdfFormatoSlash(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ANALITICA_FILTRO.getSql(), "fecha_reg"))))));
+  }
+
+  @Entonces("^el asesor deberá ver que la información del Boletín de Costos corresponde a la de BD$")
+  public void verificarBoletindeCostos() {
+    theActorInTheSpotlight().should(
+        seeThat("Nombre y Apellidos", LaInformacion.delPdf(boletinCostos("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Tipo de Identificación:", LaInformacion.delPdf(boletinCostos("Tipo Identificacion")), containsString("x")),
+        seeThat("N. de Identificación", LaInformacion.delPdf(boletinCostos("N. de Identificacion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
+        seeThat("Lugar de expedición", LaInformacion.delPdf(boletinCostos("Lugar de expedicion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_LUGAR_EXPEDICION.getSql(), "ciudad")))),
+        seeThat("Fecha de expedición", LaInformacion.delPdf(boletinCostos("Fecha de expedicion")), containsString(fechaPdf(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_exp"))))),
+        seeThat("Ciudad", LaInformacion.delPdf(boletinCostos("Ciudad")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD_RESIDENCIA.getSql(), "ciudad")))),
+        seeThat("Dirección", LaInformacion.delPdf(boletinCostos("Direccion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
+        seeThat("Teléfono", LaInformacion.delPdf(boletinCostos("Telefono")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
   }
 }
