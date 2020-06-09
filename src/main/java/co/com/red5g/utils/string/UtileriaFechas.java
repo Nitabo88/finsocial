@@ -65,6 +65,17 @@ public class UtileriaFechas {
         return fechaBD.replace("", " ").trim();
     }
 
+    public static String fechaPdfFormatoSlash(String fechaBaseDeDatos) {
+        String fechaBD = fechaBaseDeDatos.substring(0, 10);
+        String[] fechaPdf = fechaBD.split("-");
+        return fechaPdf[0] + "/" + fechaPdf[1] + "/" + fechaPdf[2];
+    }
+
+    public static String fechaPdfFormatoLinea(String fechaBaseDeDatos) {
+        return fechaBaseDeDatos.substring(0, 10);
+    }
+
+
     public static String edad(String fechaNacimiento) {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate fechaNac = LocalDate.parse(fechaNacimiento, formato);

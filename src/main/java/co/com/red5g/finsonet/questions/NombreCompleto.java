@@ -20,9 +20,9 @@ public class NombreCompleto implements Question<String> {
     String apellido = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "p_apellido"));
     String segundoApellido = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "s_apellido"));
     if (segundoNombre.isEmpty() && segundoApellido.isEmpty()) {
-      return nombre + " " + apellido;
+      return nombre + "  " + apellido;
     } else if (segundoNombre.isEmpty()) {
-      return nombre + " " + apellido + " " + segundoApellido;
+      return nombre + "  " + apellido + " " + segundoApellido;
     } else if (segundoApellido.isEmpty()) {
       return nombre + " " + segundoNombre + " " + apellido;
     } else {

@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
+import static co.com.red5g.finsonet.questions.CiudadDepartamento.ciudadDepartamento;
 import static co.com.red5g.finsonet.questions.NombreCompleto.nombreCompleto;
 import static co.com.red5g.finsonet.questions.SolicitudCreditoPdf.tipoCliente;
 import static co.com.red5g.finsonet.questions.TotalIngresos.totalIngresos;
@@ -14,12 +15,16 @@ import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_EXPEDICION;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_NACIMIENTO;
 import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
 import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
+import static co.com.red5g.utils.pdf.EstructurasPDF.seguroVidaSura;
 import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
 import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudCredito;
 import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapital;
+import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapitalSura;
 import static co.com.red5g.utils.pdf.UrlsPdfs.urlPdf;
 import static co.com.red5g.utils.string.UtileriaFechas.edad;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdf;
+import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfFormatoLinea;
+import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfFormatoSlash;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfSolicitud;
 import static co.com.red5g.utils.string.UtileriasMoneda.formatoMoneda;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -30,7 +35,6 @@ import static org.hamcrest.Matchers.containsString;
 import co.com.red5g.finsonet.questions.factories.LaInformacion;
 import co.com.red5g.finsonet.tasks.Obtiene;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
-import com.jcraft.jsch.JSchException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -49,7 +53,7 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
   }
 
   @Entonces("^el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD$")
-  public void verificarSegurosVidaMundial() throws JSchException {
+  public void verificarSegurosVidaMundial() {
     theActorInTheSpotlight().should(
         seeThat("Ciudad", LaInformacion.delPdf(segurosVidaMundial("Ciudad Solicitud")), containsString("barranquilla")),
         seeThat("Fecha de Solicitud", LaInformacion.delPdf(segurosVidaMundial("Fecha Solicitud")), containsString(fechaPdf(theActorInTheSpotlight()
@@ -189,6 +193,7 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "total_egresos"))))),
         seeThat("DATOS DE OPERACIONES INTERNACIONALES", LaInformacion.delPdf(solicitudCredito("Datos Operaciones Internacionales", pdf)), containsString("x x")),
         seeThat("DECLARACION FATCA/CRS", LaInformacion.delPdf(solicitudCredito("FATCA", pdf)), containsString("x")),
+        seeThat("MUTUARIO", LaInformacion.delPdf(solicitudCredito("Mutuario", filas)), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
         seeThat("cédula de ciudadanía No", LaInformacion.delPdf(solicitudCredito("Numero Documento Mutuario", filas)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
         seeThat("DECLARACION ORIGEN DE FONDOS", LaInformacion.delPdf(solicitudCredito("Origen Fondos", filas)), containsString("x")),
@@ -202,6 +207,7 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat("DECLARACIONES DEL MUTUARIO 2", LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-2", filas)), containsString("x")),
         seeThat("DECLARACIONES DEL MUTUARIO 3", LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-3", filas)), containsString("x")),
         seeThat("DECLARACIONES DEL MUTUARIO 4", LaInformacion.delPdf(solicitudCredito("Declaracion Mutuario-4", filas)), containsString("x")),
+        seeThat("Sección firma: Nombres y Apellidos", LaInformacion.delPdf(solicitudCredito("Nombres Y Apellidos Firma", filas)), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
         seeThat("Sección firma: Tipo de Identificación", LaInformacion.delPdf(solicitudCredito("Tipo Documento Firma", filas)), containsString("x")),
         seeThat("Sección firma: N. de Identificación", LaInformacion.delPdf(solicitudCredito("Numero Firma", filas)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
@@ -214,9 +220,47 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat("Sección firma: Dirección", LaInformacion.delPdf(solicitudCredito("Direccion Firma", filas)), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
         seeThat("Sección firma: Teléfono", LaInformacion.delPdf(solicitudCredito("Telefono Firma", filas)), containsString(theActorInTheSpotlight()
-            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))),
-        seeThat("Sección firma: Nombres y Apellidos", LaInformacion.delPdf(solicitudCredito("Nombres Y Apellidos Firma", filas)), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
-        seeThat("MUTUARIO", LaInformacion.delPdf(solicitudCredito("Mutuario", filas)), containsString(theActorInTheSpotlight().asksFor(nombreCompleto())))
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular"))))
     );
-    }
   }
+
+  @Entonces("^el asesor deberá ver que la información del Formato Seguro de Vida Sura corresponde a la de BD$")
+  public void verificarSegurosVidaSura() {
+    theActorInTheSpotlight().should(
+        seeThat("Número de identificación", LaInformacion.delPdf(seguroVidaSura("Numero de Identificacion Tomador")), containsString("900516574-6")),
+        seeThat("Razón Social y/o Nombres y Apellidos(Primero Nombres, luego Apellidos)", LaInformacion.delPdf(seguroVidaSura("Razon Social")), containsString("finsocial s.a.s")),
+        seeThat("Tipo de institución", LaInformacion.delPdf(seguroVidaSura("Tipo Institucion")), containsString("x")),
+        seeThat("Dirección Correspondencia", LaInformacion.delPdf(seguroVidaSura("Direccion Correspondencia Tomador")), containsString("cra 51b # 80-58 oficina 803")),
+        seeThat("Ciudad/Departamento", LaInformacion.delPdf(seguroVidaSura("Ciudad/Departamento")), containsString("barranquilla")),
+        seeThat("Tipo de identificación", LaInformacion.delPdf(seguroVidaSura("Tipo Identificacion Deudor")), containsString("x")),
+        seeThat("Número de identificación", LaInformacion.delPdf(seguroVidaSura("Numero Identificacion Deudor")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
+        seeThat("Nombres y Apellidos(Primero Nombres, luego Apellidos)", LaInformacion.delPdf(seguroVidaSura("Nombres y Apellidos del deudor")),
+            containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Sexo", LaInformacion.delPdf(seguroVidaSura("Sexo")), containsString("x")),
+        seeThat("Fecha de Nacimiento AAAA MM DD", LaInformacion.delPdf(seguroVidaSura("Fecha Nacimiento")), containsString(fechaPdfFormatoLinea(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_nac"))))),
+        seeThat("Peso (Kg)", LaInformacion.delPdf(seguroVidaSura("Peso")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ASEGURABILIDAD.getSql(), "peso")))),
+        seeThat("Estatura (en cms)", LaInformacion.delPdf(seguroVidaSura("Estatura")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ASEGURABILIDAD.getSql(), "estatura")))),
+        seeThat("Ciudad", LaInformacion.delPdf(seguroVidaSura("Ciudad")), containsString(theActorInTheSpotlight().asksFor(ciudadDepartamento(0)))),
+        seeThat("Departamento", LaInformacion.delPdf(seguroVidaSura("Departamento")), containsString(theActorInTheSpotlight().asksFor(ciudadDepartamento(1)))),
+        seeThat("Teléfono (Sin indicativo) ", LaInformacion.delPdf(seguroVidaSura("Telefono")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "tel_residencia")))),
+        seeThat("Celular", LaInformacion.delPdf(seguroVidaSura("Celular")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))),
+        seeThat("Dirección Correspondencia", LaInformacion.delPdf(seguroVidaSura("Direccion Correspondencia Deudor")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
+        seeThat("Correo Electrónico", LaInformacion.delPdf(seguroVidaSura("Correo Electronico")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "email")))),
+        seeThat("Valor Crédito", LaInformacion.delPdf(seguroVidaSura("Valor Credito")), containsString(valorCapitalSura(Integer.parseInt(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdCreditos(), SQL_LINEA_CREDITO.getSql(), "linea_credito_id")))))),
+        seeThat("Valor Asegurado", LaInformacion.delPdf(seguroVidaSura("Valor Asegurado")), containsString(valorCapitalSura(Integer.parseInt(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdCreditos(), SQL_LINEA_CREDITO.getSql(), "linea_credito_id")))))),
+        seeThat("Declaración Asegurabilidad 1", LaInformacion.delPdf(seguroVidaSura("Declaracion Asegurabilidad-1")), containsString("x")),
+        seeThat("Declaración Asegurabilidad 2", LaInformacion.delPdf(seguroVidaSura("Declaracion Asegurabilidad-2")), containsString("x")),
+        seeThat("Fecha de diligenciamiento Formaro (AAAA/MM/DD)", LaInformacion.delPdf(seguroVidaSura("Fecha Diligenciamiento")), containsString(fechaPdfFormatoSlash(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ANALITICA_FILTRO.getSql(), "fecha_reg"))))));
+  }
+}

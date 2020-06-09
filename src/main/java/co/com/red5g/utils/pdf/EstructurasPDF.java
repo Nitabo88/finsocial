@@ -119,6 +119,35 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
+  public static Integer seguroVidaSura (String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Tipo de Identificacion Tomador", 0);
+    map.put("Numero de Identificacion Tomador", 16);
+    map.put("Razon Social", 16);
+    map.put("Tipo Institucion", 16);
+    map.put("Direccion Correspondencia Tomador", 17);
+    map.put("Ciudad/Departamento", 17);
+    map.put("Tipo Identificacion Deudor", 18);
+    map.put("Numero Identificacion Deudor", 19);
+    map.put("Nombres y Apellidos del deudor", 19);
+    map.put("Sexo", 19);
+    map.put("Fecha Nacimiento", 19);
+    map.put("Peso", 20);
+    map.put("Estatura", 20);
+    map.put("Ciudad", 20);
+    map.put("Departamento", 20);
+    map.put("Telefono", 20);
+    map.put("Celular", 20);
+    map.put("Direccion Correspondencia Deudor", 21);
+    map.put("Correo Electronico", 21);
+    map.put("Valor Credito", 22);
+    map.put("Valor Asegurado", 23);
+    map.put("Declaracion Asegurabilidad-1", 24);
+    map.put("Declaracion Asegurabilidad-2", 25);
+    map.put("Fecha Diligenciamiento", 26);
+    return map.get(filaCampo);
+  }
+
   public static String ocupacion(Integer filaCampo) {
     Map<Integer, String> map = new HashMap<>();
     map.put(124, "pensionado");
@@ -143,6 +172,17 @@ public class EstructurasPDF {
     map.put(390, "$ 13.664.882");
     map.put(391, "$ 7.141.504");
     map.put(392, "$ 20.203.544");
+    return map.get(filaCampo);
+  }
+
+  public static String valorCapitalSura(Integer filaCampo) {
+    Map<Integer, String> map = new HashMap<>();
+    map.put(386, "13.664.882");
+    map.put(387, "7.141.504");
+    map.put(388, "20.203.544");
+    map.put(390, "13.664.882");
+    map.put(391, "7.141.504");
+    map.put(392, "20.203.544");
     return map.get(filaCampo);
   }
 }
