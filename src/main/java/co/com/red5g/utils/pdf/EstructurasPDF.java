@@ -36,6 +36,19 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
+  public static Integer boletinCostos(String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Nombre y Apellidos", 180);
+    map.put("Tipo Identificacion", 183);
+    map.put("N. de Identificacion", 181);
+    map.put("Lugar de expedicion", 181);
+    map.put("Fecha de expedicion", 181);
+    map.put("Ciudad", 182);
+    map.put("Direccion", 182);
+    map.put("Telefono", 182);
+    return map.get(filaCampo);
+  }
+
   public static Integer solicitudCredito(String filaCampo, int pdf) {
     Map<String, Integer> map = new HashMap<>();
     map.put("Fecha Solicitud", 0);
