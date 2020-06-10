@@ -50,7 +50,6 @@ Característica:  Validación Soportes Nuevos
       | 100561         |
       | 100555         |
 
-
   Esquema del escenario:  PDF Seguro de Vida Mundial
     Dado que un asesor esta en el pdf de Seguro de Vida Mundial del crédito <numero credito>
     Cuando el asesor obtiene la información del pdf
