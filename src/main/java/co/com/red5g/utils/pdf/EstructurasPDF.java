@@ -49,6 +49,40 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
+  public static Integer solicitudAfiliacionCoperativa(String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Relacion", 180);
+    map.put("Datos", 183);
+    map.put("Anio", 181);
+    map.put("Mes", 181);
+    map.put("Dia", 181);
+    map.put("Tipo Identificacion", 181);
+    map.put("Numero Identificacion", 181);
+    map.put("Fecha Expedicion", 182);
+    map.put("Expedido en", 182);
+    map.put("Lugar y fecha de nacimiento", 182);
+    map.put("Primer Apellido", 182);
+    map.put("Segundo Apellido", 182);
+    map.put("Nombres", 182);
+    map.put("Genero", 182);
+    map.put("Estado Civil", 182);
+    map.put("Hijos", 182);
+    map.put("Personas a Cargo", 182);
+    map.put("Madre Cabeza de Hogar", 182);
+    map.put("Ciudad", 182);
+    map.put("Departamento", 182);
+    map.put("Direccion", 182);
+    map.put("Estrato", 182);
+    map.put("Celular", 182);
+    map.put("Telefono", 182);
+    map.put("Correo Electronico", 182);
+    map.put("Codigo CIIU", 182);
+    map.put("Nivel Estudio", 182);
+    map.put("Maneja Recursos Publicos", 182);
+    map.put("Ocupacion", 182);
+    return map.get(filaCampo);
+  }
+
   public static Integer solicitudCredito(String filaCampo, int pdf) {
     Map<String, Integer> map = new HashMap<>();
     map.put("Fecha Solicitud", 0);

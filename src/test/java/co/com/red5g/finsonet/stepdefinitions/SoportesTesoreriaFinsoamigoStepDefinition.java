@@ -283,4 +283,8 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat("Teléfono", LaInformacion.delPdf(boletinCostos("Telefono")), containsString(theActorInTheSpotlight()
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
   }
+
+  @Entonces("^el asesor deberá ver que la información de Solicitud de Afiliación Cooperativa corresponde a la de BD$")
+  public void verificarSolicitudAfiliaciónCooperativa() {
+  }
 }
