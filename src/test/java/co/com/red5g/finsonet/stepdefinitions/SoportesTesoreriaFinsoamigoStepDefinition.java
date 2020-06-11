@@ -18,6 +18,7 @@ import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
 import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
 import static co.com.red5g.utils.pdf.EstructurasPDF.seguroVidaSura;
 import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
+import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudAfiliacionCoperativa;
 import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudCredito;
 import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapital;
 import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapitalSura;
@@ -286,5 +287,79 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
 
   @Entonces("^el asesor deberá ver que la información de Solicitud de Afiliación Cooperativa corresponde a la de BD$")
   public void verificarSolicitudAfiliaciónCooperativa() {
+    theActorInTheSpotlight().should(
+        seeThat("RELACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DATOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("AÑO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("MES", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DIA", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("TIPO DE IDENTIFICACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("NUMERO DE IDENTIFICACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("FECHA DE EXPEDICION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("EXPEDIDO EN", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("LUGAR Y FECHA DE NACIMIENTO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("PRIMER APELLIDO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("SEGUNDO APELLIDO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("NOMBRES", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("GENERO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("ESTADO CIVIL", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("HIJOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("No. DE PERSONAS A CARGO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("MADRE CABEZA DE HOGAR", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("CIUDAD", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DEPARTAMENTO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DIRECCION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("ESTRATO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("CELULAR", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("TELEFONO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("CORREO ELECTRONICO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("NIVEL ESTUDIO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("MANEJA RECURSOS PUBLICOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("OCUPACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("EJERCE CARGOS PUBLICOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("TIENE RECONOCIMIENTO PUBLICO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("TIENE RELACION CON UNA PERSONA EXPUESTA PUBLICAMENTE", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos"))
+            , containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("NOMBRE Y APELLIDO DEL CONYUGUE", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DOCUMENTO DE IDENTIDAD", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("INGRESOS MENSUALES", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("EGRESOS MENSUALES", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("ACTIVOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("PASIVOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("OTROS INGRESOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("PEPs", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARACION FATCA 1", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARACION FATCA 2", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARACION FATCA 3", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARACION FATCA 4", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARACION FATCA 5", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARACION FATCA 6", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Realiza transacciones en moneda extranjera?", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos"))
+            , containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Es sujeto de obligaciones tributarias en otro país?", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos"))
+            , containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARO EXPRESAMENTE QUE: a", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARO EXPRESAMENTE QUE: b", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARO EXPRESAMENTE QUE: c", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARO EXPRESAMENTE QUE: d", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARO EXPRESAMENTE QUE: e", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DECLARO EXPRESAMENTE QUE: f", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("No IDENTIFICACION:", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("nombre", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("cedula de ciudadania No", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("presente contrato en", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("a los", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("días del mes de", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("del año", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Nombre y Apellidos", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Tipo de Identificación", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("N. de identificación", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Lugar de expedición", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Fecha de expedición", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Ciudad", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Dirección", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Teléfono", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("NOMBRE", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto())))
+    );
   }
 }
