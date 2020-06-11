@@ -288,11 +288,11 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
   @Entonces("^el asesor deberá ver que la información de Solicitud de Afiliación Cooperativa corresponde a la de BD$")
   public void verificarSolicitudAfiliaciónCooperativa() {
     theActorInTheSpotlight().should(
-        seeThat("RELACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
-        seeThat("DATOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
-        seeThat("AÑO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
-        seeThat("MES", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
-        seeThat("DIA", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("RELACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Relacion")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DATOS", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Datos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("AÑO", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Anio")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("MES", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Mes")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("DIA", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Dia")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
         seeThat("TIPO DE IDENTIFICACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
         seeThat("NUMERO DE IDENTIFICACION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
         seeThat("FECHA DE EXPEDICION", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Nombre y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
