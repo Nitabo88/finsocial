@@ -47,9 +47,9 @@ public class InformacionCreditoLibranza implements Task {
             WaitUntil.the(BTN_CREAR_CREDITO, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             MoveMouse.to(BTN_CREAR_CREDITO),
             Click.on(BTN_CREAR_CREDITO),
+            WaitFor.seconds(2),
             WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
-            Click.on(BTN_OK),
-            WaitFor.seconds(2)
+            Click.on(BTN_OK)
         );
     }
 }
