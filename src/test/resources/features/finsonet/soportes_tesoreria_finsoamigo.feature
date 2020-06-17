@@ -5,6 +5,21 @@ Característica:  Validación Soportes Nuevos
   quiero validar que la información de los soportes nuevos
   para evitar enviar data erronea.
 
+  Esquema del escenario:  PDF Solicitud de Afiliación Cooperativa
+    Dado que un asesor esta en el pdf de Solicitud de Afiliación Cooperativa del crédito <numero credito>
+    Cuando el asesor obtiene la información del pdf
+    Entonces el asesor deberá ver que la información de Solicitud de Afiliación Cooperativa corresponde a la de BD
+
+    Ejemplos:
+      | numero credito |
+      | 98594          |
+      | 99420          |
+      | 99718          |
+      | 100530         |
+      | 100539         |
+      | 100561         |
+      | 100555         |
+
   Esquema del escenario:  PDF Boletín de Costos
     Dado que un asesor esta en el pdf de Boletín de Costos del crédito <numero credito>
     Cuando el asesor obtiene la información del pdf
@@ -49,23 +64,3 @@ Característica:  Validación Soportes Nuevos
       | 100539         |
       | 100561         |
       | 100555         |
-
-  Esquema del escenario:  PDF Seguro de Vida Mundial
-    Dado que un asesor esta en el pdf de Seguro de Vida Mundial del crédito <numero credito>
-    Cuando el asesor obtiene la información del pdf
-    Entonces el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD
-
-    Ejemplos:
-      | numero credito |
-      | 98594          |
-      | 99420          |
-      | 99718          |
-      | 100530         |
-      | 100539         |
-      | 100561         |
-      | 100555         |
-
-
-
-
-
