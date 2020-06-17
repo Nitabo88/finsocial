@@ -49,6 +49,76 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
+  public static Integer solicitudAfiliacionCoperativa(String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Relacion", 0);
+    map.put("Datos", 0);
+    map.put("Fecha Solicitud", 0);
+    map.put("Tipo Identificacion", 1);
+    map.put("Numero Identificacion", 1);
+    map.put("Fecha Expedicion", 1);
+    map.put("Expedido en", 2);
+    map.put("Lugar y fecha de nacimiento", 2);
+    map.put("Primer Apellido", 3);
+    map.put("Segundo Apellido", 3);
+    map.put("Nombres", 3);
+    map.put("Genero", 3);
+    map.put("Estado Civil", 4);
+    map.put("Hijos", 4);
+    map.put("Personas a Cargo", 4);
+    map.put("Madre Cabeza de Hogar", 4);
+    map.put("Ciudad", 5);
+    map.put("Departamento", 5);
+    map.put("Direccion", 5);
+    map.put("Estrato", 5);
+    map.put("Celular", 6);
+    map.put("Telefono", 6);
+    map.put("Correo Electronico", 6);
+    map.put("Nivel Estudio", 7);
+    map.put("Maneja Recursos Publicos", 7);
+    map.put("Ocupacion", 7);
+    map.put("Ejerce cargos publicos", 8);
+    map.put("Tiene reconocimiento publico", 8);
+    map.put("Tiene relacion con una persona publicamente expuesta", 8);
+    map.put("Nombre y apellido conyugue", 7);
+    map.put("Documento Conyugue", 7);
+    map.put("Ingresos Mensuales", 9);
+    map.put("Egresos Mensuales", 9);
+    map.put("Activos", 9);
+    map.put("Pasivos", 9);
+    map.put("Otros Ingresos", 9);
+    map.put("PEPs", 10);
+    map.put("FATCA-1", 11);
+    map.put("FATCA-2", 12);
+    map.put("FATCA-3", 13);
+    map.put("FATCA-4", 14);
+    map.put("FATCA-5", 15);
+    map.put("FATCA-6", 16);
+    map.put("Declaracion Origen Fondos", 17);
+    map.put("Declaracion Tributaria Exterior", 18);
+    map.put("Declaro Expresamente-1", 19);
+    map.put("Declaro Expresamente-2", 20);
+    map.put("Declaro Expresamente-3", 21);
+    map.put("Declaro Expresamente-4", 22);
+    map.put("Declaro Expresamente-5", 23);
+    map.put("Declaro Expresamente-6", 24);
+    map.put("Contrato de fianza - No Identificacion", 29);
+    map.put("Contrato de fianza - Nombre Completo", 30);
+    map.put("Contrato de fianza - Cedula", 30);
+    map.put("Contrato de fianza - Ciudad", 31);
+    map.put("Contrato de fianza - Fecha", 31);
+    map.put("Deudor - Nombre y Apellidos", 32);
+    map.put("Deudor - Tipo de Identificacion", 33);
+    map.put("Deudor - No Identificacion", 33);
+    map.put("Deudor - Lugar Expedicion",33);
+    map.put("Deudor - Fecha Expedicion", 33);
+    map.put("Deudor - Ciudad", 34);
+    map.put("Deudor - Direccion", 34);
+    map.put("Deudor - Telefono", 34);
+    map.put("Firma - Nombre", 39);
+    return map.get(filaCampo);
+  }
+
   public static Integer solicitudCredito(String filaCampo, int pdf) {
     Map<String, Integer> map = new HashMap<>();
     map.put("Fecha Solicitud", 0);

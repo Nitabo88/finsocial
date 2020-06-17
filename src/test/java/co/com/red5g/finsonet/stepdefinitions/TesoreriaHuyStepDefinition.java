@@ -20,7 +20,6 @@ public class TesoreriaHuyStepDefinition {
     @Cuando("^el asesor aprueba el crédito en tesorería credihuy$")
     public void aprobarCredito() {
         theActorInTheSpotlight().attemptsTo(Diligencia.laInformacionDeAprobacionDeTesoreriaCrediHuy());
-        
     }
 
     @Entonces("^el asesor deberá ver el crédito en cartera$")

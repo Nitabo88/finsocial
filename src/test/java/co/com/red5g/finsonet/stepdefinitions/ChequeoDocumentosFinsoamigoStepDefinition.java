@@ -33,6 +33,4 @@ public class ChequeoDocumentosFinsoamigoStepDefinition {
   public void verificarCreditoAprobacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
-
-
 }
