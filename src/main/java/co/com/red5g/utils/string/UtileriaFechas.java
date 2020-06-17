@@ -35,7 +35,7 @@ public class UtileriaFechas {
     }
 
     public static String obtenerPeriodoAnterior() {
-        String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH));
+        String mes = Integer.toString(Calendar.getInstance().get(Calendar.MONTH)-1);
         if (mes.length() < 2) {
             mes = "0" + mes;
         }
