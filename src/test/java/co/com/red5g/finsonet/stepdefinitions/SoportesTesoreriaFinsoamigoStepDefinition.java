@@ -17,6 +17,8 @@ import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_NACIMIENTO;
 import static co.com.red5g.utils.pdf.EstructurasPDF.boletinCostos;
 import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
 import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
+import static co.com.red5g.utils.pdf.EstructurasPDF.pagareCoophumana;
+import static co.com.red5g.utils.pdf.EstructurasPDF.pagareFinsocial;
 import static co.com.red5g.utils.pdf.EstructurasPDF.seguroVidaSura;
 import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
 import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudAfiliacionCoperativa;
@@ -394,4 +396,49 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
         seeThat("NOMBRE", LaInformacion.delPdf(solicitudAfiliacionCoperativa("Firma - Nombre")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto())))
     );
   }
+
+  @Entonces("^el asesor deberá ver que la información del Pagaré Finsocial corresponde a la de BD$")
+  public void verificarPagareFinsocial() {
+    theActorInTheSpotlight().should(
+        seeThat("en la ciudad", LaInformacion.delPdf(pagareFinsocial("Ciudad")), containsString("barranquilla")),
+        seeThat("fecha constancia", LaInformacion.delPdf(pagareFinsocial("Fecha Pagare")), containsString(fechaPdfDdMmYyyy(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ANALITICA_FILTRO.getSql(), "fecha_reg"))))),
+        seeThat("Nombre y Apellidos", LaInformacion.delPdf(pagareFinsocial("Nombres y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Tipo de Identificación:", LaInformacion.delPdf(pagareFinsocial("Tipo de Identificacion")), containsString("x")),
+        seeThat("N. de Identificación", LaInformacion.delPdf(pagareFinsocial("Numero de Identificacion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
+        seeThat("Lugar de expedición", LaInformacion.delPdf(pagareFinsocial("Lugar Expedicion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_LUGAR_EXPEDICION.getSql(), "ciudad")))),
+        seeThat("Fecha de expedición", LaInformacion.delPdf(pagareFinsocial("Fecha Expedicion")), containsString(fechaPdfDdMmYyyy(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_exp"))))),
+        seeThat("Ciudad", LaInformacion.delPdf(pagareFinsocial("Ciudad Firma")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD_RESIDENCIA.getSql(), "ciudad")))),
+        seeThat("Dirección", LaInformacion.delPdf(pagareFinsocial("Direccion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
+        seeThat("Teléfono", LaInformacion.delPdf(pagareFinsocial("Telefono")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
+  }
+
+  @Entonces("^el asesor deberá ver que la información del Pagaré Coophumana corresponde a la de BD$")
+  public void verificarPagareCoophumana() {
+    theActorInTheSpotlight().should(
+        seeThat("en la ciudad", LaInformacion.delPdf(pagareCoophumana("Ciudad")), containsString("barranquilla")),
+        seeThat("fecha constancia", LaInformacion.delPdf(pagareCoophumana("Fecha Pagare")), containsString(fechaPdfDdMmYyyy(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_ANALITICA_FILTRO.getSql(), "fecha_reg"))))),
+        seeThat("Nombre y Apellidos", LaInformacion.delPdf(pagareCoophumana("Nombres y Apellidos")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))),
+        seeThat("Tipo de Identificación:", LaInformacion.delPdf(pagareCoophumana("Tipo de Identificacion")), containsString("x")),
+        seeThat("N. de Identificación", LaInformacion.delPdf(pagareCoophumana("Numero de Identificacion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "no_doc")))),
+        seeThat("Lugar de expedición", LaInformacion.delPdf(pagareCoophumana("Lugar Expedicion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_LUGAR_EXPEDICION.getSql(), "ciudad")))),
+        seeThat("Fecha de expedición", LaInformacion.delPdf(pagareCoophumana("Fecha Expedicion")), containsString(fechaPdfDdMmYyyy(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "fecha_exp"))))),
+        seeThat("Ciudad", LaInformacion.delPdf(pagareCoophumana("Ciudad Firma")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_CIUDAD_RESIDENCIA.getSql(), "ciudad")))),
+        seeThat("Dirección", LaInformacion.delPdf(pagareCoophumana("Direccion")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "dir_residencia")))),
+        seeThat("Teléfono", LaInformacion.delPdf(pagareCoophumana("Telefono")), containsString(theActorInTheSpotlight()
+            .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
+  }
 }
+
