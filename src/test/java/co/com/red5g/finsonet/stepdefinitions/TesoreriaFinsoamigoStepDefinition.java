@@ -19,5 +19,4 @@ public class TesoreriaFinsoamigoStepDefinition {
     public void aprobarCreditoTesoreria() {
         theActorInTheSpotlight().attemptsTo(Diligencia.laAprobacionDeTesoreriaFinsoamigo());
     }
-
 }

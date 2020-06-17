@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
-@DefaultUrl("http://192.168.0.48:82/index.php")
+@DefaultUrl("http://192.168.0.18:82/index.php")
 
 public class LoginFinsonetPage extends PageObject {
 

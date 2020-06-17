@@ -51,10 +51,16 @@ public class UtileriaFechas {
         return fecha.substring(0, 6).toUpperCase() + fecha.substring(6);
     }
 
-    public static String fechaPdf(String fechaBaseDeDatos) {
+    public static String fechaPdfDdMmYyyy(String fechaBaseDeDatos) {
         String fechaBD = fechaBaseDeDatos.substring(0, 10);
         String[] fechaPdf = fechaBD.split("-");
         return fechaPdf[2] + " " + fechaPdf[1] + " " + fechaPdf[0];
+    }
+
+    public static String fechaPdfYyyyMmDd(String fechaBaseDeDatos) {
+        String fechaBD = fechaBaseDeDatos.substring(0, 10);
+        String[] fechaPdf = fechaBD.split("-");
+        return fechaPdf[0] + " " + fechaPdf[1] + " " + fechaPdf[2];
     }
 
     public static String fechaPdfSolicitud(String fechaBaseDeDatos) {
