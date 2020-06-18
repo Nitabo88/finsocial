@@ -11,6 +11,7 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUA
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -26,7 +27,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionChequeoDocumentoHuy implements Task {
 
-  private static final int TIEMPO = 20;
+  private static final int TIEMPO = 30;
   private ChequeoDocumento chequeoDocumento;
 
   public InformacionChequeoDocumentoHuy(ChequeoDocumento chequeoDocumento) {
@@ -39,6 +40,8 @@ public class InformacionChequeoDocumentoHuy implements Task {
     actor.attemptsTo(
         MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY.of(numeroCredito)),
         JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY.of(numeroCredito)),
+        WaitFor.seconds(2),
+        WaitUntil.the(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria()),isEnabled()).forNoMoreThan(TIEMPO).seconds(),
         Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
         Click.on(BTN_ACEPTAR_HUY),
         Click.on(BTN_ACEPTAR_ACCION_HUY),
