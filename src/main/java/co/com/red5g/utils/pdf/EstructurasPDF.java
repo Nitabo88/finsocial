@@ -79,6 +79,18 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
+  public static Integer desafiliacionCoophumana(String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Nombre", 0);
+    return map.get(filaCampo);
+  }
+
+  public static Integer desafiliacionActival(String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Nombre", 0);
+    return map.get(filaCampo);
+  }
+
   public static Integer solicitudAfiliacionCoperativa(String filaCampo) {
     Map<String, Integer> map = new HashMap<>();
     map.put("Relacion", 0);
@@ -140,12 +152,82 @@ public class EstructurasPDF {
     map.put("Deudor - Nombre y Apellidos", 32);
     map.put("Deudor - Tipo de Identificacion", 33);
     map.put("Deudor - No Identificacion", 33);
-    map.put("Deudor - Lugar Expedicion",33);
+    map.put("Deudor - Lugar Expedicion", 33);
     map.put("Deudor - Fecha Expedicion", 33);
     map.put("Deudor - Ciudad", 34);
     map.put("Deudor - Direccion", 34);
     map.put("Deudor - Telefono", 34);
     map.put("Firma - Nombre", 39);
+    return map.get(filaCampo);
+  }
+
+  public static Integer formularioActival(String filaCampo) {
+    Map<String, Integer> map = new HashMap<>();
+    map.put("Relacion", 47);
+    map.put("Datos", 47);
+    map.put("Fecha Solicitud", 47);
+    map.put("Tipo Identificacion", 48);
+    map.put("Numero Identificacion", 48);
+    map.put("Fecha Expedicion", 48);
+    map.put("Expedido en", 49);
+    map.put("Lugar y fecha de nacimiento", 49);
+    map.put("Primer Apellido", 50);
+    map.put("Segundo Apellido", 50);
+    map.put("Nombres", 50);
+    map.put("Genero", 50);
+    map.put("Estado Civil", 51);
+    map.put("Hijos", 51);
+    map.put("Personas a Cargo", 51);
+    map.put("Madre Cabeza de Hogar", 51);
+    map.put("Ciudad", 52);
+    map.put("Departamento", 52);
+    map.put("Direccion", 52);
+    map.put("Estrato", 52);
+    map.put("Celular", 53);
+    map.put("Telefono", 53);
+    map.put("Correo Electronico", 53);
+    map.put("Nivel Estudio", 54);
+    map.put("Maneja Recursos Publicos", 54);
+    map.put("Ocupacion", 54);
+    map.put("Ejerce cargos publicos", 55);
+    map.put("Tiene reconocimiento publico", 55);
+    map.put("Tiene relacion con una persona publicamente expuesta", 55);
+    map.put("Nombre y apellido conyugue", 7);
+    map.put("Documento Conyugue", 7);
+    map.put("Ingresos Mensuales", 56);
+    map.put("Egresos Mensuales", 56);
+    map.put("Activos", 56);
+    map.put("Pasivos", 56);
+    map.put("Otros Ingresos", 56);
+    map.put("PEPs", 57);
+    map.put("FATCA-1", 119);
+    map.put("FATCA-2", 120);
+    map.put("FATCA-3", 121);
+    map.put("FATCA-4", 122);
+    map.put("FATCA-5", 123);
+    map.put("FATCA-6", 124);
+    map.put("Declaracion Origen Fondos", 125);
+    map.put("Declaracion Tributaria Exterior", 126);
+    map.put("Declaro Expresamente-1", 127);
+    map.put("Declaro Expresamente-2", 128);
+    map.put("Declaro Expresamente-3", 129);
+    map.put("Declaro Expresamente-4", 130);
+    map.put("Declaro Expresamente-5", 131);
+    map.put("Declaro Expresamente-6", 132);
+    map.put("Contrato de fianza - No Identificacion", 194);
+    map.put("Contrato de fianza - Nombre Completo", 195);
+    map.put("Contrato de fianza - Cedula", 195);
+    map.put("Contrato de fianza - Ciudad", 196);
+    map.put("Contrato de fianza - Fecha", 196);
+    map.put("Deudor - Nombre y Apellidos", 197);
+    map.put("Deudor - Tipo de Identificacion", 198);
+    map.put("Deudor - No Identificacion", 198);
+    map.put("Deudor - Lugar Expedicion", 198);
+    map.put("Deudor - Fecha Expedicion", 198);
+    map.put("Deudor - Ciudad", 199);
+    map.put("Deudor - Direccion", 199);
+    map.put("Deudor - Telefono", 199);
+    map.put("Firma - Nombre", 215);
     return map.get(filaCampo);
   }
 
