@@ -35,4 +35,11 @@ public class FormularioSolicitudStepDefinition {
         theActorInTheSpotlight()
             .should(GivenWhenThen.seeThat(ElFormulario.fueEnviado()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
+
+    @Cuando("^diligencia el formulario de un cliente por pos$")
+    public void diligenciaFormularioSolicitudBack() {
+        theActorInTheSpotlight().attemptsTo(
+                Diligencia.laSolicitudDeCreditoBack()
+        );
+    }
 }
