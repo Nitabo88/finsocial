@@ -43,12 +43,13 @@ dependencies {
     implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: "${apache}"
     implementation group: 'mysql', name: 'mysql-connector-java', version: "${mySql}"
     implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: "${serenityVersion}"
 }
 
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
     reports {"gradle reports"}
- // maxParallelForks = Runtime.runtime.availableProcessors()
+   // maxParallelForks = Runtime.runtime.availableProcessors()
 }
 
 tasks.withType(JavaCompile) {
