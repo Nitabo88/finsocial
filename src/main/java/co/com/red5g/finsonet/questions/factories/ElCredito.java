@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.AntecarteraLibranza;
 import co.com.red5g.finsonet.questions.AprobacionCreditoHuy;
+import co.com.red5g.finsonet.questions.CodigoRespuesta;
 import co.com.red5g.finsonet.questions.CreditoHuy;
 import co.com.red5g.finsonet.questions.CreditoLibranza;
 import co.com.red5g.finsonet.questions.CreditoLibranzaFallido;
@@ -19,7 +20,6 @@ import co.com.red5g.finsonet.questions.PasoPendienteFormalizacion;
 import co.com.red5g.finsonet.questions.PasoPendienteTesoreria;
 import co.com.red5g.finsonet.questions.PasoTesoreria;
 import co.com.red5g.finsonet.questions.RechazoAprobacionCreditoHuy;
-import co.com.red5g.finsonet.questions.CodigoRespuesta;
 import co.com.red5g.finsonet.questions.TesoreriaCrediHuy;
 import co.com.red5g.finsonet.questions.TesoreriaPendienteFirma;
 import net.serenitybdd.screenplay.Question;
@@ -117,7 +117,7 @@ public final class ElCredito {
     return new CreditosPorConfirmar();
   }
 
-  public static Question<String> seProceso() {
+  public static Question<Integer> seProceso() {
     return new CodigoRespuesta();
   }
 }

@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.c
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Credito;
@@ -32,7 +33,7 @@ public class ChequeoDocumentoLibranza implements Task {
             Click.on(BTN_MI_CUENTA),
             Click.on(MNM_MI_CUENTA.of(SALIR)),
             Loguearse.enFinsonet(),
-            WaitFor.seconds(3),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(LNK_ORIGINACION)
         );
     }
