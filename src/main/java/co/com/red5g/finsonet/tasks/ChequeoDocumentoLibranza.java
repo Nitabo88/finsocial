@@ -1,6 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
+import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
+import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.con;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 
@@ -24,8 +26,7 @@ public class ChequeoDocumentoLibranza implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
             Ubicarse.enElFormulario(credito),
-            Diligencia.laSolicitudDeCredito(),
-            cambiarPestana(),
+            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(),con().informacionLibranza(),credito),
             Click.on(LNK_HOME),
             WaitFor.seconds(3),
             Click.on(LNK_ORIGINACION)

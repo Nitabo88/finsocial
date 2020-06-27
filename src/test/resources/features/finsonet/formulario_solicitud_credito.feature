@@ -2,15 +2,15 @@
 
 Característica:Formulario de solicitud de credito finsonet
   Como asesor de finsonet
-  Quiero gestionar el formulario solicitud de credito de un cliente
+  Quiero gestionar el formulario solicitud de crédito de un cliente
   Para poder llenar los datos del formulario
 
-  Escenario: Diligenciar formulario de solicitud de credito - Back
-    Dado que un asesor quiere llenar el formulario de solicitud de credito
-    Cuando diligencia el formulario de un cliente por pos
-    Entonces el debería visualizare el credito del clientee
+  Escenario: Diligenciar formulario de solicitud de crédito - BackEnd
+    Dado que un asesor quiere llenar el formulario de solicitud de crédito
+    Cuando diligencia el formulario de un cliente por back end
+    Entonces el debería visualizar el crédito del cliente
 
- # Escenario: Diligenciar formulario de solicitud de credito - Cliente
- #   Dado que un asesor quiere llenar el formulario de solicitud de credito
- #   Cuando diligencia el formulario de un cliente en su totalidad
- #   Entonces el debería visualizar el credito del cliente
+  Escenario: Diligenciar formulario de solicitud de crédito - Cliente
+    Dado que un asesor quiere llenar el formulario de solicitud de crédito
+    Cuando diligencia el formulario de un cliente en su totalidad
+    Entonces el debería visualizar el crédito del cliente

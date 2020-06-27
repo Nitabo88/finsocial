@@ -1,11 +1,14 @@
 package co.com.red5g.finsonet.models.builders;
 
+import static co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL;
+
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.utils.Builder;
 
 public class CredencialesBuilder implements Builder<Credenciales> {
 
   private String usuario;
+  private String codigoUsuario;
   private String contrasena;
   private String codigo;
   private String celular;
@@ -18,6 +21,7 @@ public class CredencialesBuilder implements Builder<Credenciales> {
 
   private CredencialesBuilder() {
     usuario = "";
+    codigoUsuario = "";
     contrasena = "";
     codigo = "";
     celular = "";
@@ -53,8 +57,17 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     return this;
   }
 
+  private CredencialesBuilder conCodigoUsuario() {
+    this.codigoUsuario = "2256";
+    return this;
+  }
+
   public String getUsuario() {
-    return this.usuario;
+    return usuario;
+  }
+
+  public String getCodigoUsuario() {
+    return codigoUsuario;
   }
 
   public String getCelular() {
@@ -74,9 +87,9 @@ public class CredencialesBuilder implements Builder<Credenciales> {
   }
 
   public Credenciales unUsuarioBasico() {
-    conUsuario(co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL.getUsuario());
-    conContrasena(co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL.getContrasena());
-    conCodigo(co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL.getCodigo());
+    conUsuario(USUARIO_FINSOCIAL.getUsuario());
+    conContrasena(USUARIO_FINSOCIAL.getContrasena());
+    conCodigo(USUARIO_FINSOCIAL.getCodigo());
     conCelular();
     conEmail();
     return build();
@@ -115,6 +128,14 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     this.conCodigo(co.com.red5g.utils.data.Credenciales.USUARIO_APROBACION_CREDITOS.getCodigo());
     conCelular();
     conEmail();
+    return this.build();
+  }
+
+  public Credenciales unUsuarioAdministrador() {
+    this.conUsuario(USUARIO_FINSOCIAL.getUsuario());
+    this.conContrasena(USUARIO_FINSOCIAL.getContrasena());
+    this.conCodigo(USUARIO_FINSOCIAL.getCodigo());
+    conCodigoUsuario();
     return this.build();
   }
 }

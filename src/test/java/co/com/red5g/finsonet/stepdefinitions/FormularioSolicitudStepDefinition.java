@@ -1,6 +1,8 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
+import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.con;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -16,7 +18,7 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 
 public class FormularioSolicitudStepDefinition {
 
-    @Dado("que un (.*) quiere llenar el formulario de solicitud de credito")
+    @Dado("que un (.*) quiere llenar el formulario de solicitud de crédito")
     public void ingresarFormularioSolicitud(String actor) {
         theActorCalled(actor).attemptsTo(
                 Ubicarse.enElFormulario(la().informacionDelCreditoFormulario())
@@ -30,16 +32,16 @@ public class FormularioSolicitudStepDefinition {
         );
     }
 
-    @Entonces("el debería visualizar el credito del cliente")
+    @Entonces("el debería visualizar el crédito del cliente")
     public void verificarSolicitudCrecito() {
         theActorInTheSpotlight()
             .should(GivenWhenThen.seeThat(ElFormulario.fueEnviado()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
 
-    @Cuando("^diligencia el formulario de un cliente por pos$")
-    public void diligenciaFormularioSolicitudBack() {
+    @Cuando("^diligencia el formulario de un cliente por back end$")
+    public void diligenciaFormularioSolicitudBackEnd() {
         theActorInTheSpotlight().attemptsTo(
-                Diligencia.laSolicitudDeCreditoBack()
+                Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(),con().informacionLibranza(),la().informacionDelCreditoFormulario())
         );
     }
 }
