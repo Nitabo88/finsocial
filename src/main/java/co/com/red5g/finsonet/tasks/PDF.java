@@ -14,7 +14,6 @@ import net.serenitybdd.screenplay.actions.Open;
 public class PDF implements Task {
 
   LoginFinsonetPage loginFinsonetPage;
-
   String url;
   String numeroCredito;
 

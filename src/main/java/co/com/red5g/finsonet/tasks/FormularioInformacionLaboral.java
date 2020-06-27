@@ -19,6 +19,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_EXTENSION;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_FECHA_VINCULACION;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_TELEFONO_TRABAJO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 import co.com.red5g.finsonet.interacions.Seleccionar;
@@ -34,13 +35,11 @@ import org.openqa.selenium.Keys;
 
 public class FormularioInformacionLaboral implements Task {
 
-    private static final int TIEMPO = 100;
     private final ActividadLaboral actividadLaboral;
 
     public FormularioInformacionLaboral(ActividadLaboral actividadLaboral) {
         this.actividadLaboral = actividadLaboral;
     }
-
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -57,7 +56,7 @@ public class FormularioInformacionLaboral implements Task {
                 TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion()),
             Enter.theValue(actividadLaboral.getDireccionTrabajo()).into(TXT_DIRECCION_TRABAJO),
             Click.on(BTN_CERRAR_DIRECCION),
-            WaitUntil.the(BTN_CIUDAD_TRABAJO, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+            WaitUntil.the(BTN_CIUDAD_TRABAJO, isEnabled()).forNoMoreThan(TIEMPO_60).seconds(),
             JavaScriptClick.on(BTN_CIUDAD_TRABAJO),
             Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
             Enter.theValue(actividadLaboral.getTelefonoTrabajo()).into(TXT_TELEFONO_TRABAJO),

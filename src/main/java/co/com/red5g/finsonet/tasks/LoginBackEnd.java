@@ -8,14 +8,14 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 
-public class LoginBack implements Task {
+public class LoginBackEnd implements Task {
 
   private static final String REST_API_URL = "http://192.168.0.18:82";
   private Credenciales credenciales;
 
   public static final String COOKIE = "Cookie";
 
-  public LoginBack(Credenciales credenciales) {
+  public LoginBackEnd(Credenciales credenciales) {
     this.credenciales = credenciales;
   }
 

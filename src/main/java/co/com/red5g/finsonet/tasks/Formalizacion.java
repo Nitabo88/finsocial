@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LBL_INCORPO
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Credito;
@@ -19,7 +20,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class Formalizacion implements Task {
 
   private static final String MNM_FORMALIZACION = "Formalización";
-  private static final int TIEMPO = 200;
 
   private Credito credito;
 
@@ -37,7 +37,7 @@ public class Formalizacion implements Task {
             .andIfSo(
                 Click.on(MNM_ORIGINACION.of(MNM_FORMALIZACION))
             ).otherwise(
-            WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
             Click.on(MNM_HAMBURGUESA),
             Click.on(MNM_NUEVO_ORIGINACION.of(MNM_FORMALIZACION))));
   }

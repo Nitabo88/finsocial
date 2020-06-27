@@ -8,7 +8,7 @@ Característica:Formulario de solicitud de credito finsonet
   Escenario: Diligenciar formulario de solicitud de crédito - BackEnd
     Dado que un asesor quiere llenar el formulario de solicitud de crédito
     Cuando diligencia el formulario de un cliente por back end
-    Entonces el debería visualizar el crédito del cliente
+    Entonces el debería visualizar el crédito en estado OK
 
   Escenario: Diligenciar formulario de solicitud de crédito - Cliente
     Dado que un asesor quiere llenar el formulario de solicitud de crédito

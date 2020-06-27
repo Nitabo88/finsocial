@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_REPORTES;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.AbreLaPagina;
@@ -17,7 +18,7 @@ public class Reportes implements Task {
         actor.attemptsTo(
             AbreLaPagina.finsonet(),
             Ingresa.lasCredenciales(CredencialesBuilder.de().unUsuarioBasico()),
-            WaitFor.seconds(2),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(LNK_REPORTES)
         );
     }

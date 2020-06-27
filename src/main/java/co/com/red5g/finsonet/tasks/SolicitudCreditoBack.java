@@ -191,6 +191,5 @@ public class SolicitudCreditoBack implements Task {
                         .formParam("rdtransaccion_ext", formularioSolicitud.getRdtransaccionExt())
                         .formParam("rdCuentasExt", formularioSolicitud.getRdCuentasExt())
                 ));
-        assertThat(SerenityRest.lastResponse().statusCode(), equalTo(200));
     }
 }

@@ -13,6 +13,7 @@ import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.*;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 public class InformacionAprobacionHuy implements Task {
 
@@ -26,7 +27,7 @@ public class InformacionAprobacionHuy implements Task {
             JavaScriptClick.on(BTN_MI_CUENTA),
             JavaScriptClick.on(MNM_MI_CUENTA.of(SALIR)),
             Ingresa.lasCredenciales(de().unUsuarioDeAprobacionCreditos()),
-            WaitFor.seconds(2),
+            WaitFor.seconds(TIEMPO_3),
             JavaScriptClick.on(LNK_ORIGINACION),
             JavaScriptClick.on(MNM_ORIGINACION.of(APROBACION_CREDITO)),
             MoveMouse.to(LST_NOMBRE_APROBACION_CREDITO_HUY.of(numeroCredito)),

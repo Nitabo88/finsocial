@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_CONFIRMACION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.TXT_MOTIVO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.AprobacionCredito;
@@ -17,7 +18,6 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 public class RegresarAprobacionCredito implements Task {
 
-  private static final int TIEMPO = 5;
   private final AprobacionCredito aprobacionCredito;
 
   private static final String REGRESAR = "Regresar";
@@ -34,13 +34,13 @@ public class RegresarAprobacionCredito implements Task {
         JavaScriptClick.on(MNM_ACCION.of(REGRESAR)),
         Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO),
         Click.on(BTN_OK),
-        WaitFor.seconds(TIEMPO),
+        WaitFor.seconds(TIEMPO_3),
         Click.on(BTN_OK));
     actor.attemptsTo(
         Check.whether(BTN_OK.resolveFor(actor).isVisible())
             .andIfSo(
                 Click.on(BTN_OK),
-                WaitFor.seconds(TIEMPO),
+                WaitFor.seconds(TIEMPO_3),
                 Click.on(BTN_OK)));
   }
 }

@@ -3,6 +3,8 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -20,8 +22,6 @@ public class ModuloCdasCompleto implements Task {
 
   private Credito credito;
 
-  private static final int TIEMPO = 120;
-
   public ModuloCdasCompleto(Credito credito) {
     this.credito = credito;
   }
@@ -32,9 +32,9 @@ public class ModuloCdasCompleto implements Task {
         Consulta.elCreditoEnFormalizacion(credito),
         Diligencia.laAprobacionDelCreditoEnFormalizacion(),
         Realiza.laLlamada(),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
         Click.on(IMG_FINSONET),
-        WaitFor.seconds(3),
+        WaitFor.seconds(TIEMPO_3),
         MoveMouse.to(LNK_CDAS),
         Click.on(LNK_CDAS));
   }
