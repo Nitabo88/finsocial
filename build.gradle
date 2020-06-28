@@ -29,6 +29,7 @@ ext{
     apache = '2.0.19'
     mySql = '8.0.20'
     lombok = '1.18.8'
+    seleniumhq = '3.141.59'
 }
 
 dependencies {
@@ -46,6 +47,8 @@ dependencies {
     implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: "${serenityVersion}"
     implementation group: 'org.projectlombok', name: 'lombok', version: "${lombok}"
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: "${seleniumhq}"
+
 }
 
 tasks.withType(Test) {
