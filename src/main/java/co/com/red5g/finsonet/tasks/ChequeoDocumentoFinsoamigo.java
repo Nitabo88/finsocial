@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Loguearse;
@@ -14,7 +15,7 @@ public class ChequeoDocumentoFinsoamigo implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Loguearse.enFinsonet(),
-        WaitFor.seconds(3),
+        WaitFor.seconds(TIEMPO_3),
         Click.on(LNK_ORIGINACION)
     );
   }

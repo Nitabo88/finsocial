@@ -10,6 +10,7 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.red5g.finsonet.models.ChequeoDocumento;
@@ -22,7 +23,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionIncompletaChequeoDocumentos implements Task {
 
-    private static final int TIEMPO = 100;
     private final ChequeoDocumento chequeoDocumento;
 
     public InformacionIncompletaChequeoDocumentos(ChequeoDocumento chequeoDocumento) {
@@ -39,7 +39,7 @@ public class InformacionIncompletaChequeoDocumentos implements Task {
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
             Click.on(BTN_ACEPTAR2_POP_UP),
             Click.on(BTN_ACEPTAR),
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO).seconds(),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
             Click.on(BTN_GUARDAR)

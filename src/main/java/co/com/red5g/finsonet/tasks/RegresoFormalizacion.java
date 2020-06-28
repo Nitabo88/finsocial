@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ACCION_
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_ACCION_FORMALIZACION;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.TXT_MOTIVO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Formalizacion;
@@ -15,7 +16,6 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class RegresoFormalizacion implements Task {
 
-  private static final int TIEMPO = 5;
   private final Formalizacion formalizacion;
 
   public RegresoFormalizacion(Formalizacion formalizacion) {
@@ -30,7 +30,7 @@ public class RegresoFormalizacion implements Task {
         JavaScriptClick.on(LST_ACCION_FORMALIZACION.of(numeroCredito, this.formalizacion.getAccion())),
         Enter.theValue(formalizacion.getMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_OK),
-        WaitFor.seconds(TIEMPO),
+        WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_OK));
   }
 }

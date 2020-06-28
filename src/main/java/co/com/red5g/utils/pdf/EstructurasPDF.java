@@ -79,13 +79,7 @@ public class EstructurasPDF {
     return map.get(filaCampo);
   }
 
-  public static Integer desafiliacionCoophumana(String filaCampo) {
-    Map<String, Integer> map = new HashMap<>();
-    map.put("Nombre", 0);
-    return map.get(filaCampo);
-  }
-
-  public static Integer desafiliacionActival(String filaCampo) {
+  public static Integer desafiliacion(String filaCampo) {
     Map<String, Integer> map = new HashMap<>();
     map.put("Nombre", 0);
     return map.get(filaCampo);

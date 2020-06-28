@@ -51,6 +51,14 @@ public class UtileriaFechas {
         return fecha.substring(0, 6).toUpperCase() + fecha.substring(6);
     }
 
+    public static String fechaActual() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        DateFormat fechaFormateada = new SimpleDateFormat("yyyy-MM-d");
+        String fecha = fechaFormateada.format(calendar.getTime());
+        return fecha.substring(0, 6).toUpperCase() + fecha.substring(6);
+    }
+
     public static String fechaPdfDdMmYyyy(String fechaBaseDeDatos) {
         String fechaBD = fechaBaseDeDatos.substring(0, 10);
         String[] fechaPdf = fechaBD.split("-");

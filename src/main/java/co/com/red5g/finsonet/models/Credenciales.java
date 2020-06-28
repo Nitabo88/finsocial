@@ -5,6 +5,8 @@ import co.com.red5g.finsonet.models.builders.CredencialesBuilder;
 public class Credenciales {
 
   private final String usuario;
+
+  private final String codigoUsuario;
   private final String contrasena;
   private final String codigo;
   private final String celular;
@@ -12,6 +14,7 @@ public class Credenciales {
 
   public Credenciales(final CredencialesBuilder credencialesBuilder) {
     usuario = credencialesBuilder.getUsuario();
+    codigoUsuario = credencialesBuilder.getCodigoUsuario();
     contrasena = credencialesBuilder.getContrasena();
     codigo = credencialesBuilder.getCodigo();
     celular = credencialesBuilder.getCelular();
@@ -28,6 +31,10 @@ public class Credenciales {
 
   public String getUsuario() {
     return this.usuario;
+  }
+
+  public String getCodigoUsuario() {
+    return codigoUsuario;
   }
 
   public String getContrasena() {

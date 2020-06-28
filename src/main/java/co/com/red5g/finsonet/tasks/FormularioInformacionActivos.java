@@ -1,12 +1,23 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.BTN_CERRAR_DIRECCION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_DIRECCION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_HIPOTECADO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_MARCA_MODELO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_PLACA_NUMERO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_PRENDA_A_FAVOR;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_SALDO_CREDITO_INMUEBLE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_SALDO_CREDITO_VEHICULO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_TIPO_INMUEBLE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_VALOR_COMERCIAL_INMUEBLE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_VALOR_COMERCIAL_VEHICULO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.TXT_VEHICULO_CLASE;
+
 import co.com.red5g.finsonet.models.DescripcionActivos;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-
-import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso4Page.*;
 
 public class FormularioInformacionActivos implements Task {
     private final DescripcionActivos descripcionActivos;

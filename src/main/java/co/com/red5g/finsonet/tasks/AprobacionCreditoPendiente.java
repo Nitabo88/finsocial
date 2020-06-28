@@ -7,6 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_MOT
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_CONFIRMACION;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -23,7 +24,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AprobacionCreditoPendiente implements Task {
 
-  private static final int TIEMPO = 20;
   private final AprobacionCredito aprobacionCredito;
   private static final String PENDIENTE = "Pendiente";
 
@@ -39,15 +39,15 @@ public class AprobacionCreditoPendiente implements Task {
         JavaScriptClick.on(MNM_ACCION.of(PENDIENTE)),
         SelectFromOptions.byVisibleText(aprobacionCredito.getSeleccionMotivo()).from(LST_MOTIVO),
         Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO),
-        WaitUntil.the(BTN_ENVIAR, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(BTN_ENVIAR, isEnabled()).forNoMoreThan(TIEMPO_10).seconds(),
         Click.on(BTN_ENVIAR),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         Click.on(BTN_OK));
     actor.attemptsTo(
         Check.whether(BTN_ENVIAR.resolveFor(actor).isVisible())
             .andIfSo(
                 Click.on(BTN_ENVIAR),
-                WaitUntil.the(ConfirmacionPage.BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+                WaitUntil.the(ConfirmacionPage.BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
                 Click.on(ConfirmacionPage.BTN_OK)));
   }
 }

@@ -2,6 +2,8 @@ package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.Formalizacion;
 import co.com.red5g.utils.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 public class FormalizacionBuilder implements Builder<Formalizacion> {
 

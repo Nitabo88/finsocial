@@ -15,8 +15,7 @@ import static co.com.red5g.utils.conexionbd.Queries.SQL_LINEA_CREDITO;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_EXPEDICION;
 import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_NACIMIENTO;
 import static co.com.red5g.utils.pdf.EstructurasPDF.boletinCostos;
-import static co.com.red5g.utils.pdf.EstructurasPDF.desafiliacionActival;
-import static co.com.red5g.utils.pdf.EstructurasPDF.desafiliacionCoophumana;
+import static co.com.red5g.utils.pdf.EstructurasPDF.desafiliacion;
 import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
 import static co.com.red5g.utils.pdf.EstructurasPDF.formularioActival;
 import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
@@ -444,15 +443,9 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
   }
 
-  @Entonces("^el asesor deberá ver que la información de Desafiliación Coophumana corresponde a la de BD$")
-  public void verificarDesafiliacionCoophumana() {
-    theActorInTheSpotlight().should(seeThat("Nombre", LaInformacion.delPdf(desafiliacionCoophumana("Nombre")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))));
-  }
-
-  @Entonces("^el asesor deberá ver que la información de Desafiliación Actival corresponde a la de BD$")
-  public void verificarDesafiliacionActival() {
-    theActorInTheSpotlight().should(
-        seeThat("Nombre", LaInformacion.delPdf(desafiliacionActival("Nombre")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))));
+  @Entonces("^el asesor deberá ver que la información de (.*) corresponde a la de BD$")
+  public void verificarDesafiliacionCoophumana(String desafiliacion) {
+    theActorInTheSpotlight().should(seeThat("Nombre", LaInformacion.delPdf(desafiliacion("Nombre")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))));
   }
 
   @Entonces("^el asesor deberá ver que la información del Formulario conocimiento actival corresponde a la de BD$")
