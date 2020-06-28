@@ -41,6 +41,7 @@ public class NegacionChequeoDocumentoCrediHuy implements Task {
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY.of(numeroCredito)),
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
             Click.on(BTN_ACEPTAR_HUY),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_ACEPTAR_ACCION_HUY),
             WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_NEGAR),

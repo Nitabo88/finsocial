@@ -185,8 +185,7 @@ public final class Diligencia {
     return instrumented(AprobacionTesoreriaFinsoamigo.class);
   }
 
-  public static Performable laNegaciondelCreditodeLibranza(
-      ChequeoDocumento motivoNegacionCreditoLibranza) {
+  public static Performable laNegaciondelCreditodeLibranza(ChequeoDocumento motivoNegacionCreditoLibranza) {
     return instrumented(NegacionChequeoDocumentoLibranza.class, motivoNegacionCreditoLibranza);
   }
 
@@ -198,8 +197,7 @@ public final class Diligencia {
     return instrumented(AprobacionTesoreriaCrediHuy.class);
   }
 
-  public static Performable laSolicitudDeCreditoBackEnd(
-      Credenciales credenciales, FormularioSolicitud formularioSolicitud, Credito credito) {
+  public static Performable laSolicitudDeCreditoBackEnd(Credenciales credenciales, FormularioSolicitud formularioSolicitud, Credito credito) {
     return instrumented(SolicitudCreditoBack.class, credenciales, formularioSolicitud, credito);
   }
 }
