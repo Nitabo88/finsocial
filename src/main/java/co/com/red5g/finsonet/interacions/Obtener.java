@@ -1,6 +1,8 @@
 package co.com.red5g.finsonet.interacions;
 
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_150_FR;
 import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_150_IVA;
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_50_FR;
 import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_50_IVA;
 import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_ESTANDAR;
 
@@ -22,12 +24,25 @@ public class Obtener implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        if (perfilRiesgo.equals("estándar")) {
-            numeroCredito = APROBACION_CREDITO_RIESGO_ESTANDAR.getNumeroCredito();
-        } else if (perfilRiesgo.equals("50%+IVA")) {
-            numeroCredito = APROBACION_CREDITO_RIESGO_50_IVA.getNumeroCredito();
-        } else {
-            numeroCredito = APROBACION_CREDITO_RIESGO_150_IVA.getNumeroCredito();
+        switch (perfilRiesgo) {
+            case "estándar":
+                numeroCredito = APROBACION_CREDITO_RIESGO_ESTANDAR.getNumeroCredito();
+                break;
+            case "50%+IVA":
+                numeroCredito = APROBACION_CREDITO_RIESGO_50_IVA.getNumeroCredito();
+                break;
+            case "150%+IVA":
+                numeroCredito = APROBACION_CREDITO_RIESGO_150_IVA.getNumeroCredito();
+                break;
+            case "50%_fr":
+                numeroCredito = APROBACION_CREDITO_RIESGO_50_FR.getNumeroCredito();
+                break;
+            case "150%_fr":
+                numeroCredito = APROBACION_CREDITO_RIESGO_150_FR.getNumeroCredito();
+                break;
+            default:
+                numeroCredito = "";
+                break;
         }
         return numeroCredito;
     }
