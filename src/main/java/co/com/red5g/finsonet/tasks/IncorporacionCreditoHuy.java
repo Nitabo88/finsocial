@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 public class IncorporacionCreditoHuy implements Task {
 
@@ -32,7 +33,7 @@ public class IncorporacionCreditoHuy implements Task {
                 JavaScriptClick.on(BTN_MI_CUENTA),
                 JavaScriptClick.on(MNM_MI_CUENTA.of(SALIR)),
                 Ingresa.lasCredenciales(de().unUsuarioBasico()),
-                WaitFor.seconds(2),
+                WaitFor.seconds(TIEMPO_3),
                 JavaScriptClick.on(LNK_ORIGINACION),
                 Click.on(MNM_ORIGINACION.of(INCORPORACION))
         );

@@ -12,12 +12,12 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class ChequeoDocumentosRechazo implements Task {
 
-    private static final int TIEMPO = 3;
     private final ChequeoDocumento chequeoDocumento;
 
     public ChequeoDocumentosRechazo(ChequeoDocumento chequeoDocumento) {
@@ -33,14 +33,14 @@ public class ChequeoDocumentosRechazo implements Task {
                 Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
                 WaitUntil.the(BTN_ENVIAR, isEnabled()),
                 Click.on(BTN_ENVIAR),
-                WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+                WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_3).seconds(),
                 Click.on(BTN_OK));
         actor.attemptsTo(
             Check.whether(
                 BTN_ENVIAR.resolveFor(actor).isPresent())
                 .andIfSo(
                     Click.on(BTN_ENVIAR),
-                    WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+                    WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_3).seconds(),
                     Click.on(BTN_OK)
                 )
         );

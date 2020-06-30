@@ -1,18 +1,18 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
+import static co.com.red5g.finsonet.models.builders.TesoreriaBuilder.con;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
-
-import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
-import static co.com.red5g.finsonet.models.builders.TesoreriaBuilder.con;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class TesoreriaStepDefinition {
 
@@ -35,7 +35,7 @@ public class TesoreriaStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en tesorería en la lista de pendientes$")
   public void verificarCreditoPendiente() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeTesoreria()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enListaPendienteDeTesoreria()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor aprueba el crédito en tesorería$")
@@ -45,6 +45,6 @@ public class TesoreriaStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en antecartera$")
   public void verificarCreditoAntecartera() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAntecartera()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAntecartera()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 }

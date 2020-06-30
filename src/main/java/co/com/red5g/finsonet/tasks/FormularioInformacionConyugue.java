@@ -1,5 +1,30 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.BTN_LUGAR_EXPEDICION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.BTN_LUGAR_NACIMIENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.BTN_SEXO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.BTN_TIPO_DOCUMENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.FILTRO_LUGARES;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.FILTRO_LUGAR_NACIMIENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.LST_FILTROS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.LST_NIVEL_ESTUDIOS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.RDB_DEPENDENCIA_ECONOMICA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.RDB_OCUPACION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_CARGO_ACTUAL;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_CELULAR;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_DOCUMENTO_IDENTIDAD;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_FECHA_EXPEDICION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_FECHA_INGRESO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_FECHA_NACIMIENTO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_LUGAR_TRABAJO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_NOMBRE_EPS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_PRIMER_APELLIDO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_PRIMER_NOMBRE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_SEGUNDO_APELLIDO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_SEGUNDO_NOMBRE;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_TOTAL_EGRESOS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.TXT_TOTAL_INGRESOS;
+
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.InformacionConyugue;
 import co.com.red5g.finsonet.models.InformacionPersonal;
@@ -9,8 +34,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
-
-import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page.*;
 
 public class FormularioInformacionConyugue implements Task {
     private final InformacionPersonal informacionPersonal;

@@ -3,7 +3,7 @@ package co.com.red5g.wiipo.models.builders;
 import co.com.red5g.utils.Builder;
 import co.com.red5g.wiipo.models.Credenciales;
 
-import static co.com.red5g.utils.Credenciales.USUARIO_WIIPO;
+import static co.com.red5g.utils.data.Credenciales.USUARIO_WIIPO;
 
 public class CredencialesBuilder implements Builder<Credenciales> {
 

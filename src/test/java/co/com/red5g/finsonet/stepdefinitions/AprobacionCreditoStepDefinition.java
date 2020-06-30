@@ -6,9 +6,9 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Negar;
+import co.com.red5g.finsonet.tasks.factories.Negar;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import cucumber.api.java.es.Cuando;
@@ -33,7 +33,7 @@ public class AprobacionCreditoStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en el paso de confirmación$")
   public void verificarCreditoConfirmacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor pone el crédito como pendiente$")
@@ -45,7 +45,7 @@ public class AprobacionCreditoStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en aprobación de créditos en la lista de pendientes$")
   public void verificarCreditoListaPendientes() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCredito()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor aprueba el crédito de libranza$")
@@ -57,7 +57,7 @@ public class AprobacionCreditoStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en el paso de incorporación$")
   public void verificarCreditoIncorporacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor niegue el crédito de libranza$")

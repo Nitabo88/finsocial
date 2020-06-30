@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -30,6 +30,6 @@ public class FormalizacionCrediHuyStepDefinition {
 
     @Entonces("^el asesor deberá ver el crédito en el paso de tesorería crediHuy$")
     public void verificarCreditoTesoreria() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaCrediHuy()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaCrediHuy()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
 }

@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_NOMBRE_COMPLETO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -19,7 +20,6 @@ import org.openqa.selenium.Keys;
 
 public class IntentaCrear implements Task {
 
-    private static final int TIEMPO = 60;
     private final Vetados vetados;
 
     public IntentaCrear(Vetados vetados) {
@@ -37,7 +37,7 @@ public class IntentaCrear implements Task {
             Click.on(LNK_COMERCIAL),
             Click.on(LNK_NUEVO_CREDITO),
             Enter.theValue(vetados.getDocumentoVetados()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
-            WaitUntil.the(TXT_NOMBRE_COMPLETO, isVisible()).forNoMoreThan(TIEMPO).seconds()
+            WaitUntil.the(TXT_NOMBRE_COMPLETO, isVisible()).forNoMoreThan(TIEMPO_60).seconds()
         );
     }
 }

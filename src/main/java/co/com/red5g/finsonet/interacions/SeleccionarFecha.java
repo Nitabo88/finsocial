@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.interacions;
 
 import co.com.red5g.finsonet.userinterfaces.DataPickerPage;
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.string.UtileriaFechas;
 import co.com.red5g.utils.Utilerias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;

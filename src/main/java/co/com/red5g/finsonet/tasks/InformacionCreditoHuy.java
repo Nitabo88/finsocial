@@ -11,11 +11,14 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_DOCUM
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_VALOR_A_GIRAR;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.utils.UtileriaFechas;
+import co.com.red5g.utils.string.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -27,7 +30,6 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
-  private static final int TIEMPO = 200;
   private final Credito credito;
 
   public InformacionCreditoHuy(Credito credito) {
@@ -40,14 +42,14 @@ public class InformacionCreditoHuy implements Task {
     actor.remember(FECHA, UtileriaFechas.formatearFechaServidorUTC());
     actor.attemptsTo(
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
-        WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
         Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
         Enter.theValue(credito.getValorCredito()).into(TXT_VALOR_A_GIRAR),
         MoveMouse.to(BTN_CREAR_CREDITO),
         JavaScriptClick.on(BTN_CREAR_CREDITO),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         Click.on(BTN_OK),
-        WaitFor.seconds(2),
+        WaitFor.seconds(TIEMPO_3),
         Click.on(MNM_HAMBURGUESA),
         Click.on(IMG_FINSONET),
         Click.on(LNK_COMERCIAL),

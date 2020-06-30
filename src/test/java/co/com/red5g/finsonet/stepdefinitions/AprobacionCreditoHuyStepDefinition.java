@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Negar;
+import co.com.red5g.finsonet.tasks.factories.Negar;
 import co.com.red5g.finsonet.tasks.Normalizar;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
@@ -42,7 +42,7 @@ public class AprobacionCreditoHuyStepDefinition {
 
   @Entonces("^el podrá ver el crédito en incorporación huy$")
   public void verificarCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enIncorporacion()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el crédito se ponga en la lista de pendientes$")
@@ -54,7 +54,7 @@ public class AprobacionCreditoHuyStepDefinition {
 
   @Entonces("^el podrá ver el crédito en pendiente por documentación$")
   public void verificarCreditoPendiente() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enPendientesAprobacionCreditoHuy()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor niegue el crédito Huy$")
@@ -67,5 +67,4 @@ public class AprobacionCreditoHuyStepDefinition {
   public void verificarCreditoRechazado(String estado) {
     theActorInTheSpotlight().should(seeThat(ElCredito.rechazado(), containsString(estado)));
   }
-
 }

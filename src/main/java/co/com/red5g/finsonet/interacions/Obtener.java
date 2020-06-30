@@ -1,9 +1,11 @@
 package co.com.red5g.finsonet.interacions;
 
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_150_IVA;
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_50_IVA;
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.APROBACION_CREDITO_RIESGO_ESTANDAR;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-
-import static co.com.red5g.utils.NumeroCreditoFinsoamigo.*;
 
 public class Obtener implements Question<String> {
     private final String perfilRiesgo;

@@ -17,8 +17,7 @@ public class Hooks {
     public void setTheStage() {
         OnStage.setTheStage(
                 OnlineCast.whereEveryoneCan(
-                        BrowseTheWeb.with(navegador)
-                )
+                    BrowseTheWeb.with(navegador))
         );
     }
 

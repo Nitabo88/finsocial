@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import co.com.red5g.finsonet.tasks.factories.Loguearse;
@@ -48,12 +48,12 @@ public class CreacionCreditoStepDefinition {
 
     @Entonces("el podrá ver un crédito de libranza creado")
     public void verificarCreacionCredito() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaExiste()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.deLibranzaExiste()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
 
     @Entonces("el podrá ver un crédito Huy creado")
     public void verificarCreacionCreditoHuy() {
-        theActorInTheSpotlight().should(seeThat(ElCredito.huyExiste()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+        theActorInTheSpotlight().should(seeThat(ElCredito.huyExiste()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
 
     @Entonces("el no podrá crear un crédito")

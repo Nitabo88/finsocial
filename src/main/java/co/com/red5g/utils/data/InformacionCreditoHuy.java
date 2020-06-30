@@ -1,4 +1,4 @@
-package co.com.red5g.utils;
+package co.com.red5g.utils.data;
 
 public enum InformacionCreditoHuy {
     INFORMACION_CREDITO_HUY("10000622", "40000000", "72"),

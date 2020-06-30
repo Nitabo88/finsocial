@@ -7,6 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_ACCION_FORMALIZACION;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_MOTIVO_PENDIENTE;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.TXT_DETALLE_PENDIENTE;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Formalizacion;
@@ -21,7 +22,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class PendienteFormalizacion implements Task {
 
-  private static final int TIEMPO = 20;
   private final Formalizacion formalizacion;
 
   public PendienteFormalizacion(final Formalizacion formalizacion) {
@@ -36,15 +36,15 @@ public class PendienteFormalizacion implements Task {
         JavaScriptClick.on(LST_ACCION_FORMALIZACION.of(numeroCredito, formalizacion.getAccion())),
         SelectFromOptions.byVisibleText(formalizacion.getMotivo()).from(LST_MOTIVO_PENDIENTE),
         Enter.theValue(formalizacion.getDetalleMotivo()).into(TXT_DETALLE_PENDIENTE),
-        WaitUntil.the(BTN_ENVIAR, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(BTN_ENVIAR, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         Click.on(BTN_ENVIAR),
-        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         Click.on(BTN_OK)
     );
     actor.attemptsTo(
         Check.whether(BTN_ENVIAR.resolveFor(actor).isPresent()).andIfSo(
             Click.on(BTN_ENVIAR),
-            WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO).seconds(),
+            WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
             Click.on(BTN_OK)
         )
     );

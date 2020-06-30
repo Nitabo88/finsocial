@@ -1,5 +1,27 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_ACTIVIDAD_ECONOMICA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_CERRAR_DIRECCION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_CIUDAD_TRABAJO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_EMPRESA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_TIPO_CONTRATO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_TIPO_EMPRESA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.FILTRO_LISTA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.LST_ACTIVIDAD_ECONOMICA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.LST_OPCIONES;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_DECLARA_RENTA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_IMPACTO_CARGO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_OCUPACION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_PERSONAJE_PUBLICO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_RECURSOS_PUBLICOS;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_CARGO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_DIRECCION_TRABAJO;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_EXTENSION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_FECHA_VINCULACION;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_TELEFONO_TRABAJO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+
 import co.com.red5g.finsonet.interacions.Seleccionar;
 import co.com.red5g.finsonet.interacions.SeleccionarFecha;
 import co.com.red5g.finsonet.models.ActividadLaboral;
@@ -11,12 +33,8 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 
-import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
-
 public class FormularioInformacionLaboral implements Task {
 
-    private static final int TIEMPO = 100;
     private final ActividadLaboral actividadLaboral;
 
     public FormularioInformacionLaboral(ActividadLaboral actividadLaboral) {
@@ -38,7 +56,7 @@ public class FormularioInformacionLaboral implements Task {
                 TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion()),
             Enter.theValue(actividadLaboral.getDireccionTrabajo()).into(TXT_DIRECCION_TRABAJO),
             Click.on(BTN_CERRAR_DIRECCION),
-            WaitUntil.the(BTN_CIUDAD_TRABAJO, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+            WaitUntil.the(BTN_CIUDAD_TRABAJO, isEnabled()).forNoMoreThan(TIEMPO_60).seconds(),
             JavaScriptClick.on(BTN_CIUDAD_TRABAJO),
             Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
             Enter.theValue(actividadLaboral.getTelefonoTrabajo()).into(TXT_TELEFONO_TRABAJO),

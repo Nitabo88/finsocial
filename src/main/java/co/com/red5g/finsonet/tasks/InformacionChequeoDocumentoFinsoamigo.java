@@ -13,6 +13,7 @@ import net.serenitybdd.screenplay.conditions.Check;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.*;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 
 public class InformacionChequeoDocumentoFinsoamigo implements Task {
 
@@ -37,7 +38,7 @@ public class InformacionChequeoDocumentoFinsoamigo implements Task {
                     Click.on(BTN_ACEPTAR)),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
-            WaitFor.seconds(2),
+            WaitFor.seconds(TIEMPO_3),
             Subir.losArchivosDeChequeoDocumentosFinsoamigo(),
             Click.on(BTN_GUARDAR),
             Click.on(BTN_ACEPTAR)

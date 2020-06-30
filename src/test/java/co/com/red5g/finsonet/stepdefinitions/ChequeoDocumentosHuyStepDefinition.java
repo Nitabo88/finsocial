@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
@@ -32,7 +32,7 @@ public class ChequeoDocumentosHuyStepDefinition {
 
   @Entonces("^deberá ver el crédito en el paso de aprobación créditos Huy$")
   public void verificarCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeCreditoHuy()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeCreditoHuy()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
   @Cuando("^el asesor decline el chequeo del crédito huy del cliente$")

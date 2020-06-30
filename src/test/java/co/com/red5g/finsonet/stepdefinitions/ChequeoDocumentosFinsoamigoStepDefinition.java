@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
@@ -9,7 +9,7 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static co.com.red5g.utils.NumeroCreditoFinsoamigo.CHEQUEO_DOCUMENTO_EXITOSO;
+import static co.com.red5g.utils.data.NumeroCreditoFinsoamigo.CHEQUEO_DOCUMENTO_EXITOSO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -31,8 +31,6 @@ public class ChequeoDocumentosFinsoamigoStepDefinition {
 
   @Entonces("^el asesor deberá ver el crédito en el paso de aprobación créditos finsoamigos$")
   public void verificarCreditoAprobacion() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoException.class, NoSeVeElCreditoException.MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionCredito()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
-
-
 }

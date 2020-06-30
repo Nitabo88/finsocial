@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoException;
+import co.com.red5g.finsonet.exceptions.NoSeMarcaElVetoAssertion;
 import co.com.red5g.finsonet.questions.ElMensaje;
 import co.com.red5g.finsonet.questions.Veto;
 import co.com.red5g.finsonet.tasks.Eliminar;
@@ -44,7 +44,7 @@ public class VetadosStepDefinition {
     @Entonces("el asesor deberia ver al cliente en el listado de vetados")
     public void verificarCreacionCredito() {
       theActorInTheSpotlight().should
-          (GivenWhenThen.seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVetoException.class, NoSeMarcaElVetoException.MENSAJE_VETO));
+          (GivenWhenThen.seeThat(Veto.existe(a().unCliente())).orComplainWith(NoSeMarcaElVetoAssertion.class, NoSeMarcaElVetoAssertion.MENSAJE_VETO));
     }
 
     @Y("el asesor no deberia poder crear un credito con este usuario")
