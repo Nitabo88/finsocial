@@ -1,11 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
@@ -16,12 +10,16 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
+import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
+
 public class Incorporacion implements Task {
 
   private static final String SALIR = "Salir";
   private static final String MNM_INCORPORACION = "Incorporación";
 
-  private Credito credito;
+  private final Credito credito;
 
   public Incorporacion(Credito credito) {
     this.credito = credito;

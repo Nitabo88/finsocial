@@ -12,7 +12,7 @@ import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACI
 
 public class AprobacionCreditoFinsoamigo implements Task {
 
-  private String perfilRiesgo;
+  private final String perfilRiesgo;
   private static final String APROBACION_CREDITO = "Apr. de créditos";
 
   public AprobacionCreditoFinsoamigo(String perfilRiesgo) {

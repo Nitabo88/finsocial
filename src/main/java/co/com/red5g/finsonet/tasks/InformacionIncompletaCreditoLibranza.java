@@ -24,7 +24,7 @@ import org.openqa.selenium.Keys;
 
 public class InformacionIncompletaCreditoLibranza implements Task {
 
-    private Credito credito;
+    private final Credito credito;
     public static final String FECHA = "fecha credito";
     public static final String CEDULA_ACTOR = "cedula actor";
 

@@ -21,12 +21,10 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class VetadosStepDefinition {
 
-    private static String ACTOR = "Administrador";
-    private static String NO_REGISTRA = "NO REGISTRA";
-
 
     @Before("@Vetados")
     public void quitarMarca() {
+        String ACTOR = "Administrador";
         theActorCalled(ACTOR).attemptsTo(Eliminar.elVeto(a().unCliente()));
     }
 
@@ -51,9 +49,10 @@ public class VetadosStepDefinition {
 
     @Y("el asesor no deberia poder crear un credito con este usuario")
     public void IntentarCrearCredito() {
-      theActorInTheSpotlight().attemptsTo(
-          IntentaCrear.unCredito(a().unCliente()));
-      theActorInTheSpotlight()
-          .should(GivenWhenThen.seeThat(ElMensaje.noRegistra(), equalTo(NO_REGISTRA)));
+        String NO_REGISTRA = "NO REGISTRA";
+        theActorInTheSpotlight().attemptsTo(
+                IntentaCrear.unCredito(a().unCliente()));
+        theActorInTheSpotlight()
+                .should(GivenWhenThen.seeThat(ElMensaje.noRegistra(), equalTo(NO_REGISTRA)));
     }
 }

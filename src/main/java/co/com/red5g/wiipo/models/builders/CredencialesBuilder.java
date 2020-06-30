@@ -36,8 +36,8 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     return this;
   }
 
-  private CredencialesBuilder conTipoDocumento(String tipoDocumento) {
-    this.tipoDocumento = tipoDocumento;
+  private CredencialesBuilder conTipoDocumento() {
+    this.tipoDocumento = "Cédula Ciudadana";
     return this;
   }
 
@@ -56,7 +56,7 @@ public class CredencialesBuilder implements Builder<Credenciales> {
   public Credenciales unUsuarioWiipo() {
     conUsuario(USUARIO_WIIPO.getUsuario());
     conContrasena(USUARIO_WIIPO.getContrasena());
-    conTipoDocumento("Cédula Ciudadana");
+    conTipoDocumento();
     return build();
   }
 }

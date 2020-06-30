@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.Task;
 
 public class SolicitudCredito implements Task {
 
-    private Credito credito;
+    private final Credito credito;
 
     public SolicitudCredito(Credito credito) {
         this.credito = credito;

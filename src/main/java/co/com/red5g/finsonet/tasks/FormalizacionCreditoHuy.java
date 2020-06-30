@@ -14,7 +14,7 @@ import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORI
 public class FormalizacionCreditoHuy implements Task {
     private static final String FORMALIZACION = "Formalización";
 
-    private Credito credito;
+    private final Credito credito;
 
     public FormalizacionCreditoHuy(Credito credito) {
         this.credito = credito;

@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 public class Hooks {
 
     @Managed(driver = "chrome")
-    private WebDriver navegador;
+    WebDriver navegador;
 
     @Before
     public void setTheStage() {

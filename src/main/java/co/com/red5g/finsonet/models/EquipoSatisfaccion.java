@@ -3,10 +3,10 @@ package co.com.red5g.finsonet.models;
 import co.com.red5g.finsonet.models.builders.EquipoSatisfaccionBuilder;
 
 public class EquipoSatisfaccion {
-    private String documentoEquipoSatisfaccion;
-    private String detalleEquipoSatisfaccion;
-    private String asunto;
-    private String protocolo;
+    private final String documentoEquipoSatisfaccion;
+    private final String detalleEquipoSatisfaccion;
+    private final String asunto;
+    private final String protocolo;
 
 
     public EquipoSatisfaccion(EquipoSatisfaccionBuilder equipoSatisfaccionBuilder) {

@@ -19,7 +19,7 @@ import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
 public class NegacionCreditoLibranza implements Task {
-    private AprobacionCredito aprobacionCredito;
+    private final AprobacionCredito aprobacionCredito;
 
     public NegacionCreditoLibranza(AprobacionCredito aprobacionCredito) {
         this.aprobacionCredito = aprobacionCredito;

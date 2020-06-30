@@ -28,30 +28,30 @@ public class EquipoSatisfaccionBuilder {
     public String getDetalleEquipoSatisfaccion() { return detalleEquipoSatisfaccion;    }
 
     public EquipoSatisfaccion cliente() {
-        this.conDocumentoEquipoSatisfaccion("32630669");
-        this.conDetalleEquipoSatisfaccion("Detalle de la nueva solicitud contact");
-        this.conAsunto("SOLICITUD DE DETALLE DE CRÉDITO");
-        this.conProtocolo("Envio detalle de credito");
+        this.conDocumentoEquipoSatisfaccion();
+        this.conDetalleEquipoSatisfaccion();
+        this.conAsunto();
+        this.conProtocolo();
         return this.build();
     }
 
-    private EquipoSatisfaccionBuilder conDetalleEquipoSatisfaccion(String detalleEquipoSatisfaccion) {
-        this.detalleEquipoSatisfaccion = detalleEquipoSatisfaccion;
+    private EquipoSatisfaccionBuilder conDetalleEquipoSatisfaccion() {
+        this.detalleEquipoSatisfaccion = "Detalle de la nueva solicitud contact";
         return this;
     }
 
-    private EquipoSatisfaccionBuilder conDocumentoEquipoSatisfaccion(String documentoEquipoSatisfaccion) {
-        this.documentoEquipoSatisfaccion = documentoEquipoSatisfaccion;
+    private EquipoSatisfaccionBuilder conDocumentoEquipoSatisfaccion() {
+        this.documentoEquipoSatisfaccion = "32630669";
         return this;
     }
 
-    private EquipoSatisfaccionBuilder conAsunto(String asunto) {
-        this.asunto = asunto;
+    private EquipoSatisfaccionBuilder conAsunto() {
+        this.asunto = "SOLICITUD DE DETALLE DE CRÉDITO";
         return this;
     }
 
-    private EquipoSatisfaccionBuilder conProtocolo(String protocolo) {
-        this.protocolo = protocolo;
+    private EquipoSatisfaccionBuilder conProtocolo() {
+        this.protocolo = "Envio detalle de credito";
         return this;
     }
 

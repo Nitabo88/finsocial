@@ -18,7 +18,7 @@ import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 public class IncorporacionCreditoHuy implements Task {
 
     private static final String SALIR = "Salir";
-    private Credito credito;
+    private final Credito credito;
     private static final String INCORPORACION = "Incorporación";
 
     public IncorporacionCreditoHuy(Credito credito) {
