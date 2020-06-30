@@ -21,7 +21,7 @@ Característica:  Aprobación Crédito
       | Tipo Perfil | Perfil Riesgo       |
       | 50%+IVA     | FinsoAmigo_50%+IVA  |
       | 150%+IVA    | FinsoAmigo_150%+IVA |
-      | 50%_fr     | FinsoAmigo_50%_fr   |
+      | 50%_fr      | FinsoAmigo_50%_fr   |
       | 150%_fr     | FinsoAmigo_150%_fr  |
 
 
