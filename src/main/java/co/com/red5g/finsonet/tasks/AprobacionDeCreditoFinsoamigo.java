@@ -9,6 +9,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LBL_POL
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_PAGADURIA;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_PERFIL_RIESGO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_CENTRO_COSTO;
+import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
 import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -42,11 +43,12 @@ public class AprobacionDeCreditoFinsoamigo implements Task {
         Enter.theValue(CENTRO_COSTO).into(TXT_CENTRO_COSTO),
         SelectFromOptions.byValue(PAGADURIA).from(LST_PAGADURIA),
         SelectFromOptions.byVisibleText(perfilRiesgo).from(LST_PERFIL_RIESGO),
-        WaitFor.seconds(3),
+        WaitFor.seconds(TIEMPO_3),
         MoveMouse.to(BTN_APROBAR),
         Click.on(BTN_APROBAR),
-        WaitFor.seconds(3),
+        WaitFor.seconds(TIEMPO_3),
         WaitUntil.the(LBL_CREDITO_CREADO, isPresent()).forNoMoreThan(TIEMPO_60).seconds(),
+        WaitFor.seconds(TIEMPO_3),
         Click.on(BTN_OK)
     );
   }
