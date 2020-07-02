@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.con;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
@@ -27,9 +28,10 @@ public class ChequeoDocumentoLibranza implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String numeroCedula = actor.recall(CEDULA_ACTOR);
         actor.attemptsTo(
             Ubicarse.enElFormulario(credito),
-            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionLibranza(), credito),
+            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionLibranza(), numeroCedula),
             Click.on(BTN_MI_CUENTA),
             Click.on(MNM_MI_CUENTA.of(SALIR)),
             Loguearse.enFinsonet(),

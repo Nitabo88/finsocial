@@ -1,11 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.models.Credenciales;
-import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import co.com.red5g.finsonet.tasks.factories.Loguearse;
 import io.restassured.http.ContentType;
@@ -16,14 +13,14 @@ import net.serenitybdd.screenplay.rest.interactions.Post;
 
 public class SolicitudCreditoBack implements Task {
 
-    Credenciales credenciales;
-    FormularioSolicitud formularioSolicitud;
-    Credito credito;
+    private Credenciales credenciales;
+    private FormularioSolicitud formularioSolicitud;
+    private String cedula;
 
-    public SolicitudCreditoBack(Credenciales credenciales, FormularioSolicitud formularioSolicitud, Credito credito) {
+    public SolicitudCreditoBack(Credenciales credenciales, FormularioSolicitud formularioSolicitud, String cedula) {
         this.credenciales = credenciales;
         this.formularioSolicitud = formularioSolicitud;
-        this.credito = credito;
+        this.cedula = cedula;
     }
 
     @Override
@@ -60,7 +57,7 @@ public class SolicitudCreditoBack implements Task {
                         .formParam("txtPNombre", formularioSolicitud.getPNombre())
                         .formParam("txtSNombre", formularioSolicitud.getSNombre())
                         .formParam("cmbTipoDoc", formularioSolicitud.getTipoDoc())
-                        .formParam("txtNoDoc", credito.getNumeroDocumento())
+                        .formParam("txtNoDoc", cedula)
                         .formParam("txtLugarExp", formularioSolicitud.getLugarExp())
                         .formParam("txtFechaExp", formularioSolicitud.getFechaExp())
                         .formParam("txtFechaNac", formularioSolicitud.getFechaNac())

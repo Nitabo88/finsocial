@@ -30,6 +30,7 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
+  public static final String CEDULA_ACTOR = "Cedula";
   private final Credito credito;
 
   public InformacionCreditoHuy(Credito credito) {
@@ -38,7 +39,7 @@ public class InformacionCreditoHuy implements Task {
 
   @Override
   public <T extends Actor> void performAs(final T actor) {
-    actor.remember(InformacionCreditoLibranza.CEDULA_ACTOR, credito.getNumeroDocumento());
+    actor.remember(CEDULA_ACTOR, credito.getNumeroDocumento());
     actor.remember(FECHA, UtileriaFechas.formatearFechaServidorUTC());
     actor.attemptsTo(
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),

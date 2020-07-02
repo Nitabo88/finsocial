@@ -3,6 +3,7 @@ package co.com.red5g.finsonet.stepdefinitions;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.con;
+import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -44,7 +45,7 @@ public class FormularioSolicitudStepDefinition {
     @Cuando("^diligencia el formulario de un cliente por back end$")
     public void diligenciaFormularioSolicitudBackEnd() {
         theActorInTheSpotlight().attemptsTo(
-            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionLibranza(), la().informacionDelCreditoFormulario())
+            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionLibranza(), theActorInTheSpotlight().recall(CEDULA_ACTOR))
         );
     }
 
