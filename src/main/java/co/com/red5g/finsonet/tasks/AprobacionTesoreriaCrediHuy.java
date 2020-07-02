@@ -42,8 +42,8 @@ public class AprobacionTesoreriaCrediHuy implements Task {
             Enter.theValue("0").into(TXT_CUOTA_RETENIDA),
             Enter.theValue(valorGiro).into(TXT_VALOR_GIRO),
             WaitFor.seconds(TIEMPO_5),
-            Click.on(BTN_ENVIAR_CARTERA));
-        actor.attemptsTo(
+            MoveMouse.to(BTN_ENVIAR_CARTERA),
+            Click.on(BTN_ENVIAR_CARTERA),
             WaitUntil.the(BTN_ENVIAR, isClickable()).forNoMoreThan(TIEMPO_10).seconds(),
             Click.on(BTN_ENVIAR),
             WaitFor.seconds(TIEMPO_3),
