@@ -59,7 +59,7 @@ public class InformacionChequeoDocumentoHuy implements Task {
         Click.on(BTN_CERRAR_POP_UP),
         Click.on(BTN_FORMULARIO_SOLICITUD),
         cambiarPestanaActual(),
-        Diligencia.laSolicitudDeCredito(),
+        Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionCredihuy(), numeroCedula),
         cerrarPestana(),
         WaitUntil.the(BTN_GUARDAR_DATOS, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         JavaScriptClick.on(BTN_GUARDAR_DATOS),
