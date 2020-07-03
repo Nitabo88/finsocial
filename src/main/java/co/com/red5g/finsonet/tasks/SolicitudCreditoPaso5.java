@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.EstructuraFormularioSolicitud.estructuraFormularioSolicitud;
 
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import io.restassured.http.ContentType;
@@ -29,29 +30,29 @@ public class SolicitudCreditoPaso5 implements Task {
                     requestSpecification
                         .contentType(ContentType.URLENC)
                         .header("Cookie", "PHPSESSID=" + cookie)
-                        .formParam("id_cred", numeroCredito)
-                        .formParam("numPaso", numeroPaso)
-                        .formParam("cmbNivelEstCon", formularioSolicitud.getNivelEstCon())
-                        .formParam("cmbSexoCon", formularioSolicitud.getSexoCon())
-                        .formParam("cmbTipoDocCony", formularioSolicitud.getTipoDocCony())
-                        .formParam("rdOcupacionCon", formularioSolicitud.getRdOcupacionCon())
-                        .formParam("txtCargoCon", formularioSolicitud.getCargoCon())
-                        .formParam("txtCelCon", formularioSolicitud.getCelCon())
-                        .formParam("txtDepEco", formularioSolicitud.getDepEco())
-                        .formParam("txtDocConyugue", formularioSolicitud.getDocConyugue())
-                        .formParam("txtEpsConyuge", formularioSolicitud.getEpsConyuge())
-                        .formParam("txtFecIngr", formularioSolicitud.getFecIngr())
-                        .formParam("txtFechaExpCon", formularioSolicitud.getFechaExpCon())
-                        .formParam("txtFechaNacCon", formularioSolicitud.getFechaNacCon())
-                        .formParam("txtLugTrabCon", formularioSolicitud.getLugTrabCon())
-                        .formParam("txtLugarExpCon", formularioSolicitud.getLugarExpCon())
-                        .formParam("txtLugarNacCon", formularioSolicitud.getLugarNacCon())
-                        .formParam("txtPNConyugue", formularioSolicitud.getPNConyugue())
-                        .formParam("txtSNConyugue", formularioSolicitud.getSNConyugue())
-                        .formParam("txtPAConyugue", formularioSolicitud.getPAConyugue())
-                        .formParam("txtSAConyugue", formularioSolicitud.getSAConyugue())
-                        .formParam("txtTIngCon", formularioSolicitud.getTIngCon())
-                        .formParam("txtTEgrCon", formularioSolicitud.getTEgrCon()))
+                        .formParam(estructuraFormularioSolicitud("numeroCredito"), numeroCredito)
+                        .formParam(estructuraFormularioSolicitud("numeroPaso"), numeroPaso)
+                        .formParam(estructuraFormularioSolicitud("nivelEstudioConyugue"), formularioSolicitud.getNivelEstudioConyugue())
+                        .formParam(estructuraFormularioSolicitud("sexoConyugue"), formularioSolicitud.getSexoConyugue())
+                        .formParam(estructuraFormularioSolicitud("tipoDocumentoConyugue"), formularioSolicitud.getTipoDocumentoConyugue())
+                        .formParam(estructuraFormularioSolicitud("ocupacionConyugue"), formularioSolicitud.getOcupacionConyugue())
+                        .formParam(estructuraFormularioSolicitud("cargoConyugue"), formularioSolicitud.getCargoConyugue())
+                        .formParam(estructuraFormularioSolicitud("celularConyugue"), formularioSolicitud.getCelularConyugue())
+                        .formParam(estructuraFormularioSolicitud("dependenciaEconomica"), formularioSolicitud.getDependenciaEconomica())
+                        .formParam(estructuraFormularioSolicitud("documentoConyugue"), formularioSolicitud.getDocumentoConyugue())
+                        .formParam(estructuraFormularioSolicitud("epsConyugue"), formularioSolicitud.getEpsConyugue())
+                        .formParam(estructuraFormularioSolicitud("fechaIngreso"), formularioSolicitud.getFechaIngreso())
+                        .formParam(estructuraFormularioSolicitud("fechaExpedicionConyugue"), formularioSolicitud.getFechaExpedicionConyugue())
+                        .formParam(estructuraFormularioSolicitud("fechaNacimientoConyugue"), formularioSolicitud.getFechaNacimientoConyugue())
+                        .formParam(estructuraFormularioSolicitud("lugarTrabajoConyugue"), formularioSolicitud.getLugarTrabajoConyugue())
+                        .formParam(estructuraFormularioSolicitud("lugarExpedicionConyugue"), formularioSolicitud.getLugarExpedicionConyugue())
+                        .formParam(estructuraFormularioSolicitud("lugarNacimientoConyugue"), formularioSolicitud.getLugarNacimientoConyugue())
+                        .formParam(estructuraFormularioSolicitud("primerNombreConyugue"), formularioSolicitud.getPrimerNombreConyugue())
+                        .formParam(estructuraFormularioSolicitud("segundoNombreConyugue"), formularioSolicitud.getSegundoNombreConyugue())
+                        .formParam(estructuraFormularioSolicitud("primerApellidoConyugue"), formularioSolicitud.getPrimerApellidoConyugue())
+                        .formParam(estructuraFormularioSolicitud("segundoApellidoConyugue"), formularioSolicitud.getSegundoApellidoConyugue())
+                        .formParam(estructuraFormularioSolicitud("totalIngresosConyugue"), formularioSolicitud.getTotalIngresosConyugue())
+                        .formParam(estructuraFormularioSolicitud("totalEgresosConyugue"), formularioSolicitud.getTotalEgresosConyugue()))
     );
   }
 }

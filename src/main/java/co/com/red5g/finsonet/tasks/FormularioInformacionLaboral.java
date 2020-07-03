@@ -19,7 +19,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_EXTENSION;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_FECHA_VINCULACION;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.TXT_TELEFONO_TRABAJO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
 import co.com.red5g.finsonet.interacions.Seleccionar;

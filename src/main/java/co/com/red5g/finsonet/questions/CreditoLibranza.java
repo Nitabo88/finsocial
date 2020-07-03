@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.FECHA;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_FILA_CREDITO_LIBRANZA;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.Constantes.FECHA;
 
 import java.util.List;
 import net.serenitybdd.core.pages.WebElementFacade;

@@ -5,7 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ACCION_
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_ACCION_FORMALIZACION;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.TXT_MOTIVO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Formalizacion;

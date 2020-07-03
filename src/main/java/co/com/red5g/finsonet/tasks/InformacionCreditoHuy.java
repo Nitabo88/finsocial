@@ -10,9 +10,11 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_DOCUM
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_VALOR_A_GIRAR;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.Constantes.FECHA;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -29,8 +31,6 @@ import org.openqa.selenium.Keys;
 
 public class InformacionCreditoHuy implements Task {
 
-  public static final String CEDULA_ACTOR = "Cedula";
-  public static final String FECHA = "Fecha";
   private final Credito credito;
 
   public InformacionCreditoHuy(Credito credito) {

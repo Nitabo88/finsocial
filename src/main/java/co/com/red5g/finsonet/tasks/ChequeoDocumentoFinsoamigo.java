@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Loguearse;

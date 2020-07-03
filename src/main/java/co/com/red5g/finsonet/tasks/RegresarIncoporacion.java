@@ -6,7 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGISTR
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGRESAR_INCORPORACION;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_SOLICITADO_POR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_MOTIVO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;

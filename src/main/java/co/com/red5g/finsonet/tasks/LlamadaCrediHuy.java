@@ -3,8 +3,8 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

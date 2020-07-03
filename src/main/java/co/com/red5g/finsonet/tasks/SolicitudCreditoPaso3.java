@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.EstructuraFormularioSolicitud.estructuraFormularioSolicitud;
 
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import io.restassured.http.ContentType;
@@ -27,24 +28,24 @@ public class SolicitudCreditoPaso3 implements Task {
             .with(
                 requestSpecification -> requestSpecification.contentType(ContentType.URLENC)
                     .header("Cookie", "PHPSESSID=" + cookie)
-                    .formParam("id_cred", numeroCredito)
-                    .formParam("numPaso", numeroPaso)
-                    .formParam("cmbActEcon", formularioSolicitud.getActEcon())
-                    .formParam("cmbCiudad2", formularioSolicitud.getCiudad2())
-                    .formParam("cmbTipoContrato", formularioSolicitud.getTipoContrato())
-                    .formParam("cmbTipoEmp", formularioSolicitud.getTipoEmp())
-                    .formParam("dirTrabajo", formularioSolicitud.getDirTrabajo())
-                    .formParam("rdOcupacion", formularioSolicitud.getRdOcupacion())
-                    .formParam("txtCargo", formularioSolicitud.getCargo())
-                    .formParam("txtDeRenta", formularioSolicitud.getDeRenta())
-                    .formParam("txtDesicionCargo", formularioSolicitud.getDesicionCargo())
-                    .formParam("txtEmpresa", formularioSolicitud.getEmpresa())
-                    .formParam("txtExt", formularioSolicitud.getExt())
-                    .formParam("txtFechaVinculacion", formularioSolicitud.getFechaVinculacion())
-                    .formParam("txtNitEmpresa", formularioSolicitud.getNitEmpresa())
-                    .formParam("txtPerPubl", formularioSolicitud.getPerPubl())
-                    .formParam("txtTelEmpresa", formularioSolicitud.getTelEmpresa())
-                    .formParam("txtrecPublicos", formularioSolicitud.getrecPublicos()))
+                    .formParam(estructuraFormularioSolicitud("numeroCredito"), numeroCredito)
+                    .formParam(estructuraFormularioSolicitud("numeroPaso"), numeroPaso)
+                    .formParam(estructuraFormularioSolicitud("actividadEconomica"), formularioSolicitud.getActividadEconomica())
+                    .formParam(estructuraFormularioSolicitud("ciudadTrabajo"), formularioSolicitud.getCiudadTrabajo())
+                    .formParam(estructuraFormularioSolicitud("tipoContrato"), formularioSolicitud.getTipoContrato())
+                    .formParam(estructuraFormularioSolicitud("tipoEmpresa"), formularioSolicitud.getTipoEmpresa())
+                    .formParam(estructuraFormularioSolicitud("direccionTrabajo"), formularioSolicitud.getDireccionTrabajo())
+                    .formParam(estructuraFormularioSolicitud("ocupacion"), formularioSolicitud.getOcupacion())
+                    .formParam(estructuraFormularioSolicitud("cargo"), formularioSolicitud.getCargo())
+                    .formParam(estructuraFormularioSolicitud("declaraRenta"), formularioSolicitud.getDeclaraRenta())
+                    .formParam(estructuraFormularioSolicitud("decisionCargo"), formularioSolicitud.getDecisionCargo())
+                    .formParam(estructuraFormularioSolicitud("empresa"), formularioSolicitud.getEmpresa())
+                    .formParam(estructuraFormularioSolicitud("extension"), formularioSolicitud.getExtension())
+                    .formParam(estructuraFormularioSolicitud("fechaVinculacion"), formularioSolicitud.getFechaVinculacion())
+                    .formParam(estructuraFormularioSolicitud("nitEmpresa"), formularioSolicitud.getNitEmpresa())
+                    .formParam(estructuraFormularioSolicitud("personajePublico"), formularioSolicitud.getPersonajePublico())
+                    .formParam(estructuraFormularioSolicitud("telefonoEmpresa"), formularioSolicitud.getTelefonoEmpresa())
+                    .formParam(estructuraFormularioSolicitud("recursosPublicos"), formularioSolicitud.getRecursosPublicos()))
     );
   }
 }

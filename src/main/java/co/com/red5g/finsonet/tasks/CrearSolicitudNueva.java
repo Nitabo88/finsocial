@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionRadicadosPage.BTN_NUEVO_PQRS;
 import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.BTN_GUARDAR;
@@ -8,8 +7,9 @@ import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.LBL_CREACI
 import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.LST_ASUNTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.TXT_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.NuevaSolicitudPage.TXT_DOCUMENTO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

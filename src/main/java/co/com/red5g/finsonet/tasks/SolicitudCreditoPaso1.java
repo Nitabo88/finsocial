@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.EstructuraFormularioSolicitud.estructuraFormularioSolicitud;
 
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import io.restassured.http.ContentType;
@@ -27,24 +28,24 @@ public class SolicitudCreditoPaso1 implements Task {
             .with(
                 requestSpecification -> requestSpecification.contentType(ContentType.URLENC)
                     .header("Cookie", "PHPSESSID=" + cookie)
-                    .formParam("a_vinculacion", formularioSolicitud.getAVinculacion())
-                    .formParam("crid", numeroCredito)
-                    .formParam("cuota", formularioSolicitud.getCuota())
-                    .formParam("id_cred", numeroCredito)
-                    .formParam("numPaso", numeroPaso)
-                    .formParam("pasoSol", formularioSolicitud.getPasoSol())
-                    .formParam("perfil", formularioSolicitud.getPerfil())
-                    .formParam("tasaI", formularioSolicitud.getTasaI())
-                    .formParam("tasaM", formularioSolicitud.getTasaM())
-                    .formParam("tasaMax", formularioSolicitud.getTasaMax())
-                    .formParam("txtAsesor", formularioSolicitud.getAsesor())
-                    .formParam("txtCiuC", formularioSolicitud.getCiuC())
-                    .formParam("txtCalf", formularioSolicitud.getCalf())
-                    .formParam("txtFecha", formularioSolicitud.getFecha())
-                    .formParam("txtLinea", formularioSolicitud.getLinea())
-                    .formParam("txtMonto", formularioSolicitud.getMonto())
-                    .formParam("txtPlaz", formularioSolicitud.getPlaz())
-                    .formParam("txtTSol", formularioSolicitud.getTSol())
-                    .formParam("txtVin", formularioSolicitud.getVin())));
+                    .formParam(estructuraFormularioSolicitud("agenciaVinculacion"), formularioSolicitud.getAgenciaVinculacion())
+                    .formParam(estructuraFormularioSolicitud("numeroCredito"), numeroCredito)
+                    .formParam(estructuraFormularioSolicitud("cuota"), formularioSolicitud.getCuota())
+                    .formParam(estructuraFormularioSolicitud("llaveCredito"), numeroCredito)
+                    .formParam(estructuraFormularioSolicitud("numeroPaso"), numeroPaso)
+                    .formParam(estructuraFormularioSolicitud("pasoSolucion"), formularioSolicitud.getPasoSolucion())
+                    .formParam(estructuraFormularioSolicitud("perfil"), formularioSolicitud.getPerfil())
+                    .formParam(estructuraFormularioSolicitud("tasaInteres"), formularioSolicitud.getTasaInteres())
+                    .formParam(estructuraFormularioSolicitud("tasaMora"), formularioSolicitud.getTasaMora())
+                    .formParam(estructuraFormularioSolicitud("tasaMaxima"), formularioSolicitud.getTasaMaxima())
+                    .formParam(estructuraFormularioSolicitud("asesor"), formularioSolicitud.getAsesor())
+                    .formParam(estructuraFormularioSolicitud("ciudadCredito"), formularioSolicitud.getCiudadCredito())
+                    .formParam(estructuraFormularioSolicitud("calificacion"), formularioSolicitud.getCalificacion())
+                    .formParam(estructuraFormularioSolicitud("fecha"), formularioSolicitud.getFecha())
+                    .formParam(estructuraFormularioSolicitud("linea"), formularioSolicitud.getLinea())
+                    .formParam(estructuraFormularioSolicitud("monto"), formularioSolicitud.getMonto())
+                    .formParam(estructuraFormularioSolicitud("plazo"), formularioSolicitud.getPlazo())
+                    .formParam(estructuraFormularioSolicitud("tipoSolicitud"), formularioSolicitud.getTipoSolicitud())
+                    .formParam(estructuraFormularioSolicitud("vinculacion"), formularioSolicitud.getVinculacion())));
   }
 }

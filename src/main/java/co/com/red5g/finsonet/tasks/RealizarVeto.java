@@ -6,7 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.VetadosPage.BTN_NUEVO_VETO;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.LST_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.TXT_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.VetadosPage.TXT_DOCUMENTO_VETADOS;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.red5g.finsonet.models.Vetados;

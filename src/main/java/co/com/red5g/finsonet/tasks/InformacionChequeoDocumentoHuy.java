@@ -5,7 +5,6 @@ import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.con;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoHuy.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR_ACCION_HUY;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR_HUY;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_CERRAR_POP_UP;
@@ -17,8 +16,9 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

@@ -4,8 +4,8 @@ import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_ASIGNACION_HUY;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.CHK_ID_LLAMADAS_CREDIHUY;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_120;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 import net.serenitybdd.screenplay.Actor;

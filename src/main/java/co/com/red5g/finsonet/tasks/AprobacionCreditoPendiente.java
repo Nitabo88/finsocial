@@ -7,7 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_MOT
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_CONFIRMACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

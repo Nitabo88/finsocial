@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.EstructuraFormularioSolicitud.estructuraFormularioSolicitud;
 
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import io.restassured.http.ContentType;
@@ -29,7 +30,8 @@ public class SolicitudCreditoPaso7 implements Task {
                     requestSpecification
                         .contentType(ContentType.URLENC)
                         .header("Cookie", "PHPSESSID=" + cookie)
-                        .formParam("id_cred", numeroCredito)
-                        .formParam("numPaso", numeroPaso)));
+                        .formParam(estructuraFormularioSolicitud("numeroCredito"), numeroCredito)
+                        .formParam(estructuraFormularioSolicitud("numeroPaso"), numeroPaso))
+    );
   }
 }

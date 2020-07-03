@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.stepdefinitions;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder.con;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoLibranza.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

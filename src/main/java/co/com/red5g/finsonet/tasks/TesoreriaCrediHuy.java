@@ -8,9 +8,9 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_120;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

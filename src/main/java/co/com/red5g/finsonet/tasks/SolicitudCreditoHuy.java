@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoHuy.CEDULA_ACTOR;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoHuy.FECHA;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_COLUMNA_CHEQUEO_DOCUMENTO;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.Constantes.FECHA;
 
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.questions.ObtenerUrl;

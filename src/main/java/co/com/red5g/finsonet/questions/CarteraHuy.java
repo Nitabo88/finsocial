@@ -1,13 +1,13 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.tasks.InformacionCreditoHuy.CEDULA_ACTOR;
 import static co.com.red5g.finsonet.userinterfaces.CarteraPage.LST_FILA_CARTERA;
 import static co.com.red5g.finsonet.userinterfaces.CarteraPage.TXT_CEDULA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import net.serenitybdd.screenplay.Actor;

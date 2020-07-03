@@ -12,8 +12,8 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO_NEGACION;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 

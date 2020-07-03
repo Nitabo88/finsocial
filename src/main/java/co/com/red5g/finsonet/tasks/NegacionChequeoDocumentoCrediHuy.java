@@ -11,8 +11,8 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_AREA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_300;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

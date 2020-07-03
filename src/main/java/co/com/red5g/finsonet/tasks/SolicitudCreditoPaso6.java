@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.EstructuraFormularioSolicitud.estructuraFormularioSolicitud;
 
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import io.restassured.http.ContentType;
@@ -29,23 +30,23 @@ public class SolicitudCreditoPaso6 implements Task {
                     requestSpecification
                         .contentType(ContentType.URLENC)
                         .header("Cookie", "PHPSESSID=" + cookie)
-                        .formParam("id_cred", numeroCredito)
-                        .formParam("numPaso", numeroPaso)
-                        .formParam("cmbCiudadRefFam", formularioSolicitud.getCiudadRefFam())
-                        .formParam("cmbCiudadRefPer", formularioSolicitud.getCiudadRefPer())
-                        .formParam("dirFamiliar", formularioSolicitud.getDirFamiliar())
-                        .formParam("dirPersonal", formularioSolicitud.getDirPersonal())
-                        .formParam("cmbTipoProd", formularioSolicitud.getTipoProd())
-                        .formParam("ref_familiar_nombre", formularioSolicitud.getRefFamiliarNombre())
-                        .formParam("ref_familiar_par", formularioSolicitud.getRefFamiliarPar())
-                        .formParam("ref_familiar_tel", formularioSolicitud.getRefFamiliarTel())
-                        .formParam("ref_personal_nombre", formularioSolicitud.getRefPersonalNombre())
-                        .formParam("ref_personal_par", formularioSolicitud.getRefPersonalPar())
-                        .formParam("ref_personal_tel", formularioSolicitud.getRefPersonalTel())
-                        .formParam("txtCelRFam", formularioSolicitud.getCelRFam())
-                        .formParam("txtCelRPer", formularioSolicitud.getCelRPer())
-                        .formParam("txtNEntFin", formularioSolicitud.getNEntFin())
-                        .formParam("txtSucursal", formularioSolicitud.getSucursal()))
+                        .formParam(estructuraFormularioSolicitud("numeroCredito"), numeroCredito)
+                        .formParam(estructuraFormularioSolicitud("numeroPaso"), numeroPaso)
+                        .formParam(estructuraFormularioSolicitud("ciudadReferenciaFamiliar"), formularioSolicitud.getCiudadReferenciaFamiliar())
+                        .formParam(estructuraFormularioSolicitud("ciudadReferenciaPersonal"), formularioSolicitud.getCiudadReferenciaPersonal())
+                        .formParam(estructuraFormularioSolicitud("direccionReferenciaFamiliar"), formularioSolicitud.getDireccionReferenciaFamiliar())
+                        .formParam(estructuraFormularioSolicitud("direccionReferenciaPersonal"), formularioSolicitud.getDireccionReferenciaPersonal())
+                        .formParam(estructuraFormularioSolicitud("tipoProducto"), formularioSolicitud.getTipoProducto())
+                        .formParam(estructuraFormularioSolicitud("nombreReferenciaFamiliar"), formularioSolicitud.getNombreReferenciaFamiliar())
+                        .formParam(estructuraFormularioSolicitud("parentescoReferenciaFamiliar"), formularioSolicitud.getParentescoReferenciaFamiliar())
+                        .formParam(estructuraFormularioSolicitud("telefonoReferenciaFamiliar"), formularioSolicitud.getTelefonoReferenciaFamiliar())
+                        .formParam(estructuraFormularioSolicitud("nombreReferenciaPersonal"), formularioSolicitud.getNombreReferenciaPersonal())
+                        .formParam(estructuraFormularioSolicitud("parentescoReferenciaPersonal"), formularioSolicitud.getParentescoReferenciaPersonal())
+                        .formParam(estructuraFormularioSolicitud("telefonoReferenciaPersonal"), formularioSolicitud.getTelefonoReferenciaPersonal())
+                        .formParam(estructuraFormularioSolicitud("celularReferenciaFamiliar"), formularioSolicitud.getCelularReferenciaFamiliar())
+                        .formParam(estructuraFormularioSolicitud("celularReferenciaPersonal"), formularioSolicitud.getCelularReferenciaPersonal())
+                        .formParam(estructuraFormularioSolicitud("nitEmpresa"), formularioSolicitud.getNitEmpresa())
+                        .formParam(estructuraFormularioSolicitud("sucursal"), formularioSolicitud.getSucursal()))
     );
   }
 }

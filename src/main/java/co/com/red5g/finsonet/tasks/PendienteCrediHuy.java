@@ -6,9 +6,8 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_AREA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

@@ -9,8 +9,8 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LBL_POL
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_PAGADURIA;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_PERFIL_RIESGO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_CENTRO_COSTO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

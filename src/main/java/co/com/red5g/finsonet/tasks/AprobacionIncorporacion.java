@@ -14,9 +14,9 @@ import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_M
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_SELECCIONAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_DETALLE_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_FECHA_LIQUIDACION_CREDITO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static co.com.red5g.utils.string.UtileriaFechas.sumarRestarDias;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

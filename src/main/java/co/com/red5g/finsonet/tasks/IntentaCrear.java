@@ -5,7 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_NOMBRE_COMPLETO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

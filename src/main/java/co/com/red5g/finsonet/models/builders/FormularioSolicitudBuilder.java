@@ -7,307 +7,306 @@ import co.com.red5g.utils.Builder;
 
 public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> {
 
-  private String numPaso;
-  private String txtFecha;
-  private int perfil;
-  private String pasoSol;
-  private String txtAsesor;
-  private int txtCiuC;
-  private int txtCalf;
-  private String txtTSol;
-  private int a_vinculacion;
-  private String txtVin;
-  private int txtMonto;
-  private String txtLinea;
-  private int cuota;
-  private int txtPlaz;
-  private int tasaI;
-  private int tasaM;
-  private int tasaMax;
-  private String txtPApellido;
-  private String txtSApellido;
-  private String txtPNombre;
-  private String txtSNombre;
-  private int cmbTipoDoc;
-  private int txtLugarExp;
-  private String txtFechaExp;
-  private String txtFechaNac;
-  private String cmbSexo;
-  private int txtLugarNac;
-  private String cmbEstCivil;
-  private String txtPais;
-  private int cmbCiudad;
-  private String cmbTipoViv;
-  private int txtEstrato;
-  private String txtArrend;
-  private int txtTelArr;
-  private String dirCa;
-  private String txtBarrio;
-  private int txtTel;
-  private int txtCel;
-  private String cmbCorrespondencia;
-  private String txtEmail;
-  private int txtAnios;
-  private int txtMeses;
-  private String txtEps;
-  private int txtAdulto;
-  private int txtMenor18;
-  private int cmbNivelEst;
-  private int cmbProfesion;
-  private int rdOcupacion;
-  private String txtDeRenta;
-  private String txtDesicionCargo;
-  private int txtrecPublicos;
-  private int txtPerPubl;
-  private int txtEmpresa;
-  private String txtCargo;
-  private String txtFechaVinculacion;
-  private String dirTrabajo;
-  private int cmbCiudad2;
-  private String txtNitEmpresa;
-  private int txtTelEmpresa;
-  private int txtExt;
-  private int cmbTipoEmp;
-  private int cmbActEcon;
-  private int cmbTipoContrato;
-  private int activos_corrientes;
-  private int activos_fijos;
-  private int otros_activos;
-  private String cuales_activos;
-  private int total_activos;
-  private int pasivos_financieros;
-  private int pasivos_corrientes;
-  private int otros_pasivos;
-  private String cuales_pasivos;
-  private int total_pasivos;
-  private String txtTipoInm;
-  private int txtValorComInm;
-  private String txtHipotecado;
-  private String dirBienes;
-  private int txtSaldoCredInm;
-  private String txtVehCls;
-  private int txtValorComVeh;
-  private String txtMarcaVeh;
-  private String txtPlacaVeh;
-  private int txtSaldoCredVeh;
-  private String txtPrendaFavVeh;
-  private int txtSueldoFijo;
-  private int txtSalVarCom;
-  private int txtArrendamiento;
-  private int txtRenFin;
-  private int txtHonorarios;
-  private int txtOtrosIng;
-  private String txtCualesIng;
-  private int txtTIngresos;
-  private int txtArriendos;
-  private int txtGastosPer;
-  private int txtPresDfFin;
-  private int txtDeducciones;
-  private int txtTarjCred;
-  private int txtOtrosGastos;
-  private String txtCualesGastos;
-  private int txtTEgresos;
-  private int txtPagHip;
-  private int txtVlrComViv;
-  private String txtGustaVivir;
-  private int rdCompViv;
-  private int rdCupoExtra;
-  private String cmbRazondecredito;
-  private String razon;
-  private String txtPNConyugue;
-  private String txtSNConyugue;
-  private String txtPAConyugue;
-  private String txtSAConyugue;
-  private int cmbTipoDocCony;
-  private int txtDocConyugue;
-  private String txtFechaExpCon;
-  private String txtLugarExpCon;
-  private String txtFechaNacCon;
-  private String txtLugarNacCon;
-  private String cmbSexoCon;
-  private String txtLugTrabCon;
-  private int rdOcupacionCon;
-  private int txtDepEco;
-  private String txtFecIngr;
-  private String txtCargoCon;
-  private String txtTIngCon;
-  private String txtTEgrCon;
-  private String txtEpsConyuge;
-  private String cmbNivelEstCon;
-  private int txtCelCon;
-  private String ref_familiar_nombre;
-  private String ref_familiar_par;
-  private int ref_familiar_tel;
-  private int cmbCiudadRefFam;
-  private int txtCelRFam;
-  private String dirFamiliar;
-  private String ref_personal_nombre;
-  private String ref_personal_par;
-  private int ref_personal_tel;
-  private int cmbCiudadRefPer;
-  private long txtCelRPer;
-  private String dirPersonal;
-  private String txtNEntFin;
-  private String txtSucursal;
-  private int cmbTipoProd;
-  private String cmbSatisfaccionC;
-  private String txtPorqueSatic;
-  private String cmbConocioFinsocial;
-  private String txtOtroConocer;
-  private int rdtransaccion_ext;
-  private int rdCuentasExt;
-
+  private String numeroPaso;
+  private String fecha;
+  private String perfil;
+  private String pasoSolucion;
+  private String asesor;
+  private String ciudadCredito;
+  private String calificacion;
+  private String tipoSolicitud;
+  private String agenciaVinculacion;
+  private String vinculacion;
+  private String monto;
+  private String linea;
+  private String cuota;
+  private String plazo;
+  private String tasaInteres;
+  private String tasaMora;
+  private String tasaMaxima;
+  private String primerApellido;
+  private String segundoApellido;
+  private String primerNombre;
+  private String segundoNombre;
+  private String tipoDocumento;
+  private String lugarExpedicion;
+  private String fechaExpedicion;
+  private String fechaNacimiento;
+  private String sexo;
+  private String lugarNacimiento;
+  private String estadoCivil;
+  private String pais;
+  private String ciudadDepartamento;
+  private String tipoVivienda;
+  private String estrato;
+  private String arrendatario;
+  private String telefonoArrendador;
+  private String direccionResidencia;
+  private String barrio;
+  private String telefonoResidencia;
+  private String celular;
+  private String correspondenciaA;
+  private String email;
+  private String anios;
+  private String meses;
+  private String eps;
+  private String adulto;
+  private String menor18;
+  private String nivelEstudio;
+  private String profesion;
+  private String ocupacion;
+  private String declaraRenta;
+  private String decisionCargo;
+  private String recursosPublicos;
+  private String personajePublico;
+  private String empresa;
+  private String cargo;
+  private String fechaVinculacion;
+  private String direccionTrabajo;
+  private String ciudadTrabajo;
+  private String nitEmpresa;
+  private String telefonoEmpresa;
+  private String extension;
+  private String tipoEmpresa;
+  private String actividadEconomica;
+  private String tipoContrato;
+  private String activosCorrientes;
+  private String activosFijos;
+  private String otrosActivos;
+  private String cualesActivos;
+  private String totalActivos;
+  private String pasivosFinancieros;
+  private String pasivosCorrientes;
+  private String otrosPasivos;
+  private String cualesPasivos;
+  private String totalPasivos;
+  private String tipoInmueble;
+  private String valorComercialInmueble;
+  private String hipotecadoA;
+  private String direccion;
+  private String saldoCreditoInmueble;
+  private String vehiculoClase;
+  private String valorComercialVehiculo;
+  private String marcaModelo;
+  private String placa;
+  private String saldoCreditoVehiculo;
+  private String prendaAFavor;
+  private String salarioFijo;
+  private String salarioVariableComisiones;
+  private String arrendamiento;
+  private String rendimientosFinancieros;
+  private String honorarios;
+  private String otrosIngresos;
+  private String cualesIngresos;
+  private String totalIngresos;
+  private String arriendos;
+  private String gastosPersonales;
+  private String prestamosDiferentes;
+  private String deducciones;
+  private String tarjetaCredito;
+  private String otrosGastos;
+  private String cualesGastos;
+  private String totalEgresos;
+  private String pagoHipoteca;
+  private String valorComercialVivienda;
+  private String dondeVivir;
+  private String quiereComprar;
+  private String cupoExtra;
+  private String razonCredito;
+  private String detalleRazon;
+  private String primerNombreConyugue;
+  private String segundoNombreConyugue;
+  private String primerApellidoConyugue;
+  private String segundoApellidoConyugue;
+  private String tipoDocumentoConyugue;
+  private String documentoConyugue;
+  private String fechaExpedicionConyugue;
+  private String lugarExpedicionConyugue;
+  private String fechaNacimientoConyugue;
+  private String lugarNacimientoConyugue;
+  private String sexoConyugue;
+  private String lugarTrabajoConyugue;
+  private String ocupacionConyugue;
+  private String dependenciaEconomica;
+  private String fechaIngreso;
+  private String cargoConyugue;
+  private String totalIngresosConyugue;
+  private String totalEgresosConyugue;
+  private String epsConyugue;
+  private String nivelEstudioConyugue;
+  private String celularConyugue;
+  private String nombreReferenciaFamiliar;
+  private String parentescoReferenciaFamiliar;
+  private String telefonoReferenciaFamiliar;
+  private String ciudadReferenciaFamiliar;
+  private String celularReferenciaFamiliar;
+  private String direccionReferenciaFamiliar;
+  private String nombreReferenciaPersonal;
+  private String parentescoReferenciaPersonal;
+  private String telefonoReferenciaPersonal;
+  private String celularReferenciaPersonal;
+  private String direccionPersonal;
+  private String entidadFinanciera;
+  private String sucursal;
+  private String tipoProducto;
+  private String calificacionAtencion;
+  private String razonCalificacion;
+  private String conocioFinsocial;
+  private String razonConocio;
+  private String monedaExtranjera;
+  private String transaccionMonedaExtranjera;
+  private String cuentaExterior;
 
   private FormularioSolicitudBuilder() {
-    this.numPaso = "";
-    this.txtFecha = "";
-    this.perfil = 0;
-    this.pasoSol = "";
-    this.txtAsesor = "";
-    this.txtCiuC = 0;
-    this.txtCalf = 0;
-    this.txtTSol = "";
-    this.a_vinculacion = 0;
-    this.txtVin = "";
-    this.txtMonto = 0;
-    this.txtLinea = "";
-    this.cuota = 0;
-    this.txtPlaz = 0;
-    this.tasaI = 0;
-    this.tasaM = 0;
-    this.tasaMax = 0;
-    this.txtPApellido = "";
-    this.txtSApellido = "";
-    this.txtPNombre = "";
-    this.txtSNombre = "";
-    this.cmbTipoDoc = 0;
-    this.txtLugarExp = 0;
-    this.txtFechaExp = "";
-    this.txtFechaNac = "";
-    this.cmbSexo = "";
-    this.txtLugarNac = 0;
-    this.cmbEstCivil = "";
-    this.txtPais = "";
-    this.cmbCiudad = 0;
-    this.cmbTipoViv = "";
-    this.txtEstrato = 0;
-    this.txtArrend = "";
-    this.txtTelArr = 0;
-    this.dirCa = "";
-    this.txtBarrio = "";
-    this.txtTel = 0;
-    this.txtCel = 0;
-    this.cmbCorrespondencia = "";
-    this.txtEmail = "";
-    this.txtAnios = 0;
-    this.txtMeses = 0;
-    this.txtEps = "";
-    this.txtAdulto = 0;
-    this.txtMenor18 = 0;
-    this.cmbNivelEst = 0;
-    this.cmbProfesion = 0;
-    this.rdOcupacion = 0;
-    this.txtDeRenta = "";
-    this.txtDesicionCargo = "";
-    this.txtrecPublicos = 0;
-    this.txtPerPubl = 0;
-    this.txtEmpresa = 0;
-    this.txtCargo = "";
-    this.txtFechaVinculacion = "";
-    this.dirTrabajo = "";
-    this.cmbCiudad2 = 0;
-    this.txtNitEmpresa = "";
-    this.txtTelEmpresa = 0;
-    this.txtExt = 0;
-    this.cmbTipoEmp = 0;
-    this.cmbActEcon = 0;
-    this.cmbTipoContrato = 0;
-    this.activos_corrientes = 0;
-    this.activos_fijos = 0;
-    this.otros_activos = 0;
-    this.cuales_activos = "";
-    this.total_activos = 0;
-    this.pasivos_financieros = 0;
-    this.pasivos_corrientes = 0;
-    this.otros_pasivos = 0;
-    this.cuales_pasivos = "";
-    this.total_pasivos = 0;
-    this.txtTipoInm = "";
-    this.txtValorComInm = 0;
-    this.txtHipotecado = "";
-    this.dirBienes = "";
-    this.txtSaldoCredInm = 0;
-    this.txtVehCls = "";
-    this.txtValorComVeh = 0;
-    this.txtMarcaVeh = "";
-    this.txtPlacaVeh = "";
-    this.txtSaldoCredVeh = 0;
-    this.txtPrendaFavVeh = "";
-    this.txtSueldoFijo = 0;
-    this.txtSalVarCom = 0;
-    this.txtArrendamiento = 0;
-    this.txtRenFin = 0;
-    this.txtHonorarios = 0;
-    this.txtOtrosIng = 0;
-    this.txtCualesIng = "";
-    this.txtTIngresos = 0;
-    this.txtArriendos = 0;
-    this.txtGastosPer = 0;
-    this.txtPresDfFin = 0;
-    this.txtDeducciones = 0;
-    this.txtTarjCred = 0;
-    this.txtOtrosGastos = 0;
-    this.txtCualesGastos = "";
-    this.txtTEgresos = 0;
-    this.txtPagHip = 0;
-    this.txtVlrComViv = 0;
-    this.txtGustaVivir = "";
-    this.rdCompViv = 0;
-    this.rdCupoExtra = 0;
-    this.cmbRazondecredito = "";
-    this.razon = "";
-    this.txtPNConyugue = "";
-    this.txtSNConyugue = "";
-    this.txtPAConyugue = "";
-    this.txtSAConyugue = "";
-    this.cmbTipoDocCony = 0;
-    this.txtDocConyugue = 0;
-    this.txtFechaExpCon = "";
-    this.txtLugarExpCon = "";
-    this.txtFechaNacCon = "";
-    this.txtLugarNacCon = "";
-    this.cmbSexoCon = "";
-    this.txtLugTrabCon = "";
-    this.rdOcupacionCon = 0;
-    this.txtDepEco = 0;
-    this.txtFecIngr = "";
-    this.txtCargoCon = "";
-    this.txtTIngCon = "";
-    this.txtTEgrCon = "";
-    this.txtEpsConyuge = "";
-    this.cmbNivelEstCon = "";
-    this.txtCelCon = 0;
-    this.ref_familiar_nombre = "";
-    this.ref_familiar_par = "";
-    this.ref_familiar_tel = 0;
-    this.cmbCiudadRefFam = 0;
-    this.txtCelRFam = 0;
-    this.dirFamiliar = "";
-    this.ref_personal_nombre = "";
-    this.ref_personal_par = "";
-    this.ref_personal_tel = 0;
-    this.cmbCiudadRefPer = 0;
-    this.txtCelRPer = 0;
-    this.dirPersonal = "";
-    this.txtNEntFin = "";
-    this.txtSucursal = "";
-    this.cmbTipoProd = 0;
-    this.cmbSatisfaccionC = "";
-    this.txtPorqueSatic = "";
-    this.cmbConocioFinsocial = "";
-    this.txtOtroConocer = "";
-    this.rdtransaccion_ext = 0;
-    this.rdCuentasExt = 0;
+    this.numeroPaso = "";
+    this.fecha = "";
+    this.perfil = "";
+    this.pasoSolucion = "";
+    this.asesor = "";
+    this.ciudadCredito = "";
+    this.calificacion = "";
+    this.tipoSolicitud = "";
+    this.agenciaVinculacion = "";
+    this.vinculacion = "";
+    this.monto = "";
+    this.linea = "";
+    this.cuota = "";
+    this.plazo = "";
+    this.tasaInteres = "";
+    this.tasaMora = "";
+    this.tasaMaxima = "";
+    this.primerApellido = "";
+    this.segundoApellido = "";
+    this.primerNombre = "";
+    this.segundoNombre = "";
+    this.tipoDocumento = "";
+    this.lugarExpedicion = "";
+    this.fechaExpedicion = "";
+    this.fechaNacimiento = "";
+    this.sexo = "";
+    this.lugarNacimiento = "";
+    this.estadoCivil = "";
+    this.pais = "";
+    this.ciudadDepartamento = "";
+    this.tipoVivienda = "";
+    this.estrato = "";
+    this.arrendatario = "";
+    this.telefonoArrendador = "";
+    this.direccionResidencia = "";
+    this.barrio = "";
+    this.telefonoResidencia = "";
+    this.celular = "";
+    this.correspondenciaA = "";
+    this.email = "";
+    this.anios = "";
+    this.meses = "";
+    this.eps = "";
+    this.adulto = "";
+    this.menor18 = "";
+    this.nivelEstudio = "";
+    this.profesion = "";
+    this.ocupacion = "";
+    this.declaraRenta = "";
+    this.decisionCargo = "";
+    this.recursosPublicos = "";
+    this.personajePublico = "";
+    this.empresa = "";
+    this.cargo = "";
+    this.fechaVinculacion = "";
+    this.direccionTrabajo = "";
+    this.ciudadTrabajo = "";
+    this.nitEmpresa = "";
+    this.telefonoEmpresa = "";
+    this.extension = "";
+    this.tipoEmpresa = "";
+    this.actividadEconomica = "";
+    this.tipoContrato = "";
+    this.activosCorrientes = "0";
+    this.activosFijos = "0";
+    this.otrosActivos = "0";
+    this.cualesActivos = "";
+    this.totalActivos = "0";
+    this.pasivosFinancieros = "0";
+    this.pasivosCorrientes = "0";
+    this.otrosPasivos = "0";
+    this.cualesPasivos = "";
+    this.totalPasivos = "0";
+    this.tipoInmueble = "";
+    this.valorComercialInmueble = "0";
+    this.hipotecadoA = "";
+    this.direccion = "";
+    this.saldoCreditoInmueble = "0";
+    this.vehiculoClase = "";
+    this.valorComercialVehiculo = "0";
+    this.marcaModelo = "";
+    this.placa = "";
+    this.saldoCreditoVehiculo = "0";
+    this.prendaAFavor = "";
+    this.salarioFijo = "0";
+    this.salarioVariableComisiones = "0";
+    this.arrendamiento = "0";
+    this.rendimientosFinancieros = "0";
+    this.honorarios = "0";
+    this.otrosIngresos = "0";
+    this.cualesIngresos = "";
+    this.totalIngresos = "0";
+    this.arriendos = "0";
+    this.gastosPersonales = "0";
+    this.prestamosDiferentes = "0";
+    this.deducciones = "0";
+    this.tarjetaCredito = "0";
+    this.otrosGastos = "0";
+    this.cualesGastos = "";
+    this.totalEgresos = "0";
+    this.pagoHipoteca = "0";
+    this.valorComercialVivienda = "0";
+    this.dondeVivir = "";
+    this.quiereComprar = "0";
+    this.cupoExtra = "0";
+    this.razonCredito = "";
+    this.detalleRazon = "";
+    this.primerNombreConyugue = "";
+    this.segundoNombreConyugue = "";
+    this.primerApellidoConyugue = "";
+    this.segundoApellidoConyugue = "";
+    this.tipoDocumentoConyugue = "0";
+    this.documentoConyugue = "0";
+    this.fechaExpedicionConyugue = "";
+    this.lugarExpedicionConyugue = "";
+    this.fechaNacimientoConyugue = "";
+    this.lugarNacimientoConyugue = "";
+    this.sexoConyugue = "";
+    this.lugarTrabajoConyugue = "";
+    this.ocupacionConyugue = "0";
+    this.dependenciaEconomica = "0";
+    this.fechaIngreso = "";
+    this.cargoConyugue = "";
+    this.totalIngresosConyugue = "";
+    this.totalEgresosConyugue = "";
+    this.epsConyugue = "";
+    this.nivelEstudioConyugue = "";
+    this.celularConyugue = "0";
+    this.nombreReferenciaFamiliar = "";
+    this.parentescoReferenciaFamiliar = "";
+    this.telefonoReferenciaFamiliar = "0";
+    this.ciudadReferenciaFamiliar = "0";
+    this.celularReferenciaFamiliar = "0";
+    this.direccionReferenciaFamiliar = "";
+    this.nombreReferenciaPersonal = "";
+    this.parentescoReferenciaPersonal = "";
+    this.telefonoReferenciaPersonal = "0";
+    this.celularReferenciaPersonal = "0";
+    this.direccionPersonal = "0";
+    this.entidadFinanciera = "";
+    this.sucursal = "";
+    this.tipoProducto = "";
+    this.calificacionAtencion = "0";
+    this.razonCalificacion = "";
+    this.conocioFinsocial = "";
+    this.razonConocio = "";
+    this.monedaExtranjera = "";
+    this.transaccionMonedaExtranjera = "0";
+    this.cuentaExterior = "0";
   }
 
   public static FormularioSolicitudBuilder con() {
@@ -320,1245 +319,1245 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
   }
 
   private FormularioSolicitudBuilder numeroPaso(String numPaso) {
-    this.numPaso = numPaso;
+    this.numeroPaso = numPaso;
     return this;
   }
 
   private FormularioSolicitudBuilder fecha() {
-    this.txtFecha = fechaActual();
+    this.fecha = fechaActual();
     return this;
   }
 
-  private FormularioSolicitudBuilder perfil(int perfil) {
+  private FormularioSolicitudBuilder perfil(String perfil) {
     this.perfil = perfil;
     return this;
   }
 
   private FormularioSolicitudBuilder pasoSolicitud(String pasoSol) {
-    this.pasoSol = pasoSol;
+    this.pasoSolucion = pasoSol;
     return this;
   }
 
   private FormularioSolicitudBuilder asesor() {
-    this.txtAsesor = "ORLANDO NICOLAS CHINCHILLA VEGA";
+    this.asesor = "ORLANDO NICOLAS CHINCHILLA VEGA";
     return this;
   }
 
-  private FormularioSolicitudBuilder ciudadSolicitud(int txtCiuC) {
-    this.txtCiuC = txtCiuC;
+  private FormularioSolicitudBuilder ciudadSolicitud(String txtCiuC) {
+    this.ciudadCredito = txtCiuC;
     return this;
   }
 
-  private FormularioSolicitudBuilder calificacion(int txtCalf) {
-    this.txtCalf = txtCalf;
+  private FormularioSolicitudBuilder calificacion(String txtCalf) {
+    this.calificacion = txtCalf;
     return this;
   }
 
   private FormularioSolicitudBuilder tipoSolicitud(String txtTSol) {
-    this.txtTSol = txtTSol;
+    this.tipoSolicitud = txtTSol;
     return this;
   }
 
-  private FormularioSolicitudBuilder agenciaVinculacion(int a_vinculacion) {
-    this.a_vinculacion = a_vinculacion;
+  private FormularioSolicitudBuilder agenciaVinculacion(String a_vinculacion) {
+    this.agenciaVinculacion = a_vinculacion;
     return this;
   }
 
   private FormularioSolicitudBuilder vinculacion(String txtVin) {
-    this.txtVin = txtVin;
+    this.vinculacion = txtVin;
     return this;
   }
 
   private FormularioSolicitudBuilder linea(String txtLinea) {
-    this.txtLinea = txtLinea;
+    this.linea = txtLinea;
     return this;
   }
 
   private FormularioSolicitudBuilder primerApellido(String txtPApellido) {
-    this.txtPApellido = txtPApellido;
+    this.primerApellido = txtPApellido;
     return this;
   }
 
   private FormularioSolicitudBuilder segundoApellido(String txtSApellido) {
-    this.txtSApellido = txtSApellido;
+    this.segundoApellido = txtSApellido;
     return this;
   }
 
   private FormularioSolicitudBuilder primerNombre(String txtPNombre) {
-    this.txtPNombre = txtPNombre;
+    this.primerNombre = txtPNombre;
     return this;
   }
 
-  private FormularioSolicitudBuilder tipoDocumento(int cmbTipoDoc) {
-    this.cmbTipoDoc = cmbTipoDoc;
+  private FormularioSolicitudBuilder tipoDocumento(String cmbTipoDoc) {
+    this.tipoDocumento = cmbTipoDoc;
     return this;
   }
 
-  private FormularioSolicitudBuilder lugarExpedicion(int txtLugarExp) {
-    this.txtLugarExp = txtLugarExp;
+  private FormularioSolicitudBuilder lugarExpedicion(String txtLugarExp) {
+    this.lugarExpedicion = txtLugarExp;
     return this;
   }
 
   private FormularioSolicitudBuilder fechaExpedicion(String txtFechaExp) {
-    this.txtFechaExp = txtFechaExp;
+    this.fechaExpedicion = txtFechaExp;
     return this;
   }
 
   private FormularioSolicitudBuilder fechaNacimiento(String txtFechaNac) {
-    this.txtFechaNac = txtFechaNac;
+    this.fechaNacimiento = txtFechaNac;
     return this;
   }
 
   private FormularioSolicitudBuilder sexo(String cmbSexo) {
-    this.cmbSexo = cmbSexo;
+    this.sexo = cmbSexo;
     return this;
   }
 
-  private FormularioSolicitudBuilder lugarNacimiento(int txtLugarNac) {
-    this.txtLugarNac = txtLugarNac;
+  private FormularioSolicitudBuilder lugarNacimiento(String txtLugarNac) {
+    this.lugarNacimiento = txtLugarNac;
     return this;
   }
 
   private FormularioSolicitudBuilder estadoCivil(String cmbEstCivil) {
-    this.cmbEstCivil = cmbEstCivil;
+    this.estadoCivil = cmbEstCivil;
     return this;
   }
 
   private FormularioSolicitudBuilder pais(String txtPais) {
-    this.txtPais = txtPais;
+    this.pais = txtPais;
     return this;
   }
 
-  private FormularioSolicitudBuilder ciudadResidencia(int cmbCiudad) {
-    this.cmbCiudad = cmbCiudad;
+  private FormularioSolicitudBuilder ciudadResidencia(String cmbCiudad) {
+    this.ciudadDepartamento = cmbCiudad;
     return this;
   }
 
   private FormularioSolicitudBuilder tipoVivienda(String cmbTipoViv) {
-    this.cmbTipoViv = cmbTipoViv;
+    this.tipoVivienda = cmbTipoViv;
     return this;
   }
 
-  private FormularioSolicitudBuilder estrato(int txtEstrato) {
-    this.txtEstrato = txtEstrato;
+  private FormularioSolicitudBuilder estrato(String txtEstrato) {
+    this.estrato = txtEstrato;
     return this;
   }
 
   private FormularioSolicitudBuilder nombreArrendatario(String txtArrend) {
-    this.txtArrend = txtArrend;
+    this.arrendatario = txtArrend;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoArrendador(int txtTelArr) {
-    this.txtTelArr = txtTelArr;
+  private FormularioSolicitudBuilder telefonoArrendador(String txtTelArr) {
+    this.telefonoArrendador = txtTelArr;
     return this;
   }
 
   private FormularioSolicitudBuilder direccionResidencia(String dirCa) {
-    this.dirCa = dirCa;
+    this.direccionResidencia = dirCa;
     return this;
   }
 
   private FormularioSolicitudBuilder barrio(String txtBarrio) {
-    this.txtBarrio = txtBarrio;
+    this.barrio = txtBarrio;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoResidencia(int txtTel) {
-    this.txtTel = txtTel;
+  private FormularioSolicitudBuilder telefonoResidencia(String txtTel) {
+    this.telefonoResidencia = txtTel;
     return this;
   }
 
-  private FormularioSolicitudBuilder celular(int txtCel) {
-    this.txtCel = txtCel;
+  private FormularioSolicitudBuilder celular(String txtCel) {
+    this.celular = txtCel;
     return this;
   }
 
   private FormularioSolicitudBuilder correspondenciaA(String cmbCorrespondencia) {
-    this.cmbCorrespondencia = cmbCorrespondencia;
+    this.correspondenciaA = cmbCorrespondencia;
     return this;
   }
 
   private FormularioSolicitudBuilder email(String txtEmail) {
-    this.txtEmail = txtEmail;
+    this.email = txtEmail;
     return this;
   }
 
-  private FormularioSolicitudBuilder tiempoResidenciaAnios(int txtAnios) {
-    this.txtAnios = txtAnios;
+  private FormularioSolicitudBuilder tiempoResidenciaAnios(String txtAnios) {
+    this.anios = txtAnios;
     return this;
   }
 
-  private FormularioSolicitudBuilder tiempoResidenciaMeses(int txtMeses) {
-    this.txtMeses = txtMeses;
+  private FormularioSolicitudBuilder tiempoResidenciaMeses(String txtMeses) {
+    this.meses = txtMeses;
     return this;
   }
 
   private FormularioSolicitudBuilder nombreEps(String txtEps) {
-    this.txtEps = txtEps;
+    this.eps = txtEps;
     return this;
   }
 
-  private FormularioSolicitudBuilder adultosACargo(int txtAdulto) {
-    this.txtAdulto = txtAdulto;
+  private FormularioSolicitudBuilder adultosACargo(String txtAdulto) {
+    this.adulto = txtAdulto;
     return this;
   }
 
-  private FormularioSolicitudBuilder menoresACargo(int txtMenor18) {
-    this.txtMenor18 = txtMenor18;
+  private FormularioSolicitudBuilder menoresACargo(String txtMenor18) {
+    this.menor18 = txtMenor18;
     return this;
   }
 
-  private FormularioSolicitudBuilder nivelEstudio(int cmbNivelEst) {
-    this.cmbNivelEst = cmbNivelEst;
+  private FormularioSolicitudBuilder nivelEstudio(String cmbNivelEst) {
+    this.nivelEstudio = cmbNivelEst;
     return this;
   }
 
-  private FormularioSolicitudBuilder profesion(int cmbProfesion) {
-    this.cmbProfesion = cmbProfesion;
+  private FormularioSolicitudBuilder profesion(String cmbProfesion) {
+    this.profesion = cmbProfesion;
     return this;
   }
 
-  private FormularioSolicitudBuilder ocupacion(int rdOcupacion) {
-    this.rdOcupacion = rdOcupacion;
+  private FormularioSolicitudBuilder ocupacion(String rdOcupacion) {
+    this.ocupacion = rdOcupacion;
     return this;
   }
 
   private FormularioSolicitudBuilder renta(String txtDeRenta) {
-    this.txtDeRenta = txtDeRenta;
+    this.declaraRenta = txtDeRenta;
     return this;
   }
 
   private FormularioSolicitudBuilder decisionCargo(String txtDesicionCargo) {
-    this.txtDesicionCargo = txtDesicionCargo;
+    this.decisionCargo = txtDesicionCargo;
     return this;
   }
 
-  private FormularioSolicitudBuilder recursosPublicos(int txtrecPublicos) {
-    this.txtrecPublicos = txtrecPublicos;
+  private FormularioSolicitudBuilder recursosPublicos(String txtrecPublicos) {
+    this.recursosPublicos = txtrecPublicos;
     return this;
   }
 
-  private FormularioSolicitudBuilder personajePublico(int txtPerPubl) {
-    this.txtPerPubl = txtPerPubl;
+  private FormularioSolicitudBuilder personajePublico(String txtPerPubl) {
+    this.personajePublico = txtPerPubl;
     return this;
   }
 
-  private FormularioSolicitudBuilder nombreEmpresa(int txtEmpresa) {
-    this.txtEmpresa = txtEmpresa;
+  private FormularioSolicitudBuilder nombreEmpresa(String txtEmpresa) {
+    this.empresa = txtEmpresa;
     return this;
   }
 
   private FormularioSolicitudBuilder cargo(String txtCargo) {
-    this.txtCargo = txtCargo;
+    this.cargo = txtCargo;
     return this;
   }
 
   private FormularioSolicitudBuilder fechaVinculacion(String txtFechaVinculacion) {
-    this.txtFechaVinculacion = txtFechaVinculacion;
+    this.fechaVinculacion = txtFechaVinculacion;
     return this;
   }
 
   private FormularioSolicitudBuilder direccionTrabajo(String dirTrabajo) {
-    this.dirTrabajo = dirTrabajo;
+    this.direccionTrabajo = dirTrabajo;
     return this;
   }
 
-  private FormularioSolicitudBuilder ciudadTrabajo(int cmbCiudad2) {
-    this.cmbCiudad2 = cmbCiudad2;
+  private FormularioSolicitudBuilder ciudadTrabajo(String cmbCiudad2) {
+    this.ciudadTrabajo = cmbCiudad2;
     return this;
   }
 
   private FormularioSolicitudBuilder nitEmpresa(String txtNitEmpresa) {
-    this.txtNitEmpresa = txtNitEmpresa;
+    this.nitEmpresa = txtNitEmpresa;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoTrabajo(int txtTelEmpresa) {
-    this.txtTelEmpresa = txtTelEmpresa;
+  private FormularioSolicitudBuilder telefonoTrabajo(String txtTelEmpresa) {
+    this.telefonoEmpresa = txtTelEmpresa;
     return this;
   }
 
-  private FormularioSolicitudBuilder extensionTrabajo(int txtExt) {
-    this.txtExt = txtExt;
+  private FormularioSolicitudBuilder extensionTrabajo(String txtExt) {
+    this.extension = txtExt;
     return this;
   }
 
-  private FormularioSolicitudBuilder tipoEmpresa(int cmbTipoEmp) {
-    this.cmbTipoEmp = cmbTipoEmp;
+  private FormularioSolicitudBuilder tipoEmpresa(String cmbTipoEmp) {
+    this.tipoEmpresa = cmbTipoEmp;
     return this;
   }
 
-  private FormularioSolicitudBuilder actividadEconomica(int cmbActEcon) {
-    this.cmbActEcon = cmbActEcon;
+  private FormularioSolicitudBuilder actividadEconomica(String cmbActEcon) {
+    this.actividadEconomica = cmbActEcon;
     return this;
   }
 
-  private FormularioSolicitudBuilder tipoContrato(int cmbTipoContrato) {
-    this.cmbTipoContrato = cmbTipoContrato;
+  private FormularioSolicitudBuilder tipoContrato(String cmbTipoContrato) {
+    this.tipoContrato = cmbTipoContrato;
     return this;
   }
 
-  private FormularioSolicitudBuilder activosCorrientes(int activos_corrientes) {
-    this.activos_corrientes = activos_corrientes;
+  private FormularioSolicitudBuilder activosCorrientes(String activos_corrientes) {
+    this.activosCorrientes = activos_corrientes;
     return this;
   }
 
-  private FormularioSolicitudBuilder activosFijos(int activos_fijos) {
-    this.activos_fijos = activos_fijos;
+  private FormularioSolicitudBuilder activosFijos(String activos_fijos) {
+    this.activosFijos = activos_fijos;
     return this;
   }
 
-  private FormularioSolicitudBuilder totalActivos(int total_activos) {
-    this.total_activos = total_activos;
+  private FormularioSolicitudBuilder totalActivos(String total_activos) {
+    this.totalActivos = total_activos;
     return this;
   }
 
-  private FormularioSolicitudBuilder pasivosFinancieros(int pasivos_financieros) {
-    this.pasivos_financieros = pasivos_financieros;
+  private FormularioSolicitudBuilder pasivosFinancieros(String pasivos_financieros) {
+    this.pasivosFinancieros = pasivos_financieros;
     return this;
   }
 
-  private FormularioSolicitudBuilder pasivosCorrientes(int pasivos_corrientes) {
-    this.pasivos_corrientes = pasivos_corrientes;
+  private FormularioSolicitudBuilder pasivosCorrientes(String pasivos_corrientes) {
+    this.pasivosCorrientes = pasivos_corrientes;
     return this;
   }
 
-  private FormularioSolicitudBuilder totalPasivos(int total_pasivos) {
-    this.total_pasivos = total_pasivos;
+  private FormularioSolicitudBuilder totalPasivos(String total_pasivos) {
+    this.totalPasivos = total_pasivos;
     return this;
   }
 
   private FormularioSolicitudBuilder tipoVehiculo(String txtVehCls) {
-    this.txtVehCls = txtVehCls;
+    this.vehiculoClase = txtVehCls;
     return this;
   }
 
-  private FormularioSolicitudBuilder valorComercialVehiculo(int txtValorComVeh) {
-    this.txtValorComVeh = txtValorComVeh;
+  private FormularioSolicitudBuilder valorComercialVehiculo(String txtValorComVeh) {
+    this.valorComercialVehiculo = txtValorComVeh;
     return this;
   }
 
   private FormularioSolicitudBuilder marcaVehiculo(String txtMarcaVeh) {
-    this.txtMarcaVeh = txtMarcaVeh;
+    this.marcaModelo = txtMarcaVeh;
     return this;
   }
 
   private FormularioSolicitudBuilder placaVehiculo(String txtPlacaVeh) {
-    this.txtPlacaVeh = txtPlacaVeh;
+    this.placa = txtPlacaVeh;
     return this;
   }
 
-  private FormularioSolicitudBuilder saldoCreditoVehiculo(int txtSaldoCredVeh) {
-    this.txtSaldoCredVeh = txtSaldoCredVeh;
+  private FormularioSolicitudBuilder saldoCreditoVehiculo(String txtSaldoCredVeh) {
+    this.saldoCreditoVehiculo = txtSaldoCredVeh;
     return this;
   }
 
-  private FormularioSolicitudBuilder sueldoFijo(int txtSueldoFijo) {
-    this.txtSueldoFijo = txtSueldoFijo;
+  private FormularioSolicitudBuilder sueldoFijo(String txtSueldoFijo) {
+    this.salarioFijo = txtSueldoFijo;
     return this;
   }
 
-  private FormularioSolicitudBuilder totalIngresos(int txtTIngresos) {
-    this.txtTIngresos = txtTIngresos;
+  private FormularioSolicitudBuilder totalIngresos(String txtTIngresos) {
+    this.totalIngresos = txtTIngresos;
     return this;
   }
 
-  private FormularioSolicitudBuilder comprarVivienda(int rdCompViv) {
-    this.rdCompViv = rdCompViv;
+  private FormularioSolicitudBuilder comprarVivienda(String rdCompViv) {
+    this.quiereComprar = rdCompViv;
     return this;
   }
 
-  private FormularioSolicitudBuilder cupoExtra(int rdCupoExtra) {
-    this.rdCupoExtra = rdCupoExtra;
+  private FormularioSolicitudBuilder cupoExtra(String rdCupoExtra) {
+    this.cupoExtra = rdCupoExtra;
     return this;
   }
 
   private FormularioSolicitudBuilder razonCredito(String cmbRazondecredito) {
-    this.cmbRazondecredito = cmbRazondecredito;
+    this.razonCredito = cmbRazondecredito;
     return this;
   }
 
   private FormularioSolicitudBuilder razonOtros(String razon) {
-    this.razon = razon;
+    this.detalleRazon = razon;
     return this;
   }
 
-  private FormularioSolicitudBuilder tipoDocumentoConyugue(int cmbTipoDocCony) {
-    this.cmbTipoDocCony = cmbTipoDocCony;
+  private FormularioSolicitudBuilder tipoDocumentoConyugue(String cmbTipoDocCony) {
+    this.tipoDocumentoConyugue = cmbTipoDocCony;
     return this;
   }
 
-  private FormularioSolicitudBuilder ocupacionConyugue(int rdOcupacionCon) {
-    this.rdOcupacionCon = rdOcupacionCon;
+  private FormularioSolicitudBuilder ocupacionConyugue(String rdOcupacionCon) {
+    this.ocupacionConyugue = rdOcupacionCon;
     return this;
   }
 
-  private FormularioSolicitudBuilder dependenciaEconomicaConyugue(int txtDepEco) {
-    this.txtDepEco = txtDepEco;
+  private FormularioSolicitudBuilder dependenciaEconomicaConyugue(String txtDepEco) {
+    this.dependenciaEconomica = txtDepEco;
     return this;
   }
 
   private FormularioSolicitudBuilder nombreReferenciaFamiliar(String ref_familiar_nombre) {
-    this.ref_familiar_nombre = ref_familiar_nombre;
+    this.nombreReferenciaFamiliar = ref_familiar_nombre;
     return this;
   }
 
   private FormularioSolicitudBuilder parentesco(String ref_familiar_par) {
-    this.ref_familiar_par = ref_familiar_par;
+    this.parentescoReferenciaFamiliar = ref_familiar_par;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoReferencia(int ref_familiar_tel) {
-    this.ref_familiar_tel = ref_familiar_tel;
+  private FormularioSolicitudBuilder telefonoReferencia(String ref_familiar_tel) {
+    this.telefonoReferenciaFamiliar = ref_familiar_tel;
     return this;
   }
 
-  private FormularioSolicitudBuilder ciudadReferenciaFamiliar(int cmbCiudadRefFam) {
-    this.cmbCiudadRefFam = cmbCiudadRefFam;
+  private FormularioSolicitudBuilder ciudadReferenciaFamiliar(String cmbCiudadRefFam) {
+    this.ciudadReferenciaFamiliar = cmbCiudadRefFam;
     return this;
   }
 
-  private FormularioSolicitudBuilder celularReferenciaFamiliar(int txtCelRFam) {
-    this.txtCelRFam = txtCelRFam;
+  private FormularioSolicitudBuilder celularReferenciaFamiliar(String txtCelRFam) {
+    this.celularReferenciaFamiliar = txtCelRFam;
     return this;
   }
 
   private FormularioSolicitudBuilder direccionReferenciaFamiliar(String dirFamiliar) {
-    this.dirFamiliar = dirFamiliar;
+    this.direccionReferenciaFamiliar = dirFamiliar;
     return this;
   }
 
   private FormularioSolicitudBuilder nombreReferenciaPersonal(String ref_personal_nombre) {
-    this.ref_personal_nombre = ref_personal_nombre;
+    this.nombreReferenciaPersonal = ref_personal_nombre;
     return this;
   }
 
   private FormularioSolicitudBuilder relacionReferenciaPersonal(String ref_personal_par) {
-    this.ref_personal_par = ref_personal_par;
+    this.parentescoReferenciaPersonal = ref_personal_par;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoReferenciaPersonal(int ref_personal_tel) {
-    this.ref_personal_tel = ref_personal_tel;
+  private FormularioSolicitudBuilder telefonoReferenciaPersonal(String ref_personal_tel) {
+    this.telefonoReferenciaPersonal = ref_personal_tel;
     return this;
   }
 
-  private FormularioSolicitudBuilder ciudadReferenciaPersonal(int cmbCiudadRefPer) {
-    this.cmbCiudadRefPer = cmbCiudadRefPer;
+  private FormularioSolicitudBuilder ciudadReferenciaPersonal(String cmbCiudadRefPer) {
+    this.celularReferenciaPersonal = cmbCiudadRefPer;
     return this;
   }
 
-  private FormularioSolicitudBuilder celularReferenciaPersonal(long txtCelRPer) {
-    this.txtCelRPer = txtCelRPer;
+  private FormularioSolicitudBuilder celularReferenciaPersonal(String txtCelRPer) {
+    this.direccionPersonal = txtCelRPer;
     return this;
   }
 
   private FormularioSolicitudBuilder direccionReferenciaPersonal(String dirPersonal) {
-    this.dirPersonal = dirPersonal;
+    this.entidadFinanciera = dirPersonal;
     return this;
   }
 
   private FormularioSolicitudBuilder nombreEntidadBancaria(String txtNEntFin) {
-    this.txtNEntFin = txtNEntFin;
+    this.sucursal = txtNEntFin;
     return this;
   }
 
   private FormularioSolicitudBuilder sucursalBancaria(String txtSucursal) {
-    this.txtSucursal = txtSucursal;
+    this.tipoProducto = txtSucursal;
     return this;
   }
 
-  private FormularioSolicitudBuilder tipoProductoBancario(int cmbTipoProd) {
-    this.cmbTipoProd = cmbTipoProd;
+  private FormularioSolicitudBuilder tipoProductoBancario(String cmbTipoProd) {
+    this.calificacionAtencion = cmbTipoProd;
     return this;
   }
 
 
-  private FormularioSolicitudBuilder operacionMonedaExtranjera(int rdtransaccion_ext) {
-    this.rdtransaccion_ext = rdtransaccion_ext;
+  private FormularioSolicitudBuilder operacionMonedaExtranjera(String rdtransaccion_ext) {
+    this.transaccionMonedaExtranjera = rdtransaccion_ext;
     return this;
   }
 
-  private FormularioSolicitudBuilder cuentaExterior(int rdCuentasExt) {
-    this.rdCuentasExt = rdCuentasExt;
+  private FormularioSolicitudBuilder cuentaExterior(String rdCuentasExt) {
+    this.cuentaExterior = rdCuentasExt;
     return this;
   }
 
   public FormularioSolicitud informacionLibranza() {
     this.numeroPaso("step-8");
     this.fecha();
-    this.perfil(3);
+    this.perfil("3");
     this.pasoSolicitud("8");
     this.asesor();
-    this.ciudadSolicitud(5001);
-    this.calificacion(660);
+    this.ciudadSolicitud("5001");
+    this.calificacion("660");
     this.tipoSolicitud("S");
-    this.agenciaVinculacion(860);
+    this.agenciaVinculacion("860");
     this.vinculacion("S");
     this.linea("LIBRANZA");
     this.primerApellido("Mora");
     this.segundoApellido("Camacho");
     this.primerNombre("Santiago");
-    this.tipoDocumento(1);
-    this.lugarExpedicion(5030);
+    this.tipoDocumento("1");
+    this.lugarExpedicion("5030");
     this.fechaExpedicion("2004-01-06");
     this.fechaNacimiento("1985-01-06");
     this.sexo("M");
-    this.lugarNacimiento(5021);
+    this.lugarNacimiento("5021");
     this.estadoCivil("S");
     this.pais("COLOMBIA");
-    this.ciudadResidencia(5001);
+    this.ciudadResidencia("5001");
     this.tipoVivienda("ARRENDADA");
-    this.estrato(4);
+    this.estrato("4");
     this.nombreArrendatario("Andres UzumaKi");
-    this.telefonoArrendador(2211421);
+    this.telefonoArrendador("2211421");
     this.direccionResidencia("CL 80 A    53     25");
     this.barrio("Colores");
-    this.telefonoResidencia(2808080);
-    this.celular(300200202);
+    this.telefonoResidencia("2808080");
+    this.celular("300200202");
     this.correspondenciaA("CASA");
     this.email("prueba1@gmail.com");
-    this.tiempoResidenciaAnios(10);
-    this.tiempoResidenciaMeses(2);
+    this.tiempoResidenciaAnios("10");
+    this.tiempoResidenciaMeses("2");
     this.nombreEps("Salud Total");
-    this.adultosACargo(0);
-    this.menoresACargo(0);
-    this.nivelEstudio(5);
-    this.profesion(122);
-    this.ocupacion(1);
+    this.adultosACargo("0");
+    this.menoresACargo("0");
+    this.nivelEstudio("5");
+    this.profesion("122");
+    this.ocupacion("1");
     this.renta("N");
     this.decisionCargo("N");
-    this.recursosPublicos(1);
-    this.personajePublico(1);
-    this.nombreEmpresa(6);
+    this.recursosPublicos("1");
+    this.personajePublico("1");
+    this.nombreEmpresa("6");
     this.cargo("Ingeniero");
     this.fechaVinculacion("2009-12-16");
     this.direccionTrabajo("CL 80     55     60");
-    this.ciudadTrabajo(8001);
+    this.ciudadTrabajo("8001");
     this.nitEmpresa("802014730-9");
-    this.telefonoTrabajo(2012020);
-    this.extensionTrabajo(123);
-    this.tipoEmpresa(1);
-    this.actividadEconomica(1);
-    this.tipoContrato(1);
-    this.activosCorrientes(38000000);
-    this.activosFijos(51000000);
-    this.totalActivos(89000000);
-    this.pasivosFinancieros(33650000);
-    this.pasivosCorrientes(3500000);
-    this.totalPasivos(37150000);
+    this.telefonoTrabajo("2012020");
+    this.extensionTrabajo("123");
+    this.tipoEmpresa("1");
+    this.actividadEconomica("1");
+    this.tipoContrato("1");
+    this.activosCorrientes("38000000");
+    this.activosFijos("51000000");
+    this.totalActivos("89000000");
+    this.pasivosFinancieros("33650000");
+    this.pasivosCorrientes("3500000");
+    this.totalPasivos("37150000");
     this.tipoVehiculo("Susuki swift");
-    this.valorComercialVehiculo(51000000);
+    this.valorComercialVehiculo("51000000");
     this.marcaVehiculo("2018");
     this.placaVehiculo("EFY890");
-    this.saldoCreditoVehiculo(33650000);
-    this.sueldoFijo(4650000);
-    this.totalIngresos(4650000);
-    this.comprarVivienda(1);
-    this.cupoExtra(1);
+    this.saldoCreditoVehiculo("33650000");
+    this.sueldoFijo("4650000");
+    this.totalIngresos("4650000");
+    this.comprarVivienda("1");
+    this.cupoExtra("1");
     this.razonCredito("VIVIENDA");
     this.razonOtros("-");
-    this.tipoDocumentoConyugue(1);
-    this.ocupacionConyugue(1);
-    this.dependenciaEconomicaConyugue(1);
+    this.tipoDocumentoConyugue("1");
+    this.ocupacionConyugue("1");
+    this.dependenciaEconomicaConyugue("1");
     this.nombreReferenciaFamiliar("Pablo Esteban Uzumaki");
     this.parentesco("Tio");
-    this.telefonoReferencia(2202526);
-    this.ciudadReferenciaFamiliar(8758);
-    this.celularReferenciaFamiliar(300204252);
+    this.telefonoReferencia("2202526");
+    this.ciudadReferenciaFamiliar("8758");
+    this.celularReferenciaFamiliar("3002042521");
     this.direccionReferenciaFamiliar("CR 79     50  53");
     this.nombreReferenciaPersonal("Tatiana Borja");
     this.relacionReferenciaPersonal("Prima");
-    this.telefonoReferenciaPersonal(2898989);
-    this.ciudadReferenciaPersonal(5001);
-    this.celularReferenciaPersonal(300200565);
+    this.telefonoReferenciaPersonal("2898989");
+    this.ciudadReferenciaPersonal("5001");
+    this.celularReferenciaPersonal("3002005654");
     this.direccionReferenciaPersonal("CL 95     85  80");
     this.nombreEntidadBancaria("Bancolombia");
     this.sucursalBancaria("RutaN");
-    this.tipoProductoBancario(1);
-    this.operacionMonedaExtranjera(1);
-    this.cuentaExterior(1);
+    this.tipoProductoBancario("1");
+    this.operacionMonedaExtranjera("1");
+    this.cuentaExterior("1");
     return this.build();
   }
 
   public FormularioSolicitud informacionCredihuy() {
     this.numeroPaso("step-8");
     this.fecha();
-    this.perfil(3);
+    this.perfil("3");
     this.pasoSolicitud("");
     this.asesor();
-    this.ciudadSolicitud(5021);
-    this.calificacion(880);
+    this.ciudadSolicitud("5021");
+    this.calificacion("880");
     this.tipoSolicitud("S");
-    this.agenciaVinculacion(1460);
+    this.agenciaVinculacion("1460");
     this.vinculacion("S");
     this.linea("LIBRANZA");
     this.primerApellido("Estrada");
     this.segundoApellido("Escobar");
     this.primerNombre("Maria");
-    this.tipoDocumento(1);
-    this.lugarExpedicion(5030);
+    this.tipoDocumento("1");
+    this.lugarExpedicion("5030");
     this.fechaExpedicion("2000-05-06");
     this.fechaNacimiento("1982-01-06");
     this.sexo("F");
-    this.lugarNacimiento(5021);
+    this.lugarNacimiento("5021");
     this.estadoCivil("S");
     this.pais("COLOMBIA");
-    this.ciudadResidencia(5001);
+    this.ciudadResidencia("5001");
     this.tipoVivienda("FAMILIAR");
-    this.estrato(5);
+    this.estrato("5");
     this.direccionResidencia("CL 81 A    53     25");
     this.barrio("Soledad");
-    this.telefonoResidencia(2828080);
-    this.celular(300202205);
+    this.telefonoResidencia("2828080");
+    this.celular("3002022105");
     this.correspondenciaA("CASA");
     this.email("prueba@gmail.com");
-    this.tiempoResidenciaAnios(10);
-    this.tiempoResidenciaMeses(2);
+    this.tiempoResidenciaAnios("10");
+    this.tiempoResidenciaMeses("2");
     this.nombreEps("Sura");
-    this.adultosACargo(0);
-    this.menoresACargo(0);
-    this.nivelEstudio(2);
-    this.profesion(3);
-    this.ocupacion(1);
+    this.adultosACargo("0");
+    this.menoresACargo("0");
+    this.nivelEstudio("2");
+    this.profesion("3");
+    this.ocupacion("1");
     this.renta("N");
     this.decisionCargo("N");
-    this.recursosPublicos(1);
-    this.personajePublico(1);
-    this.nombreEmpresa(4);
+    this.recursosPublicos("1");
+    this.personajePublico("1");
+    this.nombreEmpresa("4");
     this.cargo("Profesor");
     this.fechaVinculacion("2009-12-16");
     this.direccionTrabajo("CL 80     55     60");
-    this.ciudadTrabajo(8001);
+    this.ciudadTrabajo("8001");
     this.nitEmpresa("892280021-1");
-    this.telefonoTrabajo(2012020);
-    this.extensionTrabajo(123);
-    this.tipoEmpresa(1);
-    this.actividadEconomica(1);
-    this.tipoContrato(1);
-    this.sueldoFijo(1650000);
-    this.totalIngresos(1650000);
-    this.comprarVivienda(1);
-    this.cupoExtra(1);
+    this.telefonoTrabajo("2012020");
+    this.extensionTrabajo("123");
+    this.tipoEmpresa("1");
+    this.actividadEconomica("1");
+    this.tipoContrato("1");
+    this.sueldoFijo("1650000");
+    this.totalIngresos("1650000");
+    this.comprarVivienda("1");
+    this.cupoExtra("1");
     this.razonCredito("EDUCACION");
     this.razonOtros("-");
-    this.tipoDocumentoConyugue(1);
-    this.ocupacionConyugue(1);
-    this.dependenciaEconomicaConyugue(1);
+    this.tipoDocumentoConyugue("1");
+    this.ocupacionConyugue("1");
+    this.dependenciaEconomicaConyugue("1");
     this.nombreReferenciaFamiliar("Pablo Alboran");
     this.parentesco("Tio");
-    this.telefonoReferencia(2202525);
-    this.ciudadReferenciaFamiliar(8758);
-    this.celularReferenciaFamiliar(300204255);
+    this.telefonoReferencia("2202525");
+    this.ciudadReferenciaFamiliar("8758");
+    this.celularReferenciaFamiliar("3002042555");
     this.direccionReferenciaFamiliar("CR 79     50  53");
     this.nombreReferenciaPersonal("Evaluna Montaner");
     this.relacionReferenciaPersonal("Amiga");
-    this.telefonoReferenciaPersonal(2897989);
-    this.ciudadReferenciaPersonal(5002);
-    this.celularReferenciaPersonal(300200585);
+    this.telefonoReferenciaPersonal("2897989");
+    this.ciudadReferenciaPersonal("5002");
+    this.celularReferenciaPersonal("3002005585");
     this.direccionReferenciaPersonal("CL 95     85  80");
     this.nombreEntidadBancaria("Bancolombia");
     this.sucursalBancaria("RutaN");
-    this.tipoProductoBancario(1);
-    this.operacionMonedaExtranjera(1);
-    this.cuentaExterior(1);
+    this.tipoProductoBancario("1");
+    this.operacionMonedaExtranjera("1");
+    this.cuentaExterior("1");
     return this.build();
   }
 
-  public String getNumPaso() {
-    return numPaso;
+  public String getNumeroPaso() {
+    return numeroPaso;
   }
 
   public String getFecha() {
-    return txtFecha;
+    return fecha;
   }
 
-  public int getPerfil() {
+  public String getPerfil() {
     return perfil;
   }
 
-  public String getPasoSol() {
-    return pasoSol;
+  public String getPasoSolucion() {
+    return pasoSolucion;
   }
 
   public String getAsesor() {
-    return txtAsesor;
+    return asesor;
   }
 
-  public int getCiuC() {
-    return txtCiuC;
+  public String getCiuC() {
+    return ciudadCredito;
   }
 
-  public int getCalf() {
-    return txtCalf;
+  public String getCalf() {
+    return calificacion;
   }
 
   public String getTSol() {
-    return txtTSol;
+    return tipoSolicitud;
   }
 
-  public int getAVinculacion() {
-    return a_vinculacion;
+  public String getAVinculacion() {
+    return agenciaVinculacion;
   }
 
   public String getVin() {
-    return txtVin;
+    return vinculacion;
   }
 
-  public int getMonto() {
-    return txtMonto;
+  public String getMonto() {
+    return monto;
   }
 
   public String getLinea() {
-    return txtLinea;
+    return linea;
   }
 
-  public int getCuota() {
+  public String getCuota() {
     return cuota;
   }
 
-  public int getPlaz() {
-    return txtPlaz;
+  public String getPlaz() {
+    return plazo;
   }
 
-  public int getTasaI() {
-    return tasaI;
+  public String getTasaInteres() {
+    return tasaInteres;
   }
 
-  public int getTasaM() {
-    return tasaM;
+  public String getTasaMora() {
+    return tasaMora;
   }
 
-  public int getTasaMax() {
-    return tasaMax;
+  public String getTasaMaxima() {
+    return tasaMaxima;
   }
 
   public String getPApellido() {
-    return txtPApellido;
+    return primerApellido;
   }
 
   public String getSApellido() {
-    return txtSApellido;
+    return segundoApellido;
   }
 
   public String getPNombre() {
-    return txtPNombre;
+    return primerNombre;
   }
 
   public String getSNombre() {
-    return txtSNombre;
+    return segundoNombre;
   }
 
-  public int getTipoDoc() {
-    return cmbTipoDoc;
+  public String getTipoDoc() {
+    return tipoDocumento;
   }
 
-  public int getLugarExp() {
-    return txtLugarExp;
+  public String getLugarExp() {
+    return lugarExpedicion;
   }
 
   public String getFechaExp() {
-    return txtFechaExp;
+    return fechaExpedicion;
   }
 
   public String getFechaNac() {
-    return txtFechaNac;
+    return fechaNacimiento;
   }
 
   public String getSexo() {
-    return cmbSexo;
+    return sexo;
   }
 
-  public int getLugarNac() {
-    return txtLugarNac;
+  public String getLugarNac() {
+    return lugarNacimiento;
   }
 
   public String getEstCivil() {
-    return cmbEstCivil;
+    return estadoCivil;
   }
 
   public String getPais() {
-    return txtPais;
+    return pais;
   }
 
-  public int getCiudad() {
-    return cmbCiudad;
+  public String getCiudad() {
+    return ciudadDepartamento;
   }
 
   public String getTipoViv() {
-    return cmbTipoViv;
+    return tipoVivienda;
   }
 
-  public int getEstrato() {
-    return txtEstrato;
+  public String getEstrato() {
+    return estrato;
   }
 
   public String getArrend() {
-    return txtArrend;
+    return arrendatario;
   }
 
-  public int getTelArr() {
-    return txtTelArr;
+  public String getTelArr() {
+    return telefonoArrendador;
   }
 
-  public String getDirCa() {
-    return dirCa;
+  public String getDireccionResidencia() {
+    return direccionResidencia;
   }
 
   public String getBarrio() {
-    return txtBarrio;
+    return barrio;
   }
 
-  public int getTel() {
-    return txtTel;
+  public String getTel() {
+    return telefonoResidencia;
   }
 
-  public int getCel() {
-    return txtCel;
+  public String getCel() {
+    return celular;
   }
 
   public String getCorrespondencia() {
-    return cmbCorrespondencia;
+    return correspondenciaA;
   }
 
   public String getEmail() {
-    return txtEmail;
+    return email;
   }
 
-  public int getAnios() {
-    return txtAnios;
+  public String getAnios() {
+    return anios;
   }
 
-  public int getMeses() {
-    return txtMeses;
+  public String getMeses() {
+    return meses;
   }
 
   public String getEps() {
-    return txtEps;
+    return eps;
   }
 
-  public int getAdulto() {
-    return txtAdulto;
+  public String getAdulto() {
+    return adulto;
   }
 
-  public int getMenor18() {
-    return txtMenor18;
+  public String getMenor18() {
+    return menor18;
   }
 
-  public int getNivelEst() {
-    return cmbNivelEst;
+  public String getNivelEst() {
+    return nivelEstudio;
   }
 
-  public int getProfesion() {
-    return cmbProfesion;
+  public String getProfesion() {
+    return profesion;
   }
 
-  public int getRdOcupacion() {
-    return rdOcupacion;
+  public String getOcupacion() {
+    return ocupacion;
   }
 
   public String getDeRenta() {
-    return txtDeRenta;
+    return declaraRenta;
   }
 
   public String getDesicionCargo() {
-    return txtDesicionCargo;
+    return decisionCargo;
   }
 
-  public int getrecPublicos() {
-    return txtrecPublicos;
+  public String getrecPublicos() {
+    return recursosPublicos;
   }
 
-  public int getPerPubl() {
-    return txtPerPubl;
+  public String getPerPubl() {
+    return personajePublico;
   }
 
-  public int getEmpresa() {
-    return txtEmpresa;
+  public String getEmpresa() {
+    return empresa;
   }
 
   public String getCargo() {
-    return txtCargo;
+    return cargo;
   }
 
   public String getFechaVinculacion() {
-    return txtFechaVinculacion;
+    return fechaVinculacion;
   }
 
-  public String getDirTrabajo() {
-    return dirTrabajo;
+  public String getDireccionTrabajo() {
+    return direccionTrabajo;
   }
 
-  public int getCiudad2() {
-    return cmbCiudad2;
+  public String getCiudad2() {
+    return ciudadTrabajo;
   }
 
   public String getNitEmpresa() {
-    return txtNitEmpresa;
+    return nitEmpresa;
   }
 
-  public int getTelEmpresa() {
-    return txtTelEmpresa;
+  public String getTelEmpresa() {
+    return telefonoEmpresa;
   }
 
-  public int getExt() {
-    return txtExt;
+  public String getExt() {
+    return extension;
   }
 
-  public int getTipoEmp() {
-    return cmbTipoEmp;
+  public String getTipoEmp() {
+    return tipoEmpresa;
   }
 
-  public int getActEcon() {
-    return cmbActEcon;
+  public String getActEcon() {
+    return actividadEconomica;
   }
 
-  public int getTipoContrato() {
-    return cmbTipoContrato;
+  public String getTipoContrato() {
+    return tipoContrato;
   }
 
-  public int getActivosCorrientes() {
-    return activos_corrientes;
+  public String getActivosCorrientes() {
+    return activosCorrientes;
   }
 
-  public int getActivosFijos() {
-    return activos_fijos;
+  public String getActivosFijos() {
+    return activosFijos;
   }
 
-  public int getOtrosActivos() {
-    return otros_activos;
+  public String getOtrosActivos() {
+    return otrosActivos;
   }
 
   public String getCualesActivos() {
-    return cuales_activos;
+    return cualesActivos;
   }
 
-  public int getTotalActivos() {
-    return total_activos;
+  public String getTotalActivos() {
+    return totalActivos;
   }
 
-  public int getPasivosFinancieros() {
-    return pasivos_financieros;
+  public String getPasivosFinancieros() {
+    return pasivosFinancieros;
   }
 
-  public int getPasivosCorrientes() {
-    return pasivos_corrientes;
+  public String getPasivosCorrientes() {
+    return pasivosCorrientes;
   }
 
-  public int getOtrosPasivos() {
-    return otros_pasivos;
+  public String getOtrosPasivos() {
+    return otrosPasivos;
   }
 
   public String getCualesPasivos() {
-    return cuales_pasivos;
+    return cualesPasivos;
   }
 
-  public int getTotalPasivos() {
-    return total_pasivos;
+  public String getTotalPasivos() {
+    return totalPasivos;
   }
 
   public String getTipoInm() {
-    return txtTipoInm;
+    return tipoInmueble;
   }
 
-  public int getValorComInm() {
-    return txtValorComInm;
+  public String getValorComInm() {
+    return valorComercialInmueble;
   }
 
   public String getHipotecado() {
-    return txtHipotecado;
+    return hipotecadoA;
   }
 
-  public String getDirBienes() {
-    return dirBienes;
+  public String getDireccion() {
+    return direccion;
   }
 
-  public int getSaldoCredInm() {
-    return txtSaldoCredInm;
+  public String getSaldoCredInm() {
+    return saldoCreditoInmueble;
   }
 
   public String getVehCls() {
-    return txtVehCls;
+    return vehiculoClase;
   }
 
-  public int getValorComVeh() {
-    return txtValorComVeh;
+  public String getValorComVeh() {
+    return valorComercialVehiculo;
   }
 
   public String getMarcaVeh() {
-    return txtMarcaVeh;
+    return marcaModelo;
   }
 
   public String getPlacaVeh() {
-    return txtPlacaVeh;
+    return placa;
   }
 
-  public int getSaldoCredVeh() {
-    return txtSaldoCredVeh;
+  public String getSaldoCredVeh() {
+    return saldoCreditoVehiculo;
   }
 
   public String getPrendaFavVeh() {
-    return txtPrendaFavVeh;
+    return prendaAFavor;
   }
 
-  public int getSueldoFijo() {
-    return txtSueldoFijo;
+  public String getSueldoFijo() {
+    return salarioFijo;
   }
 
-  public int getSalVarCom() {
-    return txtSalVarCom;
+  public String getSalVarCom() {
+    return salarioVariableComisiones;
   }
 
-  public int getArrendamiento() {
-    return txtArrendamiento;
+  public String getArrendamiento() {
+    return arrendamiento;
   }
 
-  public int getRenFin() {
-    return txtRenFin;
+  public String getRenFin() {
+    return rendimientosFinancieros;
   }
 
-  public int getHonorarios() {
-    return txtHonorarios;
+  public String getHonorarios() {
+    return honorarios;
   }
 
-  public int getOtrosIng() {
-    return txtOtrosIng;
+  public String getOtrosIng() {
+    return otrosIngresos;
   }
 
   public String getCualesIng() {
-    return txtCualesIng;
+    return cualesIngresos;
   }
 
-  public int getTIngresos() {
-    return txtTIngresos;
+  public String getTIngresos() {
+    return totalIngresos;
   }
 
-  public int getArriendos() {
-    return txtArriendos;
+  public String getArriendos() {
+    return arriendos;
   }
 
-  public int getGastosPer() {
-    return txtGastosPer;
+  public String getGastosPer() {
+    return gastosPersonales;
   }
 
-  public int getPresDfFin() {
-    return txtPresDfFin;
+  public String getPresDfFin() {
+    return prestamosDiferentes;
   }
 
-  public int getDeducciones() {
-    return txtDeducciones;
+  public String getDeducciones() {
+    return deducciones;
   }
 
-  public int getTarjCred() {
-    return txtTarjCred;
+  public String getTarjCred() {
+    return tarjetaCredito;
   }
 
-  public int getOtrosGastos() {
-    return txtOtrosGastos;
+  public String getOtrosGastos() {
+    return otrosGastos;
   }
 
   public String getCualesGastos() {
-    return txtCualesGastos;
+    return cualesGastos;
   }
 
-  public int getTEgresos() {
-    return txtTEgresos;
+  public String getTEgresos() {
+    return totalEgresos;
   }
 
-  public int getPagHip() {
-    return txtPagHip;
+  public String getPagHip() {
+    return pagoHipoteca;
   }
 
-  public int getVlrComViv() {
-    return txtVlrComViv;
+  public String getVlrComViv() {
+    return valorComercialVivienda;
   }
 
   public String getGustaVivir() {
-    return txtGustaVivir;
+    return dondeVivir;
   }
 
-  public int getRdCompViv() {
-    return rdCompViv;
+  public String getQuiereComprar() {
+    return quiereComprar;
   }
 
-  public int getRdCupoExtra() {
-    return rdCupoExtra;
+  public String getCupoExtra() {
+    return cupoExtra;
   }
 
   public String getRazondecredito() {
-    return cmbRazondecredito;
+    return razonCredito;
   }
 
-  public String getRazon() {
-    return razon;
+  public String getDetalleRazon() {
+    return detalleRazon;
   }
 
   public String getPNConyugue() {
-    return txtPNConyugue;
+    return primerNombreConyugue;
   }
 
   public String getSNConyugue() {
-    return txtSNConyugue;
+    return segundoNombreConyugue;
   }
 
   public String getPAConyugue() {
-    return txtPAConyugue;
+    return primerApellidoConyugue;
   }
 
   public String getSAConyugue() {
-    return txtSAConyugue;
+    return segundoApellidoConyugue;
   }
 
-  public int getTipoDocCony() {
-    return cmbTipoDocCony;
+  public String getTipoDocCony() {
+    return tipoDocumentoConyugue;
   }
 
-  public int getDocConyugue() {
-    return txtDocConyugue;
+  public String getDocConyugue() {
+    return documentoConyugue;
   }
 
   public String getFechaExpCon() {
-    return txtFechaExpCon;
+    return fechaExpedicionConyugue;
   }
 
   public String getLugarExpCon() {
-    return txtLugarExpCon;
+    return lugarExpedicionConyugue;
   }
 
   public String getFechaNacCon() {
-    return txtFechaNacCon;
+    return fechaNacimientoConyugue;
   }
 
   public String getLugarNacCon() {
-    return txtLugarNacCon;
+    return lugarNacimientoConyugue;
   }
 
   public String getSexoCon() {
-    return cmbSexoCon;
+    return sexoConyugue;
   }
 
   public String getLugTrabCon() {
-    return txtLugTrabCon;
+    return lugarTrabajoConyugue;
   }
 
-  public int getRdOcupacionCon() {
-    return rdOcupacionCon;
+  public String getOcupacionConyugue() {
+    return ocupacionConyugue;
   }
 
-  public int getDepEco() {
-    return txtDepEco;
+  public String getDepEco() {
+    return dependenciaEconomica;
   }
 
   public String getFecIngr() {
-    return txtFecIngr;
+    return fechaIngreso;
   }
 
   public String getCargoCon() {
-    return txtCargoCon;
+    return cargoConyugue;
   }
 
   public String getTIngCon() {
-    return txtTIngCon;
+    return totalIngresosConyugue;
   }
 
   public String getTEgrCon() {
-    return txtTEgrCon;
+    return totalEgresosConyugue;
   }
 
   public String getEpsConyuge() {
-    return txtEpsConyuge;
+    return epsConyugue;
   }
 
   public String getNivelEstCon() {
-    return cmbNivelEstCon;
+    return nivelEstudioConyugue;
   }
 
-  public int getCelCon() {
-    return txtCelCon;
+  public String getCelCon() {
+    return celularConyugue;
   }
 
   public String getRefFamiliarNombre() {
-    return ref_familiar_nombre;
+    return nombreReferenciaFamiliar;
   }
 
   public String getRefFamiliarPar() {
-    return ref_familiar_par;
+    return parentescoReferenciaFamiliar;
   }
 
-  public int getRefFamiliarTel() {
-    return ref_familiar_tel;
+  public String getRefFamiliarTel() {
+    return telefonoReferenciaFamiliar;
   }
 
-  public int getCiudadRefFam() {
-    return cmbCiudadRefFam;
+  public String getCiudadRefFam() {
+    return ciudadReferenciaFamiliar;
   }
 
-  public int getCelRFam() {
-    return txtCelRFam;
+  public String getCelRFam() {
+    return celularReferenciaFamiliar;
   }
 
-  public String getDirFamiliar() {
-    return dirFamiliar;
+  public String getDireccionReferenciaFamiliar() {
+    return direccionReferenciaFamiliar;
   }
 
   public String getRefPersonalNombre() {
-    return ref_personal_nombre;
+    return nombreReferenciaPersonal;
   }
 
   public String getRefPersonalPar() {
-    return ref_personal_par;
+    return parentescoReferenciaPersonal;
   }
 
-  public int getRefPersonalTel() {
-    return ref_personal_tel;
+  public String getRefPersonalTel() {
+    return telefonoReferenciaPersonal;
   }
 
-  public int getCiudadRefPer() {
-    return cmbCiudadRefPer;
+  public String getCiudadRefPer() {
+    return celularReferenciaPersonal;
   }
 
-  public long getCelRPer() {
-    return txtCelRPer;
+  public String getCelRPer() {
+    return direccionPersonal;
   }
 
-  public String getDirPersonal() {
-    return dirPersonal;
+  public String getEntidadFinanciera() {
+    return entidadFinanciera;
   }
 
   public String getNEntFin() {
-    return txtNEntFin;
+    return sucursal;
   }
 
   public String getSucursal() {
-    return txtSucursal;
+    return tipoProducto;
   }
 
-  public int getTipoProd() {
-    return cmbTipoProd;
+  public String getTipoProd() {
+    return calificacionAtencion;
   }
 
   public String getSatisfaccionC() {
-    return cmbSatisfaccionC;
+    return razonCalificacion;
   }
 
   public String getPorqueSatic() {
-    return txtPorqueSatic;
+    return conocioFinsocial;
   }
 
   public String getConocioFinsocial() {
-    return cmbConocioFinsocial;
+    return razonConocio;
   }
 
   public String getOtroConocer() {
-    return txtOtroConocer;
+    return monedaExtranjera;
   }
 
-  public int getRdransaccionExt() {
-    return rdtransaccion_ext;
+  public String getRdransaccionExt() {
+    return transaccionMonedaExtranjera;
   }
 
-  public int getRdCuentasExt() {
-    return rdCuentasExt;
+  public String getCuentaExterior() {
+    return cuentaExterior;
   }
 }

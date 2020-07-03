@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_FILA_TESORERIA_FINSOAMIGO1;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_NOMBRE_TESORERIA_FINSOAMIGO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_300;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import net.serenitybdd.screenplay.Actor;

@@ -13,7 +13,7 @@ import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.*;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.*;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 public class InformacionAprobacionHuy implements Task {
 

@@ -4,902 +4,901 @@ import co.com.red5g.finsonet.models.builders.FormularioSolicitudBuilder;
 
 public class FormularioSolicitud {
 
-  private String numPaso;
-  private String txtFecha;
-  private int perfil;
-  private String pasoSol;
-  private String txtAsesor;
-  private int txtCiuC;
-  private int txtCalf;
-  private String txtTSol;
-  private int a_vinculacion;
-  private String txtVin;
-  private int txtMonto;
-  private String txtLinea;
-  private int cuota;
-  private int txtPlaz;
-  private int tasaI;
-  private int tasaM;
-  private int tasaMax;
-  private String txtPApellido;
-  private String txtSApellido;
-  private String txtPNombre;
-  private String txtSNombre;
-  private int cmbTipoDoc;
-  private int txtLugarExp;
-  private String txtFechaExp;
-  private String txtFechaNac;
-  private String cmbSexo;
-  private int txtLugarNac;
-  private String cmbEstCivil;
-  private String txtPais;
-  private int cmbCiudad;
-  private String cmbTipoViv;
-  private int txtEstrato;
-  private String txtArrend;
-  private int txtTelArr;
-  private String dirCa;
-  private String txtBarrio;
-  private int txtTel;
-  private int txtCel;
-  private String cmbCorrespondencia;
-  private String txtEmail;
-  private int txtAnios;
-  private int txtMeses;
-  private String txtEps;
-  private int txtAdulto;
-  private int txtMenor18;
-  private int cmbNivelEst;
-  private int cmbProfesion;
-  private int rdOcupacion;
-  private String txtDeRenta;
-  private String txtDesicionCargo;
-  private int txtrecPublicos;
-  private int txtPerPubl;
-  private int txtEmpresa;
-  private String txtCargo;
-  private String txtFechaVinculacion;
-  private String dirTrabajo;
-  private int cmbCiudad2;
-  private String txtNitEmpresa;
-  private int txtTelEmpresa;
-  private int txtExt;
-  private int cmbTipoEmp;
-  private int cmbActEcon;
-  private int cmbTipoContrato;
-  private int activos_corrientes;
-  private int activos_fijos;
-  private int otros_activos;
-  private String cuales_activos;
-  private int total_activos;
-  private int pasivos_financieros;
-  private int pasivos_corrientes;
-  private int otros_pasivos;
-  private String cuales_pasivos;
-  private int total_pasivos;
-  private String txtTipoInm;
-  private int txtValorComInm;
-  private String txtHipotecado;
-  private String dirBienes;
-  private int txtSaldoCredInm;
-  private String txtVehCls;
-  private int txtValorComVeh;
-  private String txtMarcaVeh;
-  private String txtPlacaVeh;
-  private int txtSaldoCredVeh;
-  private String txtPrendaFavVeh;
-  private int txtSueldoFijo;
-  private int txtSalVarCom;
-  private int txtArrendamiento;
-  private int txtRenFin;
-  private int txtHonorarios;
-  private int txtOtrosIng;
-  private String txtCualesIng;
-  private int txtTIngresos;
-  private int txtArriendos;
-  private int txtGastosPer;
-  private int txtPresDfFin;
-  private int txtDeducciones;
-  private int txtTarjCred;
-  private int txtOtrosGastos;
-  private String txtCualesGastos;
-  private int txtTEgresos;
-  private int txtPagHip;
-  private int txtVlrComViv;
-  private String txtGustaVivir;
-  private int rdCompViv;
-  private int rdCupoExtra;
-  private String cmbRazondecredito;
-  private String razon;
-  private String txtPNConyugue;
-  private String txtSNConyugue;
-  private String txtPAConyugue;
-  private String txtSAConyugue;
-  private int cmbTipoDocCony;
-  private int txtDocConyugue;
-  private String txtFechaExpCon;
-  private String txtLugarExpCon;
-  private String txtFechaNacCon;
-  private String txtLugarNacCon;
-  private String cmbSexoCon;
-  private String txtLugTrabCon;
-  private int rdOcupacionCon;
-  private int txtDepEco;
-  private String txtFecIngr;
-  private String txtCargoCon;
-  private String txtTIngCon;
-  private String txtTEgrCon;
-  private String txtEpsConyuge;
-  private String cmbNivelEstCon;
-  private int txtCelCon;
-  private String ref_familiar_nombre;
-  private String ref_familiar_par;
-  private int ref_familiar_tel;
-  private int cmbCiudadRefFam;
-  private int txtCelRFam;
-  private String dirFamiliar;
-  private String ref_personal_nombre;
-  private String ref_personal_par;
-  private int ref_personal_tel;
-  private int cmbCiudadRefPer;
-  private long txtCelRPer;
-  private String dirPersonal;
-  private String txtNEntFin;
-  private String txtSucursal;
-  private int cmbTipoProd;
-  private String cmbSatisfaccionC;
-  private String txtPorqueSatic;
-  private String cmbConocioFinsocial;
-  private String txtOtroConocer;
-  private int rdtransaccion_ext;
-  private int rdCuentasExt;
-
+  private String numeroPaso;
+  private String fecha;
+  private String perfil;
+  private String pasoSolucion;
+  private String asesor;
+  private String ciudadCredito;
+  private String calificacion;
+  private String tipoSolicitud;
+  private String agenciaVinculacion;
+  private String vinculacion;
+  private String monto;
+  private String linea;
+  private String cuota;
+  private String plazo;
+  private String tasaInteres;
+  private String tasaMora;
+  private String tasaMaxima;
+  private String primerApellido;
+  private String segundoApellido;
+  private String primerNombre;
+  private String segundoNombre;
+  private String tipoDocumento;
+  private String lugarExpedicion;
+  private String fechaExpedicion;
+  private String fechaNacimiento;
+  private String sexo;
+  private String lugarNacimiento;
+  private String estadoCivil;
+  private String pais;
+  private String ciudadDepartamento;
+  private String tipoVivienda;
+  private String estrato;
+  private String arrendatario;
+  private String telefonoArrendador;
+  private String direccionResidencia;
+  private String barrio;
+  private String telefonoResidencia;
+  private String celular;
+  private String correspondenciaA;
+  private String email;
+  private String anios;
+  private String meses;
+  private String eps;
+  private String adulto;
+  private String menor18;
+  private String nivelEstudio;
+  private String profesion;
+  private String ocupacion;
+  private String declaraRenta;
+  private String decisionCargo;
+  private String recursosPublicos;
+  private String personajePublico;
+  private String empresa;
+  private String cargo;
+  private String fechaVinculacion;
+  private String direccionTrabajo;
+  private String ciudadTrabajo;
+  private String nitEmpresa;
+  private String telefonoEmpresa;
+  private String extension;
+  private String tipoEmpresa;
+  private String actividadEconomica;
+  private String tipoContrato;
+  private String activosCorrientes;
+  private String activosFijos;
+  private String otrosActivos;
+  private String cualesActivos;
+  private String totalActivos;
+  private String pasivosFinancieros;
+  private String pasivosCorrientes;
+  private String otrosPasivos;
+  private String cualesPasivos;
+  private String totalPasivos;
+  private String tipoInmueble;
+  private String valorComercialInmueble;
+  private String hipotecadoA;
+  private String direccion;
+  private String saldoCreditoInmueble;
+  private String vehiculoClase;
+  private String valorComercialVehiculo;
+  private String marcaModelo;
+  private String placa;
+  private String saldoCreditoVehiculo;
+  private String prendaAFavor;
+  private String salarioFijo;
+  private String salarioVariableComisiones;
+  private String arrendamiento;
+  private String rendimientosFinancieros;
+  private String honorarios;
+  private String otrosIngresos;
+  private String cualesIngresos;
+  private String totalIngresos;
+  private String arriendos;
+  private String gastosPersonales;
+  private String prestamosDiferentes;
+  private String deducciones;
+  private String tarjetaCredito;
+  private String otrosGastos;
+  private String cualesGastos;
+  private String totalEgresos;
+  private String pagoHipoteca;
+  private String valorComercialVivienda;
+  private String dondeVivir;
+  private String quiereComprar;
+  private String cupoExtra;
+  private String razonCredito;
+  private String detalleRazon;
+  private String primerNombreConyugue;
+  private String segundoNombreConyugue;
+  private String primerApellidoConyugue;
+  private String segundoApellidoConyugue;
+  private String tipoDocumentoConyugue;
+  private String documentoConyugue;
+  private String fechaExpedicionConyugue;
+  private String lugarExpedicionConyugue;
+  private String fechaNacimientoConyugue;
+  private String lugarNacimientoConyugue;
+  private String sexoConyugue;
+  private String lugarTrabajoConyugue;
+  private String ocupacionConyugue;
+  private String dependenciaEconomica;
+  private String fechaIngreso;
+  private String cargoConyugue;
+  private String totalIngresosConyugue;
+  private String totalEgresosConyugue;
+  private String epsConyugue;
+  private String nivelEstudioConyugue;
+  private String celularConyugue;
+  private String nombreReferenciaFamiliar;
+  private String parentescoReferenciaFamiliar;
+  private String telefonoReferenciaFamiliar;
+  private String ciudadReferenciaFamiliar;
+  private String celularReferenciaFamiliar;
+  private String direccionReferenciaFamiliar;
+  private String nombreReferenciaPersonal;
+  private String parentescoReferenciaPersonal;
+  private String telefonoReferenciaPersonal;
+  private String ciudadReferenciaPersonal;
+  private String celularReferenciaPersonal;
+  private String direccionReferenciaPersonal;
+  private String entidadFinanciera;
+  private String sucursal;
+  private String tipoProducto;
+  private String calificacionAtencion;
+  private String razonCalificacion;
+  private String conocioFinsocial;
+  private String razonConocio;
+  private String transaccionMonedaExtranjera;
+  private String cuentaExterior;
 
   public FormularioSolicitud(FormularioSolicitudBuilder formularioSolicitudBuilder) {
-    this.numPaso = formularioSolicitudBuilder.getNumPaso();
-    this.txtFecha = formularioSolicitudBuilder.getFecha();
+    this.numeroPaso = formularioSolicitudBuilder.getNumeroPaso();
+    this.fecha = formularioSolicitudBuilder.getFecha();
     this.perfil = formularioSolicitudBuilder.getPerfil();
-    this.pasoSol = formularioSolicitudBuilder.getPasoSol();
-    this.txtAsesor = formularioSolicitudBuilder.getAsesor();
-    this.txtCiuC = formularioSolicitudBuilder.getCiuC();
-    this.txtCalf = formularioSolicitudBuilder.getCalf();
-    this.txtTSol = formularioSolicitudBuilder.getTSol();
-    this.a_vinculacion = formularioSolicitudBuilder.getAVinculacion();
-    this.txtVin = formularioSolicitudBuilder.getVin();
-    this.txtMonto = formularioSolicitudBuilder.getMonto();
-    this.txtLinea = formularioSolicitudBuilder.getLinea();
+    this.pasoSolucion = formularioSolicitudBuilder.getPasoSolucion();
+    this.asesor = formularioSolicitudBuilder.getAsesor();
+    this.ciudadCredito = formularioSolicitudBuilder.getCiuC();
+    this.calificacion = formularioSolicitudBuilder.getCalf();
+    this.tipoSolicitud = formularioSolicitudBuilder.getTSol();
+    this.agenciaVinculacion = formularioSolicitudBuilder.getAVinculacion();
+    this.vinculacion = formularioSolicitudBuilder.getVin();
+    this.monto = formularioSolicitudBuilder.getMonto();
+    this.linea = formularioSolicitudBuilder.getLinea();
     this.cuota = formularioSolicitudBuilder.getCuota();
-    this.txtPlaz = formularioSolicitudBuilder.getPlaz();
-    this.tasaI = formularioSolicitudBuilder.getTasaI();
-    this.tasaM = formularioSolicitudBuilder.getTasaM();
-    this.tasaMax = formularioSolicitudBuilder.getTasaMax();
-    this.txtPApellido = formularioSolicitudBuilder.getPApellido();
-    this.txtSApellido = formularioSolicitudBuilder.getSApellido();
-    this.txtPNombre = formularioSolicitudBuilder.getPNombre();
-    this.txtSNombre = formularioSolicitudBuilder.getSNombre();
-    this.cmbTipoDoc = formularioSolicitudBuilder.getTipoDoc();
-    this.txtLugarExp = formularioSolicitudBuilder.getLugarExp();
-    this.txtFechaExp = formularioSolicitudBuilder.getFechaExp();
-    this.txtFechaNac = formularioSolicitudBuilder.getFechaNac();
-    this.cmbSexo = formularioSolicitudBuilder.getSexo();
-    this.txtLugarNac = formularioSolicitudBuilder.getLugarNac();
-    this.cmbEstCivil = formularioSolicitudBuilder.getEstCivil();
-    this.txtPais = formularioSolicitudBuilder.getPais();
-    this.cmbCiudad = formularioSolicitudBuilder.getCiudad();
-    this.cmbTipoViv = formularioSolicitudBuilder.getTipoViv();
-    this.txtEstrato = formularioSolicitudBuilder.getEstrato();
-    this.txtArrend = formularioSolicitudBuilder.getArrend();
-    this.txtTelArr = formularioSolicitudBuilder.getTelArr();
-    this.dirCa = formularioSolicitudBuilder.getDirCa();
-    this.txtBarrio = formularioSolicitudBuilder.getBarrio();
-    this.txtTel = formularioSolicitudBuilder.getTel();
-    this.txtCel = formularioSolicitudBuilder.getCel();
-    this.cmbCorrespondencia = formularioSolicitudBuilder.getCorrespondencia();
-    this.txtEmail = formularioSolicitudBuilder.getEmail();
-    this.txtAnios = formularioSolicitudBuilder.getAnios();
-    this.txtMeses = formularioSolicitudBuilder.getMeses();
-    this.txtEps = formularioSolicitudBuilder.getEps();
-    this.txtAdulto = formularioSolicitudBuilder.getAdulto();
-    this.txtMenor18 = formularioSolicitudBuilder.getMenor18();
-    this.cmbNivelEst = formularioSolicitudBuilder.getNivelEst();
-    this.cmbProfesion = formularioSolicitudBuilder.getProfesion();
-    this.rdOcupacion = formularioSolicitudBuilder.getRdOcupacion();
-    this.txtDeRenta = formularioSolicitudBuilder.getDeRenta();
-    this.txtDesicionCargo = formularioSolicitudBuilder.getDesicionCargo();
-    this.txtrecPublicos = formularioSolicitudBuilder.getrecPublicos();
-    this.txtPerPubl = formularioSolicitudBuilder.getPerPubl();
-    this.txtEmpresa = formularioSolicitudBuilder.getEmpresa();
-    this.txtCargo = formularioSolicitudBuilder.getCargo();
-    this.txtFechaVinculacion = formularioSolicitudBuilder.getFechaVinculacion();
-    this.dirTrabajo = formularioSolicitudBuilder.getDirTrabajo();
-    this.cmbCiudad2 = formularioSolicitudBuilder.getCiudad2();
-    this.txtNitEmpresa = formularioSolicitudBuilder.getNitEmpresa();
-    this.txtTelEmpresa = formularioSolicitudBuilder.getTelEmpresa();
-    this.txtExt = formularioSolicitudBuilder.getExt();
-    this.cmbTipoEmp = formularioSolicitudBuilder.getTipoEmp();
-    this.cmbActEcon = formularioSolicitudBuilder.getActEcon();
-    this.cmbTipoContrato = formularioSolicitudBuilder.getTipoContrato();
-    this.activos_corrientes = formularioSolicitudBuilder.getActivosCorrientes();
-    this.activos_fijos = formularioSolicitudBuilder.getActivosFijos();
-    this.otros_activos = formularioSolicitudBuilder.getOtrosActivos();
-    this.cuales_activos = formularioSolicitudBuilder.getCualesActivos();
-    this.total_activos = formularioSolicitudBuilder.getTotalActivos();
-    this.pasivos_financieros = formularioSolicitudBuilder.getPasivosFinancieros();
-    this.pasivos_corrientes = formularioSolicitudBuilder.getPasivosCorrientes();
-    this.otros_pasivos = formularioSolicitudBuilder.getOtrosPasivos();
-    this.cuales_pasivos = formularioSolicitudBuilder.getCualesPasivos();
-    this.total_pasivos = formularioSolicitudBuilder.getTotalPasivos();
-    this.txtTipoInm = formularioSolicitudBuilder.getTipoInm();
-    this.txtValorComInm = formularioSolicitudBuilder.getValorComInm();
-    this.txtHipotecado = formularioSolicitudBuilder.getHipotecado();
-    this.dirBienes = formularioSolicitudBuilder.getDirBienes();
-    this.txtSaldoCredInm = formularioSolicitudBuilder.getSaldoCredInm();
-    this.txtVehCls = formularioSolicitudBuilder.getVehCls();
-    this.txtValorComVeh = formularioSolicitudBuilder.getValorComVeh();
-    this.txtMarcaVeh = formularioSolicitudBuilder.getMarcaVeh();
-    this.txtPlacaVeh = formularioSolicitudBuilder.getPlacaVeh();
-    this.txtSaldoCredVeh = formularioSolicitudBuilder.getSaldoCredVeh();
-    this.txtPrendaFavVeh = formularioSolicitudBuilder.getPrendaFavVeh();
-    this.txtSueldoFijo = formularioSolicitudBuilder.getSueldoFijo();
-    this.txtSalVarCom = formularioSolicitudBuilder.getSalVarCom();
-    this.txtArrendamiento = formularioSolicitudBuilder.getArrendamiento();
-    this.txtRenFin = formularioSolicitudBuilder.getRenFin();
-    this.txtHonorarios = formularioSolicitudBuilder.getHonorarios();
-    this.txtOtrosIng = formularioSolicitudBuilder.getOtrosIng();
-    this.txtCualesIng = formularioSolicitudBuilder.getCualesIng();
-    this.txtTIngresos = formularioSolicitudBuilder.getTIngresos();
-    this.txtArriendos = formularioSolicitudBuilder.getArriendos();
-    this.txtGastosPer = formularioSolicitudBuilder.getGastosPer();
-    this.txtPresDfFin = formularioSolicitudBuilder.getPresDfFin();
-    this.txtDeducciones = formularioSolicitudBuilder.getDeducciones();
-    this.txtTarjCred = formularioSolicitudBuilder.getTarjCred();
-    this.txtOtrosGastos = formularioSolicitudBuilder.getOtrosGastos();
-    this.txtCualesGastos = formularioSolicitudBuilder.getCualesGastos();
-    this.txtTEgresos = formularioSolicitudBuilder.getTEgresos();
-    this.txtPagHip = formularioSolicitudBuilder.getPagHip();
-    this.txtVlrComViv = formularioSolicitudBuilder.getVlrComViv();
-    this.txtGustaVivir = formularioSolicitudBuilder.getGustaVivir();
-    this.rdCompViv = formularioSolicitudBuilder.getRdCompViv();
-    this.rdCupoExtra = formularioSolicitudBuilder.getRdCupoExtra();
-    this.cmbRazondecredito = formularioSolicitudBuilder.getRazondecredito();
-    this.razon = formularioSolicitudBuilder.getRazon();
-    this.txtPNConyugue = formularioSolicitudBuilder.getPNConyugue();
-    this.txtSNConyugue = formularioSolicitudBuilder.getSNConyugue();
-    this.txtPAConyugue = formularioSolicitudBuilder.getPAConyugue();
-    this.txtSAConyugue = formularioSolicitudBuilder.getSAConyugue();
-    this.cmbTipoDocCony = formularioSolicitudBuilder.getTipoDocCony();
-    this.txtDocConyugue = formularioSolicitudBuilder.getDocConyugue();
-    this.txtFechaExpCon = formularioSolicitudBuilder.getFechaExpCon();
-    this.txtLugarExpCon = formularioSolicitudBuilder.getLugarExpCon();
-    this.txtFechaNacCon = formularioSolicitudBuilder.getFechaNacCon();
-    this.txtLugarNacCon = formularioSolicitudBuilder.getLugarNacCon();
-    this.cmbSexoCon = formularioSolicitudBuilder.getSexoCon();
-    this.txtLugTrabCon = formularioSolicitudBuilder.getLugTrabCon();
-    this.rdOcupacionCon = formularioSolicitudBuilder.getRdOcupacionCon();
-    this.txtDepEco = formularioSolicitudBuilder.getDepEco();
-    this.txtFecIngr = formularioSolicitudBuilder.getFecIngr();
-    this.txtCargoCon = formularioSolicitudBuilder.getCargoCon();
-    this.txtTIngCon = formularioSolicitudBuilder.getTIngCon();
-    this.txtTEgrCon = formularioSolicitudBuilder.getTEgrCon();
-    this.txtEpsConyuge = formularioSolicitudBuilder.getEpsConyuge();
-    this.cmbNivelEstCon = formularioSolicitudBuilder.getNivelEstCon();
-    this.txtCelCon = formularioSolicitudBuilder.getCelCon();
-    this.ref_familiar_nombre = formularioSolicitudBuilder.getRefFamiliarNombre();
-    this.ref_familiar_par = formularioSolicitudBuilder.getRefFamiliarPar();
-    this.ref_familiar_tel = formularioSolicitudBuilder.getRefFamiliarTel();
-    this.cmbCiudadRefFam = formularioSolicitudBuilder.getCiudadRefFam();
-    this.txtCelRFam = formularioSolicitudBuilder.getCelRFam();
-    this.dirFamiliar = formularioSolicitudBuilder.getDirFamiliar();
-    this.ref_personal_nombre = formularioSolicitudBuilder.getRefPersonalNombre();
-    this.ref_personal_par = formularioSolicitudBuilder.getRefPersonalPar();
-    this.ref_personal_tel = formularioSolicitudBuilder.getRefPersonalTel();
-    this.cmbCiudadRefPer = formularioSolicitudBuilder.getCiudadRefPer();
-    this.txtCelRPer = formularioSolicitudBuilder.getCelRPer();
-    this.dirPersonal = formularioSolicitudBuilder.getDirPersonal();
-    this.txtNEntFin = formularioSolicitudBuilder.getNEntFin();
-    this.txtSucursal = formularioSolicitudBuilder.getSucursal();
-    this.cmbTipoProd = formularioSolicitudBuilder.getTipoProd();
-    this.cmbSatisfaccionC = formularioSolicitudBuilder.getSatisfaccionC();
-    this.txtPorqueSatic = formularioSolicitudBuilder.getPorqueSatic();
-    this.cmbConocioFinsocial = formularioSolicitudBuilder.getConocioFinsocial();
-    this.txtOtroConocer = formularioSolicitudBuilder.getOtroConocer();
-    this.rdtransaccion_ext = formularioSolicitudBuilder.getRdransaccionExt();
-    this.rdCuentasExt = formularioSolicitudBuilder.getRdCuentasExt();
+    this.plazo = formularioSolicitudBuilder.getPlaz();
+    this.tasaInteres = formularioSolicitudBuilder.getTasaInteres();
+    this.tasaMora = formularioSolicitudBuilder.getTasaMora();
+    this.tasaMaxima = formularioSolicitudBuilder.getTasaMaxima();
+    this.primerApellido = formularioSolicitudBuilder.getPApellido();
+    this.segundoApellido = formularioSolicitudBuilder.getSApellido();
+    this.primerNombre = formularioSolicitudBuilder.getPNombre();
+    this.segundoNombre = formularioSolicitudBuilder.getSNombre();
+    this.tipoDocumento = formularioSolicitudBuilder.getTipoDoc();
+    this.lugarExpedicion = formularioSolicitudBuilder.getLugarExp();
+    this.fechaExpedicion = formularioSolicitudBuilder.getFechaExp();
+    this.fechaNacimiento = formularioSolicitudBuilder.getFechaNac();
+    this.sexo = formularioSolicitudBuilder.getSexo();
+    this.lugarNacimiento = formularioSolicitudBuilder.getLugarNac();
+    this.estadoCivil = formularioSolicitudBuilder.getEstCivil();
+    this.pais = formularioSolicitudBuilder.getPais();
+    this.ciudadDepartamento = formularioSolicitudBuilder.getCiudad();
+    this.tipoVivienda = formularioSolicitudBuilder.getTipoViv();
+    this.estrato = formularioSolicitudBuilder.getEstrato();
+    this.arrendatario = formularioSolicitudBuilder.getArrend();
+    this.telefonoArrendador = formularioSolicitudBuilder.getTelArr();
+    this.direccionResidencia = formularioSolicitudBuilder.getDireccionResidencia();
+    this.barrio = formularioSolicitudBuilder.getBarrio();
+    this.telefonoResidencia = formularioSolicitudBuilder.getTel();
+    this.celular = formularioSolicitudBuilder.getCel();
+    this.correspondenciaA = formularioSolicitudBuilder.getCorrespondencia();
+    this.email = formularioSolicitudBuilder.getEmail();
+    this.anios = formularioSolicitudBuilder.getAnios();
+    this.meses = formularioSolicitudBuilder.getMeses();
+    this.eps = formularioSolicitudBuilder.getEps();
+    this.adulto = formularioSolicitudBuilder.getAdulto();
+    this.menor18 = formularioSolicitudBuilder.getMenor18();
+    this.nivelEstudio = formularioSolicitudBuilder.getNivelEst();
+    this.profesion = formularioSolicitudBuilder.getProfesion();
+    this.ocupacion = formularioSolicitudBuilder.getOcupacion();
+    this.declaraRenta = formularioSolicitudBuilder.getDeRenta();
+    this.decisionCargo = formularioSolicitudBuilder.getDesicionCargo();
+    this.recursosPublicos = formularioSolicitudBuilder.getrecPublicos();
+    this.personajePublico = formularioSolicitudBuilder.getPerPubl();
+    this.empresa = formularioSolicitudBuilder.getEmpresa();
+    this.cargo = formularioSolicitudBuilder.getCargo();
+    this.fechaVinculacion = formularioSolicitudBuilder.getFechaVinculacion();
+    this.direccionTrabajo = formularioSolicitudBuilder.getDireccionTrabajo();
+    this.ciudadTrabajo = formularioSolicitudBuilder.getCiudad2();
+    this.nitEmpresa = formularioSolicitudBuilder.getNitEmpresa();
+    this.telefonoEmpresa = formularioSolicitudBuilder.getTelEmpresa();
+    this.extension = formularioSolicitudBuilder.getExt();
+    this.tipoEmpresa = formularioSolicitudBuilder.getTipoEmp();
+    this.actividadEconomica = formularioSolicitudBuilder.getActEcon();
+    this.tipoContrato = formularioSolicitudBuilder.getTipoContrato();
+    this.activosCorrientes = formularioSolicitudBuilder.getActivosCorrientes();
+    this.activosFijos = formularioSolicitudBuilder.getActivosFijos();
+    this.otrosActivos = formularioSolicitudBuilder.getOtrosActivos();
+    this.cualesActivos = formularioSolicitudBuilder.getCualesActivos();
+    this.totalActivos = formularioSolicitudBuilder.getTotalActivos();
+    this.pasivosFinancieros = formularioSolicitudBuilder.getPasivosFinancieros();
+    this.pasivosCorrientes = formularioSolicitudBuilder.getPasivosCorrientes();
+    this.otrosPasivos = formularioSolicitudBuilder.getOtrosPasivos();
+    this.cualesPasivos = formularioSolicitudBuilder.getCualesPasivos();
+    this.totalPasivos = formularioSolicitudBuilder.getTotalPasivos();
+    this.tipoInmueble = formularioSolicitudBuilder.getTipoInm();
+    this.valorComercialInmueble = formularioSolicitudBuilder.getValorComInm();
+    this.hipotecadoA = formularioSolicitudBuilder.getHipotecado();
+    this.direccion = formularioSolicitudBuilder.getDireccion();
+    this.saldoCreditoInmueble = formularioSolicitudBuilder.getSaldoCredInm();
+    this.vehiculoClase = formularioSolicitudBuilder.getVehCls();
+    this.valorComercialVehiculo = formularioSolicitudBuilder.getValorComVeh();
+    this.marcaModelo = formularioSolicitudBuilder.getMarcaVeh();
+    this.placa = formularioSolicitudBuilder.getPlacaVeh();
+    this.saldoCreditoVehiculo = formularioSolicitudBuilder.getSaldoCredVeh();
+    this.prendaAFavor = formularioSolicitudBuilder.getPrendaFavVeh();
+    this.salarioFijo = formularioSolicitudBuilder.getSueldoFijo();
+    this.salarioVariableComisiones = formularioSolicitudBuilder.getSalVarCom();
+    this.arrendamiento = formularioSolicitudBuilder.getArrendamiento();
+    this.rendimientosFinancieros = formularioSolicitudBuilder.getRenFin();
+    this.honorarios = formularioSolicitudBuilder.getHonorarios();
+    this.otrosIngresos = formularioSolicitudBuilder.getOtrosIng();
+    this.cualesIngresos = formularioSolicitudBuilder.getCualesIng();
+    this.totalIngresos = formularioSolicitudBuilder.getTIngresos();
+    this.arriendos = formularioSolicitudBuilder.getArriendos();
+    this.gastosPersonales = formularioSolicitudBuilder.getGastosPer();
+    this.prestamosDiferentes = formularioSolicitudBuilder.getPresDfFin();
+    this.deducciones = formularioSolicitudBuilder.getDeducciones();
+    this.tarjetaCredito = formularioSolicitudBuilder.getTarjCred();
+    this.otrosGastos = formularioSolicitudBuilder.getOtrosGastos();
+    this.cualesGastos = formularioSolicitudBuilder.getCualesGastos();
+    this.totalEgresos = formularioSolicitudBuilder.getTEgresos();
+    this.pagoHipoteca = formularioSolicitudBuilder.getPagHip();
+    this.valorComercialVivienda = formularioSolicitudBuilder.getVlrComViv();
+    this.dondeVivir = formularioSolicitudBuilder.getGustaVivir();
+    this.quiereComprar = formularioSolicitudBuilder.getQuiereComprar();
+    this.cupoExtra = formularioSolicitudBuilder.getCupoExtra();
+    this.razonCredito = formularioSolicitudBuilder.getRazondecredito();
+    this.detalleRazon = formularioSolicitudBuilder.getDetalleRazon();
+    this.primerNombreConyugue = formularioSolicitudBuilder.getPNConyugue();
+    this.segundoNombreConyugue = formularioSolicitudBuilder.getSNConyugue();
+    this.primerApellidoConyugue = formularioSolicitudBuilder.getPAConyugue();
+    this.segundoApellidoConyugue = formularioSolicitudBuilder.getSAConyugue();
+    this.tipoDocumentoConyugue = formularioSolicitudBuilder.getTipoDocCony();
+    this.documentoConyugue = formularioSolicitudBuilder.getDocConyugue();
+    this.fechaExpedicionConyugue = formularioSolicitudBuilder.getFechaExpCon();
+    this.lugarExpedicionConyugue = formularioSolicitudBuilder.getLugarExpCon();
+    this.fechaNacimientoConyugue = formularioSolicitudBuilder.getFechaNacCon();
+    this.lugarNacimientoConyugue = formularioSolicitudBuilder.getLugarNacCon();
+    this.sexoConyugue = formularioSolicitudBuilder.getSexoCon();
+    this.lugarTrabajoConyugue = formularioSolicitudBuilder.getLugTrabCon();
+    this.ocupacionConyugue = formularioSolicitudBuilder.getOcupacionConyugue();
+    this.dependenciaEconomica = formularioSolicitudBuilder.getDepEco();
+    this.fechaIngreso = formularioSolicitudBuilder.getFecIngr();
+    this.cargoConyugue = formularioSolicitudBuilder.getCargoCon();
+    this.totalIngresosConyugue = formularioSolicitudBuilder.getTIngCon();
+    this.totalEgresosConyugue = formularioSolicitudBuilder.getTEgrCon();
+    this.epsConyugue = formularioSolicitudBuilder.getEpsConyuge();
+    this.nivelEstudioConyugue = formularioSolicitudBuilder.getNivelEstCon();
+    this.celularConyugue = formularioSolicitudBuilder.getCelCon();
+    this.nombreReferenciaFamiliar = formularioSolicitudBuilder.getRefFamiliarNombre();
+    this.parentescoReferenciaFamiliar = formularioSolicitudBuilder.getRefFamiliarPar();
+    this.telefonoReferenciaFamiliar = formularioSolicitudBuilder.getRefFamiliarTel();
+    this.ciudadReferenciaFamiliar = formularioSolicitudBuilder.getCiudadRefFam();
+    this.celularReferenciaFamiliar = formularioSolicitudBuilder.getCelRFam();
+    this.direccionReferenciaFamiliar = formularioSolicitudBuilder.getDireccionReferenciaFamiliar();
+    this.nombreReferenciaPersonal = formularioSolicitudBuilder.getRefPersonalNombre();
+    this.parentescoReferenciaPersonal = formularioSolicitudBuilder.getRefPersonalPar();
+    this.telefonoReferenciaPersonal = formularioSolicitudBuilder.getRefPersonalTel();
+    this.ciudadReferenciaPersonal = formularioSolicitudBuilder.getCiudadRefPer();
+    this.celularReferenciaPersonal = formularioSolicitudBuilder.getCelRPer();
+    this.direccionReferenciaPersonal = formularioSolicitudBuilder.getEntidadFinanciera();
+    this.entidadFinanciera = formularioSolicitudBuilder.getNEntFin();
+    this.sucursal = formularioSolicitudBuilder.getSucursal();
+    this.tipoProducto = formularioSolicitudBuilder.getTipoProd();
+    this.calificacionAtencion = formularioSolicitudBuilder.getSatisfaccionC();
+    this.razonCalificacion = formularioSolicitudBuilder.getPorqueSatic();
+    this.conocioFinsocial = formularioSolicitudBuilder.getConocioFinsocial();
+    this.razonConocio = formularioSolicitudBuilder.getOtroConocer();
+    this.transaccionMonedaExtranjera = formularioSolicitudBuilder.getRdransaccionExt();
+    this.cuentaExterior = formularioSolicitudBuilder.getCuentaExterior();
   }
 
-  public String getNumPaso() {
-    return numPaso;
+  public String getNumeroPaso() {
+    return numeroPaso;
   }
 
   public String getFecha() {
-    return txtFecha;
+    return fecha;
   }
 
-  public int getPerfil() {
+  public String getPerfil() {
     return perfil;
   }
 
-  public String getPasoSol() {
-    return pasoSol;
+  public String getPasoSolucion() {
+    return pasoSolucion;
   }
 
   public String getAsesor() {
-    return txtAsesor;
+    return asesor;
   }
 
-  public int getCiuC() {
-    return txtCiuC;
+  public String getCiudadCredito() {
+    return ciudadCredito;
   }
 
-  public int getCalf() {
-    return txtCalf;
+  public String getCalificacion() {
+    return calificacion;
   }
 
-  public String getTSol() {
-    return txtTSol;
+  public String getTipoSolicitud() {
+    return tipoSolicitud;
   }
 
-  public int getAVinculacion() {
-    return a_vinculacion;
+  public String getAgenciaVinculacion() {
+    return agenciaVinculacion;
   }
 
-  public String getVin() {
-    return txtVin;
+  public String getVinculacion() {
+    return vinculacion;
   }
 
-  public int getMonto() {
-    return txtMonto;
+  public String getMonto() {
+    return monto;
   }
 
   public String getLinea() {
-    return txtLinea;
+    return linea;
   }
 
-  public int getCuota() {
+  public String getCuota() {
     return cuota;
   }
 
-  public int getPlaz() {
-    return txtPlaz;
+  public String getPlazo() {
+    return plazo;
   }
 
-  public int getTasaI() {
-    return tasaI;
+  public String getTasaInteres() {
+    return tasaInteres;
   }
 
-  public int getTasaM() {
-    return tasaM;
+  public String getTasaMora() {
+    return tasaMora;
   }
 
-  public int getTasaMax() {
-    return tasaMax;
+  public String getTasaMaxima() {
+    return tasaMaxima;
   }
 
-  public String getPApellido() {
-    return txtPApellido;
+  public String getPrimerApellido() {
+    return primerApellido;
   }
 
-  public String getSApellido() {
-    return txtSApellido;
+  public String getSegundoApellido() {
+    return segundoApellido;
   }
 
-  public String getPNombre() {
-    return txtPNombre;
+  public String getPrimerNombre() {
+    return primerNombre;
   }
 
-  public String getSNombre() {
-    return txtSNombre;
+  public String getSegundoNombre() {
+    return segundoNombre;
   }
 
-  public int getTipoDoc() {
-    return cmbTipoDoc;
+  public String getTipoDocumento() {
+    return tipoDocumento;
   }
 
-  public int getLugarExp() {
-    return txtLugarExp;
+  public String getLugarExpedicion() {
+    return lugarExpedicion;
   }
 
-  public String getFechaExp() {
-    return txtFechaExp;
+  public String getFechaExpedicion() {
+    return fechaExpedicion;
   }
 
-  public String getFechaNac() {
-    return txtFechaNac;
+  public String getFechaNacimiento() {
+    return fechaNacimiento;
   }
 
   public String getSexo() {
-    return cmbSexo;
+    return sexo;
   }
 
-  public int getLugarNac() {
-    return txtLugarNac;
+  public String getLugarNacimiento() {
+    return lugarNacimiento;
   }
 
-  public String getEstCivil() {
-    return cmbEstCivil;
+  public String getEstadoCivil() {
+    return estadoCivil;
   }
 
   public String getPais() {
-    return txtPais;
+    return pais;
   }
 
-  public int getCiudad() {
-    return cmbCiudad;
+  public String getCiudadDepartamento() {
+    return ciudadDepartamento;
   }
 
-  public String getTipoViv() {
-    return cmbTipoViv;
+  public String getTipoVivienda() {
+    return tipoVivienda;
   }
 
-  public int getEstrato() {
-    return txtEstrato;
+  public String getEstrato() {
+    return estrato;
   }
 
-  public String getArrend() {
-    return txtArrend;
+  public String getArrendatario() {
+    return arrendatario;
   }
 
-  public int getTelArr() {
-    return txtTelArr;
+  public String getTelefonoArrendador() {
+    return telefonoArrendador;
   }
 
-  public String getDirCa() {
-    return dirCa;
+  public String getDireccionResidencia() {
+    return direccionResidencia;
   }
 
   public String getBarrio() {
-    return txtBarrio;
+    return barrio;
   }
 
-  public int getTel() {
-    return txtTel;
+  public String getTelefonoResidencia() {
+    return telefonoResidencia;
   }
 
-  public int getCel() {
-    return txtCel;
+  public String getCelular() {
+    return celular;
   }
 
-  public String getCorrespondencia() {
-    return cmbCorrespondencia;
+  public String getCorrespondenciaA() {
+    return correspondenciaA;
   }
 
   public String getEmail() {
-    return txtEmail;
+    return email;
   }
 
-  public int getAnios() {
-    return txtAnios;
+  public String getAnios() {
+    return anios;
   }
 
-  public int getMeses() {
-    return txtMeses;
+  public String getMeses() {
+    return meses;
   }
 
   public String getEps() {
-    return txtEps;
+    return eps;
   }
 
-  public int getAdulto() {
-    return txtAdulto;
+  public String getAdulto() {
+    return adulto;
   }
 
-  public int getMenor18() {
-    return txtMenor18;
+  public String getMenor18() {
+    return menor18;
   }
 
-  public int getNivelEst() {
-    return cmbNivelEst;
+  public String getNivelEstudio() {
+    return nivelEstudio;
   }
 
-  public int getProfesion() {
-    return cmbProfesion;
+  public String getProfesion() {
+    return profesion;
   }
 
-  public int getRdOcupacion() {
-    return rdOcupacion;
+  public String getOcupacion() {
+    return ocupacion;
   }
 
-  public String getDeRenta() {
-    return txtDeRenta;
+  public String getDeclaraRenta() {
+    return declaraRenta;
   }
 
-  public String getDesicionCargo() {
-    return txtDesicionCargo;
+  public String getDecisionCargo() {
+    return decisionCargo;
   }
 
-  public int getrecPublicos() {
-    return txtrecPublicos;
+  public String getRecursosPublicos() {
+    return recursosPublicos;
   }
 
-  public int getPerPubl() {
-    return txtPerPubl;
+  public String getPersonajePublico() {
+    return personajePublico;
   }
 
-  public int getEmpresa() {
-    return txtEmpresa;
+  public String getEmpresa() {
+    return empresa;
   }
 
   public String getCargo() {
-    return txtCargo;
+    return cargo;
   }
 
   public String getFechaVinculacion() {
-    return txtFechaVinculacion;
+    return fechaVinculacion;
   }
 
-  public String getDirTrabajo() {
-    return dirTrabajo;
+  public String getDireccionTrabajo() {
+    return direccionTrabajo;
   }
 
-  public int getCiudad2() {
-    return cmbCiudad2;
+  public String getCiudadTrabajo() {
+    return ciudadTrabajo;
   }
 
   public String getNitEmpresa() {
-    return txtNitEmpresa;
+    return nitEmpresa;
   }
 
-  public int getTelEmpresa() {
-    return txtTelEmpresa;
+  public String getTelefonoEmpresa() {
+    return telefonoEmpresa;
   }
 
-  public int getExt() {
-    return txtExt;
+  public String getExtension() {
+    return extension;
   }
 
-  public int getTipoEmp() {
-    return cmbTipoEmp;
+  public String getTipoEmpresa() {
+    return tipoEmpresa;
   }
 
-  public int getActEcon() {
-    return cmbActEcon;
+  public String getActividadEconomica() {
+    return actividadEconomica;
   }
 
-  public int getTipoContrato() {
-    return cmbTipoContrato;
+  public String getTipoContrato() {
+    return tipoContrato;
   }
 
-  public int getActivosCorrientes() {
-    return activos_corrientes;
+  public String getActivosCorrientes() {
+    return activosCorrientes;
   }
 
-  public int getActivosFijos() {
-    return activos_fijos;
+  public String getActivosFijos() {
+    return activosFijos;
   }
 
-  public int getOtrosActivos() {
-    return otros_activos;
+  public String getOtrosActivos() {
+    return otrosActivos;
   }
 
   public String getCualesActivos() {
-    return cuales_activos;
+    return cualesActivos;
   }
 
-  public int getTotalActivos() {
-    return total_activos;
+  public String getTotalActivos() {
+    return totalActivos;
   }
 
-  public int getPasivosFinancieros() {
-    return pasivos_financieros;
+  public String getPasivosFinancieros() {
+    return pasivosFinancieros;
   }
 
-  public int getPasivosCorrientes() {
-    return pasivos_corrientes;
+  public String getPasivosCorrientes() {
+    return pasivosCorrientes;
   }
 
-  public int getOtrosPasivos() {
-    return otros_pasivos;
+  public String getOtrosPasivos() {
+    return otrosPasivos;
   }
 
   public String getCualesPasivos() {
-    return cuales_pasivos;
+    return cualesPasivos;
   }
 
-  public int getTotalPasivos() {
-    return total_pasivos;
+  public String getTotalPasivos() {
+    return totalPasivos;
   }
 
-  public String getTipoInm() {
-    return txtTipoInm;
+  public String getTipoInmueble() {
+    return tipoInmueble;
   }
 
-  public int getValorComInm() {
-    return txtValorComInm;
+  public String getValorComercialInmueble() {
+    return valorComercialInmueble;
   }
 
-  public String getHipotecado() {
-    return txtHipotecado;
+  public String getHipotecadoA() {
+    return hipotecadoA;
   }
 
-  public String getDirBienes() {
-    return dirBienes;
+  public String getDireccion() {
+    return direccion;
   }
 
-  public int getSaldoCredInm() {
-    return txtSaldoCredInm;
+  public String getSaldoCreditoInmueble() {
+    return saldoCreditoInmueble;
   }
 
-  public String getVehCls() {
-    return txtVehCls;
+  public String getVehiculoClase() {
+    return vehiculoClase;
   }
 
-  public int getValorComVeh() {
-    return txtValorComVeh;
+  public String getValorComercialVehiculo() {
+    return valorComercialVehiculo;
   }
 
-  public String getMarcaVeh() {
-    return txtMarcaVeh;
+  public String getMarcaModelo() {
+    return marcaModelo;
   }
 
-  public String getPlacaVeh() {
-    return txtPlacaVeh;
+  public String getPlaca() {
+    return placa;
   }
 
-  public int getSaldoCredVeh() {
-    return txtSaldoCredVeh;
+  public String getSaldoCreditoVehiculo() {
+    return saldoCreditoVehiculo;
   }
 
-  public String getPrendaFavVeh() {
-    return txtPrendaFavVeh;
+  public String getPrendaAFavor() {
+    return prendaAFavor;
   }
 
-  public int getSueldoFijo() {
-    return txtSueldoFijo;
+  public String getSalarioFijo() {
+    return salarioFijo;
   }
 
-  public int getSalVarCom() {
-    return txtSalVarCom;
+  public String getSalarioVariableComisiones() {
+    return salarioVariableComisiones;
   }
 
-  public int getArrendamiento() {
-    return txtArrendamiento;
+  public String getArrendamiento() {
+    return arrendamiento;
   }
 
-  public int getRenFin() {
-    return txtRenFin;
+  public String getRendimientosFinancieros() {
+    return rendimientosFinancieros;
   }
 
-  public int getHonorarios() {
-    return txtHonorarios;
+  public String getHonorarios() {
+    return honorarios;
   }
 
-  public int getOtrosIng() {
-    return txtOtrosIng;
+  public String getOtrosIngresos() {
+    return otrosIngresos;
   }
 
-  public String getCualesIng() {
-    return txtCualesIng;
+  public String getCualesIngresos() {
+    return cualesIngresos;
   }
 
-  public int getTIngresos() {
-    return txtTIngresos;
+  public String getTotalIngresos() {
+    return totalIngresos;
   }
 
-  public int getArriendos() {
-    return txtArriendos;
+  public String getArriendos() {
+    return arriendos;
   }
 
-  public int getGastosPer() {
-    return txtGastosPer;
+  public String getGastosPersonales() {
+    return gastosPersonales;
   }
 
-  public int getPresDfFin() {
-    return txtPresDfFin;
+  public String getPrestamosDiferentes() {
+    return prestamosDiferentes;
   }
 
-  public int getDeducciones() {
-    return txtDeducciones;
+  public String getDeducciones() {
+    return deducciones;
   }
 
-  public int getTarjCred() {
-    return txtTarjCred;
+  public String getTarjetaCredito() {
+    return tarjetaCredito;
   }
 
-  public int getOtrosGastos() {
-    return txtOtrosGastos;
+  public String getOtrosGastos() {
+    return otrosGastos;
   }
 
   public String getCualesGastos() {
-    return txtCualesGastos;
+    return cualesGastos;
   }
 
-  public int getTEgresos() {
-    return txtTEgresos;
+  public String getTotalEgresos() {
+    return totalEgresos;
   }
 
-  public int getPagHip() {
-    return txtPagHip;
+  public String getPagoHipoteca() {
+    return pagoHipoteca;
   }
 
-  public int getVlrComViv() {
-    return txtVlrComViv;
+  public String getValorComercialVivienda() {
+    return valorComercialVivienda;
   }
 
-  public String getGustaVivir() {
-    return txtGustaVivir;
+  public String getDondeVivir() {
+    return dondeVivir;
   }
 
-  public int getRdCompViv() {
-    return rdCompViv;
+  public String getQuiereComprar() {
+    return quiereComprar;
   }
 
-  public int getRdCupoExtra() {
-    return rdCupoExtra;
+  public String getCupoExtra() {
+    return cupoExtra;
   }
 
-  public String getRazondecredito() {
-    return cmbRazondecredito;
+  public String getRazonCredito() {
+    return razonCredito;
   }
 
-  public String getRazon() {
-    return razon;
+  public String getDetalleRazon() {
+    return detalleRazon;
   }
 
-  public String getPNConyugue() {
-    return txtPNConyugue;
+  public String getPrimerNombreConyugue() {
+    return primerNombreConyugue;
   }
 
-  public String getSNConyugue() {
-    return txtSNConyugue;
+  public String getSegundoNombreConyugue() {
+    return segundoNombreConyugue;
   }
 
-  public String getPAConyugue() {
-    return txtPAConyugue;
+  public String getPrimerApellidoConyugue() {
+    return primerApellidoConyugue;
   }
 
-  public String getSAConyugue() {
-    return txtSAConyugue;
+  public String getSegundoApellidoConyugue() {
+    return segundoApellidoConyugue;
   }
 
-  public int getTipoDocCony() {
-    return cmbTipoDocCony;
+  public String getTipoDocumentoConyugue() {
+    return tipoDocumentoConyugue;
   }
 
-  public int getDocConyugue() {
-    return txtDocConyugue;
+  public String getDocumentoConyugue() {
+    return documentoConyugue;
   }
 
-  public String getFechaExpCon() {
-    return txtFechaExpCon;
+  public String getFechaExpedicionConyugue() {
+    return fechaExpedicionConyugue;
   }
 
-  public String getLugarExpCon() {
-    return txtLugarExpCon;
+  public String getLugarExpedicionConyugue() {
+    return lugarExpedicionConyugue;
   }
 
-  public String getFechaNacCon() {
-    return txtFechaNacCon;
+  public String getFechaNacimientoConyugue() {
+    return fechaNacimientoConyugue;
   }
 
-  public String getLugarNacCon() {
-    return txtLugarNacCon;
+  public String getLugarNacimientoConyugue() {
+    return lugarNacimientoConyugue;
   }
 
-  public String getSexoCon() {
-    return cmbSexoCon;
+  public String getSexoConyugue() {
+    return sexoConyugue;
   }
 
-  public String getLugTrabCon() {
-    return txtLugTrabCon;
+  public String getLugarTrabajoConyugue() {
+    return lugarTrabajoConyugue;
   }
 
-  public int getRdOcupacionCon() {
-    return rdOcupacionCon;
+  public String getOcupacionConyugue() {
+    return ocupacionConyugue;
   }
 
-  public int getDepEco() {
-    return txtDepEco;
+  public String getDependenciaEconomica() {
+    return dependenciaEconomica;
   }
 
-  public String getFecIngr() {
-    return txtFecIngr;
+  public String getFechaIngreso() {
+    return fechaIngreso;
   }
 
-  public String getCargoCon() {
-    return txtCargoCon;
+  public String getCargoConyugue() {
+    return cargoConyugue;
   }
 
-  public String getTIngCon() {
-    return txtTIngCon;
+  public String getTotalIngresosConyugue() {
+    return totalIngresosConyugue;
   }
 
-  public String getTEgrCon() {
-    return txtTEgrCon;
+  public String getTotalEgresosConyugue() {
+    return totalEgresosConyugue;
   }
 
-  public String getEpsConyuge() {
-    return txtEpsConyuge;
+  public String getEpsConyugue() {
+    return epsConyugue;
   }
 
-  public String getNivelEstCon() {
-    return cmbNivelEstCon;
+  public String getNivelEstudioConyugue() {
+    return nivelEstudioConyugue;
   }
 
-  public int getCelCon() {
-    return txtCelCon;
+  public String getCelularConyugue() {
+    return celularConyugue;
   }
 
-  public String getRefFamiliarNombre() {
-    return ref_familiar_nombre;
+  public String getNombreReferenciaFamiliar() {
+    return nombreReferenciaFamiliar;
   }
 
-  public String getRefFamiliarPar() {
-    return ref_familiar_par;
+  public String getParentescoReferenciaFamiliar() {
+    return parentescoReferenciaFamiliar;
   }
 
-  public int getRefFamiliarTel() {
-    return ref_familiar_tel;
+  public String getTelefonoReferenciaFamiliar() {
+    return telefonoReferenciaFamiliar;
   }
 
-  public int getCiudadRefFam() {
-    return cmbCiudadRefFam;
+  public String getCiudadReferenciaFamiliar() {
+    return ciudadReferenciaFamiliar;
   }
 
-  public int getCelRFam() {
-    return txtCelRFam;
+  public String getCelularReferenciaFamiliar() {
+    return celularReferenciaFamiliar;
   }
 
-  public String getDirFamiliar() {
-    return dirFamiliar;
+  public String getDireccionReferenciaFamiliar() {
+    return direccionReferenciaFamiliar;
   }
 
-  public String getRefPersonalNombre() {
-    return ref_personal_nombre;
+  public String getNombreReferenciaPersonal() {
+    return nombreReferenciaPersonal;
   }
 
-  public String getRefPersonalPar() {
-    return ref_personal_par;
+  public String getParentescoReferenciaPersonal() {
+    return parentescoReferenciaPersonal;
   }
 
-  public int getRefPersonalTel() {
-    return ref_personal_tel;
+  public String getTelefonoReferenciaPersonal() {
+    return telefonoReferenciaPersonal;
   }
 
-  public int getCiudadRefPer() {
-    return cmbCiudadRefPer;
+  public String getCelularReferenciaPersonal() {
+    return celularReferenciaPersonal;
   }
 
-  public long getCelRPer() {
-    return txtCelRPer;
+  public String getDireccionReferenciaPersonal() {
+    return direccionReferenciaPersonal;
   }
 
-  public String getDirPersonal() {
-    return dirPersonal;
-  }
-
-  public String getNEntFin() {
-    return txtNEntFin;
+  public String getEntidadFinanciera() {
+    return entidadFinanciera;
   }
 
   public String getSucursal() {
-    return txtSucursal;
+    return sucursal;
   }
 
-  public int getTipoProd() {
-    return cmbTipoProd;
+  public String getTipoProducto() {
+    return tipoProducto;
   }
 
-  public String getSatisfaccionC() {
-    return cmbSatisfaccionC;
+  public String getCalificacionAtencion() {
+    return calificacionAtencion;
   }
 
-  public String getPorqueSatic() {
-    return txtPorqueSatic;
+  public String getRazonCalificacion() {
+    return razonCalificacion;
   }
 
   public String getConocioFinsocial() {
-    return cmbConocioFinsocial;
+    return conocioFinsocial;
   }
 
-  public String getOtroConocer() {
-    return txtOtroConocer;
+  public String getRazonConocio() {
+    return razonConocio;
   }
 
-  public int getRdtransaccionExt() {
-    return rdtransaccion_ext;
+  public String getCuentaExterior() {
+    return cuentaExterior;
   }
 
-  public int getRdCuentasExt() {
-    return rdCuentasExt;
+  public String getCiudadReferenciaPersonal() {
+    return ciudadReferenciaPersonal;
+  }
+
+  public String getTransaccionMonedaExtranjera() {
+    return transaccionMonedaExtranjera;
   }
 }
