@@ -63,7 +63,14 @@ public class InformacionChequeoDocumentoHuy implements Task {
         cerrarPestana(),
         WaitUntil.the(BTN_GUARDAR_DATOS, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         JavaScriptClick.on(BTN_GUARDAR_DATOS),
+        WaitFor.seconds(TIEMPO_3),
         WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
-        Click.on(BTN_OK));
+        Click.on(BTN_OK),
+        Click.on(BTN_MI_CUENTA),
+        Click.on(MNM_MI_CUENTA.of(SALIR)),
+        Loguearse.enFinsonet(),
+        WaitFor.seconds(TIEMPO_3),
+        Click.on(LNK_ORIGINACION)
+    );
   }
 }
