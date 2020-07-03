@@ -10,7 +10,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
   private String numPaso;
   private String txtFecha;
   private int perfil;
-  private int pasoSol;
+  private String pasoSol;
   private String txtAsesor;
   private int txtCiuC;
   private int txtCalf;
@@ -162,7 +162,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     this.numPaso = "";
     this.txtFecha = "";
     this.perfil = 0;
-    this.pasoSol = 0;
+    this.pasoSol = "";
     this.txtAsesor = "";
     this.txtCiuC = 0;
     this.txtCalf = 0;
@@ -334,7 +334,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return this;
   }
 
-  private FormularioSolicitudBuilder pasoSolicitud(int pasoSol) {
+  private FormularioSolicitudBuilder pasoSolicitud(String pasoSol) {
     this.pasoSol = pasoSol;
     return this;
   }
@@ -789,7 +789,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     this.numeroPaso("step-8");
     this.fecha();
     this.perfil(3);
-    this.pasoSolicitud(8);
+    this.pasoSolicitud("8");
     this.asesor();
     this.ciudadSolicitud(5001);
     this.calificacion(660);
@@ -886,12 +886,12 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     this.numeroPaso("step-8");
     this.fecha();
     this.perfil(3);
-    this.pasoSolicitud(8);
+    this.pasoSolicitud("");
     this.asesor();
-    this.ciudadSolicitud(5001);
-    this.calificacion(660);
+    this.ciudadSolicitud(5021);
+    this.calificacion(880);
     this.tipoSolicitud("S");
-    this.agenciaVinculacion(560);
+    this.agenciaVinculacion(1460);
     this.vinculacion("S");
     this.linea("LIBRANZA");
     this.primerApellido("Estrada");
@@ -919,19 +919,19 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     this.nombreEps("Sura");
     this.adultosACargo(0);
     this.menoresACargo(0);
-    this.nivelEstudio(5);
-    this.profesion(130);
-    this.ocupacion(2);
+    this.nivelEstudio(2);
+    this.profesion(3);
+    this.ocupacion(1);
     this.renta("N");
     this.decisionCargo("N");
     this.recursosPublicos(1);
     this.personajePublico(1);
-    this.nombreEmpresa(6);
-    this.cargo("Ingeniero");
+    this.nombreEmpresa(4);
+    this.cargo("Profesor");
     this.fechaVinculacion("2009-12-16");
     this.direccionTrabajo("CL 80     55     60");
     this.ciudadTrabajo(8001);
-    this.nitEmpresa("802014730-9");
+    this.nitEmpresa("892280021-1");
     this.telefonoTrabajo(2012020);
     this.extensionTrabajo(123);
     this.tipoEmpresa(1);
@@ -941,7 +941,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     this.totalIngresos(1650000);
     this.comprarVivienda(1);
     this.cupoExtra(1);
-    this.razonCredito("VACACIONES");
+    this.razonCredito("EDUCACION");
     this.razonOtros("-");
     this.tipoDocumentoConyugue(1);
     this.ocupacionConyugue(1);
@@ -978,7 +978,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return perfil;
   }
 
-  public int getPasoSol() {
+  public String getPasoSol() {
     return pasoSol;
   }
 

@@ -7,7 +7,7 @@ public class FormularioSolicitud {
   private String numPaso;
   private String txtFecha;
   private int perfil;
-  private int pasoSol;
+  private String pasoSol;
   private String txtAsesor;
   private int txtCiuC;
   private int txtCalf;
@@ -319,7 +319,7 @@ public class FormularioSolicitud {
     return perfil;
   }
 
-  public int getPasoSol() {
+  public String getPasoSol() {
     return pasoSol;
   }
 

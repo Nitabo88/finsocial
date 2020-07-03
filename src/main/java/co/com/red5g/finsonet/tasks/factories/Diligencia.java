@@ -205,8 +205,8 @@ public final class Diligencia {
     return instrumented(AprobacionTesoreriaCrediHuy.class);
   }
 
-  public static Performable laSolicitudDeCreditoBackEnd(Credenciales credenciales, FormularioSolicitud formularioSolicitud, Credito credito) {
-    return instrumented(SolicitudCreditoBack.class, credenciales, formularioSolicitud, credito);
+  public static Performable laSolicitudDeCreditoBackEnd(Credenciales credenciales, FormularioSolicitud formularioSolicitud, String cedula) {
+    return instrumented(SolicitudCreditoBack.class, credenciales, formularioSolicitud, cedula);
   }
 
   public static Performable primerPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
