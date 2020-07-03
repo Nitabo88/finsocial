@@ -47,6 +47,14 @@ import co.com.red5g.finsonet.tasks.RegresarIncoporacion;
 import co.com.red5g.finsonet.tasks.RegresoFormalizacion;
 import co.com.red5g.finsonet.tasks.RegresoTesoreria;
 import co.com.red5g.finsonet.tasks.SolicitudCreditoBack;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso1;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso2;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso3;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso4;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso5;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso6;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso7;
+import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso8;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
 
@@ -199,5 +207,37 @@ public final class Diligencia {
 
   public static Performable laSolicitudDeCreditoBackEnd(Credenciales credenciales, FormularioSolicitud formularioSolicitud, Credito credito) {
     return instrumented(SolicitudCreditoBack.class, credenciales, formularioSolicitud, credito);
+  }
+
+  public static Performable primerPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
+    return instrumented(SolicitudCreditoPaso1.class, cookie, formularioSolicitud);
+  }
+
+  public static Performable segundoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud, String cedula) {
+    return instrumented(SolicitudCreditoPaso2.class, cookie, formularioSolicitud, cedula);
+  }
+
+  public static Performable tercerPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
+    return instrumented(SolicitudCreditoPaso3.class, cookie, formularioSolicitud);
+  }
+
+  public static Performable cuartoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
+    return instrumented(SolicitudCreditoPaso4.class, cookie, formularioSolicitud);
+  }
+
+  public static Performable quintoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
+    return instrumented(SolicitudCreditoPaso5.class, cookie, formularioSolicitud);
+  }
+
+  public static Performable sextoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
+    return instrumented(SolicitudCreditoPaso6.class, cookie, formularioSolicitud);
+  }
+
+  public static Performable septimoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud) {
+    return instrumented(SolicitudCreditoPaso7.class, cookie, formularioSolicitud);
+  }
+
+  public static Performable octavoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud, String cedula) {
+    return instrumented(SolicitudCreditoPaso8.class, cookie, formularioSolicitud, cedula);
   }
 }

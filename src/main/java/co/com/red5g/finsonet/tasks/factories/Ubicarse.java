@@ -17,7 +17,7 @@ public final class Ubicarse {
   }
 
   public static Performable enElFormulario(Credito credito) {
-    return Tasks.instrumented(SolicitudCredito.class, credito);
+    return instrumented(SolicitudCredito.class, credito);
   }
 
   public static Performable enVetados() {
@@ -42,5 +42,9 @@ public final class Ubicarse {
 
   public static Performable enContactCenter() {
     return instrumented(ContactCenter.class);
+  }
+
+  public static Performable enElFormularioCrediHuy(Credito credito) {
+    return instrumented(SolicitudCreditoHuy.class, credito);
   }
 }

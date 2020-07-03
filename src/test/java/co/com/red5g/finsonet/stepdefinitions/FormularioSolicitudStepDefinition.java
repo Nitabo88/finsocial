@@ -21,7 +21,7 @@ public class FormularioSolicitudStepDefinition {
 
     private static final Integer CODIGO_RESPUESTA = 200;
 
-    @Dado("que un (.*) quiere llenar el formulario de solicitud de crédito")
+    @Dado("que un (.*) quiere llenar el formulario de solicitud de un crédito de libranza")
     public void ingresarFormularioSolicitud(String actor) {
         theActorCalled(actor).attemptsTo(
             Ubicarse.enElFormulario(la().informacionDelCreditoFormulario())
@@ -42,7 +42,7 @@ public class FormularioSolicitudStepDefinition {
     }
 
     @Cuando("^diligencia el formulario de un cliente por back end$")
-    public void diligenciaFormularioSolicitudBackEnd() {
+    public void diligenciarFormularioSolicitudLibranzaBackEnd() {
         theActorInTheSpotlight().attemptsTo(
             Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionLibranza(), la().informacionDelCreditoFormulario())
         );
@@ -51,5 +51,19 @@ public class FormularioSolicitudStepDefinition {
     @Entonces("^el debería visualizar el crédito en estado OK$")
     public void verificarSolicitudCreditoBackend() {
         theActorInTheSpotlight().should(seeThat("El codigo de respuesta es:", ElCredito.seProceso(), equalTo(CODIGO_RESPUESTA)));
+    }
+
+    @Dado("^que (.*) quiere llenar el formulario de solicitud de un crédihuy$")
+    public void ingresarFormularioSolicitudCredihuy(String actor) {
+        theActorCalled(actor).attemptsTo(
+            Ubicarse.enElFormularioCrediHuy(la().informacionDelCrediHuyFormulario())
+        );
+    }
+
+    @Cuando("^diligencia el formulario de crédihuy de un cliente por back end$")
+    public void diligenciarFormularioSolicitudCredihuyBackEnd() {
+        theActorInTheSpotlight().attemptsTo(
+            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionCredihuy(), la().informacionDelCrediHuyFormulario())
+        );
     }
 }
