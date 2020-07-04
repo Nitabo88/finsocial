@@ -7,11 +7,11 @@ import org.openqa.selenium.By;
 public class ChequeoDocumentosPage {
 
     public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA = Target.the("la fila de la tabla")
-        .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
+        .locatedBy("//td[text()='Libranza digital']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
     public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_PENDIENTE = Target.the("la fila de la tabla documentos pendiente")
         .locatedBy("//table[@id='table_p']//a[@class='faq-link'][contains(@href,'{0}')]");
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA = Target.the("la columna nombre de la tabla de libranza")
-        .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+        .locatedBy("//td[text()='Libranza digital']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target TXT_PUNTAJE_CIFIN = Target.the("el puntaje de la CIFIN").located(By.id("txtCifin"));
     public static final Target TXT_ACIERTA_DATACREDITO = Target.the("acierta datacredito").located(By.id("txtDatacredito"));
     public static final Target BTN_PAPELERIA = Target.the("el boton  de papeleria").locatedBy("//p[text()='{0}']");
@@ -29,7 +29,7 @@ public class ChequeoDocumentosPage {
     public static final Target LBL_MENSAJE = Target.the("el mensaje de advertencia").located(
             org.openqa.selenium.By.xpath("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
     public static final Target BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_LIBRANZA = Target.the("Boton de estado en chequeo de documentos")
-            .locatedBy("//td[text()='Libranza']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
+            .locatedBy("//td[text()='Libranza digital']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
     public static final Target LST_MOTIVO = Target.the("Lista de motivos en chequeo de documentos").located(By.id("motivo"));
     public static final Target LST_MOTIVO_NEGACION = Target.the("Lista de motivos en chequeo de documentos").located(By.id("txtMotivo"));
     public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));
@@ -48,7 +48,7 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
             org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_CERRAR_POP_UP = Target.the("Cerrar pop up").located(By.xpath("//a[@title='Close']"));
-    public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
+    public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos Libranza Digital']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS_NEGADO = Target.the("El texto de negado chequeo de documentos").located(By.xpath("//p[contains(text(),'Crédito negado.')]"));
     public static final Target LBL_LISTADO_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla del listado chequeo de documentos").located(By.xpath("//h1[text()='Listado de chequeo']"));
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO = Target.the("la columna nombre de la tabla de finsoamigos")
