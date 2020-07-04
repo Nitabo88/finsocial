@@ -815,7 +815,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     this.direccionResidencia("CL 80 A    53     25");
     this.barrio("Colores");
     this.telefonoResidencia("2808080");
-    this.celular("300200202");
+    this.celular("3002002020");
     this.correspondenciaA("CASA");
     this.email("prueba1@gmail.com");
     this.tiempoResidenciaAnios("10");

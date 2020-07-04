@@ -47,9 +47,10 @@ public class NegacionChequeoDocumentoCrediHuy implements Task {
             Click.on(BTN_NEGAR),
             SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
-            Click.on(BTN_ENVIAR_NEGACION),
             WaitFor.seconds(TIEMPO_3),
+            Click.on(BTN_ENVIAR_NEGACION),
             WaitUntil.the(LBL_CHEQUEO_DOCUMENTOS_NEGADO, isVisible()).forNoMoreThan(TIEMPO_300).seconds(),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_OK));
     }
 }

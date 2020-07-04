@@ -7,11 +7,11 @@ import org.openqa.selenium.By;
 public class ChequeoDocumentosPage {
 
     public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA = Target.the("la fila de la tabla")
-        .locatedBy("//td[text()='Libranza digital']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
+        .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]//parent::td//parent::tr");
     public static final Target LST_FILA_CHEQUEO_DOCUMENTOS_PENDIENTE = Target.the("la fila de la tabla documentos pendiente")
         .locatedBy("//table[@id='table_p']//a[@class='faq-link'][contains(@href,'{0}')]");
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA = Target.the("la columna nombre de la tabla de libranza")
-        .locatedBy("//td[text()='Libranza digital']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+        .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target TXT_PUNTAJE_CIFIN = Target.the("el puntaje de la CIFIN").located(By.id("txtCifin"));
     public static final Target TXT_ACIERTA_DATACREDITO = Target.the("acierta datacredito").located(By.id("txtDatacredito"));
     public static final Target BTN_PAPELERIA = Target.the("el boton  de papeleria").locatedBy("//p[text()='{0}']");
@@ -29,7 +29,7 @@ public class ChequeoDocumentosPage {
     public static final Target LBL_MENSAJE = Target.the("el mensaje de advertencia").located(
             org.openqa.selenium.By.xpath("//div[@class='swal2-popup swal2-modal popup-class swal2-show']//p[@class='p-sweet']"));
     public static final Target BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_LIBRANZA = Target.the("Boton de estado en chequeo de documentos")
-            .locatedBy("//td[text()='Libranza digital']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
+            .locatedBy("//td[text()='Libranza']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
     public static final Target LST_MOTIVO = Target.the("Lista de motivos en chequeo de documentos").located(By.id("motivo"));
     public static final Target LST_MOTIVO_NEGACION = Target.the("Lista de motivos en chequeo de documentos").located(By.id("txtMotivo"));
     public static final Target TXT_AREA = Target.the("El detalle del motivo").located(By.id("area"));

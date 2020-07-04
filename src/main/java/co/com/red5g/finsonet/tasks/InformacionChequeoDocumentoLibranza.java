@@ -20,11 +20,13 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERI
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isCurrentlyVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.interacions.factories.Subir;
@@ -75,7 +77,7 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             )
         );
         actor.attemptsTo(
-            WaitUntil.the(LBL_LISTADO_CHEQUEO_DOCUMENTOS, isCurrentlyVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitUntil.the(LBL_LISTADO_CHEQUEO_DOCUMENTOS, isPresent()).forNoMoreThan(TIEMPO_120).seconds(),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
             Subir.losArchivosDeChequeoDocumentos(),

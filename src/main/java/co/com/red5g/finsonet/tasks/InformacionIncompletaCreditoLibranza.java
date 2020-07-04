@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_INFORMACION_ADICIONAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_EMAIL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_VALOR_CUOTA;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
@@ -17,6 +18,7 @@ import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.utils.string.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.MoveMouse;
@@ -40,6 +42,7 @@ public class InformacionIncompletaCreditoLibranza implements Task {
             WaitUntil.the(TXT_DOCUMENTO, isVisible()),
             Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
             WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            Clear.field(TXT_EMAIL),
             Enter.theValue(credito.getValorCuota()).into(TXT_VALOR_CUOTA).thenHit(Keys.TAB),
             MoveMouse.to(TXT_PLAZO),
             Enter.theValue(credito.getPlazo()).into(TXT_PLAZO),
