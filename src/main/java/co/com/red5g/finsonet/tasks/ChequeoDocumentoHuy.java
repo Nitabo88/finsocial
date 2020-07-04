@@ -20,8 +20,6 @@ public class ChequeoDocumentoHuy implements Task {
     this.credito = credito;
   }
 
-  private static final String SALIR = "Salir";
-
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(

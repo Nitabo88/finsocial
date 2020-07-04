@@ -144,6 +144,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
   private String nombreReferenciaPersonal;
   private String parentescoReferenciaPersonal;
   private String telefonoReferenciaPersonal;
+  private String ciudadReferenciaPersonal;
   private String celularReferenciaPersonal;
   private String direccionPersonal;
   private String entidadFinanciera;
@@ -358,8 +359,8 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return this;
   }
 
-  private FormularioSolicitudBuilder agenciaVinculacion(String a_vinculacion) {
-    this.agenciaVinculacion = a_vinculacion;
+  private FormularioSolicitudBuilder agenciaVinculacion(String agenciaVinculacion) {
+    this.agenciaVinculacion = agenciaVinculacion;
     return this;
   }
 
@@ -598,33 +599,33 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return this;
   }
 
-  private FormularioSolicitudBuilder activosCorrientes(String activos_corrientes) {
-    this.activosCorrientes = activos_corrientes;
+  private FormularioSolicitudBuilder activosCorrientes(String activosCorrientes) {
+    this.activosCorrientes = activosCorrientes;
     return this;
   }
 
-  private FormularioSolicitudBuilder activosFijos(String activos_fijos) {
-    this.activosFijos = activos_fijos;
+  private FormularioSolicitudBuilder activosFijos(String activosFijos) {
+    this.activosFijos = activosFijos;
     return this;
   }
 
-  private FormularioSolicitudBuilder totalActivos(String total_activos) {
-    this.totalActivos = total_activos;
+  private FormularioSolicitudBuilder totalActivos(String totalActivos) {
+    this.totalActivos = totalActivos;
     return this;
   }
 
-  private FormularioSolicitudBuilder pasivosFinancieros(String pasivos_financieros) {
-    this.pasivosFinancieros = pasivos_financieros;
+  private FormularioSolicitudBuilder pasivosFinancieros(String pasivosFinancieros) {
+    this.pasivosFinancieros = pasivosFinancieros;
     return this;
   }
 
-  private FormularioSolicitudBuilder pasivosCorrientes(String pasivos_corrientes) {
-    this.pasivosCorrientes = pasivos_corrientes;
+  private FormularioSolicitudBuilder pasivosCorrientes(String pasivosCorrientes) {
+    this.pasivosCorrientes = pasivosCorrientes;
     return this;
   }
 
-  private FormularioSolicitudBuilder totalPasivos(String total_pasivos) {
-    this.totalPasivos = total_pasivos;
+  private FormularioSolicitudBuilder totalPasivos(String totalPasivos) {
+    this.totalPasivos = totalPasivos;
     return this;
   }
 
@@ -698,18 +699,18 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return this;
   }
 
-  private FormularioSolicitudBuilder nombreReferenciaFamiliar(String ref_familiar_nombre) {
-    this.nombreReferenciaFamiliar = ref_familiar_nombre;
+  private FormularioSolicitudBuilder nombreReferenciaFamiliar(String refFamiliarNombre) {
+    this.nombreReferenciaFamiliar = refFamiliarNombre;
     return this;
   }
 
-  private FormularioSolicitudBuilder parentesco(String ref_familiar_par) {
-    this.parentescoReferenciaFamiliar = ref_familiar_par;
+  private FormularioSolicitudBuilder parentesco(String refFamiliarPar) {
+    this.parentescoReferenciaFamiliar = refFamiliarPar;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoReferencia(String ref_familiar_tel) {
-    this.telefonoReferenciaFamiliar = ref_familiar_tel;
+  private FormularioSolicitudBuilder telefonoReferencia(String refFamiliarTel) {
+    this.telefonoReferenciaFamiliar = refFamiliarTel;
     return this;
   }
 
@@ -728,18 +729,18 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return this;
   }
 
-  private FormularioSolicitudBuilder nombreReferenciaPersonal(String ref_personal_nombre) {
-    this.nombreReferenciaPersonal = ref_personal_nombre;
+  private FormularioSolicitudBuilder nombreReferenciaPersonal(String refPersonalNombre) {
+    this.nombreReferenciaPersonal = refPersonalNombre;
     return this;
   }
 
-  private FormularioSolicitudBuilder relacionReferenciaPersonal(String ref_personal_par) {
-    this.parentescoReferenciaPersonal = ref_personal_par;
+  private FormularioSolicitudBuilder relacionReferenciaPersonal(String refPersonalPar) {
+    this.parentescoReferenciaPersonal = refPersonalPar;
     return this;
   }
 
-  private FormularioSolicitudBuilder telefonoReferenciaPersonal(String ref_personal_tel) {
-    this.telefonoReferenciaPersonal = ref_personal_tel;
+  private FormularioSolicitudBuilder telefonoReferenciaPersonal(String refPersonalTel) {
+    this.telefonoReferenciaPersonal = refPersonalTel;
     return this;
   }
 
@@ -773,9 +774,8 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return this;
   }
 
-
-  private FormularioSolicitudBuilder operacionMonedaExtranjera(String rdtransaccion_ext) {
-    this.transaccionMonedaExtranjera = rdtransaccion_ext;
+  private FormularioSolicitudBuilder operacionMonedaExtranjera(String rdtransaccionExt) {
+    this.transaccionMonedaExtranjera = rdtransaccionExt;
     return this;
   }
 
@@ -985,23 +985,23 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return asesor;
   }
 
-  public String getCiuC() {
+  public String getCiudadCredito() {
     return ciudadCredito;
   }
 
-  public String getCalf() {
+  public String getCalificacion() {
     return calificacion;
   }
 
-  public String getTSol() {
+  public String getTipoSolicitud() {
     return tipoSolicitud;
   }
 
-  public String getAVinculacion() {
+  public String getAgenciaVinculacion() {
     return agenciaVinculacion;
   }
 
-  public String getVin() {
+  public String getVinculacion() {
     return vinculacion;
   }
 
@@ -1017,7 +1017,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return cuota;
   }
 
-  public String getPlaz() {
+  public String getPlazo() {
     return plazo;
   }
 
@@ -1033,35 +1033,35 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return tasaMaxima;
   }
 
-  public String getPApellido() {
+  public String getPrimerApellido() {
     return primerApellido;
   }
 
-  public String getSApellido() {
+  public String getSegundoApellido() {
     return segundoApellido;
   }
 
-  public String getPNombre() {
+  public String getPrimerNombre() {
     return primerNombre;
   }
 
-  public String getSNombre() {
+  public String getSegundoNombre() {
     return segundoNombre;
   }
 
-  public String getTipoDoc() {
+  public String getTipoDocumento() {
     return tipoDocumento;
   }
 
-  public String getLugarExp() {
+  public String getLugarExpedicion() {
     return lugarExpedicion;
   }
 
-  public String getFechaExp() {
+  public String getFechaExpedicion() {
     return fechaExpedicion;
   }
 
-  public String getFechaNac() {
+  public String getFechaNacimiento() {
     return fechaNacimiento;
   }
 
@@ -1069,11 +1069,11 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return sexo;
   }
 
-  public String getLugarNac() {
+  public String getLugarNacimiento() {
     return lugarNacimiento;
   }
 
-  public String getEstCivil() {
+  public String getEstadoCivil() {
     return estadoCivil;
   }
 
@@ -1081,11 +1081,11 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return pais;
   }
 
-  public String getCiudad() {
+  public String getCiudadDepartamento() {
     return ciudadDepartamento;
   }
 
-  public String getTipoViv() {
+  public String getTipoVivienda() {
     return tipoVivienda;
   }
 
@@ -1093,11 +1093,11 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return estrato;
   }
 
-  public String getArrend() {
+  public String getArrendatario() {
     return arrendatario;
   }
 
-  public String getTelArr() {
+  public String getTelefonoArrendador() {
     return telefonoArrendador;
   }
 
@@ -1109,15 +1109,15 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return barrio;
   }
 
-  public String getTel() {
+  public String getTelefonoResidencia() {
     return telefonoResidencia;
   }
 
-  public String getCel() {
+  public String getCelular() {
     return celular;
   }
 
-  public String getCorrespondencia() {
+  public String getCorrespondenciaA() {
     return correspondenciaA;
   }
 
@@ -1145,7 +1145,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return menor18;
   }
 
-  public String getNivelEst() {
+  public String getNivelEstudio() {
     return nivelEstudio;
   }
 
@@ -1157,19 +1157,19 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return ocupacion;
   }
 
-  public String getDeRenta() {
+  public String getDeclaraRenta() {
     return declaraRenta;
   }
 
-  public String getDesicionCargo() {
+  public String getDecisionCargo() {
     return decisionCargo;
   }
 
-  public String getrecPublicos() {
+  public String getRecursosPublicos() {
     return recursosPublicos;
   }
 
-  public String getPerPubl() {
+  public String getPersonajePublico() {
     return personajePublico;
   }
 
@@ -1189,7 +1189,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return direccionTrabajo;
   }
 
-  public String getCiudad2() {
+  public String getCiudadTrabajo() {
     return ciudadTrabajo;
   }
 
@@ -1197,19 +1197,19 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return nitEmpresa;
   }
 
-  public String getTelEmpresa() {
+  public String getTelefonoEmpresa() {
     return telefonoEmpresa;
   }
 
-  public String getExt() {
+  public String getExtension() {
     return extension;
   }
 
-  public String getTipoEmp() {
+  public String getTipoEmpresa() {
     return tipoEmpresa;
   }
 
-  public String getActEcon() {
+  public String getActividadEconomica() {
     return actividadEconomica;
   }
 
@@ -1257,15 +1257,15 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return totalPasivos;
   }
 
-  public String getTipoInm() {
+  public String getTipoInmueble() {
     return tipoInmueble;
   }
 
-  public String getValorComInm() {
+  public String getValorComercialInmueble() {
     return valorComercialInmueble;
   }
 
-  public String getHipotecado() {
+  public String getHipotecadoA() {
     return hipotecadoA;
   }
 
@@ -1273,39 +1273,39 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return direccion;
   }
 
-  public String getSaldoCredInm() {
+  public String getSaldoCreditoInmueble() {
     return saldoCreditoInmueble;
   }
 
-  public String getVehCls() {
+  public String getVehiculoClase() {
     return vehiculoClase;
   }
 
-  public String getValorComVeh() {
+  public String getValorComercialVehiculo() {
     return valorComercialVehiculo;
   }
 
-  public String getMarcaVeh() {
+  public String getMarcaModelo() {
     return marcaModelo;
   }
 
-  public String getPlacaVeh() {
+  public String getPlaca() {
     return placa;
   }
 
-  public String getSaldoCredVeh() {
+  public String getSaldoCreditoVehiculo() {
     return saldoCreditoVehiculo;
   }
 
-  public String getPrendaFavVeh() {
+  public String getPrendaAFavor() {
     return prendaAFavor;
   }
 
-  public String getSueldoFijo() {
+  public String getSalarioFijo() {
     return salarioFijo;
   }
 
-  public String getSalVarCom() {
+  public String getSalarioVariableComisiones() {
     return salarioVariableComisiones;
   }
 
@@ -1313,7 +1313,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return arrendamiento;
   }
 
-  public String getRenFin() {
+  public String getRendimientosFinancieros() {
     return rendimientosFinancieros;
   }
 
@@ -1321,15 +1321,15 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return honorarios;
   }
 
-  public String getOtrosIng() {
+  public String getOtrosIngresos() {
     return otrosIngresos;
   }
 
-  public String getCualesIng() {
+  public String getCualesIngresos() {
     return cualesIngresos;
   }
 
-  public String getTIngresos() {
+  public String getTotalIngresos() {
     return totalIngresos;
   }
 
@@ -1337,11 +1337,11 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return arriendos;
   }
 
-  public String getGastosPer() {
+  public String getGastosPersonales() {
     return gastosPersonales;
   }
 
-  public String getPresDfFin() {
+  public String getPrestamosDiferentes() {
     return prestamosDiferentes;
   }
 
@@ -1349,7 +1349,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return deducciones;
   }
 
-  public String getTarjCred() {
+  public String getTarjetaCredito() {
     return tarjetaCredito;
   }
 
@@ -1361,19 +1361,19 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return cualesGastos;
   }
 
-  public String getTEgresos() {
+  public String getTotalEgresos() {
     return totalEgresos;
   }
 
-  public String getPagHip() {
+  public String getPagoHipoteca() {
     return pagoHipoteca;
   }
 
-  public String getVlrComViv() {
+  public String getValorComercialVivienda() {
     return valorComercialVivienda;
   }
 
-  public String getGustaVivir() {
+  public String getDondeVivir() {
     return dondeVivir;
   }
 
@@ -1385,7 +1385,7 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return cupoExtra;
   }
 
-  public String getRazondecredito() {
+  public String getRazonCredito() {
     return razonCredito;
   }
 
@@ -1393,51 +1393,51 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return detalleRazon;
   }
 
-  public String getPNConyugue() {
+  public String getPrimerNombreConyugue() {
     return primerNombreConyugue;
   }
 
-  public String getSNConyugue() {
+  public String getSegundoNombreConyugue() {
     return segundoNombreConyugue;
   }
 
-  public String getPAConyugue() {
+  public String getPrimerApellidoConyugue() {
     return primerApellidoConyugue;
   }
 
-  public String getSAConyugue() {
+  public String getSegundoApellidoConyugue() {
     return segundoApellidoConyugue;
   }
 
-  public String getTipoDocCony() {
+  public String getTipoDocumentoConyugue() {
     return tipoDocumentoConyugue;
   }
 
-  public String getDocConyugue() {
+  public String getDocumentoConyugue() {
     return documentoConyugue;
   }
 
-  public String getFechaExpCon() {
+  public String getFechaExpedicionConyugue() {
     return fechaExpedicionConyugue;
   }
 
-  public String getLugarExpCon() {
+  public String getLugarExpedicionConyugue() {
     return lugarExpedicionConyugue;
   }
 
-  public String getFechaNacCon() {
+  public String getFechaNacimientoConyugue() {
     return fechaNacimientoConyugue;
   }
 
-  public String getLugarNacCon() {
+  public String getLugarNacimientoConyugue() {
     return lugarNacimientoConyugue;
   }
 
-  public String getSexoCon() {
+  public String getSexoConyugue() {
     return sexoConyugue;
   }
 
-  public String getLugTrabCon() {
+  public String getLugarTrabajoConyugue() {
     return lugarTrabajoConyugue;
   }
 
@@ -1445,55 +1445,55 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return ocupacionConyugue;
   }
 
-  public String getDepEco() {
+  public String getDependenciaEconomica() {
     return dependenciaEconomica;
   }
 
-  public String getFecIngr() {
+  public String getFechaIngreso() {
     return fechaIngreso;
   }
 
-  public String getCargoCon() {
+  public String getCargoConyugue() {
     return cargoConyugue;
   }
 
-  public String getTIngCon() {
+  public String getTotalIngresosConyugue() {
     return totalIngresosConyugue;
   }
 
-  public String getTEgrCon() {
+  public String getTotalEgresosConyugue() {
     return totalEgresosConyugue;
   }
 
-  public String getEpsConyuge() {
+  public String getEpsConyugue() {
     return epsConyugue;
   }
 
-  public String getNivelEstCon() {
+  public String getNivelEstudioConyugue() {
     return nivelEstudioConyugue;
   }
 
-  public String getCelCon() {
+  public String getCelularConyugue() {
     return celularConyugue;
   }
 
-  public String getRefFamiliarNombre() {
+  public String getNombreReferenciaFamiliar() {
     return nombreReferenciaFamiliar;
   }
 
-  public String getRefFamiliarPar() {
+  public String getParentescoReferenciaFamiliar() {
     return parentescoReferenciaFamiliar;
   }
 
-  public String getRefFamiliarTel() {
+  public String getTelefonoReferenciaFamiliar() {
     return telefonoReferenciaFamiliar;
   }
 
-  public String getCiudadRefFam() {
+  public String getCiudadReferenciaFamiliar() {
     return ciudadReferenciaFamiliar;
   }
 
-  public String getCelRFam() {
+  public String getCelularReferenciaFamiliar() {
     return celularReferenciaFamiliar;
   }
 
@@ -1501,23 +1501,23 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return direccionReferenciaFamiliar;
   }
 
-  public String getRefPersonalNombre() {
+  public String getNombreReferenciaPersonal() {
     return nombreReferenciaPersonal;
   }
 
-  public String getRefPersonalPar() {
+  public String getParentescoReferenciaPersonal() {
     return parentescoReferenciaPersonal;
   }
 
-  public String getRefPersonalTel() {
+  public String getTelefonoReferenciaPersonal() {
     return telefonoReferenciaPersonal;
   }
 
-  public String getCiudadRefPer() {
+  public String getCelularReferenciaPersonal() {
     return celularReferenciaPersonal;
   }
 
-  public String getCelRPer() {
+  public String getDireccionPersonal() {
     return direccionPersonal;
   }
 
@@ -1525,39 +1525,43 @@ public class FormularioSolicitudBuilder implements Builder<FormularioSolicitud> 
     return entidadFinanciera;
   }
 
-  public String getNEntFin() {
+  public String getSucursal() {
     return sucursal;
   }
 
-  public String getSucursal() {
+  public String getTipoProducto() {
     return tipoProducto;
   }
 
-  public String getTipoProd() {
+  public String getCalificacionAtencion() {
     return calificacionAtencion;
   }
 
-  public String getSatisfaccionC() {
+  public String getRazonCalificacion() {
     return razonCalificacion;
   }
 
-  public String getPorqueSatic() {
+  public String getConocioFinsocial() {
     return conocioFinsocial;
   }
 
-  public String getConocioFinsocial() {
+  public String getRazonConocio() {
     return razonConocio;
   }
 
-  public String getOtroConocer() {
+  public String getMonedaExtranjera() {
     return monedaExtranjera;
   }
 
-  public String getRdransaccionExt() {
+  public String getTransaccionMonedaExtranjera() {
     return transaccionMonedaExtranjera;
   }
 
   public String getCuentaExterior() {
     return cuentaExterior;
+  }
+
+  public String getCiudadReferenciaPersonal() {
+    return ciudadReferenciaPersonal;
   }
 }

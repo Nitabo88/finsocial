@@ -7,4 +7,8 @@ public class ConstantesTiempo {
   public static final int TIEMPO_60 = 60;
   public static final int TIEMPO_120 = 120;
   public static final int TIEMPO_300 = 300;
+
+  private ConstantesTiempo() {
+    throw new IllegalStateException("Utility class");
+  }
 }

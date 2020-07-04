@@ -24,7 +24,6 @@ public class SolicitudCreditoPaso8 implements Task {
   @Override
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
-    String numeroPaso = "step-1";
     actor.attemptsTo(
         Post.to("/ajax/ajxFormSolicitud.php")
             .with(

@@ -7,7 +7,6 @@ import co.com.red5g.finsonet.models.AprobacionCredito;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Confirmacion;
 import co.com.red5g.finsonet.models.Credenciales;
-import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.models.EquipoSatisfaccion;
 import co.com.red5g.finsonet.models.FormularioSolicitud;
 import co.com.red5g.finsonet.models.Incorporacion;

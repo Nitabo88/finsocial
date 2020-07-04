@@ -4,11 +4,9 @@ import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static co.com.red5g.utils.data.Constantes.FECHA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import java.util.List;
-
 import co.com.red5g.finsonet.questions.ObtenerUrl;
-import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
 import co.com.red5g.finsonet.userinterfaces.MisCreditosPage;
+import java.util.List;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
