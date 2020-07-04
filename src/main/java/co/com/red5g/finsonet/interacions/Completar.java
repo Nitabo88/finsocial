@@ -6,7 +6,7 @@ import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_REGISTRAR;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.LST_SELECCIONAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.TXT_MOTIVO_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 

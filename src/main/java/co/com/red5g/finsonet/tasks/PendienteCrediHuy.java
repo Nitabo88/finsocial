@@ -6,10 +6,11 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_AREA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -17,7 +18,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class PendienteCrediHuy implements Task {
@@ -35,18 +35,10 @@ public class PendienteCrediHuy implements Task {
             JavaScriptClick.on(BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY.of(numeroCredito)),
             SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO),
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_AREA),
-            WaitUntil.the(BTN_ENVIAR, isEnabled()),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_ENVIAR),
+            WaitFor.seconds(TIEMPO_3),
             WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
             Click.on(BTN_OK));
-        actor.attemptsTo(
-                Check.whether(
-                        BTN_ENVIAR.resolveFor(actor).isPresent())
-                        .andIfSo(
-                            Click.on(BTN_ENVIAR),
-                            WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
-                            Click.on(BTN_OK)
-                        )
-        );
     }
 }

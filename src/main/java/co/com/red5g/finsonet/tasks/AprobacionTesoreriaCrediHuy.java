@@ -11,9 +11,10 @@ import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LBL_VALOR_GIRO;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_NOMBRE_TESORERIA_CREDIHUY;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.TXT_CUOTA_RETENIDA;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.TXT_VALOR_GIRO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_300;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_5;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
@@ -40,11 +41,12 @@ public class AprobacionTesoreriaCrediHuy implements Task {
         actor.attemptsTo(
             Enter.theValue("0").into(TXT_CUOTA_RETENIDA),
             Enter.theValue(valorGiro).into(TXT_VALOR_GIRO),
-            WaitFor.seconds(TIEMPO_3),
-            Click.on(BTN_ENVIAR_CARTERA));
-        actor.attemptsTo(
+            WaitFor.seconds(TIEMPO_5),
+            MoveMouse.to(BTN_ENVIAR_CARTERA),
+            Click.on(BTN_ENVIAR_CARTERA),
             WaitUntil.the(BTN_ENVIAR, isClickable()).forNoMoreThan(TIEMPO_10).seconds(),
             Click.on(BTN_ENVIAR),
+            WaitFor.seconds(TIEMPO_3),
             WaitUntil.the(BTN_OK, isPresent()).forNoMoreThan(TIEMPO_10).seconds(),
             Click.on(BTN_OK),
             cerrarPestana()

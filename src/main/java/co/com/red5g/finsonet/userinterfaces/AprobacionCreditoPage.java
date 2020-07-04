@@ -29,10 +29,12 @@ public class AprobacionCreditoPage {
           .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//ancestor::tr//a[@class='faq-link']");
   public static final Target BTN_NORMALIZAR_CREDITO_HUY = Target.the("el boton de normalizar credito")
           .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'64597')]//ancestor::tr//button");
-  public static final Target LST_PENDIENTE_APROBACION_CREDIHUY = Target.the("Fila de los crediHuy pendientes en aprobacion de credito")
-          .locatedBy("//table[@id='table_p']//td[text()='CrediHuy']//parent::tr//a[@class='faq-link'][contains(@href,'{0}')]//ancestor::tr");
+  public static final Target LST_PENDIENTE_APROBACION_CREDIHUY =
+      Target.the("Fila de los crediHuy pendientes en aprobacion de credito")
+          .locatedBy(
+              "//table[@id='table_p']//td[contains(text(),'CrediHuy')]//parent::tr//td//a[@class='faq-link'][contains(@href,{0})]//ancestor::tr");
   public static final Target LST_NOMBRE_APROBACION_LIBRANZA = Target.the("el nombre de la tabla de libranza en aprobacion")
-          .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+          .locatedBy("//td[text()='Libranza']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,{0})]");
   public static final Target LST_PERFIL_RIESGO = Target.the("el tipo de perfil de riesgo").located(By.id("combo_linea_credito"));
   public static final Target LST_PAGADURIA = Target.the("la pagaduria").located(By.id("textoPagadura"));
   public static final Target LBL_CREDITO_CREADO = Target.the("el mensaje de credito registrado exitosamente").located(By.xpath("//p[contains(text(),'Credito registrado satisfactoriamente.')"

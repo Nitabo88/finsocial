@@ -1,5 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
+import static co.com.red5g.finsonet.userinterfaces.ComercialPage.LNK_MIS_CREDITOS;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_COMERCIAL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_CREAR_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_INFORMACION_ADICIONAL;
@@ -7,9 +10,12 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERI
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENTO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_VALOR_CUOTA;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
+import static co.com.red5g.utils.data.Constantes.FECHA;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -27,8 +33,6 @@ import org.openqa.selenium.Keys;
 public class InformacionCreditoLibranza implements Task {
 
     private final Credito credito;
-    public static final String FECHA = "fecha credito";
-    public static final String CEDULA_ACTOR = "cedula actor";
 
     public InformacionCreditoLibranza(Credito credito) {
         this.credito = credito;
@@ -50,7 +54,12 @@ public class InformacionCreditoLibranza implements Task {
             MoveMouse.to(BTN_CREAR_CREDITO),
             Click.on(BTN_CREAR_CREDITO),
             WaitFor.seconds(TIEMPO_3),
-            Click.on(BTN_OK)
+            Click.on(BTN_OK),
+            WaitFor.seconds(TIEMPO_3),
+            Click.on(MNM_HAMBURGUESA),
+            Click.on(IMG_FINSONET),
+            Click.on(LNK_COMERCIAL),
+            Click.on(LNK_MIS_CREDITOS)
         );
     }
 }

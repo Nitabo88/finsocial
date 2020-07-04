@@ -10,7 +10,9 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -32,13 +34,14 @@ public class AprobacionDeCreditoLibranza implements Task {
         JavaScriptClick.on(BTN_MI_CUENTA),
         JavaScriptClick.on(MNM_MI_CUENTA.of(AprobacionDeCreditoLibranza.SALIR)),
         Ingresa.lasCredenciales(de().unUsuarioDeAprobacionCreditos()),
-        WaitFor.seconds(2),
+        WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(LNK_ORIGINACION),
         JavaScriptClick.on(MNM_ORIGINACION.of(AprobacionDeCreditoLibranza.APROBACION_CREDITO)),
         JavaScriptClick.on(LST_NOMBRE_APROBACION_LIBRANZA.of(numeroCredito)),
         WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
         JavaScriptClick.on(BTN_APROBAR),
-        WaitUntil.the(BTN_OK, isVisible()),
+        WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
+        WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_OK)
     );
   }

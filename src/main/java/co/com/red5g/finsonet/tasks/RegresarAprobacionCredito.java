@@ -5,7 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_CONFIRMACION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.TXT_MOTIVO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.AprobacionCredito;

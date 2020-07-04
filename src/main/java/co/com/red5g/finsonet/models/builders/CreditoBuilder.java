@@ -1,11 +1,12 @@
 package co.com.red5g.finsonet.models.builders;
 
+import static co.com.red5g.utils.data.InformacionCreditoHuy.INFORMACION_FROMULARIO_HUY;
+import static co.com.red5g.utils.data.InformacionCreditoHuy.INFORMACION_TESORERIA_HUY;
+
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.utils.Builder;
 import co.com.red5g.utils.data.InformacionCreditoHuy;
 import co.com.red5g.utils.data.InformacionCreditoLibranza;
-
-import static co.com.red5g.utils.data.InformacionCreditoHuy.INFORMACION_TESORERIA_HUY;
 
 public final class CreditoBuilder implements Builder<Credito> {
 
@@ -73,6 +74,13 @@ public final class CreditoBuilder implements Builder<Credito> {
     this.conValorCuota(InformacionCreditoLibranza.INFORMACION_FORMULARIO_LIBRANZA.getValorCuota());
     this.a(InformacionCreditoLibranza.INFORMACION_FORMULARIO_LIBRANZA.getNumeroCuotas());
     this.conCodigoPapeleria();
+    return this.build();
+  }
+
+  public Credito informacionDelCrediHuyFormulario() {
+    this.conDocumento(INFORMACION_FROMULARIO_HUY.getNumeroDocumento());
+    this.conValorCredito(INFORMACION_FROMULARIO_HUY.getValorCredito());
+    this.a(INFORMACION_FROMULARIO_HUY.getNumeroCuotas());
     return this.build();
   }
 

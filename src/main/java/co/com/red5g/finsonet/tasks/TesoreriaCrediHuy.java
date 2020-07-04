@@ -8,8 +8,9 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -39,13 +40,13 @@ public class TesoreriaCrediHuy implements Task {
             Click.on(MNM_HAMBURGUESA),
             Click.on(IMG_FINSONET),
             WaitFor.seconds(TIEMPO_3),
-            WaitUntil.the(LNK_LLAMADAS, isClickable()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitUntil.the(LNK_LLAMADAS, isClickable()).forNoMoreThan(TIEMPO_120).seconds(),
             Click.on(LNK_LLAMADAS),
             Asignarse.laLlamadaCrediHuy(),
             Gestionar.laLlamada(),
-            WaitUntil.the(LBL_BUSQUEDA_GESTION, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitUntil.the(LBL_BUSQUEDA_GESTION, isVisible()).forNoMoreThan(TIEMPO_120).seconds(),
             Click.on(IMG_FINSONET),
-            WaitUntil.the(LBL_MODULOS_ADMINISTRACION, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitUntil.the(LBL_MODULOS_ADMINISTRACION, isVisible()).forNoMoreThan(TIEMPO_120).seconds(),
             WaitUntil.the(LNK_ORIGINACION, isClickable()).forNoMoreThan(TIEMPO_60).seconds(),
             WaitFor.seconds(TIEMPO_3),
             Click.on(LNK_ORIGINACION),

@@ -12,11 +12,13 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO_NEGACION;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.ChequeoDocumento;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -51,6 +53,7 @@ public class NegacionChequeoDocumentoLibranza implements Task {
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_DETALLE),
             Click.on(BTN_ACEPTAR_NEGACION),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_ACEPTAR2));
     }
 }

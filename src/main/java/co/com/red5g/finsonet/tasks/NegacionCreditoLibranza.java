@@ -7,7 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_MOTIVO_NEGAR;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_NOMBRE_APROBACION_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_MOTIVO_NEGACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.AprobacionCredito;

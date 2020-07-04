@@ -9,7 +9,7 @@ import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_SUBIR_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LBL_FORMALIZACION;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_COLUMNA_NOMBRE_FORMALIZACION;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

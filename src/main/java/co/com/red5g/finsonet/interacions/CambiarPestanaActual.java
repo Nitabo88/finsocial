@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.interacions;
 
-import static co.com.red5g.utils.data.Constantes.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

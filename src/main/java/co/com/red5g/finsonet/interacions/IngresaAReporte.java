@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 

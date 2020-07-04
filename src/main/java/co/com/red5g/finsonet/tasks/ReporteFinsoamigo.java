@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LNK_VER_DETALLE_VENTA_FINSOAMIGO;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_PERIODO;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_FINSONET;
-import static co.com.red5g.utils.data.Constantes.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.red5g.utils.string.UtileriaFechas;

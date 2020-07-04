@@ -48,7 +48,7 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_CERRAR = Target.the("Enviar motivo en chequeo de documentos").located(
             org.openqa.selenium.By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_CERRAR_POP_UP = Target.the("Cerrar pop up").located(By.xpath("//a[@title='Close']"));
-    public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos']"));
+    public static final Target LBL_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla chequeo de documentos").located(By.xpath("//h3[text()='Chequeo de Documentos Libranza Digital']"));
     public static final Target LBL_CHEQUEO_DOCUMENTOS_NEGADO = Target.the("El texto de negado chequeo de documentos").located(By.xpath("//p[contains(text(),'Crédito negado.')]"));
     public static final Target LBL_LISTADO_CHEQUEO_DOCUMENTOS = Target.the("El texto de la pantalla del listado chequeo de documentos").located(By.xpath("//h1[text()='Listado de chequeo']"));
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO = Target.the("la columna nombre de la tabla de finsoamigos")

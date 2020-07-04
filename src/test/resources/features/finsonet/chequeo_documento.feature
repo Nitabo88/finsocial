@@ -2,7 +2,7 @@
 
 Característica: Chequeo documento
   Como asesor de finsonet
-  quiero tramitar el chequeo documentos de un credito
+  quiero tramitar el chequeo documentos de un crédito
   para revisar que el proceso funcione correctamente
 
   @ChequeoDocumentos
@@ -24,7 +24,7 @@ Característica: Chequeo documento
     Entonces el auxiliar de documentación debería verlo en su lista de chequeo de documentos
 
   @ChequeoDocumentos
-  Escenario: Chequeo Documentos Libranza -Aprobación chequeo documentos no exitosa
+  Escenario: Chequeo Documentos Libranza - Aprobación chequeo documentos no exitosa
     Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza
     Cuando el asesor complete el chequeo de crédito del cliente
     Entonces deberá ver el mensaje de adjuntar información
@@ -42,7 +42,7 @@ Característica: Chequeo documento
     Entonces el auxiliar de documentación debería verlo en su lista de chequeo de documentos
 
   @ChequeoDocumentosHuy
-  Escenario: Chequeo Documentos CrediHuy - Negacion chequeo documentos
+  Escenario: Chequeo Documentos CrediHuy - Negación chequeo documentos
     Dado que un asesor quiere negar un chequeo de documentos de un crédito huy
     Cuando el asesor niegue el chequeo de documentos del crédito huy
     Entonces el podrá ver el crédito en estado RECHAZADO

@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.AntecarteraLibranza;
 import co.com.red5g.finsonet.questions.AprobacionCreditoHuy;
+import co.com.red5g.finsonet.questions.CarteraHuy;
 import co.com.red5g.finsonet.questions.CodigoRespuesta;
 import co.com.red5g.finsonet.questions.CreditoHuy;
 import co.com.red5g.finsonet.questions.CreditoLibranza;
@@ -120,4 +121,6 @@ public final class ElCredito {
   public static Question<Integer> seProceso() {
     return new CodigoRespuesta();
   }
+
+  public static Question<Boolean> enCartera() {return new CarteraHuy();}
 }
