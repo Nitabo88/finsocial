@@ -10,13 +10,11 @@ cache:
 
 build:
   stage: build
-  script:
-    - pwd
-    - ls
+  script:    
     - ./gradlew compileJava
     - ./gradlew clean assemble
 
 test:
   stage: test
   script:
-    - ./gradlew check 
+    - $COMMAND_GRADLE 
