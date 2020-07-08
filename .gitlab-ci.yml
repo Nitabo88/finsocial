@@ -10,11 +10,17 @@ cache:
 
 build:
   stage: build
+  tags:
+    - automatizacion
+
   script:    
     - ./gradlew compileJava
     - ./gradlew clean assemble
 
 test:
   stage: test
+  tags:
+    - automatizacion
   script:
+    - echo $COMMAND_GRADLE
     - $COMMAND_GRADLE 
