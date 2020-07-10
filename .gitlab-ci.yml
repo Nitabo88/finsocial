@@ -14,8 +14,8 @@ build:
     - automatizacion
 
   script:    
-    - ./gradlew compileJava
-    - ./gradlew clean assemble
+    - ./gradlew clean compileJava
+    - chmod 777 chromedriver
 
 test:
   stage: test
