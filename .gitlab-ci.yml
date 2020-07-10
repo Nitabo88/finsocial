@@ -15,6 +15,7 @@ build:
 
   script:    
     - ./gradlew clean compileJava
+    - chmod 777 chromedriver
 
 test:
   stage: test
