@@ -5,7 +5,6 @@ import co.com.red5g.finsonet.models.builders.CredencialesBuilder;
 public class Credenciales {
 
   private final String usuario;
-
   private final String codigoUsuario;
   private final String contrasena;
   private final String codigo;

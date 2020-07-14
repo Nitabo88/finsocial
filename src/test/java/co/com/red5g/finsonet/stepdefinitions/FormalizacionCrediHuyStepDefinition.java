@@ -32,4 +32,5 @@ public class FormalizacionCrediHuyStepDefinition {
     public void verificarCreditoTesoreria() {
         theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaCrediHuy()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
+
 }

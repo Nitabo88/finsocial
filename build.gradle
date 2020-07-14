@@ -40,7 +40,6 @@ dependencies {
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: "${serenityVersion}"
     implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: "${serenityVersion}"
     implementation group: 'net.serenity-bdd', name: 'serenity-single-page-report', version: "${serenityVersion}"
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
     implementation group: 'co.com.devco.automation', name: 'automationDevcoLibrary', version: "${automationDevcoVersion}"
     implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: "${apache}"
     implementation group: 'mysql', name: 'mysql-connector-java', version: "${mySql}"
