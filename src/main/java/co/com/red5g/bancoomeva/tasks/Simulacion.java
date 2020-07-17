@@ -48,9 +48,7 @@ public class Simulacion implements Task {
         WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(SeguroVidaPage.BTN_ACEPTAR_Y_CONTINUAR),
         Click.on(BTN_COLABORADOR),
-        Click.on(BTN_SALIR),
-        ingresarEnGmail(OTP_BANCOMEVA),
-        buscarCorreo()
+        Click.on(BTN_SALIR)
     );
   }
 }

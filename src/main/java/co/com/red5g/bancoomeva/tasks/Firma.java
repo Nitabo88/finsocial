@@ -1,6 +1,8 @@
 package co.com.red5g.bancoomeva.tasks;
 
 import static co.com.red5g.bancoomeva.tasks.IngresarCorreo.CODIGO;
+import static co.com.red5g.bancoomeva.tasks.IngresarCorreo.buscarCorreo;
+import static co.com.red5g.bancoomeva.tasks.LoginGmail.ingresarEnGmail;
 import static co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage.LNK_CODIGO_RECUPERACION;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTO_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_CONTINUAR;
@@ -8,6 +10,7 @@ import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.CHK_TERMINOS_Y_CO
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.LBL_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.TXT_CODIGO_RECUPERACION;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.Emails.OTP_BANCOMEVA;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage;
@@ -27,6 +30,8 @@ public class Firma implements Task {
   public <T extends Actor> void performAs(T actor) {
     String codigo = actor.recall(CODIGO);
     actor.attemptsTo(
+        ingresarEnGmail(OTP_BANCOMEVA),
+        buscarCorreo(),
         Open.browserOn(bancoomevaHomePage),
         JavaScriptClick.on(LNK_CODIGO_RECUPERACION),
         Enter.theValue(codigo).into(TXT_CODIGO_RECUPERACION),

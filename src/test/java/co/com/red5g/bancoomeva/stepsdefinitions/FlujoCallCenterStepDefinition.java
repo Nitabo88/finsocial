@@ -8,6 +8,7 @@ import co.com.red5g.bancoomeva.tasks.factories.Diligencia;
 import co.com.red5g.bancoomeva.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Y;
 
 public class FlujoCallCenterStepDefinition {
 
@@ -18,6 +19,11 @@ public class FlujoCallCenterStepDefinition {
 
   @Cuando("^el asesor call center diligencia los tres pasos de crédito en línea$")
   public void diligenciarPasosGestion() {
-    theActorInTheSpotlight().attemptsTo(Diligencia.losPasosDeCreditoEnLinea());
+    theActorInTheSpotlight().attemptsTo(Diligencia.losPrimerosPasosDeUnCredito());
+  }
+
+  @Y("^(.*) realiza el proceso de firma$")
+  public void diligenciarFirma(String actor) {
+    theActorCalled(actor).attemptsTo(Diligencia.laFirmaDelCredito());
   }
 }

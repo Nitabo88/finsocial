@@ -17,7 +17,7 @@ public class Diligencia {
     return instrumented(Autenticacion.class,credenciales);
   }
 
-  public static Performable losPasosDeCreditoEnLinea() {
+  public static Performable losPrimerosPasosDeUnCredito() {
     return instrumented(CreditoLinea.class);
   }
 
@@ -29,7 +29,7 @@ public class Diligencia {
     return instrumented(Simulacion.class);
   }
 
-  public static Performable laFirma() {
+  public static Performable laFirmaDelCredito() {
     return instrumented(Firma.class);
   }
 

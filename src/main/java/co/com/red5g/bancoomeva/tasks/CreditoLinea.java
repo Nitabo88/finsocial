@@ -10,8 +10,7 @@ public class CreditoLinea implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Diligencia.laValidacion(),
-        Diligencia.laSimulacion(),
-        Diligencia.laFirma()
+        Diligencia.laSimulacion()
     );
   }
 }
