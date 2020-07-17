@@ -14,4 +14,6 @@ public class SimulacionPage {
   public static final Target BTN_ACEPTAR = Target.the("boton de colaborador").located(By.xpath("//button[text()='Aceptar']"));
   public static final Target BTN_GUARDAR = Target.the("boton de colaborador").located(By.id("btnAceptarLinea1"));
   public static final Target BTN_ACEPTAR_Y_CONTINUAR = Target.the("boton de colaborador").located(By.id("btnConfirmarProd"));
+  public static final Target BTN_COLABORADOR = Target.the("boton de colaborador").located(By.xpath("//div[@class='div-login']"));
+  public static final Target BTN_SALIR = Target.the("boton de colaborador").located(By.xpath("//p[text()='Salir']"));
 }

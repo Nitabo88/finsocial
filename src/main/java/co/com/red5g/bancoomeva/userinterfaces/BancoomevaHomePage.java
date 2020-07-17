@@ -6,7 +6,8 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
 @DefaultUrl("http://10.10.1.55:8085/")
-public class HomePage extends PageObject {
+public class BancoomevaHomePage extends PageObject {
 
   public static final Target BTN_SOY_COLABORADOR = Target.the("boton de colaborador").located(By.xpath("//button[contains(.,'Soy colaborador')]"));
+  public static final Target LNK_CODIGO_RECUPERACION = Target.the("boton de colaborador").located(By.xpath("//a[contains(text(),'Tengo un código de recuperación.')]"));
 }

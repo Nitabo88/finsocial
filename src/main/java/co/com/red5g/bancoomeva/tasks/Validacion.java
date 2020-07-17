@@ -1,6 +1,5 @@
 package co.com.red5g.bancoomeva.tasks;
 
-import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_ACEPTO;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_ACEPTO_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_CONTINUAR;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_CONTINUAR_DATOS;
@@ -52,8 +51,7 @@ public class Validacion implements Task {
         JavaScriptClick.on(BTN_CONTINUAR),
         WaitFor.seconds(TIEMPO_3),
         WaitUntil.the(BTN_CONTINUAR_DATOS, isPresent()).forNoMoreThan(TIEMPO_3).seconds(),
-        WaitFor.seconds(TIEMPO_3));
-    actor.attemptsTo(
+        WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_CONTINUAR_DATOS));
   }
 }

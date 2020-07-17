@@ -5,8 +5,10 @@ import static co.com.red5g.bancoomeva.userinterfaces.GmailLoginPage.BTN_SIGUIENT
 import static co.com.red5g.bancoomeva.userinterfaces.GmailLoginPage.BTN_SIGUIENTE_EMAIL;
 import static co.com.red5g.bancoomeva.userinterfaces.GmailLoginPage.TXT_CONTRASENA;
 import static co.com.red5g.bancoomeva.userinterfaces.GmailLoginPage.TXT_EMAIL;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.utils.data.Emails;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -36,6 +38,7 @@ public class LoginGmail implements Task {
         Click.on(BTN_SIGUIENTE_EMAIL),
         Enter.theValue(emails.getContrasena()).into(TXT_CONTRASENA),
         Click.on(BTN_SIGUIENTE_CONTRASENA),
+        WaitFor.seconds(TIEMPO_3),
         modificarUrl(EMAIL));
   }
 }

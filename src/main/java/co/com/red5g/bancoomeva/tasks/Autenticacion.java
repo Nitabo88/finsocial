@@ -1,10 +1,9 @@
 package co.com.red5g.bancoomeva.tasks;
 
 import static co.com.red5g.bancoomeva.userinterfaces.BancaExpressLoginPage.BTN_INGRESAR;
-import static co.com.red5g.bancoomeva.userinterfaces.BancaExpressLoginPage.LBL_BIENVENIDO;
 import static co.com.red5g.bancoomeva.userinterfaces.BancaExpressLoginPage.TXT_CONTRASENA;
 import static co.com.red5g.bancoomeva.userinterfaces.BancaExpressLoginPage.TXT_USUARIO;
-import static co.com.red5g.bancoomeva.userinterfaces.HomePage.BTN_SOY_COLABORADOR;
+import static co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage.BTN_SOY_COLABORADOR;
 
 import co.com.red5g.bancoomeva.modelos.Credenciales;
 import net.serenitybdd.screenplay.Actor;
@@ -12,7 +11,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import org.openqa.selenium.Keys;
 
 public class Autenticacion implements Task {
