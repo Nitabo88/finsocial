@@ -1,3 +1,5 @@
+image: gradle:5.6.4-jdk8
+
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
 
@@ -7,19 +9,18 @@ cache:
     - .gradle/caches
 
 build:
-  stage: build  
-  image: 
-    name: gradle:5.6.4-jdk8  
-  script:    
-    - ./gradlew compileJava
-    - ./gradlew clean assemble
+  stage: build
+  tags:
+    - automatizacion
+
+  script:
+    - ./gradlew clean compileJava
+    - chmod 777 chromedriver
 
 test:
   stage: test
   tags:
     - automatizacion
-  image:
-    name: registry.gitlab.com/red5g/finsonet/app/sqa_code
   script:
     - echo $COMMAND_GRADLE
     - $COMMAND_GRADLE
