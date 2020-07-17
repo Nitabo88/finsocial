@@ -8,4 +8,4 @@ Característica: Login Colaborador Banca Express
   Escenario: Ingreso exitoso de un usuario a la página de Banca Express
     Dado que un colaborador quiere acceder a Banca Express
     Cuando ingresa su información de autenticación de Banca Express
-    Entonces el debería ver el mensaje Dashboard - Banca Express +
+    Entonces el debería poder ver el mensaje Dashboard - Banca Express + en Banca Express

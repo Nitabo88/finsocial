@@ -3,7 +3,7 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.interacions.ModificarUrl.modificarUrl;
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
-import static co.com.red5g.utils.conexionbd.Queries.SQL_ID_GESTION;
+import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ID_GESTION;
 
 import co.com.red5g.finsonet.questions.factories.LaInformacion;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage;

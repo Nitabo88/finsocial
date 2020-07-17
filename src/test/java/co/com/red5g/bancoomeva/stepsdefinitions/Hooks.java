@@ -2,7 +2,6 @@ package co.com.red5g.bancoomeva.stepsdefinitions;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
@@ -15,10 +14,8 @@ public class Hooks {
 
     @Before
     public void setTheStage() {
-        OnStage.setTheStage(
-                OnlineCast.whereEveryoneCan(
-                    BrowseTheWeb.with(navegador))
-        );
+            OnStage.setTheStage(new OnlineCast()
+            );
     }
 
     @After

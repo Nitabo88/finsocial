@@ -1,6 +1,6 @@
 package co.com.red5g.utils.conexionbd;
 
-public enum Queries {
+public enum QueriesFinsonet {
   SQL_FORMULARIO_SOLICITUD(
       "SELECT * FROM form_solicitud_web WHERE gestion_id = (SELECT id_gestion FROM gestion_pendiente WHERE id_cred_finsonet = '%s')"),
   SQL_ANALITICA_FILTRO(
@@ -18,7 +18,7 @@ public enum Queries {
 
   private final String sql;
 
-  Queries(String sql) {
+  QueriesFinsonet(String sql) {
     this.sql = sql;
   }
 

@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
-import static co.com.red5g.utils.conexionbd.Queries.SQL_FORMULARIO_SOLICITUD;
-import static co.com.red5g.utils.conexionbd.Queries.SQL_LUGAR_NACIMIENTO;
+import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_FORMULARIO_SOLICITUD;
+import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_LUGAR_NACIMIENTO;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfYyyyMmDd;
 
 import co.com.red5g.finsonet.questions.factories.LaInformacion;
