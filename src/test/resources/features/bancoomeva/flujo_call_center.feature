@@ -9,4 +9,4 @@ Característica: Flujo call center Banca Express
     Dado que un asesor quiere acceder a un crédito por el call center
     Cuando el asesor call center diligencia los tres pasos de crédito en línea
     Y el cliente realiza el proceso de firma
-    Entonces el debería poder ver el credito creado
+    Entonces el debería poder ver el crédito creado
