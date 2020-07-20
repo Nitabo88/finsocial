@@ -1,5 +1,7 @@
 package co.com.red5g.finsonet.interacions;
 
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.BTN_ERROR;
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LBL_ID;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static co.com.red5g.utils.data.Constantes.FECHA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -12,6 +14,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.DoubleClick;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class Ingresar implements Interaction {
 
@@ -25,6 +29,9 @@ public class Ingresar implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         String numeroCedula = actor.recall(CEDULA_ACTOR);
         String fecha = actor.recall(FECHA);
+        actor.attemptsTo(
+            JavaScriptClick.on(BTN_ERROR),
+            DoubleClick.on(LBL_ID));
         List<WebElementFacade> lstCredito = MisCreditosPage.LST_COLUMNA_FORMULARIO_SOLICITUD.of(numeroCedula, fecha).resolveAllFor(actor);
         actor.attemptsTo(
             Click.on(lstCredito.get(0))
