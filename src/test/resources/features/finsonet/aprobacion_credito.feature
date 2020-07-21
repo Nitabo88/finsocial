@@ -25,6 +25,12 @@ Característica:  Aprobación Crédito
       | 150%_fr     | FinsoAmigo_150%_fr  |
 
   @AprobacionCreditosHuy
+  Escenario: Aprobación Crédito Huy - Marcar el crédito como pendiente en aprobación de créditos
+    Dado que un asesor quiere normalizar un crédito huy en aprobación de créditos
+    Cuando el crédito se ponga en la lista de pendientes
+    Entonces el podrá ver el crédito en pendiente por documentación
+
+  @AprobacionCreditosHuy
   Escenario: Aprobación Crédito Huy - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor quiere aprobar un crédito huy en aprobación de créditos
     Cuando el asesor diligencia la información de aprobación de crédito huy

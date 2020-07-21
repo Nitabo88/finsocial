@@ -18,6 +18,7 @@ public final class MisCreditosPage {
           .locatedBy(
               "//td[text()='CrediHuy']//parent::tr//td[contains(.,'{0}')]//parent::tr//td[contains(text(),'{1}')]//parent::tr//td");
   public static final Target LBL_ID = Target.the("la cabecera ID de la tabla").located(By.xpath("//table[@id='tablaOriginacion']//div[@class='th-inner sortable both'][contains(text(),'ID')]"));
+  public static final Target LBL_ID2 = Target.the("la cabecera ID de la tabla ascendente").located(By.xpath("//div[@class='th-inner sortable both asc'][contains(text(), 'ID')]"));
   public static final Target BTN_ERROR = Target.the("el error").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']"));
 
   private MisCreditosPage() {
