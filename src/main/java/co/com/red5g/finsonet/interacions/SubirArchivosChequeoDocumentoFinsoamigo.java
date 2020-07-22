@@ -4,9 +4,11 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_CER
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_UPLOAD_FINSOAMIGO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LNK_FILE_UPLOAD;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import net.serenitybdd.screenplay.Actor;
@@ -26,7 +28,8 @@ public class SubirArchivosChequeoDocumentoFinsoamigo implements Performable {
                 Click.on(BTN_UPLOAD_FINSOAMIGO.resolveFor(actor)),
                 Upload.theFile(path).to(LNK_FILE_UPLOAD),
                 Click.on(BTN_CERRAR),
-                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds());
+                WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+                WaitFor.seconds(TIEMPO_3));
         }
     }
 }

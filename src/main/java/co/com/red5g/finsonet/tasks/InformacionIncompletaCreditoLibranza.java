@@ -8,10 +8,12 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_DOCUMENT
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_EMAIL;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_PLAZO;
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.TXT_VALOR_CUOTA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static co.com.red5g.utils.data.Constantes.FECHA;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.red5g.finsonet.models.Credito;
@@ -39,6 +41,7 @@ public class InformacionIncompletaCreditoLibranza implements Task {
         actor.remember(CEDULA_ACTOR, credito.getNumeroDocumento());
         actor.remember(FECHA, UtileriaFechas.formatearFechaServidorUTC());
         actor.attemptsTo(
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
             WaitUntil.the(TXT_DOCUMENTO, isVisible()),
             Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
             WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
