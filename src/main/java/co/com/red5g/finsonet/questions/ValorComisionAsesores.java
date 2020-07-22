@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
+import static co.com.red5g.general.interactions.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.questions.EstadoCredito.estadoCredito;
 import static co.com.red5g.finsonet.questions.MontoAsesor.montoAsesor;
 import static co.com.red5g.finsonet.questions.NombreAsesores.obtenerNombres;

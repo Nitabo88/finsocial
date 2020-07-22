@@ -15,19 +15,24 @@ import org.openqa.selenium.Keys;
 
 public class IngresarCorreo implements Task {
 
-  private static final String BUSQUEDA = "Bancoomeva en Linea <bancoomeva_en_linea@coomeva.com.co>";
+  String busqueda;
+
   public static final String CODIGO = "Codigo para seguir con el prestamo";
 
-  public static Performable buscarCorreo() {
-    return instrumented(IngresarCorreo.class);
+  public IngresarCorreo(String busqueda) {
+   this.busqueda = busqueda;
+  }
+
+  public static Performable buscarCorreo(String busqueda) {
+    return instrumented(IngresarCorreo.class, busqueda);
   }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         WaitUntil.the(TXT_BUSCAR_CORREO, isPresent()).forNoMoreThan(TIEMPO_10).seconds(),
-        Enter.theValue(BUSQUEDA).into(TXT_BUSCAR_CORREO).thenHit(Keys.ENTER)
+        Enter.theValue(busqueda).into(TXT_BUSCAR_CORREO).thenHit(Keys.ENTER)
     );
-    actor.remember(CODIGO, actor.asksFor(numeroCodigo()));
+    actor.remember(CODIGO, actor.asksFor(numeroCodigo(busqueda)));
   }
 }

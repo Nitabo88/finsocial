@@ -1,9 +1,12 @@
 package co.com.red5g.bancoomeva.stepsdefinitions;
 
 import static co.com.red5g.bancoomeva.modelos.builders.CredencialesBuilder.con;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.equalTo;
 
+import co.com.red5g.bancoomeva.questions.factories.ElValor;
 import co.com.red5g.bancoomeva.tasks.factories.Diligencia;
 import co.com.red5g.bancoomeva.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
@@ -30,6 +33,8 @@ public class FlujoCallCenterStepDefinition {
 
   @Entonces("^el debería poder ver el crédito creado$")
   public void verificarCreditoCreado() {
-    theActorInTheSpotlight().should();
+    theActorInTheSpotlight().should(
+        seeThat("La cuota del crédito", ElValor.deSimulacion(3),equalTo(ElValor.deLaCuotadelCredito()))
+    );
   }
 }

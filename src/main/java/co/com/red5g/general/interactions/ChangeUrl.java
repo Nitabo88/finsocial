@@ -1,19 +1,19 @@
-package co.com.red5g.bancoomeva.interactions;
+package co.com.red5g.general.interactions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
-public class ModificarUrl implements Interaction {
+public class ChangeUrl implements Interaction {
 
   private String url;
 
-  public ModificarUrl(String url) {
+  public ChangeUrl(String url) {
     this.url = url;
   }
 
-  public static ModificarUrl modificarUrl(String url) {
-    return new ModificarUrl(url);
+  public static ChangeUrl onBrowser(String url) {
+    return new ChangeUrl(url);
   }
 
   @Override

@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
+import static co.com.red5g.general.interactions.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.BTN_ENVIAR;
