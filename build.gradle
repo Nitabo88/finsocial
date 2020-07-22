@@ -49,7 +49,7 @@ dependencies {
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
     reports {"gradle reports"}
-    systemProperty "webdriver.chrome.driver", project.getProperty("webdriver.chrome.driver")
+    systemProperty "webdriver.chrome.driver", System.getProperty("webdriver.chrome.driver")
 }
 
 tasks.withType(JavaCompile) {
