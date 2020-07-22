@@ -4,6 +4,7 @@ import static co.com.red5g.bancoomeva.tasks.IngresarCorreo.CODIGO;
 import static co.com.red5g.bancoomeva.tasks.IngresarCorreo.buscarCorreo;
 import static co.com.red5g.bancoomeva.tasks.LoginGmail.ingresarEnGmail;
 import static co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage.LNK_CODIGO_RECUPERACION;
+import static co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage.SPN_CARGA;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTAR_Y_CONTINUAR;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTAR_Y_CONTINUAR_DOCUMENTOS;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTO_TERMINOS_Y_CONDICIONES;
@@ -14,8 +15,10 @@ import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.LBL_TERMINOS_Y_CO
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.TXT_CODIGO;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.TXT_CODIGO_RECUPERACION;
 import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.Emails.OTP_BANCOMEVA;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.bancoomeva.interactions.factories.Subir;
@@ -27,6 +30,7 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Firma implements Task {
 
@@ -64,6 +68,7 @@ public class Firma implements Task {
     codigo = actor.recall(CODIGO);
     actor.attemptsTo(
         Enter.theValue(codigo).into(TXT_CODIGO),
+        WaitUntil.the(SPN_CARGA, isNotVisible()).forNoMoreThan(TIEMPO_120).seconds(),
         JavaScriptClick.on(BTN_CONTINUAR),
         JavaScriptClick.on(BTN_REGRESAR_INICIO)
     );
