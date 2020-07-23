@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.Vetados;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public class VetadosBuilder implements Builder<Vetados> {
     private String documentoVetados;
@@ -35,23 +35,23 @@ public class VetadosBuilder implements Builder<Vetados> {
     }
 
     public Vetados unCliente() {
-      condocumentoVetados("10040048");
-      condetalleVetados("Usuario con problemas penales");
-      conListaVetados("Sin motivo");
+      condocumentoVetados();
+      condetalleVetados();
+      conListaVetados();
         return build();
     }
 
-    private VetadosBuilder condetalleVetados(final String detalleVetados) {
-        this.detalleVetados = detalleVetados;
+    private VetadosBuilder condetalleVetados() {
+        this.detalleVetados = "Usuario con problemas penales";
         return this;
     }
-    private VetadosBuilder condocumentoVetados(final String documentoVetados) {
-        this.documentoVetados = documentoVetados;
+    private VetadosBuilder condocumentoVetados() {
+        this.documentoVetados = "10040048";
         return this;
     }
 
-    private VetadosBuilder conListaVetados(final String listaVetados) {
-        this.listaVetados = listaVetados;
+    private VetadosBuilder conListaVetados() {
+        this.listaVetados = "Sin motivo";
         return this;
     }
 }

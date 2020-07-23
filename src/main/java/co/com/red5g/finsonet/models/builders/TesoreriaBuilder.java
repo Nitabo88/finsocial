@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.Tesoreria;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public class TesoreriaBuilder implements Builder<Tesoreria> {
 
@@ -28,7 +28,7 @@ public class TesoreriaBuilder implements Builder<Tesoreria> {
 
   public Tesoreria motivoRegreso() {
     this.accion("Regresar");
-    this.solicitadoPor("ORLANDO NICOLAS CHINCHILLA VEGA");
+    this.solicitadoPor();
     this.motivo("llamada pendiente");
     return this.build();
   }
@@ -36,7 +36,7 @@ public class TesoreriaBuilder implements Builder<Tesoreria> {
   public Tesoreria motivoPendiente() {
     this.accion("Pendiente");
     this.motivo("Pago pendiente por profesor");
-    this.detalleMotivo("Aun no se registra pago");
+    this.detalleMotivo();
     return this.build();
   }
 
@@ -50,13 +50,13 @@ public class TesoreriaBuilder implements Builder<Tesoreria> {
     return this;
   }
 
-  private TesoreriaBuilder solicitadoPor(String solicitadoPor) {
-    this.solicitadoPor = solicitadoPor;
+  private TesoreriaBuilder solicitadoPor() {
+    this.solicitadoPor = "ORLANDO NICOLAS CHINCHILLA VEGA";
     return this;
   }
 
-  private TesoreriaBuilder detalleMotivo(String detalleMotivo) {
-    this.detalleMotivo = detalleMotivo;
+  private TesoreriaBuilder detalleMotivo() {
+    this.detalleMotivo = "Aun no se registra pago";
     return this;
   }
 

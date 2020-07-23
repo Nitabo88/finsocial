@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.AprobacionCredito;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito> {
 
@@ -31,7 +31,7 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     return new AprobacionCredito(this);
   }
 
-  public AprobacionCredito motivoRegreso() {
+  public AprobacionCredito motivoRegresoLibranza() {
     this.conRazonMotivo("El usuario tiene los documentos incompletos");
     return this.build();
   }
@@ -39,6 +39,12 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
   public AprobacionCredito motivoPendiente() {
     this.conSeleccionMotivo("Pendiente Certificaciones");
     this.conRazonMotivo("El usuario aun no entrega los certificados");
+    return this.build();
+  }
+
+  public AprobacionCredito motivoNegacionCreditoHuy() {
+    this.conSeleccionMotivo("ALTO RIESGO");
+    this.conRazonMotivo("El usuario es de alto riesgo");
     return this.build();
   }
 
@@ -51,4 +57,10 @@ public final class AprobacionCreditoBuilder implements Builder<AprobacionCredito
     this.seleccionMotivo = seleccionMotivo;
     return this;
   }
+
+    public AprobacionCredito motivoNegacionCreditoLibranza() {
+      this.conSeleccionMotivo("CREDITO NO VIABLE");
+      this.conRazonMotivo("No es posible dar el credito");
+      return this.build();
+    }
 }

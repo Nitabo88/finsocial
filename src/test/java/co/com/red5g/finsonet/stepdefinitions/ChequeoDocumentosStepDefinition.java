@@ -1,88 +1,77 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException.MENSAJE_CREDITO_RECHAZADO;
-import static co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException.MENSAJE_CREDITO;
+import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoAssertion;
+import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
+import co.com.red5g.finsonet.questions.QueAparece;
+import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
+import co.com.red5g.finsonet.questions.factories.ElCredito;
+import co.com.red5g.finsonet.tasks.factories.Diligencia;
+import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import co.com.red5g.finsonet.tasks.factories.Realiza;
+import cucumber.api.java.es.Cuando;
+import cucumber.api.java.es.Dado;
+import cucumber.api.java.es.Entonces;
+import net.serenitybdd.screenplay.GivenWhenThen;
+
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 
-import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoException;
-import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoException;
-import co.com.red5g.finsonet.interacions.AbreLaPagina;
-import co.com.red5g.finsonet.interacions.Subir;
-import co.com.red5g.finsonet.questions.QueAparece;
-import co.com.red5g.finsonet.questions.QueElChequeoDeDocumentos;
-import co.com.red5g.finsonet.questions.factories.ElCredito;
-import co.com.red5g.finsonet.tasks.Realizar;
-import co.com.red5g.finsonet.tasks.factories.Diligencia;
-import co.com.red5g.finsonet.tasks.factories.Ingresa;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
-
 public class ChequeoDocumentosStepDefinition {
 
   private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
 
-  @Dado("^que (.*) esta en el paso de chequeo de un documentos$")
-  public void ingresarChequeo(final String actor) {
+  @Dado("^que (.*) esta en el paso de chequeo de documentos de un crédito de libranza$")
+  public void ingresarChequeoDocumentos(final String actor) {
     theActorCalled(actor).attemptsTo(
-        Realizar.unChequeoDeDocumento()
+        Realiza.unChequeoDeDocumento(la().informacionDelCreditoChequeoDocumento())
     );
   }
 
-  @Cuando("^el asesor decline el chequeo del credito del cliente$")
+  @Cuando("^el asesor decline el chequeo del crédito de libranza del cliente$")
   public void rechazarChequeoDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Ingresa.elRechazoDelCredito(con().motivo())
+            Ingresa.elRechazoDelCredito(con().motivoLibranza())
     );
   }
 
-  @Cuando("^el asesor complete el chequeo de credito del cliente$")
+  @Cuando("^el asesor complete el chequeo de crédito del cliente$")
   public void diligenciarChequeoDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().centralesDeRiesgo())
+        Diligencia.laInformacionIncompletaDeChequeoDeDocumentos(con().libranza())
     );
   }
 
-  @Entonces("^deberia ver el mensaje de adjuntar informacion$")
+  @Entonces("^deberá ver el mensaje de adjuntar información$")
   public void verificarNoCreacionCredito() {
-    theActorInTheSpotlight().should(seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString(ChequeoDocumentosStepDefinition.ESTADO_NO_EXITOSO)));
+    theActorInTheSpotlight().should(GivenWhenThen.seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString(ChequeoDocumentosStepDefinition.ESTADO_NO_EXITOSO)));
   }
 
-  @Cuando("^el asesor adjunta toda la informacion de el chequeo de documentos$")
+  @Cuando("^el asesor adjunta toda la información de el chequeo de documentos$")
   public void adjuntarDocumentos() {
     theActorInTheSpotlight().attemptsTo(
-        Diligencia.laInformacionDeChequeoDeDocumentos(con().centralesDeRiesgo())
+            Diligencia.laInformacionDeChequeoDeDocumentosLibranza(con().libranza())
     );
   }
 
-  @Entonces("^deberia ver el credito en el paso de confirmacion$")
+  @Entonces("^deberá ver el crédito en el paso de confirmación$")
   public void verificarCreacionCredito() {
-    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoException.class, MENSAJE_CREDITO));
+    theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacion()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
-  @Entonces("^el auxiliar de documentacion deberia verlo$")
+  @Entonces("^el auxiliar de documentación debería verlo en su lista de chequeo de documentos$")
   public void verificarRevisionDocumentacion() {
     theActorInTheSpotlight().attemptsTo(Ingresa.conUsuarioDeDocumentacion());
-    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoException.class, MENSAJE_CREDITO_RECHAZADO));
+    theActorInTheSpotlight().should(seeThat(QueAparece.laSolicitudPendiente()).orComplainWith(ElCreditoNoFueRechazadoAssertion.class, ElCreditoNoFueRechazadoAssertion.MENSAJE_CREDITO_RECHAZADO));
   }
 
-  @Dado("^que un asesor esta en el paso de chequeo de un credito numero (.*)$")
-  public void queUnAsesorEstaEnElPasoDeChequeoDeUnCreditoNumero(String numeroCredito) {
-    theActorCalled("prueba").attemptsTo(
-        AbreLaPagina.finsonet(),
-        Ingresa.lasCredenciales(de().unUsuarioBasico()),
-        Click.on(LNK_ORIGINACION),
-        JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE.of(numeroCredito))
+  @Cuando("^el asesor niegue el chequeo de documentos$")
+  public void negarChequeoDocumentos() {
+    theActorInTheSpotlight().attemptsTo(
+            Diligencia.laNegaciondelCreditodeLibranza(con().motivoNegacionCreditoLibranza())
     );
-    theActorInTheSpotlight().attemptsTo(Subir.losArchivos());
   }
 }

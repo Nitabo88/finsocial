@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_VENTA_NUEVA;
-import static co.com.red5g.finsonet.utils.Utilerias.suma;
+import static co.com.red5g.utils.Utilerias.suma;
 
 import java.util.List;
 import net.serenitybdd.core.pages.WebElementFacade;

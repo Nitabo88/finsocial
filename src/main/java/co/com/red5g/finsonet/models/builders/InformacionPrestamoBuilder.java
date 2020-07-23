@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.InformacionPrestamo;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public class InformacionPrestamoBuilder implements Builder<InformacionPrestamo> {
     private String strMonto;
@@ -48,43 +48,43 @@ public class InformacionPrestamoBuilder implements Builder<InformacionPrestamo> 
         return strTasaMaximaInteresVigente;
     }
 
-    private InformacionPrestamoBuilder conMonto(String strMonto) {
-        this.strMonto = strMonto;
+    private InformacionPrestamoBuilder conMonto() {
+        this.strMonto = "7680000";
         return this;
     }
 
-    private InformacionPrestamoBuilder conTasaInteres(String strTasaInteres) {
-        this.strTasaInteres = strTasaInteres;
+    private InformacionPrestamoBuilder conTasaInteres() {
+        this.strTasaInteres = "2";
         return this;
     }
 
-    private InformacionPrestamoBuilder conCuota(String strCuota) {
-        this.strCuota = strCuota;
+    private InformacionPrestamoBuilder conCuota() {
+        this.strCuota = "160000";
         return this;
     }
 
-    private InformacionPrestamoBuilder conTasaMora(String strTasaMora) {
-        this.strTasaMora = strTasaMora;
+    private InformacionPrestamoBuilder conTasaMora() {
+        this.strTasaMora = "23";
         return this;
     }
 
-    private InformacionPrestamoBuilder conPlazo(String strPlazo) {
-        this.strPlazo = strPlazo;
+    private InformacionPrestamoBuilder conPlazo() {
+        this.strPlazo = "48";
         return this;
     }
 
-    private InformacionPrestamoBuilder conTasaMaxima(String strTasaMaximaInteresVigente) {
-        this.strTasaMaximaInteresVigente = strTasaMaximaInteresVigente;
+    private InformacionPrestamoBuilder conTasaMaxima() {
+        this.strTasaMaximaInteresVigente = "23";
         return this;
     }
 
     public InformacionPrestamo informacionPrestamo() {
-      this.conMonto("7680000");
-      this.conTasaInteres("2");
-      this.conCuota("160000");
-      this.conTasaMora("23");
-      this.conPlazo("48");
-      this.conTasaMaxima("23");
+      this.conMonto();
+      this.conTasaInteres();
+      this.conCuota();
+      this.conTasaMora();
+      this.conPlazo();
+      this.conTasaMaxima();
         return this.build();
     }
 

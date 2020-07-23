@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.Referencias;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public class ReferenciasBuilder implements Builder<Referencias> {
     private String nombreCompletoReferencia;
@@ -39,7 +39,7 @@ public class ReferenciasBuilder implements Builder<Referencias> {
       this.conNombreCompletoReferencia("Laura Mejia");
       this.conParentescoReferencia("Compañera del Trabajo");
       this.conTelefonoFijoReferencia("2505050");
-      this.conCiudadReferencia("BARRANQUILLA");
+      this.conCiudadReferencia();
       this.conCelularReferencia("3002809010");
       this.conDireccionReferencia("CL 99 35 90");
         return this.build();
@@ -50,8 +50,8 @@ public class ReferenciasBuilder implements Builder<Referencias> {
         return this;
     }
 
-    private ReferenciasBuilder conCiudadReferencia(String ciudadReferencia) {
-        this.ciudadReferencia = ciudadReferencia;
+    private ReferenciasBuilder conCiudadReferencia() {
+        this.ciudadReferencia = "BARRANQUILLA";
         return this;
     }
 
@@ -74,7 +74,7 @@ public class ReferenciasBuilder implements Builder<Referencias> {
       this.conNombreCompletoReferencia("Cristian Morales");
       this.conParentescoReferencia("Hermano");
       this.conTelefonoFijoReferencia("2606060");
-      this.conCiudadReferencia("BARRANQUILLA");
+      this.conCiudadReferencia();
       this.conCelularReferencia("3002005656");
       this.conDireccionReferencia("CR 99 90 90");
         return this.build();
@@ -86,24 +86,24 @@ public class ReferenciasBuilder implements Builder<Referencias> {
     }
 
     public Referencias informacionReferenciaFinanciera() {
-      this.conNombreEntidadFinanciera("BANCOMEVA");
-      this.conSucursal("Cali");
-      this.conTipoProducto("AHORROS");
+      this.conNombreEntidadFinanciera();
+      this.conSucursal();
+      this.conTipoProducto();
         return this.build();
     }
 
-    private ReferenciasBuilder conTipoProducto(String tipoProducto) {
-        this.tipoProducto = tipoProducto;
+    private ReferenciasBuilder conTipoProducto() {
+        this.tipoProducto = "AHORROS";
         return this;
     }
 
-    private ReferenciasBuilder conSucursal(String sucursal) {
-        this.sucursal = sucursal;
+    private ReferenciasBuilder conSucursal() {
+        this.sucursal = "Cali";
         return this;
     }
 
-    private ReferenciasBuilder conNombreEntidadFinanciera(String nombreEntidadFinanciera) {
-        this.nombreEntidadFinanciera = nombreEntidadFinanciera;
+    private ReferenciasBuilder conNombreEntidadFinanciera() {
+        this.nombreEntidadFinanciera = "BANCOMEVA";
         return this;
     }
 

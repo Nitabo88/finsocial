@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.interacions.CambiarPestana.cambiarPestana;
+import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.finsonet.models.builders.ActividadLaboralBuilder.es;
 import static co.com.red5g.finsonet.models.builders.DescripcionActivosBuilder.por;
 import static co.com.red5g.finsonet.models.builders.DocumentoRequeridosBuilder.los;
@@ -23,17 +24,17 @@ import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso5Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso6Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso7Page;
 import co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso8Page;
+import co.com.red5g.utils.Utilerias;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 
 public class FormularioSolicitudCredito implements Task {
 
-    public static final String FECHA_SOLICITUD_CREDITO = "fecha credito";
-    public static final String VISITA_COLEGIO = "Visita al colegio";
-
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String respuestaEncuesta = String.valueOf(Utilerias.random(1, 5));
         actor.attemptsTo(
             Escribe.losDocumentosRequeridos(los().documentosSolicitante()),
             Escribe.laInformacionDelPrestamo(la().informacionPrestamo()),
@@ -55,9 +56,10 @@ public class FormularioSolicitudCredito implements Task {
             Click.on(FormularioSolicitudPaso6Page.BTN_GUARDAR_CONTINUAR),
             Click.on(FormularioSolicitudPaso7Page.BTN_GUARDAR_CONTINUAR),
             Click.on(FormularioSolicitudPaso8Page.BTN_ENVIAR),
-            Click.on(BTN_ENCUESTA.of(VISITA_COLEGIO)),
-            Click.on(BTN_ENVIAR_ENCUESTA),
-            Click.on(BTN_ACEPTAR_ENCUESTA),
+            JavaScriptClick.on(BTN_ENCUESTA.of(respuestaEncuesta)),
+            JavaScriptClick.on(BTN_ENVIAR_ENCUESTA),
+            JavaScriptClick.on(BTN_ACEPTAR_ENCUESTA),
+            cerrarPestana(),
             cambiarPestana()
         );
     }

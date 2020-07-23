@@ -5,10 +5,13 @@ import static co.com.red5g.finsonet.userinterfaces.AuxiliarOperativoPage.LNK_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_CHEQUEO_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_AUXILIAR_OPERATIVO;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNU_MI_CUENTA;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -18,19 +21,18 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class LoguinUsuarioDocumentacion implements Task {
 
   private static final String OPCION_SALIR = "Salir";
-  private static final Integer TIEMPO = 10;
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Click.on(BTN_MI_CUENTA),
-        Click.on(MNU_MI_CUENTA.of(OPCION_SALIR)),
+        Click.on(MNM_MI_CUENTA.of(OPCION_SALIR)),
         Ingresa.lasCredenciales(de().unUsuarioDeDocumentacion()),
-        WaitUntil.the(LNK_AUXILIAR_OPERATIVO, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+        WaitFor.seconds(TIEMPO_3),
         Click.on(LNK_AUXILIAR_OPERATIVO),
-        WaitUntil.the(LNK_CHEQUEO_DOCUMENTOS, isEnabled()).forNoMoreThan(TIEMPO).seconds(),
+        WaitUntil.the(LNK_CHEQUEO_DOCUMENTOS, isEnabled()).forNoMoreThan(TIEMPO_10).seconds(),
         Click.on(LNK_CHEQUEO_DOCUMENTOS),
-        WaitUntil.the(LBL_CHEQUEO_DOCUMENTOS, isVisible()).forNoMoreThan(TIEMPO).seconds()
+        WaitUntil.the(LBL_CHEQUEO_DOCUMENTOS, isVisible()).forNoMoreThan(TIEMPO_10).seconds()
     );
   }
 }

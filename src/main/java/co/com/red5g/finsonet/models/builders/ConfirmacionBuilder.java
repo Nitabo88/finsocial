@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.models.builders;
 
 import co.com.red5g.finsonet.models.Confirmacion;
-import co.com.red5g.finsonet.utils.Builder;
+import co.com.red5g.utils.Builder;
 
 public final class ConfirmacionBuilder implements Builder<Confirmacion> {
     private String accion;
@@ -31,7 +31,7 @@ public final class ConfirmacionBuilder implements Builder<Confirmacion> {
 
     public Confirmacion motivoPendiente() {
         this.accion("Pendiente");
-        this.motivo("Datos incompletos");
+        this.motivo();
         this.razonMotivo("Contactar al usuario por documentos pendientes");
         return this.build();
     }
@@ -41,8 +41,8 @@ public final class ConfirmacionBuilder implements Builder<Confirmacion> {
         return this;
     }
 
-    private ConfirmacionBuilder motivo(String motivo) {
-        this.motivo = motivo;
+    private ConfirmacionBuilder motivo() {
+        this.motivo = "Datos incompletos";
         return this;
     }
 

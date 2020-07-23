@@ -1,12 +1,11 @@
 package co.com.red5g.finsonet.interacions;
 
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
+import java.util.stream.IntStream;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.targets.Target;
-
-import java.util.stream.IntStream;
-
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class SeleccionarElAnio implements Interaction {
     private static final String LEFT = "izquierda";

@@ -6,8 +6,9 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGISTR
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGRESAR_INCORPORACION;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_SOLICITADO_POR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_MOTIVO;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
+import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Incorporacion;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
@@ -15,11 +16,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class RegresarIncoporacion implements Task {
 
-  private static final int TIEMPO = 20;
   private final Incorporacion incorporacion;
 
   public RegresarIncoporacion(Incorporacion incorporacion) {
@@ -34,7 +33,7 @@ public class RegresarIncoporacion implements Task {
         SelectFromOptions.byVisibleText(this.incorporacion.getSolicitadoPor()).from(LST_SOLICITADO_POR),
         Enter.theValue(incorporacion.getRazonMotivo()).into(TXT_MOTIVO),
         JavaScriptClick.on(BTN_REGISTRAR_REGRESAR),
-        WaitUntil.the(BTN_ACEPTAR, isVisible()).forNoMoreThan(RegresarIncoporacion.TIEMPO).seconds(),
+        WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_ACEPTAR),
         Ingresa.enAprobacion());
   }

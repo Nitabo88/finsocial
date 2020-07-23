@@ -1,9 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_ANTECARTERA;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_VALOR_DETALLE_ORIGINACION;
-import static co.com.red5g.finsonet.utils.Utilerias.suma;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -13,6 +10,7 @@ import co.com.red5g.finsonet.questions.factories.ElNumero;
 import co.com.red5g.finsonet.questions.factories.ElValor;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Ingresa;
+import co.com.red5g.utils.Utilerias;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -58,19 +56,19 @@ public class ReporteVentasStepDefinition {
     @Entonces("el observara que el valor consolidado y el detalle del reporte de originacion son consistentes")
     public void verificarValorReporteOriginacion() {
         theActorInTheSpotlight()
-            .should(seeThat(ElValor.delReporteDeOriginacion(), containsString(String.valueOf(suma(LST_VALOR_DETALLE_ORIGINACION.resolveAllFor(theActorInTheSpotlight()))))));
+            .should(seeThat(ElValor.delReporteDeOriginacion(), containsString(String.valueOf(Utilerias.suma(LST_VALOR_DETALLE_ORIGINACION.resolveAllFor(theActorInTheSpotlight()))))));
     }
 
     @Y("^que el numero de creditos consolidado y el detalle del reporte de originacion son consistentes$")
     public void verificarCreditosReporteOriginacion() {
         theActorInTheSpotlight()
-            .should(seeThat(ElNumero.deCreditosDelReporteDeOriginacion(), containsString(String.valueOf(suma(LST_CREDITO_DETALLE_ORIGINACION.resolveAllFor(theActorInTheSpotlight()))))));
+            .should(seeThat(ElNumero.deCreditosDelReporteDeOriginacion(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_ORIGINACION.resolveAllFor(theActorInTheSpotlight()))))));
     }
 
     @Entonces("el observara que el numero de creditos consolidado y el detalle del reporte de antecartera son consistentes")
     public void verificarReporteAntecartera() {
         theActorInTheSpotlight()
-            .should(seeThat(ElNumero.deCreditosDelReporteDeAntecartera(), containsString(String.valueOf(suma(LST_CREDITO_DETALLE_ANTECARTERA.resolveAllFor(theActorInTheSpotlight()))))));
+            .should(seeThat(ElNumero.deCreditosDelReporteDeAntecartera(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_ANTECARTERA.resolveAllFor(theActorInTheSpotlight()))))));
     }
 
     @Entonces("el observara que el valor consolidado y el detalle del reporte de venta nueva son consistentes")
@@ -95,5 +93,25 @@ public class ReporteVentasStepDefinition {
     public void verificarValorVentaLiberada() {
         theActorInTheSpotlight()
             .should(seeThat(ElValor.delReporteDeVentaLiberada(), containsString(theActorInTheSpotlight().asksFor(ElValor.delDetalleDelReporteDeVentaLiberada()))));
+    }
+
+    @Cuando("^el ingresa al reporte del mes de finsoamigo$")
+    public void consultarVentaFinsoamigo() {
+        theActorInTheSpotlight().attemptsTo(
+                Ingresa.enElReporteDeFinsoamigo()
+        );
+    }
+
+    @Entonces("^el observara que el valor consolidado y el detalle del reporte de finsoamigo son consistentes$")
+    public void verificarValorVentaFinsoamigo() {
+        theActorInTheSpotlight()
+                .should(seeThat(ElValor.delReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_VALOR_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
+
+    }
+
+    @Y("^que el numero de creditos consolidado y el detalle del reporte de finsoamigo son consistentes$")
+    public void verificarCreditosVentaFinsoamigo() {
+        theActorInTheSpotlight()
+                .should(seeThat(ElNumero.deCreditosDelReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
     }
 }
