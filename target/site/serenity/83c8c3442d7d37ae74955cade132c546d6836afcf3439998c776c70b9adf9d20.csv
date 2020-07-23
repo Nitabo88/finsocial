@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Originacion","Aprobacion de Creditos - Aprobar el credito desde aprobacion de creditos","SUCCESS","2020-03-26T10:17:09.566-05:00[America/Bogota]","0.0","496.1"
+"Originacion","Aprobacion de Creditos - Marcar el credito como pendiente en aprobacion de creditos","SUCCESS","2020-03-26T10:25:25.676-05:00[America/Bogota]","0.0","372.64"
+"Originacion","Aprobacion de Creditos - Regresar el credito desde aprobacion de creditos","SUCCESS","2020-03-26T10:31:38.317-05:00[America/Bogota]","0.0","363.64"

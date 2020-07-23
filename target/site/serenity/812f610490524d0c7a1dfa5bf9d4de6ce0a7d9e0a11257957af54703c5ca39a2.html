@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+            $('.scenario-result-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            // Results table
+            $('#test-results-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
+            });
+
+            $('#evidence-table').DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table").DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table-with-pagination").DataTable({
+                order: [[0, "asc",]],
+                pageLength: 10,
+                language: {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Pruebas FINSONET</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                    > Feature  (with Feature Originacion)
+                > <span
+                    class="truncate-60">Originacion</span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 26-03-2020 15:13</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2><i class='fa fa-tags'></i> Feature: Originacion</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div class="test-count-title">
+                                    17 test scenarios 
+                                     |
+                                        <a href="812f610490524d0c7a1dfa5bf9d4de6ce0a7d9e0a11257957af54703c5ca39a2.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="fas fa-home"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="fas fa-tachometer-alt"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
+
+                                                                var labels = ['88%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '6%', ' ', '6%', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                                var series = [{meta: 'Passing tests (automated)', value: 15}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 1}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 1}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
+
+
+                                                                new Chartist.Pie('.ct-chart', {
+                                                                    series: series,
+                                                                    labels: labels
+                                                                }, {
+                                                                    plugins: [Chartist.plugins.tooltip()],
+                                                                    donut: true,
+                                                                    donutWidth: 60,
+                                                                    donutSolid: true,
+                                                                    startAngle: 270,
+                                                                    showLabel: true
+                                                                }, options);
+
+
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Scenario Results (including rows of test
+                                                                    data)
+                                                                </th>
+                                                                <th scope="col" colspan="2" class="automated-stats">
+                                                                    Automated
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="59a871c32ba5fbac197387f7a139f33b3603aba055482cc0bf7f8723da8c9293.html"><i
+                                                                                    class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                                <td class="automated-stats">15</td>
+                                                                <td class="automated-stats">88%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                                class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                                class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                                class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                        <td colspan="3"><a
+                                                                                    href="be637034ec01d9b0c7eecbe856ca8eff1b32a59959cc3976386cb9f155a98a3b.html"><i
+                                                                                        class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                        </td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="56aaad5fb1f9e0296c076105a638b753a5137c5d23769916de404284b865471d.html"><i
+                                                                                    class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                                <td class="automated-stats">1</td>
+                                                                <td class="automated-stats">6%</td>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="b39dd59eab73dbacd63104cc5e1e3dae5b66d38a5cb6e3e79387b6d0b9e8d87d.html"><i
+                                                                                    class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken</a>
+                                                                    </td>
+                                                                <td class="automated-stats">1</td>
+                                                                <td class="automated-stats">6%</td>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <i
+                                                                                class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr class="summary-stats">
+                                                                <td class="aggregate-result-count">Total</td>
+                                                                <td class="automated-stats">17</td>
+                                                                <td class="automated-stats"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>Execution Time</th>
+                                                                <th>Clock Time</th>
+                                                                <th>Fastest Test</th>
+                                                                <th>Slowest Test</th>
+                                                                <th>Average Execution Time</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td> 2h  3m 57s</td>
+                                                                <td> 4h  41m 50s</td>
+                                                                <td>44s</td>
+                                                                <td> 13m 42s</td>
+                                                                <td> 7m 17s</td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3>Functional Coverage Overview</h3>
+
+
+                                                                    <h4>Features</h4>
+
+                                                                    <table class="table feature-coverage-table"
+                                                                           id="Feature">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>Feature</th>
+                                                                            <th style="width:7.5em;">Scenarios</th>
+                                                                            <th style="width:7.5em;">% Pass</th>
+                                                                            <th style="width:7.5em;">Result</th>
+                                                                            <th>Coverage</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="8b367b8173fcc94369cefda5af86bc36d993549f09fefb40a0af92a53eceae41.html">Originacion</a>
+                                                                                </td>
+                                                                                <td>17</td>
+                                                                                <td>88%</td>
+                                                                                <td>
+                                                                                        <i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 88.235294%; background-color: #30cb23"
+                                                                                                 aria-valuenow="15"
+                                                                                                 title="88% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 5.882353%; background-color: #f8001f"
+                                                                                                 aria-valuenow="1"
+                                                                                                 title="6% failure"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 5.882353%; background-color: darkorange"
+                                                                                                 aria-valuenow="1"
+                                                                                                 title="6% error"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <h3>Test Failure Overview</h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <h4>Most Frequent Failures</h4>
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="failure-color top-list-title">
+                                                                            <a href="a0ace456df350117335ad374e8d62c0d8c978db868ea1469e0c5ba32aac965ea.html"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i> Assertion error</a>
+                                                                        </td>
+                                                                        <td><span
+                                                                                    class="badge failure-badge">1</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="error-color top-list-title">
+                                                                            <a href="3111f09eab6414eeab6f970da5557409da235621b5ff2226adea1df608bf72e9.html"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> Index out of bounds exception</a>
+                                                                        </td>
+                                                                        <td><span
+                                                                                    class="badge failure-badge">1</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <h4>Most Unstable Features</h4>
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="failure-color top-list-title"><a
+                                                                                    href="#">Originacion</a>
+                                                                        </td>
+                                                                        <td><span
+                                                                                    class="badge failure-badge">11%</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3>Tags</h3>
+
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div>
+                                                                                <a href="d5943410e7daa7722461c66255033bf0d21e114035d672f9e24eaf67b770a79a.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Aprobacioncreditos&nbsp;&nbsp;&nbsp;3</span>
+                                                                                </a>
+                                                                                <a href="e023d26f8ca5861e801805a17440c4190fd13644a1a036f1a7896cb97ca9ed07.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Chequeodocumentos&nbsp;&nbsp;&nbsp;3</span>
+                                                                                </a>
+                                                                                <a href="fb6eb9f2879e9b0bbfd3004c41a076c24ce03c2382a8b3d15f12a13e41b2d888.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Confirmacion&nbsp;&nbsp;&nbsp;3</span>
+                                                                                </a>
+                                                                                <a href="fd3ecac0925272ceeba4d1ab92be69918db08099fb1bfb52c195293bec0e6fd6.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Formalizacion&nbsp;&nbsp;&nbsp;3</span>
+                                                                                </a>
+                                                                                <a href="5887a550150ec8d0e69fefe09ecbd0712bdaf1c033ab693a3707551c7796e2e0.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#f8001f; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Tesoreria&nbsp;&nbsp;&nbsp;2</span>
+                                                                                </a>
+                                                                                <a href="8c08c382c1bb59da139e97e0cf1ad51f409bfc5f9eb5bae19e9edb62f0575f3f.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:darkorange; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Incorporacion&nbsp;&nbsp;&nbsp;3</span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                            <h5 class="card-title">Feature</h5>
+                                                                        <div>
+                                                                                <a href="8b367b8173fcc94369cefda5af86bc36d993549f09fefb40a0af92a53eceae41.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:darkorange; margin:1em;padding:4px;"><i
+                                                                                    class="fa fa-tag"></i> Originacion&nbsp;&nbsp;&nbsp;17</span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                                            <table class="scenario-result-table table"
+                                                                   id="scenario-results">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>Feature</th>
+                                                                    <th class="test-name-column">Scenario</th>
+                                                                    <th>Steps</th>
+                                                                    <th>Start Time</th>
+                                                                    <th>Duration</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="b6f00502a6acefa9fdac633928c62fd924aa9e5f35b3f8ccc34e24897e2a571b.html">Aprobacion de Creditos - Aprobar el credito desde aprobacion de creditos</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>10:17:09</td>
+                                                                        <td>08:16</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="91d793a64c32d3ae1787fcff017c1fea2cdddd2149e2d39d367ae966f9f4961d.html">Aprobacion de Creditos - Marcar el credito como pendiente en aprobacion de creditos</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>10:25:25</td>
+                                                                        <td>06:12</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="934ec8cdf96524a8156817c9b667f882be158a5153512b944cc1a68a2fa643b1.html">Aprobacion de Creditos - Regresar el credito desde aprobacion de creditos</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>10:31:38</td>
+                                                                        <td>06:03</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="2e0c16441ca76a665cb9eb69aafb5a8d6ccc29bec0e9b9fca94f777fb3650b65.html">Chequeo Documentos - Aprobacion chequeo de documentos</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:06:52</td>
+                                                                        <td>05:13</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="259509a5fd86909cb486755be0637f8423d20ff3462b72b168be4fb001cba1bc.html">Chequeo Documentos - Aprobacion chequeo documentos no exitosa</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:12:06</td>
+                                                                        <td>04:31</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="f2c9314b2302a143dc12e067bcee93c1d99cb239d6dcbd1f7647f7b212295968.html">Chequeo Documentos - Chequeo de documentos estado Pendiente</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:16:37</td>
+                                                                        <td>04:53</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="bf266461577a61f94ed3eaf2ddb4d3d703761cb1f699be9e0cac73f10c92abb4.html">Confirmacion - Aprobacion del paso de confirmacion de un credito</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:23:28</td>
+                                                                        <td>05:35</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="6706224c6762d8e44fd3a1e3b1967d8057675acd670b11b9b21ddb04761a915b.html">Confirmacion - Regresar el credito desde el paso de confirmacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:29:03</td>
+                                                                        <td>05:47</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="2e4cba21942c12093acc793eca9e305a434ffeb50af8a34bd62afe0ca801aefb.html">Confirmacion - Marcar como pendiente el credito en el paso de confirmacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:34:51</td>
+                                                                        <td>05:34</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="687f1db4dc897789fd3ed4e158c5a4e3b629582a16f33ff5e8aea31314061e31.html">Formalizacion - Regresar el credito desde formalizacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:44:55</td>
+                                                                        <td>12:21</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="c3457ce1fc40329d4c51db3eb34ab1aae3d8eb725aaaef1e930c62e41c7affa3.html">Formalizacion - Marcar el credito como pendiente en formalizacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>11:57:16</td>
+                                                                        <td>11:08</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="bb94ca9cd0789f54812e5cbb7ab5031397d0e59845f42cb62ca3e3c5c21b2d08.html">Formalizacion - Aprobar el credito desde formalizacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>12:08:24</td>
+                                                                        <td>12:11</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result FAILURE">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="dadc33e5e1ef0477fcd71b6837957d37436c2a542d2aad26057e4cded7310494.html">Tesoreria - Regresar el credito desde tesoreria</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>13:05:58</td>
+                                                                        <td>00:44</td>
+                                                                        <td><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i> <span
+                                                                                    style="display:none">FAILURE</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="df43a1b46a319cbba3bd3aa039fadd08be238e0aa04ca3b0f359b81879dad832.html">Tesoreria - Marcar el credito como pendiente en tesoreria</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>13:06:43</td>
+                                                                        <td>13:42</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="c86a41407fd81de11c47f7ae1c31cb6cc53204f0c8d63c868b21731f034dd2e2.html">Incorporacion - Aprobar el credito desde incorporacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>14:38:28</td>
+                                                                        <td>10:52</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="5e07eda4089e0de99dd5253b4ef76e28e2e0892bf0ee8202e29309485e60d513.html">Incorporacion - Marcar el credito como pendiente en incorporacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>14:49:20</td>
+                                                                        <td>09:39</td>
+                                                                        <td><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result ERROR">
+                                                                        <td>
+                                                                                <a href="da1646366b988de16299e3fe27e43cc087eef26760c8eb7ef0272f45f0ad9c8a.html">Originacion</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="42ce75b9b4e3bcd4e0364fa13403a56eed21026ddc5b5b3cf5f56c4ff428f1ad.html">Incorporacion - Regresar el credito desde incorporacion</a>
+                                                                        </td>
+                                                                        <td>3</td>
+                                                                        <td>14:59:00</td>
+                                                                        <td>01:09</td>
+                                                                        <td><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i> <span
+                                                                                    style="display:none">ERROR</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                            No manual tests were recorded
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.0.70</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

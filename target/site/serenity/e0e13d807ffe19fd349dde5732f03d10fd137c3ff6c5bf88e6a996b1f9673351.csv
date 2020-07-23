@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Originacion","Formalizacion - Regresar el credito desde formalizacion","SUCCESS","2020-03-26T11:44:55.154-05:00[America/Bogota]","0.0","741.77"
+"Originacion","Formalizacion - Marcar el credito como pendiente en formalizacion","SUCCESS","2020-03-26T11:57:16.927-05:00[America/Bogota]","0.0","668.02"
+"Originacion","Formalizacion - Aprobar el credito desde formalizacion","SUCCESS","2020-03-26T19:44:12.621-05:00[America/Bogota]","0.0","866.12"
