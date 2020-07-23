@@ -18,7 +18,7 @@ public final class ConfirmacionPage {
     public static final Target TXT_MOTIVO_PENDIENTE = Target.the("detalle del estado pendiente").located(By.id("area"));
     public static final Target BTN_ACEPTAR = Target.the("Boton aceptar").located(By.id("boton2"));
     public static final Target BTN_ACCION_PENDIENTE_HUY = Target.the("Boton aceptar")
-        .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//ancestor::tr//button[@data-toggle='dropdown']");
+            .locatedBy("//a[@href='formOrigHuy.php?crid={0}']//parent::td//following-sibling::td//button[@data-toggle='dropdown']");
     public static final Target LST_FILA_CONFIRMACION_PENDIENTE = Target.the("la fila de la tabla")
         .locatedBy("//table[@id='table_p']//a[contains(@href,'{0}')]//ancestor::tr");
 

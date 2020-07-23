@@ -8,13 +8,13 @@ Característica: Creacion credito nuevo finsonet
   @Libranza
   Escenario: Creacion nuevo credito
     Dado que un asesor quiere crear un crédito de libranza
-    Cuando el ingresa el número de documento 12000092 con el valor 2500000 y a un plazo de "52" meses
+    Cuando el ingresa el número de documento 4390231 con el valor 2500000 y a un plazo de "55" meses
     Entonces el podrá ver un crédito de libranza creado
 
   @Libranza
   Escenario:  Creación nuevo crédito - Campos faltantes
-  Dado que un asesor quiere crear un crédito de libranza
-  Cuando el diligencia el número de documento 23604517 con el valor 1500000 y a un plazo de "52" meses
+    Dado que un asesor quiere crear un crédito de libranza
+    Cuando el diligencia el número de documento 26774662 con el valor 1500000 y a un plazo de "55" meses
     Entonces el no podrá crear un crédito de libranza
 
   @Credihuy

@@ -7,6 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACI
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 
 public class PasoAprobacionDeCreditos implements Question<Boolean> {
 
@@ -16,7 +17,8 @@ public class PasoAprobacionDeCreditos implements Question<Boolean> {
   public Boolean answeredBy(Actor actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
-        Click.on(MNM_ORIGINACION.of(APROBACION_CREDITOS)));
+        Click.on(MNM_ORIGINACION.of(APROBACION_CREDITOS)),
+        MoveMouse.to(LST_FILA_APROBACION_CREDITO.of(numeroCredito)));
     return LST_FILA_APROBACION_CREDITO.of(numeroCredito).resolveFor(actor).isPresent();
   }
 }

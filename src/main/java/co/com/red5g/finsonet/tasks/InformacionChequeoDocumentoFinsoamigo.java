@@ -24,6 +24,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 
 public class InformacionChequeoDocumentoFinsoamigo implements Task {
 
@@ -39,16 +40,15 @@ public class InformacionChequeoDocumentoFinsoamigo implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.remember(NUMERO_CREDITO, numeroCredito);
     actor.attemptsTo(
-            MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)),
-            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)));
+        MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)),
+        JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO.of(numeroCredito)));
     actor.attemptsTo(
         Check.whether(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria()).resolveFor(actor).isVisible()).andIfSo(
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
             Click.on(BTN_ACEPTAR1_POP_UP),
             Click.on(BTN_ACEPTAR)),
-        Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),
-        Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
-        WaitFor.seconds(TIEMPO_3),
+        Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN).thenHit(Keys.ENTER),
+        Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO).thenHit(Keys.TAB),
         Subir.losArchivosDeChequeoDocumentosFinsoamigo(),
         Click.on(BTN_GUARDAR),
         WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds(),

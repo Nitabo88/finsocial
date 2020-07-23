@@ -59,7 +59,6 @@ public class InformacionCreditoLibranza implements Task {
             Click.on(MNM_HAMBURGUESA),
             Click.on(IMG_FINSONET),
             Click.on(LNK_COMERCIAL),
-            Click.on(LNK_MIS_CREDITOS)
-        );
+            Click.on(LNK_MIS_CREDITOS));
     }
 }
