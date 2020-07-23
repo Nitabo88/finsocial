@@ -8,21 +8,21 @@ Característica:  Aprobación Crédito
   @AprobacionCreditosFinsoamigos
   Escenario: Aprobación Finsoamigos Riesgo Estándar - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil estándar
-    Cuando el asesor diligencia la información del cliente con perfil FinsoAmigo_Estandar+IVA en aprobación de crédito
+    Cuando el asesor diligencia la información del cliente con perfil 390 en aprobación de crédito
     Entonces el asesor deberá ver el crédito en el paso de tesorería en pendiente por firma
 
-
+  @AprobacionCreditosFinsoamigos
   Esquema del escenario: Aprobación Finsoamigos Riesgo No Estandar - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil <Tipo Perfil>
     Cuando el asesor diligencia la información del cliente con perfil <Perfil Riesgo> en aprobación de crédito
     Entonces el asesor deberá ver el crédito en el módulo creditos por confirmar
 
     Ejemplos:
-      | Tipo Perfil | Perfil Riesgo       |
-      | 50%+IVA     | FinsoAmigo_50%+IVA  |
-      | 150%+IVA    | FinsoAmigo_150%+IVA |
-      | 50%_fr      | FinsoAmigo_50%_fr   |
-      | 150%_fr     | FinsoAmigo_150%_fr  |
+      | Tipo Perfil | Perfil Riesgo |
+      | 50%+IVA     | 391           |
+      | 150%+IVA    | 392           |
+      | 50%_fr      | 406           |
+      | 150%_fr     | 407           |
 
   @AprobacionCreditosHuy
   Escenario: Aprobación Crédito Huy - Marcar el crédito como pendiente en aprobación de créditos

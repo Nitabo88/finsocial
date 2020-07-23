@@ -6,7 +6,10 @@ import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.BTN_ASIGNACION_F
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.CHK_ID_LLAMADAS_FINSOAMIGO;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_HAMBURGUESA_LLAMADAS;
 import static co.com.red5g.finsonet.userinterfaces.LlamadasPage.MNU_LLAMADAS;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
 import java.util.List;
@@ -24,11 +27,13 @@ public class AsignacionLlamadaFinsoamigo implements Task {
 
   @Override
   public <T extends Actor> void performAs(T actor) {
-    List<WebElementFacade> lstIdLlamadasFinsoamigo = CHK_ID_LLAMADAS_FINSOAMIGO.resolveAllFor(actor);
-    actor.remember(NUMERO_CREDITO, lstIdLlamadasFinsoamigo.get(0).getAttribute("id").split("-")[1]);
     actor.attemptsTo(
         Click.on(MNU_HAMBURGUESA_LLAMADAS),
         Click.on(MNU_LLAMADAS.of(OPCION_MENU)),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds());
+    List<WebElementFacade> lstIdLlamadasFinsoamigo = CHK_ID_LLAMADAS_FINSOAMIGO.resolveAllFor(actor);
+    actor.remember(NUMERO_CREDITO, lstIdLlamadasFinsoamigo.get(0).getAttribute("id").split("-")[1]);
+    actor.attemptsTo(
         MoveMouse.to(lstIdLlamadasFinsoamigo.get(0)),
         JavaScriptClick.on(lstIdLlamadasFinsoamigo.get(0)),
         WaitUntil.the(BTN_ASIGNACION_FINSOAMIGOS, isPresent()).forNoMoreThan(TIEMPO_10).seconds(),
