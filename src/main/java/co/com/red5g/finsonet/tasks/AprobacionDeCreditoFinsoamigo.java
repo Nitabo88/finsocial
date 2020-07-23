@@ -42,7 +42,7 @@ public class AprobacionDeCreditoFinsoamigo implements Task {
         WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
         Enter.theValue(CENTRO_COSTO).into(TXT_CENTRO_COSTO),
         SelectFromOptions.byValue(PAGADURIA).from(LST_PAGADURIA),
-        SelectFromOptions.byVisibleText(perfilRiesgo).from(LST_PERFIL_RIESGO),
+        SelectFromOptions.byValue(perfilRiesgo).from(LST_PERFIL_RIESGO),
         WaitFor.seconds(TIEMPO_3),
         MoveMouse.to(BTN_APROBAR),
         Click.on(BTN_APROBAR),
