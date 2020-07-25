@@ -16,4 +16,7 @@ public class SeguroVidaPage {
   public static final Target RBN_SALARIO_ESTABLE = Target.the("boton de colaborador").located(By.id("recSalario"));
   public static final Target RBN_SALARIO_NO_ESTABLE = Target.the("boton de colaborador").located(By.id("recInSalario"));
 
+  private SeguroVidaPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

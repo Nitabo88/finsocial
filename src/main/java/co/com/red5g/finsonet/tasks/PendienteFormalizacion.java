@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ACCION_FORMALIZACION;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ENVIAR;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_ACCION_FORMALIZACION;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_MOTIVO_PENDIENTE;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.TXT_DETALLE_PENDIENTE;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

@@ -16,4 +16,8 @@ public class FirmaPage {
   public static final Target BTN_SUBIR_DOCUMENTO = Target.the("boton de colaborador").located(By.xpath("//div[@class='bot']//div"));
   public static final Target LNK_INPUT = Target.the("boton de colaborador").located(By.xpath("//input[@class='subirArchivos']"));
   public static final Target SPN_CARGA = Target.the("boton de colaborador").located(By.xpath("//img[@class='logo']"));
+
+  private FirmaPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

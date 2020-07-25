@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.general.interactions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_ATRAS;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_DETALLE_GESTION;

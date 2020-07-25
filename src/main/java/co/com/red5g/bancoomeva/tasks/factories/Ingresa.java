@@ -9,6 +9,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Ingresa {
 
+  private Ingresa() {
+  }
+
   public static Performable aBancoomeva() {
     return instrumented(PaginaPrincipalBancomeva.class);
   }

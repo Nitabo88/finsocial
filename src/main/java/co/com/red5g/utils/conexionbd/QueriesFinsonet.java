@@ -14,7 +14,8 @@ public enum QueriesFinsonet {
   SQL_LUGAR_EXPEDICION(
       "SELECT ciudad FROM y_ciudad WHERE codigo= (SELECT t.lugar_exp FROM form_solicitud_web AS t INNER JOIN gestion_pendiente AS tr ON t.gestion_id = tr.id_gestion AND tr.id_cred_finsonet = '%s')"),
   SQL_LINEA_CREDITO("SELECT linea_credito_id FROM creditos WHERE id = '%s'"),
-  SQL_ID_GESTION("SELECT id_gestion FROM gestion_pendiente WHERE id_cred_finsonet = '%s'");
+  SQL_ID_GESTION("SELECT id_gestion FROM gestion_pendiente WHERE id_cred_finsonet = '%s'"),
+  SQL_ASIGNAR_CREDITO("UPDATE creditos SET id_vendedor = 2256 WHERE id ='%s'");
 
   private final String sql;
 

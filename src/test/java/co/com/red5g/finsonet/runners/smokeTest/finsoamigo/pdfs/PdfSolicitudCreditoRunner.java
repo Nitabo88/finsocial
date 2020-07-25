@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.runners.smokeTest.pdfs;
+package co.com.red5g.finsonet.runners.smokeTest.finsoamigo.pdfs;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;

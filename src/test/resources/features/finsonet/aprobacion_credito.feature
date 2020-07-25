@@ -5,7 +5,6 @@ Característica:  Aprobación Crédito
   quiero tramitar la aprobación de un crédito
   para revisar que el proceso funcione correctamente
 
-  @AprobacionCreditosFinsoamigos
   Escenario: Aprobación Finsoamigos Riesgo Estándar - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil estándar
     Cuando el asesor diligencia la información del cliente con perfil 390 en aprobación de crédito
@@ -15,7 +14,7 @@ Característica:  Aprobación Crédito
   Esquema del escenario: Aprobación Finsoamigos Riesgo No Estandar - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil <Tipo Perfil>
     Cuando el asesor diligencia la información del cliente con perfil <Perfil Riesgo> en aprobación de crédito
-    Entonces el asesor deberá ver el crédito en el módulo creditos por confirmar
+    Entonces el asesor deberá ver el crédito en el módulo créditos por confirmar
 
     Ejemplos:
       | Tipo Perfil | Perfil Riesgo |

@@ -1,11 +1,11 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGISTRAR_REGRESAR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGRESAR_INCORPORACION;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_SOLICITADO_POR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.TXT_MOTIVO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

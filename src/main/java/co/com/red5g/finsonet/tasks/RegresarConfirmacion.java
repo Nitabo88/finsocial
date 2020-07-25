@@ -1,11 +1,11 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_ACCION_CONFIRMACION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.LBL_CREDITO_REGRESADO;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.MNM_ACCION;
 import static co.com.red5g.finsonet.userinterfaces.ConfirmacionPage.TXT_MOTIVO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

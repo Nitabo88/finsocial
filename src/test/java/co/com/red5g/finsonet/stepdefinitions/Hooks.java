@@ -13,7 +13,7 @@ public class Hooks {
     @Managed(driver = "chrome")
     WebDriver navegador;
 
-    @Before
+    @Before(order=1)
     public void setTheStage() {
         OnStage.setTheStage(
             OnlineCast.whereEveryoneCan(

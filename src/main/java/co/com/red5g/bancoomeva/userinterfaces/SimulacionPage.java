@@ -20,4 +20,7 @@ public class SimulacionPage {
   public static final Target LBL_CUOTA_SEGURO_VIDA = Target.the("boton de colaborador").located(By.id("vlrCuotaSeguroVida1"));
   public static final Target LBL_VALOR_CREDITO = Target.the("boton de colaborador").located(By.id("vlrMonto1"));
   public static final Target LBL_BANCA_SEGURO = Target.the("boton de colaborador").located(By.id("vlrBancaSeguro1"));
+
+  private SimulacionPage() {throw new IllegalStateException("Utility class");
   }
+}

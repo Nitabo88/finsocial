@@ -6,6 +6,9 @@ import net.serenitybdd.screenplay.Question;
 
 public class ElValor {
 
+  private ElValor() {
+  }
+
   public static Question<Float> deSimulacion(int posicion) {
     return new ValoresSimulacion(posicion);
   }

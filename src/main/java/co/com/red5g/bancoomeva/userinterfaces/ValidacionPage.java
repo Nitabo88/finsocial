@@ -15,4 +15,7 @@ public class ValidacionPage {
   public static final Target BTN_CONTINUAR_DATOS = Target.the("acepta terminos y condiciones").located(By.id("btnContinuarProceso"));
   public static final Target BTN_ACEPTO = Target.the("acepta terminos y condiciones").located(By.id("btnAcepto"));
   public static final Target LNK_RECUPERACION = Target.the("acepta terminos y condiciones").located(By.id("//a[contains(text(),'Tengo un código de recuperación.')]"));
+
+  private ValidacionPage() {throw new IllegalStateException("Utility class");
+  }
 }

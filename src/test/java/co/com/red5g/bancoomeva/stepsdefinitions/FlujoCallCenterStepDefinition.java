@@ -28,7 +28,7 @@ public class FlujoCallCenterStepDefinition {
 
   @Y("^(.*) realiza el proceso de firma$")
   public void diligenciarFirma(String actor) {
-    theActorCalled(actor).attemptsTo(Diligencia.laFirmaDelCredito());
+    theActorInTheSpotlight().attemptsTo(Diligencia.laFirmaDelCredito());
   }
 
   @Entonces("^el debería poder ver el crédito creado$")

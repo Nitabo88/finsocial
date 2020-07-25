@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_FILA_PENDIENTE_INCORPORACION;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import net.serenitybdd.screenplay.Actor;

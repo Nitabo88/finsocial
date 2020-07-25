@@ -3,29 +3,30 @@ package co.com.red5g.finsonet.tasks;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.conectarBaseDatos;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
-import static org.hamcrest.MatcherAssert.assertThat;
+import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import co.com.red5g.finsonet.models.CredencialesBD;
 import co.com.red5g.utils.conexionbd.ConexionBaseDatos;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 
-public class ConsultaBD implements Task {
+public class Actualizar implements Task {
 
-  public static final String RESULTADO_CONSULTA = "resultado consulta";
-  CredencialesBD credencialesBD;
-  String query;
   Connection conexion = null;
   String sql = "";
-  List<Map<String, String>> resultadoConsulta = null;
+  CredencialesBD credencialesBD;
+  String query;
 
-  public ConsultaBD(CredencialesBD credencialesBD, String query) {
+  public Actualizar(CredencialesBD credencialesBD, String query) {
     this.credencialesBD = credencialesBD;
     this.query = query;
+  }
+
+  public static Performable laInformaciondeBD(CredencialesBD credencialesBD, String query) {
+    return instrumented(Actualizar.class, credencialesBD, query);
   }
 
   @Override
@@ -42,13 +43,9 @@ public class ConsultaBD implements Task {
     }
     sql = String.format(query, numeroCredito);
     try {
-      resultadoConsulta = ConexionBaseDatos.consultarBaseDatos(conexion, sql);
+      ConexionBaseDatos.actualizarBaseDatos(conexion, sql);
     } catch (SQLException e) {
-      getLogger().info("Error SQL");
+      getLogger().info("Error actualizando la BD");
     }
-    if (resultadoConsulta.isEmpty()) {
-      assertThat("El crédito " + numeroCredito + " no esta en BD", false);
-    }
-    actor.remember(RESULTADO_CONSULTA, resultadoConsulta);
   }
 }

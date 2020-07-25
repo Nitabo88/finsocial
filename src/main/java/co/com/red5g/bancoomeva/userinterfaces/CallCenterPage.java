@@ -8,4 +8,7 @@ public class CallCenterPage {
   public static final Target LNK_CALL_CENTER = Target.the("el link a call center").located(By.id("comercial"));
   public static final Target LNK_FLUJO_CALL_CENTER = Target.the("el link a flujo de call center").located(By.id("creditoNew"));
 
+  private CallCenterPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

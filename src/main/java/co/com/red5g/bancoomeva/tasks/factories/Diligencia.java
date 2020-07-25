@@ -13,6 +13,9 @@ import net.serenitybdd.screenplay.Performable;
 
 public class Diligencia {
 
+  private Diligencia() {
+  }
+
   public static Performable lasCredencialesDeAutenticacion(Credenciales credenciales) {
     return instrumented(Autenticacion.class,credenciales);
   }

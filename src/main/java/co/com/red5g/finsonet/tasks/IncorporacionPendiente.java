@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_PENDIENTE_INCORPORACION;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_REGISTRAR_PENDIENTE;

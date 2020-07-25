@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
 import static co.com.red5g.general.interactions.ChangeUrl.onBrowser;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ID_GESTION;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 
 import co.com.red5g.finsonet.questions.factories.LaInformacion;
 import co.com.red5g.finsonet.userinterfaces.LoginFinsonetPage;

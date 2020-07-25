@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.exceptions;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class NoSeVeElCreditoAssertion extends AssertionError {

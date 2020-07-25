@@ -12,4 +12,7 @@ public class DashBoardPage {
   public static final Target LNK_REPORTES = Target.the("link a reportes").located(By.xpath("//strong[text()='Reportes']"));
   public static final Target LNK_GARANTE = Target.the("link a garante").located(By.xpath("//strong[text()='Garante']"));
 
+  private DashBoardPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

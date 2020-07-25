@@ -2,7 +2,7 @@ package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.general.interactions.CambiarPestanaActual.cambiarPestanaActual;
 import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionPage.BTN_GESTIONAR;
 import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionPage.RDB_CRITERIO_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.BusquedaGestionPage.TXT_BUSQUEDA;
