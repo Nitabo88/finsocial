@@ -17,7 +17,7 @@ public class AprobacionCreditoFinsoamigoStepDefinition {
   @Dado("^que (.*) esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil (.*)$")
   public void ingresarAprobacionCreditos(String actor, String perfilRiesgo) {
     theActorCalled(actor).wasAbleTo(
-        Ingresa.aAprobacionFinsoamigo(perfilRiesgo));
+        Ingresa.aAprobacionFinsoamigo());
   }
 
   @Cuando("^el asesor diligencia la información del cliente con perfil (.*) en aprobación de crédito$")

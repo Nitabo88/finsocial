@@ -100,8 +100,8 @@ public final class Ingresa {
         return instrumented(ChequeoDocumentoFinsoamigo.class);
   }
 
-    public static Performable aAprobacionFinsoamigo(String perfilRiesgo) {
-        return instrumented(AprobacionCreditoFinsoamigo.class,perfilRiesgo);
+    public static Performable aAprobacionFinsoamigo() {
+        return instrumented(AprobacionCreditoFinsoamigo.class);
     }
 
     public static Performable aChequeoDocumentosHuy(Credito credito) {
