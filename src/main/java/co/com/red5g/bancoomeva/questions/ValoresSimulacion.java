@@ -2,7 +2,6 @@ package co.com.red5g.bancoomeva.questions;
 
 import static co.com.red5g.utils.data.Constantes.VALORES;
 
-import java.io.IOException;
 import java.util.List;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

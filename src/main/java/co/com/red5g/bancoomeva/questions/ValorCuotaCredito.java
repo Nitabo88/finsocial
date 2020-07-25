@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.Question;
 
 public class ValorCuotaCredito implements Question<Float> {
 
-  private ValorCuotaCredito() {
+  public ValorCuotaCredito() {
   }
 
   @Override
