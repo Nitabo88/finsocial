@@ -33,6 +33,7 @@ ext{
 dependencies {
     testImplementation group: 'junit', name: 'junit', version: '4.12'
     testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: "${hamcrestVersion}"
+    testImplementation group: 'net.serenity-bdd',name: 'serenity-screenplay-webdriver', version: "${serenityVersion}"
     implementation group: 'net.serenity-bdd', name: 'serenity-core', version: "${serenityVersion}"
     implementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: "${serenityCucumberVersion}"
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: "${serenityVersion}"
@@ -49,7 +50,7 @@ tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
     reports {"gradle reports"}
     systemProperty "webdriver.chrome.driver", System.getProperty("webdriver.chrome.driver")
-    maxParallelForks = Runtime.runtime.availableProcessors()
+   // maxParallelForks = Runtime.runtime.availableProcessors()
 }
 
 tasks.withType(JavaCompile) {
