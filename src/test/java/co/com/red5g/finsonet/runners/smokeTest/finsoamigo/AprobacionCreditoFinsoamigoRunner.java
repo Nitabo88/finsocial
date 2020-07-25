@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.runners.regresion.finsoamigo;
+package co.com.red5g.finsonet.runners.smokeTest.finsoamigo;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
