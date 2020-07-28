@@ -6,17 +6,14 @@ import java.util.List;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-public class ValoresSimulacion implements Question<Integer> {
-
-  int posicion;
-
-  public ValoresSimulacion(int posicion) {
-    this.posicion = posicion;
-  }
+public class ValorCredito implements Question<Integer> {
 
   @Override
   public Integer answeredBy(Actor actor) {
     List<String> valores = actor.recall(VALORES);
-    return Integer.parseInt(valores.get(posicion));
+    Integer monto = Integer.parseInt(valores.get(0));
+    Integer bancaSeguro = Integer.parseInt(valores.get(6));
+    Integer plazo = Integer.parseInt(valores.get(1));
+    return Math.round((monto + bancaSeguro) * plazo);
   }
 }

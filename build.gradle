@@ -44,6 +44,7 @@ dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: "${mySql}"
     implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: "${serenityVersion}"
     implementation group: 'org.sonarsource.sonarqube', name: 'sonar-plugin-api', version: '8.4.0.35506'
+    implementation group: 'net.serenity-bdd', name: 'serenity-ensure', version: "${serenityVersion}"
 }
 
 tasks.withType(Test) {

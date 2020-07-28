@@ -30,19 +30,37 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     return contrasena;
   }
 
-  public CredencialesBuilder conUsuario() {
-    this.usuario = "smart01";
+  public CredencialesBuilder conUsuario(String usuario) {
+    this.usuario = usuario;
     return this;
   }
 
-  public CredencialesBuilder conContrasena() {
-    this.contrasena = "Ago%2020";
+  public CredencialesBuilder conContrasena(String contrasena) {
+    this.contrasena = contrasena;
     return this;
   }
 
   public Credenciales unColaborador() {
-    conUsuario();
-    conContrasena();
+    conUsuario("smart01");
+    conContrasena("Ago%2020");
+    return build();
+  }
+
+  public Credenciales claveIncorrecta() {
+    conUsuario("smart01");
+    conContrasena("smart01");
+    return build();
+  }
+
+  public Credenciales usuarioIncorrecto() {
+    conUsuario("smart010");
+    conContrasena("Ago%2020");
+    return build();
+  }
+
+  public Credenciales datosIncorrectos() {
+    conUsuario("prueba");
+    conContrasena("prueba");
     return build();
   }
 }
