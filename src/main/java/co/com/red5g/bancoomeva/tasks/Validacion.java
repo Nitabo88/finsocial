@@ -10,7 +10,6 @@ import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.LST_TIPO_DOC
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.TXT_ACEPTO_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.TXT_NUMERO_DOCUMENTO;
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
-import static co.com.red5g.utils.conexionbd.QueriesBancoomeva.SQL_CLIENTE_APROBADO;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
@@ -33,11 +32,16 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 public class Validacion implements Task {
 
   private static final String TIPO_DOCUMENTO = "Cédula de ciudadanía";
+  String sql;
+
+  public Validacion(String sql) {
+    this.sql = sql;
+  }
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     LBL_MENSAJE_BIENVENIDA.resolveFor(actor).isPresent();
-    String numeroCedula = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdBancomevaEnLinea(), SQL_CLIENTE_APROBADO.getSql(), "DOCUMENTO"));
+    String numeroCedula = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdBancomevaEnLinea(), sql, "DOCUMENTO"));
     actor.remember(CEDULA_ACTOR, numeroCedula);
     actor.attemptsTo(
         Actualizar.informacionCliente(numeroCedula, OTP_BANCOMEVA.getEmail()),

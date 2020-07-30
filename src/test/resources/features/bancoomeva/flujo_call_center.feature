@@ -7,7 +7,7 @@ Característica: Flujo call center Banca Express
 
   Escenario: Flujo de call center- Cliente Aprobado - Valores Mínimos - Pagares creados - Cuenta creada
     Dado que un asesor quiere acceder a un crédito por el call center
-    Cuando el asesor del call center diligencia el crédito de libranza con el valor mínimo
+    Cuando el asesor del call center diligencia el crédito aprobado de libranza con el valor mínimo
     Y el cliente realiza el proceso de firma de un cliente aprobado
     Entonces el debería poder ver el crédito creado
 
@@ -15,4 +15,8 @@ Característica: Flujo call center Banca Express
     Dado que un asesor quiere acceder a un crédito por el call center
     Cuando el asesor del call center diligencia el crédito pre-aprobado de libranza con el valor mínimo
     Y el cliente realiza el proceso de firma de un cliente pre-aprobado
+    Y el asesor aprueba el proceso de fabrica
     Entonces el debería poder ver el crédito creado
+
+
+ 

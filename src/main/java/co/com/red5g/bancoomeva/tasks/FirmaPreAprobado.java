@@ -1,5 +1,6 @@
 package co.com.red5g.bancoomeva.tasks;
 
+import static co.com.red5g.bancoomeva.questions.NumeroGestionCredito.numeroGestion;
 import static co.com.red5g.bancoomeva.tasks.CodigoRecuperacion.obtenerCodigoDeRecuperacion;
 import static co.com.red5g.bancoomeva.tasks.CodigoVerificacionFirma.obtenerCodigoVerificacionFirma;
 import static co.com.red5g.bancoomeva.tasks.IngresarCorreo.CODIGO;
@@ -16,6 +17,7 @@ import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.LBL_MENSAJE_FELIC
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.LBL_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.TXT_CODIGO;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.TXT_CODIGO_RECUPERACION;
+import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
@@ -39,12 +41,15 @@ public class FirmaPreAprobado implements Task {
 
   private static final String MENSAJE_PRE_APROBADO = "Estás muy cerca de obtener tus productos";
   BancoomevaHomePage bancoomevaHomePage;
+  public static final String ID_GESTION = "Id de Gestion";
 
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(obtenerCodigoDeRecuperacion());
+    actor.remember(ID_GESTION, actor.asksFor(numeroGestion()));
     String codigo = actor.recall(CODIGO);
     actor.attemptsTo(
+        cerrarPestana(),
         Open.browserOn(bancoomevaHomePage),
         JavaScriptClick.on(LNK_CODIGO_RECUPERACION),
         Enter.theValue(codigo).into(TXT_CODIGO_RECUPERACION),
@@ -70,8 +75,7 @@ public class FirmaPreAprobado implements Task {
         Enter.theValue(codigo).into(TXT_CODIGO),
         WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_CONTINUAR),
-        WaitUntil.the(SPN_CARGA_LOGO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds());
-    actor.attemptsTo(
+        WaitUntil.the(SPN_CARGA_LOGO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds(),
         Ensure.that(LBL_MENSAJE_FELICITACIONES.resolveFor(actor).getText()).contains(MENSAJE_PRE_APROBADO),
         JavaScriptClick.on(BTN_REGRESAR_INICIO)
     );

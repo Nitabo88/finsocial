@@ -2,7 +2,6 @@ package co.com.red5g.bancoomeva.tasks;
 
 import static co.com.red5g.bancoomeva.tasks.IngresarCorreo.buscarCorreo;
 import static co.com.red5g.bancoomeva.tasks.LoginGmail.ingresarEnGmail;
-import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.utils.data.Emails.OTP_BANCOMEVA;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -22,8 +21,7 @@ public class CodigoRecuperacion implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         ingresarEnGmail(OTP_BANCOMEVA),
-        buscarCorreo(BUSQUEDA_CODIGO_FIRMA),
-        cerrarPestana()
+        buscarCorreo(BUSQUEDA_CODIGO_FIRMA)
     );
   }
 }

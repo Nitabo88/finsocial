@@ -6,10 +6,16 @@ import net.serenitybdd.screenplay.Task;
 
 public class CreditoLinea implements Task {
 
+  String sql;
+
+  public CreditoLinea(String sql) {
+    this.sql = sql;
+  }
+
   @Override
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
-        Diligencia.laValidacion(),
+        Diligencia.laValidacion(sql),
         Diligencia.laSimulacion()
     );
   }

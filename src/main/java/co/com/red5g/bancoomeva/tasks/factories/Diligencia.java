@@ -5,6 +5,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 import co.com.red5g.bancoomeva.modelos.Credenciales;
 import co.com.red5g.bancoomeva.tasks.Autenticacion;
 import co.com.red5g.bancoomeva.tasks.CreditoLinea;
+import co.com.red5g.bancoomeva.tasks.FabricaCreditos;
 import co.com.red5g.bancoomeva.tasks.FirmaAprobado;
 import co.com.red5g.bancoomeva.tasks.FirmaPreAprobado;
 import co.com.red5g.bancoomeva.tasks.SeguroVida;
@@ -21,12 +22,12 @@ public class Diligencia {
     return instrumented(Autenticacion.class,credenciales);
   }
 
-  public static Performable elCreditoConValoresMinimos() {
-    return instrumented(CreditoLinea.class);
+  public static Performable elCreditoConValoresMinimos(String sql) {
+    return instrumented(CreditoLinea.class,sql);
   }
 
-  public static Performable laValidacion() {
-    return instrumented(Validacion.class);
+  public static Performable laValidacion(String sql) {
+    return instrumented(Validacion.class, sql);
   }
 
   public static Performable laSimulacion() {
@@ -43,5 +44,9 @@ public class Diligencia {
 
   public static Performable laFirmaDelCreditoPreAprobado() {
     return instrumented(FirmaPreAprobado.class);
+  }
+
+  public static Performable elProcesoDeFabrica() {
+    return instrumented(FabricaCreditos.class);
   }
 }

@@ -1,6 +1,8 @@
 package co.com.red5g.bancoomeva.stepsdefinitions;
 
 import static co.com.red5g.bancoomeva.modelos.builders.CredencialesBuilder.con;
+import static co.com.red5g.utils.conexionbd.QueriesBancoomeva.SQL_CLIENTE_APROBADO;
+import static co.com.red5g.utils.conexionbd.QueriesBancoomeva.SQL_CLIENTE_PRE_APROBADO;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -23,9 +25,9 @@ public class FlujoCallCenterStepDefinition {
     theActorCalled(actor).wasAbleTo(Ingresa.alFlujodeCallCenter(con().unColaborador()));
   }
 
-  @Cuando("^el asesor del call center diligencia el crédito de libranza con el valor mínimo$")
-  public void diligenciarPasosGestion() {
-    theActorInTheSpotlight().attemptsTo(Diligencia.elCreditoConValoresMinimos());
+  @Cuando("^el asesor del call center diligencia el crédito aprobado de libranza con el valor mínimo$")
+  public void diligenciarPasosGestionAprobado() {
+    theActorInTheSpotlight().attemptsTo(Diligencia.elCreditoConValoresMinimos(SQL_CLIENTE_APROBADO.getSql()));
   }
 
   @Y("^el cliente realiza el proceso de firma de un cliente aprobado$")
@@ -47,5 +49,15 @@ public class FlujoCallCenterStepDefinition {
   @Y("^el cliente realiza el proceso de firma de un cliente pre-aprobado$")
   public void diligenciarFirmaClientePreAprobado() {
     theActorInTheSpotlight().attemptsTo(Diligencia.laFirmaDelCreditoPreAprobado());
+  }
+
+  @Y("^el asesor aprueba el proceso de fabrica$")
+  public void aprobarProcesoFabrica() {
+    theActorInTheSpotlight().attemptsTo(Diligencia.elProcesoDeFabrica());
+  }
+
+  @Cuando("^el asesor del call center diligencia el crédito pre-aprobado de libranza con el valor mínimo$")
+  public void diligenciarPasosGestionPreAprobado() {
+    theActorInTheSpotlight().attemptsTo(Diligencia.elCreditoConValoresMinimos(SQL_CLIENTE_PRE_APROBADO.getSql()));
   }
 }
