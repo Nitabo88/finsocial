@@ -14,7 +14,7 @@ public class FirmaPage {
   public static final Target BTN_ACEPTO_TERMINOS_Y_CONDICIONES = Target.the("boton de acepto terminos y condiciones").located(By.id("btnAceptoTerminos"));
   public static final Target BTN_CONTINUAR = Target.the("boton de continuar").located(By.xpath("//button[contains(text(),'Continuar')]"));
   public static final Target LNK_INPUT = Target.the("subir archivos").located(By.xpath("//input[@class='subirArchivos']"));
-  public static final Target LBL_MENSAJE_FELICITACIONES = Target.the("el mensaje de bancoomeva de felicitaciones").located(By.xpath("//div[@id='mensaje']"));
+  public static final Target LBL_MENSAJE = Target.the("el mensaje de bancoomeva de felicitaciones").located(By.xpath("//div[@id='mensaje']"));
 
   private FirmaPage() {
     throw new IllegalStateException("Utility class");

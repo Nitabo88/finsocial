@@ -9,6 +9,7 @@ import co.com.red5g.bancoomeva.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.ensure.Ensure;
 
 public class LoginBancaExpress implements Task {
 
@@ -26,7 +27,7 @@ public class LoginBancaExpress implements Task {
   public <T extends Actor> void performAs(T actor) {
     actor.attemptsTo(
         Ingresa.aBancoomeva(),
-        Diligencia.lasCredencialesDeAutenticacion(credenciales));
-    LBL_MENSAJE_DASHBOARD.resolveFor(actor).isPresent();
+        Diligencia.lasCredencialesDeAutenticacion(credenciales),
+        Ensure.that(LBL_MENSAJE_DASHBOARD).isEnabled());
   }
 }

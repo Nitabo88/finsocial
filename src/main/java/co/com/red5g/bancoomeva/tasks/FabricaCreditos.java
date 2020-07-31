@@ -17,7 +17,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 
@@ -32,13 +33,15 @@ public class FabricaCreditos implements Task {
     String sql = String.format(SQL_ID_GESTION.getSql(), id);
     String idGestion = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdBancomevaEnLinea(), sql, "GESTION"));
     actor.attemptsTo(
-        Ingresa.aLaFabricaDeCreditos(CredencialesBuilder.con().unColaborador()),
+        Ingresa.aLaFabricaDeCreditos(CredencialesBuilder.con().unColaborador()));
+    actor.attemptsTo(
         Ensure.that(LBL_BANDEJA_FABRICA.resolveFor(actor).getText()).isEqualTo(BANDEJA_FABRICA),
         Enter.theValue(idGestion).into(TXT_FILTRO_ID),
-        Click.on(BTN_FILTRO),
-        Click.on(BTN_ACCION),
+        JavaScriptClick.on(BTN_FILTRO),
+        JavaScriptClick.on(BTN_ACCION.of(idGestion)));
+    actor.attemptsTo(
         Ensure.that(LBL_CREDITO.resolveFor(actor).getText()).isEqualTo(CREDITO),
-        Scroll.to(BTN_APROBAR),
+        MoveMouse.to(BTN_APROBAR),
         Click.on(BTN_APROBAR));
   }
 }

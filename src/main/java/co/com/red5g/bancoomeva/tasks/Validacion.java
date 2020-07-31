@@ -50,13 +50,11 @@ public class Validacion implements Task {
         Enter.theValue(numeroCedula).into(TXT_NUMERO_DOCUMENTO),
         JavaScriptClick.on(CHK_TERMINOS_Y_CONDICIONES),
         Scroll.to(TXT_ACEPTO_TERMINOS_Y_CONDICIONES).andAlignToBottom(),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
         JavaScriptClick.on(BTN_ACEPTO_TERMINOS_Y_CONDICIONES));
     actor.attemptsTo(
         WaitUntil.the(BTN_CONTINUAR, isVisible()).forNoMoreThan(TIEMPO_3).seconds(),
         WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_CONTINUAR),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
         WaitFor.seconds(TIEMPO_3),
         WaitUntil.the(BTN_CONTINUAR_DATOS, isPresent()).forNoMoreThan(TIEMPO_3).seconds(),
         WaitFor.seconds(TIEMPO_3),
