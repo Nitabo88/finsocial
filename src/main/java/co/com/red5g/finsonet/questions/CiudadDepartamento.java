@@ -1,7 +1,7 @@
 package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
-import static co.com.red5g.utils.conexionbd.Queries.SQL_CIUDAD_RESIDENCIA;
+import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_CIUDAD_RESIDENCIA;
 
 import co.com.red5g.finsonet.questions.factories.LaInformacion;
 import net.serenitybdd.screenplay.Actor;

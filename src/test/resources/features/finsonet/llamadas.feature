@@ -5,6 +5,7 @@ Característica: Realizar gestion de llamada
   Quiero ingresar a la pagina de finsonet
   Para confirmar la llamada  realizada a un cliente para un nuevo credito
 
+  @Finsoamigo
   @LlamadaFinsoamigo
   Escenario: Gestión llamada para nuevo crédito finsoamigo
     Dado que un asesor debe gestionar la llamada para un crédito finsoamigo
@@ -12,6 +13,7 @@ Característica: Realizar gestion de llamada
     Y posteriormente procese la llamada del crédito finsoamigo
     Entonces deberá ver que la gestión del credito finsoamigo fue exitosa
 
+  @Libranza
   @LlamadaLibranza
   Escenario: Gestión llamada para nuevo crédito de libranza
     Dado que un asesor debe gestionar la llamada para un crédito de libranza
@@ -19,6 +21,7 @@ Característica: Realizar gestion de llamada
     Y posteriormente procese la llamada del crédito de libranza
     Entonces deberá ver que la gestión del credito libranza fue exitosa
 
+  @Credihuy
   @LlamadaCrediHuy
   Escenario: Gestión llamada para nuevo CrediHuy
     Dado que un asesor debe gestionar la llamada para un crédito Huy

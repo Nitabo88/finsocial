@@ -5,6 +5,7 @@ import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LBL_ID2;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static co.com.red5g.utils.data.Constantes.FECHA;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
@@ -20,8 +21,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Ingresar implements Interaction {
-
-    public static final String NUMERO_CREDITO = "numero credito";
 
     public static Performable enFormularioDeSolicitud() {
         return instrumented(Ingresar.class);

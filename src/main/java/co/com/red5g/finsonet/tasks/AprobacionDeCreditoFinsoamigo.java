@@ -1,6 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_APROBAR;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LBL_CREDITO_CREADO;
@@ -20,14 +20,15 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import org.openqa.selenium.Keys;
 
 public class AprobacionDeCreditoFinsoamigo implements Task {
 
   private final String perfilRiesgo;
-  private static final String PAGADURIA = "FINSOCIAL";
+  private static final String PAGADURIA = "COLPENSIONES";
   private static final String CENTRO_COSTO = "I.E. Tec. Agrop. Campeche Baranoa";
 
   public AprobacionDeCreditoFinsoamigo(String perfilRiesgo) {
@@ -40,12 +41,14 @@ public class AprobacionDeCreditoFinsoamigo implements Task {
     actor.attemptsTo(
         JavaScriptClick.on(LBL_NOMBRE_FINSOAMIGO.of(numeroCredito)),
         WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
-        Enter.theValue(CENTRO_COSTO).into(TXT_CENTRO_COSTO),
+        Enter.theValue(CENTRO_COSTO).into(TXT_CENTRO_COSTO).thenHit(Keys.TAB),
+        WaitFor.seconds(TIEMPO_3),
         SelectFromOptions.byValue(PAGADURIA).from(LST_PAGADURIA),
+        WaitFor.seconds(TIEMPO_3),
         SelectFromOptions.byValue(perfilRiesgo).from(LST_PERFIL_RIESGO),
         WaitFor.seconds(TIEMPO_3),
-        MoveMouse.to(BTN_APROBAR),
-        Click.on(BTN_APROBAR),
+        Scroll.to(BTN_APROBAR),
+        JavaScriptClick.on(BTN_APROBAR),
         WaitFor.seconds(TIEMPO_3),
         WaitUntil.the(LBL_CREDITO_CREADO, isPresent()).forNoMoreThan(TIEMPO_60).seconds(),
         WaitFor.seconds(TIEMPO_3),

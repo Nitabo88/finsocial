@@ -5,7 +5,6 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

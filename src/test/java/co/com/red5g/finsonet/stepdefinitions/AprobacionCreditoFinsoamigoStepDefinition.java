@@ -17,7 +17,7 @@ public class AprobacionCreditoFinsoamigoStepDefinition {
   @Dado("^que (.*) esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil (.*)$")
   public void ingresarAprobacionCreditos(String actor, String perfilRiesgo) {
     theActorCalled(actor).wasAbleTo(
-        Ingresa.aAprobacionFinsoamigo(perfilRiesgo));
+        Ingresa.aAprobacionFinsoamigo());
   }
 
   @Cuando("^el asesor diligencia la información del cliente con perfil (.*) en aprobación de crédito$")
@@ -32,7 +32,7 @@ public class AprobacionCreditoFinsoamigoStepDefinition {
     theActorInTheSpotlight().should(seeThat(ElCredito.enTesoreriaPendientePorFirma()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
-  @Entonces("^el asesor deberá ver el crédito en el módulo creditos por confirmar$")
+  @Entonces("^el asesor deberá ver el crédito en el módulo créditos por confirmar$")
   public void verificarCreditosPorConfirmar() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enLaListaDeCreditosPorConfirmar()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }

@@ -1,9 +1,9 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_FILA_CHEQUEO_DOCUMENTOS_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_HOME;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

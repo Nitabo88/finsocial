@@ -55,4 +55,15 @@ public class ConexionBaseDatos {
     }
     return lstFila;
   }
+
+  public static void actualizarBaseDatos(
+      Connection conexion, String sql) throws SQLException {
+    try {
+      statement = conexion.createStatement();
+      statement.executeUpdate(sql);
+    } finally {
+      statement.close();
+      conexion.close();
+    }
+  }
 }

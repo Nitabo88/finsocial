@@ -49,7 +49,8 @@ public class FormularioInformacionLaboral implements Task {
             Click.on(RDB_IMPACTO_CARGO.of(actividadLaboral.getImpactoDecision())),
             Click.on(RDB_RECURSOS_PUBLICOS.of(actividadLaboral.getManejoRecursosPublicos())),
             Click.on(RDB_PERSONAJE_PUBLICO.of(actividadLaboral.getPersonaPublica())),
-            Click.on(BTN_EMPRESA),
+            Click.on(BTN_EMPRESA));
+        actor.attemptsTo(
             Enter.theValue(actividadLaboral.getEmpresa()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
             Enter.theValue(actividadLaboral.getCargo()).into(TXT_CARGO),
             SeleccionarFecha.deConsulta(

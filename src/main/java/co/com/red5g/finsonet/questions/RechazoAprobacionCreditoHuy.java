@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.BTN_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.LBL_CDAS;
 import static co.com.red5g.finsonet.userinterfaces.CdasPage.LBL_ESTADO_ACTUAL;
@@ -9,6 +8,7 @@ import static co.com.red5g.finsonet.userinterfaces.CdasPage.TXT_VALOR_BUSQUEDA;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;

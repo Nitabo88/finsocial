@@ -1,14 +1,14 @@
 package co.com.red5g.finsonet.questions;
 
+import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_FILA_FORMALIZACION;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.MoveMouse;
-
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_FILA_FORMALIZACION;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
 
 public class PasoFormalizacion implements Question<Boolean> {
 

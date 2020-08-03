@@ -1,8 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.CambiarPestanaActual.cambiarPestanaActual;
-import static co.com.red5g.finsonet.interacions.CerrarPestana.cerrarPestana;
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.BTN_ENVIAR;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.BTN_ENVIAR_ANTECARTERA;
@@ -11,6 +8,9 @@ import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LBL_VALOR_GIRO;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.LST_NOMBRE_TESORERIA_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.TXT_CUOTA_RETENIDA;
 import static co.com.red5g.finsonet.userinterfaces.TesoreriaPage.TXT_VALOR_GIRO;
+import static co.com.red5g.general.interactions.CambiarPestanaActual.cambiarPestanaActual;
+import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;

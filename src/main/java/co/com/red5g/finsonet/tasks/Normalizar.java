@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_NORMALIZAR_CREDITO_HUY;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import net.serenitybdd.screenplay.Actor;

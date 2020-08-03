@@ -1,8 +1,8 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.conectarBaseDatos;
 import static co.com.red5g.utils.conexionbd.ConexionBaseDatos.getLogger;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import co.com.red5g.finsonet.models.CredencialesBD;

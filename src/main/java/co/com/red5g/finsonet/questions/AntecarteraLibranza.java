@@ -1,17 +1,17 @@
 package co.com.red5g.finsonet.questions;
 
+import static co.com.red5g.finsonet.userinterfaces.AntecarteraPage.LST_FILA_ANTECARTERA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
-import static co.com.red5g.finsonet.interacions.Ingresar.NUMERO_CREDITO;
-import static co.com.red5g.finsonet.userinterfaces.AntecarteraPage.LST_FILA_ANTECARTERA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_NUEVO_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 public class AntecarteraLibranza implements Question<Boolean> {
 
