@@ -49,7 +49,7 @@ dependencies {
 
 tasks.withType(Test) {
     systemProperty "file.encoding", "UTF-8"
-    reports {"gradle reports"}
+    reports { "gradle reports" }
     systemProperty "webdriver.chrome.driver", System.getProperty("webdriver.chrome.driver")
    // maxParallelForks = Runtime.runtime.availableProcessors()
 }
