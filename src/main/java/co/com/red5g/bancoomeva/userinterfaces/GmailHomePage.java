@@ -10,7 +10,7 @@ public class GmailHomePage {
   public static final Target LBL_CORREO_NOTIFICACION = Target.the("el correo del codigo de firma").located(By.xpath("//span[contains(text(),'esta tendrá una duración de (3) minutos')]"));
   public static final Target LBL_CORREO_CARTA_COMERCIAL = Target.the("el correo de la carta comercial").located(By.xpath("//td//span[contains(text(),'VNP - CARTA COMERCIAL')]//ancestor::div[@class='y6']"));
   public static final Target TBL_PRODUCTO_CORREO = Target.the("la tabla con el detalle de producto").located(By.xpath("//p[text()='Producto']//ancestor::div[contains(@style,'margin-bottom')]"));
-  public static final Target LBL_ID_GESTION = Target.the("la tabla con el detalle de producto").located(By.xpath("//span[contains(text(),'CODIGO DE RETOMAR')]"));
+  public static final Target LBL_ID_GESTION = Target.the("el mensaje del id de gestion").located(By.xpath("//span[contains(text(),'CODIGO DE RETOMAR')]"));
 
   private GmailHomePage() {
     throw new IllegalStateException("Utility class");

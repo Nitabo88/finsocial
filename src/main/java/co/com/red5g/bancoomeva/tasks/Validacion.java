@@ -1,6 +1,5 @@
 package co.com.red5g.bancoomeva.tasks;
 
-import static co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage.SPN_CARGANDO;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_ACEPTO_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_CONTINUAR;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_CONTINUAR_DATOS;
@@ -12,9 +11,7 @@ import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.TXT_NUMERO_D
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static co.com.red5g.utils.data.Emails.OTP_BANCOMEVA;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

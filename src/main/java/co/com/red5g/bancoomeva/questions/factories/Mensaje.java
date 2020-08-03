@@ -9,6 +9,9 @@ import net.serenitybdd.screenplay.questions.Text;
 
 public class Mensaje {
 
+  private Mensaje() {
+  }
+
   public static Question<String> deBienvenida() {
     return actor -> Text.of(LBL_MENSAJE_DASHBOARD).viewedBy(actor).asString();
   }

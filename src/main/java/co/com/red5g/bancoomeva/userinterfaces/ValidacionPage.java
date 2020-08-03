@@ -13,8 +13,8 @@ public class ValidacionPage {
   public static final Target BTN_CONTINUAR = Target.the("el boton continuar").located(By.id("btnContinuarUno"));
   public static final Target TXT_ACEPTO_TERMINOS_Y_CONDICIONES = Target.the("acepta terminos y condiciones").located(By.xpath("//p[contains(text(),'ﬁrmo el presente formulario.')]"));
   public static final Target BTN_CONTINUAR_DATOS = Target.the("acepta terminos y condiciones").located(By.id("btnContinuarProceso"));
-  public static final Target BTN_ACEPTO = Target.the("acepta terminos y condiciones").located(By.id("btnAcepto"));
-  public static final Target LNK_RECUPERACION = Target.the("acepta terminos y condiciones").located(By.id("//a[contains(text(),'Tengo un código de recuperación.')]"));
+  public static final Target BTN_ACEPTO = Target.the("boton acepto").located(By.id("btnAcepto"));
+  public static final Target LNK_RECUPERACION = Target.the("el link de recuperacion").located(By.id("//a[contains(text(),'Tengo un código de recuperación.')]"));
 
   private ValidacionPage() {throw new IllegalStateException("Utility class");
   }

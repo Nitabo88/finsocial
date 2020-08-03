@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class FirmaPage {
+
   public static final Target BTN_ACEPTAR_Y_CONTINUAR = Target.the("boton aceptar y continuar").located(By.id("aceptarYContinuar"));
   public static final Target TXT_CODIGO = Target.the("el campo del codigo").located(By.xpath("//input[@class='input-pass']"));
   public static final Target BTN_REGRESAR_INICIO = Target.the("boton regresar a inicio").located(By.id("btnContinuarUno"));

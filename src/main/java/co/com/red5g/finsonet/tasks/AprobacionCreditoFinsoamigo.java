@@ -18,7 +18,7 @@ public class AprobacionCreditoFinsoamigo implements Task {
 
   private static final String APROBACION_CREDITO = "Apr. de créditos";
 
-  public AprobacionCreditoFinsoamigo() {
+  private AprobacionCreditoFinsoamigo() {
   }
 
   @Override

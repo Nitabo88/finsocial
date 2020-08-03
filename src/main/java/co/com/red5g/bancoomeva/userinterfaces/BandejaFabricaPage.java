@@ -11,4 +11,7 @@ public class BandejaFabricaPage {
   public static final Target LBL_BANDEJA_FABRICA = Target.the("el label de bandeja de fabrica").located(By.xpath("//h2[@class='title-breadcrumbs title-breadcrumbs--secondary']"));
   public static final Target TXT_FILTRO_ID = Target.the("el label de bandeja de fabrica").located(By.id("id"));
 
+  private BandejaFabricaPage() {
+    throw new IllegalStateException("Utility class");
+  }
 }

@@ -7,7 +7,6 @@ import static co.com.red5g.bancoomeva.userinterfaces.SimulacionPage.LBL_TASA_LIB
 import static co.com.red5g.bancoomeva.userinterfaces.SimulacionPage.LBL_VALOR_CREDITO;
 import static co.com.red5g.bancoomeva.userinterfaces.SimulacionPage.LST_PLAZO_LIBRANZA;
 import static co.com.red5g.bancoomeva.userinterfaces.SimulacionPage.TXT_MONTO;
-import static co.com.red5g.bancoomeva.userinterfaces.SimulacionPage.TXT_MONTO_CREDITO_LIBRANZA;
 import static co.com.red5g.utils.data.Constantes.VALORES;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
