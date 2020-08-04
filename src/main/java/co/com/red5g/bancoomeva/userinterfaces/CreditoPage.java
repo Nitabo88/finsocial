@@ -9,6 +9,7 @@ public class CreditoPage {
   public static final Target BTN_APROBAR = Target.the("el boton aprobar").located(By.xpath("//button[contains(text(),'Aprobar')]"));
   public static final Target BTN_APLAZAR = Target.the("el boton aplazar").located(By.xpath("//button[contains(text(),'Aplazar')]"));
   public static final Target BTN_NEGAR = Target.the("el boton negar").located(By.xpath("//button[contains(text(),'Negar')]"));
+  public static final Target LBL_CANAL = Target.the("el canal").located(By.xpath("//td[text()='Canal']//following-sibling::td"));
 
   private CreditoPage() {
     throw new IllegalStateException("Utility class");

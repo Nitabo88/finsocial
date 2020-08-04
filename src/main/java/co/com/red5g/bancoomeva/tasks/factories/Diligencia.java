@@ -12,6 +12,7 @@ import co.com.red5g.bancoomeva.tasks.SeguroVida;
 import co.com.red5g.bancoomeva.tasks.Simulacion;
 import co.com.red5g.bancoomeva.tasks.Validacion;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.targets.Target;
 
 public class Diligencia {
 
@@ -46,7 +47,7 @@ public class Diligencia {
     return instrumented(FirmaPreAprobado.class);
   }
 
-  public static Performable elProcesoDeFabrica() {
-    return instrumented(FabricaCreditos.class);
+  public static Performable elProcesoEnFabricaDeCreditos(Target btnOperacion) {
+    return instrumented(FabricaCreditos.class, btnOperacion);
   }
 }
