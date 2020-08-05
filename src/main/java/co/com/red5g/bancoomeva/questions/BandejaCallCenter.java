@@ -25,14 +25,18 @@ public class BandejaCallCenter implements Question<String> {
   @Override
   public String answeredBy(Actor actor) {
     String idGestion = actor.recall(ID_GESTION);
-    actor.attemptsTo(Click.on(MNM_PUNTOS));
-    actor.attemptsTo(Ensure.that(LBL_MENSAJE_DASHBOARD).isDisplayed());
-    actor.attemptsTo(Click.on(LNK_CALL_CENTER));
-    actor.attemptsTo(Ensure.that(LBL_CALL_CENTER.resolveFor(actor).getText()).contains(CALL_CENTER));
-    actor.attemptsTo(Click.on(CallCenterPage.LNK_CALL_CENTER));
-    actor.attemptsTo(Ensure.that(LBL_BANDEJA_CALL_CENTER.resolveFor(actor).getText()).contains(BANDEJA_CALL_CENTER));
-    actor.attemptsTo(Enter.theValue(idGestion).into(TXT_FILTRO_ID));
-    actor.attemptsTo(Click.on(BTN_FILTRO));
+    actor.attemptsTo(
+        Click.on(MNM_PUNTOS),
+        Ensure.that(LBL_MENSAJE_DASHBOARD).isDisplayed(),
+        Click.on(LNK_CALL_CENTER));
+    actor.attemptsTo(
+        Ensure.that(LBL_CALL_CENTER.resolveFor(actor).getText()).contains(CALL_CENTER),
+        Click.on(CallCenterPage.LNK_CALL_CENTER));
+    actor.attemptsTo(
+        Ensure.that(
+            LBL_BANDEJA_CALL_CENTER.resolveFor(actor).getText()).contains(BANDEJA_CALL_CENTER),
+        Enter.theValue(idGestion).into(TXT_FILTRO_ID),
+        Click.on(BTN_FILTRO));
     return LBL_FILA_TIPO.resolveFor(actor).getText();
   }
 }

@@ -38,6 +38,7 @@ public class FabricaCreditos implements Task {
     String id = actor.recall(ID_GESTION);
     String sql = String.format(SQL_ID_GESTION.getSql(), id);
     String idGestion = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdBancomevaEnLinea(), sql, "GESTION"));
+    actor.remember(ID_GESTION, idGestion);
     actor.attemptsTo(
         Ingresa.aLaFabricaDeCreditos(CredencialesBuilder.con().unColaborador()));
     actor.attemptsTo(

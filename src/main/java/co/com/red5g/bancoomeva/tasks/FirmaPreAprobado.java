@@ -63,15 +63,20 @@ public class FirmaPreAprobado implements Task {
         JavaScriptClick.on(BTN_ACEPTAR_Y_CONTINUAR),
         obtenerCodigoVerificacionFirma()
     );
+    codigo(actor, TIEMPO_300, MENSAJE_PRE_APROBADO);
+  }
+
+  static <T extends Actor> void codigo(T actor, int tiempo300, String mensajePreAprobado) {
+    String codigo;
     codigo = actor.recall(CODIGO);
     actor.attemptsTo(
         Enter.theValue(codigo).into(TXT_CODIGO),
         WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_CONTINUAR),
-        WaitUntil.the(SPN_CARGA_LOGO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds());
+        WaitUntil.the(SPN_CARGA_LOGO, isNotVisible()).forNoMoreThan(tiempo300).seconds());
     actor.attemptsTo(
         Scroll.to(LBL_MENSAJE).andAlignToBottom(),
-        Ensure.that(LBL_MENSAJE.resolveFor(actor).getText()).contains(MENSAJE_PRE_APROBADO),
+        Ensure.that(LBL_MENSAJE.resolveFor(actor).getText()).contains(mensajePreAprobado),
         JavaScriptClick.on(BTN_REGRESAR_INICIO)
     );
   }

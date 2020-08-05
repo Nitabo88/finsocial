@@ -13,6 +13,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.bancoomeva.questions.factories.ElCredito;
+import co.com.red5g.bancoomeva.questions.factories.ElPdf;
 import co.com.red5g.bancoomeva.questions.factories.ElValor;
 import co.com.red5g.bancoomeva.questions.factories.Mensaje;
 import co.com.red5g.bancoomeva.tasks.factories.Diligencia;
@@ -47,7 +48,8 @@ public class FlujoCallCenterStepDefinition {
         seeThat("El valor del crédito", ElValor.deSimulacion(5), equalTo(theActorInTheSpotlight().asksFor(ElValor.delCredito()))),
         seeThat("La cuota del seguro de vida", ElValor.deSimulacion(4), equalTo(theActorInTheSpotlight().asksFor(ElValor.delSeguroDeVida()))),
         seeThat("El credito esta en estado negado", ElCredito.aprobadoEnBandejaCallCenter(), containsString("Gestion Aprobada en fabrica")),
-        seeThat("El tipo de producto", Mensaje.deCartaComercial(), containsString("Libre inversión"))
+        seeThat("El tipo de producto", Mensaje.deCartaComercial(), containsString("Libre inversión")),
+        seeThat("El tipo de producto", ElPdf.deEquidadSeguros(), containsString("Libre inversión"))
     );
   }
 
