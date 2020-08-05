@@ -26,5 +26,5 @@ test:
     - ls -R    
   artifacts:
     paths:
-      - ./builds/red5g/finsonet/app/sqa_code/target/site/serenity/
+      - ./target/site/serenity/
     expire_in: 1 week
