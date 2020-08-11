@@ -42,7 +42,7 @@ public class CredencialesBuilder implements Builder<Credenciales> {
 
   public Credenciales unColaborador() {
     conUsuario("smart01");
-    conContrasena("Ago%2020");
+    conContrasena("Ago01%2020");
     return build();
   }
 
