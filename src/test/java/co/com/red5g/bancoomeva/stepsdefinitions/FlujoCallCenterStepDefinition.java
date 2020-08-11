@@ -6,14 +6,16 @@ import static co.com.red5g.bancoomeva.userinterfaces.CreditoPage.BTN_APROBAR;
 import static co.com.red5g.bancoomeva.userinterfaces.CreditoPage.BTN_NEGAR;
 import static co.com.red5g.utils.conexionbd.QueriesBancoomeva.SQL_CLIENTE_APROBADO;
 import static co.com.red5g.utils.conexionbd.QueriesBancoomeva.SQL_CLIENTE_PRE_APROBADO;
+import static co.com.red5g.utils.string.UtileriaFechas.formatearFechaServidorUTC;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.isEmptyString;
+import static org.hamcrest.Matchers.not;
 
 import co.com.red5g.bancoomeva.questions.factories.ElCredito;
-import co.com.red5g.bancoomeva.questions.factories.ElPdf;
 import co.com.red5g.bancoomeva.questions.factories.ElValor;
 import co.com.red5g.bancoomeva.questions.factories.Mensaje;
 import co.com.red5g.bancoomeva.tasks.factories.Diligencia;
@@ -42,15 +44,18 @@ public class FlujoCallCenterStepDefinition {
 
   @Entonces("^el debería poder ver el crédito creado$")
   public void verificarCreditoCreado() {
-    theActorInTheSpotlight().should(
-        seeThat("La cuota del crédito", ElValor.deSimulacion(3), equalTo(theActorInTheSpotlight().asksFor(ElValor.deLaCuotadelCredito()))),
-        seeThat("El valor de banca seguro", ElValor.deSimulacion(6), equalTo(theActorInTheSpotlight().asksFor(ElValor.deBancaSeguro()))),
-        seeThat("El valor del crédito", ElValor.deSimulacion(5), equalTo(theActorInTheSpotlight().asksFor(ElValor.delCredito()))),
-        seeThat("La cuota del seguro de vida", ElValor.deSimulacion(4), equalTo(theActorInTheSpotlight().asksFor(ElValor.delSeguroDeVida()))),
-        seeThat("El credito esta en estado negado", ElCredito.aprobadoEnBandejaCallCenter(), containsString("Gestion Aprobada en fabrica")),
-        seeThat("El tipo de producto", Mensaje.deCartaComercial(), containsString("Libre inversión")),
-        seeThat("El tipo de producto", ElPdf.deEquidadSeguros(), containsString("Libre inversión"))
-    );
+    theActorInTheSpotlight()
+        .should(
+            seeThat("La cuota del crédito", ElValor.deSimulacion(3), equalTo(theActorInTheSpotlight().asksFor(ElValor.deLaCuotadelCredito()))),
+            seeThat("El valor de banca seguro", ElValor.deSimulacion(6), equalTo(theActorInTheSpotlight().asksFor(ElValor.deBancaSeguro()))),
+            seeThat("El valor del crédito", ElValor.deSimulacion(5), equalTo(theActorInTheSpotlight().asksFor(ElValor.delCredito()))),
+            seeThat("La cuota del seguro de vida", ElValor.deSimulacion(4), equalTo(theActorInTheSpotlight().asksFor(ElValor.delSeguroDeVida()))),
+            seeThat("El credito esta en estado negado", ElCredito.aprobadoEnBandejaCallCenter(), containsString("Gestión Aprobada en fábrica")),
+            seeThat("El tipo de producto", Mensaje.deCartaComercial(), containsString("Libre inversión")),
+            seeThat("La fecha", Mensaje.deCartaComercial("1"), containsString(formatearFechaServidorUTC().substring(0, 10))),
+            seeThat("La hora", Mensaje.deCartaComercial("2"), containsString(formatearFechaServidorUTC().substring(11))),
+            seeThat("La ip", Mensaje.deCartaComercial("3"), not(isEmptyString())),
+            seeThat("El numero de operacion", Mensaje.deCartaComercial("4"), not(isEmptyString())));
   }
 
   @Y("^el cliente realiza el proceso de firma de un cliente pre-aprobado$")
@@ -80,7 +85,7 @@ public class FlujoCallCenterStepDefinition {
         seeThat("El valor de banca seguro", ElValor.deSimulacion(6), equalTo(theActorInTheSpotlight().asksFor(ElValor.deBancaSeguro()))),
         seeThat("El valor del crédito", ElValor.deSimulacion(5), equalTo(theActorInTheSpotlight().asksFor(ElValor.delCredito()))),
         seeThat("La cuota del seguro de vida", ElValor.deSimulacion(4), equalTo(theActorInTheSpotlight().asksFor(ElValor.delSeguroDeVida()))),
-        seeThat("El credito esta en estado", ElCredito.negadoEnBandejaCallCenter(), containsString("Gestion Rechazada en fabrica"))
+        seeThat("El credito esta en estado", ElCredito.negadoEnBandejaCallCenter(), containsString("Gestión Rechazada en fábrica"))
     );
   }
 
@@ -96,7 +101,7 @@ public class FlujoCallCenterStepDefinition {
         seeThat("El valor de banca seguro", ElValor.deSimulacion(6), equalTo(theActorInTheSpotlight().asksFor(ElValor.deBancaSeguro()))),
         seeThat("El valor del crédito", ElValor.deSimulacion(5), equalTo(theActorInTheSpotlight().asksFor(ElValor.delCredito()))),
         seeThat("La cuota del seguro de vida", ElValor.deSimulacion(4), equalTo(theActorInTheSpotlight().asksFor(ElValor.delSeguroDeVida()))),
-        seeThat("El credito esta en estado", ElCredito.negadoEnBandejaCallCenter(), containsString("Gestion Aplazada en fabrica"))
+        seeThat("El credito esta en estado", ElCredito.negadoEnBandejaCallCenter(), containsString("Gestión Aplazada en fábrica"))
     );
   }
 }

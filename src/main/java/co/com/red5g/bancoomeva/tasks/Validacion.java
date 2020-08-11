@@ -1,5 +1,6 @@
 package co.com.red5g.bancoomeva.tasks;
 
+import static co.com.red5g.bancoomeva.questions.ServicioDataPdf.laInformacionDelPdf;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_ACEPTO_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_CONTINUAR;
 import static co.com.red5g.bancoomeva.userinterfaces.ValidacionPage.BTN_CONTINUAR_DATOS;
@@ -40,6 +41,7 @@ public class Validacion implements Task {
     LBL_MENSAJE_BIENVENIDA.resolveFor(actor).isPresent();
     String numeroCedula = actor.asksFor(LaInformacion.deBaseDeDatos(con().bdBancomevaEnLinea(), sql, "DOCUMENTO"));
     actor.remember(CEDULA_ACTOR, numeroCedula);
+    String informacionPdf= actor.asksFor(laInformacionDelPdf());
     actor.attemptsTo(
         Actualizar.informacionCliente(numeroCedula, OTP_BANCOMEVA.getEmail()),
         WaitFor.seconds(TIEMPO_3),

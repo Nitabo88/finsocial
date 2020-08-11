@@ -1,5 +1,6 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import static co.com.red5g.bancoomeva.questions.UrlSoportes.obtenerUrlDelPdf;
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
 import static co.com.red5g.finsonet.questions.CiudadDepartamento.ciudadDepartamento;
 import static co.com.red5g.finsonet.questions.LugarYFechaNacimiento.lugarYFechaNacimiento;
@@ -27,7 +28,6 @@ import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.solicitudAfiliacion
 import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.solicitudCredito;
 import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.valorCapital;
 import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.valorCapitalSura;
-import static co.com.red5g.utils.pdf.UrlsPdfs.urlPdf;
 import static co.com.red5g.utils.string.UtileriaFechas.edad;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfDdMmYyyy;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfFormatoLinea;
@@ -52,8 +52,8 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
 
   @Dado("^que (.*) esta en el pdf de (.*) del crédito (.*)$")
   public void ingresarUrlPdf(String actor, String url, String numeroCredito) {
-    String urlPdf = urlPdf(url);
-    theActorCalled(actor).wasAbleTo(Ingresa.alPDF(urlPdf, numeroCredito));
+    String urlPdf = theActorCalled(actor).asksFor(obtenerUrlDelPdf(url, numeroCredito));
+    theActorInTheSpotlight().wasAbleTo(Ingresa.alPDF(urlPdf, numeroCredito));
   }
 
   @Cuando("^el asesor obtiene la información del pdf$")
@@ -443,8 +443,8 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
   }
 
-  @Entonces("^el asesor deberá ver que la información de (.*) corresponde a la de BD$")
-  public void verificarDesafiliacionCoophumana(String desafiliacion) {
+  @Entonces("^el asesor deberá ver que la información de Desafiliación corresponde a la de BD$")
+  public void verificarDesafiliacionCooperativa() {
     theActorInTheSpotlight().should(seeThat("Nombre", LaInformacion.delPdf(desafiliacion("Nombre")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))));
   }
 

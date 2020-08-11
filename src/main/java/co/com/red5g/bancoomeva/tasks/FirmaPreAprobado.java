@@ -10,6 +10,7 @@ import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTAR_Y_CON
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTAR_Y_CONTINUAR_DOCUMENTOS;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_ACEPTO_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_CONTINUAR;
+import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_DOCUMENTO_0151;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.BTN_REGRESAR_INICIO;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.CHK_TERMINOS_Y_CONDICIONES;
 import static co.com.red5g.bancoomeva.userinterfaces.FirmaPage.LBL_MENSAJE;
@@ -24,8 +25,10 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotV
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.bancoomeva.interactions.factories.Subir;
 import co.com.red5g.bancoomeva.userinterfaces.BancoomevaHomePage;
+import java.util.ArrayList;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
@@ -58,7 +61,8 @@ public class FirmaPreAprobado implements Task {
         JavaScriptClick.on(BTN_CONTINUAR),
         WaitFor.seconds(TIEMPO_3),
         Subir.documentosCallCenter(),
-        JavaScriptClick.on(BTN_ACEPTAR_Y_CONTINUAR_DOCUMENTOS),
+        JavaScriptClick.on(BTN_ACEPTAR_Y_CONTINUAR_DOCUMENTOS));
+    actor.attemptsTo(
         WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_ACEPTAR_Y_CONTINUAR),
         obtenerCodigoVerificacionFirma()
