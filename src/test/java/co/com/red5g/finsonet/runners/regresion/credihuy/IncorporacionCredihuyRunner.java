@@ -8,6 +8,6 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/finsonet/incorporacion.feature", glue = "co.com.red5g.finsonet.stepdefinitions", tags = "@IncorporacionHuy", snippets = SnippetType.CAMELCASE)
 
-public class IncorporacionHuyRunner {
+public class IncorporacionCredihuyRunner {
 
 }

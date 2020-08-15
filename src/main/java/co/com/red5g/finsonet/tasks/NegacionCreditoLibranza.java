@@ -36,6 +36,7 @@ public class NegacionCreditoLibranza implements Task {
             SelectFromOptions.byVisibleText(aprobacionCredito.getSeleccionMotivo())
                 .from(LST_MOTIVO_NEGAR),
             Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO_NEGACION),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_ENVIAR_NEGACION),
             WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_OK));

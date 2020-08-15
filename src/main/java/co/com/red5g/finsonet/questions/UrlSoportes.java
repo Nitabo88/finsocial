@@ -1,4 +1,4 @@
-package co.com.red5g.bancoomeva.questions;
+package co.com.red5g.finsonet.questions;
 
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_COOPERATIVA;

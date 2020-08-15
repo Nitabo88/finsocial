@@ -1,12 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.bancoomeva.questions.UrlSoportes.obtenerUrlDelPdf;
 import static co.com.red5g.finsonet.models.builders.CredencialesBDBuilder.con;
 import static co.com.red5g.finsonet.questions.CiudadDepartamento.ciudadDepartamento;
 import static co.com.red5g.finsonet.questions.LugarYFechaNacimiento.lugarYFechaNacimiento;
 import static co.com.red5g.finsonet.questions.NombreCompleto.nombreCompleto;
 import static co.com.red5g.finsonet.questions.SolicitudCreditoPdf.tipoCliente;
 import static co.com.red5g.finsonet.questions.TotalIngresos.totalIngresos;
+import static co.com.red5g.finsonet.questions.UrlSoportes.obtenerUrlDelPdf;
 import static co.com.red5g.finsonet.tasks.Obtiene.NUMERO_FILAS;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ANALITICA_FILTRO;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ASEGURABILIDAD;

@@ -12,7 +12,7 @@ Característica:Formulario de solicitud de credito finsonet
     Cuando diligencia el formulario de crédihuy de un cliente por back end
     Entonces el debería visualizar el crédito en estado OK
 
-  @Segundo
+  @Libranza
   @FormularioLibranza
   Escenario: Diligenciar formulario de solicitud de crédito - Cliente
     Dado que un asesor quiere llenar el formulario de solicitud de un crédito de libranza

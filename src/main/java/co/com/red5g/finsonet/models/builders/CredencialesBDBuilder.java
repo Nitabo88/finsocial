@@ -69,10 +69,4 @@ public class CredencialesBDBuilder implements Builder<CredencialesBD> {
     return build();
   }
 
-  public CredencialesBD bdBancomevaEnLinea() {
-    conUrl(USUARIO_BD_EN_LINEA.getUrl());
-    conUsuario(USUARIO_BD_EN_LINEA.getUsuario());
-    conContrasena(USUARIO_BD_EN_LINEA.getContrasena());
-    return build();
-  }
 }

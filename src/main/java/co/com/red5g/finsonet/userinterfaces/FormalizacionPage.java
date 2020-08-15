@@ -16,7 +16,7 @@ public final class FormalizacionPage {
   public static final Target LST_MOTIVO_PENDIENTE = Target.the("la lista motivo pendiente").located(By.id("motivo"));
   public static final Target TXT_DETALLE_PENDIENTE = Target.the("el detalle del motivo pendiente").located(By.id("area"));
   public static final Target LST_FILA_FORMALIZACION = Target.the("la fila de la tabla de formalizacion")
-      .locatedBy("//table[@id='table_n']//a[contains(@href,'{0}')]/ancestor::tr");
+      .locatedBy("//table//a[contains(@href,'{0}')]//ancestor::tr");
   public static final Target LST_FILA_PENDIENTE_FORMALIZACION = Target.the("la fila de la tabla pendiente de formalizacion")
       .locatedBy("//table[@id='table_p']//a[contains(@href,'{0}')]/ancestor::tr");
   public static final Target LST_COLUMNA_NOMBRE_FORMALIZACION = Target.the("la columna nombre de la de formalizacion")

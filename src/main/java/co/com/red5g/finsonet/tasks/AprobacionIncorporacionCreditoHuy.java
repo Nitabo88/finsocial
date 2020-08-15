@@ -7,6 +7,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_INCORPO
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LBL_DATOS_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_FECHA_LIQUIDACION_CREDITO;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static co.com.red5g.utils.string.UtileriaFechas.sumarRestarDias;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -17,7 +18,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AprobacionIncorporacionCreditoHuy implements Task {
@@ -27,16 +28,17 @@ public class AprobacionIncorporacionCreditoHuy implements Task {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         String fechaPosterior = sumarRestarDias(1);
         actor.attemptsTo(
-                WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
-                MoveMouse.to(LST_INCORPORACION_HUY_NOMBRE.of(numeroCredito)),
-                JavaScriptClick.on(LST_INCORPORACION_HUY_NOMBRE.of(numeroCredito)),
-                MoveMouse.to(LBL_DATOS_LIBRANZA),
-                SeleccionarFecha.deConsulta(TXT_FECHA_LIQUIDACION_CREDITO, fechaPosterior),
-                WaitFor.seconds(3),
-                MoveMouse.to(BTN_APROBAR),
-                Click.on(BTN_APROBAR),
-                WaitFor.seconds(3),
-                WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
-                Click.on(BTN_OK));
+            WaitUntil.the(LBL_INCORPORACION, isVisible()).forNoMoreThan(TIEMPO_120).seconds(),
+            Scroll.to(LST_INCORPORACION_HUY_NOMBRE.of(numeroCredito)).andAlignToBottom(),
+            JavaScriptClick.on(LST_INCORPORACION_HUY_NOMBRE.of(numeroCredito)),
+            Scroll.to(LBL_DATOS_LIBRANZA).andAlignToBottom(),
+            SeleccionarFecha.deConsulta(TXT_FECHA_LIQUIDACION_CREDITO, fechaPosterior),
+            WaitFor.seconds(3),
+            Scroll.to(BTN_APROBAR).andAlignToBottom(),
+            Click.on(BTN_APROBAR),
+            WaitFor.seconds(3),
+            WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            Scroll.to(BTN_OK).andAlignToBottom(),
+            Click.on(BTN_OK));
     }
 }
