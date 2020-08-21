@@ -12,12 +12,20 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información de Solicitud de Crédito corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
-      | 103708         |
-      | 104254         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @Actival
   Esquema del escenario: PDF Formulario conocimiento actival
@@ -26,10 +34,20 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información del Formulario conocimiento actival corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
-      | 105043         |
+      | 103317         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
 
   @Cooperativa
@@ -39,37 +57,64 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información de Solicitud de Afiliación Cooperativa corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
-      | 103708         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @Costos
   Esquema del escenario:  PDF Boletín de Costos
     Dado que un asesor esta en el pdf de Boletín de Costos del crédito <numero credito>
     Cuando el asesor obtiene la información del pdf
     Entonces el asesor deberá ver que la información del Boletín de Costos corresponde a la de BD
-
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @SeguroSura
   Esquema del escenario:  PDF Seguro de Vida Sura
     Dado que un asesor esta en el pdf de Seguro de Vida Sura del crédito <numero credito>
     Cuando el asesor obtiene la información del pdf
     Entonces el asesor deberá ver que la información del Formato Seguro de Vida Sura corresponde a la de BD
-
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @SeguroVidaMundial
   Esquema del escenario:  PDF Seguro de Vida Mundial
@@ -78,11 +123,20 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información del Formato Seguro de Vida Mundial corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
-      | 103708         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @PagareFinsocial
   Esquema del escenario: PDF Pagaré Finsocial
@@ -91,11 +145,20 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información del Pagaré Finsocial corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
-
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @PagareCoophumana
   Esquema del escenario: PDF Pagaré Coophumana
@@ -104,10 +167,20 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información del Pagaré Coophumana corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @DesafiliacionCoophumana
   Esquema del escenario: PDF Desafiliación Coophumana
@@ -116,12 +189,20 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información de Desafiliación corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
-      | 103708         |
-
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
 
   @DesafiliacionActival
   Esquema del escenario: PDF Desafiliación Actival
@@ -130,7 +211,17 @@ Característica:  Validación Soportes Nuevos
     Entonces el asesor deberá ver que la información de Desafiliación corresponde a la de BD
     Ejemplos:
       | numero credito |
-      | 100205         |
-      | 102019         |
-      | 99039          |
       | 103317         |
+      | 104445         |
+      | 105084         |
+      | 105193         |
+      | 104877         |
+      | 105066         |
+      | 104817         |
+      | 105858         |
+      | 105884         |
+      | 106139         |
+      | 106076         |
+      | 106062         |
+      | 106174         |
+      | 105691         |
