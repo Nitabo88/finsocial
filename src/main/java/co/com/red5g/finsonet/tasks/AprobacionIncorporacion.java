@@ -1,7 +1,6 @@
 package co.com.red5g.finsonet.tasks;
 
 
-import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_APROBAR;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.LST_INCORPORACION_NOMBRE;
@@ -14,6 +13,7 @@ import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_M
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.LST_SELECCIONAR_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_DETALLE_GESTION;
 import static co.com.red5g.finsonet.userinterfaces.PlanillaOriginacionPage.TXT_FECHA_LIQUIDACION_CREDITO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
@@ -32,6 +32,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -70,7 +71,8 @@ public class AprobacionIncorporacion implements Task {
         SeleccionarFecha.deConsulta(TXT_FECHA_LIQUIDACION_CREDITO, fechaPosterior),
         WaitFor.seconds(TIEMPO_3));
     actor.attemptsTo(
-        MoveMouse.to(BTN_APROBAR),
+        WaitUntil.the(BTN_APROBAR, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
+        Scroll.to(BTN_APROBAR).andAlignToBottom(),
         Click.on(BTN_APROBAR),
         WaitFor.seconds(TIEMPO_3),
         Click.on(BTN_OK));

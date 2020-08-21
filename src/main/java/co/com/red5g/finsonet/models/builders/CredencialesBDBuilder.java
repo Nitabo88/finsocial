@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.models.builders;
 
-import static co.com.red5g.utils.conexionbd.CredencialesBaseDatosBancoomeva.USUARIO_BD_EN_LINEA;
 import static co.com.red5g.utils.conexionbd.CredencialesBaseDatosFinsocial.USUARIO_BD_CREDITOS;
 import static co.com.red5g.utils.conexionbd.CredencialesBaseDatosFinsocial.USUARIO_BD_EN_LINEA_AUTOGESTION;
 
@@ -66,13 +65,6 @@ public class CredencialesBDBuilder implements Builder<CredencialesBD> {
     conUrl(USUARIO_BD_CREDITOS.getUrl());
     conUsuario(USUARIO_BD_CREDITOS.getUsuario());
     conContrasena(USUARIO_BD_CREDITOS.getContrasena());
-    return build();
-  }
-
-  public CredencialesBD bdBancomevaEnLinea() {
-    conUrl(USUARIO_BD_EN_LINEA.getUrl());
-    conUsuario(USUARIO_BD_EN_LINEA.getUsuario());
-    conContrasena(USUARIO_BD_EN_LINEA.getContrasena());
     return build();
   }
 }

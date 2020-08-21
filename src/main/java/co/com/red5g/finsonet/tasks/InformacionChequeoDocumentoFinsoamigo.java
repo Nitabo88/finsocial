@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR1_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
@@ -9,8 +8,9 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_400;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -51,7 +51,7 @@ public class InformacionChequeoDocumentoFinsoamigo implements Task {
         Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO).thenHit(Keys.TAB),
         Subir.losArchivosDeChequeoDocumentosFinsoamigo(),
         Click.on(BTN_GUARDAR),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds(),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_400).seconds(),
         WaitFor.seconds(TIEMPO_3),
         Click.on(BTN_ACEPTAR)
     );

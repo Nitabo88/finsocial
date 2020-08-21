@@ -9,6 +9,7 @@ import static co.com.red5g.finsonet.userinterfaces.IncorporacionPage.MNM_HAMBURG
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_CDAS;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -28,7 +29,7 @@ public class RechazoAprobacionCreditoHuy implements Question<String> {
     public String answeredBy(Actor actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            Click.on(MNM_HAMBURGUESA),
+            JavaScriptClick.on(MNM_HAMBURGUESA),
             Click.on(IMG_FINSONET),
             MoveMouse.to(LNK_CDAS),
             Click.on(LNK_CDAS));
@@ -36,7 +37,7 @@ public class RechazoAprobacionCreditoHuy implements Question<String> {
             WaitUntil.the(LBL_CDAS, isVisible()).forNoMoreThan(TIEMPO).seconds(),
             JavaScriptClick.on(RDB_CRITERIO_BUSQUEDA.of(ID_CREDITO)),
             Enter.theValue(numeroCredito).into(TXT_VALOR_BUSQUEDA),
-            WaitFor.seconds(2),
+            WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_BUSQUEDA));
         return LBL_ESTADO_ACTUAL.of(numeroCredito).resolveFor(actor).getTextContent();
     }

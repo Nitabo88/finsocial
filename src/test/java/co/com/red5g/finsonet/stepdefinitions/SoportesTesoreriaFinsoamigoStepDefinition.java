@@ -6,6 +6,7 @@ import static co.com.red5g.finsonet.questions.LugarYFechaNacimiento.lugarYFechaN
 import static co.com.red5g.finsonet.questions.NombreCompleto.nombreCompleto;
 import static co.com.red5g.finsonet.questions.SolicitudCreditoPdf.tipoCliente;
 import static co.com.red5g.finsonet.questions.TotalIngresos.totalIngresos;
+import static co.com.red5g.finsonet.questions.UrlSoportes.obtenerUrlDelPdf;
 import static co.com.red5g.finsonet.tasks.Obtiene.NUMERO_FILAS;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ANALITICA_FILTRO;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ASEGURABILIDAD;
@@ -14,20 +15,19 @@ import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_FORMULARIO_SOLIC
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_LINEA_CREDITO;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_LUGAR_EXPEDICION;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_LUGAR_NACIMIENTO;
-import static co.com.red5g.utils.pdf.EstructurasPDF.boletinCostos;
-import static co.com.red5g.utils.pdf.EstructurasPDF.desafiliacion;
-import static co.com.red5g.utils.pdf.EstructurasPDF.estadoCivil;
-import static co.com.red5g.utils.pdf.EstructurasPDF.formularioActival;
-import static co.com.red5g.utils.pdf.EstructurasPDF.ocupacion;
-import static co.com.red5g.utils.pdf.EstructurasPDF.pagareCoophumana;
-import static co.com.red5g.utils.pdf.EstructurasPDF.pagareFinsocial;
-import static co.com.red5g.utils.pdf.EstructurasPDF.seguroVidaSura;
-import static co.com.red5g.utils.pdf.EstructurasPDF.segurosVidaMundial;
-import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudAfiliacionCoperativa;
-import static co.com.red5g.utils.pdf.EstructurasPDF.solicitudCredito;
-import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapital;
-import static co.com.red5g.utils.pdf.EstructurasPDF.valorCapitalSura;
-import static co.com.red5g.utils.pdf.UrlsPdfs.urlPdf;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.boletinCostos;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.desafiliacion;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.estadoCivil;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.formularioActival;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.ocupacion;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.pagareCoophumana;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.pagareFinsocial;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.seguroVidaSura;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.segurosVidaMundial;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.solicitudAfiliacionCoperativa;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.solicitudCredito;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.valorCapital;
+import static co.com.red5g.utils.pdf.EstructurasPDFFinsocial.valorCapitalSura;
 import static co.com.red5g.utils.string.UtileriaFechas.edad;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfDdMmYyyy;
 import static co.com.red5g.utils.string.UtileriaFechas.fechaPdfFormatoLinea;
@@ -52,8 +52,8 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
 
   @Dado("^que (.*) esta en el pdf de (.*) del crédito (.*)$")
   public void ingresarUrlPdf(String actor, String url, String numeroCredito) {
-    String urlPdf = urlPdf(url);
-    theActorCalled(actor).wasAbleTo(Ingresa.alPDF(urlPdf, numeroCredito));
+    String urlPdf = theActorCalled(actor).asksFor(obtenerUrlDelPdf(url, numeroCredito));
+    theActorInTheSpotlight().wasAbleTo(Ingresa.alPDF(urlPdf, numeroCredito));
   }
 
   @Cuando("^el asesor obtiene la información del pdf$")
@@ -443,8 +443,8 @@ public class SoportesTesoreriaFinsoamigoStepDefinition {
             .asksFor(LaInformacion.deBaseDeDatos(con().bdEnLineaAutogestion(), SQL_FORMULARIO_SOLICITUD.getSql(), "celular")))));
   }
 
-  @Entonces("^el asesor deberá ver que la información de (.*) corresponde a la de BD$")
-  public void verificarDesafiliacionCoophumana(String desafiliacion) {
+  @Entonces("^el asesor deberá ver que la información de Desafiliación corresponde a la de BD$")
+  public void verificarDesafiliacionCooperativa() {
     theActorInTheSpotlight().should(seeThat("Nombre", LaInformacion.delPdf(desafiliacion("Nombre")), containsString(theActorInTheSpotlight().asksFor(nombreCompleto()))));
   }
 

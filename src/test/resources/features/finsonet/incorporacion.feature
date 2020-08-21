@@ -5,7 +5,7 @@ Característica:  Incorporación
   quiero tramitar el paso de incorporación de un crédito
   para revisar que el proceso funcione correctamente
 
-  @Segundo
+  @Libranza
   @Incorporacion
   Escenario: Incorporación - Aprobar el crédito desde incorporación
     Dado que un asesor esta en el paso de incorporación

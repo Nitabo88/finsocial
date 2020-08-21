@@ -1,5 +1,12 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
+import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
+import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
+
 import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoAssertion;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.QueAparece;
@@ -12,13 +19,6 @@ import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 import net.serenitybdd.screenplay.GivenWhenThen;
-
-import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
-import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
 
 public class ChequeoDocumentosStepDefinition {
 

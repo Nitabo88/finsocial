@@ -6,8 +6,9 @@ import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_EMPRESA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_TIPO_CONTRATO;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.BTN_TIPO_EMPRESA;
-import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.FILTRO_LISTA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.FILTRO_CIUDAD_TRABAJO;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.LST_ACTIVIDAD_ECONOMICA;
+import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.LST_EMPRESA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.LST_OPCIONES;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_DECLARA_RENTA;
 import static co.com.red5g.finsonet.userinterfaces.FormularioSolicitudPaso3Page.RDB_IMPACTO_CARGO;
@@ -49,9 +50,8 @@ public class FormularioInformacionLaboral implements Task {
             Click.on(RDB_IMPACTO_CARGO.of(actividadLaboral.getImpactoDecision())),
             Click.on(RDB_RECURSOS_PUBLICOS.of(actividadLaboral.getManejoRecursosPublicos())),
             Click.on(RDB_PERSONAJE_PUBLICO.of(actividadLaboral.getPersonaPublica())),
-            Click.on(BTN_EMPRESA));
-        actor.attemptsTo(
-            Enter.theValue(actividadLaboral.getEmpresa()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
+            Click.on(BTN_EMPRESA),
+            Click.on(LST_EMPRESA.of(actividadLaboral.getEmpresa())),
             Enter.theValue(actividadLaboral.getCargo()).into(TXT_CARGO),
             SeleccionarFecha.deConsulta(
                 TXT_FECHA_VINCULACION, actividadLaboral.getFechaVinculacion()),
@@ -59,7 +59,7 @@ public class FormularioInformacionLaboral implements Task {
             Click.on(BTN_CERRAR_DIRECCION),
             WaitUntil.the(BTN_CIUDAD_TRABAJO, isEnabled()).forNoMoreThan(TIEMPO_60).seconds(),
             JavaScriptClick.on(BTN_CIUDAD_TRABAJO),
-            Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_LISTA).thenHit(Keys.ENTER),
+            Enter.theValue(actividadLaboral.getCiudadTrabajo()).into(FILTRO_CIUDAD_TRABAJO).thenHit(Keys.ENTER),
             Enter.theValue(actividadLaboral.getTelefonoTrabajo()).into(TXT_TELEFONO_TRABAJO),
             Enter.theValue(actividadLaboral.getExtension()).into(TXT_EXTENSION),
             Seleccionar.opcionLista(actividadLaboral.getTipoEmpresa(), BTN_TIPO_EMPRESA, LST_OPCIONES),

@@ -18,9 +18,6 @@ public class AprobacionCreditoFinsoamigo implements Task {
 
   private static final String APROBACION_CREDITO = "Apr. de créditos";
 
-  private AprobacionCreditoFinsoamigo() {
-  }
-
   @Override
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.asksFor(LaInformacion.deBaseDeDatos(CredencialesBDBuilder.con().bdCreditos(), SQL_CONSULTAR_CREDITO_FINSOAMIGO.getSql(), "id"));

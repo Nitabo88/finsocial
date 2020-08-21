@@ -12,7 +12,7 @@ build:
     name: gradle:5.6.4-jdk8  
   script:    
     - ./gradlew compileJava
-    - ./gradlew clean assemble
+    - ./gradlew clean assemble   
 
 test:
   stage: test
@@ -23,3 +23,8 @@ test:
   script:
     - echo $COMMAND_GRADLE
     - $COMMAND_GRADLE
+    - ls -R    
+  artifacts:
+    paths:
+      - ./target/site/serenity/
+    expire_in: 1 week

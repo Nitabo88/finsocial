@@ -3,9 +3,9 @@ package co.com.red5g.utils.pdf;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EstructurasPDF {
+public class EstructurasPDFFinsocial {
 
-  private EstructurasPDF() {
+  private EstructurasPDFFinsocial() {
   }
 
   public static Integer segurosVidaMundial(String filaCampo) {
