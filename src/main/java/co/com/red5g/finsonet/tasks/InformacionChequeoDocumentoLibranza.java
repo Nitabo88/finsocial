@@ -4,12 +4,18 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR1_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_MODIFICAR_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_LISTADO_CHEQUEO_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CODIGO_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
+import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LBL_INFORMACION_ADICIONAL;
+import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERIA;
+import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
@@ -30,6 +36,7 @@ import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionChequeoDocumentoLibranza implements Task {
@@ -54,6 +61,19 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             Click.on(BTN_ACEPTAR),
             Scroll.to(LST_CODIGO_PAPELERIA).andAlignToBottom(),
             SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_CODIGO_PAPELERIA));
+        actor.attemptsTo(
+            Check.whether(LBL_INFORMACION_ADICIONAL.resolveFor(actor).isVisible()).andIfSo(
+                MoveMouse.to(LST_PAPELERIA),
+                SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
+                Click.on(BTN_MODIFICAR_CREDITO),
+                Click.on(MNM_HAMBURGUESA),
+                Click.on(IMG_FINSONET),
+                WaitFor.seconds(TIEMPO_3),
+                JavaScriptClick.on(LNK_ORIGINACION),
+                Scroll.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)).andAlignToBottom(),
+                JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito))
+            )
+        );
         actor.attemptsTo(
             WaitUntil.the(LBL_LISTADO_CHEQUEO_DOCUMENTOS, isPresent()).forNoMoreThan(TIEMPO_120).seconds(),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),

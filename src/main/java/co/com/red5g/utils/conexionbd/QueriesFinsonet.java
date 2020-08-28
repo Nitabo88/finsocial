@@ -17,7 +17,7 @@ public enum QueriesFinsonet {
   SQL_COOPERATIVA("SELECT * FROM creditos WHERE id = '%s'"),
   SQL_ID_GESTION("SELECT id_gestion FROM gestion_pendiente WHERE id_cred_finsonet = '%s'"),
   SQL_ASIGNAR_CREDITO("UPDATE creditos SET id_vendedor = 2256 WHERE id ='%s'"),
-  SQL_CONSULTAR_CREDITO_FINSOAMIGO("Select * from creditos where sufi= 2 AND estado = 'INGRESO' AND finsoamigo_externo='0' LIMIT 1");
+  SQL_CONSULTAR_CREDITO_FINSOAMIGO("Select * from creditos where sufi= 2 AND estado = 'INGRESO' AND finsoamigo_externo='0' ORDER BY RAND() LIMIT 1");
 
   private final String sql;
 

@@ -22,7 +22,7 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 
 public class ChequeoDocumentosStepDefinition {
 
-  private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar";
+  private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario escoger la papeleria";
 
   @Dado("^que (.*) esta en el paso de chequeo de documentos de un crédito de libranza$")
   public void ingresarChequeoDocumentos(final String actor) {

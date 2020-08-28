@@ -24,7 +24,8 @@ public class PasoFormalizacion implements Question<Boolean> {
     actor.attemptsTo(
         JavaScriptClick.on(MNM_HAMBURGUESA),
         JavaScriptClick.on(MNM_NUEVO_ORIGINACION.of(PasoFormalizacion.FORMALIZACION)),
-        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_400).seconds(),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_400).seconds());
+    actor.attemptsTo(
         Scroll.to(LST_FILA_FORMALIZACION.of(numeroCredito)).andAlignToBottom());
     return LST_FILA_FORMALIZACION.of(numeroCredito).resolveFor(actor).isPresent();
   }
