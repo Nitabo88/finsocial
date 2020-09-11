@@ -1,6 +1,9 @@
 package co.com.red5g.finsonet.models.builders;
 
 import static co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL;
+import static co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL_CONTRASENA_ERRADA;
+import static co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL_DATA_ERRADA;
+import static co.com.red5g.utils.data.Credenciales.USUARIO_FINSOCIAL_USUARIO_ERRADO;
 
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.utils.Builder;
@@ -92,6 +95,24 @@ public class CredencialesBuilder implements Builder<Credenciales> {
     conCodigo(USUARIO_FINSOCIAL.getCodigo());
     conCelular();
     conEmail();
+    return build();
+  }
+
+  public Credenciales unUsuarioContrasenaInvalida() {
+    conUsuario(USUARIO_FINSOCIAL_CONTRASENA_ERRADA.getUsuario());
+    conContrasena(USUARIO_FINSOCIAL_CONTRASENA_ERRADA.getContrasena());
+       return build();
+  }
+
+  public Credenciales unUsuarioInvalido() {
+    conUsuario(USUARIO_FINSOCIAL_USUARIO_ERRADO.getUsuario());
+    conContrasena(USUARIO_FINSOCIAL_USUARIO_ERRADO.getContrasena());
+       return build();
+  }
+
+  public Credenciales unUsuarioDataInvalida() {
+    conUsuario(USUARIO_FINSOCIAL_DATA_ERRADA.getUsuario());
+    conContrasena(USUARIO_FINSOCIAL_DATA_ERRADA.getContrasena());
     return build();
   }
 

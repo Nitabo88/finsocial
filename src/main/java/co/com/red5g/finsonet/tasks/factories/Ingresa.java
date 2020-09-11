@@ -12,6 +12,7 @@ import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
+import co.com.red5g.finsonet.tasks.InformacionErradaLogin;
 import co.com.red5g.finsonet.tasks.InformacionIncompletaCreditoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionLogin;
 import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
@@ -57,8 +58,7 @@ public final class Ingresa {
     }
 
     public static Performable lasCredenciales(Credenciales credenciales) {
-        return instrumented(InformacionLogin.class, credenciales);
-    }
+        return instrumented(InformacionLogin.class, credenciales);    }
 
     public static Performable enLiquidacionDeComisionesVentaNueva() {
         return instrumented(LiquidacionComisionesVentaNueva.class);
@@ -101,8 +101,7 @@ public final class Ingresa {
   }
 
     public static Performable aAprobacionFinsoamigo(String perfilRiesgo) {
-        return instrumented(AprobacionCreditoFinsoamigo.class, perfilRiesgo);
-    }
+        return instrumented(AprobacionCreditoFinsoamigo.class, perfilRiesgo);    }
 
     public static Performable aChequeoDocumentosHuy(Credito credito) {
         return instrumented(ChequeoDocumentoHuy.class, credito);
@@ -132,4 +131,7 @@ public final class Ingresa {
     return instrumented(PDF.class, url, numeroCredito);
   }
 
+  public static Performable lasCredencialesErradas(Credenciales credenciales) {
+    return instrumented(InformacionErradaLogin.class, credenciales);
+  }
 }

@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_APROBAR;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LBL_CREDITO_CREADO;
@@ -9,6 +8,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LBL_POL
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_PAGADURIA;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_PERFIL_RIESGO;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_CENTRO_COSTO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
@@ -44,11 +44,14 @@ public class AprobacionDeCreditoFinsoamigo implements Task {
         Enter.theValue(CENTRO_COSTO).into(TXT_CENTRO_COSTO).thenHit(Keys.TAB),
         WaitFor.seconds(TIEMPO_3),
         SelectFromOptions.byValue(PAGADURIA).from(LST_PAGADURIA),
+        WaitFor.seconds(TIEMPO_3));
+    actor.attemptsTo(
+        SelectFromOptions.byValue(perfilRiesgo).from(LST_PERFIL_RIESGO));
+    actor.attemptsTo(
+        WaitUntil.the(BTN_APROBAR, isPresent()).forNoMoreThan(TIEMPO_60).seconds(),
         WaitFor.seconds(TIEMPO_3),
-        SelectFromOptions.byValue(perfilRiesgo).from(LST_PERFIL_RIESGO),
-        WaitFor.seconds(TIEMPO_3),
-        Scroll.to(BTN_APROBAR),
-        JavaScriptClick.on(BTN_APROBAR),
+        Scroll.to(BTN_APROBAR).andAlignToBottom(),
+        Click.on(BTN_APROBAR),
         WaitFor.seconds(TIEMPO_3),
         WaitUntil.the(LBL_CREDITO_CREADO, isPresent()).forNoMoreThan(TIEMPO_60).seconds(),
         WaitFor.seconds(TIEMPO_3),

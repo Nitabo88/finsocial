@@ -21,7 +21,9 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_FORMULARIO_SOLICITUD = Target.the("el boton formulario de solicitud").located(By.xpath("//a[text()='Formulario de solicitud']"));
     public static final Target BTN_ACEPTAR2 = Target.the("el boton aceptar 2").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']"));
-    public static final Target BTN_MODIFICAR_CREDITO = Target.the("el boton modificar credito").located(By.id("btn_Dif"));
+    public static final Target BTN_MODIFICAR = Target.the("el boton modificar credito").located(By.id("btn_Dif"));
+    public static final Target LBL_VALOR_A_GIRAR = Target.the("el valor a girar").located(By.id("tdVlrGiro"));
+    public static final Target BTN_OK_MODIFICACION = Target.the("el boton modificar credito").located(By.xpath("//button[@class='confirm']"));
     public static final Target BTN_ACEPTAR_HUY = Target.the("el boton aceptar de papeleria del credito huy").located(By.id("btn-aceptar-1"));
     public static final Target BTN_ACEPTAR_ACCION_HUY = Target.the("el boton aceptar de aviso de papeleria del credito huy").located(By.xpath("//button[@class='btn btn-light-blue']"));
     public static final Target BTN_GUARDAR = Target.the("el boton guardar").located(By.xpath("//button[contains(.,'Guardar')]"));

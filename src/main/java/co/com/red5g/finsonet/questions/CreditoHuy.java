@@ -14,7 +14,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class CreditoHuy implements Question<Boolean> {
@@ -29,7 +29,7 @@ public class CreditoHuy implements Question<Boolean> {
         );
         actor.attemptsTo(WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds());
         List<WebElementFacade> lstFila = LST_FILA_CREDITO_HUY.of(numeroCedula, fechaCredito).resolveAllFor(actor);
-        actor.attemptsTo(MoveMouse.to(lstFila.get(0)));
+        actor.attemptsTo(Scroll.to(lstFila.get(0)).andAlignToBottom());
         return lstFila.get(0).isPresent();
     }
 }
