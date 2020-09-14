@@ -2,14 +2,14 @@ package co.com.red5g.finsonet.tasks.factories;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
-import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumento;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
+import co.com.red5g.finsonet.tasks.ConfirmacionLibranzaDigital;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionErradaLogin;
@@ -76,9 +76,9 @@ public final class Ingresa {
         return instrumented(LiquidacionComisiones.class, ciclo);
     }
 
-    public static Performable elRechazoDelCredito(ChequeoDocumento motivo) {
-        return instrumented(ChequeoDocumentosRechazo.class, motivo);
-    }
+  public static Performable elRechazoDelCredito(co.com.red5g.finsonet.models.ChequeoDocumento motivo) {
+    return instrumented(ChequeoDocumentosRechazo.class, motivo);
+  }
 
     public static Performable enAprobacion() {
         return instrumented(Aprobacion.class);
@@ -97,7 +97,7 @@ public final class Ingresa {
     }
 
   public static Performable aChequeoDocumentosFinsoamigo() {
-        return instrumented(ChequeoDocumentoFinsoamigo.class);
+    return instrumented(ChequeoDocumento.class);
   }
 
     public static Performable aAprobacionFinsoamigo(String perfilRiesgo) {
@@ -124,7 +124,7 @@ public final class Ingresa {
     }
 
     public static Performable enElReporteDeFinsoamigo() {
-        return instrumented(ReporteFinsoamigo.class);
+      return instrumented(ReporteFinsoamigo.class);
     }
 
   public static Performable alPDF(String url, String numeroCredito) {
@@ -133,5 +133,13 @@ public final class Ingresa {
 
   public static Performable lasCredencialesErradas(Credenciales credenciales) {
     return instrumented(InformacionErradaLogin.class, credenciales);
+  }
+
+  public static Performable aChequeoDocumentos() {
+    return instrumented(ChequeoDocumento.class);
+  }
+
+  public static Performable aConfirmacionLibranzaDigital() {
+    return instrumented(ConfirmacionLibranzaDigital.class);
   }
 }

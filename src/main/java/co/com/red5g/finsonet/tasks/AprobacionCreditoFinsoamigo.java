@@ -1,6 +1,7 @@
 package co.com.red5g.finsonet.tasks;
 
 import static co.com.red5g.finsonet.models.builders.ChequeoDocumentoBuilder.con;
+import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_ASIGNAR_CREDITO;
 import static co.com.red5g.utils.conexionbd.QueriesFinsonet.SQL_CONSULTAR_CREDITO_FINSOAMIGO;
@@ -25,7 +26,7 @@ public class AprobacionCreditoFinsoamigo implements Task {
     actor.attemptsTo(
         Actualizar.laInformaciondeBD(CredencialesBDBuilder.con().bdCreditos(), SQL_ASIGNAR_CREDITO.getSql()),
         Ingresa.aChequeoDocumentosFinsoamigo(),
-        Diligencia.laInformacionDeChequeoDeDocumentosFinsoamigo(con().finsoamigo(), numeroCredito),
+        Diligencia.laInformacionDeChequeoDeDocumentos(con().finsoamigo(), numeroCredito, LST_CHEQUEO_DOCUMENTOS_NOMBRE_FINSOAMIGO),
         Click.on(MNM_ORIGINACION.of(APROBACION_CREDITO))
     );
   }

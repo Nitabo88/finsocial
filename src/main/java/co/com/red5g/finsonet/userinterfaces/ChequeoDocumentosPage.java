@@ -58,7 +58,15 @@ public class ChequeoDocumentosPage {
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY = Target.the("la columna nombre de la tabla de credihuy")
         .locatedBy("//td[text()='CrediHuy']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY = Target.the("Boton de estado en chequeo de documentos de credihuy")
-            .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
+        .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
+    public static final Target LST_CHEQUEO_DOCUMENTOS_LIBRANZA_DIGITAL = Target.the("la columna nombre de la tabla de libranza digital")
+        .locatedBy("//td[text()='Libranza digital']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_NOMBRE_FINSOALIVIO = Target.the("la columna nombre de la tabla de finsoalivio")
+        .locatedBy("//td[text()='Finsoalivio']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_NOMBRE_FINSOTIENDA = Target.the("la columna nombre de la tabla de finsotienda")
+        .locatedBy("//td[text()='Finsotienda']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_NOMBRE_FINSOPRODUCTIVO = Target.the("la columna nombre de la tabla de finsoproductivo")
+        .locatedBy("//td[text()='Finsoproductivo']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");

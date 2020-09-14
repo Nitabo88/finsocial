@@ -64,7 +64,7 @@ public class FormularioSolicitudStepDefinition {
     @Cuando("^diligencia el formulario de crédihuy de un cliente por back end$")
     public void diligenciarFormularioSolicitudCredihuyBackEnd() {
         theActorInTheSpotlight().attemptsTo(
-            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionCredihuy(), theActorInTheSpotlight().recall(CEDULA_ACTOR) )
+            Diligencia.laSolicitudDeCreditoBackEnd(de().unUsuarioAdministrador(), con().informacionCredihuy(), theActorInTheSpotlight().recall(CEDULA_ACTOR))
         );
     }
 }

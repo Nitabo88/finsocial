@@ -28,9 +28,9 @@ import co.com.red5g.finsonet.tasks.CrearSolicitudNueva;
 import co.com.red5g.finsonet.tasks.FormularioSolicitudCredito;
 import co.com.red5g.finsonet.tasks.IncorporacionPendiente;
 import co.com.red5g.finsonet.tasks.InformacionAprobacionHuy;
-import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoFinsoamigo;
 import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoLibranza;
+import co.com.red5g.finsonet.tasks.InformacionChequeoDocumentoLibranzaDigital;
 import co.com.red5g.finsonet.tasks.InformacionConfirmacion;
 import co.com.red5g.finsonet.tasks.InformacionIncompletaChequeoDocumentos;
 import co.com.red5g.finsonet.tasks.NegacionChequeoDocumentoCrediHuy;
@@ -56,6 +56,7 @@ import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso7;
 import co.com.red5g.finsonet.tasks.SolicitudCreditoPaso8;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.targets.Target;
 
 public final class Diligencia {
 
@@ -149,12 +150,6 @@ public final class Diligencia {
     return instrumented(Cdas.class, accionCdas);
   }
 
-  public static Performable laInformacionDeChequeoDeDocumentosFinsoamigo(
-      ChequeoDocumento chequeoDocumento, String numeroCredito) {
-    return instrumented(
-        InformacionChequeoDocumentoFinsoamigo.class, chequeoDocumento, numeroCredito);
-  }
-
   public static Performable laInformacionDeAprobacionDeCreditoFinsoamigo(String perfilRiesgo) {
     return instrumented(AprobacionDeCreditoFinsoamigo.class, perfilRiesgo);
   }
@@ -238,5 +233,10 @@ public final class Diligencia {
 
   public static Performable octavoPasoFormulario(String cookie, FormularioSolicitud formularioSolicitud, String cedula) {
     return instrumented(SolicitudCreditoPaso8.class, cookie, formularioSolicitud, cedula);
+  }
+
+  public static Performable laInformacionDeChequeoDeDocumentos(ChequeoDocumento chequeoDocumento, String id, Target lista) {
+    return instrumented(
+        InformacionChequeoDocumentoLibranzaDigital.class, chequeoDocumento, id, lista);
   }
 }

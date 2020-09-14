@@ -1,4 +1,4 @@
-package co.com.red5g.finsonet.runners.regresion.finsoamigo;
+package co.com.red5g.finsonet.runners.regresion.finsotienda;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
     features = "src/test/resources/features/finsonet/chequeo_documento.feature",
     glue = "co.com.red5g.finsonet.stepdefinitions",
-    tags = "@ChequeoDocumentosFinsoamigos",
+    tags = "@ChequeoDocumentosFinsotienda",
     snippets = SnippetType.CAMELCASE)
 
-public class ChequeoDocumentoFinsoamigoRunner {
+public class ChequeoDocumentoFinsotiendaRunner {
 }

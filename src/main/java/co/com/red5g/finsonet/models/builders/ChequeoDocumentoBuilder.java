@@ -57,6 +57,35 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
         return this.build();
     }
 
+    public ChequeoDocumento finsoalivio() {
+        this.conPuntajeCifin("950");
+        this.conAciertaDatacredito("1200");
+        this.conPapeleria(PAPELERIA_NUEVA);
+        return this.build();
+    }
+
+    public ChequeoDocumento finsotienda() {
+        this.conPuntajeCifin("1001");
+        this.conAciertaDatacredito("300");
+        this.conPapeleria(PAPELERIA_NUEVA);
+        return this.build();
+    }
+
+
+    public ChequeoDocumento finsoproductivo() {
+        this.conPuntajeCifin("1200");
+        this.conAciertaDatacredito("1200");
+        this.conPapeleria(PAPELERIA_NUEVA);
+        return this.build();
+    }
+
+    public ChequeoDocumento libranzaDigital() {
+        this.conPuntajeCifin("920");
+        this.conAciertaDatacredito("920");
+        this.conPapeleria(PAPELERIA_NUEVA);
+        return this.build();
+    }
+
     public ChequeoDocumento huy() {
         this.conPuntajeCifin("900");
         this.conAciertaDatacredito("900");
