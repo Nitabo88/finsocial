@@ -21,7 +21,9 @@ public class ChequeoDocumentosPage {
     public static final Target BTN_ACEPTAR = Target.the("el boton aceptar").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-green swal2-styled']"));
     public static final Target BTN_FORMULARIO_SOLICITUD = Target.the("el boton formulario de solicitud").located(By.xpath("//a[text()='Formulario de solicitud']"));
     public static final Target BTN_ACEPTAR2 = Target.the("el boton aceptar 2").located(By.xpath("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']"));
-    public static final Target BTN_MODIFICAR_CREDITO = Target.the("el boton modificar credito").located(By.id("btn_Dif"));
+    public static final Target BTN_MODIFICAR = Target.the("el boton modificar credito").located(By.id("btn_Dif"));
+    public static final Target LBL_VALOR_A_GIRAR = Target.the("el valor a girar").located(By.id("tdVlrGiro"));
+    public static final Target BTN_OK_MODIFICACION = Target.the("el boton modificar credito").located(By.xpath("//button[@class='confirm']"));
     public static final Target BTN_ACEPTAR_HUY = Target.the("el boton aceptar de papeleria del credito huy").located(By.id("btn-aceptar-1"));
     public static final Target BTN_ACEPTAR_ACCION_HUY = Target.the("el boton aceptar de aviso de papeleria del credito huy").located(By.xpath("//button[@class='btn btn-light-blue']"));
     public static final Target BTN_GUARDAR = Target.the("el boton guardar").located(By.xpath("//button[contains(.,'Guardar')]"));
@@ -56,7 +58,15 @@ public class ChequeoDocumentosPage {
     public static final Target LST_CHEQUEO_DOCUMENTOS_NOMBRE_HUY = Target.the("la columna nombre de la tabla de credihuy")
         .locatedBy("//td[text()='CrediHuy']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
     public static final Target BTN_PENDIENTE_CHEQUEO_DOCUMENTOS_CREDIHUY = Target.the("Boton de estado en chequeo de documentos de credihuy")
-            .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
+        .locatedBy("//td[text()='CrediHuy']//parent::tr//a[contains(@href,'{0}')]//parent::td//parent::tr//child::td//*[@id='boton']");
+    public static final Target LST_CHEQUEO_DOCUMENTOS_LIBRANZA_DIGITAL = Target.the("la columna nombre de la tabla de libranza digital")
+        .locatedBy("//td[text()='Libranza digital']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_NOMBRE_FINSOALIVIO = Target.the("la columna nombre de la tabla de finsoalivio")
+        .locatedBy("//td[text()='Finsoalivio']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_NOMBRE_FINSOTIENDA = Target.the("la columna nombre de la tabla de finsotienda")
+        .locatedBy("//td[text()='Finsotienda']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
+    public static final Target LST_CHEQUEO_NOMBRE_FINSOPRODUCTIVO = Target.the("la columna nombre de la tabla de finsoproductivo")
+        .locatedBy("//td[text()='Finsoproductivo']//parent::tr[@role='row']//td[@style='text-align: left']//a[contains(@href,'{0}')]");
 
     private ChequeoDocumentosPage() {
         throw new IllegalStateException("Utility class");

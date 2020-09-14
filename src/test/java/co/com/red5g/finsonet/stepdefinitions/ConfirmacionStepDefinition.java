@@ -10,6 +10,7 @@ import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
 import co.com.red5g.finsonet.questions.factories.ElCredito;
 import co.com.red5g.finsonet.tasks.factories.Consulta;
 import co.com.red5g.finsonet.tasks.factories.Diligencia;
+import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -54,9 +55,14 @@ public class ConfirmacionStepDefinition {
     theActorInTheSpotlight().should(seeThat(ElCredito.enConfirmacionPendiente()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
-  @Entonces("^el asesor deberá ver el crédito en el paso de aprobación de creditos$")
+  @Entonces("^el asesor deberá ver el crédito en el paso de aprobación de créditos$")
   public void verificarAprobacionConfirmacion() {
     theActorInTheSpotlight().should(seeThat(ElCredito.enAprobacionDeDocumentos()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
   }
 
+  @Dado("^que (.*) esta en el paso de confirmación de libranza digital$")
+  public void consultarCreditoConfirmacionDigital(String actor) {
+    theActorCalled(actor).wasAbleTo(
+        Ingresa.aConfirmacionLibranzaDigital());
+  }
 }

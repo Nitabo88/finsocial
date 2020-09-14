@@ -4,11 +4,15 @@ import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ACCION_
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_ENVIAR;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.BTN_OK;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_ACCION_FORMALIZACION;
+import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_MOSTRAR_CREDITOS_POR_FORMALIZAR;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.LST_MOTIVO_PENDIENTE;
 import static co.com.red5g.finsonet.userinterfaces.FormalizacionPage.TXT_DETALLE_PENDIENTE;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -33,6 +37,8 @@ public class PendienteFormalizacion implements Task {
   public <T extends Actor> void performAs(T actor) {
     String numeroCredito = actor.recall(NUMERO_CREDITO);
     actor.attemptsTo(
+        SelectFromOptions.byVisibleText("Todos").from(LST_MOSTRAR_CREDITOS_POR_FORMALIZAR),
+        WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds(),
         JavaScriptClick.on(BTN_ACCION_FORMALIZACION.of(numeroCredito)),
         JavaScriptClick.on(LST_ACCION_FORMALIZACION.of(numeroCredito, formalizacion.getAccion())),
         SelectFromOptions.byVisibleText(formalizacion.getMotivo()).from(LST_MOTIVO_PENDIENTE),

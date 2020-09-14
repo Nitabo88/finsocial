@@ -60,3 +60,31 @@ Característica: Chequeo documento
     Dado que un asesor esta en el paso de chequeo de documentos finsoamigo
     Cuando el asesor adjunta toda la información de el chequeo de documentos finsoamigo
     Entonces el asesor deberá ver el crédito en el paso de aprobación créditos finsoamigos
+
+  @Finsotienda
+  @ChequeoDocumentosFinsotienda
+  Escenario: Chequeo Documentos Finsotienda - Aprobación chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de documentos finsotienda
+    Cuando el asesor adjunta toda la información de el chequeo de documentos finsotienda
+    Entonces el asesor deberá ver el crédito en el paso de aprobación créditos finsotienda
+
+  @LibranzaDigital
+  @ChequeoDocumentosLibranzaDigital
+  Escenario: Chequeo Documentos Libranza Digital- Aprobación chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de documentos de un crédito de libranza digital
+    Cuando el asesor adjunta toda la información del chequeo de documentos
+    Entonces deberá ver el crédito en el paso de confirmación
+
+  @Finsoalivio
+  @ChequeoDocumentosFinsoalivio
+  Escenario: Chequeo Documentos Finsoalivio - Aprobación chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de documentos finsoalivio
+    Cuando el asesor adjunta toda la información de el chequeo de documentos finsoalivio
+    Entonces el asesor deberá ver el crédito en el paso de aprobación créditos finsoalivio
+
+  @Finsoproductivo
+  @ChequeoDocumentosFinsoproductivo
+  Escenario: Chequeo Documentos Finsoproductivo - Aprobación chequeo de documentos
+    Dado que un asesor esta en el paso de chequeo de documentos finsoproductivo
+    Cuando el asesor adjunta toda la información de el chequeo de documentos finsoproductivo
+    Entonces el asesor deberá ver el crédito en el paso de aprobación créditos finsoproductivo

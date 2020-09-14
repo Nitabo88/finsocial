@@ -32,6 +32,7 @@ public final class FormalizacionPage {
   public static final Target BTN_GUARDAR = Target.the("el boton guardar").located(By.id("btnGuardar"));
   public static final Target LBL_FORMALIZACION = Target.the("el titulo de formalizacion").located(By.xpath("//h3[text()='Formalización_huy']"));
   public static final Target LST_NOMBRE_FORMALIZACION_CREDIHUY = Target.the("la columna de nombre de formalizacion huy").locatedBy("//td[text()='CrediHuy']//parent::tr//a[@href='/chequeo_docs_huy.php?crid={0}&act=1']");
+  public static final Target LST_MOSTRAR_CREDITOS_POR_FORMALIZAR = Target.the("la lista de créditos a mostrar").locatedBy("//select[@name='tablaPenVis_length']");
 
   private FormalizacionPage() {
     throw new IllegalStateException("Utility class");

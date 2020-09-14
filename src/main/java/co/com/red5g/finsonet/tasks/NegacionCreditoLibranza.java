@@ -8,6 +8,7 @@ import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.LST_NOM
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.TXT_MOTIVO_NEGACION;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_5;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.AprobacionCredito;
@@ -15,6 +16,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 
@@ -35,10 +37,11 @@ public class NegacionCreditoLibranza implements Task {
             Click.on(BTN_NEGAR),
             SelectFromOptions.byVisibleText(aprobacionCredito.getSeleccionMotivo())
                 .from(LST_MOTIVO_NEGAR),
-            Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO_NEGACION),
+            Enter.theValue(aprobacionCredito.getRazonMotivo()).into(TXT_MOTIVO_NEGACION));
+        actor.attemptsTo(
             WaitFor.seconds(TIEMPO_3),
-            Click.on(BTN_ENVIAR_NEGACION),
-            WaitFor.seconds(TIEMPO_3),
+            JavaScriptClick.on(BTN_ENVIAR_NEGACION),
+            WaitFor.seconds(TIEMPO_5),
             Click.on(BTN_OK));
     }
 }

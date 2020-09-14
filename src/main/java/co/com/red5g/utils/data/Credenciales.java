@@ -2,6 +2,9 @@ package co.com.red5g.utils.data;
 
 public enum Credenciales {
     USUARIO_FINSOCIAL("ochinchilla", "Nicolas32@", "1234"),
+    USUARIO_FINSOCIAL_CONTRASENA_ERRADA("ochinchilla", "Nicolas", "1234"),
+    USUARIO_FINSOCIAL_USUARIO_ERRADO("ochinchilla1", "Nicolas32@", "1234"),
+    USUARIO_FINSOCIAL_DATA_ERRADA("prueba", "prueba", "1234"),
     USUARIO_DOCUMENTOS("mvargas", "Nicolas32@", "5678"),
     USUARIO_APROBACION_CREDITOS("jcastro", "Nicolas32@", "abcd"),
     USUARIO_PQRS("kcampo", "Nicolas32@", "adf"),

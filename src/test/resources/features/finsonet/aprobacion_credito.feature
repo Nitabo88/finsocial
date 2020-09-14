@@ -9,7 +9,7 @@ Característica:  Aprobación Crédito
     @AprobacionCreditosFinsoamigos
   Escenario: Aprobación Finsoamigos Riesgo Estándar - Aprobar el crédito desde aprobación de créditos
     Dado que un asesor esta en el paso de aprobación de créditos finsoamigo de un cliente con perfil estándar
-    Cuando el asesor diligencia la información del cliente con perfil 390 en aprobación de crédito
+    Cuando el asesor diligencia la información del cliente con perfil 418 en aprobación de crédito
     Entonces el asesor deberá ver el crédito en el paso de tesorería en pendiente por firma
 
   @Finsoamigo
@@ -21,10 +21,10 @@ Característica:  Aprobación Crédito
 
     Ejemplos:
       | Tipo Perfil | Perfil Riesgo |
-      | 50%+IVA     | 391           |
-      | 150%+IVA    | 392           |
-      | 50%_fr      | 406           |
-      | 150%_fr     | 407           |
+      | 50%+IVA     | 419           |
+      | 150%+IVA    | 420           |
+      | 50%_fr      | 423           |
+      | 150%_fr     | 424           |
 
   @Credihuy
   @AprobacionCreditosHuy

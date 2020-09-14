@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR1_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2;
@@ -12,9 +11,10 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_MOTIVO_NEGACION;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_DETALLE;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 
@@ -52,7 +52,7 @@ public class NegacionChequeoDocumentoLibranza implements Task {
             SelectFromOptions.byVisibleText(chequeoDocumento.getSeleccionMotivo()).from(LST_MOTIVO_NEGACION),
             Enter.theValue(chequeoDocumento.getRazonMotivo()).into(TXT_DETALLE),
             Click.on(BTN_ACEPTAR_NEGACION),
-            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds(),
             WaitFor.seconds(TIEMPO_3),
             Click.on(BTN_ACEPTAR2));
     }

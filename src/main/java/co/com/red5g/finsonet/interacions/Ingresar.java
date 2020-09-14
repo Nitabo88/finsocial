@@ -33,6 +33,7 @@ public class Ingresar implements Interaction {
         actor.attemptsTo(
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
             Click.on(LBL_ID),
+            WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_60).seconds(),
             Click.on(LBL_ID2));
         List<WebElementFacade> lstCredito = MisCreditosPage.LST_COLUMNA_FORMULARIO_SOLICITUD.of(numeroCedula, fecha).resolveAllFor(actor);
         actor.attemptsTo(

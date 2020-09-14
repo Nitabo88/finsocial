@@ -8,13 +8,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-public class ElMensaje implements Question<String> {
+public class MensajeError implements Question<String> {
 
   private static final int TIEMPO = 50;
-
-  public static ElMensaje noRegistra() {
-    return new ElMensaje();
-  }
 
   @Override
   public String answeredBy(final Actor actor) {

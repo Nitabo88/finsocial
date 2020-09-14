@@ -1,6 +1,5 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.finsonet.models.builders.CredencialesBuilder.de;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_APROBAR;
 import static co.com.red5g.finsonet.userinterfaces.AprobacionCreditoPage.BTN_OK;
@@ -10,9 +9,10 @@ import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.BTN
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
 import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.MNM_MI_CUENTA;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_ORIGINACION;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 import co.com.devco.automation.mobile.actions.WaitFor;
@@ -20,6 +20,7 @@ import co.com.red5g.finsonet.tasks.factories.Ingresa;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class AprobacionDeCreditoLibranza implements Task {
@@ -38,8 +39,11 @@ public class AprobacionDeCreditoLibranza implements Task {
         JavaScriptClick.on(LNK_ORIGINACION),
         JavaScriptClick.on(MNM_ORIGINACION.of(AprobacionDeCreditoLibranza.APROBACION_CREDITO)),
         JavaScriptClick.on(LST_NOMBRE_APROBACION_LIBRANZA.of(numeroCredito)),
-        WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
-        JavaScriptClick.on(BTN_APROBAR),
+        WaitUntil.the(LBL_POLITICAS_CREDITO, isVisible()).forNoMoreThan(TIEMPO_120).seconds());
+    actor.attemptsTo(
+        Scroll.to(BTN_APROBAR).andAlignToBottom(),
+        JavaScriptClick.on(BTN_APROBAR));
+    actor.attemptsTo(
         WaitUntil.the(BTN_OK, isVisible()).forNoMoreThan(TIEMPO_10).seconds(),
         WaitFor.seconds(TIEMPO_3),
         JavaScriptClick.on(BTN_OK)

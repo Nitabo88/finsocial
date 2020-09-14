@@ -2,16 +2,17 @@ package co.com.red5g.finsonet.tasks.factories;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-import co.com.red5g.finsonet.models.ChequeoDocumento;
 import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
-import co.com.red5g.finsonet.tasks.ChequeoDocumentoFinsoamigo;
+import co.com.red5g.finsonet.tasks.ChequeoDocumento;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
+import co.com.red5g.finsonet.tasks.ConfirmacionLibranzaDigital;
 import co.com.red5g.finsonet.tasks.InformacionCreditoHuy;
 import co.com.red5g.finsonet.tasks.InformacionCreditoLibranza;
+import co.com.red5g.finsonet.tasks.InformacionErradaLogin;
 import co.com.red5g.finsonet.tasks.InformacionIncompletaCreditoLibranza;
 import co.com.red5g.finsonet.tasks.InformacionLogin;
 import co.com.red5g.finsonet.tasks.LiquidacionComisiones;
@@ -57,8 +58,7 @@ public final class Ingresa {
     }
 
     public static Performable lasCredenciales(Credenciales credenciales) {
-        return instrumented(InformacionLogin.class, credenciales);
-    }
+        return instrumented(InformacionLogin.class, credenciales);    }
 
     public static Performable enLiquidacionDeComisionesVentaNueva() {
         return instrumented(LiquidacionComisionesVentaNueva.class);
@@ -76,9 +76,9 @@ public final class Ingresa {
         return instrumented(LiquidacionComisiones.class, ciclo);
     }
 
-    public static Performable elRechazoDelCredito(ChequeoDocumento motivo) {
-        return instrumented(ChequeoDocumentosRechazo.class, motivo);
-    }
+  public static Performable elRechazoDelCredito(co.com.red5g.finsonet.models.ChequeoDocumento motivo) {
+    return instrumented(ChequeoDocumentosRechazo.class, motivo);
+  }
 
     public static Performable enAprobacion() {
         return instrumented(Aprobacion.class);
@@ -97,12 +97,11 @@ public final class Ingresa {
     }
 
   public static Performable aChequeoDocumentosFinsoamigo() {
-        return instrumented(ChequeoDocumentoFinsoamigo.class);
+    return instrumented(ChequeoDocumento.class);
   }
 
     public static Performable aAprobacionFinsoamigo(String perfilRiesgo) {
-        return instrumented(AprobacionCreditoFinsoamigo.class, perfilRiesgo);
-    }
+        return instrumented(AprobacionCreditoFinsoamigo.class, perfilRiesgo);    }
 
     public static Performable aChequeoDocumentosHuy(Credito credito) {
         return instrumented(ChequeoDocumentoHuy.class, credito);
@@ -125,11 +124,22 @@ public final class Ingresa {
     }
 
     public static Performable enElReporteDeFinsoamigo() {
-        return instrumented(ReporteFinsoamigo.class);
+      return instrumented(ReporteFinsoamigo.class);
     }
 
   public static Performable alPDF(String url, String numeroCredito) {
     return instrumented(PDF.class, url, numeroCredito);
   }
 
+  public static Performable lasCredencialesErradas(Credenciales credenciales) {
+    return instrumented(InformacionErradaLogin.class, credenciales);
+  }
+
+  public static Performable aChequeoDocumentos() {
+    return instrumented(ChequeoDocumento.class);
+  }
+
+  public static Performable aConfirmacionLibranzaDigital() {
+    return instrumented(ConfirmacionLibranzaDigital.class);
+  }
 }
