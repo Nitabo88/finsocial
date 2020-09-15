@@ -25,7 +25,9 @@ test:
     - $COMMAND_GRADLE
     - ls -R    
   artifacts:
-    paths:
-      - ./target/site/serenity/
+    when: always
+    paths:      
+      - ./target/site/serenity/      
+      - ./build/reports/tests/test/index.html
     expire_in: 1 week
   allow_failure: true
