@@ -11,6 +11,7 @@ import static co.com.red5g.general.interactions.CambiarPestana.cambiarPestana;
 import static co.com.red5g.general.interactions.CambiarPestanaActual.cambiarPestanaActual;
 import static co.com.red5g.general.interactions.CerrarPestana.cerrarPestana;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
+import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_300;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
@@ -21,6 +22,7 @@ import co.com.red5g.finsonet.interacions.factories.Subir;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.JavaScriptClick;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -31,14 +33,14 @@ public class AprobacionFormalizacion implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            WaitUntil.the(LBL_FORMALIZACION, isPresent()).forNoMoreThan(TIEMPO_60).seconds(),
+            WaitUntil.the(LBL_FORMALIZACION, isPresent()).forNoMoreThan(TIEMPO_120).seconds(),
             SelectFromOptions.byVisibleText("Todos").from(LST_MOSTRAR_CREDITOS_POR_FORMALIZAR),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_300).seconds(),
             Scroll.to(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)).andAlignToBottom());
         actor.attemptsTo(
-            Click.on(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)),
-            Click.on(BTN_SUBIR_DOCUMENTOS),
+            JavaScriptClick.on(LST_COLUMNA_NOMBRE_FORMALIZACION.of(numeroCredito)),
             cambiarPestanaActual(),
+            Click.on(BTN_SUBIR_DOCUMENTOS),
             Subir.losArchivosDeFormalizacion(),
             cerrarPestana(),
             cambiarPestana(),

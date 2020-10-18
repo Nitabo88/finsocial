@@ -6,6 +6,7 @@ import co.com.red5g.finsonet.models.Credenciales;
 import co.com.red5g.finsonet.models.Credito;
 import co.com.red5g.finsonet.tasks.Aprobacion;
 import co.com.red5g.finsonet.tasks.AprobacionCreditoFinsoamigo;
+import co.com.red5g.finsonet.tasks.AprobacionLibranzaDigital;
 import co.com.red5g.finsonet.tasks.ChequeoDocumento;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentoHuy;
 import co.com.red5g.finsonet.tasks.ChequeoDocumentosRechazo;
@@ -29,7 +30,6 @@ import co.com.red5g.finsonet.tasks.ReporteOriginacion;
 import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
 import co.com.red5g.finsonet.tasks.ReporteVentaNueva;
 import co.com.red5g.finsonet.tasks.TesoreriaFinsoamigo;
-import co.com.red5g.wiipo.tasks.InformacionLoginWiipo;
 import net.serenitybdd.screenplay.Performable;
 
 public final class Ingresa {
@@ -100,32 +100,29 @@ public final class Ingresa {
     return instrumented(ChequeoDocumento.class);
   }
 
-    public static Performable aAprobacionFinsoamigo(String perfilRiesgo) {
-        return instrumented(AprobacionCreditoFinsoamigo.class, perfilRiesgo);    }
+  public static Performable aAprobacionFinsoamigo(String perfilRiesgo) {
+    return instrumented(AprobacionCreditoFinsoamigo.class, perfilRiesgo);
+  }
 
-    public static Performable aChequeoDocumentosHuy(Credito credito) {
-        return instrumented(ChequeoDocumentoHuy.class, credito);
-    }
+  public static Performable aChequeoDocumentosHuy(Credito credito) {
+    return instrumented(ChequeoDocumentoHuy.class, credito);
+  }
 
-    public static Performable enNuevoCreditoHuy() {
-        return instrumented(NuevoCreditoHuy.class);
-    }
+  public static Performable enNuevoCreditoHuy() {
+    return instrumented(NuevoCreditoHuy.class);
+  }
 
-    public static Performable lasCredencialesWiipo(co.com.red5g.wiipo.models.Credenciales credenciales) {
-        return instrumented(InformacionLoginWiipo.class, credenciales);
-    }
+  public static Performable laInformacionIncompletaDelCredito(Credito credito) {
+    return instrumented(InformacionIncompletaCreditoLibranza.class, credito);
+  }
 
-    public static Performable laInformacionIncompletaDelCredito(Credito credito) {
-        return instrumented(InformacionIncompletaCreditoLibranza.class, credito);
-    }
+  public static Performable aTesoreriaFinsoamigo() {
+    return instrumented(TesoreriaFinsoamigo.class);
+  }
 
-    public static Performable aTesoreriaFinsoamigo() {
-        return instrumented(TesoreriaFinsoamigo.class);
-    }
-
-    public static Performable enElReporteDeFinsoamigo() {
-      return instrumented(ReporteFinsoamigo.class);
-    }
+  public static Performable enElReporteDeFinsoamigo() {
+    return instrumented(ReporteFinsoamigo.class);
+  }
 
   public static Performable alPDF(String url, String numeroCredito) {
     return instrumented(PDF.class, url, numeroCredito);
@@ -141,5 +138,9 @@ public final class Ingresa {
 
   public static Performable aConfirmacionLibranzaDigital() {
     return instrumented(ConfirmacionLibranzaDigital.class);
+  }
+
+  public static Performable aAprobacionDeLibranzaDigital() {
+    return instrumented(AprobacionLibranzaDigital.class);
   }
 }

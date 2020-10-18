@@ -8,6 +8,9 @@ import net.serenitybdd.screenplay.questions.TextContent;
 
 public class ElMensaje {
 
+  private ElMensaje() {
+  }
+
   public static Question<String> noRegistra() {
     return new MensajeError();
   }

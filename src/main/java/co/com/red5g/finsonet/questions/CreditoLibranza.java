@@ -17,13 +17,11 @@ public class CreditoLibranza implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String numeroCedula = actor.recall(CEDULA_ACTOR);
-        String fechaCredito = actor.recall(FECHA);
         actor.attemptsTo(
             Click.on(LBL_ID),
             Click.on(LBL_ID2)
         );
-        List<WebElementFacade> lstFila = LST_FILA_CREDITO_LIBRANZA.of(numeroCedula, fechaCredito).resolveAllFor(actor);
+        List<WebElementFacade> lstFila = LST_FILA_CREDITO_LIBRANZA.resolveAllFor(actor);
         actor.attemptsTo(MoveMouse.to(lstFila.get(0)));
         return lstFila.get(0).isPresent();
     }

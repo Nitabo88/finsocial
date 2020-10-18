@@ -18,7 +18,6 @@ public class Obtener implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-
         return numeroCredito;
     }
 }

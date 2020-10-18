@@ -151,7 +151,7 @@ public class ChequeoDocumentoBuilder implements Builder<ChequeoDocumento> {
     }
 
     private ChequeoDocumentoBuilder conCodigoPapeleria() {
-        this.codigoPapeleria = "No tiene";
+        this.codigoPapeleria = "L-191128";
         return this;
     }
 

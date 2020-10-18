@@ -6,25 +6,17 @@ import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACE
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_MODIFICAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_LISTADO_CHEQUEO_DOCUMENTOS;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_VALOR_A_GIRAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CODIGO_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.IMG_FINSONET;
-import static co.com.red5g.finsonet.userinterfaces.ModulosAdministracionPage.LNK_ORIGINACION;
-import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoPage.LST_PAPELERIA;
-import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
 import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_120;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_5;
-import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isNotVisible;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
@@ -61,29 +53,7 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getAfianzado())),
             Click.on(BTN_ACEPTAR2_POP_UP),
             WaitFor.seconds(TIEMPO_3),
-            Click.on(BTN_ACEPTAR),
-            Scroll.to(LST_CODIGO_PAPELERIA).andAlignToBottom(),
-            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_CODIGO_PAPELERIA),
-            Click.on(BTN_ACEPTAR2),
-            WaitFor.seconds(TIEMPO_3),
-            actualizaPantalla(),
-            Scroll.to(LST_PAPELERIA).andAlignToBottom(),
-            SelectFromOptions.byVisibleText(chequeoDocumento.getCodigoPapeleria()).from(LST_PAPELERIA),
-            Scroll.to(LBL_VALOR_A_GIRAR).andAlignToBottom(),
-            WaitFor.seconds(TIEMPO_5),
-            Scroll.to(BTN_MODIFICAR).andAlignToBottom(),
-            Click.on(BTN_MODIFICAR),
-            Click.on(MNM_HAMBURGUESA),
-            Click.on(IMG_FINSONET),
-            WaitFor.seconds(TIEMPO_5));
-        actor.attemptsTo(
-            WaitUntil.the(LNK_ORIGINACION, isPresent()).forNoMoreThan(TIEMPO_60).seconds(),
-            WaitFor.seconds(TIEMPO_5),
-            JavaScriptClick.on(LNK_ORIGINACION),
-            WaitFor.seconds(TIEMPO_5),
-            Scroll.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)).andAlignToBottom(),
-            JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito))
-        );
+            Click.on(BTN_ACEPTAR));
         actor.attemptsTo(
             WaitUntil.the(LBL_LISTADO_CHEQUEO_DOCUMENTOS, isPresent()).forNoMoreThan(TIEMPO_120).seconds(),
             Enter.theValue(this.chequeoDocumento.getPuntajeCifin()).into(TXT_PUNTAJE_CIFIN),

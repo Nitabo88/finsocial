@@ -5,7 +5,7 @@ import static co.com.red5g.finsonet.models.builders.CreditoBuilder.la;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 
 import co.com.red5g.finsonet.exceptions.ElCreditoNoFueRechazadoAssertion;
 import co.com.red5g.finsonet.exceptions.NoSeVeElCreditoAssertion;
@@ -22,7 +22,7 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 
 public class ChequeoDocumentosStepDefinition {
 
-  private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario escoger la papeleria";
+  private static final String ESTADO_NO_EXITOSO = "Para poder continuar es necesario diligenciar y subir todos los campos y documentos solicitados en la sección de chequeo de documentos.";
 
   @Dado("^que (.*) esta en el paso de chequeo de documentos de un crédito de libranza$")
   public void ingresarChequeoDocumentos(final String actor) {
@@ -47,7 +47,7 @@ public class ChequeoDocumentosStepDefinition {
 
   @Entonces("^deberá ver el mensaje de adjuntar información$")
   public void verificarNoCreacionCredito() {
-    theActorInTheSpotlight().should(GivenWhenThen.seeThat(QueElChequeoDeDocumentos.noSeGuardo(), containsString(ChequeoDocumentosStepDefinition.ESTADO_NO_EXITOSO)));
+    theActorInTheSpotlight().should(GivenWhenThen.seeThat(QueElChequeoDeDocumentos.noSeGuardo(), equalTo(ESTADO_NO_EXITOSO)));
   }
 
   @Cuando("^el asesor adjunta toda la información de el chequeo de documentos$")

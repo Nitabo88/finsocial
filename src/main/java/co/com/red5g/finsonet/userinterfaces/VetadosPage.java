@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 
-@DefaultUrl("http://192.168.0.18:82/vetados/vetoInterno.php")
+@DefaultUrl("http://10.10.1.59/vetados/vetoInterno.php")
 
 public class VetadosPage extends PageObject {
 

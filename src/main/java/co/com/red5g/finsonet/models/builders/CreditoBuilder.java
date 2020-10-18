@@ -31,7 +31,7 @@ public final class CreditoBuilder implements Builder<Credito> {
   }
 
   private CreditoBuilder conCodigoPapeleria() {
-    this.strCodigoPapeleria = "No tiene";
+    this.strCodigoPapeleria = "L-191128";
     return this;
   }
 

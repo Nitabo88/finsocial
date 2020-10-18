@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-    features = "src/test/resources/features/finsonet/chequeo_documento.feature",
+    features = "src/test/resources/features/chequeo_documento.feature",
     glue = "co.com.red5g.finsonet.stepdefinitions",
     tags = "@ChequeoDocumentosLibranzaDigital",
     snippets = SnippetType.CAMELCASE)

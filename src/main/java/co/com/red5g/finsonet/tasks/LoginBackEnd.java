@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.rest.interactions.Post;
 
 public class LoginBackEnd implements Task {
 
-  private static final String REST_API_URL = "http://192.168.0.18:82";
+  private static final String REST_API_URL = "http://10.10.1.59";
   private Credenciales credenciales;
 
   public static final String COOKIE = "Cookie";
