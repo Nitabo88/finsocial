@@ -1,10 +1,12 @@
 package co.com.red5g.finsonet.questions.factories;
 
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_FILA_CREDITO_HUY;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
+
 import co.com.red5g.finsonet.questions.AntecarteraLibranza;
 import co.com.red5g.finsonet.questions.AprobacionCreditoHuy;
 import co.com.red5g.finsonet.questions.CarteraHuy;
 import co.com.red5g.finsonet.questions.CodigoRespuesta;
-import co.com.red5g.finsonet.questions.CreditoHuy;
 import co.com.red5g.finsonet.questions.CreditoLibranza;
 import co.com.red5g.finsonet.questions.CreditoLibranzaFallido;
 import co.com.red5g.finsonet.questions.CreditosPorConfirmar;
@@ -24,6 +26,7 @@ import co.com.red5g.finsonet.questions.RechazoAprobacionCreditoHuy;
 import co.com.red5g.finsonet.questions.TesoreriaCrediHuy;
 import co.com.red5g.finsonet.questions.TesoreriaPendienteFirma;
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.questions.Visibility;
 
 public final class ElCredito {
 
@@ -90,10 +93,6 @@ public final class ElCredito {
     return new CreditoLibranza();
   }
 
-  public static Question<Boolean> huyExiste() {
-    return new CreditoHuy();
-  }
-
   public static Question<String> deLibranzaNoExiste() {
     return new CreditoLibranzaFallido();
   }
@@ -122,6 +121,12 @@ public final class ElCredito {
     return new CodigoRespuesta();
   }
 
-  public static Question<Boolean> enCartera() {return new CarteraHuy();}
+  public static Question<Boolean> enCartera() {
+    return new CarteraHuy();
+  }
 
+  public static Question<Boolean> huyExiste() {
+    return actor ->
+        Visibility.of(LST_FILA_CREDITO_HUY.of(actor.recall(NUMERO_CREDITO))).viewedBy(actor).value();
+  }
 }

@@ -1,28 +1,24 @@
 package co.com.red5g.finsonet.questions;
 
-import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LBL_ID;
-import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LBL_ID2;
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LBL_MIS_CREDITOS;
 import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.LST_FILA_CREDITO_LIBRANZA;
-import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
-import static co.com.red5g.utils.data.Constantes.FECHA;
+import static co.com.red5g.finsonet.userinterfaces.MisCreditosPage.TXT_BUSCAR;
+import static co.com.red5g.utils.data.Constantes.NUMERO_CREDITO;
 
-import java.util.List;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.MoveMouse;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.ensure.Ensure;
 
 public class CreditoLibranza implements Question<Boolean> {
 
+    private static final String MIS_CREDITOS = "Mis créditos";
+
     @Override
     public Boolean answeredBy(Actor actor) {
-        actor.attemptsTo(
-            Click.on(LBL_ID),
-            Click.on(LBL_ID2)
-        );
-        List<WebElementFacade> lstFila = LST_FILA_CREDITO_LIBRANZA.resolveAllFor(actor);
-        actor.attemptsTo(MoveMouse.to(lstFila.get(0)));
-        return lstFila.get(0).isPresent();
+        String numeroCredito = actor.recall(NUMERO_CREDITO);
+        actor.attemptsTo(Ensure.that(LBL_MIS_CREDITOS.resolveFor(actor).getText()).isEqualTo(MIS_CREDITOS),
+            Enter.theValue(numeroCredito).into(TXT_BUSCAR));
+        return LST_FILA_CREDITO_LIBRANZA.of(numeroCredito).resolveFor(actor).isPresent();
     }
 }

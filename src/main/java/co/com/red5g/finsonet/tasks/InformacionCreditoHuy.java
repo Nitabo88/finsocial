@@ -11,7 +11,6 @@ import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_PLAZO
 import static co.com.red5g.finsonet.userinterfaces.NuevoCreditoHuyPage.TXT_VALOR_A_GIRAR;
 import static co.com.red5g.finsonet.userinterfaces.OriginacionPage.MNM_HAMBURGUESA;
 import static co.com.red5g.utils.data.Constantes.CEDULA_ACTOR;
-import static co.com.red5g.utils.data.Constantes.FECHA;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_10;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_3;
 import static co.com.red5g.utils.data.ConstantesTiempo.TIEMPO_60;
@@ -19,7 +18,6 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 import co.com.devco.automation.mobile.actions.WaitFor;
 import co.com.red5g.finsonet.models.Credito;
-import co.com.red5g.utils.string.UtileriaFechas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -40,7 +38,6 @@ public class InformacionCreditoHuy implements Task {
   @Override
   public <T extends Actor> void performAs(final T actor) {
     actor.remember(CEDULA_ACTOR, credito.getNumeroDocumento());
-    actor.remember(FECHA, UtileriaFechas.formatearFechaServidorUTC());
     actor.attemptsTo(
         Enter.theValue(credito.getNumeroDocumento()).into(TXT_DOCUMENTO).thenHit(Keys.ENTER),
         WaitUntil.the(LBL_INFORMACION_ADICIONAL, isVisible()).forNoMoreThan(TIEMPO_60).seconds(),
