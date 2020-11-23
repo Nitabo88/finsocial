@@ -1,6 +1,10 @@
 package co.com.red5g.finsonet.stepdefinitions;
 
-import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.*;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_ANTECARTERA;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_FINSOAMIGO;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_CREDITO_DETALLE_ORIGINACION;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_VALOR_DETALLE_FINSOAMIGO;
+import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.LST_VALOR_DETALLE_ORIGINACION;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -18,7 +22,7 @@ import cucumber.api.java.es.Y;
 
 public class ReporteVentasStepDefinition {
 
-    @Dado("que un (.*) quiere consultar un reporte")
+    @Dado("^que un (.*) quiere consultar un reporte$")
     public void ingresarReportes(String strActor) {
         theActorCalled(strActor).attemptsTo(
                 Consulta.unReporte()
@@ -114,4 +118,5 @@ public class ReporteVentasStepDefinition {
         theActorInTheSpotlight()
                 .should(seeThat(ElNumero.deCreditosDelReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
     }
+
 }

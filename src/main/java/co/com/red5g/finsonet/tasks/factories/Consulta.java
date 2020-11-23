@@ -59,4 +59,5 @@ public final class Consulta {
   public static Performable laInformacionDeLaBD(String sql) {
       return instrumented(ConsultaBD.class, sql );
   }
+
 }

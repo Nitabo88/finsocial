@@ -18,7 +18,7 @@ public class ConfirmacionLLamadasPage {
           .locatedBy("//input[@name='rdTipoConf-{0}'][@value='1']");
   public static final Target TXT_OBSERVACION_LLAMADA = Target.the("Campo de observacion llamada").locatedBy("//textarea[@id='textarea-{0}']");
   public static final Target BTN_CERTIFICACION_LLAMADAS = Target.the("Campo de certificación de la llamada").locatedBy("//button[text()='Regresar']");
-  public static final Target BTN_ACEPTAR = Target.the("Campo de advertencia para guardar").locatedBy("//button[text()='Aceptar']");
+  public static final Target BTN_ACEPTAR = Target.the("Campo de advertencia para guardar").locatedBy("//button[@class='swal2-confirm btn confirm-button-class-danger swal2-styled']");
   public static final Target BTN_GUARDAR = Target.the("Campo para guardar la gestión").locatedBy("//button[@onclick='marcaLlamadaExitosa({0}, 1);']");
 
   private ConfirmacionLLamadasPage() {

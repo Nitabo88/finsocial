@@ -26,7 +26,7 @@ Característica: Confirmación
     Cuando el asesor marque como pendiente el paso de confirmación
     Entonces el asesor deberá ver el crédito en confirmación de créditos en la lista de pendientes
 
-  @LibranzaDigital @Pending
+  @LibranzaDigital
   @ConfirmacionLibranzaDigital
   Escenario: Confirmación Libranza Digital - Aprobación del paso de confirmación de un crédito
     Dado que un asesor esta en el paso de confirmación de libranza digital

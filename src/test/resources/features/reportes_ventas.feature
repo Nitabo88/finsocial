@@ -2,7 +2,7 @@
 
 Característica: Reportes de venta Finsonet
   Como asesor de finsonet
-  Quiero ingresar a la seccion de reportes de venta
+  Quiero ingresar a la sección de reportes de venta
   Para revisar el estado de las ventas del mes
 
   Escenario: Reporte de venta - Venta Finsoamigo

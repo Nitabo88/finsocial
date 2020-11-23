@@ -19,6 +19,7 @@ public final class ModulosAdministracionPage {
     public static final Target LNK_LLAMADAS = Target.the("el logo de llamadas").located(By.id("call"));
     public static final Target LNK_EQUIPO_SATISFACCION = Target.the("el link de equipo de satisfaccion").located(By.id("juridico"));
     public static final Target LBL_MODULOS_ADMINISTRACION = Target.the("el label de modulos de administracion").located(By.xpath("//h2[text()='Módulos de Administración']"));
+    public static final Target LNK_FINSOAMIGO = Target.the("el link de finsoamigos").located(By.id("finso_amigo"));
 
     private ModulosAdministracionPage() {
         throw new IllegalStateException("Utility class");

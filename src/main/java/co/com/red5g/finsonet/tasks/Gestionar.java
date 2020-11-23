@@ -77,9 +77,11 @@ public class Gestionar implements Task {
         JavaScriptClick.on(CHK_TIPO_CONFIRMACION.of(numeroCredito)),
         Enter.theValue(LLAMADA).into(TXT_OBSERVACION_LLAMADA.of(numeroCredito)),
         Click.on(BTN_GUARDAR.of(numeroCredito)),
-        WaitFor.seconds(TIEMPO_3),
+        WaitFor.seconds(TIEMPO_3));
+    actor.attemptsTo(
         Click.on(BTN_ACEPTAR),
-        WaitFor.seconds(TIEMPO_3),
+        WaitFor.seconds(TIEMPO_3));
+    actor.attemptsTo(
         Click.on(BTN_ACEPTAR),
         cerrarPestana()
     );

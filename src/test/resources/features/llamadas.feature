@@ -5,7 +5,7 @@ Característica: Realizar gestion de llamada
   Quiero ingresar a la pagina de finsonet
   Para confirmar la llamada  realizada a un cliente para un nuevo credito
 
-  @Finsoamigo
+  @Finsoamigo @Pending
   @LlamadaFinsoamigo
   Escenario: Gestión llamada para nuevo crédito finsoamigo
     Dado que un asesor debe gestionar la llamada para un crédito finsoamigo

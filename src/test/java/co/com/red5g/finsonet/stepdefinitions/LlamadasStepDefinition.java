@@ -64,8 +64,8 @@ public class LlamadasStepDefinition {
 
   @Entonces("^deberá ver que la gestión del credito (.*) fue exitosa$")
   public void verificarGestionLLamadaFinsoamigo(String llamada) {
-    theActorInTheSpotlight().should
-        (seeThat(LaLlamada.fueExitosa(), containsString(ESTADO_LLAMADA)));
+    theActorInTheSpotlight()
+        .should(seeThat(LaLlamada.fueExitosa(), containsString(ESTADO_LLAMADA)));
   }
 
   @Dado("^que (.*) debe gestionar la llamada para un crédito Huy$")
