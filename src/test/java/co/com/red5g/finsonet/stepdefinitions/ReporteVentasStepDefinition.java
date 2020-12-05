@@ -118,5 +118,4 @@ public class ReporteVentasStepDefinition {
         theActorInTheSpotlight()
                 .should(seeThat(ElNumero.deCreditosDelReporteDeFinsoamigo(), containsString(String.valueOf(Utilerias.suma(LST_CREDITO_DETALLE_FINSOAMIGO.resolveAllFor(theActorInTheSpotlight()))))));
     }
-
 }

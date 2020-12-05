@@ -2,6 +2,7 @@ package co.com.red5g.finsonet.questions.factories;
 
 import co.com.red5g.finsonet.questions.*;
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.targets.Target;
 
 public final class ElValor {
 
@@ -50,5 +51,13 @@ public final class ElValor {
 
   public static Question<String> delReporteDeFinsoamigo() {
     return new ValorReporteFinsoamigo();
+  }
+
+  public static Question<String> totalDeLosCreditos(Target lblValor) {
+    return new ValorCreditosRadicados(lblValor);
+  }
+
+  public static Question<String> delDetalle(Target btnDetalle, Target valorDetalle) {
+    return new ValorDetalleCreditos(btnDetalle, valorDetalle);
   }
 }

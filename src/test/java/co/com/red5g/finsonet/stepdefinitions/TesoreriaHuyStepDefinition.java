@@ -29,4 +29,5 @@ public class TesoreriaHuyStepDefinition {
     public void verificarCredito() {
         theActorInTheSpotlight().should(seeThat(ElCredito.enCartera()).orComplainWith(NoSeVeElCreditoAssertion.class, NoSeVeElCreditoAssertion.MENSAJE_CREDITO));
     }
+
 }

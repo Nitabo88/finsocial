@@ -26,11 +26,13 @@ import co.com.red5g.finsonet.tasks.NuevoCreditoHuy;
 import co.com.red5g.finsonet.tasks.PDF;
 import co.com.red5g.finsonet.tasks.ReporteAntecartera;
 import co.com.red5g.finsonet.tasks.ReporteFinsoamigo;
+import co.com.red5g.finsonet.tasks.Reporte;
 import co.com.red5g.finsonet.tasks.ReporteOriginacion;
 import co.com.red5g.finsonet.tasks.ReporteVentaLiberada;
 import co.com.red5g.finsonet.tasks.ReporteVentaNueva;
 import co.com.red5g.finsonet.tasks.TesoreriaFinsoamigo;
 import net.serenitybdd.screenplay.Performable;
+import net.serenitybdd.screenplay.targets.Target;
 
 public final class Ingresa {
 
@@ -142,5 +144,9 @@ public final class Ingresa {
 
   public static Performable aAprobacionDeLibranzaDigital() {
     return instrumented(AprobacionLibranzaDigital.class);
+  }
+
+  public static Performable enElReporte(Target lnkVerDetalle) {
+    return instrumented(Reporte.class,lnkVerDetalle);
   }
 }

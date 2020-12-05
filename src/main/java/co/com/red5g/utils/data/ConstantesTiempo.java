@@ -1,6 +1,7 @@
 package co.com.red5g.utils.data;
 
 public class ConstantesTiempo {
+  public static final int TIEMPO_1 = 1;
   public static final int TIEMPO_3 = 3;
   public static final int TIEMPO_5 = 5;
   public static final int TIEMPO_10 = 10;

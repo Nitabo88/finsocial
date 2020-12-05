@@ -19,7 +19,7 @@ public class ReporteAntecartera implements Task {
         actor.attemptsTo(
             SelectFromOptions.byVisibleText(UtileriaFechas.obtenerPeriodoAnterior()).from(LST_PERIODO),
             WaitUntil.the(SPN_FINSONET, isNotVisible()).forNoMoreThan(TIEMPO_10).seconds(),
-            Visualizar.elReporteDeOriginacion(LNK_VER_DETALLE_ANTECARTERA)
+            Visualizar.elReporte(LNK_VER_DETALLE_ANTECARTERA)
         );
     }
 }

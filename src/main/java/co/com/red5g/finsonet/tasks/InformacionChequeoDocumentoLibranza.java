@@ -1,15 +1,12 @@
 package co.com.red5g.finsonet.tasks;
 
-import static co.com.red5g.finsonet.interacions.ActualizarPantalla.actualizaPantalla;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR1_POP_UP;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_ACEPTAR2_POP_UP;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_GUARDAR;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.BTN_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LBL_LISTADO_CHEQUEO_DOCUMENTOS;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA;
-import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.LST_CODIGO_PAPELERIA;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_ACIERTA_DATACREDITO;
 import static co.com.red5g.finsonet.userinterfaces.ChequeoDocumentosPage.TXT_PUNTAJE_CIFIN;
 import static co.com.red5g.finsonet.userinterfaces.ReporteVentasPage.SPN_CARGANDO;
@@ -29,9 +26,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class InformacionChequeoDocumentoLibranza implements Task {
@@ -46,7 +41,7 @@ public class InformacionChequeoDocumentoLibranza implements Task {
     public <T extends Actor> void performAs(T actor) {
         String numeroCredito = actor.recall(NUMERO_CREDITO);
         actor.attemptsTo(
-            MoveMouse.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),
+            Scroll.to(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)).andAlignToBottom(),
             JavaScriptClick.on(LST_CHEQUEO_DOCUMENTOS_NOMBRE_LIBRANZA.of(numeroCredito)),
             Click.on(BTN_PAPELERIA.of(chequeoDocumento.getPapeleria())),
             Click.on(BTN_ACEPTAR1_POP_UP),
@@ -60,7 +55,7 @@ public class InformacionChequeoDocumentoLibranza implements Task {
             Enter.theValue(this.chequeoDocumento.getAciertaDatacredito()).into(TXT_ACIERTA_DATACREDITO),
             Subir.losArchivosDeChequeoDocumentos(),
             WaitUntil.the(SPN_CARGANDO, isNotVisible()).forNoMoreThan(TIEMPO_10).seconds(),
-            MoveMouse.to(BTN_GUARDAR),
+            Scroll.to(BTN_GUARDAR).andAlignToBottom(),
             JavaScriptClick.on(BTN_GUARDAR),
             WaitUntil.the(BTN_ACEPTAR, isEnabled()).forNoMoreThan(TIEMPO_10).seconds(),
             Click.on(BTN_ACEPTAR)
