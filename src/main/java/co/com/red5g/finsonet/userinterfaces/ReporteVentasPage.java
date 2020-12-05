@@ -18,7 +18,6 @@ public final class ReporteVentasPage {
     public static final Target LBL_NUMERO_CREDITOS_CONFIRMACION = Target.the("el numero total de créditos de confirmación").located(By.id("cantConfirmacionFc"));
     public static final Target LBL_NUMERO_CREDITOS_APROBACION = Target.the("el numero total de créditos de aprobación").located(By.id("cantAprobacionFc"));
     public static final Target LBL_NUMERO_CREDITOS_INCORPORACION = Target.the("el numero total de créditos de incorporación").located(By.id("cantIncoFc"));
-    public static final Target LBL_NUMERO_ANTECARTERA = Target.the("el numero total de créditos de antecartera").located(By.id("cantAcFc"));
     public static final Target LBL_VALOR_RADICADOS = Target.the("el valor total de radicados").located(By.id("radicadosFc"));
     public static final Target LBL_VALOR_DOCUMENTOS = Target.the("el valor total de documentos").located(By.id("documentosFc"));
     public static final Target LBL_VALOR_CONFIRMACION = Target.the("el valor total de confirmación").located(By.id("confirmacionFc"));
@@ -35,38 +34,8 @@ public final class ReporteVentasPage {
     public static final Target LNK_VER_DETALLE_VENTA_FINSOAMIGO = Target.the("el detalle de la venta finsoamigo").located(By.xpath("//div[@id='vivo_fa']/following-sibling::button"));
     public static final Target SPN_FINSONET = Target.the("el spiner de carga con el logo de finsonet").located(By.xpath("//img[@class='finsocialLogo']"));
     public static final Target SPN_CARGANDO = Target.the("el spiner de carga").located(By.xpath("//h1[@class='text-white'][contains(.,'Cargando')]"));
-    public static final Target LST_VALOR_DETALLE_ORIGINACION = Target.the("la lista de valores de originacion").located(
-        By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
-    public static final Target LST_VALOR_DETALLE_FINSOAMIGO = Target.the("la lista de valores de finsoamigo").located(
-        By.id("val_vn_fa"));
-    public static final Target LST_CREDITO_DETALLE_ORIGINACION = Target.the("la lista de créditos de originación").located(
-        By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'CR')]"));
-    public static final Target LST_CREDITO_DETALLE_FINSOAMIGO = Target.the("la lista de créditos de finsoamigo").located(
-        By.xpath("//label[@id='cant_vn_fa']"));
-    public static final Target LST_CREDITO_DETALLE_ANTECARTERA = Target.the("la lista de créditos de antecartera").located(
-        By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'CR')]"));
-    public static final Target LST_VALOR_DETALLE_VENTA_NUEVA = Target.the("la lista de valores de venta nueva").located(
-        By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p[contains(.,'$')]"));
-    public static final Target LST_VALOR_DETALLE = Target.the("la lista de valores de los créditos").located(
-        By.xpath("//span[@class='DOsuma']"));
-    public static final Target LST_CREDITOS_DETALLE = Target.the("la lista del número de créditos").located(
-        By.xpath("//span[@class='DOcantidad']"));
-    public static final Target LST_CREDITO_DETALLE_VENTA_NUEVA = Target.the("la lista de créditos de venta nueva").located(
-        By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p//span[@class='DOcantidad']"));
-    public static final Target LST_VALOR_DETALLE_VENTA_LIBERADA = Target.the("la lista de valores de venta liberada").located(
-        By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p[contains(.,'$')]"));
-    public static final Target LST_CREDITO_DETALLE_VENTA_LIBERADA = Target.the("la lista de créditos de venta liberada").located(
-        By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p//span[@class='DOcantidad']"));
-    public static final Target LNK_VER_DETALLE_FINSOCREDITO = Target.the("la lista de créditos de venta finsocrédito").located(
-        By.xpath("//img[@alt='Finsocrédito']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
-    public static final Target LNK_VER_DETALLE_FINSOAMIGO = Target.the("la lista de créditos de finsoamigo").located(
-        By.xpath("//img[@alt='Finsoamigo']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
-    public static final Target LNK_VER_DETALLE_FINSOPRODUCTIVO = Target.the("la lista de créditos de finsoproductivo").located(
-        By.xpath("//img[@alt='Finsoproductivo']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
-    public static final Target LNK_VER_DETALLE_FINSOALIVIO = Target.the("la lista de créditos de finsoalivio").located(
-        By.xpath("//img[@alt='Finsoalivio']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
-    public static final Target LNK_VER_DETALLE_FINSOTIENDA = Target.the("la lista de créditos de tienda en casa").located(
-        By.xpath("//img[@alt='Finsotienda']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
+    public static final Target LST_VALOR_DETALLE = Target.the("la lista de valores de los créditos").located(By.xpath("//span[@class='DOsuma']"));
+    public static final Target LST_CREDITOS_DETALLE = Target.the("la lista del número de créditos").located(By.xpath("//span[@class='DOcantidad']"));
     public static final Target SPN_ELIPSE = Target.the("el spinner de carga").located(By.id("Elipse_4"));
     public static final Target BTN_DETALLE_RADICADOS = Target.the("El botón detalle de radicados").located(By.xpath("//button[@onclick='btnRadicados(this)']"));
     public static final Target BTN_DETALLE_DOCUMENTOS = Target.the("El botón detalle de documentos").located(By.xpath("//button[@onclick='btnDocumentos(this)']"));
@@ -74,6 +43,34 @@ public final class ReporteVentasPage {
     public static final Target BTN_DETALLE_APROBACION = Target.the("El botón detalle de aprobación").located(By.xpath("//button[@onclick='btnAprobacion(this)']"));
     public static final Target BTN_DETALLE_ANTECARTERA = Target.the("El botón detalle de antecartera").located(By.xpath("//button[@onclick='detAc(this)']"));
     public static final Target BTN_DETALLE_INCORPORACION = Target.the("El botón detalle de Incorporación").located(By.xpath("//button[@onclick='btnIncorporacion(this)']"));
+    public static final Target LST_VALOR_DETALLE_ORIGINACION = Target.the("la lista de valores de originacion")
+        .located(By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'$')]"));
+    public static final Target LST_VALOR_DETALLE_FINSOAMIGO = Target.the("la lista de valores de finsoamigo")
+        .located(By.id("val_vn_fa"));
+    public static final Target LST_CREDITO_DETALLE_ORIGINACION = Target.the("la lista de créditos de originación")
+        .located(By.xpath("//div[@class='table-Rventa02 table-Rventa-1-0']//p[contains(.,'CR')]"));
+    public static final Target LST_CREDITO_DETALLE_FINSOAMIGO = Target.the("la lista de créditos de finsoamigo")
+        .located(By.xpath("//label[@id='cant_vn_fa']"));
+    public static final Target LST_CREDITO_DETALLE_ANTECARTERA = Target.the("la lista de créditos de antecartera")
+        .located(By.xpath("//div[@class='table-Rventa02 table-Rventa-2-0']//p[contains(.,'CR')]"));
+    public static final Target LST_VALOR_DETALLE_VENTA_NUEVA = Target.the("la lista de valores de venta nueva")
+        .located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p[contains(.,'$')]"));
+    public static final Target LST_CREDITO_DETALLE_VENTA_NUEVA = Target.the("la lista de créditos de venta nueva")
+        .located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p//span[@class='DOcantidad']"));
+    public static final Target LST_VALOR_DETALLE_VENTA_LIBERADA = Target.the("la lista de valores de venta liberada")
+        .located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p[contains(.,'$')]"));
+    public static final Target LST_CREDITO_DETALLE_VENTA_LIBERADA = Target.the("la lista de créditos de venta liberada")
+        .located(By.xpath("//div[@class='panel-body'][contains(.,'Detalle por oficina')]//p//span[@class='DOcantidad']"));
+    public static final Target LNK_VER_DETALLE_FINSOCREDITO = Target.the("la lista de créditos de venta finsocrédito")
+        .located(By.xpath("//img[@alt='Finsocrédito']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
+    public static final Target LNK_VER_DETALLE_FINSOAMIGO = Target.the("la lista de créditos de finsoamigo")
+        .located(By.xpath("//img[@alt='Finsoamigo']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
+    public static final Target LNK_VER_DETALLE_FINSOPRODUCTIVO = Target.the("la lista de créditos de finsoproductivo")
+        .located(By.xpath("//img[@alt='Finsoproductivo']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
+    public static final Target LNK_VER_DETALLE_FINSOALIVIO = Target.the("la lista de créditos de finsoalivio")
+        .located(By.xpath("//img[@alt='Finsoalivio']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
+    public static final Target LNK_VER_DETALLE_FINSOTIENDA = Target.the("la lista de créditos de tienda en casa")
+        .located(By.xpath("//img[@alt='Finsotienda']//ancestor::div[@class='card-custom card-purple']//span[text()='Ver detalle']"));
 
     private ReporteVentasPage() {
         throw new IllegalStateException("Utility class");
